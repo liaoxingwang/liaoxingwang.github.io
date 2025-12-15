@@ -775,14 +775,14 @@ T getById(Serializable id);
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        2.5k
+                        2.4k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        11 分
+                        10 分
                     </div>
                     
                 
@@ -806,74 +806,74 @@ T getById(Serializable id);
 <span class="token comment" spellcheck="true">// 根据 ID 查询</span>
 T <span class="token function">getById</span><span class="token punctuation">(</span>Serializable id<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">// 根据 Wrapper，查询一条记录。结果集，如果是多个会抛出异常，随机取一条加上限制条件 wrapper.last("LIMIT 1")</span>
-T <span class="token function">getOne</span><span class="token punctuation">(</span>Wrapper<span class="token operator">&lt;</span>T<span class="token operator">&gt;</span> queryWrapper<span class="token punctuation">)</span><span class="token punctuation">;</span>
+T <span class="token function">getOne</span><span class="token punctuation">(</span>Wrapper<span class="token operator">&lt;</span>T<span class="token operator">></span> queryWrapper<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">// 根据 Wrapper，查询一条记录</span>
-T <span class="token function">getOne</span><span class="token punctuation">(</span>Wrapper<span class="token operator">&lt;</span>T<span class="token operator">&gt;</span> queryWrapper<span class="token punctuation">,</span> <span class="token keyword">boolean</span> throwEx<span class="token punctuation">)</span><span class="token punctuation">;</span>
+T <span class="token function">getOne</span><span class="token punctuation">(</span>Wrapper<span class="token operator">&lt;</span>T<span class="token operator">></span> queryWrapper<span class="token punctuation">,</span> <span class="token keyword">boolean</span> throwEx<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">// 根据 Wrapper，查询一条记录</span>
-Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Object<span class="token operator">&gt;</span> <span class="token function">getMap</span><span class="token punctuation">(</span>Wrapper<span class="token operator">&lt;</span>T<span class="token operator">&gt;</span> queryWrapper<span class="token punctuation">)</span><span class="token punctuation">;</span>
+Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Object<span class="token operator">></span> <span class="token function">getMap</span><span class="token punctuation">(</span>Wrapper<span class="token operator">&lt;</span>T<span class="token operator">></span> queryWrapper<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">/*
 2、List：查询多条
 */</span>
 <span class="token comment" spellcheck="true">// 查询所有</span>
-List<span class="token operator">&lt;</span>T<span class="token operator">&gt;</span> <span class="token function">list</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+List<span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token function">list</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">// 查询列表</span>
-List<span class="token operator">&lt;</span>T<span class="token operator">&gt;</span> <span class="token function">list</span><span class="token punctuation">(</span>Wrapper<span class="token operator">&lt;</span>T<span class="token operator">&gt;</span> queryWrapper<span class="token punctuation">)</span><span class="token punctuation">;</span>
+List<span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token function">list</span><span class="token punctuation">(</span>Wrapper<span class="token operator">&lt;</span>T<span class="token operator">></span> queryWrapper<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">// 查询（根据ID 批量查询）</span>
-Collection<span class="token operator">&lt;</span>T<span class="token operator">&gt;</span> <span class="token function">listByIds</span><span class="token punctuation">(</span>Collection<span class="token operator">&lt;</span><span class="token operator">?</span> <span class="token keyword">extends</span> <span class="token class-name">Serializable</span><span class="token operator">&gt;</span> idList<span class="token punctuation">)</span><span class="token punctuation">;</span>
+Collection<span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token function">listByIds</span><span class="token punctuation">(</span>Collection<span class="token operator">&lt;</span><span class="token operator">?</span> <span class="token keyword">extends</span> <span class="token class-name">Serializable</span><span class="token operator">></span> idList<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">// 查询（根据 columnMap 条件）</span>
-Collection<span class="token operator">&lt;</span>T<span class="token operator">&gt;</span> <span class="token function">listByMap</span><span class="token punctuation">(</span>Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Object<span class="token operator">&gt;</span> columnMap<span class="token punctuation">)</span><span class="token punctuation">;</span>
+Collection<span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token function">listByMap</span><span class="token punctuation">(</span>Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Object<span class="token operator">></span> columnMap<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">// 查询所有列表</span>
-List<span class="token operator">&lt;</span>Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Object<span class="token operator">&gt;&gt;</span> <span class="token function">listMaps</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+List<span class="token operator">&lt;</span>Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Object<span class="token operator">>></span> <span class="token function">listMaps</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">// 查询列表</span>
-List<span class="token operator">&lt;</span>Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Object<span class="token operator">&gt;&gt;</span> <span class="token function">listMaps</span><span class="token punctuation">(</span>Wrapper<span class="token operator">&lt;</span>T<span class="token operator">&gt;</span> queryWrapper<span class="token punctuation">)</span><span class="token punctuation">;</span>
+List<span class="token operator">&lt;</span>Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Object<span class="token operator">>></span> <span class="token function">listMaps</span><span class="token punctuation">(</span>Wrapper<span class="token operator">&lt;</span>T<span class="token operator">></span> queryWrapper<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">/*
 3、Page：分页查询
 */</span>
 <span class="token comment" spellcheck="true">// 无条件分页查询</span>
-IPage<span class="token operator">&lt;</span>T<span class="token operator">&gt;</span> <span class="token function">page</span><span class="token punctuation">(</span>IPage<span class="token operator">&lt;</span>T<span class="token operator">&gt;</span> page<span class="token punctuation">)</span><span class="token punctuation">;</span>
+IPage<span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token function">page</span><span class="token punctuation">(</span>IPage<span class="token operator">&lt;</span>T<span class="token operator">></span> page<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">// 条件分页查询</span>
-IPage<span class="token operator">&lt;</span>T<span class="token operator">&gt;</span> <span class="token function">page</span><span class="token punctuation">(</span>IPage<span class="token operator">&lt;</span>T<span class="token operator">&gt;</span> page<span class="token punctuation">,</span> Wrapper<span class="token operator">&lt;</span>T<span class="token operator">&gt;</span> queryWrapper<span class="token punctuation">)</span><span class="token punctuation">;</span>
+IPage<span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token function">page</span><span class="token punctuation">(</span>IPage<span class="token operator">&lt;</span>T<span class="token operator">></span> page<span class="token punctuation">,</span> Wrapper<span class="token operator">&lt;</span>T<span class="token operator">></span> queryWrapper<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">// 无条件分页查询</span>
-IPage<span class="token operator">&lt;</span>Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Object<span class="token operator">&gt;&gt;</span> <span class="token function">pageMaps</span><span class="token punctuation">(</span>IPage<span class="token operator">&lt;</span>T<span class="token operator">&gt;</span> page<span class="token punctuation">)</span><span class="token punctuation">;</span>
+IPage<span class="token operator">&lt;</span>Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Object<span class="token operator">>></span> <span class="token function">pageMaps</span><span class="token punctuation">(</span>IPage<span class="token operator">&lt;</span>T<span class="token operator">></span> page<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">// 条件分页查询</span>
-IPage<span class="token operator">&lt;</span>Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Object<span class="token operator">&gt;&gt;</span> <span class="token function">pageMaps</span><span class="token punctuation">(</span>IPage<span class="token operator">&lt;</span>T<span class="token operator">&gt;</span> page<span class="token punctuation">,</span> Wrapper<span class="token operator">&lt;</span>T<span class="token operator">&gt;</span> queryWrapper<span class="token punctuation">)</span><span class="token punctuation">;</span>
+IPage<span class="token operator">&lt;</span>Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Object<span class="token operator">>></span> <span class="token function">pageMaps</span><span class="token punctuation">(</span>IPage<span class="token operator">&lt;</span>T<span class="token operator">></span> page<span class="token punctuation">,</span> Wrapper<span class="token operator">&lt;</span>T<span class="token operator">></span> queryWrapper<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token operator">/</span><span class="token operator">*</span>
 <span class="token number">4</span>、Count：条数
 <span class="token comment" spellcheck="true">// 查询总记录数</span>
 <span class="token keyword">int</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">// 根据 Wrapper 条件，查询总记录数</span>
-<span class="token keyword">int</span> <span class="token function">count</span><span class="token punctuation">(</span>Wrapper<span class="token operator">&lt;</span>T<span class="token operator">&gt;</span> queryWrapper<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">int</span> <span class="token function">count</span><span class="token punctuation">(</span>Wrapper<span class="token operator">&lt;</span>T<span class="token operator">></span> queryWrapper<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="2、添加"><a href="#2、添加" class="headerlink" title="2、添加"></a>2、添加</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">/*
 1、Save
 */</span>
 <span class="token comment" spellcheck="true">// 插入一条记录（选择字段，策略插入）</span>
 <span class="token keyword">boolean</span> <span class="token function">save</span><span class="token punctuation">(</span>T entity<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">// 插入（批量）</span>
-<span class="token keyword">boolean</span> <span class="token function">saveBatch</span><span class="token punctuation">(</span>Collection<span class="token operator">&lt;</span>T<span class="token operator">&gt;</span> entityList<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">boolean</span> <span class="token function">saveBatch</span><span class="token punctuation">(</span>Collection<span class="token operator">&lt;</span>T<span class="token operator">></span> entityList<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">// 插入（批量）</span>
-<span class="token keyword">boolean</span> <span class="token function">saveBatch</span><span class="token punctuation">(</span>Collection<span class="token operator">&lt;</span>T<span class="token operator">&gt;</span> entityList<span class="token punctuation">,</span> <span class="token keyword">int</span> batchSize<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">boolean</span> <span class="token function">saveBatch</span><span class="token punctuation">(</span>Collection<span class="token operator">&lt;</span>T<span class="token operator">></span> entityList<span class="token punctuation">,</span> <span class="token keyword">int</span> batchSize<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">/*
 2、SaveOrUpdate
 */</span>
 <span class="token comment" spellcheck="true">// TableId 注解存在更新记录，否插入一条记录</span>
 <span class="token keyword">boolean</span> <span class="token function">saveOrUpdate</span><span class="token punctuation">(</span>T entity<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">// 根据updateWrapper尝试更新，否继续执行saveOrUpdate(T)方法</span>
-<span class="token keyword">boolean</span> <span class="token function">saveOrUpdate</span><span class="token punctuation">(</span>T entity<span class="token punctuation">,</span> Wrapper<span class="token operator">&lt;</span>T<span class="token operator">&gt;</span> updateWrapper<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">boolean</span> <span class="token function">saveOrUpdate</span><span class="token punctuation">(</span>T entity<span class="token punctuation">,</span> Wrapper<span class="token operator">&lt;</span>T<span class="token operator">></span> updateWrapper<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">// 批量修改插入</span>
-<span class="token keyword">boolean</span> <span class="token function">saveOrUpdateBatch</span><span class="token punctuation">(</span>Collection<span class="token operator">&lt;</span>T<span class="token operator">&gt;</span> entityList<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">boolean</span> <span class="token function">saveOrUpdateBatch</span><span class="token punctuation">(</span>Collection<span class="token operator">&lt;</span>T<span class="token operator">></span> entityList<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">// 批量修改插入</span>
-<span class="token keyword">boolean</span> <span class="token function">saveOrUpdateBatch</span><span class="token punctuation">(</span>Collection<span class="token operator">&lt;</span>T<span class="token operator">&gt;</span> entityList<span class="token punctuation">,</span> <span class="token keyword">int</span> batchSize<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">boolean</span> <span class="token function">saveOrUpdateBatch</span><span class="token punctuation">(</span>Collection<span class="token operator">&lt;</span>T<span class="token operator">></span> entityList<span class="token punctuation">,</span> <span class="token keyword">int</span> batchSize<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="3、修改"><a href="#3、修改" class="headerlink" title="3、修改"></a>3、修改</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 根据 UpdateWrapper 条件，更新记录 需要设置sqlset</span>
-<span class="token keyword">boolean</span> <span class="token function">update</span><span class="token punctuation">(</span>Wrapper<span class="token operator">&lt;</span>T<span class="token operator">&gt;</span> updateWrapper<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">boolean</span> <span class="token function">update</span><span class="token punctuation">(</span>Wrapper<span class="token operator">&lt;</span>T<span class="token operator">></span> updateWrapper<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">// 根据 whereEntity 条件，更新记录</span>
-<span class="token keyword">boolean</span> <span class="token function">update</span><span class="token punctuation">(</span>T entity<span class="token punctuation">,</span> Wrapper<span class="token operator">&lt;</span>T<span class="token operator">&gt;</span> updateWrapper<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">boolean</span> <span class="token function">update</span><span class="token punctuation">(</span>T entity<span class="token punctuation">,</span> Wrapper<span class="token operator">&lt;</span>T<span class="token operator">></span> updateWrapper<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">// 根据 ID 选择修改</span>
 <span class="token keyword">boolean</span> <span class="token function">updateById</span><span class="token punctuation">(</span>T entity<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">// 根据ID 批量更新</span>
-<span class="token keyword">boolean</span> <span class="token function">updateBatchById</span><span class="token punctuation">(</span>Collection<span class="token operator">&lt;</span>T<span class="token operator">&gt;</span> entityList<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">boolean</span> <span class="token function">updateBatchById</span><span class="token punctuation">(</span>Collection<span class="token operator">&lt;</span>T<span class="token operator">></span> entityList<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">// 根据ID 批量更新</span>
-<span class="token keyword">boolean</span> <span class="token function">updateBatchById</span><span class="token punctuation">(</span>Collection<span class="token operator">&lt;</span>T<span class="token operator">&gt;</span> entityList<span class="token punctuation">,</span> <span class="token keyword">int</span> batchSize<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">boolean</span> <span class="token function">updateBatchById</span><span class="token punctuation">(</span>Collection<span class="token operator">&lt;</span>T<span class="token operator">></span> entityList<span class="token punctuation">,</span> <span class="token keyword">int</span> batchSize<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="4、删除"><a href="#4、删除" class="headerlink" title="4、删除"></a>4、删除</h3><pre><code>// 根据 entity 条件，删除记录
 boolean remove(Wrapper&lt;T&gt; queryWrapper);
@@ -900,9 +900,9 @@ update().eq("column", value).remove();
 lambdaUpdate().eq(Entity::getId, value).update(entity);
 
 </code></pre><h2 id="Lambda"><a href="#Lambda" class="headerlink" title="Lambda"></a>Lambda</h2><p>官方表示，3.x支持Lambda表达式，那应该怎么使用呢？我们来看个例子：</p>
-<pre class="line-numbers language-java"><code class="language-java">QueryWrapper<span class="token operator">&lt;</span>Student<span class="token operator">&gt;</span> queryWrapper <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">QueryWrapper</span><span class="token operator">&lt;</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-java"><code class="language-java">QueryWrapper<span class="token operator">&lt;</span>Student<span class="token operator">></span> queryWrapper <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">QueryWrapper</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 queryWrapper<span class="token punctuation">.</span><span class="token function">lambda</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">eq</span><span class="token punctuation">(</span>Student<span class="token operator">:</span><span class="token operator">:</span>getName<span class="token punctuation">,</span> <span class="token string">"SK"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-List<span class="token operator">&lt;</span>Student<span class="token operator">&gt;</span> studentList <span class="token operator">=</span> <span class="token function">list</span><span class="token punctuation">(</span>queryWrapper<span class="token punctuation">)</span><span class="token punctuation">;</span>
+List<span class="token operator">&lt;</span>Student<span class="token operator">></span> studentList <span class="token operator">=</span> <span class="token function">list</span><span class="token punctuation">(</span>queryWrapper<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">for</span> <span class="token punctuation">(</span>Student student <span class="token operator">:</span> studentList<span class="token punctuation">)</span>
     Console<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span>student<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="条件查询"><a href="#条件查询" class="headerlink" title="条件查询"></a>条件查询</h2><p>【1】多<code>eq</code></p>
@@ -1078,9 +1078,9 @@ for (Student student : studentList)
 <h2 id="自定义sql"><a href="#自定义sql" class="headerlink" title="自定义sql"></a>自定义sql</h2><p>如果官方提供的满足不了你的需求，或者你的需求很复杂，导致你不知道如何使用条件构造器，那应该怎么办呢？</p>
 <p>很简单。</p>
 <p>第一步：找到 Dao，写一个数据库操作接口</p>
-<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">StudentDao</span> <span class="token keyword">extends</span> <span class="token class-name">BaseMapper</span><span class="token operator">&lt;</span>Student<span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">StudentDao</span> <span class="token keyword">extends</span> <span class="token class-name">BaseMapper</span><span class="token operator">&lt;</span>Student<span class="token operator">></span> <span class="token punctuation">{</span>
 
-    List<span class="token operator">&lt;</span>Student<span class="token operator">&gt;</span> <span class="token function">selectAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    List<span class="token operator">&lt;</span>Student<span class="token operator">></span> <span class="token function">selectAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>第二步：在xml文件中写sql</p>
@@ -1254,62 +1254,6 @@ public Student findById(Long id) {
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/05/15/blog-open-source-gitlearn/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="Git学习之常用命令">
-                        
-                        <span class="card-title">Git学习之常用命令</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            实际工作中常用命令汇总：
-查看远程分支：$ git branch -a
-
-查看本地分支：$ git branch
-
-切换分支：$ git checkout 分支名
-
-更新到指定版本：$ git reset –hard 39c9064fe34
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2023-05-15
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Git/" class="post-category" target="_blank">
-                                    Git
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Git/" target="_blank">
-                        <span class="chip bg-color">Git</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
-            <div class="card">
                 <a href="/2023/05/12/blog-open-source-linux/">
                     <div class="card-image">
                         
@@ -1329,9 +1273,9 @@ mkd
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2023-05-12
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2023-05-12
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -1349,6 +1293,66 @@ mkd
                     
                     <a href="/tags/Linux/" target="_blank">
                         <span class="chip bg-color">Linux</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/05/12/blog-open-source-wechat-mini-program/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="微信小程序">
+                        
+                        <span class="card-title">微信小程序</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            微信小程序篇
+ 打开微信小程序导入一个项目时，控制台弹出下面的错误：
+
+HBuilder X—运行—运行到小程序模拟器 微信开发者工具
+
+编译后生成
+
+一，注册微信小程序1.打开 微信公众平台
+
+
+2.注册开发者账号
+可以选择注册服务号/小
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2023-05-12
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/微信小程序/" class="post-category" target="_blank">
+                                    微信小程序
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/微信小程序/" target="_blank">
+                        <span class="chip bg-color">微信小程序</span>
                     </a>
                     
                 </div>
@@ -1523,7 +1527,7 @@ mkd
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">96.1k</span> 字
+                <span class="white-color">95.7k</span> 字
             
 
             
@@ -1747,7 +1751,7 @@ $(function () {
             </script>
         
 
-    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script>
+    
         <style>
             [bg-lazy] {
                 background-image: none !important;
@@ -1760,5 +1764,5 @@ $(function () {
                 preloadRatio: 1,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z\d\-\.\+]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(t.test(e.href)||r.test(e.href))&&(e.href=a.dataset.original)})});</script><script>(r=>{r.imageLazyLoadSetting.processImages=t;var a=r.imageLazyLoadSetting.isSPA,o=r.imageLazyLoadSetting.preloadRatio||1,d=i();function i(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(t){(a||t)&&(d=i());for(var e,n=0;n<d.length;n++)0<=(e=(e=d[n]).getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(r.innerHeight*o||document.documentElement.clientHeight*o)&&(()=>{var t,e,a,o,i=d[n];e=function(){d=d.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).dataset.loaded||(t.hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(a=new Image,o=t.getAttribute("data-original"),a.onload=function(){t.src=o,t.removeAttribute("data-original"),t.setAttribute("data-loaded",!0),e&&e()},a.onerror=function(){t.removeAttribute("data-original"),t.setAttribute("data-loaded",!1),t.src=o},t.src!==o&&(a.src=o)))})()}function e(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",e),r.addEventListener("resize",e),r.addEventListener("orientationchange",e)})(this);</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z\d\-\.\+]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(t.test(e.href)||r.test(e.href))&&(e.href=a.dataset.original)})});</script><script>(r=>{r.imageLazyLoadSetting.processImages=t;var a=r.imageLazyLoadSetting.isSPA,o=r.imageLazyLoadSetting.preloadRatio||1,d=i();function i(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(t){(a||t)&&(d=i());for(var e,n=0;n<d.length;n++)0<=(e=(e=d[n]).getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(r.innerHeight*o||document.documentElement.clientHeight*o)&&(()=>{var t,e,a,o,i=d[n];e=function(){d=d.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).dataset.loaded||(t.hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(a=new Image,o=t.getAttribute("data-original"),a.onload=function(){t.src=o,t.removeAttribute("data-original"),t.setAttribute("data-loaded",!0),e&&e()},a.onerror=function(){t.removeAttribute("data-original"),t.setAttribute("data-loaded",!1),t.src=o},t.src!==o&&(a.src=o)))})()}function e(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",e),r.addEventListener("resize",e),r.addEventListener("orientationchange",e)})(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
 </html>
