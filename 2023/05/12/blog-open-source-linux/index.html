@@ -6,7 +6,7 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Linu命令总结, Computer Science and Technology of Hunan University of Technology sk Java开发 整包服务 深度学习">
+    <meta name="keywords" content="Linu命令总结, 商单接企业项目外包 软件开发 整包服务 移动开发 移动开发团队 移动开发项目">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
     <meta name="description" content="简易的命令行入门教程:Git 全局设置:
@@ -764,7 +764,7 @@ mkd">
                 <div class="post-author info-break-policy">
                     <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
                     
-                        马内
+                        SK
                     
                 </div>
 
@@ -850,13 +850,13 @@ alias ll<span class="token operator">=</span><span class="token string">'ls -alF
 nohup xxx <span class="token operator">&amp;</span>
 
 # 后台运行<span class="token punctuation">,</span> 不输出任何日志
-nohup xxx <span class="token operator">&gt;</span> <span class="token operator">/</span>dev<span class="token operator">/</span>null <span class="token operator">&amp;</span>
+nohup xxx <span class="token operator">></span> <span class="token operator">/</span>dev<span class="token operator">/</span>null <span class="token operator">&amp;</span>
 
 # 后台运行<span class="token punctuation">,</span> 并将错误信息做标准输出到日志中 
-nohup xxx <span class="token operator">&gt;</span>out<span class="token punctuation">.</span>log <span class="token number">2</span><span class="token operator">&gt;</span><span class="token operator">&amp;</span><span class="token number">1</span> <span class="token operator">&amp;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+nohup xxx <span class="token operator">></span>out<span class="token punctuation">.</span>log <span class="token number">2</span><span class="token operator">></span><span class="token operator">&amp;</span><span class="token number">1</span> <span class="token operator">&amp;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="强制活动用户退出"><a href="#强制活动用户退出" class="headerlink" title="强制活动用户退出"></a>强制活动用户退出</h2><pre class="line-numbers language-go"><code class="language-go"># 命令来完成强制活动用户退出<span class="token punctuation">.</span>其中TTY表示终端名称
 pkill <span class="token operator">-</span>kill <span class="token operator">-</span>t <span class="token punctuation">[</span>TTY<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h2 id="查看命令路径"><a href="#查看命令路径" class="headerlink" title="查看命令路径"></a>查看命令路径</h2><pre class="line-numbers language-go"><code class="language-go">which <span class="token operator">&lt;</span>命令<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="查看命令路径"><a href="#查看命令路径" class="headerlink" title="查看命令路径"></a>查看命令路径</h2><pre class="line-numbers language-go"><code class="language-go">which <span class="token operator">&lt;</span>命令<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="查看进程所有打开最大fd数"><a href="#查看进程所有打开最大fd数" class="headerlink" title="查看进程所有打开最大fd数"></a>查看进程所有打开最大fd数</h2><pre class="line-numbers language-go"><code class="language-go">ulimit <span class="token operator">-</span>n<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="配置dns"><a href="#配置dns" class="headerlink" title="配置dns"></a>配置dns</h2><pre class="line-numbers language-go"><code class="language-go">vim <span class="token operator">/</span>etc<span class="token operator">/</span>resolv<span class="token punctuation">.</span>conf<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="nslookup-查看域名路由表"><a href="#nslookup-查看域名路由表" class="headerlink" title="nslookup,查看域名路由表"></a>nslookup,查看域名路由表</h2><pre class="line-numbers language-go"><code class="language-go">nslookup google<span class="token punctuation">.</span>com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -972,10 +972,10 @@ cat <span class="token operator">-</span>v xxx<span class="token punctuation">.<
 # 去除特殊字符
 sed <span class="token operator">-</span>i 's<span class="token operator">/</span><span class="token operator">^</span>M<span class="token comment" spellcheck="true">//g’ env.sh  去除文件的特殊字符, 比如^M:  需要这样输入: ctrl+v+enter</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="处理因系统原因引起的文件中特殊字符的问题"><a href="#处理因系统原因引起的文件中特殊字符的问题" class="headerlink" title="处理因系统原因引起的文件中特殊字符的问题"></a>处理因系统原因引起的文件中特殊字符的问题</h2><pre class="line-numbers language-go"><code class="language-go"># 可以转换为该系统下的文件格式
-cat file<span class="token punctuation">.</span>sh <span class="token operator">&gt;</span> file<span class="token punctuation">.</span>sh_bak
+cat file<span class="token punctuation">.</span>sh <span class="token operator">></span> file<span class="token punctuation">.</span>sh_bak
 
 # 先将file<span class="token punctuation">.</span>sh中文件内容复制下来然后运行<span class="token punctuation">,</span> 然后粘贴内容<span class="token punctuation">,</span> 最后ctrl <span class="token operator">+</span> d 保存退出
-cat <span class="token operator">&gt;</span> file1<span class="token punctuation">.</span>sh
+cat <span class="token operator">></span> file1<span class="token punctuation">.</span>sh
 
 # 在vim中通过如下设置文件编码和文件格式
 <span class="token punctuation">:</span>set fileencodings<span class="token operator">=</span>utf<span class="token number">-8</span> ，然后 w （存盘）一下即可转化为 utf8 格式，
@@ -1058,7 +1058,7 @@ iptables <span class="token operator">-</span>D INPUT <span class="token operato
 nc <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">0.11</span> <span class="token number">8000</span> <span class="token operator">&lt;</span> data<span class="token punctuation">.</span>txt
 
 #nc可以当做服务器，监听某个端口号<span class="token punctuation">,</span>把某一次请求的内容存储到received_data里
-nc <span class="token operator">-</span>l <span class="token number">8000</span> <span class="token operator">&gt;</span> received_data
+nc <span class="token operator">-</span>l <span class="token number">8000</span> <span class="token operator">></span> received_data
 
 #上边只监听一次，如果多次可以加上<span class="token operator">-</span>k参数
 nc <span class="token operator">-</span>lk <span class="token number">8000</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -1706,6 +1706,62 @@ r b swpd free buff cache si so bi bo in cs us sy id wa
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
+                <a href="/2023/05/15/blog-open-source-gitlearn/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="Git学习之常用命令">
+                        
+                        <span class="card-title">Git学习之常用命令</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            实际工作中常用命令汇总：
+查看远程分支：$ git branch -a
+
+查看本地分支：$ git branch
+
+切换分支：$ git checkout 分支名
+
+更新到指定版本：$ git reset –hard 39c9064fe34
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2023-05-15
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Git/" class="post-category" target="_blank">
+                                    Git
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Git/" target="_blank">
+                        <span class="chip bg-color">Git</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
                 <a href="/2023/05/12/blog-open-source-mybatis-plus/">
                     <div class="card-image">
                         
@@ -1728,9 +1784,9 @@ T getById(Serializable id);
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2023-05-12
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2023-05-12
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -1748,66 +1804,6 @@ T getById(Serializable id);
                     
                     <a href="/tags/MyBatis-Plus/" target="_blank">
                         <span class="chip bg-color">MyBatis-Plus</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2023/05/12/blog-open-source-wechat-mini-program/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="微信小程序">
-                        
-                        <span class="card-title">微信小程序</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            微信小程序篇
- 打开微信小程序导入一个项目时，控制台弹出下面的错误：
-
-HBuilder X—运行—运行到小程序模拟器 微信开发者工具
-
-编译后生成
-
-一，注册微信小程序1.打开 微信公众平台
-
-
-2.注册开发者账号
-可以选择注册服务号/小
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2023-05-12
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/微信小程序/" class="post-category" target="_blank">
-                                    微信小程序
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/微信小程序/" target="_blank">
-                        <span class="chip bg-color">微信小程序</span>
                     </a>
                     
                 </div>
@@ -1848,7 +1844,7 @@ HBuilder X—运行—运行到小程序模拟器 微信开发者工具
         var url = document.location.href;
         newdiv.innerHTML += '<br />'
             + '来源: 理想热爱<br />'
-            + '作者: sk<br />'
+            + '作者: SK<br />'
             + '链接: <a href="' + url + '">' + url + '</a><br />'
             + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
 
@@ -1982,7 +1978,7 @@ HBuilder X—运行—运行到小程序模拟器 微信开发者工具
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">96.1k</span> 字
+                <span class="white-color">95.7k</span> 字
             
 
             
