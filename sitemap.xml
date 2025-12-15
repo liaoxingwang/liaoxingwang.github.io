@@ -23,20 +23,6 @@
   </url>
   
   <url>
-    <loc>https://liaoxingwang.github.io/categories/index.html</loc>
-    
-    <lastmod>2025-12-15T03:28:41.041Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://liaoxingwang.github.io/friends/index.html</loc>
-    
-    <lastmod>2025-12-15T03:28:41.041Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://liaoxingwang.github.io/archives/index.html</loc>
     
     <lastmod>2025-12-15T03:28:41.041Z</lastmod>
@@ -51,7 +37,14 @@
   </url>
   
   <url>
-    <loc>https://liaoxingwang.github.io/tags/index.html</loc>
+    <loc>https://liaoxingwang.github.io/friends/index.html</loc>
+    
+    <lastmod>2025-12-15T03:28:41.041Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://liaoxingwang.github.io/categories/index.html</loc>
     
     <lastmod>2025-12-15T03:28:41.041Z</lastmod>
     
@@ -59,6 +52,13 @@
   
   <url>
     <loc>https://liaoxingwang.github.io/galleries/index.html</loc>
+    
+    <lastmod>2025-12-15T03:28:41.041Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://liaoxingwang.github.io/tags/index.html</loc>
     
     <lastmod>2025-12-15T03:28:41.041Z</lastmod>
     
@@ -79,14 +79,14 @@
   </url>
   
   <url>
-    <loc>https://liaoxingwang.github.io/2023/05/21/blog-open-source-sqloptimization/</loc>
+    <loc>https://liaoxingwang.github.io/2024/04/15/blog-open-source-work-thinking/</loc>
     
     <lastmod>2025-12-15T03:28:41.040Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://liaoxingwang.github.io/2024/04/15/blog-open-source-work-thinking/</loc>
+    <loc>https://liaoxingwang.github.io/2023/05/21/blog-open-source-sqloptimization/</loc>
     
     <lastmod>2025-12-15T03:28:41.040Z</lastmod>
     
@@ -135,7 +135,7 @@
   </url>
   
   <url>
-    <loc>https://liaoxingwang.github.io/2024/12/21/blog-open-source-javanote/</loc>
+    <loc>https://liaoxingwang.github.io/2023/05/12/blog-open-source-linux/</loc>
     
     <lastmod>2025-12-15T03:28:41.038Z</lastmod>
     
@@ -149,14 +149,14 @@
   </url>
   
   <url>
-    <loc>https://liaoxingwang.github.io/2023/05/12/blog-open-source-linux/</loc>
+    <loc>https://liaoxingwang.github.io/2024/12/21/blog-open-source-javanote/</loc>
     
     <lastmod>2025-12-15T03:28:41.038Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://liaoxingwang.github.io/2023/05/15/blog-open-source-gitlearn/</loc>
+    <loc>https://liaoxingwang.github.io/2023/05/20/blog-open-source-circular-deletion-of-elements-in-list/</loc>
     
     <lastmod>2025-12-15T03:28:41.037Z</lastmod>
     
@@ -170,7 +170,7 @@
   </url>
   
   <url>
-    <loc>https://liaoxingwang.github.io/2023/05/20/blog-open-source-circular-deletion-of-elements-in-list/</loc>
+    <loc>https://liaoxingwang.github.io/2023/05/15/blog-open-source-gitlearn/</loc>
     
     <lastmod>2025-12-15T03:28:41.037Z</lastmod>
     
