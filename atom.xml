@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>理想热爱</title>
+  
+  <subtitle>理想热爱</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://liaoxingwang.github.io/"/>
+  <updated>2025-12-15T03:28:41.038Z</updated>
+  <id>https://liaoxingwang.github.io/</id>
+  
+  <author>
+    <name>sk</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>java笔记</title>
+    <link href="https://liaoxingwang.github.io/2024/12/21/blog-open-source-javanote/"/>
+    <id>https://liaoxingwang.github.io/2024/12/21/blog-open-source-javanote/</id>
+    <published>2024-12-20T21:20:00.000Z</published>
+    <updated>2025-12-15T03:28:41.038Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;iframe frameborder=&quot;no&quot; border=&quot;1&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;100%&quot; height=&quot;86&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="https://liaoxingwang.github.io/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="https://liaoxingwang.github.io/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java中23种设计模式</title>
+    <link href="https://liaoxingwang.github.io/2024/04/16/blog-open-source-design-patterns/"/>
+    <id>https://liaoxingwang.github.io/2024/04/16/blog-open-source-design-patterns/</id>
+    <published>2024-04-15T21:20:00.000Z</published>
+    <updated>2025-12-15T03:28:41.037Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;iframe frameborder=&quot;no&quot; border=&quot;1&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;100%&quot; height=&quot;86&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="https://liaoxingwang.github.io/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="https://liaoxingwang.github.io/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>职场杂谈</title>
+    <link href="https://liaoxingwang.github.io/2024/04/15/blog-open-source-workplace/"/>
+    <id>https://liaoxingwang.github.io/2024/04/15/blog-open-source-workplace/</id>
+    <published>2024-04-14T21:20:00.000Z</published>
+    <updated>2025-12-15T03:28:41.041Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;iframe frameborder=&quot;no&quot; border=&quot;1&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;100%&quot; height=&quot;86&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="https://liaoxingwang.github.io/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="https://liaoxingwang.github.io/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>工作思考</title>
+    <link href="https://liaoxingwang.github.io/2024/04/15/blog-open-source-work-thinking/"/>
+    <id>https://liaoxingwang.github.io/2024/04/15/blog-open-source-work-thinking/</id>
+    <published>2024-04-14T21:20:00.000Z</published>
+    <updated>2025-12-15T03:28:41.040Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;iframe frameborder=&quot;no&quot; border=&quot;1&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;100%&quot; height=&quot;86&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="https://liaoxingwang.github.io/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="https://liaoxingwang.github.io/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>代码分层</title>
+    <link href="https://liaoxingwang.github.io/2024/03/18/blog-open-source-codelayering/"/>
+    <id>https://liaoxingwang.github.io/2024/03/18/blog-open-source-codelayering/</id>
+    <published>2024-03-17T21:20:00.000Z</published>
+    <updated>2025-12-15T03:28:41.037Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;iframe frameborder=&quot;no&quot; border=&quot;1&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;100%&quot; height=&quot;86&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="https://liaoxingwang.github.io/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="https://liaoxingwang.github.io/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java之Lambda表达式详解</title>
+    <link href="https://liaoxingwang.github.io/2023/05/21/blog-open-source-java-lambda/"/>
+    <id>https://liaoxingwang.github.io/2023/05/21/blog-open-source-java-lambda/</id>
+    <published>2023-05-20T21:20:00.000Z</published>
+    <updated>2025-12-15T03:28:41.038Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;iframe frameborder=&quot;no&quot; border=&quot;1&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;100%&quot; height=&quot;86&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="https://liaoxingwang.github.io/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="https://liaoxingwang.github.io/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySql之SQL优化</title>
+    <link href="https://liaoxingwang.github.io/2023/05/21/blog-open-source-sqloptimization/"/>
+    <id>https://liaoxingwang.github.io/2023/05/21/blog-open-source-sqloptimization/</id>
+    <published>2023-05-20T21:20:00.000Z</published>
+    <updated>2025-12-15T03:28:41.040Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;iframe frameborder=&quot;no&quot; border=&quot;1&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;100%&quot; height=&quot;86&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="MySql" scheme="https://liaoxingwang.github.io/categories/MySql/"/>
+    
+    
+      <category term="MySql" scheme="https://liaoxingwang.github.io/tags/MySql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java循环删除List中的元素</title>
+    <link href="https://liaoxingwang.github.io/2023/05/20/blog-open-source-circular-deletion-of-elements-in-list/"/>
+    <id>https://liaoxingwang.github.io/2023/05/20/blog-open-source-circular-deletion-of-elements-in-list/</id>
+    <published>2023-05-19T21:20:00.000Z</published>
+    <updated>2025-12-15T03:28:41.037Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;iframe frameborder=&quot;no&quot; border=&quot;1&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;100%&quot; height=&quot;86&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="https://liaoxingwang.github.io/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="https://liaoxingwang.github.io/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySql基础篇</title>
+    <link href="https://liaoxingwang.github.io/2023/05/19/blog-open-source-mysqlfoundation/"/>
+    <id>https://liaoxingwang.github.io/2023/05/19/blog-open-source-mysqlfoundation/</id>
+    <published>2023-05-19T09:20:00.000Z</published>
+    <updated>2025-12-15T03:28:41.039Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;MyISAM和InnoDB&quot;&gt;&lt;a href=&quot;#MyISAM和InnoDB&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="MySql" scheme="https://liaoxingwang.github.io/categories/MySql/"/>
+    
+    
+      <category term="MySql" scheme="https://liaoxingwang.github.io/tags/MySql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>日常开发中，提升技术建议</title>
+    <link href="https://liaoxingwang.github.io/2023/05/17/blog-open-source-promotion/"/>
+    <id>https://liaoxingwang.github.io/2023/05/17/blog-open-source-promotion/</id>
+    <published>2023-05-17T09:20:00.000Z</published>
+    <updated>2025-12-15T03:28:41.039Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;h1 id=&quot;日常开发中，提升技术建议&quot;&gt;&lt;a href=&quot;#日常开发中，提升技术建议&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="https://liaoxingwang.github.io/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="https://liaoxingwang.github.io/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git学习之常用命令</title>
+    <link href="https://liaoxingwang.github.io/2023/05/15/blog-open-source-gitlearn/"/>
+    <id>https://liaoxingwang.github.io/2023/05/15/blog-open-source-gitlearn/</id>
+    <published>2023-05-15T09:20:00.000Z</published>
+    <updated>2025-12-15T03:28:41.037Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;实际工作中常用命令汇总：&quot;&gt;&lt;a href=&quot;#实际工作中常用命令汇总：&quot; class=&quot;headerlink&quot; title=&quot;实际工作中常用命令汇总：&quot;&gt;&lt;/a&gt;实际工作中常用命令汇总：&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;查看远程分支：$ git branch
+        
+      
+    
+    </summary>
+    
+      <category term="Git" scheme="https://liaoxingwang.github.io/categories/Git/"/>
+    
+    
+      <category term="Git" scheme="https://liaoxingwang.github.io/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MyBatis-Plus学习记录</title>
+    <link href="https://liaoxingwang.github.io/2023/05/12/blog-open-source-mybatis-plus/"/>
+    <id>https://liaoxingwang.github.io/2023/05/12/blog-open-source-mybatis-plus/</id>
+    <published>2023-05-12T09:20:00.000Z</published>
+    <updated>2025-12-15T03:28:41.039Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;h1 id=&quot;MyBatis-Plus通用查询&quot;&gt;&lt;a href=&quot;#MyBatis-Plus通用查询&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="MyBatis-Plus" scheme="https://liaoxingwang.github.io/categories/MyBatis-Plus/"/>
+    
+    
+      <category term="MyBatis-Plus" scheme="https://liaoxingwang.github.io/tags/MyBatis-Plus/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linu命令总结</title>
+    <link href="https://liaoxingwang.github.io/2023/05/12/blog-open-source-linux/"/>
+    <id>https://liaoxingwang.github.io/2023/05/12/blog-open-source-linux/</id>
+    <published>2023-05-12T09:20:00.000Z</published>
+    <updated>2025-12-15T03:28:41.038Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;简易的命令行入门教程&quot;&gt;&lt;a href=&quot;#简易的命令行入门教程&quot; class=&quot;headerlink&quot; title=&quot;简易的命令行入门教程:&quot;&gt;&lt;/a&gt;简易的命令行入门教程:&lt;/h2&gt;&lt;p&gt;Git 全局设置:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git config
+        
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://liaoxingwang.github.io/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="https://liaoxingwang.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>微信小程序</title>
+    <link href="https://liaoxingwang.github.io/2023/05/12/blog-open-source-wechat-mini-program/"/>
+    <id>https://liaoxingwang.github.io/2023/05/12/blog-open-source-wechat-mini-program/</id>
+    <published>2023-05-12T09:20:00.000Z</published>
+    <updated>2025-12-15T03:28:41.040Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;微信小程序篇&lt;/p&gt;
+&lt;p&gt; 打开微信小程序导入一个项目时，控制台弹出下面的错误：&lt;/p&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="微信小程序" scheme="https://liaoxingwang.github.io/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+    
+      <category term="微信小程序" scheme="https://liaoxingwang.github.io/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Nginx安装和配置文件讲解</title>
+    <link href="https://liaoxingwang.github.io/2023/03/23/blog-open-source-nginx-environment/"/>
+    <id>https://liaoxingwang.github.io/2023/03/23/blog-open-source-nginx-environment/</id>
+    <published>2023-03-23T09:20:00.000Z</published>
+    <updated>2025-12-15T03:28:41.039Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Nginx安装和配置文件讲解&quot;&gt;&lt;a href=&quot;#Nginx安装和配置文件讲解&quot; class=&quot;headerlink&quot; title=&quot;Nginx安装和配置文件讲解&quot;&gt;&lt;/a&gt;Nginx安装和配置文件讲解&lt;/h1&gt;&lt;h3
+        
+      
+    
+    </summary>
+    
+      <category term="Nginx" scheme="https://liaoxingwang.github.io/categories/Nginx/"/>
+    
+    
+      <category term="Nginx" scheme="https://liaoxingwang.github.io/tags/Nginx/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java学习之Java环境配置</title>
+    <link href="https://liaoxingwang.github.io/2023/03/22/blog-open-source-java-environment/"/>
+    <id>https://liaoxingwang.github.io/2023/03/22/blog-open-source-java-environment/</id>
+    <published>2023-03-22T09:20:00.000Z</published>
+    <updated>2025-12-15T03:28:41.038Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Java学习笔记之Java环境配置&quot;&gt;&lt;a href=&quot;#Java学习笔记之Java环境配置&quot; class=&quot;headerlink&quot; title=&quot;Java学习笔记之Java环境配置&quot;&gt;&lt;/a&gt;Java学习笔记之Java环境配置&lt;/h1&gt;&lt;h2
+        
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="https://liaoxingwang.github.io/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="https://liaoxingwang.github.io/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>专业团队高效接单</title>
+    <link href="https://liaoxingwang.github.io/2020/11/21/blog-open-source/"/>
+    <id>https://liaoxingwang.github.io/2020/11/21/blog-open-source/</id>
+    <published>2020-11-21T09:20:00.000Z</published>
+    <updated>2025-12-15T03:28:41.041Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;团队介绍&quot;&gt;&lt;a href=&quot;#团队介绍&quot; class=&quot;headerlink&quot; title=&quot;团队介绍&quot;&gt;&lt;/a&gt;团队介绍&lt;/h1&gt;&lt;p&gt;滴滴滴，接单啦接单啦欢迎各位老板咨询18124777246
+        
+      
+    
+    </summary>
+    
+      <category term="高效接单" scheme="https://liaoxingwang.github.io/categories/%E9%AB%98%E6%95%88%E6%8E%A5%E5%8D%95/"/>
+    
+    
+      <category term="高效接单" scheme="https://liaoxingwang.github.io/tags/%E9%AB%98%E6%95%88%E6%8E%A5%E5%8D%95/"/>
+    
+  </entry>
+  
+</feed>

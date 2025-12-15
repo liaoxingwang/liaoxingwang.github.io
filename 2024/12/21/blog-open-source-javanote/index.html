@@ -1,0 +1,2142 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+    
+
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="java笔记, Computer Science and Technology of Hunan University of Technology sk Java开发 整包服务 深度学习">
+    <meta name="baidu-site-verification" content="fmlEuI34ir">
+    <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
+    <meta name="description" content="
+
+
+
+java笔记说说进程和线程的区别？进程是程序的一次执行，是系统进行资源分配和调度的独立单位，他的作用是是程序能够并发执行提高资源利用率和吞吐率。
+由于进程是资源分配和调度的基本单位，因为进程的创建、销毁、切换产生大量的时间和空间的开">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>java笔记 | 理想热爱</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/aos/3.0.0-beta.6/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/lightgallery/1.6.12/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <style type="text/css">
+        
+
+            code[class*="language-"],
+            pre[class*="language-"] {
+                white-space: pre !important;
+            }
+
+        
+    </style>
+
+    <script src="https://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?46e79e71af0709a5b9106bf20cecc493";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+    
+    
+        <script>
+            (function(){
+                var bp = document.createElement('script');
+                var curProtocol = window.location.protocol.split(':')[0];
+                if (curProtocol === 'https') {
+                    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+                }
+                else {
+                    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                }
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(bp, s);
+            })();
+        </script>
+    
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+    <body>
+
+        <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <span class="logo-span">理想热爱</span>
+                </a>
+            </div>
+            
+
+
+<!-- <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/AV" class="waves-effect waves-light">
+            
+            <i class="fa fa-music"></i>
+            
+            <span>视听</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/galleries" class="waves-effect waves-light">
+            
+            <i class="fa fa-photo"></i>
+            
+            <span>相册</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于我</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/contact" class="waves-effect waves-light">
+            
+            <i class="fa fa-envelope"></i>
+            
+            <span>留言板</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul> -->
+
+<!-- 支持二级菜单特性 liaoxingwang modify 2019.09.17  -->
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right nav-menu">
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/" class="waves-effect waves-light">
+              
+                <i class="fa fa-home"></i>
+              
+              <span>首页</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/tags" class="waves-effect waves-light">
+              
+                <i class="fa fa-tags"></i>
+              
+              <span>标签</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/categories" class="waves-effect waves-light">
+              
+                <i class="fa fa-bookmark"></i>
+              
+              <span>分类</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/archives" class="waves-effect waves-light">
+              
+                <i class="fa fa-archive"></i>
+              
+              <span>归档</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/AV" class="waves-effect waves-light">
+              
+                <i class="fa fa-music"></i>
+              
+              <span>视听</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/galleries" class="waves-effect waves-light">
+              
+                <i class="fa fa-photo"></i>
+              
+              <span>相册</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/about" class="waves-effect waves-light">
+              
+                <i class="fa fa-user-circle-o"></i>
+              
+              <span>关于我</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/contact" class="waves-effect waves-light">
+              
+                <i class="fa fa-envelope"></i>
+              
+              <span>留言板</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/friends" class="waves-effect waves-light">
+              
+                <i class="fa fa-address-book"></i>
+              
+              <span>友情链接</span>
+            </a>
+
+            
+      </li>
+    
+
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <div class="logo-name">理想热爱</div>
+        <div class="logo-desc">
+            
+            湖南工业大学 | 计算机科学与技术
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/AV" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-music"></i>
+                
+                视听
+            </a>
+        </li>
+        
+        <li>
+            <a href="/galleries" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-photo"></i>
+                
+                相册
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于我
+            </a>
+        </li>
+        
+        <li>
+            <a href="/contact" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-envelope"></i>
+                
+                留言板
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/liaoxingwang/" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+
+   
+   
+<!-- 支持二级菜单特性 liaoxingwang modify 2019.09.17  -->
+<!-- <ul class="menu-list mobile-menu-list">
+    
+        <li class="m-nav-item">
+                
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-home"></i>
+                        
+                        首页
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/tags" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-tags"></i>
+                        
+                        标签
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/categories" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-bookmark"></i>
+                        
+                        分类
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/archives" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-archive"></i>
+                        
+                        归档
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/AV" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-music"></i>
+                        
+                        视听
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/galleries" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-photo"></i>
+                        
+                        相册
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/about" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-user-circle-o"></i>
+                        
+                        关于我
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/contact" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-envelope"></i>
+                        
+                        留言板
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/friends" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-address-book"></i>
+                        
+                        友情链接
+                    </a>
+              
+            </li>
+        
+
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/liaoxingwang/" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul> -->
+
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/liaoxingwang/" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+        
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        java笔记
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        
+<!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Java/" target="_blank">
+                                <span class="chip bg-color">Java</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Java/" class="post-category" target="_blank">
+                                Java
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2024-12-21
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
+                    
+                        廖兴旺
+                    
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        9.5k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        35 分
+                    </div>
+                    
+                
+
+                
+                        <span id="busuanzi_container_site_pv" style='display:none'></span>
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv" ></span>
+
+                
+
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <iframe frameborder="no" border="1" marginwidth="0" marginheight="0" width="100%" height="86" src="//music.163.com/outchain/player?type=2&amp;id=1973133244&amp;auto=1&amp;height=66"></iframe>
+
+
+
+<h2 id="java笔记"><a href="#java笔记" class="headerlink" title="java笔记"></a>java笔记</h2><h3 id="说说进程和线程的区别？"><a href="#说说进程和线程的区别？" class="headerlink" title="说说进程和线程的区别？"></a>说说进程和线程的区别？</h3><p>进程是程序的一次执行，是系统进行资源分配和调度的独立单位，他的作用是是程序能够并发执行提高资源利用率和吞吐率。</p>
+<p>由于进程是资源分配和调度的基本单位，因为进程的创建、销毁、切换产生大量的时间和空间的开销，进程的数量不能太多，而线程是比进程更小的能独立运行的基本单位，他是进程的一个实体，可以减少程序并发执行时的时间和空间开销，使得操作系统具有更好的并发性。</p>
+<p>线程基本不拥有系统资源，只有一些运行时必不可少的资源，比如程序计数器、寄存器和栈，进程则占有堆、栈。</p>
+<p>操作系统的线程状态：新建、就绪、运行、阻塞、终止</p>
+<p>java的线程状态：新建、运行、阻塞、等待、超时等待、终止</p>
+<h3 id="1、重载和重写的区别"><a href="#1、重载和重写的区别" class="headerlink" title="1、重载和重写的区别"></a>1、重载和重写的区别</h3><p><strong>重载：</strong> 发生在同一个类中，方法名必须相同，参数类型不同、个数不同、顺序不同，方法返回值和访问修饰符可以不同。</p>
+<p><strong>重写：</strong> 发生在父子类中，方法名、参数列表必须相同，返回值范围小于等于父类，抛出的异常范围小于等于父类，访问修饰符范围大于等于父类；如果父类方法访问修饰符为 private 则子类就不能重写该方法。</p>
+<h3 id="2、static-关键字是干什么用的？谈谈你的理解"><a href="#2、static-关键字是干什么用的？谈谈你的理解" class="headerlink" title="2、static 关键字是干什么用的？谈谈你的理解"></a>2、static 关键字是干什么用的？谈谈你的理解</h3><p>static 是 Java 中非常重要的关键字，static 表示的概念是 <code>静态的</code>，在 Java 中，static 主要用来</p>
+<ul>
+<li>修饰变量，static 修饰的变量称为<code>静态变量</code>、也称为<code>类变量</code>，类变量属于类所有，对于不同的类来说，static 变量只有一份，static 修饰的变量位于方法区中；static 修饰的变量能够直接通过 类名.变量名 来进行访问，不用通过实例化类再进行使用。</li>
+<li>修饰方法，static 修饰的方法被称为<code>静态方法</code>，静态方法能够直接通过 类名.方法名来使用，在静态方法内部不能使用非静态属性和方法</li>
+<li>static 可以修饰代码块，主要分为两种，一种直接定义在类中，使用 <code>static{}</code>，这种被称为<code>静态代码块</code>，一种是在类中定义<code>静态内部类</code>，使用 <code>static class xxx</code> 来进行定义。</li>
+<li>static 可以用于静态导包，通过使用 <code>import static xxx</code>  来实现，这种方式一般不推荐使用</li>
+<li>static 可以和单例模式一起使用，通过双重检查锁来实现线程安全的单例模式。</li>
+</ul>
+<h3 id="final-关键字是干什么用的？谈谈你的理解"><a href="#final-关键字是干什么用的？谈谈你的理解" class="headerlink" title="final 关键字是干什么用的？谈谈你的理解"></a>final 关键字是干什么用的？谈谈你的理解</h3><p>final 是 Java 中的关键字，它表示的意思是 <code>不可变的</code>，在 Java 中，final 主要用来</p>
+<ul>
+<li>修饰类，final 修饰的类不能被继承，不能被继承的意思就是不能使用 <code>extends</code> 来继承被 final 修饰的类。</li>
+<li>修饰变量，final 修饰的变量不能被改写，不能被改写的意思有两种，对于基本数据类型来说，final 修饰的变量，其值不能被改变，final 修饰的对象，对象的引用不能被改变，但是对象内部的属性可以被修改。final 修饰的变量在某种程度上起到了<code>不可变</code>的效果，所以，可以用来保护只读数据，尤其是在并发编程中，因为明确的不能再为 final 变量进行赋值，有利于减少额外的同步开销。</li>
+<li>修饰方法，final 修饰的方法不能被重写。</li>
+</ul>
+<h3 id="2、StringBuild和StringBuffer还有String"><a href="#2、StringBuild和StringBuffer还有String" class="headerlink" title="2、StringBuild和StringBuffer还有String"></a>2、StringBuild和StringBuffer还有String</h3><p>他们的无参构造器的初始容量都为16，有参的为参数长度加上16。</p>
+<p>StringBuffer 对方法加了同步锁或者对调用的方法加了同步锁，所以是线程安全的。StringBuilder 并没有对方法进行加同步锁，所以是非线程安全的。每次 String 类型进行改变的时候，都会生成一个新的 String 对象，然后将指针指向新的 String 对象。StringBuffer 每次都会对 StringBuffer 对象本身进行操作，而不是生成新的对象并改变对象引用。</p>
+<p><strong>对于三者使用的总结：</strong></p>
+<ol>
+<li><p>操作少量的数据 ： String</p>
+</li>
+<li><p>单线程操作字符串缓冲区下操作大量数据 ：StringBuilder</p>
+</li>
+<li><p>多线程操作字符串缓冲区下操作大量数据 ：StringBuffer</p>
+</li>
+<li><p>String的equals源码</p>
+<p><img src="https://cdn.jsdelivr.net/gh/liaoxingwang/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original=".%5Cimages%5CString%E7%9A%84equals%E6%BA%90%E7%A0%81.png" alt="image-20210816170633107"></p>
+</li>
+</ol>
+<h3 id="3、接口和抽象类的区别是什么"><a href="#3、接口和抽象类的区别是什么" class="headerlink" title="3、接口和抽象类的区别是什么"></a>3、接口和抽象类的区别是什么</h3><ol>
+<li><p>接口的方法默认是 public，所有方法在接口中不能有实现(Java 8 开始接口方法可以有默认实现），抽象类可以有非抽象的方法</p>
+</li>
+<li><p>接口中的实例变量默认是 final 类型的，而抽象类中则不一定</p>
+</li>
+<li><p>一个类可以实现多个接口，但最多只能实现一个抽象类</p>
+</li>
+<li><p>一个类实现接口的话要实现接口的所有方法，而抽象类不一定</p>
+</li>
+<li><p>接口不能用 new 实例化，但可以声明，但是必须引用一个实现该接口的对象 从设计层面来说，抽象是对类的抽象，是一种模板设计，接口是行为的抽象，是一种行为的规范。</p>
+</li>
+</ol>
+<h3 id="6、ArrayList实现了RandomAccess接口（关于随机访问）、Cloneable接口、Serializable（关于序列化和反序列化）、继承了AbstractList抽象类"><a href="#6、ArrayList实现了RandomAccess接口（关于随机访问）、Cloneable接口、Serializable（关于序列化和反序列化）、继承了AbstractList抽象类" class="headerlink" title="6、ArrayList实现了RandomAccess接口（关于随机访问）、Cloneable接口、Serializable（关于序列化和反序列化）、继承了AbstractList抽象类"></a>6、ArrayList实现了RandomAccess接口（关于随机访问）、Cloneable接口、Serializable（关于序列化和反序列化）、继承了AbstractList抽象类</h3><p>ArrayList的无参构造器为一个空数组</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> Object<span class="token punctuation">[</span><span class="token punctuation">]</span> DEFAULTCAPACITY_EMPTY_ELEMENTDATA <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/liaoxingwang/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original=".%5Cimages%5CArrayList%E6%97%A0%E5%8F%82%E6%9E%84%E9%80%A0.png" alt="image-20210918115237209"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/liaoxingwang/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original=".%5Cimages%5CArrayList%E6%9C%89%E5%8F%82%E6%9E%84%E9%80%A0.png" alt="image-20210921181330903"></p>
+<p>此时整个数组里面是没有数据的，但是容量是initialCapacity的，如果执行add(int index, E element)和set(int index, E element)方法时会报错数组越界。<br>ArrayList的默认初始化容量为10，jdk1.7的时候初始化默认为10，但是jdk1.8之后，默认为空，只有第一次添加数据的时候会判断当前是否有容量，否则初始化容量为10</p>
+<p><img src="https://cdn.jsdelivr.net/gh/liaoxingwang/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original=".%5Cimages%5CArrayList%E6%B7%BB%E5%8A%A0%E5%85%83%E7%B4%A0%E6%97%B6%E7%9A%84%E6%A3%80%E6%9F%A5.png" alt="image-20210921195820657"></p>
+<p>ArrayList的add过程</p>
+<ol>
+<li><p><strong>初始容量</strong>：当创建一个 ArrayList 对象时，如果没有指定初始容量大小，则其初始容量为 10。</p>
+</li>
+<li><p><strong>添加元素</strong>：当向 ArrayList 中添加元素时，ArrayList 会先检查当前元素个数是否达到了数组的长度，如果达到了就需要进行扩容。</p>
+</li>
+<li><p><strong>计算新容量</strong>：扩容时，ArrayList 会计算新的容量大小。先获取当前容器的长度，扩大到之前容器的1.5倍，然后回去检查容器是否合适，如果当前容器小了，容器大小直接为当前的值，当前容器容量超过数组最大容量，newCapacity = (minCapacity &gt; MAX_ARRAY_SIZE) ? Integer.MAX_VALUE : MAX_ARRAY_SIZE来扩容</p>
+<p><img src="https://cdn.jsdelivr.net/gh/liaoxingwang/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original=".%5Cimages%5CArrayList%E6%89%A9%E5%AE%B9.png" alt="image-20210921201257542"></p>
+</li>
+<li><p><strong>创建新数组</strong>：ArrayList 将创建一个新的数组，其长度为新容量大小。</p>
+</li>
+<li><p><strong>数据复制</strong>：ArrayList 将原来数组中的元素复制到新数组中。</p>
+</li>
+<li><p><strong>更新引用</strong>：ArrayList 更新内部引用，使其指向新的数组。</p>
+</li>
+<li><p><strong>添加新元素</strong>：最后，ArrayList 将新的元素添加到新数组中。</p>
+</li>
+</ol>
+<p>ArrayList的移除方法是先检查当前index是否合法，将当前index+1以及后面的元素进行复制后，往前移动一个下标覆盖之前的数据，然后设置将数组最后一个元素设置为null，并且size-1</p>
+<p><img src="https://cdn.jsdelivr.net/gh/liaoxingwang/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original=".%5Cimages%5CArrayList%E7%9A%84remove%E6%96%B9%E6%B3%95.png" alt="image-20210921232405261"></p>
+<p>ArrayList的添加方法：先去检查index的合法性，检查容器是否需要初始化和扩容等，然后将index位置以及之后的数据移动到index+1的位置上，留出index的位置，将元素放到index的位置上</p>
+<p><img src="https://cdn.jsdelivr.net/gh/liaoxingwang/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original=".%5Cimages%5CArrayList%E7%9A%84add%E6%96%B9%E6%B3%95.png" alt="image-20210921233458372"></p>
+<p>关于Arrays.asList()方法是生成的一个内部的java.util.Arrays.ArrayList，不是java.util.ArrayList，这个要注意，它不具备添加和删除的方法。</p>
+<h3 id="为什么不是线程安全的，具体来说是哪里不安全？（源码层面，没答上来）"><a href="#为什么不是线程安全的，具体来说是哪里不安全？（源码层面，没答上来）" class="headerlink" title="为什么不是线程安全的，具体来说是哪里不安全？（源码层面，没答上来）"></a>为什么不是线程安全的，具体来说是哪里不安全？（源码层面，没答上来）</h3><p>在高并发添加数据下，ArrayList会暴露三个问题;</p>
+<ul>
+<li>部分值为null（我们并没有add null进去）</li>
+<li>索引越界异常</li>
+<li>size与我们add的数量不符</li>
+</ul>
+<p>下面我们来分析三种情况都是如何产生的：</p>
+<ul>
+<li>部分值为null：当线程1走到了扩容那里发现当前size是9，而数组容量是10，所以不用扩容，这时候cpu让出执行权，线程2也进来了，发现size是9，而数组容量是10，所以不用扩容，这时候线程1继续执行，将数组下标索引为9的位置set值了，还没有来得及执行size++，这时候线程2也来执行了，又把数组下标索引为9的位置set了一遍，这时候两个先后进行size++，导致下标索引10的地方就为null了。</li>
+<li>索引越界异常：线程1走到扩容那里发现当前size是9，数组容量是10不用扩容，cpu让出执行权，线程2也发现不用扩容，这时候数组的容量就是10，而线程1 set完之后size++，这时候线程2再进来size就是10，数组的大小只有10，而你要设置下标索引为10的就会越界（数组的下标索引从0开始）；</li>
+<li>size与我们add的数量不符：这个基本上每次都会发生，这个理解起来也很简单，因为size++本身就不是原子操作，可以分为三步：获取size的值，将size的值加1，将新的size值覆盖掉原来的，线程1和线程2拿到一样的size值加完了同时覆盖，就会导致一次没有加上，所以肯定不会与我们add的数量保持一致的；</li>
+</ul>
+<h3 id="7、HashMap（继承AbstractMap抽象类，实现了Map-Cloneable-Serializable）"><a href="#7、HashMap（继承AbstractMap抽象类，实现了Map-Cloneable-Serializable）" class="headerlink" title="7、HashMap（继承AbstractMap抽象类，实现了Map, Cloneable, Serializable）"></a>7、HashMap（继承AbstractMap抽象类，实现了Map, Cloneable, Serializable）</h3><p>初始化的时候会根据传入的数值计算一个比传入值大的第一个2次幂的值,然后将这个值作为HashMap的容量</p>
+<p><img src="https://cdn.jsdelivr.net/gh/liaoxingwang/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original=".%5Cimages%5CHashMap%E5%88%9D%E5%A7%8B%E5%8C%96.png" alt="image-20211216163926866"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/liaoxingwang/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original=".%5Cimages%5C%E8%AE%A1%E7%AE%97%E6%AF%94%E4%BC%A0%E5%85%A5%E5%80%BC%E5%A4%A7%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA2%E6%AC%A1%E5%B9%82%E7%9A%84%E5%80%BC.png" alt="image-20211216164232417"></p>
+<p>默认容量为16<br><img src="https://cdn.jsdelivr.net/gh/liaoxingwang/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original=".%5Cimages%5CHashMap%E9%BB%98%E8%AE%A4%E5%AE%B9%E9%87%8F.png" alt="image-20211104160909551"><br>负载因子为0.75<br>负载因子是0.75的时候，空间利用率比较高，而且避免了相当多的Hash冲突，使得底层的链表或者是红黑树的高度比较低，提升了空间效率。<br>扩容条件</p>
+<blockquote>
+<p>当前数据存储量达到总容量乘以负载因子时，就会发生扩容</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/liaoxingwang/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original=".%5Cimages%5CHashMap%E6%89%A9%E5%AE%B9.png" alt=""></p>
+<p>HashMap的Put方法：1.8之前是头插法，1.8之后使用尾插法</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> V <span class="token function">put</span><span class="token punctuation">(</span>K key<span class="token punctuation">,</span> V value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">putVal</span><span class="token punctuation">(</span><span class="token function">hash</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">,</span> key<span class="token punctuation">,</span> value<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">final</span> V <span class="token function">putVal</span><span class="token punctuation">(</span><span class="token keyword">int</span> hash<span class="token punctuation">,</span> K key<span class="token punctuation">,</span> V value<span class="token punctuation">,</span> <span class="token keyword">boolean</span> onlyIfAbsent<span class="token punctuation">,</span>
+               <span class="token keyword">boolean</span> evict<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    Node<span class="token operator">&lt;</span>K<span class="token punctuation">,</span>V<span class="token operator">></span><span class="token punctuation">[</span><span class="token punctuation">]</span> tab<span class="token punctuation">;</span> Node<span class="token operator">&lt;</span>K<span class="token punctuation">,</span>V<span class="token operator">></span> p<span class="token punctuation">;</span> <span class="token keyword">int</span> n<span class="token punctuation">,</span> i<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//第一次put元素时，table数组为空，先调用resize生成一个指定容量的数组</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>tab <span class="token operator">=</span> table<span class="token punctuation">)</span> <span class="token operator">==</span> null <span class="token operator">||</span> <span class="token punctuation">(</span>n <span class="token operator">=</span> tab<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+        n <span class="token operator">=</span> <span class="token punctuation">(</span>tab <span class="token operator">=</span> <span class="token function">resize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//hash值和n-1的与运算结果为桶的位置，如果该位置空就直接放置一个Node</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>p <span class="token operator">=</span> tab<span class="token punctuation">[</span>i <span class="token operator">=</span> <span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span> hash<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">==</span> null<span class="token punctuation">)</span>
+        tab<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">newNode</span><span class="token punctuation">(</span>hash<span class="token punctuation">,</span> key<span class="token punctuation">,</span> value<span class="token punctuation">,</span> null<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//如果计算出的bucket不空，即发生哈希冲突，就要进一步判断</span>
+    <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        Node<span class="token operator">&lt;</span>K<span class="token punctuation">,</span>V<span class="token operator">></span> e<span class="token punctuation">;</span> K k<span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//判断当前Node的key与要put的key是否相等,如果相等，直接覆盖</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>p<span class="token punctuation">.</span>hash <span class="token operator">==</span> hash <span class="token operator">&amp;&amp;</span>
+            <span class="token punctuation">(</span><span class="token punctuation">(</span>k <span class="token operator">=</span> p<span class="token punctuation">.</span>key<span class="token punctuation">)</span> <span class="token operator">==</span> key <span class="token operator">||</span> <span class="token punctuation">(</span>key <span class="token operator">!=</span> null <span class="token operator">&amp;&amp;</span> key<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>k<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            e <span class="token operator">=</span> p<span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//判断当前Node是否是红黑树的节点</span>
+        <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>p <span class="token keyword">instanceof</span> <span class="token class-name">TreeNode</span><span class="token punctuation">)</span>
+            e <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>TreeNode<span class="token operator">&lt;</span>K<span class="token punctuation">,</span>V<span class="token operator">></span><span class="token punctuation">)</span>p<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">putTreeVal</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> tab<span class="token punctuation">,</span> hash<span class="token punctuation">,</span> key<span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//以上都不是，说明要new一个Node，加入到链表中</span>
+        <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> binCount <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token punctuation">;</span> <span class="token operator">++</span>binCount<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+             <span class="token comment" spellcheck="true">//在链表尾部插入新节点，注意jdk1.8是在链表尾部插入新节点</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>e <span class="token operator">=</span> p<span class="token punctuation">.</span>next<span class="token punctuation">)</span> <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    p<span class="token punctuation">.</span>next <span class="token operator">=</span> <span class="token function">newNode</span><span class="token punctuation">(</span>hash<span class="token punctuation">,</span> key<span class="token punctuation">,</span> value<span class="token punctuation">,</span> null<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token comment" spellcheck="true">// 如果当前链表中的元素大于树化的阈值，进行链表转树的操作</span>
+                    <span class="token keyword">if</span> <span class="token punctuation">(</span>binCount <span class="token operator">>=</span> TREEIFY_THRESHOLD <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// -1 for 1st</span>
+                        <span class="token function">treeifyBin</span><span class="token punctuation">(</span>tab<span class="token punctuation">,</span> hash<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token keyword">break</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+                <span class="token comment" spellcheck="true">//在链表中继续判断是否已经存在完全相同的key</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>e<span class="token punctuation">.</span>hash <span class="token operator">==</span> hash <span class="token operator">&amp;&amp;</span>
+                    <span class="token punctuation">(</span><span class="token punctuation">(</span>k <span class="token operator">=</span> e<span class="token punctuation">.</span>key<span class="token punctuation">)</span> <span class="token operator">==</span> key <span class="token operator">||</span> <span class="token punctuation">(</span>key <span class="token operator">!=</span> null <span class="token operator">&amp;&amp;</span> key<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>k<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                    <span class="token keyword">break</span><span class="token punctuation">;</span>
+                p <span class="token operator">=</span> e<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment" spellcheck="true">//走到这里，说明本次put是更新一个已存在的键值对的value</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>e <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// existing mapping for key</span>
+            V oldValue <span class="token operator">=</span> e<span class="token punctuation">.</span>value<span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>onlyIfAbsent <span class="token operator">||</span> oldValue <span class="token operator">==</span> null<span class="token punctuation">)</span>
+                e<span class="token punctuation">.</span>value <span class="token operator">=</span> value<span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">//在hashMap中，afterNodeAccess方法体为空，交给子类去实现</span>
+            <span class="token function">afterNodeAccess</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> oldValue<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token operator">++</span>modCount<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//如果当前size超过临界值，就扩容。注意是先插入节点再扩容</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">++</span>size <span class="token operator">></span> threshold<span class="token punctuation">)</span>
+        <span class="token function">resize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//在hashMap中，afterNodeInsertion方法体为空，交给子类去实现</span>
+    <span class="token function">afterNodeInsertion</span><span class="token punctuation">(</span>evict<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> null<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>HashMap的hash计算方法:将hashCode无符号右移16位后，让高16位和低16位进行异或运算，减少hash碰撞，实现均匀分布。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/liaoxingwang/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original=".%5Cimages%5CHashMap%E7%9A%84hash%E8%AE%A1%E7%AE%97%E6%96%B9%E6%B3%95.png" alt="image-20211216143455714"></p>
+<h3 id="说说你对红黑树的见解？"><a href="#说说你对红黑树的见解？" class="headerlink" title="说说你对红黑树的见解？"></a>说说你对红黑树的见解？</h3><p>每个节点非红即黑<br>根节点总是黑色的<br>如果节点是红色的，则它的子节点必须是黑色的（反之不一定）<br>每个叶子节点都是黑色的空节点（NIL节点）<br>从根节点到叶节点或空子节点的每条路径，必须包含相同数目的黑色节点（即相同的黑色高度）</p>
+<h3 id="8、HashMap-和-HashTable-有什么区别？"><a href="#8、HashMap-和-HashTable-有什么区别？" class="headerlink" title="8、HashMap 和 HashTable 有什么区别？"></a>8、HashMap 和 HashTable 有什么区别？</h3><ol>
+<li><p>HashMap 是线程不安全的，HashTable 是线程安全的；HashTable里面所有方法使用Synchronized的修饰，导致HashTable的效率比不上HashMap</p>
+</li>
+<li><p>HashMap最多只允许一条记录的键为null，允许多条记录的值为null，而 HashTable不允许；concurrentHashMap也不允许key和value为null。</p>
+</li>
+<li><p>HashMap 默认初始化数组的大小为16，HashTable 为 11，前者扩容时，扩大两倍，后者扩大两倍+1；</p>
+</li>
+<li><p>HashMap 需要重新计算 hash 值，而 HashTable 直接使用对象的 hashCode</p>
+<p><img src="https://cdn.jsdelivr.net/gh/liaoxingwang/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original=".%5Cimages%5CHashTable%E6%89%A9%E5%AE%B9.png" alt="image-20211104195532344"></p>
+</li>
+<li><p>实现方式不同：HashTable继承Dictionary类，HashMap继承的是AbstractMap类</p>
+</li>
+<li><p>迭代器不同：HashMap中的迭代器是Iterator（快速失败机制）的,，而HashTable的是Enumerator（安全失败）</p>
+</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/liaoxingwang/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original=".%5Cimages%5CEnumerator.png" alt="image-20220504225614199"></p>
+<ol>
+<li>HashMap在1.8后有引入红黑树，但是HashTable没有</li>
+</ol>
+<h3 id="HashMap1-7和1-8的区别"><a href="#HashMap1-7和1-8的区别" class="headerlink" title="HashMap1.7和1.8的区别"></a>HashMap1.7和1.8的区别</h3><p>底层结构：<br>hashmap1.7底层结构是entry数组+链表，</p>
+<pre><code>    hashmap1.8底层结构是node数组+链表+红黑树</code></pre><p>扩容策略：7上8下(7前8后)<br>1.8会保持原链表的顺序并且在元素插入后检测是否需要扩容，扩容后，不会把所有元素重新计算一遍位置；</p>
+<pre><code>    1.7会颠倒链表的顺序并且在元素插入前检测是否需要扩容，扩容后，把所有元素重新计算一遍位置，为了降低hash冲突；</code></pre><ul>
+<li>在JDK1.7的时候是直接用hash值和需要扩容的二进制数进行&amp;（这里就是为什么扩容的时候为啥一定必须是2的多少次幂的原因所在，因为如果只有2的n次幂的情况时最后一位二进制数才一定是1，这样能最大程度减少hash碰撞）（hash值 &amp; length-1）</li>
+<li>而在JDK1.8的时候直接用了JDK1.7的时候计算的规律，也就是扩容前的原始位置+扩容的大小值=JDK1.8的计算方式，而不再是JDK1.7的那种异或的方法。但是这种方式就相当于只需要判断Hash值的新增参与运算的位是0还是1就直接迅速计算出了扩容后的储存方式。</li>
+</ul>
+<h3 id="9、关于Iterator和Enumeration"><a href="#9、关于Iterator和Enumeration" class="headerlink" title="9、关于Iterator和Enumeration"></a>9、关于Iterator和Enumeration</h3><p>两者都是迭代器接口，都是关于比遍历集合的</p>
+<p>Iterator包含hasNext()、next()、remov()、forEachRemaining()四个方法，支持对集合的遍历以及删除，支持fail-fast</p>
+<p>enumeration包含hasMoreElements()、nextElement()，只支持对集合的变量，不支持对集合进行删除操作。</p>
+<h3 id="10-快速失败-fail-fast-和安全失败-fail-safe-的区别是什么？"><a href="#10-快速失败-fail-fast-和安全失败-fail-safe-的区别是什么？" class="headerlink" title="10. 快速失败(fail-fast)和安全失败(fail-safe)的区别是什么？"></a>10. 快速失败(fail-fast)和安全失败(fail-safe)的区别是什么？</h3><p>快速失败</p>
+<p>在用迭代器遍历一个集合对象时，如果遍历过程中对集合对象的内容进行了修改（增加、删除、修改），则会抛出Concurrent Modification Exception。安全失败</p>
+<p>采用安全失败机制的集合容器，在遍历时不是直接在集合内容上访问的，而是先复制原有集合内容，在拷贝的集合上进行遍历。</p>
+<p>其实，在java.util.concurrent 并发包的集合，如 ConcurrentHashMap, CopyOnWriteArrayList等，默认为都是安全失败的。</p>
+<h3 id="11、Java创建对象的方式"><a href="#11、Java创建对象的方式" class="headerlink" title="11、Java创建对象的方式"></a>11、Java创建对象的方式</h3><ol>
+<li>通过new的方式</li>
+<li>通过反射</li>
+<li>通过clone机制</li>
+<li>通过反序列化</li>
+</ol>
+<h3 id="12、Java中的异常体系"><a href="#12、Java中的异常体系" class="headerlink" title="12、Java中的异常体系"></a>12、Java中的异常体系</h3><p>Java中的所有异常都来自顶级父类Throwable。Throwable下有两个子类Exception和Error。</p>
+<ol>
+<li><p>Error是程序无法处理的错误，一旦出现这个错误，则程序将被迫停止运行。</p>
+</li>
+<li><p>Exception不会导致程序停止，又分为两个部分Unchecked Exception（非受检异常）和CheckedException（受检异常）。</p>
+</li>
+<li><p>Checked Exception（受检异常）：这种异常在编译时就可以被检测出来，必须要在代码中进行处理或者声明抛出，否则编译不通过。这类异常主要是由程序的外部环境引起的，例如文件不存在、网络连接失败等。常见的Checked Exception包括IOException、SQLException等。</p>
+</li>
+<li><p>Unchecked Exception（非受检异常）：这种异常通常是由程序内部错误引起的包括RuntimeException以及其子类，例如NullPointerException、ArrayIndexOutOfBoundsException、IllegalArgumentException等。这类异常不需要在代码中声明抛出，也可以不进行处理，但是如果不进行处理，程序会崩溃。</p>
+</li>
+</ol>
+<h3 id="13-Collections-sort和Arrays-sort的实现原理"><a href="#13-Collections-sort和Arrays-sort的实现原理" class="headerlink" title="13. Collections.sort和Arrays.sort的实现原理"></a>13. Collections.sort和Arrays.sort的实现原理</h3><p>Collection.sort是对list进行排序，Arrays.sort是对数组进行排序。因此，Collections.sort方法底层就是调用的Array.sort方法</p>
+<p>Arrays的sort方法，如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/liaoxingwang/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://mmbiz.qpic.cn/mmbiz_png/sMmr4XOCBzHTXzzpaoia3tmfmZWFoOAsp1rg4wXnvsZvkCCJGjpkRZU9z1RzJHibjZhp5Yfw1Fm0CXoxqguibsFicw/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="图片"></p>
+<p>如果比较器为null，进入sort（a）方法。如下：<img src="https://cdn.jsdelivr.net/gh/liaoxingwang/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://mmbiz.qpic.cn/mmbiz_png/sMmr4XOCBzHTXzzpaoia3tmfmZWFoOAspffM7oicRm5rFBaRqCoB64ToOePMtHdIGl7CRYSYRS8lUNm7FH4hbmdg/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="图片"></p>
+<p>因此，Arrays的sort方法底层就是：</p>
+<ul>
+<li>legacyMergeSort(a)，归并排序，</li>
+<li>ComparableTimSort.sort()：即Timsort排序。</li>
+</ul>
+<p>Timesort排序</p>
+<p>Timsort排序是结合了合并排序（merge.sort）和插入排序（insertion sort）而得出的排序方法；</p>
+<p>1.当数组长度小于某个值，采用的是二分插入排序算法，如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/liaoxingwang/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://mmbiz.qpic.cn/mmbiz_png/sMmr4XOCBzHTXzzpaoia3tmfmZWFoOAsptK91pJpGSh65XdOLpDGUJUolVPzr0iaicS0XW1hPmUFJZetbw8ic0qZbA/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="图片"></p>
+<ol>
+<li>找到各个run，并入栈。</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/liaoxingwang/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://mmbiz.qpic.cn/mmbiz_png/sMmr4XOCBzHTXzzpaoia3tmfmZWFoOAsprlFCf9Dia8fvxmBibLm2BNyBRmm9V9ia2l6YAkiabNwqeiaLEsGZJqAxHIg/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="图片"></p>
+<ol>
+<li>按规则合并run。</li>
+</ol>
+<h3 id="14-TreeMap底层？"><a href="#14-TreeMap底层？" class="headerlink" title="14. TreeMap底层？"></a>14. TreeMap底层？</h3><ul>
+<li>TreeMap实现了SotredMap接口，它是有序的集合。</li>
+<li>TreeMap底层数据结构是一个红黑树，每个key-value都作为一个红黑树的节点。</li>
+<li>如果在调用TreeMap的构造函数时没有指定比较器，则根据key执行自然排序。</li>
+</ul>
+<h3 id="15-Iterator-和-ListIterator-有什么区别？"><a href="#15-Iterator-和-ListIterator-有什么区别？" class="headerlink" title="15. Iterator 和 ListIterator 有什么区别？"></a>15. Iterator 和 ListIterator 有什么区别？</h3><ul>
+<li>ListIterator 比 Iterator有更多的方法。</li>
+<li>ListIterator只能用于遍历List及其子类，Iterator可用来遍历所有集合，</li>
+<li>ListIterator遍历可以是逆向的，因为有previous()和hasPrevious()方法，而Iterator不可以。</li>
+<li>ListIterator有add()方法，可以向List添加对象，而Iterator却不能。</li>
+<li>ListIterator可以定位当前的索引位置，因为有nextIndex()和previousIndex()方法，而Iterator不可以。</li>
+<li>ListIterator可以实现对象的修改，set()方法可以实现。Iterator仅能遍历，不能修改哦。</li>
+</ul>
+<h3 id="16-怎么确保一个集合不能被修改？"><a href="#16-怎么确保一个集合不能被修改？" class="headerlink" title="16. 怎么确保一个集合不能被修改？"></a>16. 怎么确保一个集合不能被修改？</h3><ul>
+<li>unmodifiableMap</li>
+<li>unmodifiableList</li>
+<li>unmodifiableSet</li>
+</ul>
+<h3 id="17-Java中类的比较和排序方法"><a href="#17-Java中类的比较和排序方法" class="headerlink" title="17.Java中类的比较和排序方法"></a>17.Java中类的比较和排序方法</h3><p>使用Comparable接口  Comparable接口定义了compareTo方法，用于对象之间的比较</p>
+<p>使用Comparator接口 Comparator可以用于比较没有实现Comparable的类的对象，Comparator的compare方法用来告诉代码应该怎么去比较两个实例，然后根据比较结果进行排序</p>
+<h3 id="18-多线程创建的方式"><a href="#18-多线程创建的方式" class="headerlink" title="18. 多线程创建的方式"></a>18. 多线程创建的方式</h3><ol>
+<li><p>继承Thread类创建线程</p>
+</li>
+<li><p>实现Runnable接口创建线程</p>
+</li>
+<li><p>实现Callable接口通过FutureTask包装器来创建Thread线程</p>
+</li>
+<li><p>使用ExecutorService、Callable、Future实现有返回结果的线程</p>
+</li>
+</ol>
+<h3 id="23-什么是Java优先级队列-Priority-Queue-？"><a href="#23-什么是Java优先级队列-Priority-Queue-？" class="headerlink" title="23. 什么是Java优先级队列(Priority Queue)？"></a>23. 什么是Java优先级队列(Priority Queue)？</h3><p>优先队列PriorityQueue是Queue接口的实现，可以对其中元素进行排序</p>
+<ul>
+<li>优先队列中元素默认排列顺序是升序排列</li>
+<li>但对于自己定义的类来说，需要自己定义比较器</li>
+</ul>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">PriorityQueue</span><span class="token operator">&lt;</span>E<span class="token operator">></span> <span class="token keyword">extends</span> <span class="token class-name">AbstractQueue</span><span class="token operator">&lt;</span>E<span class="token operator">></span>    <span class="token keyword">implements</span> <span class="token class-name">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>Serializable</span> <span class="token punctuation">{</span>    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>     <span class="token keyword">private</span> <span class="token keyword">final</span> Comparator<span class="token operator">&lt;</span><span class="token operator">?</span> <span class="token keyword">super</span> E<span class="token operator">></span> comparator<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>方法：</p>
+<pre><code>peek()//返回队首元素poll()//返回队首元素，队首元素出队列add()//添加元素size()//返回队列元素个数isEmpty()//判断队列是否为空，为空返回true,不空返回false</code></pre><p>特点：</p>
+<ul>
+<li>1.基于优先级堆</li>
+<li>2.不允许null值</li>
+<li>3.线程不安全</li>
+<li>4.出入队时间复杂度O(log(n))</li>
+<li>5.调用remove()返回堆内最小值</li>
+</ul>
+<h3 id="24-JAVA8的ConcurrentHashMap为什么放弃了分段锁，有什么问题吗，如果你来设计，你如何设计。"><a href="#24-JAVA8的ConcurrentHashMap为什么放弃了分段锁，有什么问题吗，如果你来设计，你如何设计。" class="headerlink" title="24. JAVA8的ConcurrentHashMap为什么放弃了分段锁，有什么问题吗，如果你来设计，你如何设计。"></a>24. JAVA8的ConcurrentHashMap为什么放弃了分段锁，有什么问题吗，如果你来设计，你如何设计。</h3><p>jdk8 放弃了分段锁而是用了Node锁，减低锁的粒度，提高性能，并使用CAS操作来确保Node的一些操作的原子性，取代了锁。</p>
+<h3 id="25-阻塞队列的实现，ArrayBlockingQueue的底层实现？"><a href="#25-阻塞队列的实现，ArrayBlockingQueue的底层实现？" class="headerlink" title="25. 阻塞队列的实现，ArrayBlockingQueue的底层实现？"></a>25. 阻塞队列的实现，ArrayBlockingQueue的底层实现？</h3><p>ArrayBlockingQueue是数组实现的线程安全的有界的阻塞队列，继承自AbstractBlockingQueue,间接的实现了Queue接口和Collection接口。底层以数组的形式保存数据(实际上可看作一个循环数组)。常用的操作包括 add ,offer,put，remove,poll,take,peek。</p>
+<h3 id="29-ConcurrenHashMap-原理？1-8-中为什么要用红黑树？"><a href="#29-ConcurrenHashMap-原理？1-8-中为什么要用红黑树？" class="headerlink" title="29. ConcurrenHashMap 原理？1.8 中为什么要用红黑树？"></a>29. ConcurrenHashMap 原理？1.8 中为什么要用红黑树？</h3><p>聊到ConcurrenHashMap，需要跟面试官聊到安全性，分段锁segment，为什么放弃了分段锁，与及选择CAS，其实就是都是从效率和安全性触发，嘻嘻~</p>
+<pre><code>java8不是用红黑树来管理hashmap,而是在hash值相同的情况下(且重复数量大于8),用红黑树来管理数据。红黑树相当于排序数据。可以自动的使用二分法进行定位。性能较高。</code></pre><h3 id="35-说一下HashSet的实现原理？"><a href="#35-说一下HashSet的实现原理？" class="headerlink" title="35. 说一下HashSet的实现原理？"></a>35. 说一下HashSet的实现原理？</h3><ul>
+<li>不能保证元素的排列顺序，顺序有可能发生变化。</li>
+<li>元素可以为null</li>
+<li>hashset保证元素不重复~ （这个面试官很可能会问什么原理，这个跟HashMap有关的哦）</li>
+<li>HashSet，需要谈谈它俩hashcode()和equles()哦~</li>
+<li>实际是基于HashMap实现的，HashSet 底层使用HashMap来保存所有元素的看看它的add方法吧~</li>
+</ul>
+<pre class="line-numbers language-java"><code class="language-java">    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">add</span><span class="token punctuation">(</span>E e<span class="token punctuation">)</span> <span class="token punctuation">{</span>        <span class="token keyword">return</span> map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>e<span class="token punctuation">,</span> PRESENT<span class="token punctuation">)</span><span class="token operator">==</span>null<span class="token punctuation">;</span>    <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="39-讲讲红黑树的特点？"><a href="#39-讲讲红黑树的特点？" class="headerlink" title="39. 讲讲红黑树的特点？"></a>39. 讲讲红黑树的特点？</h3><ul>
+<li>每个节点或者是黑色，或者是红色。</li>
+<li>根节点是黑色。</li>
+<li>每个叶子节点（NIL）是黑色。[注意：这里叶子节点，是指为空(NIL或NULL)的叶子节点！]</li>
+<li>如果一个节点是红色的，则它的子节点必须是黑色的。</li>
+<li>从一个节点到该节点的子孙节点的所有路径上包含相同数目的黑节点。</li>
+</ul>
+<h3 id="41-谈谈线程池阻塞队列吧"><a href="#41-谈谈线程池阻塞队列吧" class="headerlink" title="41.谈谈线程池阻塞队列吧~"></a>41.谈谈线程池阻塞队列吧~</h3><ul>
+<li>ArrayBlockingQueue</li>
+<li>LinkedBlockingQueue</li>
+<li>DelayQueue</li>
+<li>PriorityBlockingQueue</li>
+<li>SynchronousQueue</li>
+</ul>
+<p><strong>ArrayBlockingQueue：</strong> （有界队列）是一个用数组实现的有界阻塞队列，按FIFO排序量。</p>
+<p><strong>LinkedBlockingQueue：</strong> （可设置容量队列）基于链表结构的阻塞队列，按FIFO排序任务，容量可以选择进行设置，不设置的话，将是一个无边界的阻塞队列，最大长度为Integer.MAX_VALUE，吞吐量通常要高于ArrayBlockingQuene；newFixedThreadPool线程池使用了这个队列</p>
+<p><strong>DelayQueue：</strong>（延迟队列）是一个任务定时周期的延迟执行的队列。根据指定的执行时间从小到大排序，否则根据插入到队列的先后排序。newScheduledThreadPool线程池使用了这个队列。</p>
+<p><strong>PriorityBlockingQueue：</strong>（优先级队列）是具有优先级的无界阻塞队列；</p>
+<p><strong>SynchronousQueue：</strong>（同步队列）一个不存储元素的阻塞队列，每个插入操作必须等到另一个线程调用移除操作，否则插入操作一直处于阻塞状态，吞吐量通常要高于LinkedBlockingQuene，newCachedThreadPool线程池使用了这个队列。针对面试题：线程池都有哪几种工作队列？</p>
+<p>我觉得，回答以上几种ArrayBlockingQueue，LinkedBlockingQueue，SynchronousQueue等，说出它们的特点，并结合使用到对应队列的常用线程池(如newFixedThreadPool线程池使用LinkedBlockingQueue)，进行展开阐述， 就可以啦。</p>
+<h3 id="Class类的getDeclaredFields-方法与getFields-的区别"><a href="#Class类的getDeclaredFields-方法与getFields-的区别" class="headerlink" title="Class类的getDeclaredFields()方法与getFields()的区别?"></a>Class类的getDeclaredFields()方法与getFields()的区别?</h3><p>getDeclaredFields():可以获取所有本类自己声明的方法,不能获取继承的方法<br>getFields():只能获取所有public声明的方法,包括继承的方法</p>
+<h3 id="静态代码、非静态代码、构造方法的执行顺序"><a href="#静态代码、非静态代码、构造方法的执行顺序" class="headerlink" title="静态代码、非静态代码、构造方法的执行顺序"></a>静态代码、非静态代码、构造方法的执行顺序</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloA</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//构造方法</span>
+        <span class="token keyword">public</span> <span class="token function">HelloA</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Hello A!父类构造方法"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment" spellcheck="true">//非静态代码块</span>
+        <span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"i'm A class.父类非静态代码块"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment" spellcheck="true">//静态代码块</span>
+        <span class="token keyword">static</span> <span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"static A 父类静态代码块"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+ <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloB</span> <span class="token keyword">extends</span> <span class="token class-name">HelloA</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//构造方法</span>
+        <span class="token keyword">public</span> <span class="token function">HelloB</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Hello B! 构造方法"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment" spellcheck="true">//非静态代码块</span>
+        <span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"i'm B class.非静态代码块"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment" spellcheck="true">//静态代码块</span>
+        <span class="token keyword">static</span> <span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"static B 静态代码块"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"---start---"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">new</span> <span class="token class-name">HelloB</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"---end---"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>上面是执行一次new HelloB方法，执行结果是：<br>static A 父类静态代码块<br>static B 静态代码块<br>—start—<br>i’m A class.父类非静态代码块<br>HelloA!父类构造方法<br>i’m B class.非静态代码块<br>HelloB! 构造方法<br>—end—</p>
+<p>面试时new HelloB方法使执行两次的，执行两次的话，结果为：<br>static A 父类静态代码块<br>static B 静态代码块<br>—start—<br>i’m A class.父类非静态代码块<br>HelloA!父类构造方法<br>i’m B class.非静态代码块<br>HelloB! 构造方法<br>i’m A class.父类非静态代码块<br>HelloA!父类构造方法<br>i’m B class.非静态代码块<br>HelloB! 构造方法</p>
+<h3 id="transient的作用"><a href="#transient的作用" class="headerlink" title="transient的作用"></a>transient的作用</h3><p>阻止实例中那些用此关键字修饰的的变量序列化； 当对象被反序列化时，被 transient 修饰的变量值不会被持久化和恢复。 <code>transient 只能修饰变量，不能修饰类和方法。</code></p>
+<h3 id="java的深拷贝和浅拷贝"><a href="#java的深拷贝和浅拷贝" class="headerlink" title="java的深拷贝和浅拷贝"></a>java的深拷贝和浅拷贝</h3><h4 id="浅拷贝定义"><a href="#浅拷贝定义" class="headerlink" title="浅拷贝定义"></a>浅拷贝定义</h4><p>被复制对象的所有变量都含有与原来的对象相同的值，而所有的对其他对象的引用仍然指向原来的对象。即对象的浅拷贝会对“主”对象进行拷贝，但不会复制主对象里面的对象。”里面的对象“会在原来的对象和它的副本之间共享。</p>
+<h4 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h4><p>深拷贝是一个整个独立的对象拷贝，深拷贝会拷贝所有的属性,并拷贝属性指向的动态分配的内存。当对象和它所引用的对象一起拷贝时即发生深拷贝。深拷贝相比于浅拷贝速度较慢并且花销较大。</p>
+<p><a href="https://blog.csdn.net/riemann_/article/details/87217229?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522164792327616780366542167%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=164792327616780366542167&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~blog~top_positive~default-1-87217229.nonecase&amp;utm_term=java%E6%B7%B1%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B5%85%E6%8B%B7%E8%B4%9D&amp;spm=1018.2226.3001.4450" target="_blank" rel="noopener">参考链接</a></p>
+<h4 id="实现深拷贝的两种方法"><a href="#实现深拷贝的两种方法" class="headerlink" title="实现深拷贝的两种方法"></a>实现深拷贝的两种方法</h4><ul>
+<li><p>clone() 方法麻烦一些，需要将所有涉及到的类实现声明式接口 Cloneable，并覆盖Object类中的clone()方法，并设置作用域为public（这是为了其他类可以使用到该clone方法）。</p>
+</li>
+<li><p>序列化的方法简单，需要将所有涉及到的类实现接口Serializable</p>
+</li>
+</ul>
+<h3 id="jdbc中主要使用桥接模式"><a href="#jdbc中主要使用桥接模式" class="headerlink" title="jdbc中主要使用桥接模式"></a>jdbc中主要使用桥接模式</h3><h3 id="关于物理分页还是内存分页"><a href="#关于物理分页还是内存分页" class="headerlink" title="关于物理分页还是内存分页"></a>关于物理分页还是内存分页</h3><ul>
+<li>物理分页指sql中拼接好分页条件，分页的功能由sql提供。</li>
+<li>内存分页表示程序一次性把数据库的数据全部取出来，然后由程序进行分页获取分页数据。</li>
+</ul>
+<h3 id="toString-、String-valueOf-、-String-强转区别"><a href="#toString-、String-valueOf-、-String-强转区别" class="headerlink" title="toString()、String.valueOf()、(String)强转区别"></a>toString()、String.valueOf()、(String)强转区别</h3><h3 id="1、toString-，可能会抛空指针异常"><a href="#1、toString-，可能会抛空指针异常" class="headerlink" title="1、toString()，可能会抛空指针异常"></a>1、toString()，可能会抛空指针异常</h3><p>在这种使用方法中，因为java.lang.Object类里已有public方法.toString()，所以java对象都可以调用此方法。但在使用时要注意，必须保证object不是null值，否则将抛出NullPointerException异常。采用这种方法时，通常派生类会覆盖Object里的toString()方法。</p>
+<h3 id="2、String-valueOf-，推荐使用，返回字符串“null”"><a href="#2、String-valueOf-，推荐使用，返回字符串“null”" class="headerlink" title="2、String.valueOf()，推荐使用，返回字符串“null”"></a>2、String.valueOf()，推荐使用，返回字符串“null”</h3><p>String.valueOf()方法是小编推荐使用的，因为它不会出现空指针异常，而且是静态的方法，直接通过String调用即可，只是有一点需要注意，就是上面提到的，如果为null，String.valueOf()返回结果是字符串“null”。而不是null。</p>
+<h3 id="3、-String-强转，不推荐使用"><a href="#3、-String-强转，不推荐使用" class="headerlink" title="3、(String)强转，不推荐使用"></a>3、(String)强转，不推荐使用</h3><p>（String）是标准的类型转换，将Object类型转为String类型，使用(String)强转时，最好使用instanceof做一个类型检查，以判断是否可以进行强转，否则容易抛出ClassCastException异常。需要注意的是编写的时候，编译器并不会提示有语法错误，所以这个方法要谨慎的使用。</p>
+<h3 id="Integer的范围为-128-127"><a href="#Integer的范围为-128-127" class="headerlink" title="Integer的范围为[-128,127]"></a>Integer的范围为[-128,127]</h3><h3 id="Java是值传递"><a href="#Java是值传递" class="headerlink" title="Java是值传递"></a>Java是值传递</h3><p>参考链接<a href="https://blog.csdn.net/pcwl1206/article/details/86550268?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_title~default-5.pc_relevant_default&amp;spm=1001.2101.3001.4242.4&amp;utm_relevant_index=8" target="_blank" rel="noopener">https://blog.csdn.net/pcwl1206/article/details/86550268?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_title~default-5.pc_relevant_default&amp;spm=1001.2101.3001.4242.4&amp;utm_relevant_index=8</a></p>
+<p>比如经过Hash函数计算后， <code>7</code>和 <code>8</code>会有相同的Hash值，对此Java的HashMap对象采用的是<strong>“链地址法”</strong>的解决方案。效果如下图所示</p>
+<p><img src="https://cdn.jsdelivr.net/gh/liaoxingwang/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://mmbiz.qpic.cn/mmbiz_png/xq9PqibkVAzriaxY3UB0Kcg50owNgoMtHmwTKNiaVhsJJkwibrbzCfV9rJ43Sv8kjRelMRs49QqQ0AhhxDUEDoH45A/640?wx_fmt=png&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="图片"></p>
+<p>具体的做法是，为所有Hash值是 <code>i</code>的对象建立一个同义词链表。假设我们在放入 <code>8</code>的时候，发现 <code>4</code>号位置已经被占，那么就会新建一个链表结点放入 <code>8</code>。同样，如果我们要找 <code>8</code>，那么发现 <code>4</code>号索引里不是 <code>8</code>，那会沿着链表依次查找。</p>
+<p>虽然我们还是无法彻底避免Hash值冲突的问题，但是Hash函数设计合理，仍能保证同义词链表的长度被控制在一个合理的范围里。</p>
+<h3 id="Object类所有方法详解"><a href="#Object类所有方法详解" class="headerlink" title="Object类所有方法详解"></a>Object类所有方法详解</h3><p><code>Object</code>中含有： <code>registerNatives()、getClass()、hashCode()、equals()、clone()、toString()、notify()、notifyAll()、wait(long)、wait(long,int)、wait()、finalize()</code> 共<strong>十二个方法</strong>。这个顺序是按照 <code>Object</code>类中定义方法的顺序列举的，下面我也会按照这个顺序依次进行讲解。</p>
+<ul>
+<li><strong>registerNatives()</strong></li>
+</ul>
+<p><strong>从名字上理解，这个方法是注册 native方法</strong>（本地方法，由 <code>JVM</code>实现，底层是 <code>C/C++</code>实现的）<strong>向谁注册呢？当然是向 JVM</strong>，当有程序调用到 <code>native</code>方法时， <code>JVM</code>才好去找到这些底层的方法进行调用。</p>
+<p><code>Object</code>中的 <code>native</code>方法，并使用 <code>registerNatives()</code>向 <code>JVM</code>进行注册。（这属于 <code>JNI</code>的范畴，有兴趣的可自行查阅。）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/liaoxingwang/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://mmbiz.qpic.cn/mmbiz_png/xq9PqibkVAzp1opdyycWF8FqUsnz1pdR07HZn67GzuK8MwwAyF5VBXbmOKfqRfQX1TtiaryNQCSpFgWVdvjibpewA/640?wx_fmt=png&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="图片"></p>
+<blockquote>
+<p>为什么要使用静态方法，还要放到静态块中呢？</p>
+</blockquote>
+<p>我们知道了在类初始化的时候，会依次从父类到本类的类变量及类初始化块中的类变量及方法按照定义顺序放到 <code>&lt; clinit&gt;</code>方法中，这样可以保证父类的类变量及方法的初始化一定先于子类。所以当子类调用相应 <code>native</code>方法，比如计算 <code>hashCode</code>时，一定可以保证能够调用到 <code>JVM</code>的 <code>native</code>方法。</p>
+<ul>
+<li><strong>getClass()</strong></li>
+</ul>
+<pre><code>public final native Class getClass();</code></pre><p>这是一个 <code>public</code>的方法，我们可以直接通过对象调用。</p>
+<p>类加载的第一阶段类的加载就是将 <code>.class</code>文件加载到内存，并生成一个 <code>java.lang.Class</code>对象的过程。 <code>getClass()</code>方法就是获取这个对象，这是当前类的对象在运行时类的所有信息的集合。这个方法是反射三种方式之一。</p>
+<ul>
+<li><strong>hashCode()</strong></li>
+</ul>
+<pre><code>public native int hashCode(); </code></pre><p>这是一个 <code>public</code>的方法，所以子类可以重写它。这个方法返回当前对象的 <code>hashCode</code>值，这个值是一个整数范围内的 <code>（-2^31~2^31-1）</code>数字。</p>
+<p>对于 <code>hashCode</code>有以下几点约束:</p>
+<ol>
+<li>在 Java应用程序执行期间，在对同一对象多次调用 <code>hashCode</code> 方法时，必须一致地返回相同的整数，前提是将对象进行 <code>equals</code> 比较时所用的信息没有被修改；</li>
+<li>如果两个对象 <code>x.equals(y)</code> 方法返回 <code>true</code>，则 <code>x</code>、 <code>y</code>这两个对象的 <code>hashCode</code>必须相等。</li>
+<li>如果两个对象 <code>x.equals(y)</code> 方法返回 <code>false</code>，则 <code>x</code>、 <code>y</code>这两个对象的 <code>hashCode</code>可以相等也可以不等。但是，为不相等的对象生成不同整数结果可以提高哈希表的性能。</li>
+<li>默认的 <code>hashCode</code>是将内存地址转换为的 <code>hash</code>值，重写过后就是自定义的计算方式；也可以通过 <code>System.identityHashCode(Object)</code>来返回原本的 <code>hashCode</code>。</li>
+</ol>
+<pre><code>public class HashCodeTest {        private int age;        private String name;    
+    @Override        public int hashCode() {                Object[] a = Stream.of(age, name).toArray();                int result = 1;                for (Object element : a) {                        result = 31 * result + (element == null ? 0 : element.hashCode());                }                return result;        }}</code></pre><p>推荐使用 <code>Objects.hash(Object…values)</code>方法。相信看源码的时候，都看到计算 <code>hashCode</code>都使用了 <code>31</code>作为基础乘数，为什么使用 <code>31</code>呢？我比较赞同与理解 <code>result*31=(result&lt;&lt;5)-result</code>。 <code>JVM</code>底层可以自动做优化为位运算，效率很高；还有因为 <code>31</code>计算的 <code>hashCode</code>冲突较少，利于 <code>hash</code>桶位的分布。</p>
+<ul>
+<li><strong>equals()</strong></li>
+</ul>
+<pre><code>public boolean equals(Object obj);</code></pre><p>用于比较当前对象与目标对象是否相等，默认是比较引用是否指向同一对象。为 <code>public</code>方法，子类可重写。</p>
+<pre><code>public class Object{    public boolean equals(Object obj) {        return (this == obj);    }}</code></pre><blockquote>
+<p>为什么需要重写 <code>equals</code>方法？</p>
+</blockquote>
+<p><strong>因为如果不重写equals方法，当将自定义对象放到 map或者 set中时</strong>；如果这时两个对象的 <code>hashCode</code>相同，就会调用 <code>equals</code>方法进行比较，这个时候会调用 <code>Object</code>中默认的 <code>equals</code>方法，而默认的 <code>equals</code>方法只是比较了两个对象的引用是否指向了同一个对象，显然大多数时候都不会指向，这样就会将重复对象存入 <code>map</code>或者 <code>set</code>中。这就<strong>破坏了 map与 set不能存储重复对象的特性，会造成内存溢出</strong>。</p>
+<p><strong>重写 equals方法的几条约定：</strong></p>
+<ol>
+<li><strong>自反性</strong>：即 <code>x.equals(x)</code>返回 <code>true</code>， <code>x</code>不为 <code>null</code>；</li>
+<li><strong>对称性</strong>：即 <code>x.equals(y)</code>与 <code>y.equals(x）</code>的结果相同， <code>x</code>与 <code>y</code>不为 <code>null</code>；</li>
+<li><strong>传递性</strong>：即 <code>x.equals(y)</code>结果为 <code>true</code>, <code>y.equals(z)</code>结果为 <code>true</code>，则 <code>x.equals(z)</code>结果也必须为 <code>true</code>；</li>
+<li><strong>一致性</strong>：即 <code>x.equals(y)</code>返回 <code>true</code>或 <code>false</code>，在未更改 <code>equals</code>方法使用的参数条件下，多次调用返回的结果也必须一致。 <code>x</code>与 <code>y</code>不为 <code>null</code>。</li>
+<li>如果 <code>x</code>不为 <code>null</code>, <code>x.equals(null)</code>返回 <code>false</code>。</li>
+</ol>
+<ul>
+<li><strong>clone()</strong></li>
+</ul>
+<pre><code>protected native Object clone() throws CloneNotSupportedException;</code></pre><p>此方法返回当前对象的一个副本。</p>
+<p>这是一个 <code>protected</code>方法，提供给子类重写。但需要实现 <code>Cloneable</code>接口，这是一个标记接口，如果没有实现，当调用 <code>object.clone()</code>方法，会抛出 <code>CloneNotSupportedException</code>。</p>
+<pre><code>public class CloneTest implements Cloneable {        private int age;        private String name;        //省略get、set、构造函数等    
+    @Override        protected CloneTest clone() throws CloneNotSupportedException {                return (CloneTest) super.clone();        }    
+    public static void main(String[] args) throws CloneNotSupportedException {                CloneTest cloneTest = new CloneTest(23, "XX");                CloneTest clone = cloneTest.clone();                System.out.println(clone == cloneTest);                System.out.println(cloneTest.getAge()==clone.getAge());                System.out.println(cloneTest.getName()==clone.getName());        }}//输出结果//false//true//true</code></pre><p>从输出我们看见， <code>clone</code>的对象是一个新的对象；但原对象与 <code>clone</code>对象的 <code>String</code>类型的 <code>name</code>却是同一个引用，这表明， <code>super.clone</code>方法对成员变量如果是引用类型，进行是浅拷贝。</p>
+<blockquote>
+<p>那如果我们要进行深拷贝怎么办呢？</p>
+<p><strong>答案是</strong>：如果成员变量是引用类型，想实现深拷贝，则成员变量也要实现 <code>Cloneable</code>接口，重写 <code>clone</code>方法。</p>
+</blockquote>
+<ul>
+<li><strong>toString()</strong></li>
+</ul>
+<pre><code>public String toString()；</code></pre><p>这是一个 <code>public</code>方法，子类可重写，建议所有子类都重写 <code>toString</code>方法，默认的 <code>toString</code>方法，只是将当前类的全限定性类名 <code>+@+</code>十六进制的 <code>hashCode</code>值。</p>
+<p><strong>我们思考一下为什么需要toString方法？</strong></p>
+<p>可以这么理解：返回当前对象的字符串表示，可以将其打印方便查看对象的信息，方便记录日志信息提供调试。我们可以选择需要表示的重要信息重写到 <code>toString</code>方法中。</p>
+<ul>
+<li><strong>wait()/ wait(long)/ wait(long,int)</strong></li>
+</ul>
+<p>这三个方法是用来线程间通信用的，作用是阻塞当前线程，等待其他线程调用 <code>notify()/notifyAll()</code>方法将其唤醒。这些方法都是 <code>publicfinal</code>的，不可被重写。</p>
+<p><strong>注意：</strong></p>
+<ol>
+<li>此方法只能在当前线程获取到对象的锁监视器之后才能调用，否则会抛出 <code>IllegalMonitorStateException</code>异常。</li>
+<li>调用 <code>wait</code>方法，线程会将锁监视器进行释放；而 <code>Thread.sleep，Thread.yield()</code>并不会释放锁。</li>
+<li><code>wait</code>方法会一直阻塞，直到其他线程调用当前对象的 <code>notify()/notifyAll()</code>方法将其唤醒；而 <code>wait(long)</code>是等待给定超时时间内（单位毫秒），如果还没有调用 <code>notify()/nofiyAll()</code>会自动唤醒； <code>wait(long,int)</code>如果第二个参数大于 <code>0</code>并且小于 <code>999999</code>，则第一个参数 <code>+1</code>作为超时时间；</li>
+</ol>
+<ul>
+<li><strong>notify()/notifyAll()</strong></li>
+</ul>
+<p>前面说了，如果当前线程获得了当前对象锁，调用 <code>wait</code>方法，将锁释放并阻塞；这时另一个线程获取到了此对象锁，并调用此对象的 <code>notify()/notifyAll()</code>方法将之前的线程唤醒。这些方法都是 <code>public final</code>的，不可被重写。</p>
+<ol>
+<li><code>public final native void notify();</code> 随机唤醒之前在当前对象上调用 <code>wait</code>方法的一个线程</li>
+<li><code>public final native void notifyAll()</code>; 唤醒所有之前在当前对象上调用 <code>wait</code>方法的线程</li>
+</ol>
+<p><strong>注意</strong>：调用 <code>notify()</code>后，阻塞线程被唤醒，可以参与锁的竞争，但可能调用 <code>notify()</code>方法的线程还要继续做其他事，锁并未释放，所以我们看到的结果是，无论 <code>notify()</code>是在方法一开始调用，还是最后调用，阻塞线程都要等待当前线程结束才能开始。</p>
+<blockquote>
+<p>为什么 <code>wait()/notify()</code>方法要放到 <code>Object</code>中呢？ 因为每个对象都可以成为锁监视器对象，所以放到 <code>Object</code>中，可以直接使用。</p>
+</blockquote>
+<ul>
+<li><strong>finalize()</strong></li>
+</ul>
+<pre><code>protected void finalize() throws Throwable ;</code></pre><p>此方法是在垃圾回收之前，JVM会调用此方法来清理资源。此方法可能会将对象重新置为可达状态，导致JVM无法进行垃圾回收。</p>
+<p>我们知道java相对于C++很大的优势是程序员不用手动管理内存，内存由jvm管理；如果我们的引用对象在堆中没有引用指向他们时，当内存不足时，JVM会自动将这些对象进行回收释放内存，这就是我们常说的垃圾回收。但垃圾回收没有讲述的这么简单。</p>
+<p><strong>finalize()方法具有如下4个特点：</strong></p>
+<ol>
+<li>永远不要主动调用某个对象的 <code>finalize()</code>方法，该方法由垃圾回收机制自己调用；</li>
+<li><code>finalize()</code>何时被调用，是否被调用具有不确定性；</li>
+<li>当 <code>JVM</code>执行可恢复对象的 <code>finalize()</code>可能会将此对象重新变为可达状态；</li>
+<li>当 <code>JVM</code>执行 <code>finalize()</code>方法时出现异常，垃圾回收机制不会报告异常，程序继续执行。</li>
+</ol>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+            
+            <div class="reprint1">
+                <p>
+                    <span class="reprint1-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+                    </span>
+                    <a href="https://liaoxingwang.github.io" class="b-link-green">理想热爱</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2024/12/21/blog-open-source-javanote/" class="b-link-green">java笔记</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+    /* valine 评论框增加背景图片 */
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("") 100% 100% no-repeat;
+    }
+
+    #vcomments input[type=text],
+    #vcomments input[type=email],
+    #vcomments input[type=url],
+    #vcomments textarea {
+        box-sizing: border-box;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #42b983;
+        font-weight: 500;
+        text-decoration: underline;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    /* 修复评论第一行位置错位 */
+    .v .vlist .vcard {
+    padding-top: 2.5em !important ;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div id="vcomments" class="card-content"></div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<!-- <link rel="stylesheet" type="text/css" href="/libs//libs/jQuery-emoji/dist/css/jquery.emoji.css">
+<script src="/libs//libs/jQuery-emoji/dist/js/jquery.emoji.min.js"></script>
+<script src="/libs//libs/jQuery-emoji/dist/js/emoji.list.js"></script> -->
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: '9CBZJWsRPnlWYTAxASRR4O5e-gzGzoHsz',
+        appKey: 'xzAkiKfgG2tidbeUAjc06x6K',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '开始你的表演',
+
+    });
+
+//     function parse_emoji() {
+//     jQuery(".vcontent").emojiParse({
+//       basePath: '/libs/jQuery-emoji/images/emoji',
+//       icons: emojiLists   // 注：详见 js/emoji.list.js
+//     });
+//   }
+  
+//   setTimeout(function() {
+//     // jQuery emoji 解析
+//     parse_emoji();
+//     // jquery emoji 初始化
+//     jQuery(".veditor").emoji({
+//       showTab: true,
+//       animation: 'slide',
+//       basePath: '/libs/jQuery-emoji/images/emoji',
+//       icons: emojiLists  // 注：详见 js/emoji.list.js
+//     });
+//     jQuery(".vmore").on("click", function() {
+//       setTimeout(function() {
+//         parse_emoji();
+//       }, 500);
+//     });
+//   }, 800)
+
+</script>
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2024/12/21/blog-open-source-javanote/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="java笔记">
+                        
+                        <span class="card-title">java笔记</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+
+
+
+java笔记说说进程和线程的区别？进程是程序的一次执行，是系统进行资源分配和调度的独立单位，他的作用是是程序能够并发执行提高资源利用率和吞吐率。
+由于进程是资源分配和调度的基本单位，因为进程的创建、销毁、切换产生大量的时间和空间的开
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2024-12-21
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java/" class="post-category" target="_blank">
+                                    Java
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java/" target="_blank">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2024/04/16/blog-open-source-design-patterns/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="Java中23种设计模式">
+                        
+                        <span class="card-title">Java中23种设计模式</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+
+
+
+
+Java中23种设计模式Java中23种设计模式，包括简单介绍，适用场景以及优缺点等
+一、创建型模式1.单例模式（Singleton Pattern）单例模式（Singleton Pattern）是 Java 中最简单的设计模式之
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2024-04-16
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java/" class="post-category" target="_blank">
+                                    Java
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java/" target="_blank">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 理想热爱<br />'
+            + '作者: sk<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4, h5'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4, h5').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+        <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&copy; 理想热爱.
+
+            <br>
+            <span id="sitetime"></span><span class="my-face">ღゝ◡╹)ノ♡</span>
+            <br>
+
+            
+
+            
+                    
+                        <span id="busuanzi_container_site_pv" style='display:none'></span>
+                        总访问量: <span id="busuanzi_value_site_pv" class="white-color"></span>
+                    
+
+                    
+                        <span id="busuanzi_container_site_uv" style='display:none'></span>
+                        人次&nbsp; | &nbsp;访客人数: <span id="busuanzi_value_site_uv" class="white-color"></span> 人
+                    
+
+            
+
+            
+                &nbsp; | &nbsp;字数统计:&nbsp;
+                <span class="white-color">95.7k</span> 字
+            
+
+            
+            <br>
+
+        </div>
+
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/liaoxingwang" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+ 
+    <a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=807928930@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+
+    <a href="https://zhihu.com/people/zbozci" class="tooltipped" target="_blank" data-tooltip="访问我的知乎" data-position="top" data-delay="50">
+        <i class="fa fa-inverse">知</i>
+    </a>
+
+
+
+    <a href="http://wpa.qq.com/msgrd?v=3&uin=807928930&site=qq&menu=yes" class="tooltipped" target="_blank" data-tooltip="访问我的QQ空间" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+    <a href="https://weibo.com/jamsJJYY" class="tooltipped" target="_blank" data-tooltip="关注我的微博" data-position="top" data-delay="50">
+        <i class="fa fa-weibo"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+
+        var t1 = Date.UTC(2022, 10, 24, 00, 00, 00); //北京时间2019-8-1 00:00:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes *
+            minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已勉强运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours +
+            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒" ;
+    } /*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+
+
+
+
+
+
+        <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+        <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+        <script src="https://cdn.bootcss.com/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="https://cdn.bootcss.com/masonry/4.2.2/masonry.pkgd.min.js"></script>
+        <script src="https://cdn.bootcss.com/aos/3.0.0-beta.6/aos.js"></script>
+        <script src="https://cdn.bootcss.com/scrollprogress/3.0.2/scrollProgress.min.js"></script>
+        <script src="https://cdn.bootcss.com/lightgallery/1.6.12/js/lightgallery-all.min.js"></script>
+        <script src="/js/matery.js"></script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+        
+            <script src="/libs/others/clicklove.js"></script>
+        
+
+        
+            <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        
+
+        <!-- liaoxingwang add 2019.08.28 -->
+        <script type="text/javascript">
+            var OriginTitile = document.title,
+                st;
+            document.addEventListener("visibilitychange", function () {
+                document.hidden ? (document.title = "看不见我🙈~看不见我🙈~", clearTimeout(st)) : (document.title =
+                    "(๑•̀ㅂ•́) ✧被发现了～", st = setTimeout(function () {
+                        document.title = OriginTitile
+                    }, 3e3))
+            })
+        </script>
+
+        <!-- 鼠标点击烟花爆炸效果  liaoxingwang add 2019.09.09 -->
+        
+
+        <!-- 背景雪花飘落特效liaoxingwang add 2019.09.10 -->
+        
+
+        <!-- 鼠标点击文字特效 liaoxingwang add 2019.09.10-->
+        
+            <script src="/js/wenzi.js" type="text/javascript"></script>
+        
+
+        <!-- 背景雪花飘落特效 liaoxingwang add 2019.09.10 -->
+        
+
+        <!-- 在线聊天工具  liaoxingwang add 2019.09.11 -->
+        
+            <script src="//code.tidio.co/xxxxxxxxxxxxxxxxxxxxxxxxxxx.js"></script>
+            <!--  在线聊天位置自定义  liaoxingwang add 2019.09.13  -->
+            <script> 
+                $(document).ready(function () {
+
+                    setInterval(change_Tidio, 50);  
+                    function change_Tidio() { 
+
+                        var tidio=$("#tidio-chat iframe");
+                        if(tidio.css("display")=="block"&& $(window).width()>977 ){
+                            document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" &&$(window).width()>977)>0? "-40px" : ($("div.toc-title").length&&$(window).width()>977)>0?"80px":"20px";   
+                            document.getElementById("tidio-chat-iframe").style.right="-15px";   
+                            document.getElementById("tidio-chat-iframe").style.height=parseInt(tidio.css("height"))>=520?"520px":tidio.css("height");
+                            document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                        } 
+                        else if(tidio.css("display")=="block"&&$(window).width()>601 &&$(window).width()<992 ){
+                            document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" && 601< $(window).width()<992)>0? "-40px":"20px" ;   
+                            document.getElementById("tidio-chat-iframe").style.right="-15px"; 
+                            document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                        }
+                        else if(tidio.css("display")=="block"&&$(window).width()<601 && parseInt(tidio.css("height"))<230){
+                            document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" && $(window).width()<601)>0? "-10px":"45px" ;   
+                            document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                        }
+
+                        if( tidio.css("display")=="block"&&$(window).width()<601 && parseInt(tidio.css("height"))>=230){
+                            document.getElementById("tidio-chat-iframe").style.zIndex="998";
+                        }
+                    } 
+                }); 
+            </script>
+        
+
+        <!-- 背景 canvas-nest  洪卫 shw 2018  add 2019.09.15-->
+        
+
+        <!-- 背景静止彩带  洪卫 shw 2018  add 2019.09.15-->
+        
+            <script type="text/javascript">
+            var windowWidth = $(window).width();
+            if (windowWidth > 992) {
+                document.write('<script type="text/javascript" size="150" alpha="0.6" zIndex="-1" src="/libs/background/ribbon.min.js"><\/script>');
+            }
+            </script>
+        
+
+        <!-- 背景动态彩带 洪卫 shw 2018  add 2019.09.15-->
+        
+            <script type="text/javascript">
+            var windowWidth = $(window).width();
+            if (windowWidth > 992) {
+                document.write('<script type="text/javascript" src="/libs/background/ribbon-dynamic.js"><\/script>');
+            }
+            </script>
+        
+
+    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script>
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z\d\-\.\+]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(t.test(e.href)||r.test(e.href))&&(e.href=a.dataset.original)})});</script><script>(r=>{r.imageLazyLoadSetting.processImages=t;var a=r.imageLazyLoadSetting.isSPA,o=r.imageLazyLoadSetting.preloadRatio||1,d=i();function i(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(t){(a||t)&&(d=i());for(var e,n=0;n<d.length;n++)0<=(e=(e=d[n]).getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(r.innerHeight*o||document.documentElement.clientHeight*o)&&(()=>{var t,e,a,o,i=d[n];e=function(){d=d.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).dataset.loaded||(t.hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(a=new Image,o=t.getAttribute("data-original"),a.onload=function(){t.src=o,t.removeAttribute("data-original"),t.setAttribute("data-loaded",!0),e&&e()},a.onerror=function(){t.removeAttribute("data-original"),t.setAttribute("data-loaded",!1),t.src=o},t.src!==o&&(a.src=o)))})()}function e(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",e),r.addEventListener("resize",e),r.addEventListener("orientationchange",e)})(this);</script></body>
+</html>
