@@ -877,8 +877,8 @@ git status  <span class="token comment" spellcheck="true">--show-stash 查询工
 <h3 id="6-git-log"><a href="#6-git-log" class="headerlink" title="6.git log"></a>6.git log</h3><p>git log，这个命令用得应该比较多，表示查看提交历史/提交日志~</p>
 <pre class="line-numbers language-lua"><code class="language-lua">git log  查看提交历史
 git log <span class="token comment" spellcheck="true">--oneline 以精简模式显示查看提交历史</span>
-git log <span class="token operator">-</span>p <span class="token operator">&lt;</span>file<span class="token operator">></span> 查看指定文件的提交历史
-git blame <span class="token operator">&lt;</span>file<span class="token operator">></span> 一列表方式查看指定文件的提交历史<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+git log <span class="token operator">-</span>p <span class="token operator">&lt;</span>file<span class="token operator">&gt;</span> 查看指定文件的提交历史
+git blame <span class="token operator">&lt;</span>file<span class="token operator">&gt;</span> 一列表方式查看指定文件的提交历史<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>嘻嘻，看看dev分支上的提交历史吧<del>要回滚代码就经常用它喵喵提交历史</del><img src="https://cdn.jsdelivr.net/gh/liaoxingwang/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://mmbiz.qpic.cn/mmbiz_png/sMmr4XOCBzFs0frvIVCzia8LNcDRgicBZf5Piaa2ZH3ppiaSYS7olYibOu4FFwgXe7QLgGmtgFTYXvtOOuF2yeuSFew/640?wx_fmt=png&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="图片"></p>
 <h3 id="7-git-diff"><a href="#7-git-diff" class="headerlink" title="7.git diff"></a>7.git diff</h3><pre class="line-numbers language-mipsasm"><code class="language-mipsasm">git diff 显示暂存区和工作区的差异
 git diff filepath   filepath路径文件中，工作区与暂存区的比较差异
@@ -900,7 +900,7 @@ git fetch origin master 拉取远程最新master分支代码<span aria-hidden="t
 <h3 id="9-git-push"><a href="#9-git-push" class="headerlink" title="9.git push"></a>9.git push</h3><p>git push 可以推送本地分支、标签到远程仓库，也可以删除远程分支哦。</p>
 <pre class="line-numbers language-mipsasm"><code class="language-mipsasm">git push origin master 将本地分支的更新全部推送到远程仓库master分支。
 git push origin -d <branchname>   删除远程branchname分支
-git push --tags 推送所有标签<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+git push --tags 推送所有标签<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></branchname></code></pre>
 <p>如果我们在dev开发完，或者就想把文件推送到远程仓库，给别的伙伴看看，就可以使用git push origin dev~<img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="img"></p>
 <p> <img src="https://cdn.jsdelivr.net/gh/liaoxingwang/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://mmbiz.qpic.cn/mmbiz_png/sMmr4XOCBzFs0frvIVCzia8LNcDRgicBZfqG4djZgIcQyujjerQdpQoloa53wOfdtnpjhfxeOSiay19xfgB2vVflA/640?wx_fmt=png&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="图片"></p>
 <h2 id="Git-的相关理论基础"><a href="#Git-的相关理论基础" class="headerlink" title="Git 的相关理论基础"></a>Git 的相关理论基础</h2><h3 id="1-Git的四大工作区域"><a href="#1-Git的四大工作区域" class="headerlink" title="1.Git的四大工作区域"></a>1.Git的四大工作区域</h3><p>先复习Git的几个工作区域哈：<img src="https://cdn.jsdelivr.net/gh/liaoxingwang/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://mmbiz.qpic.cn/mmbiz_png/sMmr4XOCBzFs0frvIVCzia8LNcDRgicBZfYuV2icpSpH5bNJN6ib4fia6v6v4xcsfdcxhUgf2LLlN9jtT1841HOGicWg/640?wx_fmt=png&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="图片"></p>
@@ -945,7 +945,7 @@ git branch -r  查看所有远程的分支
 git branch -a  查看所有远程分支和本地分支<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p><img src="https://cdn.jsdelivr.net/gh/liaoxingwang/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://mmbiz.qpic.cn/mmbiz_png/sMmr4XOCBzFs0frvIVCzia8LNcDRgicBZfR6iaex0F7ZUDiaLunv0wxeHwxmVp2Z3feuib43lzrH7LI5LwtCOWjLVmQ/640?wx_fmt=png&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img"></p>
 <p>删除分支：</p>
-<pre class="line-numbers language-mipsasm"><code class="language-mipsasm">git branch -D <branchname>  删除本地branchname分支<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-mipsasm"><code class="language-mipsasm">git branch -D <branchname>  删除本地branchname分支<span aria-hidden="true" class="line-numbers-rows"><span></span></span></branchname></code></pre>
 <p><img src="https://cdn.jsdelivr.net/gh/liaoxingwang/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://mmbiz.qpic.cn/mmbiz_png/sMmr4XOCBzFs0frvIVCzia8LNcDRgicBZf4iacTlU3sMLuEPLPS8Yl6ibpicgIhtXwAGgXA5Cvtc5W26YBVkXwkP68A/640?wx_fmt=png&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img"></p>
 <h3 id="2-git-checkout"><a href="#2-git-checkout" class="headerlink" title="2.git checkout"></a>2.git checkout</h3><p>切换分支：</p>
 <pre class="line-numbers language-undefined"><code class="language-undefined">git checkout master 切换到master分支<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -1034,7 +1034,7 @@ git push origin HEAD <span class="token comment" spellcheck="true">--force</span
 <p><img src="https://cdn.jsdelivr.net/gh/liaoxingwang/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://mmbiz.qpic.cn/mmbiz_png/sMmr4XOCBzFs0frvIVCzia8LNcDRgicBZfkqFZAfCictqs05d1uHbXelGpyLW9hpkzEX2HBGPhIW24EM0ia8PNRiaeg/640?wx_fmt=png&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="图片"></p>
 <p>当然，如果代码已经推送到远程的话，还可以考虑revert回滚呢</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">git</span> log  得到你需要回退一次提交的commit <span class="token function">id</span>
-<span class="token function">git</span> revert -n <span class="token operator">&lt;</span>commit_id<span class="token operator">></span>  撤销指定的版本，撤销也会作为一次提交进行保存<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<span class="token function">git</span> revert -n <span class="token operator">&lt;</span>commit_id<span class="token operator">&gt;</span>  撤销指定的版本，撤销也会作为一次提交进行保存<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p><img src="https://cdn.jsdelivr.net/gh/liaoxingwang/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://mmbiz.qpic.cn/mmbiz_png/sMmr4XOCBzFs0frvIVCzia8LNcDRgicBZfctBtiavSqKDAfhm6LKt220IE9UbOpHCUcY52CV6Jw3icUibkknJLQJghg/640?wx_fmt=png&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="图片"></p>
 <h2 id="Git-进阶之标签-tag"><a href="#Git-进阶之标签-tag" class="headerlink" title="Git 进阶之标签 tag"></a><strong>Git 进阶之标签 tag</strong></h2><p>打tag就是对发布的版本标注一个版本号，如果版本发布有问题，就把该版本拉取出来，修复bug，再合回去。</p>
 <pre class="line-numbers language-css"><code class="language-css">git tag  列出所有tag
@@ -1212,22 +1212,25 @@ git remote <span class="token keyword">show</span> <span class="token punctuatio
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/05/12/blog-open-source-linux/">
+                <a href="/2023/05/12/blog-open-source-mybatis-plus/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Linu命令总结">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="MyBatis-Plus学习记录">
                         
-                        <span class="card-title">Linu命令总结</span>
+                        <span class="card-title">MyBatis-Plus学习记录</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            简易的命令行入门教程:Git 全局设置:
-git config --global user.name "sky"
-git config --global user.email "807928930@qq.com"创建 git 仓库:
-mkd
+                            MyBatis-Plus通用查询CRUD接口service接口：service继承BaseMapper
+1、查询/*
+1、Get：查询一个
+*/
+// 根据 ID 查询
+T getById(Serializable id);
+// 根据 W
                         
                     </div>
                     <div class="publish-info">
@@ -1238,8 +1241,8 @@ mkd
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Linux/" class="post-category" target="_blank">
-                                    Linux
+                            <a href="/categories/MyBatis-Plus/" class="post-category" target="_blank">
+                                    MyBatis-Plus
                                 </a>
                             
                             
@@ -1249,8 +1252,8 @@ mkd
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Linux/" target="_blank">
-                        <span class="chip bg-color">Linux</span>
+                    <a href="/tags/MyBatis-Plus/" target="_blank">
+                        <span class="chip bg-color">MyBatis-Plus</span>
                     </a>
                     
                 </div>
@@ -1425,7 +1428,7 @@ mkd
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">95.7k</span> 字
+                <span class="white-color">96.1k</span> 字
             
 
             
@@ -1649,7 +1652,7 @@ $(function () {
             </script>
         
 
-    
+    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script>
         <style>
             [bg-lazy] {
                 background-image: none !important;
@@ -1662,5 +1665,5 @@ $(function () {
                 preloadRatio: 1,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z\d\-\.\+]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(t.test(e.href)||r.test(e.href))&&(e.href=a.dataset.original)})});</script><script>(r=>{r.imageLazyLoadSetting.processImages=t;var a=r.imageLazyLoadSetting.isSPA,o=r.imageLazyLoadSetting.preloadRatio||1,d=i();function i(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(t){(a||t)&&(d=i());for(var e,n=0;n<d.length;n++)0<=(e=(e=d[n]).getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(r.innerHeight*o||document.documentElement.clientHeight*o)&&(()=>{var t,e,a,o,i=d[n];e=function(){d=d.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).dataset.loaded||(t.hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(a=new Image,o=t.getAttribute("data-original"),a.onload=function(){t.src=o,t.removeAttribute("data-original"),t.setAttribute("data-loaded",!0),e&&e()},a.onerror=function(){t.removeAttribute("data-original"),t.setAttribute("data-loaded",!1),t.src=o},t.src!==o&&(a.src=o)))})()}function e(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",e),r.addEventListener("resize",e),r.addEventListener("orientationchange",e)})(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z\d\-\.\+]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(t.test(e.href)||r.test(e.href))&&(e.href=a.dataset.original)})});</script><script>(r=>{r.imageLazyLoadSetting.processImages=t;var a=r.imageLazyLoadSetting.isSPA,o=r.imageLazyLoadSetting.preloadRatio||1,d=i();function i(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(t){(a||t)&&(d=i());for(var e,n=0;n<d.length;n++)0<=(e=(e=d[n]).getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(r.innerHeight*o||document.documentElement.clientHeight*o)&&(()=>{var t,e,a,o,i=d[n];e=function(){d=d.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).dataset.loaded||(t.hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(a=new Image,o=t.getAttribute("data-original"),a.onload=function(){t.src=o,t.removeAttribute("data-original"),t.setAttribute("data-loaded",!0),e&&e()},a.onerror=function(){t.removeAttribute("data-original"),t.setAttribute("data-loaded",!1),t.src=o},t.src!==o&&(a.src=o)))})()}function e(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",e),r.addEventListener("resize",e),r.addEventListener("orientationchange",e)})(this);</script></body>
 </html>
