@@ -6,16 +6,25 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="MyBatis-Plus学习记录, 商单接企业项目外包 软件开发 整包服务 移动开发 移动开发团队 移动开发项目">
+    <meta name="keywords" content="谷歌支付集成全攻略：订阅与积分购买完整指南, 商单接企业项目外包 软件开发 整包服务 移动开发 移动开发团队 移动开发项目">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-    <meta name="description" content="MyBatis-Plus通用查询CRUD接口service接口：service继承BaseMapper
-1、查询/*
-1、Get：查询一个
-*/
-// 根据 ID 查询
-T getById(Serializable id);
-// 根据 W">
+    <meta name="description" content="📱 项目背景在移动应用中集成 Google Play 订阅和一次性购买（积分购买）功能，实现完整的支付体系。
+🎯 核心区别：订阅 vs 积分
+
+
+特性
+订阅
+积分（一次性购买）
+
+
+
+支付类型
+周期性自动扣款
+一次性购买
+
+
+是否需要A">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -23,7 +32,7 @@ T getById(Serializable id);
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>MyBatis-Plus学习记录 | 理想热爱</title>
+    <title>谷歌支付集成全攻略：订阅与积分购买完整指南 | 理想热爱</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -619,13 +628,13 @@ T getById(Serializable id);
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        MyBatis-Plus学习记录
+                        谷歌支付集成全攻略：订阅与积分购买完整指南
                     </div>
                 </div>
             </div>
@@ -737,8 +746,8 @@ T getById(Serializable id);
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/MyBatis-Plus/" target="_blank">
-                                <span class="chip bg-color">MyBatis-Plus</span>
+                            <a href="/tags/GooglePay/" target="_blank">
+                                <span class="chip bg-color">GooglePay</span>
                             </a>
                         
                     </div>
@@ -749,8 +758,8 @@ T getById(Serializable id);
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/MyBatis-Plus/" class="post-category" target="_blank">
-                                MyBatis-Plus
+                            <a href="/categories/GooglePay/" class="post-category" target="_blank">
+                                GooglePay
                             </a>
                         
                     </div>
@@ -761,7 +770,7 @@ T getById(Serializable id);
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-05-12
+                    2026-01-15
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -775,14 +784,14 @@ T getById(Serializable id);
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        2.4k
+                        1.4k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        10 分
+                        6 分
                     </div>
                     
                 
@@ -799,369 +808,284 @@ T getById(Serializable id);
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="MyBatis-Plus通用查询"><a href="#MyBatis-Plus通用查询" class="headerlink" title="MyBatis-Plus通用查询"></a>MyBatis-Plus通用查询</h1><h2 id="CRUD接口"><a href="#CRUD接口" class="headerlink" title="CRUD接口"></a>CRUD接口</h2><p>service接口：service继承BaseMapper</p>
-<h3 id="1、查询"><a href="#1、查询" class="headerlink" title="1、查询"></a>1、查询</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">/*
-1、Get：查询一个
-*/</span>
-<span class="token comment" spellcheck="true">// 根据 ID 查询</span>
-T <span class="token function">getById</span><span class="token punctuation">(</span>Serializable id<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">// 根据 Wrapper，查询一条记录。结果集，如果是多个会抛出异常，随机取一条加上限制条件 wrapper.last("LIMIT 1")</span>
-T <span class="token function">getOne</span><span class="token punctuation">(</span>Wrapper<span class="token operator">&lt;</span>T<span class="token operator">></span> queryWrapper<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">// 根据 Wrapper，查询一条记录</span>
-T <span class="token function">getOne</span><span class="token punctuation">(</span>Wrapper<span class="token operator">&lt;</span>T<span class="token operator">></span> queryWrapper<span class="token punctuation">,</span> <span class="token keyword">boolean</span> throwEx<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">// 根据 Wrapper，查询一条记录</span>
-Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Object<span class="token operator">></span> <span class="token function">getMap</span><span class="token punctuation">(</span>Wrapper<span class="token operator">&lt;</span>T<span class="token operator">></span> queryWrapper<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">/*
-2、List：查询多条
-*/</span>
-<span class="token comment" spellcheck="true">// 查询所有</span>
-List<span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token function">list</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">// 查询列表</span>
-List<span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token function">list</span><span class="token punctuation">(</span>Wrapper<span class="token operator">&lt;</span>T<span class="token operator">></span> queryWrapper<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">// 查询（根据ID 批量查询）</span>
-Collection<span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token function">listByIds</span><span class="token punctuation">(</span>Collection<span class="token operator">&lt;</span><span class="token operator">?</span> <span class="token keyword">extends</span> <span class="token class-name">Serializable</span><span class="token operator">></span> idList<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">// 查询（根据 columnMap 条件）</span>
-Collection<span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token function">listByMap</span><span class="token punctuation">(</span>Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Object<span class="token operator">></span> columnMap<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">// 查询所有列表</span>
-List<span class="token operator">&lt;</span>Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Object<span class="token operator">>></span> <span class="token function">listMaps</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">// 查询列表</span>
-List<span class="token operator">&lt;</span>Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Object<span class="token operator">>></span> <span class="token function">listMaps</span><span class="token punctuation">(</span>Wrapper<span class="token operator">&lt;</span>T<span class="token operator">></span> queryWrapper<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">/*
-3、Page：分页查询
-*/</span>
-<span class="token comment" spellcheck="true">// 无条件分页查询</span>
-IPage<span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token function">page</span><span class="token punctuation">(</span>IPage<span class="token operator">&lt;</span>T<span class="token operator">></span> page<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">// 条件分页查询</span>
-IPage<span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token function">page</span><span class="token punctuation">(</span>IPage<span class="token operator">&lt;</span>T<span class="token operator">></span> page<span class="token punctuation">,</span> Wrapper<span class="token operator">&lt;</span>T<span class="token operator">></span> queryWrapper<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">// 无条件分页查询</span>
-IPage<span class="token operator">&lt;</span>Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Object<span class="token operator">>></span> <span class="token function">pageMaps</span><span class="token punctuation">(</span>IPage<span class="token operator">&lt;</span>T<span class="token operator">></span> page<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">// 条件分页查询</span>
-IPage<span class="token operator">&lt;</span>Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Object<span class="token operator">>></span> <span class="token function">pageMaps</span><span class="token punctuation">(</span>IPage<span class="token operator">&lt;</span>T<span class="token operator">></span> page<span class="token punctuation">,</span> Wrapper<span class="token operator">&lt;</span>T<span class="token operator">></span> queryWrapper<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">/</span><span class="token operator">*</span>
-<span class="token number">4</span>、Count：条数
-<span class="token comment" spellcheck="true">// 查询总记录数</span>
-<span class="token keyword">int</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">// 根据 Wrapper 条件，查询总记录数</span>
-<span class="token keyword">int</span> <span class="token function">count</span><span class="token punctuation">(</span>Wrapper<span class="token operator">&lt;</span>T<span class="token operator">></span> queryWrapper<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="2、添加"><a href="#2、添加" class="headerlink" title="2、添加"></a>2、添加</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">/*
-1、Save
-*/</span>
-<span class="token comment" spellcheck="true">// 插入一条记录（选择字段，策略插入）</span>
-<span class="token keyword">boolean</span> <span class="token function">save</span><span class="token punctuation">(</span>T entity<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">// 插入（批量）</span>
-<span class="token keyword">boolean</span> <span class="token function">saveBatch</span><span class="token punctuation">(</span>Collection<span class="token operator">&lt;</span>T<span class="token operator">></span> entityList<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">// 插入（批量）</span>
-<span class="token keyword">boolean</span> <span class="token function">saveBatch</span><span class="token punctuation">(</span>Collection<span class="token operator">&lt;</span>T<span class="token operator">></span> entityList<span class="token punctuation">,</span> <span class="token keyword">int</span> batchSize<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">/*
-2、SaveOrUpdate
-*/</span>
-<span class="token comment" spellcheck="true">// TableId 注解存在更新记录，否插入一条记录</span>
-<span class="token keyword">boolean</span> <span class="token function">saveOrUpdate</span><span class="token punctuation">(</span>T entity<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">// 根据updateWrapper尝试更新，否继续执行saveOrUpdate(T)方法</span>
-<span class="token keyword">boolean</span> <span class="token function">saveOrUpdate</span><span class="token punctuation">(</span>T entity<span class="token punctuation">,</span> Wrapper<span class="token operator">&lt;</span>T<span class="token operator">></span> updateWrapper<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">// 批量修改插入</span>
-<span class="token keyword">boolean</span> <span class="token function">saveOrUpdateBatch</span><span class="token punctuation">(</span>Collection<span class="token operator">&lt;</span>T<span class="token operator">></span> entityList<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">// 批量修改插入</span>
-<span class="token keyword">boolean</span> <span class="token function">saveOrUpdateBatch</span><span class="token punctuation">(</span>Collection<span class="token operator">&lt;</span>T<span class="token operator">></span> entityList<span class="token punctuation">,</span> <span class="token keyword">int</span> batchSize<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="3、修改"><a href="#3、修改" class="headerlink" title="3、修改"></a>3、修改</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 根据 UpdateWrapper 条件，更新记录 需要设置sqlset</span>
-<span class="token keyword">boolean</span> <span class="token function">update</span><span class="token punctuation">(</span>Wrapper<span class="token operator">&lt;</span>T<span class="token operator">></span> updateWrapper<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">// 根据 whereEntity 条件，更新记录</span>
-<span class="token keyword">boolean</span> <span class="token function">update</span><span class="token punctuation">(</span>T entity<span class="token punctuation">,</span> Wrapper<span class="token operator">&lt;</span>T<span class="token operator">></span> updateWrapper<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">// 根据 ID 选择修改</span>
-<span class="token keyword">boolean</span> <span class="token function">updateById</span><span class="token punctuation">(</span>T entity<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">// 根据ID 批量更新</span>
-<span class="token keyword">boolean</span> <span class="token function">updateBatchById</span><span class="token punctuation">(</span>Collection<span class="token operator">&lt;</span>T<span class="token operator">></span> entityList<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">// 根据ID 批量更新</span>
-<span class="token keyword">boolean</span> <span class="token function">updateBatchById</span><span class="token punctuation">(</span>Collection<span class="token operator">&lt;</span>T<span class="token operator">></span> entityList<span class="token punctuation">,</span> <span class="token keyword">int</span> batchSize<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="4、删除"><a href="#4、删除" class="headerlink" title="4、删除"></a>4、删除</h3><pre><code>// 根据 entity 条件，删除记录
-boolean remove(Wrapper&lt;T&gt; queryWrapper);
-// 根据 ID 删除
-boolean removeById(Serializable id);
-// 根据 columnMap 条件，删除记录
-boolean removeByMap(Map&lt;String, Object&gt; columnMap);
-// 删除（根据ID 批量删除）
-boolean removeByIds(Collection&lt;? extends Serializable&gt; idList);
-</code></pre><h3 id="5、链式操作"><a href="#5、链式操作" class="headerlink" title="5、链式操作"></a>5、链式操作</h3><pre><code>// 链式查询 普通
-QueryChainWrapper&lt;T&gt; query();
-// 链式查询 lambda 式。注意：不支持 Kotlin
-LambdaQueryChainWrapper&lt;T&gt; lambdaQuery(); 
-// 示例：
-query().eq("column", value).one();
-lambdaQuery().eq(Entity::getId, value).list();
-
-// 链式更改 普通
-UpdateChainWrapper&lt;T&gt; update();
-// 链式更改 lambda 式。注意：不支持 Kotlin 
-LambdaUpdateChainWrapper&lt;T&gt; lambdaUpdate();
-// 示例：
-update().eq("column", value).remove();
-lambdaUpdate().eq(Entity::getId, value).update(entity);
-
-</code></pre><h2 id="Lambda"><a href="#Lambda" class="headerlink" title="Lambda"></a>Lambda</h2><p>官方表示，3.x支持Lambda表达式，那应该怎么使用呢？我们来看个例子：</p>
-<pre class="line-numbers language-java"><code class="language-java">QueryWrapper<span class="token operator">&lt;</span>Student<span class="token operator">></span> queryWrapper <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">QueryWrapper</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-queryWrapper<span class="token punctuation">.</span><span class="token function">lambda</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">eq</span><span class="token punctuation">(</span>Student<span class="token operator">:</span><span class="token operator">:</span>getName<span class="token punctuation">,</span> <span class="token string">"SK"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-List<span class="token operator">&lt;</span>Student<span class="token operator">></span> studentList <span class="token operator">=</span> <span class="token function">list</span><span class="token punctuation">(</span>queryWrapper<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">for</span> <span class="token punctuation">(</span>Student student <span class="token operator">:</span> studentList<span class="token punctuation">)</span>
-    Console<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span>student<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="条件查询"><a href="#条件查询" class="headerlink" title="条件查询"></a>条件查询</h2><p>【1】多<code>eq</code></p>
-<pre><code>QueryWrapper&lt;Student&gt; queryWrapper = new QueryWrapper&lt;&gt;();
-queryWrapper.lambda()
-        .eq(Student::getName, "SK")
-        .eq(Student::getAge, 26);
-List&lt;Student&gt; studentList = list(queryWrapper);
-for (Student student : studentList)
-    Console.info(new Gson().toJson(student));</code></pre><p>对于这部分的测试，我想结果是毫无因为，那么你应该关注什么呢？没错，SQL，所以，我们直接看SQL。当然，结果也是可以看到的。</p>
-<pre><code>==&gt;  Preparing: SELECT id,name,age,info,is_delete,create_time,update_time,gender,idcard_id,city_id FROM t_student WHERE name = ? AND age = ? 
-==&gt; Parameters: SK(String), 26(Integer)
-&lt;==    Columns: id, name, age, info, is_delete, create_time, update_time, gender, idcard_id, city_id
-&lt;==        Row: 1035789714459471874, SK, 26, &lt;&lt;BLOB&gt;&gt;, 0, 2018-09-01 15:21:26.0, 2018-09-01 15:21:26.0, 1, 1035789714388168706, 1035762001753501698
-&lt;==      Total: 1</code></pre><p>我们还可以这样写：</p>
-<pre><code>QueryWrapper&lt;Student&gt; queryWrapper = new QueryWrapper&lt;&gt;();
-queryWrapper.lambda()
-        .and(obj -&gt;
-                obj.eq(Student::getName, "SK")
-                    .eq(Student::getAge, 26));
-
-List&lt;Student&gt; studentList = list(queryWrapper);
-for (Student student : studentList)
-    Console.info(new Gson().toJson(student));</code></pre><p>【2】<code>or</code></p>
-<p>第一种：</p>
-<pre><code>QueryWrapper&lt;Student&gt; queryWrapper = new QueryWrapper&lt;&gt;();
-queryWrapper.lambda()
-        .or(obj1 -&gt; obj1.eq(Student::getName, "SK"))
-        .or(obj2 -&gt; obj2.eq(Student::getName, "1"));
-List&lt;Student&gt; studentList = list(queryWrapper);
-for (Student student : studentList)
-    Console.info(new Gson().toJson(student));</code></pre><p>sql:</p>
-<pre><code>SELECT * FROM t_student WHERE ( name = ? ) OR ( name = ? ) </code></pre><p>第二种：</p>
-<pre><code>QueryWrapper&lt;Student&gt; queryWrapper = new QueryWrapper&lt;&gt;();
-queryWrapper.lambda()
-        .eq(Student::getName, "SK")
-        .or()
-        .eq(Student::getName, "1");
-List&lt;Student&gt; studentList = list(queryWrapper);
-for (Student student : studentList)
-    Console.info(new Gson().toJson(student));</code></pre><p>SQL:</p>
-<pre><code>SELECT * FROM t_student WHERE name = ? OR name = ? </code></pre><p>这样的话，我们就可以拼接各种条件了。那么问题来了：到底有哪些关键字呢？性能如何呢？</p>
-<h2 id="条件构造器"><a href="#条件构造器" class="headerlink" title="条件构造器"></a>条件构造器</h2><p><a href="https://baomidou.gitee.io/mybatis-plus-doc/#/wrapper?id=条件参数说明" target="_blank" rel="noopener">条件参数说明</a></p>
-<table>
+                <h2 id="📱-项目背景"><a href="#📱-项目背景" class="headerlink" title="📱 项目背景"></a>📱 项目背景</h2><p>在移动应用中集成 Google Play 订阅和一次性购买（积分购买）功能，实现完整的支付体系。</p>
+<h2 id="🎯-核心区别：订阅-vs-积分"><a href="#🎯-核心区别：订阅-vs-积分" class="headerlink" title="🎯 核心区别：订阅 vs 积分"></a>🎯 核心区别：订阅 vs 积分</h2><table>
 <thead>
 <tr>
-<th align="left">查询方式</th>
-<th align="left">说明</th>
+<th align="left">特性</th>
+<th align="left"><strong>订阅</strong></th>
+<th align="left"><strong>积分（一次性购买）</strong></th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="left">setSqlSelect</td>
-<td align="left">设置 SELECT 查询字段</td>
+<td align="left"><strong>支付类型</strong></td>
+<td align="left">周期性自动扣款</td>
+<td align="left">一次性购买</td>
 </tr>
 <tr>
-<td align="left">where</td>
-<td align="left">WHERE 语句，拼接 + <code>WHERE 条件</code></td>
+<td align="left"><strong>是否需要ACK</strong></td>
+<td align="left">✅ <strong>必须确认</strong></td>
+<td align="left">❌ <strong>不需要确认</strong></td>
 </tr>
 <tr>
-<td align="left">and</td>
-<td align="left">AND 语句，拼接 + <code>AND 字段=值</code></td>
+<td align="left"><strong>是否需要消耗</strong></td>
+<td align="left">❌ 不需要</td>
+<td align="left">✅ <strong>必须消耗</strong></td>
 </tr>
 <tr>
-<td align="left">andNew</td>
-<td align="left">AND 语句，拼接 + <code>AND (字段=值)</code></td>
+<td align="left"><strong>退款机制</strong></td>
+<td align="left">整个订阅期可退款</td>
+<td align="left">较短退款窗口</td>
 </tr>
 <tr>
-<td align="left">or</td>
-<td align="left">OR 语句，拼接 + <code>OR 字段=值</code></td>
+<td align="left"><strong>状态管理</strong></td>
+<td align="left">复杂（激活、续订、取消）</td>
+<td align="left">简单（购买即完成）</td>
 </tr>
 <tr>
-<td align="left">orNew</td>
-<td align="left">OR 语句，拼接 + <code>OR (字段=值)</code></td>
+<td align="left"><strong>API接口</strong></td>
+<td align="left"><code>subscriptionsv2.get()</code></td>
+<td align="left"><code>products.get()</code></td>
 </tr>
 <tr>
-<td align="left">eq</td>
-<td align="left">等于=</td>
+<td align="left"><strong>确认方式</strong></td>
+<td align="left"><code>acknowledge()</code></td>
+<td align="left"><code>consume()</code></td>
 </tr>
 <tr>
-<td align="left">allEq</td>
-<td align="left">基于 map 内容等于=</td>
-</tr>
-<tr>
-<td align="left">ne</td>
-<td align="left">不等于&lt;&gt;</td>
-</tr>
-<tr>
-<td align="left">gt</td>
-<td align="left">大于&gt;</td>
-</tr>
-<tr>
-<td align="left">ge</td>
-<td align="left">大于等于&gt;=</td>
-</tr>
-<tr>
-<td align="left">lt</td>
-<td align="left">小于&lt;</td>
-</tr>
-<tr>
-<td align="left">le</td>
-<td align="left">小于等于&lt;=</td>
-</tr>
-<tr>
-<td align="left">like</td>
-<td align="left">模糊查询 LIKE</td>
-</tr>
-<tr>
-<td align="left">notLike</td>
-<td align="left">模糊查询 NOT LIKE</td>
-</tr>
-<tr>
-<td align="left">in</td>
-<td align="left">IN 查询</td>
-</tr>
-<tr>
-<td align="left">notIn</td>
-<td align="left">NOT IN 查询</td>
-</tr>
-<tr>
-<td align="left">isNull</td>
-<td align="left">NULL 值查询</td>
-</tr>
-<tr>
-<td align="left">isNotNull</td>
-<td align="left">IS NOT NULL</td>
-</tr>
-<tr>
-<td align="left">groupBy</td>
-<td align="left">分组 GROUP BY</td>
-</tr>
-<tr>
-<td align="left">having</td>
-<td align="left">HAVING 关键词</td>
-</tr>
-<tr>
-<td align="left">orderBy</td>
-<td align="left">排序 ORDER BY</td>
-</tr>
-<tr>
-<td align="left">orderAsc</td>
-<td align="left">ASC 排序 ORDER BY</td>
-</tr>
-<tr>
-<td align="left">orderDesc</td>
-<td align="left">DESC 排序 ORDER BY</td>
-</tr>
-<tr>
-<td align="left">exists</td>
-<td align="left">EXISTS 条件语句</td>
-</tr>
-<tr>
-<td align="left">notExists</td>
-<td align="left">NOT EXISTS 条件语句</td>
-</tr>
-<tr>
-<td align="left">between</td>
-<td align="left">BETWEEN 条件语句</td>
-</tr>
-<tr>
-<td align="left">notBetween</td>
-<td align="left">NOT BETWEEN 条件语句</td>
-</tr>
-<tr>
-<td align="left">addFilter</td>
-<td align="left">自由拼接 SQL</td>
-</tr>
-<tr>
-<td align="left">last</td>
-<td align="left">拼接在最后，例如：last(“LIMIT 1”)</td>
+<td align="left"><strong>再次购买</strong></td>
+<td align="left">自动续订</td>
+<td align="left">需要先消耗才能再买</td>
 </tr>
 </tbody></table>
-<p>注意！ xxNew 都是另起 <code>( ... )</code> 括号包裹。</p>
-<h2 id="自定义sql"><a href="#自定义sql" class="headerlink" title="自定义sql"></a>自定义sql</h2><p>如果官方提供的满足不了你的需求，或者你的需求很复杂，导致你不知道如何使用条件构造器，那应该怎么办呢？</p>
-<p>很简单。</p>
-<p>第一步：找到 Dao，写一个数据库操作接口</p>
-<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">StudentDao</span> <span class="token keyword">extends</span> <span class="token class-name">BaseMapper</span><span class="token operator">&lt;</span>Student<span class="token operator">></span> <span class="token punctuation">{</span>
+<h2 id="🏗️-系统架构设计"><a href="#🏗️-系统架构设计" class="headerlink" title="🏗️ 系统架构设计"></a>🏗️ 系统架构设计</h2><h3 id="1-数据库设计"><a href="#1-数据库设计" class="headerlink" title="1. 数据库设计"></a>1. <strong>数据库设计</strong></h3><p>sql</p>
+<pre><code>-- 用户订单表
+CREATE TABLE user_orders (
+    order_id VARCHAR(64) PRIMARY KEY,
+    user_id BIGINT NOT NULL,
+    google_purchase_token VARCHAR(512),  -- Google购买令牌
+    google_order_id VARCHAR(128),        -- Google订单ID
+    product_type TINYINT,                -- 1=订阅, 2=积分
+    product_id VARCHAR(128),             -- 产品ID
+    payment_status TINYINT DEFAULT 1,    -- 1=待支付,2=成功,3=续订,4=过期,5=退款
+    consumption_state TINYINT DEFAULT 0, -- 0=未消耗,1=已消耗（仅积分）
+    expiry_time DATETIME,                -- 过期时间（订阅用）
+    created_time DATETIME DEFAULT CURRENT_TIMESTAMP,
+    INDEX idx_user_id (user_id),
+    INDEX idx_purchase_token (google_purchase_token(64)),
+    INDEX idx_status (payment_status)
+);</code></pre><h3 id="2-支付状态机"><a href="#2-支付状态机" class="headerlink" title="2. 支付状态机"></a>2. <strong>支付状态机</strong></h3><p>text</p>
+<pre><code>订阅状态流程：
+PENDING → PAID → RENEWED → EXPIRED/CANCELLED
 
-    List<span class="token operator">&lt;</span>Student<span class="token operator">></span> <span class="token function">selectAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+积分状态流程：
+PENDING → PAID → CONSUMED → COMPLETED</code></pre><h2 id="🔄-完整处理流程"><a href="#🔄-完整处理流程" class="headerlink" title="🔄 完整处理流程"></a>🔄 完整处理流程</h2><h3 id="步骤1：前端发起购买"><a href="#步骤1：前端发起购买" class="headerlink" title="步骤1：前端发起购买"></a>步骤1：前端发起购买</h3><p>javascript</p>
+<pre><code>// Android前端调用
+async function purchaseProduct(productType, productId) {
+    const productDetails = await getProductDetails(productId);
 
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>第二步：在xml文件中写sql</p>
-<pre><code>&lt;!--List&lt;Student&gt; selectAll();--&gt;
-&lt;select id="selectAll" resultMap="BaseResultMap"&gt;
-    select * from t_student
-&lt;/select&gt;</code></pre><p>这样我们就可以使用了：</p>
-<pre><code>@Resource
-StudentDao studentDao;
+    const purchaseParams = {
+        productId: productDetails.productId,
+        productType: productType,
+        oldPurchaseToken: existingToken  // 订阅续订时需要
+    };
 
-List&lt;Student&gt; studentList = studentDao.selectAll();
-for (Student student : studentList)
-    Console.info(new Gson().toJson(student));</code></pre><p>测试：</p>
-<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" alt="自定义sql测试"></p>
-<h2 id="封装我们自己的Service"><a href="#封装我们自己的Service" class="headerlink" title="封装我们自己的Service"></a>封装我们自己的Service</h2><p>前面我们就说了，我是很不喜欢MP的查询接口的，我们就把他弄成我们喜欢的吧，我这里借鉴 JPA接口了，哈哈</p>
-<p>interface:</p>
-<pre><code>/**
- * 查询所有数据
- * @return List&lt;Student&gt;
- */
-List&lt;Student&gt; findAll();
+    const result = await BillingClient.launchBillingFlow(
+        activity, 
+        billingFlowParams
+    );
 
-/**
- * 查询部分数据
- * @return List&lt;Student&gt;
- */
-List&lt;Student&gt; findList();
+    // 发送购买凭证到后端验证
+    await verifyPurchase(result.purchaseToken);
+}</code></pre><h3 id="步骤2：后端验证购买"><a href="#步骤2：后端验证购买" class="headerlink" title="步骤2：后端验证购买"></a>步骤2：后端验证购买</h3><h4 id="订阅购买验证"><a href="#订阅购买验证" class="headerlink" title="订阅购买验证"></a><strong>订阅购买验证</strong></h4><p>java</p>
+<pre><code>private void handleSubscriptionPurchase(LocalOrdersParam param, LocalOrdersEntity order) {
+    // 1. 获取订阅信息
+    SubscriptionPurchaseV2 subscription = googlePaymentService
+        .getSubscriptionGoogleOrderV2(param.getGooglePurchaseToken());
 
-/**
- * 查询一条数据
- * @return Student
- */
-Student findOne();
+    // 2. 验证订阅状态
+    if (!"SUBSCRIPTION_STATE_ACTIVE".equals(subscription.getSubscriptionState())) {
+        throw new BusinessException("订阅未激活");
+    }
 
-/**
- * 根据主键ID查询数据
- * @param id 主键ID，为null，返回null
- * @return Student
- */
-Student findById(Long id);</code></pre><p>impl:</p>
-<pre><code>@Override
-public List&lt;Student&gt; findAll() {
-    return list(null);
-}
+    // 3. ACK确认（必须）
+    acknowledgeSubscription(param, subscription);
 
-@Override
-public List&lt;Student&gt; findList() {
-    return list(null);
-}
+    // 4. 更新订单和发放权益
+    updateSubscriptionOrder(order, subscription);
+    grantSubscriptionBenefits(order);
+}</code></pre><h4 id="积分购买验证"><a href="#积分购买验证" class="headerlink" title="积分购买验证"></a><strong>积分购买验证</strong></h4><p>java</p>
+<pre><code>private void handlePointsPurchase(LocalOrdersParam param, LocalOrdersEntity order) {
+    // 1. 获取购买信息
+    ProductPurchase productPurchase = googlePaymentService
+        .getOneTimeGoogleOrder(order.getGoogleProductId(), param.getGooglePurchaseToken());
 
-@Override
-public Student findOne() {
-    return getOne(null);
-}
+    // 2. 验证购买状态（0=已购买）
+    if (productPurchase.getPurchaseState() != 0) {
+        throw new BusinessException("购买未完成");
+    }
 
-@Override
-public Student findById(Long id) {
-    ExceptionUtil.notNull(id, "id must not null.");
-    return getById(id);
-}
-预览</code></pre><p>一、条件构造器关系介绍</p>
-<p><img src="https://cdn.jsdelivr.net/gh/liaoxingwang/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://img-blog.csdnimg.cn/20210903205722934.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5Lme5Yqb6ams5omO572X44Gu6buO5piO,size_20,color_FFFFFF,t_70,g_se,x_16" alt="img"></p>
-<p>条件构造器关系介绍 ：<br>上图绿色框为抽象类abstract<br>蓝色框为正常class类，可new对象<br>黄色箭头指向为父子类关系，箭头指向为父类</p>
-<p>wapper介绍 ：</p>
-<p>Wrapper ： 条件构造抽象类，最顶端父类</p>
-<p>AbstractWrapper ： 用于查询条件封装，生成 sql 的 where 条件</p>
-<p>QueryWrapper ： Entity 对象封装操作类，不是用lambda语法</p>
-<p>UpdateWrapper ： Update 条件封装，用于Entity对象更新操作</p>
-<p>AbstractLambdaWrapper ： Lambda 语法使用 Wrapper统一处理解析 lambda 获取 column。</p>
-<p>LambdaQueryWrapper ：看名称也能明白就是用于Lambda语法使用的查询Wrapper</p>
-<p>LambdaUpdateWrapper ： Lambda 更新封装Wrapper</p>
-<p>先了解一下内外连接：<br>什么是连接表？<br>多表查询原理：将多个表通过笛卡尔积形成一个虚表，再根据查询条件筛选符合条件的数据。<br>在关系数据库中，数据分布在多个逻辑表中。 要获得完整有意义的数据集，需要使用连接来查询这些表<br>中的数据。 SQL Server支持多种<br>连接包括<br><strong>INNER JOIN:内连接,</strong>关键字在表中存在至少一个匹配时返回行。<br>left join : 左连接，返回左表中所有的记录以及右表中连接字段相等的记录。<br>right join : 右连接，返回右表中所有的记录以及左表中连接字段相等的记录。<br>inner join : 内连接，又叫等值连接，只返回两个表中连接字段相等的行。<br>full join : 外连接，返回两个表中的行：left join + right join。<br>cross join : 结果是笛卡尔积，就是第一个表的行数乘以第二个表的行数。<br>GROUP BY:全外连接， 子句必须放在 WHERE 子句中的条件之后，必须放在 ORDER BY 子句之前<br>每种连接类型指定SQL Server如何使用一个表中的数据来选择另一个表中的行</p>
-<p>SQL内连接(INNER JOIN)<br>返回两张表中符合连接条件的数据行</p>
-<p>内连接是从结果表中删除与被连接表中未匹配行的所有行，所以内连接可能会丢失信息</p>
-<p>SQL外连接（OUTER JOIN）</p>
-<p>外连接（OUTER JOIN）分 为左连接、右连接和全连接</p>
-<p>左连接：返回左表中的所以行，如果左表中行在右表中没有匹配行，则结果中右表中的列返回空值NULL</p>
-<p>语法：SELECT * FROM 表1 LEFT OUTER JOIN 表2 ON 条件<br>eg：我们左连接Student表、Score表查询学生的成绩，SQL 语句如下：<br>SELECT * FROM Student LEFT OUTER JOIN Score ON Student.id = Score.studentID</p>
-<p>右 连 接：返回右表中的所以行，如果右表中行在左表中没有匹配行，则结果中左表中的列返回空值NULL</p>
-<p>语法：SELECT * FROM 表1 RIGHT OUTER JOIN 表2 ON 条件<br>eg：我们右连接Student表、Score表查询学生的成绩，SQL 语句如下：<br>SELECT * FROM Student RIGHT OUTER JOIN Score ON Student.id = Score.studentID</p>
-<p>全连接：返回左表和右表中的所有行，当某行在另一表中没有匹配行，则另一表中的补NULL</p>
+    // 3. 检查是否已消耗
+    if (productPurchase.getConsumptionState() == 1) {
+        throw new BusinessException("商品已消耗，请勿重复发货");
+    }
+
+    // 4. 消耗购买（必须）
+    googlePaymentService.consumePurchase(
+        order.getGoogleProductId(), 
+        param.getGooglePurchaseToken()
+    );
+
+    // 5. 发放积分
+    grantPointsToUser(order, productPurchase);
+}</code></pre><h3 id="步骤3：消息队列处理"><a href="#步骤3：消息队列处理" class="headerlink" title="步骤3：消息队列处理"></a>步骤3：消息队列处理</h3><p>java</p>
+<pre><code>@Component
+public class GooglePurchaseMessageListener {
+
+    @RabbitListener(queues = "google.purchase.queue")
+    public void handlePurchaseMessage(String message) {
+        LocalOrdersParam param = parseMessage(message);
+        LocalOrdersEntity order = getOrder(param.getOrderId());
+
+        // 使用分布式锁防止重复处理
+        String lockKey = "purchase:" + param.getOrderId();
+        RLock lock = redissonClient.getLock(lockKey);
+
+        try {
+            if (lock.tryLock(5, TimeUnit.SECONDS)) {
+                if (order.getProductType() == 1) {
+                    processSubscription(param, order);
+                } else if (order.getProductType() == 2) {
+                    processPoints(param, order);
+                }
+            }
+        } finally {
+            lock.unlock();
+        }
+    }
+}</code></pre><h2 id="⚠️-关键错误处理"><a href="#⚠️-关键错误处理" class="headerlink" title="⚠️ 关键错误处理"></a>⚠️ 关键错误处理</h2><h3 id="1-410-Gone-错误处理"><a href="#1-410-Gone-错误处理" class="headerlink" title="1. 410 Gone 错误处理"></a>1. <strong>410 Gone 错误处理</strong></h3><p>java</p>
+<pre><code>try {
+    subscription = googlePaymentService.getSubscriptionGoogleOrderV2(purchaseToken);
+} catch (PaymentCoreException e) {
+    if (e.getMessage().contains("purchaseTokenNoLongerValid")) {
+        // 令牌已过期，可能是退款或取消
+        log.warn("购买令牌已失效: {}", purchaseToken);
+        markOrderAsExpired(order, "令牌失效");
+        return;
+    }
+    throw e;
+}</code></pre><h3 id="2-重复购买处理"><a href="#2-重复购买处理" class="headerlink" title="2. 重复购买处理"></a>2. <strong>重复购买处理</strong></h3><p>java</p>
+<pre><code>private boolean isPurchaseAlreadyProcessed(String purchaseToken) {
+    return localOrdersService.exists(
+        new QueryWrapper&lt;LocalOrdersEntity&gt;()
+            .eq("google_purchase_token", purchaseToken)
+            .in("payment_status", Arrays.asList(2, 3))  // 成功或续订状态
+    );
+}</code></pre><h3 id="3-ACK失败重试机制"><a href="#3-ACK失败重试机制" class="headerlink" title="3. ACK失败重试机制"></a>3. <strong>ACK失败重试机制</strong></h3><p>java</p>
+<pre><code>@Retryable(
+    value = {IOException.class},
+    maxAttempts = 3,
+    backoff = @Backoff(delay = 1000, multiplier = 2)
+)
+public void acknowledgeSubscription(String purchaseToken, String productId) {
+    // 订阅ACK确认
+}</code></pre><h2 id="📊-状态同步策略"><a href="#📊-状态同步策略" class="headerlink" title="📊 状态同步策略"></a>📊 状态同步策略</h2><h3 id="1-定期检查订阅状态"><a href="#1-定期检查订阅状态" class="headerlink" title="1. 定期检查订阅状态"></a>1. <strong>定期检查订阅状态</strong></h3><p>java</p>
+<pre><code>@Scheduled(cron = "0 0 2 * * ?")  // 每天凌晨2点
+public void checkSubscriptionStatus() {
+    // 获取所有活跃订阅
+    List&lt;LocalOrdersEntity&gt; activeSubscriptions = getActiveSubscriptions();
+
+    for (LocalOrdersEntity order : activeSubscriptions) {
+        try {
+            SubscriptionPurchaseV2 subscription = googlePaymentService
+                .getSubscriptionGoogleOrderV2(order.getGooglePurchaseToken());
+
+            // 更新本地状态
+            updateLocalStatus(order, subscription);
+
+        } catch (PurchaseTokenExpiredException e) {
+            // 订阅已过期
+            expireSubscription(order);
+        }
+    }
+}</code></pre><h3 id="2-续订识别"><a href="#2-续订识别" class="headerlink" title="2. 续订识别"></a>2. <strong>续订识别</strong></h3><p>java</p>
+<pre><code>private boolean isRenewalSubscription(SubscriptionPurchaseV2 subscription) {
+    // 方法1：检查linkedPurchaseToken
+    if (subscription.getLinkedPurchaseToken() != null) {
+        return true;
+    }
+
+    // 方法2：检查是否有历史订单
+    return orderService.hasPreviousSubscription(
+        subscription.getLinkedPurchaseToken()
+    );
+}</code></pre><h2 id="🔐-安全最佳实践"><a href="#🔐-安全最佳实践" class="headerlink" title="🔐 安全最佳实践"></a>🔐 安全最佳实践</h2><h3 id="1-购买验证"><a href="#1-购买验证" class="headerlink" title="1. 购买验证"></a>1. <strong>购买验证</strong></h3><p>java</p>
+<pre><code>// 验证购买来源
+private void validatePurchaseSource(String purchaseToken) {
+    // 1. 检查是否来自正确的包名
+    // 2. 验证签名
+    // 3. 检查购买时间戳
+}</code></pre><h3 id="2-防重放攻击"><a href="#2-防重放攻击" class="headerlink" title="2. 防重放攻击"></a>2. <strong>防重放攻击</strong></h3><p>java</p>
+<pre><code>// 使用时间戳和签名
+public boolean validateRequest(String data, String signature, long timestamp) {
+    // 检查时间戳是否在有效期内（如5分钟内）
+    if (Math.abs(System.currentTimeMillis() - timestamp) &gt; 300000) {
+        return false;
+    }
+
+    // 验证签名
+    String expectedSignature = generateSignature(data + timestamp);
+    return expectedSignature.equals(signature);
+}</code></pre><h2 id="🚀-性能优化"><a href="#🚀-性能优化" class="headerlink" title="🚀 性能优化"></a>🚀 性能优化</h2><h3 id="1-缓存策略"><a href="#1-缓存策略" class="headerlink" title="1. 缓存策略"></a>1. <strong>缓存策略</strong></h3><p>java</p>
+<pre><code>@Component
+public class PurchaseCacheService {
+
+    @Cacheable(value = "purchaseToken", key = "#purchaseToken")
+    public ProductPurchase getCachedPurchase(String productId, String purchaseToken) {
+        return googlePaymentService.getOneTimeGoogleOrder(productId, purchaseToken);
+    }
+
+    @CacheEvict(value = "purchaseToken", key = "#purchaseToken")
+    public void clearPurchaseCache(String purchaseToken) {
+        // 清理缓存
+    }
+}</code></pre><h3 id="2-批量处理"><a href="#2-批量处理" class="headerlink" title="2. 批量处理"></a>2. <strong>批量处理</strong></h3><p>java</p>
+<pre><code>// 批量验证购买
+public Map&lt;String, ProductPurchase&gt; batchVerifyPurchases(
+    Map&lt;String, String&gt; purchaseMap) {
+
+    // 使用多线程并行验证
+    return purchaseMap.entrySet().parallelStream()
+        .collect(Collectors.toMap(
+            Map.Entry::getKey,
+            entry -&gt; verifySinglePurchase(entry.getValue())
+        ));
+}</code></pre><h2 id="📝-上线检查清单"><a href="#📝-上线检查清单" class="headerlink" title="📝 上线检查清单"></a>📝 上线检查清单</h2><h3 id="✅-测试项目"><a href="#✅-测试项目" class="headerlink" title="✅ 测试项目"></a>✅ 测试项目</h3><ul>
+<li>订阅购买流程测试</li>
+<li>积分购买流程测试</li>
+<li>订阅续订识别测试</li>
+<li>订阅取消/退款处理测试</li>
+<li>重复购买处理测试</li>
+<li>令牌过期处理测试</li>
+<li>网络异常重试测试</li>
+<li>高并发场景测试</li>
+</ul>
+<h3 id="✅-监控项"><a href="#✅-监控项" class="headerlink" title="✅ 监控项"></a>✅ 监控项</h3><ul>
+<li>购买成功率监控</li>
+<li>ACK确认失败率监控</li>
+<li>消耗失败率监控</li>
+<li>退款率监控</li>
+<li>响应时间监控</li>
+<li>Redis缓存命中率</li>
+</ul>
+<h2 id="🎯-核心要点总结"><a href="#🎯-核心要点总结" class="headerlink" title="🎯 核心要点总结"></a>🎯 核心要点总结</h2><ol>
+<li><strong>订阅必须ACK，积分必须消耗</strong> - 这是 Google Play 的政策要求</li>
+<li><strong>处理好410错误</strong> - 令牌过期是正常现象，要有优雅处理</li>
+<li><strong>防止重复处理</strong> - 使用分布式锁和状态检查</li>
+<li><strong>区分首次和续订</strong> - 续订的支付状态要单独标记</li>
+<li><strong>完善的错误处理</strong> - 宁可返回空也不返回错误格式</li>
+<li><strong>定期状态同步</strong> - 保持本地与 Google 状态一致</li>
+</ol>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1206,7 +1130,7 @@ public Student findById(Long id) {
                     </span>
                     <a href="https://liaoxingwang.github.io" class="b-link-green">理想热爱</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2023/05/12/blog-open-source-mybatis-plus/" class="b-link-green">MyBatis-Plus学习记录</a>
+                    <a href="/2026/01/15/blog-open-source-googlepay/" class="b-link-green">谷歌支付集成全攻略：订阅与积分购买完整指南</a>
                 </p>
             </div>
 
@@ -1229,7 +1153,7 @@ public Student findById(Long id) {
         repo: 'liaoxingwang.github.io',
         owner: 'liaoxingwang',
         admin: ["liaoxingwang"],
-        id: '2023/05/12/blog-open-source-mybatis-plus/',
+        id: '2026/01/15/blog-open-source-googlepay/',
         proxy: '{{ theme.gitalk.proxy }}',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
@@ -1251,49 +1175,63 @@ public Student findById(Long id) {
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/05/12/blog-open-source-linux/">
+                <a href="/2026/01/15/blog-open-source-googlepay/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Linu命令总结">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="谷歌支付集成全攻略：订阅与积分购买完整指南">
                         
-                        <span class="card-title">Linu命令总结</span>
+                        <span class="card-title">谷歌支付集成全攻略：订阅与积分购买完整指南</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            简易的命令行入门教程:Git 全局设置:
-git config --global user.name "sky"
-git config --global user.email "807928930@qq.com"创建 git 仓库:
-mkd
+                            📱 项目背景在移动应用中集成 Google Play 订阅和一次性购买（积分购买）功能，实现完整的支付体系。
+🎯 核心区别：订阅 vs 积分
+
+
+特性
+订阅
+积分（一次性购买）
+
+
+
+支付类型
+周期性自动扣款
+一次性购买
+
+
+是否需要A
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2023-05-12
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2026-01-15
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Linux/" class="post-category" target="_blank">
-                                    Linux
+                            <a href="/categories/GooglePay/" class="post-category" target="_blank">
+                                    GooglePay
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Linux/" target="_blank">
-                        <span class="chip bg-color">Linux</span>
+                    <a href="/tags/GooglePay/" target="_blank">
+                        <span class="chip bg-color">GooglePay</span>
                     </a>
                     
                 </div>
@@ -1307,42 +1245,36 @@ mkd
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/05/12/blog-open-source-wechat-mini-program/">
+                <a href="/2024/12/21/blog-open-source-javanote/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="微信小程序">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="java笔记">
                         
-                        <span class="card-title">微信小程序</span>
+                        <span class="card-title">java笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            微信小程序篇
- 打开微信小程序导入一个项目时，控制台弹出下面的错误：
-
-HBuilder X—运行—运行到小程序模拟器 微信开发者工具
-
-编译后生成
-
-一，注册微信小程序1.打开 微信公众平台
+                            
 
 
-2.注册开发者账号
-可以选择注册服务号/小
+
+java笔记说说进程和线程的区别？进程是程序的一次执行，是系统进行资源分配和调度的独立单位，他的作用是是程序能够并发执行提高资源利用率和吞吐率。
+由于进程是资源分配和调度的基本单位，因为进程的创建、销毁、切换产生大量的时间和空间的开
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2023-05-12
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2024-12-21
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/微信小程序/" class="post-category" target="_blank">
-                                    微信小程序
+                            <a href="/categories/Java/" class="post-category" target="_blank">
+                                    Java
                                 </a>
                             
                             
@@ -1352,8 +1284,8 @@ HBuilder X—运行—运行到小程序模拟器 微信开发者工具
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/微信小程序/" target="_blank">
-                        <span class="chip bg-color">微信小程序</span>
+                    <a href="/tags/Java/" target="_blank">
+                        <span class="chip bg-color">Java</span>
                     </a>
                     
                 </div>
