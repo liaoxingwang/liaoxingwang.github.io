@@ -9,7 +9,7 @@
     <meta name="keywords" content="留言板, 商单接企业项目外包 软件开发 整包服务 移动开发 移动开发团队 移动开发项目">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-    <meta name="description" content="留言板 | 理想热爱">
+    <meta name="description" content="留言板 | 屿">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>留言板 | 理想热爱</title>
+    <title>留言板 | 屿</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -82,7 +82,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <span class="logo-span">理想热爱</span>
+                    <span class="logo-span">屿</span>
                 </a>
             </div>
             
@@ -313,7 +313,7 @@
 
     <div class="mobile-head bg-color">
         
-        <div class="logo-name">理想热爱</div>
+        <div class="logo-name">屿</div>
         <div class="logo-desc">
             
             湖南工业大学 | 计算机科学与技术
@@ -666,6 +666,22 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                                 </div>
                     </div>
                 </div>
+            if theme.gitalk.enable == true
+                #container
+                link(rel='stylesheet', type='text/css', href='//unpkg.com/gitalk/dist/gitalk.css?v=' + theme.version)
+                script(type='text/javascript' src='//cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js?v=' + theme.version)
+                script(type='text/javascript' src='//unpkg.com/gitalk/dist/gitalk.min.js?v=' + theme.version)
+                script.
+                  var gitalk = new Gitalk({
+                    clientID: '#{theme.gitalk.client_id}',
+                    clientSecret: '#{theme.gitalk.client_secret}',
+                    repo: '#{theme.gitalk.repo}',
+                    owner: '#{theme.gitalk.owner}',
+                    admin: ['#{theme.gitalk.admin}'],
+                    id: md5(location.pathname),
+                    distractionFreeMode: false
+                  })
+                  gitalk.render('container')
 
                         
                             <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
@@ -678,11 +694,11 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 <script src="/libs/gitalk/gitalk.min.js"></script>
 <script>
     let gitalk = new Gitalk({
-        clientID: 'Ov23liHeONyhVnkW2voD',
-        clientSecret: 'eaba73712b1f1e0765259a3a01d0eaccd05e0866',
+        clientID: 'Ov23ctyInatwab7oypUk',
+        clientSecret: '870f8acff037eb6a22beec4ae3b9b98eb4f0bfac',
         repo: 'liaoxingwang.github.io',
         owner: 'liaoxingwang',
-        admin: ["liaoxingwang"],
+        admin: "liaoxingwang",
         id: 'contact/index.html',
         proxy: '{{ theme.gitalk.proxy }}',
         distractionFreeMode: false  // Facebook-like distraction free mode
@@ -729,7 +745,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">95.9k</span> 字
+                <span class="white-color">95.8k</span> 字
             
 
             
