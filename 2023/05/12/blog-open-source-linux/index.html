@@ -850,13 +850,13 @@ alias ll<span class="token operator">=</span><span class="token string">'ls -alF
 nohup xxx <span class="token operator">&amp;</span>
 
 # 后台运行<span class="token punctuation">,</span> 不输出任何日志
-nohup xxx <span class="token operator">&gt;</span> <span class="token operator">/</span>dev<span class="token operator">/</span>null <span class="token operator">&amp;</span>
+nohup xxx <span class="token operator">></span> <span class="token operator">/</span>dev<span class="token operator">/</span>null <span class="token operator">&amp;</span>
 
 # 后台运行<span class="token punctuation">,</span> 并将错误信息做标准输出到日志中 
-nohup xxx <span class="token operator">&gt;</span>out<span class="token punctuation">.</span>log <span class="token number">2</span><span class="token operator">&gt;</span><span class="token operator">&amp;</span><span class="token number">1</span> <span class="token operator">&amp;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+nohup xxx <span class="token operator">></span>out<span class="token punctuation">.</span>log <span class="token number">2</span><span class="token operator">></span><span class="token operator">&amp;</span><span class="token number">1</span> <span class="token operator">&amp;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="强制活动用户退出"><a href="#强制活动用户退出" class="headerlink" title="强制活动用户退出"></a>强制活动用户退出</h2><pre class="line-numbers language-go"><code class="language-go"># 命令来完成强制活动用户退出<span class="token punctuation">.</span>其中TTY表示终端名称
 pkill <span class="token operator">-</span>kill <span class="token operator">-</span>t <span class="token punctuation">[</span>TTY<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h2 id="查看命令路径"><a href="#查看命令路径" class="headerlink" title="查看命令路径"></a>查看命令路径</h2><pre class="line-numbers language-go"><code class="language-go">which <span class="token operator">&lt;</span>命令<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="查看命令路径"><a href="#查看命令路径" class="headerlink" title="查看命令路径"></a>查看命令路径</h2><pre class="line-numbers language-go"><code class="language-go">which <span class="token operator">&lt;</span>命令<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="查看进程所有打开最大fd数"><a href="#查看进程所有打开最大fd数" class="headerlink" title="查看进程所有打开最大fd数"></a>查看进程所有打开最大fd数</h2><pre class="line-numbers language-go"><code class="language-go">ulimit <span class="token operator">-</span>n<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="配置dns"><a href="#配置dns" class="headerlink" title="配置dns"></a>配置dns</h2><pre class="line-numbers language-go"><code class="language-go">vim <span class="token operator">/</span>etc<span class="token operator">/</span>resolv<span class="token punctuation">.</span>conf<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="nslookup-查看域名路由表"><a href="#nslookup-查看域名路由表" class="headerlink" title="nslookup,查看域名路由表"></a>nslookup,查看域名路由表</h2><pre class="line-numbers language-go"><code class="language-go">nslookup google<span class="token punctuation">.</span>com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -972,10 +972,10 @@ cat <span class="token operator">-</span>v xxx<span class="token punctuation">.<
 # 去除特殊字符
 sed <span class="token operator">-</span>i 's<span class="token operator">/</span><span class="token operator">^</span>M<span class="token comment" spellcheck="true">//g’ env.sh  去除文件的特殊字符, 比如^M:  需要这样输入: ctrl+v+enter</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="处理因系统原因引起的文件中特殊字符的问题"><a href="#处理因系统原因引起的文件中特殊字符的问题" class="headerlink" title="处理因系统原因引起的文件中特殊字符的问题"></a>处理因系统原因引起的文件中特殊字符的问题</h2><pre class="line-numbers language-go"><code class="language-go"># 可以转换为该系统下的文件格式
-cat file<span class="token punctuation">.</span>sh <span class="token operator">&gt;</span> file<span class="token punctuation">.</span>sh_bak
+cat file<span class="token punctuation">.</span>sh <span class="token operator">></span> file<span class="token punctuation">.</span>sh_bak
 
 # 先将file<span class="token punctuation">.</span>sh中文件内容复制下来然后运行<span class="token punctuation">,</span> 然后粘贴内容<span class="token punctuation">,</span> 最后ctrl <span class="token operator">+</span> d 保存退出
-cat <span class="token operator">&gt;</span> file1<span class="token punctuation">.</span>sh
+cat <span class="token operator">></span> file1<span class="token punctuation">.</span>sh
 
 # 在vim中通过如下设置文件编码和文件格式
 <span class="token punctuation">:</span>set fileencodings<span class="token operator">=</span>utf<span class="token number">-8</span> ，然后 w （存盘）一下即可转化为 utf8 格式，
@@ -1058,7 +1058,7 @@ iptables <span class="token operator">-</span>D INPUT <span class="token operato
 nc <span class="token number">192.168</span><span class="token punctuation">.</span><span class="token number">0.11</span> <span class="token number">8000</span> <span class="token operator">&lt;</span> data<span class="token punctuation">.</span>txt
 
 #nc可以当做服务器，监听某个端口号<span class="token punctuation">,</span>把某一次请求的内容存储到received_data里
-nc <span class="token operator">-</span>l <span class="token number">8000</span> <span class="token operator">&gt;</span> received_data
+nc <span class="token operator">-</span>l <span class="token number">8000</span> <span class="token operator">></span> received_data
 
 #上边只监听一次，如果多次可以加上<span class="token operator">-</span>k参数
 nc <span class="token operator">-</span>lk <span class="token number">8000</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -1406,7 +1406,7 @@ r b swpd free buff cache si so bi bo in cs us sy id wa
         owner: 'liaoxingwang',
         admin: "liaoxingwang",
         id: '2023/05/12/blog-open-source-linux/',
-        distractionFreeMode: false,  // Facebook-like distraction free mode
+        distractionFreeMode: false, // Facebook-like distraction free mode
         proxy: "https://netnr-proxy.cloudno.de/https://github.com/login/oauth/access_token"
     });
 
@@ -1703,7 +1703,7 @@ T getById(Serializable id);
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">96.2k</span> 字
+                <span class="white-color">95.8k</span> 字
             
 
             
@@ -1927,7 +1927,7 @@ $(function () {
             </script>
         
 
-    
+    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script>
         <style>
             [bg-lazy] {
                 background-image: none !important;
@@ -1940,5 +1940,5 @@ $(function () {
                 preloadRatio: 1,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z\d\-\.\+]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(t.test(e.href)||r.test(e.href))&&(e.href=a.dataset.original)})});</script><script>(r=>{r.imageLazyLoadSetting.processImages=t;var a=r.imageLazyLoadSetting.isSPA,o=r.imageLazyLoadSetting.preloadRatio||1,d=i();function i(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(t){(a||t)&&(d=i());for(var e,n=0;n<d.length;n++)0<=(e=(e=d[n]).getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(r.innerHeight*o||document.documentElement.clientHeight*o)&&(()=>{var t,e,a,o,i=d[n];e=function(){d=d.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).dataset.loaded||(t.hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(a=new Image,o=t.getAttribute("data-original"),a.onload=function(){t.src=o,t.removeAttribute("data-original"),t.setAttribute("data-loaded",!0),e&&e()},a.onerror=function(){t.removeAttribute("data-original"),t.setAttribute("data-loaded",!1),t.src=o},t.src!==o&&(a.src=o)))})()}function e(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",e),r.addEventListener("resize",e),r.addEventListener("orientationchange",e)})(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z\d\-\.\+]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(t.test(e.href)||r.test(e.href))&&(e.href=a.dataset.original)})});</script><script>(r=>{r.imageLazyLoadSetting.processImages=t;var a=r.imageLazyLoadSetting.isSPA,o=r.imageLazyLoadSetting.preloadRatio||1,d=i();function i(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(t){(a||t)&&(d=i());for(var e,n=0;n<d.length;n++)0<=(e=(e=d[n]).getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(r.innerHeight*o||document.documentElement.clientHeight*o)&&(()=>{var t,e,a,o,i=d[n];e=function(){d=d.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).dataset.loaded||(t.hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(a=new Image,o=t.getAttribute("data-original"),a.onload=function(){t.src=o,t.removeAttribute("data-original"),t.setAttribute("data-loaded",!0),e&&e()},a.onerror=function(){t.removeAttribute("data-original"),t.setAttribute("data-loaded",!1),t.src=o},t.src!==o&&(a.src=o)))})()}function e(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",e),r.addEventListener("resize",e),r.addEventListener("orientationchange",e)})(this);</script></body>
 </html>
