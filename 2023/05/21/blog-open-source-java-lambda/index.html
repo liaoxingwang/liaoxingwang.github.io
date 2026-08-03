@@ -29,7 +29,7 @@ Lambda 表达式和方法一样，它提供了一个正常的参数列表和一�
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/aos/3.0.0-beta.6/aos.css">
     <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/lightgallery/1.6.12/css/lightgallery.min.css">
@@ -47,7 +47,7 @@ Lambda 表达式和方法一样，它提供了一个正常的参数列表和一�
         
     </style>
 
-    <script src="https://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
     <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
 
     <script>
@@ -814,7 +814,7 @@ Lambda 表达式和方法一样，它提供了一个正常的参数列表和一�
 <li>Lambda 表达式允许把函数作为一个方法的参数</li>
 </ul>
 <h2 id="2-Lambda-表达式的语法"><a href="#2-Lambda-表达式的语法" class="headerlink" title="2. Lambda 表达式的语法"></a><strong>2. Lambda 表达式的语法</strong></h2><p>基本形式：Lambda 表达式由三部分组成：参数、-&gt;符号、方法体</p>
-<pre class="line-numbers language-text"><code class="language-text">(参数列表)->{
+<pre class="line-numbers language-text"><code class="language-text">(参数列表)-&gt;{
  方法体}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h3 id="补充："><a href="#补充：" class="headerlink" title="补充："></a><strong>补充：</strong></h3><ul>
 <li>Lambda 表达式的参数可以是零个或多个</li>
@@ -824,19 +824,19 @@ Lambda 表达式和方法一样，它提供了一个正常的参数列表和一�
 <li>如果 Lambda 表达式的方法体只有一条语句，且为返回值的时候，可以省略 return</li>
 </ul>
 <h3 id="代码示例："><a href="#代码示例：" class="headerlink" title="代码示例："></a><strong>代码示例：</strong></h3><pre class="line-numbers language-text"><code class="language-text">// 不需要参数，返回值为 2
-()->2
+()-&gt;2
 
 // 接收一个参数（数字类型），返回值为其2倍的值
-x->2*x
+x-&gt;2*x
 
 // 接收两个参数（数字类型），并返回它们的和
-(x,y)->x+y
+(x,y)-&gt;x+y
 
 // 接收两个 int 类型参数，返回它们的乘积
-(int x,int y)->x*y
+(int x,int y)-&gt;x*y
 
 // 接收一个 String 对象，并在控制台打印
-(String s)->System.out.println(s)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+(String s)-&gt;System.out.println(s)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="3-函数接口"><a href="#3-函数接口" class="headerlink" title="3. 函数接口"></a><strong>3. 函数接口</strong></h2><p>如果一个接口中有且只有一个 abstract 方法，称这样的接口为单接口。从 JDK8 开始，Java 使用 Lambda 表达式，并将单接口称为函数接口</p>
 <h3 id="注意："><a href="#注意：" class="headerlink" title="注意："></a><strong>注意：</strong></h3><pre class="line-numbers language-text"><code class="language-text">@FunctionInterface<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="示例代码："><a href="#示例代码：" class="headerlink" title="示例代码："></a><strong>示例代码：</strong></h3><pre class="line-numbers language-text"><code class="language-text">@functionInterface
@@ -868,30 +868,30 @@ public class TestDemo {
 
     public static void main(String[] args) {
 
-        NoParameterNoReturn noParameterNoReturn = ()->{
+        NoParameterNoReturn noParameterNoReturn = ()-&gt;{
   System.out.println("无参数无返回值"); };
         noParameterNoReturn.test(); 
 
-        OneParameterNoReturn oneParameterNoReturn = (int a)->{
+        OneParameterNoReturn oneParameterNoReturn = (int a)-&gt;{
   System.out.println("无参数一个返回值："+ a); };
         oneParameterNoReturn.test(10); 
 
-        MoreParameterNoReturn moreParameterNoReturn = (int a,int b)->{
+        MoreParameterNoReturn moreParameterNoReturn = (int a,int b)-&gt;{
   System.out.println("无返回值多个参数："+a+" "+b); };
         moreParameterNoReturn.test(20,30); 
 
-        NoParameterReturn noParameterReturn = ()->{
+        NoParameterReturn noParameterReturn = ()-&gt;{
   System.out.println("有返回值无参数！"); return 40; };
         //接收函数的返回值 
         int ret = noParameterReturn.test(); 
         System.out.println(ret); 
 
-        OneParameterReturn oneParameterReturn = (int a)->{
+        OneParameterReturn oneParameterReturn = (int a)-&gt;{
   System.out.println("有返回值有参数！"); return a; };
         ret = oneParameterReturn.test(50); 
         System.out.println(ret); 
 
-        MoreParameterReturn moreParameterReturn = (int a,int b)->{
+        MoreParameterReturn moreParameterReturn = (int a,int b)-&gt;{
   System.out.println("有返回值多个参数！"); return a+b; };
         ret = moreParameterReturn.test(60,70);
         System.out.println(ret); 
@@ -930,7 +930,7 @@ public class TestDemo {
 public static void main(String[] args) {
 
     int a = 10; 
-    NoParameterNoReturn noParameterNoReturn = ()->{
+    NoParameterNoReturn noParameterNoReturn = ()-&gt;{
 
         // a = 99; 如果修改a，则会报错 
         System.out.println("捕获变量："+a); 
@@ -959,11 +959,11 @@ public static void main(String[] args) {
 
     public static void main(String[] args) {
 
-        List<String> list=new ArrayList<>();
+        List<string> list=new ArrayList&lt;&gt;();
         list.add("aaa");
         list.add("bbb");
         list.add("ccc");
-        list.forEach(new Consumer<String>() {
+        list.forEach(new Consumer<string>() {
 
             @Override
             public void accept(String s) {
@@ -973,20 +973,20 @@ public static void main(String[] args) {
         });
     }
 }
-// 结果为：aaa bbb ccc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+// 结果为：aaa bbb ccc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></string></string></code></pre>
 <p>代码示例：使用 Lambda</p>
 <pre class="line-numbers language-text"><code class="language-text">public class TestDemo{
 
     public static void main(String[] args) {
 
-        List<String> list=new ArrayList<>();
+        List<string> list=new ArrayList&lt;&gt;();
         list.add("aaa");
         list.add("bbb");
         list.add("ccc");
-        list.forEach(s -> System.out.print(s+" "));
+        list.forEach(s -&gt; System.out.print(s+" "));
     }
 }
-// 结果为：aaa bbb ccc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+// 结果为：aaa bbb ccc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></string></code></pre>
 <h3 id="6-2-List-接口"><a href="#6-2-List-接口" class="headerlink" title="6.2 List 接口"></a><strong>6.2 List 接口</strong></h3><p>使用 sort() 方法进行演示</p>
 <p><code>sort()</code> 源码：</p>
 <p><img src="https://cdn.jsdelivr.net/gh/liaoxingwang/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://pic2.zhimg.com/80/v2-3fbcdf6076860970998ea91fce1a846d_1440w.webp" alt="img"></p>
@@ -995,11 +995,11 @@ public static void main(String[] args) {
 
     public static void main(String[] args) {
 
-        List<String> list=new ArrayList<>();
+        List<string> list=new ArrayList&lt;&gt;();
         list.add("aaa");
         list.add("bbb");
         list.add("ccc");
-        list.sort(new Comparator<String>() {
+        list.sort(new Comparator<string>() {
 
             @Override
             public int compare(String o1, String o2) {
@@ -1010,32 +1010,32 @@ public static void main(String[] args) {
         System.out.println(list);
     }
 }
-// 结果为：[aaa, bbb, ccc]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+// 结果为：[aaa, bbb, ccc]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></string></string></code></pre>
 <p>代码示例：使用 Lambda</p>
 <pre class="line-numbers language-text"><code class="language-text">public class TestDemo{
 
     public static void main(String[] args) {
 
-        List<String> list=new ArrayList<>();
+        List<string> list=new ArrayList&lt;&gt;();
         list.add("aaa");
         list.add("bbb");
         list.add("ccc");
-        list.sort((String o1,String o2)->o1.compareTo(o2));
+        list.sort((String o1,String o2)-&gt;o1.compareTo(o2));
         System.out.println(list);
     }
 }
-// 结果为：[aaa, bbb, ccc]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+// 结果为：[aaa, bbb, ccc]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></string></code></pre>
 <h3 id="6-3-Map-接口"><a href="#6-3-Map-接口" class="headerlink" title="6.3 Map 接口"></a><strong>6.3 Map 接口</strong></h3><p>使用 HashMap 的 forEach() 方法进行演示</p>
 <h3 id="HashMap-的-forEach-源码："><a href="#HashMap-的-forEach-源码：" class="headerlink" title="HashMap 的 forEach() 源码："></a><strong><code>HashMap 的 forEach()</code></strong> <strong>源码：</strong></h3><p>代码示例：使用匿名内部类</p>
 <pre class="line-numbers language-text"><code class="language-text">public class TestDemo{
 
     public static void main(String[] args) {
 
-        Map<Integer,String> map=new HashMap<>();
+        Map<integer,string> map=new HashMap&lt;&gt;();
         map.put(1,"aaa");
         map.put(2,"222");
         map.put(3,"333");
-        map.forEach(new BiConsumer<Integer, String>() {
+        map.forEach(new BiConsumer<integer, string="">() {
 
             @Override
             public void accept(Integer integer, String s) {
@@ -1049,17 +1049,17 @@ public static void main(String[] args) {
 Key=1 Value=aaa
 Key=2 Value=222
 Key=3 Value=333
-*/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+*/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></integer,></integer,string></code></pre>
 <p>代码示例：使用 Lambda</p>
 <pre class="line-numbers language-text"><code class="language-text">public class TestDemo{
 
     public static void main(String[] args) {
 
-        Map<Integer,String> map=new HashMap<>();
+        Map<integer,string> map=new HashMap&lt;&gt;();
         map.put(1,"aaa");
         map.put(2,"222");
         map.put(3,"333");
-        map.forEach((Integer integer,String s)->
+        map.forEach((Integer integer,String s)-&gt;
                 System.out.println("Key="+integer+" Value="+s));
     }
 }
@@ -1067,7 +1067,7 @@ Key=3 Value=333
 Key=1 Value=aaa
 Key=2 Value=222
 Key=3 Value=333
-*/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+*/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></integer,string></code></pre>
 <h2 id="7-Lambda-表达式的优点和缺点"><a href="#7-Lambda-表达式的优点和缺点" class="headerlink" title="7. Lambda 表达式的优点和缺点"></a><strong>7. Lambda 表达式的优点和缺点</strong></h2><h3 id="优点："><a href="#优点：" class="headerlink" title="优点："></a><strong>优点：</strong></h3><ul>
 <li>代码简洁，开发迅速</li>
 <li>方便函数式编程</li>
@@ -1456,7 +1456,7 @@ SELECT id,username,tel FROM user3、理由
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">95.8k</span> 字
+                <span class="white-color">96.2k</span> 字
             
 
             
@@ -1577,7 +1577,7 @@ $(function () {
 </div>
 
 
-        <script src="https://cdn.bootcss.com/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="/libs/materialize/materialize.min.js"></script>
         <script src="https://cdn.bootcss.com/masonry/4.2.2/masonry.pkgd.min.js"></script>
         <script src="https://cdn.bootcss.com/aos/3.0.0-beta.6/aos.js"></script>
         <script src="https://cdn.bootcss.com/scrollprogress/3.0.2/scrollProgress.min.js"></script>
