@@ -1,0 +1,1714 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+    
+
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Java开发人员面试宝典(Java版), 商单接企业项目外包 软件开发 整包服务 移动开发 移动开发团队 移动开发项目">
+    <meta name="baidu-site-verification" content="fmlEuI34ir">
+    <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
+    <meta name="description" content="开发人员面试宝典（ 版）Java
+1 基础篇1.1 Java介绍1.2 J2SE、J2EE、J2ME三者区别1.3 JDK、JRE、JVM区别1.4 JDK常用的包1.5 Java中的基本数据类型1.6 Java中switch接受的几种数据">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Java开发人员面试宝典(Java版) | 屿">
+    <meta property="og:description" content="开发人员面试宝典（ 版）Java
+1 基础篇1.1 Java介绍1.2 J2SE、J2EE、J2ME三者区别1.3 JDK、JRE、JVM区别1.4 JDK常用的包1.5 Java中的基本数据类型1.6 Java中switch接受的几种数据">
+    <meta property="og:url" content="https://liaoxingwang.github.io2025/08/05/blog-open-source-java-interview-java-kai-fa-ren-yuan-mian-shi-bao-dian-java-ban/">
+    <meta property="og:image" content="https://liaoxingwang.github.io/medias/banner/0.jpg">
+    <meta property="og:site_name" content="屿">
+    <meta property="og:locale" content="zh_CN">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Java开发人员面试宝典(Java版) | 屿">
+    <meta name="twitter:description" content="开发人员面试宝典（ 版）Java
+1 基础篇1.1 Java介绍1.2 J2SE、J2EE、J2ME三者区别1.3 JDK、JRE、JVM区别1.4 JDK常用的包1.5 Java中的基本数据类型1.6 Java中switch接受的几种数据">
+    <meta name="twitter:image" content="https://liaoxingwang.github.io/medias/banner/0.jpg">
+
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Java开发人员面试宝典(Java版) | 屿</title>
+    <link rel="icon" type="image/jpeg" href="/medias/avatars/hwsun.jpg">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/aos/3.0.0-beta.6/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/lightgallery/1.6.12/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <style type="text/css">
+        
+
+            code[class*="language-"],
+            pre[class*="language-"] {
+                white-space: pre !important;
+            }
+
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?46e79e71af0709a5b9106bf20cecc493";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+    
+    
+        <script>
+            (function(){
+                var bp = document.createElement('script');
+                var curProtocol = window.location.protocol.split(':')[0];
+                if (curProtocol === 'https') {
+                    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+                }
+                else {
+                    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                }
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(bp, s);
+            })();
+        </script>
+    
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+    <body>
+
+        <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <span class="logo-span">屿</span>
+                </a>
+            </div>
+            
+
+
+<!-- <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/AV" class="waves-effect waves-light">
+            
+            <i class="fa fa-music"></i>
+            
+            <span>视听</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/galleries" class="waves-effect waves-light">
+            
+            <i class="fa fa-photo"></i>
+            
+            <span>相册</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于我</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/contact" class="waves-effect waves-light">
+            
+            <i class="fa fa-envelope"></i>
+            
+            <span>留言板</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul> -->
+
+<!-- 支持二级菜单特性 liaoxingwang modify 2019.09.17  -->
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right nav-menu">
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/" class="waves-effect waves-light">
+              
+                <i class="fa fa-home"></i>
+              
+              <span>首页</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/tags" class="waves-effect waves-light">
+              
+                <i class="fa fa-tags"></i>
+              
+              <span>标签</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/categories" class="waves-effect waves-light">
+              
+                <i class="fa fa-bookmark"></i>
+              
+              <span>分类</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/archives" class="waves-effect waves-light">
+              
+                <i class="fa fa-archive"></i>
+              
+              <span>归档</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/AV" class="waves-effect waves-light">
+              
+                <i class="fa fa-music"></i>
+              
+              <span>视听</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/galleries" class="waves-effect waves-light">
+              
+                <i class="fa fa-photo"></i>
+              
+              <span>相册</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/about" class="waves-effect waves-light">
+              
+                <i class="fa fa-user-circle-o"></i>
+              
+              <span>关于我</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/contact" class="waves-effect waves-light">
+              
+                <i class="fa fa-envelope"></i>
+              
+              <span>留言板</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/friends" class="waves-effect waves-light">
+              
+                <i class="fa fa-address-book"></i>
+              
+              <span>友情链接</span>
+            </a>
+
+            
+      </li>
+    
+
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <div class="logo-name">屿</div>
+        <div class="logo-desc">
+            
+            湖南工业大学 | 计算机科学与技术
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/AV" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-music"></i>
+                
+                视听
+            </a>
+        </li>
+        
+        <li>
+            <a href="/galleries" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-photo"></i>
+                
+                相册
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于我
+            </a>
+        </li>
+        
+        <li>
+            <a href="/contact" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-envelope"></i>
+                
+                留言板
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/liaoxingwang/" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+
+   
+   
+<!-- 支持二级菜单特性 liaoxingwang modify 2019.09.17  -->
+<!-- <ul class="menu-list mobile-menu-list">
+    
+        <li class="m-nav-item">
+                
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-home"></i>
+                        
+                        首页
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/tags" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-tags"></i>
+                        
+                        标签
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/categories" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-bookmark"></i>
+                        
+                        分类
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/archives" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-archive"></i>
+                        
+                        归档
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/AV" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-music"></i>
+                        
+                        视听
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/galleries" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-photo"></i>
+                        
+                        相册
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/about" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-user-circle-o"></i>
+                        
+                        关于我
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/contact" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-envelope"></i>
+                        
+                        留言板
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/friends" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-address-book"></i>
+                        
+                        友情链接
+                    </a>
+              
+            </li>
+        
+
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/liaoxingwang/" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul> -->
+
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/liaoxingwang/" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+        
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        Java开发人员面试宝典(Java版)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        
+<!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/面试/" target="_blank">
+                                <span class="chip bg-color">面试</span>
+                            </a>
+                        
+                            <a href="/tags/Java面试/" target="_blank">
+                                <span class="chip bg-color">Java面试</span>
+                            </a>
+                        
+                            <a href="/tags/综合/" target="_blank">
+                                <span class="chip bg-color">综合</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Java面试-综合/" class="post-category" target="_blank">
+                                Java面试/综合
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2025-08-05
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
+                    
+                        SK
+                    
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        35.6k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        128 分
+                    </div>
+                    
+                
+
+                
+                        <span id="busuanzi_container_site_pv" style='display:none'></span>
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv" ></span>
+
+                
+
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>开发人员面试宝典<br>（ 版）<br>Java</p>
+<h3 id="1-基础篇"><a href="#1-基础篇" class="headerlink" title="1 基础篇"></a>1 基础篇</h3><h3 id="1-1-Java介绍"><a href="#1-1-Java介绍" class="headerlink" title="1.1 Java介绍"></a>1.1 Java介绍</h3><h3 id="1-2-J2SE、J2EE、J2ME三者区别"><a href="#1-2-J2SE、J2EE、J2ME三者区别" class="headerlink" title="1.2 J2SE、J2EE、J2ME三者区别"></a>1.2 J2SE、J2EE、J2ME三者区别</h3><h3 id="1-3-JDK、JRE、JVM区别"><a href="#1-3-JDK、JRE、JVM区别" class="headerlink" title="1.3 JDK、JRE、JVM区别"></a>1.3 JDK、JRE、JVM区别</h3><h3 id="1-4-JDK常用的包"><a href="#1-4-JDK常用的包" class="headerlink" title="1.4 JDK常用的包"></a>1.4 JDK常用的包</h3><h3 id="1-5-Java中的基本数据类型"><a href="#1-5-Java中的基本数据类型" class="headerlink" title="1.5 Java中的基本数据类型"></a>1.5 Java中的基本数据类型</h3><h3 id="1-6-Java中switch接受的几种数据类型"><a href="#1-6-Java中switch接受的几种数据类型" class="headerlink" title="1.6 Java中switch接受的几种数据类型"></a>1.6 Java中switch接受的几种数据类型</h3><h3 id="1-7-String、StringBuffer、StringBuilder区别"><a href="#1-7-String、StringBuffer、StringBuilder区别" class="headerlink" title="1.7 String、StringBuffer、StringBuilder区别"></a>1.7 String、StringBuffer、StringBuilder区别</h3><h3 id="1-8-Char型变量能不能存储一个汉字？"><a href="#1-8-Char型变量能不能存储一个汉字？" class="headerlink" title="1.8 Char型变量能不能存储一个汉字？"></a>1.8 Char型变量能不能存储一个汉字？</h3><p>1.9 ==和equals方法的区别</p>
+<h3 id="1-10-静态变量和实例变量的区别"><a href="#1-10-静态变量和实例变量的区别" class="headerlink" title="1.10 静态变量和实例变量的区别"></a>1.10 静态变量和实例变量的区别</h3><h3 id="1-11-Integer和int的区别"><a href="#1-11-Integer和int的区别" class="headerlink" title="1.11 Integer和int的区别"></a>1.11 Integer和int的区别</h3><h3 id="1-12-Math-round-的使用"><a href="#1-12-Math-round-的使用" class="headerlink" title="1.12 Math.round()的使用"></a>1.12 Math.round()的使用</h3><h3 id="1-13-构造器是否可以被重写"><a href="#1-13-构造器是否可以被重写" class="headerlink" title="1.13 构造器是否可以被重写"></a>1.13 构造器是否可以被重写</h3><h3 id="1-14-抽象类和接口的区别"><a href="#1-14-抽象类和接口的区别" class="headerlink" title="1.14 抽象类和接口的区别"></a>1.14 抽象类和接口的区别</h3><h3 id="1-15-新建对象有几种方式"><a href="#1-15-新建对象有几种方式" class="headerlink" title="1.15 新建对象有几种方式"></a>1.15 新建对象有几种方式</h3><h3 id="1-16-amp-和-amp-amp-的区别"><a href="#1-16-amp-和-amp-amp-的区别" class="headerlink" title="1.16 &amp;和&amp;&amp;的区别"></a>1.16 &amp;和&amp;&amp;的区别</h3><h3 id="1-17-面向对象什么特性"><a href="#1-17-面向对象什么特性" class="headerlink" title="1.17 面向对象什么特性"></a>1.17 面向对象什么特性</h3><h3 id="1-18-面向对象中多态特性"><a href="#1-18-面向对象中多态特性" class="headerlink" title="1.18 面向对象中多态特性"></a>1.18 面向对象中多态特性</h3><p>1.19 <code>List</code>,set,<code>Collection</code>,<code>Collections</code></p>
+<h3 id="1-20-线程和进程的区别"><a href="#1-20-线程和进程的区别" class="headerlink" title="1.20 线程和进程的区别"></a>1.20 线程和进程的区别</h3><h3 id="1-21-Jvm内存结构"><a href="#1-21-Jvm内存结构" class="headerlink" title="1.21 Jvm内存结构"></a>1.21 Jvm内存结构</h3><h3 id="1-22-内存泄露和内存溢出"><a href="#1-22-内存泄露和内存溢出" class="headerlink" title="1.22 内存泄露和内存溢出"></a>1.22 内存泄露和内存溢出</h3><h3 id="1-23-解析xml文件的几种技术"><a href="#1-23-解析xml文件的几种技术" class="headerlink" title="1.23 解析xml文件的几种技术"></a>1.23 解析xml文件的几种技术</h3><h3 id="1-24-Dom4j与sax之间的对比"><a href="#1-24-Dom4j与sax之间的对比" class="headerlink" title="1.24 Dom4j与sax之间的对比"></a>1.24 Dom4j与sax之间的对比</h3><h3 id="1-25-javaException体系结构"><a href="#1-25-javaException体系结构" class="headerlink" title="1.25 javaException体系结构"></a>1.25 javaException体系结构</h3><h3 id="1-26-抽象类和接口的区别"><a href="#1-26-抽象类和接口的区别" class="headerlink" title="1.26 抽象类和接口的区别"></a>1.26 抽象类和接口的区别</h3><h3 id="1-27-修饰符的作用"><a href="#1-27-修饰符的作用" class="headerlink" title="1.27 修饰符的作用"></a>1.27 修饰符的作用</h3><h3 id="1-28-HashMap和Hashtable的区别"><a href="#1-28-HashMap和Hashtable的区别" class="headerlink" title="1.28 HashMap和Hashtable的区别"></a>1.28 HashMap和Hashtable的区别</h3><h3 id="1-29-字节流和字符流的区别"><a href="#1-29-字节流和字符流的区别" class="headerlink" title="1.29 字节流和字符流的区别"></a>1.29 字节流和字符流的区别</h3><h3 id="1-30-运行异常和检查异常有何不同"><a href="#1-30-运行异常和检查异常有何不同" class="headerlink" title="1.30 运行异常和检查异常有何不同"></a>1.30 运行异常和检查异常有何不同</h3><h3 id="1-31-error和exception的区别"><a href="#1-31-error和exception的区别" class="headerlink" title="1.31 error和exception的区别"></a>1.31 error和exception的区别</h3><h3 id="1-32-举例最常用的五个运行时异常"><a href="#1-32-举例最常用的五个运行时异常" class="headerlink" title="1.32 举例最常用的五个运行时异常"></a>1.32 举例最常用的五个运行时异常</h3><h3 id="1-33-Sleep和wait的区别"><a href="#1-33-Sleep和wait的区别" class="headerlink" title="1.33 Sleep和wait的区别"></a>1.33 Sleep和wait的区别</h3><h3 id="1-34-多线程有几种实现方式"><a href="#1-34-多线程有几种实现方式" class="headerlink" title="1.34 多线程有几种实现方式"></a>1.34 多线程有几种实现方式</h3><h3 id="1-35-启动一个线程用run还是start"><a href="#1-35-启动一个线程用run还是start" class="headerlink" title="1.35 启动一个线程用run还是start"></a>1.35 启动一个线程用run还是start</h3><h3 id="1-36-List和Map的区别"><a href="#1-36-List和Map的区别" class="headerlink" title="1.36 List和Map的区别"></a>1.36 List和Map的区别</h3><p>1.37 说出ArrayList,<code>Vector</code>,LinkedList的存储性能和特性</p>
+<h3 id="1-38-Java序列化"><a href="#1-38-Java序列化" class="headerlink" title="1.38 Java序列化"></a>1.38 Java序列化</h3><h3 id="1-39-堆和栈的区别"><a href="#1-39-堆和栈的区别" class="headerlink" title="1.39 堆和栈的区别"></a>1.39 堆和栈的区别</h3><h3 id="1-40-什么时候用断言"><a href="#1-40-什么时候用断言" class="headerlink" title="1.40 什么时候用断言"></a>1.40 什么时候用断言</h3><h3 id="1-41-Java中会有内存泄露吗"><a href="#1-41-Java中会有内存泄露吗" class="headerlink" title="1.41 Java中会有内存泄露吗"></a>1.41 Java中会有内存泄露吗</h3><h3 id="1-42-简述反射的作用"><a href="#1-42-简述反射的作用" class="headerlink" title="1.42 简述反射的作用"></a>1.42 简述反射的作用</h3><h3 id="2-Servlet篇"><a href="#2-Servlet篇" class="headerlink" title="2 Servlet篇"></a>2 Servlet篇</h3><h3 id="2-1-Servlet概述"><a href="#2-1-Servlet概述" class="headerlink" title="2.1 Servlet概述"></a>2.1 Servlet概述</h3><h3 id="2-2-九大隐式对象"><a href="#2-2-九大隐式对象" class="headerlink" title="2.2 九大隐式对象"></a>2.2 九大隐式对象</h3><h3 id="2-3-page和pageContext的区别"><a href="#2-3-page和pageContext的区别" class="headerlink" title="2.3 page和pageContext的区别"></a>2.3 page和pageContext的区别</h3><h3 id="2-4-GET和POST的区别"><a href="#2-4-GET和POST的区别" class="headerlink" title="2.4 GET和POST的区别"></a>2.4 GET和POST的区别</h3><h3 id="2-5-转发与重定向的区别"><a href="#2-5-转发与重定向的区别" class="headerlink" title="2.5 转发与重定向的区别"></a>2.5 转发与重定向的区别</h3><h3 id="2-6-四大作用域介绍"><a href="#2-6-四大作用域介绍" class="headerlink" title="2.6 四大作用域介绍"></a>2.6 四大作用域介绍</h3><h3 id="2-7-session和cookie的区别"><a href="#2-7-session和cookie的区别" class="headerlink" title="2.7 session和cookie的区别"></a>2.7 session和cookie的区别</h3><h3 id="2-8-request和session的区别"><a href="#2-8-request和session的区别" class="headerlink" title="2.8 request和session的区别"></a>2.8 request和session的区别</h3><h3 id="2-9-报错状态码"><a href="#2-9-报错状态码" class="headerlink" title="2.9 报错状态码"></a>2.9 报错状态码</h3><h3 id="2-10-常见协议及默认的端口号"><a href="#2-10-常见协议及默认的端口号" class="headerlink" title="2.10 常见协议及默认的端口号"></a>2.10 常见协议及默认的端口号</h3><h3 id="2-11-对过滤器的理解"><a href="#2-11-对过滤器的理解" class="headerlink" title="2.11 对过滤器的理解"></a>2.11 对过滤器的理解</h3><h3 id="3-脚本篇"><a href="#3-脚本篇" class="headerlink" title="3 脚本篇"></a>3 脚本篇</h3><h3 id="3-1-onready和onload的区别"><a href="#3-1-onready和onload的区别" class="headerlink" title="3.1 onready和onload的区别"></a>3.1 onready和onload的区别</h3><h3 id="3-2-对jQuery简单介绍"><a href="#3-2-对jQuery简单介绍" class="headerlink" title="3.2 对jQuery简单介绍"></a>3.2 对jQuery简单介绍</h3><h3 id="3-3-XML和Json的特点"><a href="#3-3-XML和Json的特点" class="headerlink" title="3.3 XML和Json的特点"></a>3.3 XML和Json的特点</h3><h3 id="3-4-对JQuery中Ajax介绍"><a href="#3-4-对JQuery中Ajax介绍" class="headerlink" title="3.4 对JQuery中Ajax介绍"></a>3.4 对JQuery中Ajax介绍</h3><h3 id="3-5-对Ajax介绍"><a href="#3-5-对Ajax介绍" class="headerlink" title="3.5 对Ajax介绍"></a>3.5 对Ajax介绍</h3><h3 id="4-框架篇"><a href="#4-框架篇" class="headerlink" title="4 框架篇"></a>4 框架篇</h3><h3 id="4-1-Struts1运行原理"><a href="#4-1-Struts1运行原理" class="headerlink" title="4.1 Struts1运行原理"></a>4.1 Struts1运行原理</h3><h3 id="4-2-Struts2运行原理"><a href="#4-2-Struts2运行原理" class="headerlink" title="4.2 Struts2运行原理"></a>4.2 Struts2运行原理</h3><h3 id="4-3-Hibernate运行原理"><a href="#4-3-Hibernate运行原理" class="headerlink" title="4.3 Hibernate运行原理"></a>4.3 Hibernate运行原理</h3><h3 id="4-4-Spring运行原理"><a href="#4-4-Spring运行原理" class="headerlink" title="4.4 Spring运行原理"></a>4.4 Spring运行原理</h3><h3 id="4-5-SpringMVC运行原理"><a href="#4-5-SpringMVC运行原理" class="headerlink" title="4.5 SpringMVC运行原理"></a>4.5 SpringMVC运行原理</h3><h3 id="4-6-Struts1和Struts2区别"><a href="#4-6-Struts1和Struts2区别" class="headerlink" title="4.6 Struts1和Struts2区别"></a>4.6 Struts1和Struts2区别</h3><h3 id="4-7-SpringMVC、Struts1和Struts2区别"><a href="#4-7-SpringMVC、Struts1和Struts2区别" class="headerlink" title="4.7 SpringMVC、Struts1和Struts2区别"></a>4.7 SpringMVC、Struts1和Struts2区别</h3><h3 id="4-8-Struts2在的type类型"><a href="#4-8-Struts2在的type类型" class="headerlink" title="4.8 Struts2在的type类型"></a>4.8 Struts2在的type类型</h3><h3 id="4-9-Struts2的常用标签"><a href="#4-9-Struts2的常用标签" class="headerlink" title="4.9 Struts2的常用标签"></a>4.9 Struts2的常用标签</h3><h3 id="4-10-Hibernate可get和load的区别"><a href="#4-10-Hibernate可get和load的区别" class="headerlink" title="4.10 Hibernate可get和load的区别"></a>4.10 Hibernate可get和load的区别</h3><h3 id="4-11-Hibernate、Ibatis、JDBC区别"><a href="#4-11-Hibernate、Ibatis、JDBC区别" class="headerlink" title="4.11 Hibernate、Ibatis、JDBC区别"></a>4.11 Hibernate、Ibatis、JDBC区别</h3><h3 id="4-12-Hibernate与JDBC区别"><a href="#4-12-Hibernate与JDBC区别" class="headerlink" title="4.12 Hibernate与JDBC区别"></a>4.12 Hibernate与JDBC区别</h3><h3 id="4-13-Hibernate两大配置文件"><a href="#4-13-Hibernate两大配置文件" class="headerlink" title="4.13 Hibernate两大配置文件"></a>4.13 Hibernate两大配置文件</h3><h3 id="4-14-Hibernate中的事务处理"><a href="#4-14-Hibernate中的事务处理" class="headerlink" title="4.14 Hibernate中的事务处理"></a>4.14 Hibernate中的事务处理</h3><h3 id="4-15-Hibernate三种状态及如何转换"><a href="#4-15-Hibernate三种状态及如何转换" class="headerlink" title="4.15 Hibernate三种状态及如何转换"></a>4.15 Hibernate三种状态及如何转换</h3><h3 id="4-16-Hibernate中的五大核心接口"><a href="#4-16-Hibernate中的五大核心接口" class="headerlink" title="4.16 Hibernate中的五大核心接口"></a>4.16 Hibernate中的五大核心接口</h3><h3 id="4-17-Hibernate缓存概述"><a href="#4-17-Hibernate缓存概述" class="headerlink" title="4.17 Hibernate缓存概述"></a>4.17 Hibernate缓存概述</h3><h3 id="4-18-SSH概述"><a href="#4-18-SSH概述" class="headerlink" title="4.18 SSH概述"></a>4.18 SSH概述</h3><h3 id="4-19-分页步骤"><a href="#4-19-分页步骤" class="headerlink" title="4.19 分页步骤"></a>4.19 分页步骤</h3><h3 id="4-20-如何防止表单重复提交"><a href="#4-20-如何防止表单重复提交" class="headerlink" title="4.20 如何防止表单重复提交"></a>4.20 如何防止表单重复提交</h3><h3 id="4-21-通过Struts2来解决表单重复提交"><a href="#4-21-通过Struts2来解决表单重复提交" class="headerlink" title="4.21 通过Struts2来解决表单重复提交"></a>4.21 通过Struts2来解决表单重复提交</h3><h3 id="4-22-拦截器"><a href="#4-22-拦截器" class="headerlink" title="4.22 拦截器"></a>4.22 拦截器</h3><h3 id="5-数据库篇"><a href="#5-数据库篇" class="headerlink" title="5 数据库篇"></a>5 数据库篇</h3><h3 id="5-1-JDBC连接数据库步骤"><a href="#5-1-JDBC连接数据库步骤" class="headerlink" title="5.1 JDBC连接数据库步骤"></a>5.1 JDBC连接数据库步骤</h3><h3 id="5-2-数据库连接池"><a href="#5-2-数据库连接池" class="headerlink" title="5.2 数据库连接池"></a>5.2 数据库连接池</h3><h3 id="5-3-jdbc分段批量提交的时候出现异常怎么处理"><a href="#5-3-jdbc分段批量提交的时候出现异常怎么处理" class="headerlink" title="5.3 jdbc分段批量提交的时候出现异常怎么处理?"></a>5.3 jdbc分段批量提交的时候出现异常怎么处理?</h3><h3 id="5-4-JDBC批量处理数据"><a href="#5-4-JDBC批量处理数据" class="headerlink" title="5.4 JDBC批量处理数据"></a>5.4 JDBC批量处理数据</h3><h3 id="5-5-Oracle分页语句"><a href="#5-5-Oracle分页语句" class="headerlink" title="5.5 Oracle分页语句"></a>5.5 Oracle分页语句</h3><h3 id="5-6-MySQL分页语句"><a href="#5-6-MySQL分页语句" class="headerlink" title="5.6 MySQL分页语句"></a>5.6 MySQL分页语句</h3><h3 id="5-7-Oracle基本数据类型"><a href="#5-7-Oracle基本数据类型" class="headerlink" title="5.7 Oracle基本数据类型"></a>5.7 Oracle基本数据类型</h3><h3 id="5-8-id、rowid、rownum的区别"><a href="#5-8-id、rowid、rownum的区别" class="headerlink" title="5.8 id、rowid、rownum的区别"></a>5.8 id、rowid、rownum的区别</h3><h3 id="5-9-主键和唯一索引的区别？"><a href="#5-9-主键和唯一索引的区别？" class="headerlink" title="5.9 主键和唯一索引的区别？"></a>5.9 主键和唯一索引的区别？</h3><h3 id="5-10-Preparedstatement和statement的区别"><a href="#5-10-Preparedstatement和statement的区别" class="headerlink" title="5.10 Preparedstatement和statement的区别"></a>5.10 Preparedstatement和statement的区别</h3><h3 id="5-11-数据库三范氏"><a href="#5-11-数据库三范氏" class="headerlink" title="5.11 数据库三范氏"></a>5.11 数据库三范氏</h3><h3 id="5-12-视图概述"><a href="#5-12-视图概述" class="headerlink" title="5.12 视图概述"></a>5.12 视图概述</h3><h3 id="5-13-存储过程概述"><a href="#5-13-存储过程概述" class="headerlink" title="5.13 存储过程概述"></a>5.13 存储过程概述</h3><h3 id="5-14-索引概述"><a href="#5-14-索引概述" class="headerlink" title="5.14 索引概述"></a>5.14 索引概述</h3><h3 id="5-15-Ibatis批量"><a href="#5-15-Ibatis批量" class="headerlink" title="5.15 Ibatis批量"></a>5.15 Ibatis批量</h3><h3 id="6-业务场景篇"><a href="#6-业务场景篇" class="headerlink" title="6 业务场景篇"></a>6 业务场景篇</h3><h3 id="6-1-Spring的概述"><a href="#6-1-Spring的概述" class="headerlink" title="6.1 Spring的概述"></a>6.1 Spring的概述</h3><h3 id="6-2-事务概述"><a href="#6-2-事务概述" class="headerlink" title="6.2 事务概述"></a>6.2 事务概述</h3><h3 id="6-3-权限概述"><a href="#6-3-权限概述" class="headerlink" title="6.3 权限概述"></a>6.3 权限概述</h3><h3 id="6-4-OSCache业务场景"><a href="#6-4-OSCache业务场景" class="headerlink" title="6.4 OSCache业务场景"></a>6.4 OSCache业务场景</h3><h3 id="6-5-线程概述"><a href="#6-5-线程概述" class="headerlink" title="6.5 线程概述"></a>6.5 线程概述</h3><h3 id="6-6-Ajax请求Session超时问题"><a href="#6-6-Ajax请求Session超时问题" class="headerlink" title="6.6 Ajax请求Session超时问题"></a>6.6 Ajax请求Session超时问题</h3><h3 id="6-7-Java线程池概述"><a href="#6-7-Java线程池概述" class="headerlink" title="6.7 Java线程池概述"></a>6.7 Java线程池概述</h3><h3 id="6-8-OSCache概述"><a href="#6-8-OSCache概述" class="headerlink" title="6.8 OSCache概述"></a>6.8 OSCache概述</h3><h3 id="6-9-OSCache-autocomplete-单例业务场景"><a href="#6-9-OSCache-autocomplete-单例业务场景" class="headerlink" title="6.9 OSCache+autocomplete+单例业务场景"></a>6.9 OSCache+autocomplete+单例业务场景</h3><h3 id="6-10-缓存概述"><a href="#6-10-缓存概述" class="headerlink" title="6.10 缓存概述"></a>6.10 缓存概述</h3><h3 id="6-11-实现页面静态化业务场景"><a href="#6-11-实现页面静态化业务场景" class="headerlink" title="6.11 实现页面静态化业务场景"></a>6.11 实现页面静态化业务场景</h3><h3 id="6-12-servlet线程安全描述"><a href="#6-12-servlet线程安全描述" class="headerlink" title="6.12 servlet线程安全描述"></a>6.12 servlet线程安全描述</h3><h3 id="6-13-jbpm4-工作流引擎描述"><a href="#6-13-jbpm4-工作流引擎描述" class="headerlink" title="6.13 (jbpm4)工作流引擎描述:"></a>6.13 (jbpm4)工作流引擎描述:</h3><h3 id="6-14-JPBM业务场景"><a href="#6-14-JPBM业务场景" class="headerlink" title="6.14 JPBM业务场景"></a>6.14 JPBM业务场景</h3><h3 id="6-15-Ant描述"><a href="#6-15-Ant描述" class="headerlink" title="6.15 Ant描述"></a>6.15 Ant描述</h3><h3 id="6-16-FreeMarker描述"><a href="#6-16-FreeMarker描述" class="headerlink" title="6.16 FreeMarker描述"></a>6.16 FreeMarker描述</h3><h3 id="6-17-webService描述"><a href="#6-17-webService描述" class="headerlink" title="6.17 webService描述"></a>6.17 webService描述</h3><h3 id="6-18-oracle索引概述"><a href="#6-18-oracle索引概述" class="headerlink" title="6.18 oracle索引概述"></a>6.18 oracle索引概述</h3><h3 id="6-19-oracle存储过程"><a href="#6-19-oracle存储过程" class="headerlink" title="6.19 oracle存储过程"></a>6.19 oracle存储过程</h3><h3 id="6-20-Junit-业务场景"><a href="#6-20-Junit-业务场景" class="headerlink" title="6.20 Junit 业务场景"></a>6.20 Junit 业务场景</h3><h3 id="6-21-Apache-Tomcat-实现负载均衡及seesion复制"><a href="#6-21-Apache-Tomcat-实现负载均衡及seesion复制" class="headerlink" title="6.21 Apache+Tomcat 实现负载均衡及seesion复制"></a>6.21 Apache+Tomcat 实现负载均衡及seesion复制</h3><h3 id="6-22-Ant业务场景"><a href="#6-22-Ant业务场景" class="headerlink" title="6.22 Ant业务场景"></a>6.22 Ant业务场景</h3><h3 id="6-23-maven业务场景"><a href="#6-23-maven业务场景" class="headerlink" title="6.23 maven业务场景"></a>6.23 maven业务场景</h3><h3 id="6-24-bugfree的操作步骤"><a href="#6-24-bugfree的操作步骤" class="headerlink" title="6.24 bugfree的操作步骤"></a>6.24 bugfree的操作步骤</h3><h3 id="6-25-Axis2-的配置"><a href="#6-25-Axis2-的配置" class="headerlink" title="6.25 Axis2 的配置"></a>6.25 Axis2 的配置</h3><h3 id="6-26-spring定时器"><a href="#6-26-spring定时器" class="headerlink" title="6.26 spring定时器"></a>6.26 spring定时器</h3><h3 id="6-27-Ext概述"><a href="#6-27-Ext概述" class="headerlink" title="6.27 Ext概述"></a>6.27 Ext概述</h3><h3 id="6-28-lucene的概述"><a href="#6-28-lucene的概述" class="headerlink" title="6.28 lucene的概述"></a>6.28 lucene的概述</h3><h3 id="6-29-线程池作用"><a href="#6-29-线程池作用" class="headerlink" title="6.29 线程池作用"></a>6.29 线程池作用</h3><h3 id="6-30-jbpm是如何和spring进行整合"><a href="#6-30-jbpm是如何和spring进行整合" class="headerlink" title="6.30 jbpm是如何和spring进行整合"></a>6.30 jbpm是如何和spring进行整合</h3><h3 id="6-31-Tomcat优化"><a href="#6-31-Tomcat优化" class="headerlink" title="6.31 Tomcat优化"></a>6.31 Tomcat优化</h3><h3 id="6-32-memcached的介绍"><a href="#6-32-memcached的介绍" class="headerlink" title="6.32 memcached的介绍"></a>6.32 memcached的介绍</h3><h3 id="7-优化篇"><a href="#7-优化篇" class="headerlink" title="7 优化篇"></a>7 优化篇</h3><h3 id="7-1-代码优化"><a href="#7-1-代码优化" class="headerlink" title="7.1 代码优化"></a>7.1 代码优化</h3><h3 id="7-2-业务优化"><a href="#7-2-业务优化" class="headerlink" title="7.2 业务优化"></a>7.2 业务优化</h3><h3 id="7-3-sql优化"><a href="#7-3-sql优化" class="headerlink" title="7.3 sql优化"></a>7.3 sql优化</h3><h3 id="7-4-防sql注入"><a href="#7-4-防sql注入" class="headerlink" title="7.4 防sql注入"></a>7.4 防sql注入</h3><h3 id="7-5-数据库中常用术语"><a href="#7-5-数据库中常用术语" class="headerlink" title="7.5 数据库中常用术语"></a>7.5 数据库中常用术语</h3><h3 id="7-6-深入java虚拟机以及大数据"><a href="#7-6-深入java虚拟机以及大数据" class="headerlink" title="7.6 深入java虚拟机以及大数据"></a>7.6 深入java虚拟机以及大数据</h3><p>基础篇<br>介绍</p>
+<h3 id="1-1Java"><a href="#1-1Java" class="headerlink" title="1.1Java"></a>1.1Java</h3><p>Java是面向对象的，跨平台的，它通过java虚拟机来进行跨平台操作，它可以进行自<br>动垃圾回收的（c语言是通过人工进行垃圾回收）。<br>java还会进行自动分配内存。（c语言是通过指定进行分配内存的），只需要new一个对<br>象，这个对象占用了多少空间，不需要我们来管，java虚拟机负责管这些，用完之后也<br>不需要我们来释放，java虚拟机会自动释放。<br>、 、 三者区别</p>
+<h3 id="1-2J2SE-J2EE-J2ME"><a href="#1-2J2SE-J2EE-J2ME" class="headerlink" title="1.2J2SE J2EE J2ME"></a>1.2J2SE J2EE J2ME</h3><p>JavaSE=JavaStandardEdition=j2se=java 标准版<br>JavaEE=JavaEnterpriseEdition=j2ee=java 企业版<br>JavaME=JavaMobileEdition=j2me=java 移动版</p>
+<h2 id="三、者特点"><a href="#三、者特点" class="headerlink" title="三、者特点"></a>三、者特点</h2><p>J2SE主要用于桌面程序（swing），控制台开发（main程序）。<br>J2EE企业级开发（<code>JSP</code>,EJB,<code>SpringMVC</code>,<code>Struts</code>,hibernate,ibatis等），用于企业级软件开发，<br>网络开发，web开发。<br>J2ME嵌入式开发(手机，小家电，PDA)。[苹果的ios，黑莓]。</p>
+<h2 id="三、者之间的关系"><a href="#三、者之间的关系" class="headerlink" title="三、者之间的关系"></a>三、者之间的关系</h2><p>JavaSE（JavaPlatform，StandardEdition，Java标准版）就是基于JDK和JRE的。JavaSE<br>为JavaEE提供了基础。JavaEE除了基于我们这个所谓的JavaSE外，还新加了企业应用<br>所需的类库。<br>、 、 区别</p>
+<h3 id="1-3JDK-JRE-JVM"><a href="#1-3JDK-JRE-JVM" class="headerlink" title="1.3JDK JRE JVM"></a>1.3JDK JRE JVM</h3><p>Jdk【JavaDevelopmentToolKit】就是java开发工具箱， JDK是整个JAVA的核心里边包<br>含了jre，它除了包含jre之外还包含了一些javac的工具类，把java源文件编译成class<br>文件，java文件是用来运行这个程序的，除此之外，里边还包含了java源生的API，<br>java.lang.integer在rt的jar包里边【可以在项目中看到】，通过rt这个jar包来调用我们<br>的这些io流写入写出等。<br>JDK有以下三种版本：</p>
+<p>J2SE，standardedition，标准版，是我们通常用的一个版本<br>J2EE，enterpsiseedtion，企业版，使用这种JDK开发J2EE应用程序<br>J2ME，microedtion，主要用于移动设备、嵌入式设备上的java应用程序<br>Jre【JavaRuntimeEnviromental】是java运行时环境，那么所谓的java运行时环境，就<br>是为了保证java程序能够运行时，所必备的一基础环境，也就是它只是保证java程序<br>运行的，不能用来开发，而jdk才是用来开发的，所有的Java程序都要在JRE下才能运<br>行。<br>包括JVM和JAVA核心类库和支持文件。与JDK相比，它不包含开发工具——编译器、<br>调试器和其它工具。Jre里边包含jvm。<br>Jvm：【JavaVirtualMechinal】因为jre是java运行时环境，java运行靠什么运行，而底<br>层就是依赖于jvm，即java虚拟机，java虚拟机用来加载类文件，java中之所以有跨平<br>台的作用，就是因为我们的jvm。<br>三者关系：J2se是基于jdk和jre，JDK是整个JAVA的核心里边包含了jre，Jre里边包含<br>jvm。<br>常用的包</p>
+<h3 id="1-4JDK"><a href="#1-4JDK" class="headerlink" title="1.4JDK"></a>1.4JDK</h3><p>java.lang: 这个是系统的基础类，比如String、<code>Math</code>、<code>Integer</code>、System和Thread，提供<br>常用功能。<br>java.io: 这里面是所有输入输出有关的类，比如文件操作等。<br>java.net: 这里面是与网络有关的类，比如URL,URLConnection等。<br>java.util: 这个是系统辅助类，特别是集合类Collection,<code>List</code>,Map等。<br>java.sql: 这个是数据库操作的类，Connection，Statememt，ResultSet等。<br>中的基本数据类型</p>
+<h3 id="1-5Java"><a href="#1-5Java" class="headerlink" title="1.5Java"></a>1.5Java</h3><p>数据类型 大小<br>byte(字节) 1(8位)<br>shot(短整型) 2(16位)<br>int(整型) 4(32位)<br>long(长整型) 8(32位)<br>float(浮点型) 4(32位)<br>double(双精度) 8(64位)<br>char(字符型) 2(16位)<br>boolean(布尔型) 1位<br>附加：<br>String是基本数据类型吗?(String不是基本数据类型)</p>
+<p>String的长度是多少，有限制?(长度受内存大小的影响)<br>中 接受的几种数据类型</p>
+<h3 id="1-6Java-switch"><a href="#1-6Java-switch" class="headerlink" title="1.6Java switch"></a>1.6Java switch</h3><p><code>Short</code>， int， byte，char<br><code>enum</code>（JDK1.5以后支持）<br><code>String</code>（JDK1.7以后支持）<br>、 、 区别</p>
+<h3 id="1-7String-StringBuffer-StringBuilder"><a href="#1-7String-StringBuffer-StringBuilder" class="headerlink" title="1.7String StringBuffer StringBuilder"></a>1.7String StringBuffer StringBuilder</h3><p><code>String</code> 字符串常量 不可变 使用字符串拼接时是不同的2个空间。<br><code>StringBuffer</code> 字符串变量 可变 线程安全，字符串拼接直接在字符串后<br>追加。<br><code>StringBuilder</code> 字符串变量 可变 非线程安全，字符串拼接直接在字符串<br>后追加。<br>1、StringBuilder执行效率高于StringBuffer高于String。<br>2、String是一个常量，是不可变的，所以对于每一次+=赋值都会创建一个新的对象，<br>StringBuffer和StringBuilder都是可变的，当进行字符串拼接时采用append方法，<br>在原来的基础上进行追加，所以性能比String要高，又因为StringBuffer是线程安全<br>的而StringBuilder是线程非安全的，所以StringBuilder的效率高于StringBuffer。<br>3、对于大数据量的字符串的拼接，采用StringBuffer,<code>StringBuilder</code>。<br>4、另一种说法，JDK1.6做了优化，通过String声明的字符串在进行用“+”进行拼接时，<br>底层调用的是StringBuffer，所以性能上基本和后两者没有什么区别。</p>
+<p><strong>Q:</strong> 型变量能不能存储一个汉字？</p>
+<h3 id="1-8Char"><a href="#1-8Char" class="headerlink" title="1.8Char"></a>1.8Char</h3><p>char型变量是用来存储Unicode编码的字符的，unicode编码字符集中包含了汉字，补<br>充说明：unicode编码占用两个字节，所以，char类型的变量也是占用两个字节。<br>和 方法的区别<br>1.9== <code>equals</code><br>“==”如果前后比较的是对象，则比较的是对象的地址，如果前后是数字，则比较的数<br>值。<br>“<code>equals</code>”如果前后是对象，比较的是对象的地址。如果比较的对象重写了equals方法，<br>则有可能比较的是“值”。像八个基本数据类型的封装类、<code>String</code>、<code>File</code>、Date都比较的<br>是值。</p>
+<p>静态变量和实例变量的区别</p>
+<h3 id="1-10"><a href="#1-10" class="headerlink" title="1.10"></a>1.10</h3><p>在语法定义上的区别：静态变量前要加static关键字，而实例变量前则不加。<br>在程序运行时的区别：实例变量属于某个对象的属性，必须创建了实例对象，其中的实<br>例变量才会被分配空间，才能使用这个实例变量。静态变量不属于某个实例对象，而是<br>属于类，所以也称为类变量，只要程序加载了类的字节码，不用创建任何实例对象，静<br>态变量就会被分配空间，静态变量就可以被使用了。<br>总之，实例变量必须创建对象后才可以通过这个对象来使用，静态变量则可以直接使用<br>类名来引用。<br>和 的区别</p>
+<h3 id="1-11Integer-int"><a href="#1-11Integer-int" class="headerlink" title="1.11Integer int"></a>1.11Integer int</h3><p>int是java提供的8种原始数据类型之一，意思整型，占用4字节。<br>Integer是java为int提供的封装类，是引用数据类型。<br>int的默认值为0，而Integer的默认值为null，即Integer可以区分出未赋值和值为0的<br>区别，int则无法表达出未赋值的情况。<br>的使用</p>
+<h3 id="1-12Math-round"><a href="#1-12Math-round" class="headerlink" title="1.12Math.round()"></a>1.12Math.round()</h3><p>Math类中提供了三个与取整有关的方法：ceil、floor、round，这些方法的作用与它们<br>的英文名称的含义相对应，例如，ceil的英文意义是天花板，该方法就表示向上取整，<br><code>Math</code>.ceil(11.3)的结果为12,<code>Math</code>.ceil(-11.3)的结果是-11；floor的英文意义是地板，该方<br>法就表示向下取整，<code>Math</code>.ceil(11.6)的结果为11,<code>Math</code>.ceil(-11.6)的结果是-12；最难掌握<br>的是round方法，它表示“四舍五入”，算法为Math.floor(x+0.5)，即将原来的数字加上<br>0.5后再向下取整，所以，<code>Math</code>.round(11.5)的结果为12，<code>Math</code>.round(-11.5)的结果为-11。<br>构造器是否可以被重写</p>
+<h3 id="1-13"><a href="#1-13" class="headerlink" title="1.13"></a>1.13</h3><p>构造器Constructor不能被继承，因此不能重写Override，但可以被重载Overload。<br>抽象类和接口的区别</p>
+<h3 id="1-14"><a href="#1-14" class="headerlink" title="1.14"></a>1.14</h3><p>含有abstract修饰符的class即为抽象类，abstract类不能创建的实例对象。含有abstract<br>方法的类必须定义为abstractclass，abstractclass类中的方法不必是抽象的。abstractclass<br>类中定义抽象方法必须在具体(Concrete)子类中实现，所以，不能有抽象构造方法或抽<br>象静态方法。如果的子类没有实现抽象父类中的所有抽象方法，那么子类也必须定义为<br>abstract类型。</p>
+<p>接口（<code>interface</code>）可以说成是抽象类的一种特例，接口中的所有方法都必须是抽象的。<br>接口中的方法定义默认为 publicabstract 类型，接口中的成员变量类型默认为 <code>public</code><br>staticfinal。<br>下面比较一下两者的语法区别：</p>
+<ol>
+<li>抽象类可以有构造方法，接口中不能有构造方法。</li>
+<li>抽象类中可以有普通成员变量，接口中没有普通成员变量</li>
+<li>抽象类中可以包含非抽象的普通方法，接口中的所有方法必须都是抽象的，不能有<br>非抽象的普通方法。</li>
+<li>抽象类中的抽象方法的访问类型可以是public，protected和默认类型，但接口中的<br>抽象方法只能是public类型的，并且默认即为publicabstract类型。</li>
+<li>抽象类中可以包含静态方法，接口中不能包含静态方法</li>
+<li>抽象类和接口中都可以包含静态成员变量，抽象类中的静态成员变量的访问类型可<br>以任意，但接口中定义的变量只能是publicstaticfinal类型，并且默认即为publicstatic<br>final类型。</li>
+<li>一个类可以实现多个接口，但只能继承一个抽象类。<br>下面接着再说说两者在应用上的区别：<br>接口更多的是在系统架构设计方法发挥作用，主要用于定义模块之间的通信契约；<br>而抽象类在代码实现方面发挥作用，可以实现代码的重用。<br>新建对象有几种方式</li>
+</ol>
+<h3 id="1-15"><a href="#1-15" class="headerlink" title="1.15"></a>1.15</h3><h3 id="1-使用new关键字"><a href="#1-使用new关键字" class="headerlink" title="1. 使用new关键字"></a>1. 使用new关键字</h3><ol start="2">
+<li>使用反射，调用newInstance</li>
+</ol>
+<h3 id="3-使用clone方法"><a href="#3-使用clone方法" class="headerlink" title="3. 使用clone方法"></a>3. 使用clone方法</h3><h3 id="4-使用序列化与反序列化"><a href="#4-使用序列化与反序列化" class="headerlink" title="4. 使用序列化与反序列化"></a>4. 使用序列化与反序列化</h3><h3 id="5-动态代理-Proxy类和CGLIB"><a href="#5-动态代理-Proxy类和CGLIB" class="headerlink" title="5. 动态代理(Proxy类和CGLIB)"></a>5. 动态代理(Proxy类和CGLIB)</h3><p>和 的区别</p>
+<h3 id="1-16-amp-amp-amp"><a href="#1-16-amp-amp-amp" class="headerlink" title="1.16&amp; &amp;&amp;"></a>1.16&amp; &amp;&amp;</h3><p>&amp;和&amp;&amp;都可以用作逻辑与的运算符，&amp;&amp;为短路与，&amp;不是短路与。<br>另外&amp;可以做为整数的位运算符<br>例1：对于if(str!=null&amp;&amp;!str.<code>equals</code>(“”))表达式，当str为null时，后面的表达式不会执<br>行，所以不会出现NullPointerException如果将&amp;&amp;改为&amp;，则会抛出NullPointerException<br>异常。<br>例2：If(x==33&amp;++y&gt;0)y会增长，if(x==33&amp;&amp;++y&gt;0)不会增长。<br>备注：这道题先说两者的共同点，再说出&amp;&amp;和&amp;的特殊之处，并列举一些经典的例子来<br>表明自己理解透彻深入、实际经验丰富。</p>
+<p>面向对象什么特性</p>
+<h3 id="1-17"><a href="#1-17" class="headerlink" title="1.17"></a>1.17</h3><p>对于面向对象的特性，一般有两种说法：一种是有三大特性，分别是封装，继承，多态，</p>
+<h2 id="一、种说法是有四大特性"><a href="#一、种说法是有四大特性" class="headerlink" title="一、种说法是有四大特性"></a>一、种说法是有四大特性</h2><p>这里的提问方式是面向对象的特性，而不是Java的特性。<br>面向对象中多态特性</p>
+<h3 id="1-18"><a href="#1-18" class="headerlink" title="1.18"></a>1.18</h3><p>多态是面向对象很重要的一个特性，转型是多态的具体体现。多态还包括重载和重写。<br>转型：转型分为向上转型和向下转型。向上转型是子类对象转换成父类对象，直接转就<br>可以，向下转型是父类对象转换成子类对象，这需要强转，在转换过程中要保证此父类<br>对象“本体”是由子类对象实例化的。<br>重载：重载发生在同一个类中，在该类中如果存在多个同名方法，但是方法的参数类型<br>和个数不一样，那么说明该方法被重载了。<br>重写：重写发生在子类继承父类的关系中，父类中的方法被子类继承，方法名，返回值<br>类型，参数完全一样，但是方法体不一样，那么说明父类中的该方法被子类重写了。<br>1.19List,set,<code>Collection</code>,<code>Collections</code><br>、 和 都是接口，他们都继承于接口 是一个有序的可重复的集合，<br>1 <code>List</code> <code>Set</code> <code>Collection</code>,<code>List</code><br>而 的无序的不可重复的集合。 是集合的顶层接口， 是一个<br><code>Set</code> <code>Collection</code> <code>Collections</code><br>封装了众多关于集合操作的静态方法的工具类 因为构造方法是私有的，所以不能实例<br>,<br>化。<br>、 接口实现类有 。 和 是基于数组实现<br>2 <code>List</code> <code>ArrayList</code>,<code>LinkedList</code>,<code>Vector</code> <code>ArrayList</code> <code>Vector</code><br>的 所以查询的时候速度快，而在进行增加和删除的时候速度较慢 是基于链<br>, <code>LinkedList</code><br>式存储结构，所以在进行查询的时候速度较慢但在进行增加和删除的时候速度较快。又<br>因为 是线程安全的，所以他和 相比而言，查询效率要低。<br><code>Vector</code> <code>ArrayList</code><br>线程和进程的区别</p>
+<h3 id="1-20"><a href="#1-20" class="headerlink" title="1.20"></a>1.20</h3><p>、进程定义的是应用程序与应用程序之间的边界，通常来说一个进程就代表一个与之<br>对应的应用程序。不同的进程之间不能共享代码和数据空间，而同一进程的不同线<br>程可以共享代码和数据空间。<br>、一个进程可以包括若干个线程，同时创建多个线程来完成某项任务，便是多线程。</p>
+<p>实现线程的两种方式：继承 类，实现 接口。<br><code>Thread</code> Runable<br>内存结构</p>
+<h3 id="1-21Jvm"><a href="#1-21Jvm" class="headerlink" title="1.21Jvm"></a>1.21Jvm</h3><p>Java虚拟机的内存结构分为堆(heap)和栈(stack)，堆里面存放是对象实例也就是new出<br>来的对象。栈里面存放的是基本数据类型以及引用数据类型的地址。对于所谓的常量是<br>存储在方法区的常量池里面。<br>堆是先进先出<br>栈是先进后出<br>内存泄露和内存溢出</p>
+<h3 id="1-22"><a href="#1-22" class="headerlink" title="1.22"></a>1.22</h3><p>内存泄露 (memoryleak)，是指应用程序在申请内存后，无法释放已经申请的内存空间。<br>一次内存泄露危害可以忽略，但如果任其发展最终会导致内存溢出（outofmemory）。<br>如读取文件后流要进行及时的关闭以及对数据库连接的释放。<br>内存溢出（outofmemory）是指应用程序在申请内存时，没有足够的内存空间供其使<br>用。如我们在项目中对于大批量数据的导入，采用分段批量提交的方式。<br>解析 文件的几种技术</p>
+<h3 id="1-23-xml"><a href="#1-23-xml" class="headerlink" title="1.23 xml"></a>1.23 xml</h3><p>解析 的几种技术<br>xml<br>、 、 、 、</p>
+<h3 id="1-dom4j-2-sax-3-jaxb-4-jdom-5-dom"><a href="#1-dom4j-2-sax-3-jaxb-4-jdom-5-dom" class="headerlink" title="1. dom4j 2.sax 3.jaxb 4.jdom 5.dom"></a>1. dom4j 2.sax 3.jaxb 4.jdom 5.dom</h3><p>、</p>
+<h3 id="1-dom4j"><a href="#1-dom4j" class="headerlink" title="1 dom4j"></a>1 dom4j</h3><p>是一个 的 ，类似于 ，用来读写 文件的。 是<br>dom4j Java <code>XML</code> API jdom <code>XML</code> dom4j</p>
+<h2 id="一、个非常优秀的"><a href="#一、个非常优秀的" class="headerlink" title="一、个非常优秀的"></a>一、个非常优秀的</h2><p>Java <code>XML</code> API<br>同时它也是一个开放源代码的软件。<br>、</p>
+<h3 id="2-sax"><a href="#2-sax" class="headerlink" title="2 sax"></a>2 sax</h3><p>（ ）是一种 解析的替代方法。相比于 ， 是一<br>SAX simpleAPIforXML <code>XML</code> DOM SAX<br>种速度更快，更有效的方法。它逐行扫描文档，一边扫描一边解析。而且相比于 ，<br>DOM<br>可以在解析文档的任意时刻停止解析，但任何事物都有其相反的一面，对于<br>SAX SAX<br>来说就是操作复杂。<br>、</p>
+<h3 id="3-Jaxb"><a href="#3-Jaxb" class="headerlink" title="3 Jaxb"></a>3 Jaxb</h3><p>（ 是一个业界的标准，是一项可以根据<br>JAXB Java Architecture for <code>XML</code> Binding)<br>产生 类的技术。该过程中， 也提供了将 实例文档反向<br><code>XML</code> Schema Java JAXB <code>XML</code><br>生成 对象树的方法，并能将 对象树的内容重新写到 实例文档。从另<br>Java Java <code>XML</code></p>
+<h2 id="一、方面来讲"><a href="#一、方面来讲" class="headerlink" title="一、方面来讲"></a>一、方面来讲</h2><p>JAXB <code>XML</code> Java</p>
+<p>得 开发者在 应用程序中能方便地结合 数据和处理函数。<br>Java Java <code>XML</code><br>与 之间的对比</p>
+<h3 id="1-24Dom4j-sax"><a href="#1-24Dom4j-sax" class="headerlink" title="1.24Dom4j sax"></a>1.24Dom4j sax</h3><p>不适合大文件的解析，因为它是一下子将文件加载到内存中，所以有可能出现<br>dom4j<br>内存溢出， 是基于事件来对 进行解析的，所以他可以解析大文件的 ，也<br>sax xml xml<br>正是因为如此，所以 可以对 进行灵活的增删改查和导航，而 没有这<br>dom4j xml sax<br>么强的灵活性，所以 经常是用来解析大型 文件，而要对 文件进行一些灵<br>sax xml xml<br>活（ ）操作就用 。<br>crud dom4j<br>体系结构</p>
+<h3 id="1-25java-Exception"><a href="#1-25java-Exception" class="headerlink" title="1.25java Exception"></a>1.25java Exception</h3><p>java 异常是程序运行过程中出现的错误。Java把异常当作对象来处理，并定义一个基<br>类java.lang.Throwable作为所有异常的超类。在JavaAPI中定义了许多异常类,分为两大<br>类，错误 <code>Error</code> 和异常 <code>Exception</code>。其中异常类 <code>Exception</code> 又分为运行时异常<br>(<code>RuntimeException</code>)和非运行时异常(非 runtimeException)，也称之为不检查异常<br>（UncheckedException）和检查异常（CheckedException）。</p>
+<h3 id="1、Error与Exception"><a href="#1、Error与Exception" class="headerlink" title="1、Error与Exception"></a>1、Error与Exception</h3><p>Error是程序无法处理的错误，比如OutOfMemoryError、ThreadDeath等。这些异常发生<br>时，Java虚拟机（<code>JVM</code>）一般会选择线程终止。<br>Exception是程序本身可以处理的异常，这种异常分两大类运行时异常和非运行时异常。<br>程序中应当尽可能去处理这些异常。</p>
+<h3 id="2、运行时异常和非运行时异常"><a href="#2、运行时异常和非运行时异常" class="headerlink" title="2、运行时异常和非运行时异常"></a>2、运行时异常和非运行时异常</h3><p>a) 运行时异常: 都是RuntimeException类及其子类异常：<br>i. IndexOutOfBoundsException 索引越界异常<br>ii. ArithmeticException：数学计算异常<br>iii. NullPointerException：空指针异常<br>iv. ArrayOutOfBoundsException：数组索引越界异常<br>v. ClassNotFoundException：类文件未找到异常<br>vi. ClassCastException：造型异常（类型转换异常）<br>这些异常是不检查异常（UncheckedException），程序中可以选择捕获处理，也可以不<br>处理。这些异常一般是由程序逻辑错误引起的。<br>非运行时异常:是RuntimeException以外的异常，类型上都属于Exception类及其子类。<br>从程序语法角度讲是必须进行处理的异常，如果不处理，程序就不能编译通过。如：<br><code>IOException</code>、文件读写异常<br>FileNotFoundException：文件未找到异常</p>
+<p>EOFException：读写文件尾异常<br>MalformedURLException：URL格式错误异常<br>SocketException：Socket异常<br><code>SQLException</code>：SQL数据库异常<br>抽象类和接口的区别</p>
+<h3 id="1-26"><a href="#1-26" class="headerlink" title="1.26"></a>1.26</h3><p>1.抽象类由publicabstract修饰，接口由publicinterface修饰。<br>2.类（抽象类也是类）只支持单继承，但接口可以实现多个接口。接口不是类，接口和类<br>同属于Java中的一个类型。<br>3.抽象类里由构造器、常量、变量、抽象方法、普通方法构成，接口里只包括常量和抽象<br>方法，没有构造器和普通方法。<br>4.是否是使用抽象类还是接口，主要看想要实现什么样的事情，如果侧重于描述事务，应<br>该选择抽象类，如果侧重于定义功能，建议选择使用接口。<br>修饰符的作用</p>
+<h3 id="1-27"><a href="#1-27" class="headerlink" title="1.27"></a>1.27</h3><p>修饰符 同一个类中 同一个包中 子类中 全局<br><code>private</code> Yes<br>Default Yes Yes<br><code>protected</code> Yes Yes Yes<br><code>public</code> Yes Yes Yes Yes<br>和 的区别</p>
+<h3 id="1-28HashMap-Hashtable"><a href="#1-28HashMap-Hashtable" class="headerlink" title="1.28HashMap Hashtable"></a>1.28HashMap Hashtable</h3><p>1、HashMap和Hashtable是Map接口下的两个实现类，因为Map对象是键值对的，<br>所以此两类也是键值对的。<br>2、<code>HashMap</code> 是线程非安全的，Hashtable是线程安全的，所以 <code>HashMap</code> 的效率高于<br><code>Hashtable</code>。<br>3、HashMap允许键或值为null，键最多只可以有一个为null，值不受限制。而Hashtable<br>键或值都不许为null。<br>注意：Hashtable中的“t”是小写的。</p>
+<p>字节流和字符流的区别</p>
+<h3 id="1-29"><a href="#1-29" class="headerlink" title="1.29"></a>1.29</h3><p>以stream结尾都是字节流，以reader和writer结尾都是字符流，两者的区别就是读写<br>的时候一个是按字节读写，一个是按字符。在实际使用时差不多。<br>在读写文件需要对内容按行处理，比如比较特定字符，处理某一行数据的时候一般会选<br>择字符流。只是读写文件，和文件内容无关的，一般选择字节流。<br>运行异常和检查异常有何不同</p>
+<h3 id="1-30"><a href="#1-30" class="headerlink" title="1.30"></a>1.30</h3><p>异常表示程序运行过程中可能出现的非正常状态，运行时异常表示虚拟机的通常操作中<br>可能遇到的异常，是一种常见运行错误。java编译器要求方法必须声明抛出可能发生的<br>非运行时异常，但是并不要求必须声明抛出未被捕获的运行时异常。<br>和 的区别</p>
+<h3 id="1-31error-exception"><a href="#1-31error-exception" class="headerlink" title="1.31error exception"></a>1.31error exception</h3><p>error 表示恢复不是不可能但很困难的情况下的一种严重问题。比如说内存溢出，不可<br>能指望程序能处理这样的情况。exception表示一种设计或实现问题，也就是说，它表<br>示如果程序运行正常，从不会发生的情况。<br>举例最常用的五个运行时异常</p>
+<h3 id="1-32"><a href="#1-32" class="headerlink" title="1.32"></a>1.32</h3><p>NullPointerException 空 指 针 、 ArrayIndexOutOfBoundsException 数 组 越 界 、<br>ClassCastException 类 转 换 异 常 、 IllegelArgumentException 输 入 输 出 异 常 、<br>SecurityException 权限不够。<br>和 的区别</p>
+<h3 id="1-33Sleep-wait"><a href="#1-33Sleep-wait" class="headerlink" title="1.33Sleep wait"></a>1.33Sleep wait</h3><p>（网上的答案：sleep是线程类（<code>Thread</code>）的方法，导致此线程暂停执行指定时间，给<br>执行机会给其他线程，但是监控状态依然保持，到时后会自动恢复。调用sleep不会释<br>放对象锁。 wait是Object类的方法，对此对象调用wait方法导致本线程放弃对象锁，<br>进入等待此对象的等待锁定池，只有针对此对象发出notify方法（或notifyAll）后本线<br>程才进入对象锁定池准备获得对象锁进入运行状态。）<br>sleep就是正在执行的线程主动让出cpu，cpu去执行其他线程，在sleep指定的时间过<br>后，cpu才会回到这个线程上继续往下执行，如果当前线程进入了同步锁，sleep方法<br>并不会释放锁，即使当前线程使用sleep方法让出了cpu，但其他被同步锁挡住了的线</p>
+<p>程也无法得到执行。wait是指在一个已经进入了同步锁的线程内，让自己暂时让出同步<br>锁，以便其他正在等待此锁的线程可以得到同步锁并运行，只有其他线程调用了notify<br>方法（notify并不释放锁，只是告诉调用过wait方法的线程可以去参与获得锁的竞争了，<br>但不是马上得到锁，因为锁还在别人手里，别人还没释放。如果notify方法后面的代码<br>还有很多，需要这些代码执行完后才会释放锁，可以在notfiy方法后增加一个等待和一<br>些代码，看看效果），调用wait方法的线程就会解除wait状态和程序可以再次得到锁后<br>继续向下运行。对于wait的讲解一定要配合例子代码来说明，才显得自己真明白。<br>多线程有几种实现方式</p>
+<h3 id="1-34"><a href="#1-34" class="headerlink" title="1.34"></a>1.34</h3><p>多线程有两种实现方法，分别是继承Thread类与实现Runnable接口<br>同步的实现方面有五种，分别是synchronized、wait与notify、sleep、suspend、join<br><code>synchronized</code>: 一直持有锁，直至执行结束<br><code>wait</code>():使一个线程处于等待状态，并且释放所持有的对象的lock，需捕获异常。<br>sleep():使一个正在运行的线程处于睡眠状态，是一个静态方法，需捕获异常，不释放锁。<br><code>notify</code>():唤醒一个处于等待状态的线程，注意的是在调用此方法的时候，并不能确切的<br>唤醒某一个等待状态的线程，而是由JVM确定唤醒哪个线程，而且不是按优先级。<br>notityAll():唤醒所有处入等待状态的线程，注意并不是给所有唤醒线程一个对象的锁，<br>而是让它们竞争。<br>启动一个线程用 还是</p>
+<h3 id="1-35-run-start"><a href="#1-35-run-start" class="headerlink" title="1.35 run start"></a>1.35 run start</h3><p>启动一个线程是调用start()方法，使线程就绪状态，以后可以被调度为运行状态，一个<br>线程必须关联一些具体的执行代码，run()方法是该线程所关联的执行代码。<br>和 的区别</p>
+<h3 id="1-36List-Map"><a href="#1-36List-Map" class="headerlink" title="1.36List Map"></a>1.36List Map</h3><p>一个是存储单列数据的集合，另一个是存储键和值的双列数据的集合，List中存储的数<br>据是有顺序，并且允许重复；Map中存储的数据是<br>没有顺序的，其键是不能重复的，它的值是可以有重复的。<br>1、List有重复值，Map没有重复key，但可以有重复值</p>
+<h3 id="2、List有序，Map不一定有序"><a href="#2、List有序，Map不一定有序" class="headerlink" title="2、List有序，Map不一定有序"></a>2、List有序，Map不一定有序</h3><p>3、List只能存单列值，Map可以存双列值</p>
+<p>说出 的存<br>1.37 <code>ArrayList</code>,<code>Vector</code>, <code>LinkedList</code><br>储性能和特性<br>1.ArrayList和Vector使用数组存储元素；LinkedList使用链表存储元素<br>2.ArrayList和Vector插入删除数据时，需要搬运数据，效率较差；LinkedList使用链表，<br>不需要搬运数据，效率高<br>3.ArrayList和Vectory查询时，按数组下标查询，不需要遍历，效率高；LinkedList需要<br>遍历，查询效率底<br>序列化</p>
+<h3 id="1-38Java"><a href="#1-38Java" class="headerlink" title="1.38Java"></a>1.38Java</h3><p>序列化是把内存Java对象保存到存储介质中，反序列化就是把存储介质中的数据转化<br>为Java对象。Java通过ObjectInputStream和ObjectOutputStream实现序列化和反序列<br>化。需要进行序列化的对象的类必须实现Serializable接口，通常情况下需要满足以下<br>条件：</p>
+<h3 id="1-强烈建议手动生成serialVersionUID常量"><a href="#1-强烈建议手动生成serialVersionUID常量" class="headerlink" title="1. 强烈建议手动生成serialVersionUID常量"></a>1. 强烈建议手动生成serialVersionUID常量</h3><ol start="2">
+<li>如果需要加解密的话，需要实现两个方法readObject和writeObject方法</li>
+<li>如果使用Hibernate二级缓存或其它缓存服务器的话，对象必须是可序列化的</li>
+<li>如果需要远程调用对象或传值的话，则对像需要序列化</li>
+<li>序列化类的可序列化成员必须也是可序列化的，不需要序列化的属性用transient修<br>饰<br>堆和栈的区别</li>
+</ol>
+<h3 id="1-39"><a href="#1-39" class="headerlink" title="1.39"></a>1.39</h3><p>Java的内存分为两类，一类是栈内存，一类是堆内存。<br>栈中存储的是当前线程的方法调用、基本数据类型和对象的引用，栈是有序的。<br>堆中存储的是对象的值，堆是无序的。<br>方法中的局部变量使用final修饰后，放在堆中，而不是栈中。<br>什么时候用断言</p>
+<h3 id="1-40"><a href="#1-40" class="headerlink" title="1.40"></a>1.40</h3><p>assertion(断言)在软件开发中是一种常用的调试方式，很多开发语言中都支持这种机制。<br>在实现中，assertion就是在程序中的一条语句，它对一个boolean表达式进行检查，一<br>个正确程序必须保证这个boolean表达式的值为true；如果该值为false，说明程序已经<br>处于不正确的状态下，assert将给出警告或退出。一般来说，assertion用于保证程序最<br>基本、关键的正确性。assertion检查通常在开发和测试时开启。为了提高性能，在软件<br>发布后，assertion检查通常是关闭的。</p>
+<p>中会有内存泄露吗</p>
+<h3 id="1-41Java"><a href="#1-41Java" class="headerlink" title="1.41Java"></a>1.41Java</h3><p>会，原因：<br>如果对象被集合类引用时，如果只是添加，而不删除，会引起内存泄漏，严重时会发出<br>内存溢出。<br>Java中的内存泄露的情况：长生命周期的对象持有短生命周期对象的引用就很可能发生<br>内存泄露。<br>内存泄露的另外一种情况：当一个对象被存储进HashSet或HashMap中以后，就不能<br>修改这个对象中的那些参与计算哈希值的字段了，否则，对象修改后的哈希值与最初存<br>储进HashSet集合中时的哈希值就不同了，在这种情况下，即使在contains方法使用该<br>对象的当前引用作为的参数去HashSet集合中检索对象，也将返回找不到对象的结果，<br>这也会导致无法从HashSet集合中单独删除当前对象，造成内存泄露。<br>简述反射的作用</p>
+<h3 id="1-42"><a href="#1-42" class="headerlink" title="1.42"></a>1.42</h3><p>假如我们有两个程序员，一个程序员在写程序的时候，需要使用第二个程序员所写<br>的类，但第二个程序员并没完成他所写的类。那么第一个程序员的代码能否通过编</p>
+<p><strong>Q:</strong> 译呢？这是不能通过编译的。利用Java反射的机制，就可以让第一个程序员在没有<br>得到第二个程序员所写的类的时候，来完成自身代码的编译。<br>Java的反射机制它知道类的基本结构，这种对Java类结构探知的能力，我们称为Java<br>类的“自审”。大家都用过Jcreator和eclipse。当我们构建出一个对象的时候，去调用<br>该对象的方法和属性的时候。一按点，编译工具就会自动的把该对象能够使用的所<br>有的方法和属性全部都列出来，供用户进行选择。这就是利用了Java反射的原理，<br>是对我们创建对象的探知、自审。</p>
+<p>篇</p>
+<h3 id="2-Servlet"><a href="#2-Servlet" class="headerlink" title="2 Servlet"></a>2 Servlet</h3><p>概述</p>
+<h3 id="2-1Servlet"><a href="#2-1Servlet" class="headerlink" title="2.1Servlet"></a>2.1Servlet</h3><p>Servlet是一个web容器，我们通常用的servlet是httpservlet，而httpservlet又是继承于<br>genericservlet，而genericservlet又实现了servlet接口。<br>servlet的生命周期是 ：先进行实例化，然后是初始化，然后是提高服务，然后销毁，最<br>后不可用，在这五个生命周期，其中，初始化是调用的init方法，这个方法只有一个，而<br>提高服务的时候调用的是service方法，而我们具体在我们所写的这个方法中，因为我们<br>继承了httpservlet，其实就是对应了doGet（），doPost(),这种方法，然后据我了解，servlet<br>是单例的。非线程安全的，我们通常有一下几种方案来解决：<br>第一种，继承SingleThreadModel但是这样每次都会创建一个新的servlet实例，但这样消<br>耗服务器的内存，降低了性能，并且这个接口现在已经过时了，不推荐使用。<br>第二种：我们尽量避免使用全局变量，就我个人而言，我比较喜欢使用这种方法。<br>第三种，我们可以通过使用ThreadLocal， 内部结构是一个Map结构，用当前线程作为<br>key,他会创建多个副本。get,set方。<br>第四种，我们当然还可以来加锁，进行解决线程问题。<br>而且我还知道，向我们这种常用的MVC框架，struts1，spring这些MVC框架，都是基于<br>servlet发展而来的，就比如struts1 的核心总控制器是ActionServlet，而springMVC的前<br>端总控制器是dispatchServlet，在项目我们曾经用serlet来生成 图片验证码的，防止用户<br>进行暴力破解<br>（别人问了，再回答）<br>servlet的配置文件 web.xml<br><servlet><br><servlet-name>ImageCodeServlet</servlet-name><br><servlet-class>org.leopard.code.ImageCodeServlet</servlet-class><br></servlet><br><servlet-mapping><br><servlet-name>ImageCodeServlet</servlet-name><br><url-pattern>/d</url-pattern><br></servlet-mapping></p>
+<p>描述：<br>我在web.xml中，我首先需要写一个servlet标签，servlet标签中有两个子标签，一个叫<br>servlet-name，这个name可以随便起，但是要保证唯一性，除此之外，在这个servlet-name<br>下有一个servlet-class，这个servlet-class对应的就是我后台提高服务的servlet，除此之外<br>还有一个servlet-mapping，这个里边首先有一个servl-name。，这个servl-name首先要保<br>证和上边的servlet-name保持一致，除此之外还有一个url-pattern，这是一个虚拟路径，<br>是用来发送请求的url地址。</p>
+<h2 id="九、大隐式对象"><a href="#九、大隐式对象" class="headerlink" title="九、大隐式对象"></a>九、大隐式对象</h2><h3 id="2-2"><a href="#2-2" class="headerlink" title="2.2"></a>2.2</h3><p>输入/输出对象： request(也属于作用域通信对象) response out<br>作用域通信对象： session application pageContext<br><code>Servlet</code> 对象： page config<br>错误对象： exception<br>和 的区别</p>
+<h3 id="2-3page-pageContext"><a href="#2-3page-pageContext" class="headerlink" title="2.3page pageContext"></a>2.3page pageContext</h3><p>page是servlet对象；使用this关键字，它的作用范围是在同一页面。<br>pageContext是作用域通信对象；通常使用setAttribute()和getAttribute()来设置和获取存<br>放对象的值。<br>和 的区别</p>
+<h3 id="2-4GET-POST"><a href="#2-4GET-POST" class="headerlink" title="2.4GET POST"></a>2.4GET POST</h3><p>1、get是从服务器上获取数据，post是向服务器传送数据。<br>2、get传送的数据量较小，不能大于2KB。post传送的数据量较大，一般被默认为不<br>受限制。<br>3、get安全性非常低，post安全性较高。但是执行效率却比Post方法好。<br>4、在进行文件上传时只能使用post而不能是get。<br>转发与重定向的区别</p>
+<h3 id="2-5"><a href="#2-5" class="headerlink" title="2.5"></a>2.5</h3><p>1、从数据共享上区别：forword是一个请求的延续，可以共享request作用域的数据。<br>redirect开启一个新的请求，不可以共享request作用域的数据，但可以通过URL方<br>式进行数据发送。<br>2、从地址栏上区别：forword转发地址栏不发生变化，redirect转发地址栏发生变化。<br>3、从性能上区别：forword性能要高于redirect。<br>4、常见使用上的区别：因为上性能上有区别，在本系统中请求跳转建议使用forword，<br>如果是跨域访问，建议使用redirect。</p>
+<h2 id="四、大作用域介绍"><a href="#四、大作用域介绍" class="headerlink" title="四、大作用域介绍"></a>四、大作用域介绍</h2><h3 id="2-6"><a href="#2-6" class="headerlink" title="2.6"></a>2.6</h3><h2 id="四、个作用域从大到小"><a href="#四、个作用域从大到小" class="headerlink" title="四、个作用域从大到小"></a>四、个作用域从大到小</h2><p>appliaction&gt;session&gt;request&gt;page<br> application ：全局作用范围，整个应用程序共享 . 生命周期为：应用程序启动到停<br>止。<br> session ：会话作用域，当用户首次访问时，产生一个新的会话，以后服务器就可<br>以记住这个会话状态。<br> request ：请求作用域，就是客户端的一次请求。<br> page ：一个 <code>JSP</code> 页面。<br>以上作用范围使越来越小， 和 的生命周期都是短暂的，他们之间的区<br>request page<br>别就是：一个 可以包含多个 页 ， 。<br>request page (include forward)<br>和 的区别</p>
+<h3 id="2-7session-cookie"><a href="#2-7session-cookie" class="headerlink" title="2.7session cookie"></a>2.7session cookie</h3><p>session是存储在服务器端，cookie是存储在客户端的，所以从安全来讲session的安<br>全性要比 cookie 高，然后我们获取 session 里的信息是通过存放在会话 cookie 里的<br>sessionid获取的。又由于session是存放在服务器的内存中，所以session里的东西不断<br>增加会造成服务器的负担，所以需要把很重要的信息才存储在session中，而把一些次<br>要东西存储在客户端的cookie里，然后cookie确切的说分为两大类分为会话cookie和<br>持久化cookie，会话cookie确切的说是，存放在客户端浏览器的内存中,所以说他的生<br>命周期和浏览器是一致的，浏览器关了会话cookie也就消失了，然而持久化cookie是<br>存放在客户端硬盘中，而持久化cookie的生命周期就是我们在设置cookie时候设置的<br>那个保存时间，然后我们考虑一问题当浏览器关闭时session会不会丢失，从上面叙述<br>分析session 的信息是通过会话cookie的sessionid 获取的，当浏览器关闭的时候会话<br>cookie消失所以我们的sessionid也就消失了，但是session的信息还存在服务器端，这<br>时我们只是查不到所谓的session但它并不是不存在。那么，session在什么情况下丢失，<br>就是在服务器关闭的时候，或者是session 过期(默认时间是30分钟)，再或者调用了<br>invalidate()的或者是我们想要session中的某一条数据消失调用session.removeAttribute()<br>方法，然后session在什么时候被创建呢，确切的说是通过调用getsession()来创建，这<br>就是session与cookie的区别。<br>访问HTML页面是不会创建session，但是访问index.JSP时会创建session(JSP实际上是</p>
+<h2 id="一、个Servlet"><a href="#一、个Servlet" class="headerlink" title="一、个Servlet"></a>一、个Servlet</h2><p>和 的区别</p>
+<h3 id="2-8request-session"><a href="#2-8request-session" class="headerlink" title="2.8request session"></a>2.8request session</h3><p>1、他们的生命周期不同，request对应的是一次请求，session对应的是一次会话。<br>2、request占用资源比较少，相对来说缺乏持续性，而session资源消耗比较大，所以<br>通常使用request来保存信息。</p>
+<p>报错状态码</p>
+<h3 id="2-9"><a href="#2-9" class="headerlink" title="2.9"></a>2.9</h3><h3 id="301-永久重定向"><a href="#301-永久重定向" class="headerlink" title="301 永久重定向"></a>301 永久重定向</h3><h3 id="302-临时重定向"><a href="#302-临时重定向" class="headerlink" title="302 临时重定向"></a>302 临时重定向</h3><h3 id="304-服务端-未改变"><a href="#304-服务端-未改变" class="headerlink" title="304 服务端 未改变"></a>304 服务端 未改变</h3><h3 id="403-访问无权限"><a href="#403-访问无权限" class="headerlink" title="403 访问无权限***"></a>403 访问无权限***</h3><h3 id="200-正常"><a href="#200-正常" class="headerlink" title="200 正常"></a>200 正常</h3><h3 id="404-找不到访问的资源"><a href="#404-找不到访问的资源" class="headerlink" title="404 找不到访问的资源"></a>404 找不到访问的资源</h3><p>500内部错误</p>
+<h3 id="503-服务器承受不了压力报错"><a href="#503-服务器承受不了压力报错" class="headerlink" title="503 服务器承受不了压力报错"></a>503 服务器承受不了压力报错</h3><p>常见协议及默认的端口号</p>
+<h3 id="2-10"><a href="#2-10" class="headerlink" title="2.10"></a>2.10</h3><p>ftp 21 文件传输协议<br>ssh 22 SSH服务协议，可以通过ssh来访问Linux系统<br>Pop3 110 它是因特网电子邮件的第一个离线协议标准<br>Smtp 25 简单邮件传输协议<br>http 80 超文本传输协议<br>https 443 即HTTP下加入SSL层，简单讲是HTTP的安全版。<br>Svn 3690<br>tomcat8080<br><code>Oracle</code> 默认端口号1521<br>Mysql 默认端口号 3306<br>Sqlserver 默认端口1433<br>Postgresql 默认端口 3690<br>对过滤器的理解</p>
+<h3 id="2-11"><a href="#2-11" class="headerlink" title="2.11"></a>2.11</h3><p>filter的概述:<br>filter是一个过滤器，用来在请求前和响应后进行数据的处理。<br>filter的生命周期是:<br>实例化—&gt;初始化(init)–&gt;进行过滤(doFilter)—&gt;销毁(destroy)–&gt;释放资源</p>
+<h2 id="一、个Filter必须实现javax"><a href="#一、个Filter必须实现javax" class="headerlink" title="一、个Filter必须实现javax"></a>一、个Filter必须实现javax</h2><p>在项目中我们通常通过filter进行编码转换，进行安全验证，进行重复提交的判断。<br>了解(不需要主动说)：<br>filter 相当于 拦截器 相当于SpringAO</p>
+<p>脚本篇<br>和 的区别</p>
+<h3 id="3-1onready-onload"><a href="#3-1onready-onload" class="headerlink" title="3.1onready onload"></a>3.1onready onload</h3><p>1.onready比onload先执行。<br>2.onready是在页面解析完成之后执行，而onload是在页面所有元素加载后执行。<br>3.onload只执行最后一个而onready可以执行多个。<br>对 简单介绍</p>
+<h3 id="3-2-jQuery"><a href="#3-2-jQuery" class="headerlink" title="3.2 jQuery"></a>3.2 jQuery</h3><p>是一个轻量级的 框架，具有跨浏览器的特性，兼容性好，并且封装了很多工<br>jquery js<br>具，方便使用。常用的有：选择器， 操作， 不能跨域 ，特效，工具类，<br>om ajax(ajax )<br>验证、UI引用。<br>和 的特点</p>
+<h3 id="3-3XML-Json"><a href="#3-3XML-Json" class="headerlink" title="3.3XML Json"></a>3.3XML Json</h3><p>Xml特点：<br>1、有且只有一个根节点；</p>
+<h3 id="2、数据传输的载体"><a href="#2、数据传输的载体" class="headerlink" title="2、数据传输的载体"></a>2、数据传输的载体</h3><h3 id="3、所有的标签都需要自定义"><a href="#3、所有的标签都需要自定义" class="headerlink" title="3、所有的标签都需要自定义"></a>3、所有的标签都需要自定义</h3><h3 id="4、是纯文本文件"><a href="#4、是纯文本文件" class="headerlink" title="4、是纯文本文件"></a>4、是纯文本文件</h3><p>Json（JavaScriptObjectNotation）特点：<br>json分为两种格式:<br>1、json对象(就是在{}中存储键值对，键和值之间用冒号分隔，键 值 对之间用逗号分<br>隔)。<br>2、json数组(就是[]中存储多个json对象，json对象之间用逗号分隔)，（两者间可以进<br>行相互嵌套）数据传输的载体之一。<br>区别：<br>传输同样格式的数据，xml需要使用更多的字符进行描述，<br>流行的是基于json的数据传输。<br>xml的层次结构比json更清晰。<br>共同点：<br>xml和json都是数据传输的载体，并且具有跨平台跨语言的特性。</p>
+<p>对 中 介绍</p>
+<h3 id="3-4-JQuery-Ajax"><a href="#3-4-JQuery-Ajax" class="headerlink" title="3.4 JQuery Ajax"></a>3.4 JQuery Ajax</h3><p>JQuery中对Ajax进行了三层封装，第一层封装的方法是$.ajax()，第二层封装的方法有<br>$.post()、$.get()、$(“对象”).load()，第三层封装的方法有$.getJson()、$.getScript()。<br>对 介绍</p>
+<h3 id="3-5-Ajax"><a href="#3-5-Ajax" class="headerlink" title="3.5 Ajax"></a>3.5 Ajax</h3><p>的全称是 （异步 及 ），<br><code>AJAX</code> AsynchronousJavaScriptAndXML JavaScript <code>XML</code> Ajax<br>的核心是 对象 。<br>JavaScript XmlHttpRequest(XHR)<br>的优点：<br>Ajax<br>、提高用户体验度（ ）</p>
+<h3 id="1-UE"><a href="#1-UE" class="headerlink" title="1 UE"></a>1 UE</h3><p>、提高应用程序的性能<br>、进行局部刷新<br>详细介绍：<br>Ajax<br>、 不是一种新的编程语言，而是一种用于创建更好更快以及交互性更强的</p>
+<h3 id="1-AJAX-Web"><a href="#1-AJAX-Web" class="headerlink" title="1 AJAX Web"></a>1 AJAX Web</h3><p>应用程序的技术。<br>、通过 ，我们的 可使用 的 对象来直</p>
+<h3 id="2-AJAX-JavaScript-JavaScript-XMLHttpRequest"><a href="#2-AJAX-JavaScript-JavaScript-XMLHttpRequest" class="headerlink" title="2 AJAX JavaScript JavaScript XMLHttpRequest"></a>2 AJAX JavaScript JavaScript XMLHttpRequest</h3><p>接与服务器进行通信。通过这个对象，我们的 可在不重载页面的情况<br>JavaScript<br>与 服务器交换数据，即可局部刷新。<br>Web<br>、 在浏览器与 服务器之间使用异步数据传输（ 请求），这样就可</p>
+<h3 id="3-AJAX-Web-HTTP"><a href="#3-AJAX-Web-HTTP" class="headerlink" title="3 AJAX Web HTTP"></a>3 AJAX Web HTTP</h3><p>使网页从服务器请求少量的信息，而不是整个页面，减轻服务器的负担，提升站点<br>的性能。<br>、 可使因特网应用程序更小、更快，更友好，用户体验（ ）好。</p>
+<h3 id="4-AJAX-UE"><a href="#4-AJAX-UE" class="headerlink" title="4 AJAX UE"></a>4 AJAX UE</h3><p>、 是基于标准化并被广泛支持的技术，并且不需要插件和下载小程序。</p>
+<h3 id="5-Ajax"><a href="#5-Ajax" class="headerlink" title="5 Ajax"></a>5 Ajax</h3><p>框架篇<br>运行原理</p>
+<h3 id="4-1Struts1"><a href="#4-1Struts1" class="headerlink" title="4.1Struts1"></a>4.1Struts1</h3><p>1、在 servlet 容器启动时加载 web.xml，通过前端控制器 ActionServlet 加载<br>struts-config.xml并进行解析。<br>2、客户端发送请求，请求被ActionServlet控制器接收。<br>3、ActionServlet在处理请求时，根据struts-config.xml配置关系通过访问路径找到相应<br>的ActionForm和Action。Struts将数据封装在ActionForm中，将封装后的ActionForm<br>传递给Action相应方法进行使用。<br>4、在 Action 处理完请求后，通过 ActionMapping 中的 findForward()方法返回一个<br>ActionForward对象，通过struts-config.xml配置的forward名称找到响应的请求路径。<br>运行原理</p>
+<h3 id="4-2Struts2"><a href="#4-2Struts2" class="headerlink" title="4.2Struts2"></a>4.2Struts2</h3><p>1、在servlet容器启动时加载web.xml，通过核心控制器FilterDispatcher加载struts.xml<br>文件并进行解析，将解析的信息封装在ActionMapper类中。<br>2、客户端发送请求，请求被核心控制器FilterDispatcher进行拦截。<br>3、FilterDispatcher通过ActionMapper找到对应的ActionForm和Action中的响应方法，<br>在访问方法前先经过Struts2设置的17个默认拦截器，其中一个拦截器的功能是将<br>请 求时的数据封装在ActionForm中，然后方法进行响应。</p>
+<p>4、方法处理完后返回一个字符串，通过sturts.xml配置文件中的<result>找到响应的<br>请求路径。<br>需要注意的两点：<br>（1） struts 2.1.3 以 后 FilterDispatcher 核 心 已 标 注 为 过 时 ， 建 议 使 用<br>StrutsPrepareAndExecuteFilter过滤器。<br>（2） struts2是基于拦截器实现的，在理解struts2运行原理时，一定要搞清楚拦截器<br>是什么。<br>运行原理</result></p>
+<h3 id="4-3Hibernate"><a href="#4-3Hibernate" class="headerlink" title="4.3Hibernate"></a>4.3Hibernate</h3><p>首先通过configuration去加载hibernate.cfg.xml这个配置文件，根据配置文件的信息去</p>
+<p>创建sessionFactory，sessionFactory是线程安全的，是一个session工厂，用来创建session，<br>session是线程不安全的，相当于jdbc的connection，最后通过session去进行数据库的<br>各种操作，在进行操作的时候通过transaction进行事务的控制。<br>运行原理</p>
+<h3 id="4-4Spring"><a href="#4-4Spring" class="headerlink" title="4.4Spring"></a>4.4Spring</h3><p>内部最核心的就是IOC了，动态注入，让一个对象的创建不用new了，可以自动<br>的生产，这其实就是利用java里的反射。反射其实就是在运行时动态的去创建、调用<br>对象，Spring就是在运行时，跟xmlSpring的配置文件来动态的创建对象，和调用对象<br>里的方法的。<br>Spring还有一个核心就是AOP这个就是面向切面编程，可以为某一类对象 进行监<br>督和控制（也就是在调用这类对象的具体方法的前后去调用你指定的 模块）从而达到<br>对一个模块扩充的功能。这些都是通过配置类达到的。<br>Spring目的：就是让对象与对象（模块与模块）之间的关系没有通过代码来关联，<br>都是通过配置类说明管理的（Spring根据这些配置 内部通过反射去动态的组装对象）<br>要记住：Spring是一个容器，凡是在容器里的对象才会有Spring所提供的这些服务和功<br>能。<br>Spring里用的最经典的一个设计模式就是：模板方法模式。（这里我都不介绍了，<br>是一个很常用的设计模式）<br>Spring里的配置是很多的，很难都记住，但是Spring里的精华也无非就是以上的两<br>点，把以上两点跟理解了 也就基本上掌握了Spring。<br>运行原理</p>
+<h3 id="4-5SpringMVC"><a href="#4-5SpringMVC" class="headerlink" title="4.5SpringMVC"></a>4.5SpringMVC</h3><p>1、客户端发出一个http请求给web服务器，web服务器对http请求进行解析，如果<br>匹配DispatcherServlet的请求映射路径（在web.xml中指定），web容器将请求转交<br>给DispatcherServlet.</p>
+<h3 id="2、DipatcherServlet接收到这个请求之后将根据请求的信息（包括URL、Http方法、请"><a href="#2、DipatcherServlet接收到这个请求之后将根据请求的信息（包括URL、Http方法、请" class="headerlink" title="2、DipatcherServlet接收到这个请求之后将根据请求的信息（包括URL、Http方法、请"></a>2、DipatcherServlet接收到这个请求之后将根据请求的信息（包括URL、Http方法、请</h3><p>求报文头和请求参数Cookie等）以及HandlerMapping的配置找到处理请求的处理<br>器（Handler）。<br>3、DispatcherServlet根据HandlerMapping 找到对应的Handle，将处理权交给Handler<br>（Handler将具体的处理进行封装），再由具体的HandlerAdapter对Handler进行具<br>体的调用。<br>4、Handler对数据处理完成以后将返回一个ModelAndView()对象给DispatcherServlet。<br>5、Handler 返回的 <code>ModelAndView</code>()只是一个逻辑视图并不是一个正式的视图，<br>DispatcherSevlet通过ViewResolver将逻辑视图转化为真正的视图View。</p>
+<h3 id="6、Dispatcher通过model解析出ModelAndView-中的参数进行解析最终展现出完整的"><a href="#6、Dispatcher通过model解析出ModelAndView-中的参数进行解析最终展现出完整的" class="headerlink" title="6、Dispatcher通过model解析出ModelAndView()中的参数进行解析最终展现出完整的"></a>6、Dispatcher通过model解析出ModelAndView()中的参数进行解析最终展现出完整的</h3><p>view并返回给客户端。</p>
+<p>和 区别</p>
+<h3 id="4-6Struts1-Struts2"><a href="#4-6Struts1-Struts2" class="headerlink" title="4.6Struts1 Struts2"></a>4.6Struts1 Struts2</h3><p>依赖关系：<br>Struts2以WebWork（也就是MVC框架）为核心。采用拦截器的机制来处理用户请<br>求，struts1严重依赖于servletAPI，属于侵入性框架，struts2不严重依赖于servletAPI，<br>属于非侵入性框架。<br>线程模型方面：<br>struts1的Action是单实例的，一个Action的实例处理所有的请求。<br>struts2的Action是一个请求对应一个实例（每次请求都新new出一个对象），没有<br>线程安全方面的问题。<br>封装请求参数：<br>struts1中强制使用ActionForm对象 封装请求的参数。<br>Struts2可以选择使用POJO类（也就是javaBean）来封装请求的参数，或者直接使<br>用Action的属性。<br>核心控制器：<br>struts1的前端总控制器（核心总控制器）为ActionServlet，是一个Servlet类。<br>struts2的前端总控制器（核心总控制器）为FileterDispatcher，是一个过滤器。<br>说明：<br>struts2.1.3以前，核心总控制器：<br>org.apache.struts2.dispatcher.FilterDispatcher<br>struts2.1.3以后，核心总控制器：<br>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</p>
+<p>、 和 区别</p>
+<h3 id="4-7SpringMVC-Struts1-Struts2"><a href="#4-7SpringMVC-Struts1-Struts2" class="headerlink" title="4.7SpringMVC Struts1 Struts2"></a>4.7SpringMVC Struts1 Struts2</h3><p>1、springMVC单例非线程安全，struts1单例非线程安全，struts2线程安全对每个请求<br>都产生一个实例。<br>2、springMVC和String1的入口都是servlet，而struts2是Filter。springMVC 的前端总<br>控制器为 <code>DispatcherServlet</code>，struts1 的前端总控制器为 ActionServlet，struts2 的前<br>端总控制器为 FilterDispatcher。<br>3、参数传递：struts是在接受参数的时候，可以用属性来接受参数，这就说明参数是<br>让多个方法共享的。springMVC用方法来接受参数。<br>4、springMVC是基于方法的设计，而sturts是基于类。<br>在的 类型</p>
+<h3 id="4-8Struts2-type"><a href="#4-8Struts2-type" class="headerlink" title="4.8Struts2 type"></a>4.8Struts2 type</h3><p>1、dispatcher：它是默认的，用来转向页面，通常处理JSP。<br>2、redirect：将用户重定向到一个已配置好的URL。<br>3、redirectAction：将用户重定向到一个已定义好的action。<br>4、chain：将action和另外一个action链接起来。<br>5、freemarker：呈现Freemarker模板。<br>6、httpheader：返回一个已配置好的HTTP头信息响应。<br>7、stream：向浏览器发送InputSream对象对下载的内容和图片非常有用。<br>8、velocity：呈现Velocity模板。<br>9、xslt ：该XML可以通过XSL模板进行转换。<br>10、 plaintext：显示原始文件内容，例如文件源代码。<br>的常用标签</p>
+<h3 id="4-9Struts2"><a href="#4-9Struts2" class="headerlink" title="4.9Struts2"></a>4.9Struts2</h3><p>首先需要引用 &lt;%@taglibprefix=”s”uri=”/struts-tags”%&gt;<br>1、&lt;s:if&gt; 判断标签 后面可跟 &lt;s:else&gt;<br>2、&lt;s:iterator&gt; 迭代标签<br>3、&lt;s:include&gt; 引入标签 可以把一个JSP页面或者servlet引入一个页面中<br>4、&lt;s:property&gt; 输出标签<br>5、&lt;s:set&gt; 标签赋予变量一个特定范围内的值<br>6、&lt;s:form&gt; 表单标签<br>7、&lt;s:testarea&gt; 文本域标签<br>8、&lt;s:<code>select</code>&gt;&lt;/s:<code>select</code>&gt; 下拉标签<br>9、&lt;s:url&gt; 声明一个url的路径<br>最常用的是：<br>判断&lt;s:if&gt;<br>循环&lt;s:iterator&gt;</p>
+<p>输出&lt;s:property&gt;<br>可 和 的区别</p>
+<h3 id="4-10Hibernate-get-load"><a href="#4-10Hibernate-get-load" class="headerlink" title="4.10Hibernate get load"></a>4.10Hibernate get load</h3><p>加载方式：<br>load为延迟加载（返回的是一个只有id属性的代理，只有使用该对象属性时，才<br>发出sql语句）。<br>get为立即加载（执行时，会立即向数据库发出sql语句）。<br>返回结果：<br>load检索不到记录时,会抛ObjectNotFoundException异常。<br>get检索不到记录时,会返回null。<br>、 、 区别</p>
+<h3 id="4-11Hibernate-Ibatis-JDBC"><a href="#4-11Hibernate-Ibatis-JDBC" class="headerlink" title="4.11Hibernate Ibatis JDBC"></a>4.11Hibernate Ibatis JDBC</h3><p>Hibernate属于全自动， Ibatis属于半自动，Jdbc属于手动，从开发效率上讲hibernate<br>较高，ibatis居中，jdbc较低，从执行效率上讲hibernate较低，ibatis居中，jdbc较高，<br>因为jdbc是手工写sql语句，程序员对sql的控制能力更大，可以根据业务需要进行优<br>化，而ibatis虽然也可以对sql进行优化，但是他里面将resultset封装为实体的过程中<br>采用了反射机制所以一定程度上影响了性能，而hibernate因为高度封装所以开发效率<br>相对较高，但正因为这个原因，所以程序员在对sql语句的控制和优化方面相对比较弱，<br>而且在将resultset封装成实体的过程中也采用了反射机制，所以在性能方面较低。<br>与 区别</p>
+<h3 id="4-12Hibernate-JDBC"><a href="#4-12Hibernate-JDBC" class="headerlink" title="4.12Hibernate JDBC"></a>4.12Hibernate JDBC</h3><p>、 和 主要区别就是， 先检索缓存中的映射对象 即</p>
+<h3 id="1-hibernate-jdbc-hibernate"><a href="#1-hibernate-jdbc-hibernate" class="headerlink" title="1 hibernate jdbc hibernate ("></a>1 hibernate jdbc hibernate (</h3><p>操作的是对象 ，而 则是直接操作数据库。<br>hibernate ) jdbc<br>、 是 的轻量级的对象封装，它是一个独立的对象持久层框架。</p>
+<h3 id="2-Hibernate-JDBC"><a href="#2-Hibernate-JDBC" class="headerlink" title="2 Hibernate JDBC"></a>2 Hibernate JDBC</h3><p>可以用在任何 可以使用的场合。<br><code>Hibernate</code> <code>JDBC</code><br>、 是一个和 密切关联的框架，所以 的兼容性和 驱</p>
+<h3 id="3-Hibernate-JDBC-Hibernate-JDBC"><a href="#3-Hibernate-JDBC-Hibernate-JDBC" class="headerlink" title="3 Hibernate JDBC Hibernate JDBC"></a>3 Hibernate JDBC Hibernate JDBC</h3><p>动，和数据库都有一定的关系，但是和使用它的 程序，和 没有任<br>Java AppServer<br>何关系，也不存在兼容性问题。<br>、如果正确的使用 技术 它的执行效率一定比 要好 因为<br>4 <code>JDBC</code> , hibernate , hibernate<br>是基于 的技术。<br>jdbc<br>、 使用的是 语句， 使用的是 语句，但是 语句最终还</p>
+<h3 id="5-JDBC-SQL-Hibernate-HQL-HQL"><a href="#5-JDBC-SQL-Hibernate-HQL-HQL" class="headerlink" title="5 JDBC SQL Hibernate HQL HQL"></a>5 JDBC SQL Hibernate HQL HQL</h3><p>会隐式转换成 语句执行。<br>SQL<br>两大配置文件</p>
+<h3 id="4-13Hibernate"><a href="#4-13Hibernate" class="headerlink" title="4.13Hibernate"></a>4.13Hibernate</h3><p>*.hbm.xml：主键生成策略，映射关系，一对多，一对一的关系。</p>
+<p><code>Hibernate</code>.cfg.xml：方言(用哪个数据库)，数据库连接信息，包含*.hbm.xml内容，映射<br>文件，也可以配事务。<br>中的事务处理</p>
+<h3 id="4-14Hibernate"><a href="#4-14Hibernate" class="headerlink" title="4.14Hibernate"></a>4.14Hibernate</h3><p>开启事务<br>session.beginTransaction();<br>执行相关的操作，如果成功则<br>session.getTransaction().commit();<br>执行操作失败则<br>session.getTransaction.rollback();</p>
+<h2 id="三、种状态及如何转换"><a href="#三、种状态及如何转换" class="headerlink" title="三、种状态及如何转换"></a>三、种状态及如何转换</h2><h3 id="4-15Hibernate"><a href="#4-15Hibernate" class="headerlink" title="4.15Hibernate"></a>4.15Hibernate</h3><p>Transient(临时)<br>new 一个初始化对象后，并没有在数据库里保存数据，处于临时状态；<br>Persistent(持久化)<br>当执行save()方法，调用session.close()方法之前，内存中的对象与数据库有对应关系处<br>于持久化状态；<br>Detached(托管/游离)<br>当执行session.close()之后，处于托管状态；<br>状态的转换<br>处于托管状态下，调用update()方法后，转换为持久化状态；<br>在持久化状态下，执行delete()方法后，转换为临时状态；<br>在未初始化对象之前，调用get(),load(),find(),iterate()之后，直接进入持久化状态。<br>中的五大核心接口</p>
+<h3 id="4-16Hibernate"><a href="#4-16Hibernate" class="headerlink" title="4.16Hibernate"></a>4.16Hibernate</h3><p>1、Configuration 接口的作用是对 <code>Hibernate</code> 进行配置，以及对它进行启动。（加载<br>hibernate.cfg.xml）并创建一个SessionFactory对象。<br>2、SessionFactory接口负责初始化Hibernate。它充当数据存储源的代理，并负责创建Session<br>对象。SessionFactory是线程安全的。<br>3、Session（会话）接口是Hibernate应用使用的主要接口。Session接口负责执行被持久化<br>对象的 CRUD 操作(增删改查)。Session 对象是非线程安全的。Session 相当于 jdbc 的<br>connection<br>4、Query和Criteria接口负责执行各种数据库查询。<br>5、Transaction接口负责操作相关的事务。</p>
+<p>缓存概述</p>
+<h3 id="4-17Hibernate"><a href="#4-17Hibernate" class="headerlink" title="4.17Hibernate"></a>4.17Hibernate</h3><p>hibernate分为一级缓存即session缓存也叫事务级别的缓存以及二级缓存sessionFactory<br>即应用级别的缓存，还有查询缓存即三级缓存。<br>一级缓存的生命周期和session的生命周期保持一致，hibernate默认就启用了一级缓存，<br>不能将其关闭，可以通过 session.clear()和 session.evict(object)来管理一级缓存。其中<br>get,load,iterate都会使用一级缓存，一级缓存缓存的是对象。<br>二级缓存的生命周期和 sessionFactory 的生命周期保持一致，可以跨 session,被多个<br>session 共享，hibernate3 默认开启二级缓存,也可以手动开启并指定缓存插件如<br>ehcache,oscache等。二级缓存也只能缓存对象。</p>
+<h2 id="三、级缓存也叫查询缓存"><a href="#三、级缓存也叫查询缓存" class="headerlink" title="三、级缓存也叫查询缓存"></a>三、级缓存也叫查询缓存</h2><p>只缓存id。对query.list()起作用，query.iterate不起作用，也就是query.iterate不使用查询缓<br>存。<br>概述</p>
+<h3 id="4-18SSH"><a href="#4-18SSH" class="headerlink" title="4.18SSH"></a>4.18SSH</h3><p>ssh是web开发中常见的一种框架<br>s-struts<br>s-spring<br>h-hibernate<br>其中struts在框架中充当控制器，实现MVC，主要用来处理用户的请求，和跳转页面。使<br>项目结构清晰，开发者只需要关注业务逻辑的实现即可。<br>spring在ssh充当粘合剂，粘合struts-sping-hibernate，主要用来进行事物的控制，hibernate-<br>充当数据库持久层，主要用它来与数据库交互，提高开发效率，减轻程序员sql控制要求，<br>而且hibernate通过反射机制，有灵活的映射性，还支持各种关系，一对一，一对多，多<br>对多。<br>在进行ssh整合的时候，我们应该注意：<br>1.Action继承于ActionSupport；<br>2.引入struts-spring-plugin.jar包，从而完成struts和spring的整合；<br>3.在struts2的action 中注入service，保证service的名字和配置文件中的一致，并生成<br>get,set方法；<br>4.Dao层继承于hibernateDaoSupport；<br>5.在dao层的配置文件中注入sessionFactory。</p>
+<p>分页步骤</p>
+<h3 id="4-19"><a href="#4-19" class="headerlink" title="4.19"></a>4.19</h3><p>①前台封装一个显示分页的组件<br>②查询总条数<br>③后台封装分页工具类，计算开始位置、结束位置、总页数<br>④后台写支持分页的sql语句<br>⑤前台包含分页组件，实现分页效果<br>注意：<br>查询总条数的where和查询列表信息的where条件要保证一致。<br>如何防止表单重复提交</p>
+<h3 id="4-20"><a href="#4-20" class="headerlink" title="4.20"></a>4.20</h3><p>针对于重复提交的整体解决方案：</p>
+<h3 id="1-用redirect来解决重复提交的问题"><a href="#1-用redirect来解决重复提交的问题" class="headerlink" title="1.用redirect来解决重复提交的问题"></a>1.用redirect来解决重复提交的问题</h3><h3 id="2-点击一次之后，按钮失效"><a href="#2-点击一次之后，按钮失效" class="headerlink" title="2.点击一次之后，按钮失效"></a>2.点击一次之后，按钮失效</h3><h3 id="3-通过loading"><a href="#3-通过loading" class="headerlink" title="3.通过loading"></a>3.通过loading</h3><h3 id="4-自定义重复提交过滤器"><a href="#4-自定义重复提交过滤器" class="headerlink" title="4.自定义重复提交过滤器"></a>4.自定义重复提交过滤器</h3><p>通过 来解决表单重复提交</p>
+<h3 id="4-21-Struts2"><a href="#4-21-Struts2" class="headerlink" title="4.21 Struts2"></a>4.21 Struts2</h3><p>解决struts2重复提交，可以结合s:token标签来解决重复提交问题。<br>1.在前端的jsp页面中加入s:token标签，在访问该页面时就会生成隐藏域，该隐藏域中<br>包含一个随机生成的字符串，并把该字符串存入session中。<br>2.在struts2的配置文件中加入token拦截器后，当正常访问action的时候，会从session<br>中取出该字符串，然后和页面隐藏域中提交字符串做对比，如果一致则正常执行并删除<br>session中存储的字符串。<br>拦截器</p>
+<h3 id="4-22"><a href="#4-22" class="headerlink" title="4.22"></a>4.22</h3><p>什么是拦截器：<br>拦截器是AOP中的概念，它本身是一段代码，可以通过定义“织入点”，来指定拦截器<br>的代码在“织入点”的前后执行，从而起到拦截的作用<br>正如上面 Struts2的Reference中讲述的，Struts2的Interceptor，其拦截的对象是Action<br>代码，可以定义在Action代码之前或者之后执行拦截器的代码。<br>在项目中，我们经常用来拦截通过非正常程序而进行的访问</p>
+<p>Struts2的拦截器和Servlet过滤器类似。在执行Action的execute方法之前，Struts2会<br>首先执行在struts.xml中引用的拦截器，在执行完所有引用的拦截器的intercept方法后，<br>会执行Action的execute方法。<br>其中 intercept 方法是拦截器的核心方法，所有安装的拦截器都会调用之个方法。在<br>Struts2中已经在struts-default.xml中预定义了一些自带的拦截器，如timer、params等。<br>如果 在<package>标签 中继 承 struts-default，则 当前 package 就会 自动 拥有<br>struts-default.xml中的所有配置。代码如下：<br>&lt;packagename=”demo”<code>extends</code>=”struts-default”&gt;…</package><br>拦截器是Struts2框架的核心，它主要完成解析请求参数、将请求参数赋值给Action<br>属性、执行数据校验、文件上传等工作<br>在struts-default.xml中有一个默认的引用，在默认情况下（也就是<action>中未引用拦<br>截器时）会自动引用一些拦截器。struts2中默认的拦截器是defaultStack.<br>自定义拦截器需要特别注意的是不要忘记引入struts2默认的拦截器。为了实现某些操<br>作，我们可以自定义拦截器，<br>自定义拦截器有三种方式定义。分别为实现 Interceptor 接口，继承抽象类<br>AbstractInterceptor，继承MethodFilterInteceptor类。<br>拦截器在项目中的运用：<br>同时可以减轻代码冗余，提高重用率。<br>如果要求用户密码、权限等的验证，就可以用自定义的拦截器进行密码验证和权限限制。<br>对符合的登入者才跳转到正确页面。</action></p>
+<p>数据库篇<br>连接数据库步骤</p>
+<h3 id="5-1JDBC"><a href="#5-1JDBC" class="headerlink" title="5.1JDBC"></a>5.1JDBC</h3><p>1、加载驱动。<br>2、提供URL，数据库用户名密码，创建Connection连接对象。<br>3、创建Statement，执行静态SQL语句。通常通过Statement实例实现，执行动态SQL语句。<br>通常通过PreparedStatement实例实现。<br>4、执行SQL语句，并处理结果。<br>5、关闭JDBC连接。<br>数据库连接池</p>
+<h3 id="5-2"><a href="#5-2" class="headerlink" title="5.2"></a>5.2</h3><p>数据库连接池的优点运行原理：<br>在我们不使用数据库连接池的时候，每次访问数据库都需要创建连接，使用完成之后需要释<br>放关闭连接，而这样是很耗费资源的。当我们使用数据库连接池的时候，在容器启动的时候<br>就创建了指定数量的连接，之后当我们程序使用的时候就直接从连接池里面取，而不需要创<br>建，同理，当我们使用完的时候也不需要关闭连接，而是将连接返回到连接池中，供其他请<br>求继续使用。<br>现在常用的开源数据连接池主要有c3p0、dbcp和proxool三种，其中：<br>hibernate开发组推荐使用c3p0;<br>spring开发组推荐使用dbcp(dbcp连接池有weblogic连接池同样的问题，就是强行关闭连接<br>或数据库重启后，无法reconnect，告诉连接被重置，这个设置可以解决);<br>hibernateinaction推荐使用c3p0和proxool;<br>分段批量提交的时候出现异常怎</p>
+<h3 id="5-3jdbc"><a href="#5-3jdbc" class="headerlink" title="5.3jdbc"></a>5.3jdbc</h3><p>么处理<br>?<br>通过Map来解决性能问题。首先在分段批量提交的时候，我们不采用事务，这样就保证了<br>合法的数据就自动提交，不合法的数据就自己自动进行回滚，为了避免不合法数据影响后续<br>合法数据的提交，采用定义业务规则字典表，实现对数据的验证，将不合法的数据记录下来，<br>供用户进行后续处理，而合法的数据就全部提交。</p>
+<p>批量处理数据</p>
+<h3 id="5-4JDBC"><a href="#5-4JDBC" class="headerlink" title="5.4JDBC"></a>5.4JDBC</h3><p>批量处理数据:(代码优化:提高程序执行性能)<br>降低了java程序代码(客户端)和数据库之间的 网络通信的次数。<br>在jdbc中进行批量插入的核心API为 addBatch,executeBatch<br>大数据量的插入问题:（jdbc,hibernate,ibatis）</p>
+<h3 id="1-每次只插入一条和数据库交互多次-很耗时间"><a href="#1-每次只插入一条和数据库交互多次-很耗时间" class="headerlink" title="1.每次只插入一条和数据库交互多次(很耗时间)"></a>1.每次只插入一条和数据库交互多次(很耗时间)</h3><h3 id="2-批量插入和数据库只交互一次-内存溢出"><a href="#2-批量插入和数据库只交互一次-内存溢出" class="headerlink" title="2.批量插入和数据库只交互一次(内存溢出)"></a>2.批量插入和数据库只交互一次(内存溢出)</h3><h3 id="3-分段批量插入-推荐"><a href="#3-分段批量插入-推荐" class="headerlink" title="3.分段批量插入(推荐)"></a>3.分段批量插入(推荐)</h3><p>jdbc 批量处理数据是通过 PreparedStatement 对象的 addbatch()，executebatch（）<br>clearbatch()进行和数据库的交互。通常我们使用分段批量处理的方式 这样可以提高程序的<br>性能 ，防止内存溢出。</p>
+<h3 id="1-每个sql语句都和数据库交互一次-非批量操作"><a href="#1-每个sql语句都和数据库交互一次-非批量操作" class="headerlink" title="1.每个sql语句都和数据库交互一次(非批量操作)"></a>1.每个sql语句都和数据库交互一次(非批量操作)</h3><h3 id="2-只和数据库交互一次-批量操作-内存溢出"><a href="#2-只和数据库交互一次-批量操作-内存溢出" class="headerlink" title="2.只和数据库交互一次(批量操作)(内存溢出)"></a>2.只和数据库交互一次(批量操作)(内存溢出)</h3><p>当数据达到一定额度的时候就和数据库进行交互，分多次进行(分段批量操作)<br>(500或者1000)<br>pst.addBatch();<br>if(i&gt;0&amp;&amp;i%1000==0){<br>pst.executeBatch();<br>pst.clearBatch();<br>}<br>分页语句</p>
+<h3 id="5-5Oracle"><a href="#5-5Oracle" class="headerlink" title="5.5Oracle"></a>5.5Oracle</h3><p><code>select</code> * from (<code>select</code> * from (<code>select</code> s.*,rownum rn from student s ) where rn&lt;=5)<br>where rn&gt;0<br>分页语句</p>
+<h3 id="5-6MySQL"><a href="#5-6MySQL" class="headerlink" title="5.6MySQL"></a>5.6MySQL</h3><p><code>select</code>*frommusicwhereidlimit5,5</p>
+<p>基本数据类型</p>
+<h3 id="5-7Oracle"><a href="#5-7Oracle" class="headerlink" title="5.7Oracle"></a>5.7Oracle</h3><p>Oracle的基本数据类型（常用）：</p>
+<h3 id="1、字符型"><a href="#1、字符型" class="headerlink" title="1、字符型"></a>1、字符型</h3><p>Char 固定长度字符串 占2000个字节<br>Varchar2 可变长度字符串 占4000个字节<br>Nvarchar2 占2000个字符（最多能存2000个字母/中文）</p>
+<h3 id="2、大对象型（lob）"><a href="#2、大对象型（lob）" class="headerlink" title="2、大对象型（lob）"></a>2、大对象型（lob）</h3><p>Blob ：二进制数据 最大长度4G<br>Blob 用于存一些图片，视频，文件。<br>比如：当我们在进行文件上传时，我们一般把上传的文件存在硬盘上，可以不占用 数据库，<br>下载时，如果项目迁移时，文件也要跟着迁移。因此我们可以把用blob把它存在数据库中。<br>但这样也增加了数据库的负担。<br>Clob ：字符数据 最大长度4G，可以存大字符串 varchar2和nvarchar2都具有一定的局限<br>性，它们长度有限，但数据库中无论用varchar2或nvarchar2类型，还是用clob，在java端<br>都使用String接收。</p>
+<h3 id="3、数值型"><a href="#3、数值型" class="headerlink" title="3、数值型"></a>3、数值型</h3><p><code>Integer</code> 整数类型，小的整数。<br><code>Float</code> 浮点数类型。<br>Real 实数类型。<br>Number（p,s）包含小数位的数值类型。P表示精度，s表示小数后的位数。<br>Eg:number(10,2) 表示小数点之前可有8位数字，小数点后有2位。</p>
+<h3 id="4、日期类型"><a href="#4、日期类型" class="headerlink" title="4、日期类型"></a>4、日期类型</h3><p>Date 日期（日-月-年） DD-MM-YY(HH-MI-SS)<br>Timestamp 跟date比 它可以精确到微秒。精确范围0~9 默认为6.<br>、 、 的区别</p>
+<h3 id="5-8id-rowid-rownum"><a href="#5-8id-rowid-rownum" class="headerlink" title="5.8id rowid rownum"></a>5.8id rowid rownum</h3><p>rowid物理位置的唯一标识。而id是逻辑上的唯一标识，所以rowid查找速度要快于id,<br>是目前最快的定位一条记录的方式。<br>rowid和rownum都是”伪数列”，所谓“伪数列”也就是默认隐藏的一个数列。rownum用<br>于标记结果集中结果顺序的一个字段，它的特点是按顺序标记，而且是连续的，换句话说<br>就是只有有rownum=1的记录，才可能有rownum=2的记录。<br>rownum关键字只能和&lt;或者&lt;=直接关联，如果是&gt;或者=则需要给他起个别名。</p>
+<p><strong>Q:</strong> 主键和唯一索引的区别？</p>
+<h3 id="5-9"><a href="#5-9" class="headerlink" title="5.9"></a>5.9</h3><p>在创建主键的同时会生成对应的唯一索引，主键在保证数据唯一性的同时不允许为<br>空，而唯一可以有一个为空数据项，一个表中只能有一个主键，但是一个主键可以</p>
+<p>有多个字段，一个表中可以有多个唯一索引。<br>和 的区</p>
+<h3 id="5-10Preparedstatement-statement"><a href="#5-10Preparedstatement-statement" class="headerlink" title="5.10Preparedstatement statement"></a>5.10Preparedstatement statement</h3><p>别<br>用Preparedstatement进行开发。Preparedstatement是预编译的，而statement不是，<br>在每次执行sql语句的增删改时，如果是一条数据两者没差距，但如果数据量大于1，<br>那么每次执行 sql 语句 statement 都要重新编译一次，而 Prepared statement 不用，<br>Preparedstatement的运行效率大于statement；从代码的可维护性和可读性来说，虽然<br>用Preparedstatement来代替statement会使代码多出几行，但这样的代码无论从可读<br>性还是可维护性来说，都比直接使用statement的代码高很多档次；最重要的一点，从<br>安全角度来说，使用 Preparedstatement可以大大提高程序的安全性，因为 Prepared</p>
+<p><strong>Q:</strong> statement是用‘？’传参,可以防止sql注入，具有安全性，而statement用的是‘+’字符串<br>拼接，安全性较低。<br>数据库三范氏</p>
+<h3 id="5-11"><a href="#5-11" class="headerlink" title="5.11"></a>5.11</h3><p>第一范式：数据库表中的所有字段值都是不可分解的原子值。<br>第二范式：需要确保数据库表中的每一列都和主键相关，而不能只与主键的某一部<br>分相关（主要针对联合主键而言）。<br>第三范式：需要确保数据表中的每一列数据都和主键直接相关，而不能间接相关。<br>视图概述</p>
+<h3 id="5-12"><a href="#5-12" class="headerlink" title="5.12"></a>5.12</h3><p>视图可以视为“虚拟表”或“存储的查询”<br>创建视图所依据的表称为“基表”<br>视图的优点：<br>提供了另外一种级别的表安全性:隐藏了一些关键的字段<br>简化的用户的SQL命令<br>隔离基表结构的改变<br>存储过程概述</p>
+<h3 id="5-13"><a href="#5-13" class="headerlink" title="5.13"></a>5.13</h3><p>存储过程（StoredProcedure）<br>可以包含逻辑判断的sql语句集合。<br>是经过预编译，存在于数据库中。<br>通过调用指定存储过程的名字（可有参，可无参）来执行。</p>
+<p>优点：<br>简化了复杂的业务逻辑，根据需要可重复使用屏蔽了底层细节，不暴露表信息即可<br>完成操作降低网络的通信量，多条语句可以封装成一个存储过程来执行设置访问权<br>限来提高安全性提高执行效率，因为它是预编译以及存储在数据库中。<br>缺点：<br>可移植性差，相同的存储过程并不能跨多个数据库进行操作大量使用存储过程后，<br>首先会使服务器压力增大，而且维护难度逐渐增加。<br>存储过程的语法：<br>–下面是在oracle数据库下最基本的语法<br>–仅创建一个名为testProcedure 的无参的存储过程<br>–IS也可以是AS<br>–如果已经存在名为 testProcedure 的存储过程，下面的语法会出现 名称已被使用的错<br>误<br>–解决办法：<br>–第一句可以写成 createorreplaceproceduretestProcedure<br>–这样会替换原有的存储过程<br>–NULL表示任何可以正确执行的sql 语句，但至少一句<br>createproceduretestProcedure<br>IS<br>BEGIN<br>NULL<br>END;<br>存储过程的参数的分类:<br>IN<br>OUT<br>INOUT<br>注意：<br>存储过程之间可相互调用<br>存储过程一般修改后，立即生效。<br>索引概述</p>
+<h3 id="5-14"><a href="#5-14" class="headerlink" title="5.14"></a>5.14</h3><h3 id="1、索引的概念"><a href="#1、索引的概念" class="headerlink" title="1、索引的概念"></a>1、索引的概念</h3><p>索引就是为了提高数据的检索速度。</p>
+<p>数据库的索引类似于书籍的索引。<br>在书籍中，索引允许用户不必翻阅完整个书就能迅速地找到所需要的信息。<br>在数据库中，索引也允许数据库程序迅速地找到表中的数据，而不必扫描整个数据<br>库。</p>
+<h3 id="2、索引的优点"><a href="#2、索引的优点" class="headerlink" title="2、索引的优点"></a>2、索引的优点</h3><p>1.创建唯一性索引，保证数据库表中每一行数据的唯一性<br>2.大大加快数据的检索速度，这也是创建索引的最主要的原因</p>
+<h3 id="3-减少磁盘IO（向字典一样可以直接定位）"><a href="#3-减少磁盘IO（向字典一样可以直接定位）" class="headerlink" title="3.减少磁盘IO（向字典一样可以直接定位）"></a>3.减少磁盘IO（向字典一样可以直接定位）</h3><h3 id="3、索引的缺点"><a href="#3、索引的缺点" class="headerlink" title="3、索引的缺点"></a>3、索引的缺点</h3><p>1.创建索引和维护索引要耗费时间，这种时间随着数据量的增加而增加</p>
+<h3 id="2-索引需要占用额外的物理空间"><a href="#2-索引需要占用额外的物理空间" class="headerlink" title="2.索引需要占用额外的物理空间"></a>2.索引需要占用额外的物理空间</h3><p>3.当对表中的数据进行增加、删除和修改的时候，索引也要动态的维护，降低了数<br>据的维护速度</p>
+<h3 id="4、索引的分类"><a href="#4、索引的分类" class="headerlink" title="4、索引的分类"></a>4、索引的分类</h3><h3 id="1-普通索引和唯一性索引"><a href="#1-普通索引和唯一性索引" class="headerlink" title="1.普通索引和唯一性索引"></a>1.普通索引和唯一性索引</h3><p>普通索引：CREATE INDEXmycolumn_indexONmytable(myclumn)<br>唯一性索引：保证在索引列中的全部数据是唯一的<br>CREATEuniqueINDEXmycolumn_indexONmytable(myclumn)</p>
+<h3 id="2-单个索引和复合索引"><a href="#2-单个索引和复合索引" class="headerlink" title="2. 单个索引和复合索引"></a>2. 单个索引和复合索引</h3><p>单个索引：对单个字段建立索引<br>复合索引：又叫组合索引，在索引建立语句中同时包含多个字段名，<br>最多16个字段<br>CREATEINDEXname_indexONuserInfo(firstname,lastname)</p>
+<h3 id="3-顺序索引，散列索引-位图索引"><a href="#3-顺序索引，散列索引-位图索引" class="headerlink" title="3.顺序索引，散列索引,位图索引"></a>3.顺序索引，散列索引,位图索引</h3><p>批量</p>
+<h3 id="5-15Ibatis"><a href="#5-15Ibatis" class="headerlink" title="5.15Ibatis"></a>5.15Ibatis</h3><p>this.getSqlMapClientTemplate().execute(<br>newSqlMapClientCallback(){<br>publicObjectdoInSqlMapClient(<br>SqlMapExecutorexecutor)<br>throwsSQLException{<br>executor.startBatch();<br>for(inti=0，n=list.size();i&lt;n;i++){<br>executor.insert(<br>“productAttach.insertProductAttach”,<br>list.get(i));<br>}</p>
+<p>executor.executeBatch();<br>returnnull;<br>}<br>});<br>ibatis,jdbc,hibernate的分段的实现:<br>都应该在组装list的时候进行拆分（如：action层加入）<br>if(list.size()%1000==0)<br>{<br>productAttachService.addBatch(list);<br>list.clear();<br>}<br>if(list.size()&gt;0)<br>productAttachService.addBatch(list);</p>
+<p>业务场景篇<br>的概述</p>
+<h3 id="6-1Spring"><a href="#6-1Spring" class="headerlink" title="6.1Spring"></a>6.1Spring</h3><p>是完全面向接口的设计，降低程序耦合性，主要是事务控制并创建 实例<br><code>Spring</code> bean<br>对象。在 整合时，充当黏合剂的作用。 控制反转 依<br>ssh <code>IOC</code>(Inversion of Control) /<br>赖注入，又称 依赖注入<br><code>DI</code>(Dependency Injection) ( )<br>的作用：产生对象实例，所以它是基于工厂设计模式的<br><code>IOC</code><br>的注入<br><code>Spring</code> <code>IOC</code><br>通过属性进行注入，通过构造函数进行注入<br>注入对象数组 注入 集合<br><code>List</code><br>注入 集合 注入 类型<br><code>Map</code> Properties<br>自动绑定模式：<br><code>Spring</code> <code>IOC</code><br>可以设置 按以下方式进行绑定<br>autowire<br>按 只要类型一致会自动寻找<br>byType<br>按 自动按属性名称进行自动查找匹配<br>byName .<br>面向方面（切面）编程<br><code>AOP</code><br>是 的延续，是 的缩写，意思是面向方面 切<br><code>AOP</code> OOP AspectOrientedProgramming (<br>面 编程。<br>)<br>注： 面向对象编程<br>OOP(<code>Object</code>-Oriented Programming )<br>主要应用于日志记录，性能统计，安全控制 事务处理（项目中使用的）等方面。<br><code>AOP</code> ,<br>中实现 技术：<br><code>Spring</code> <code>AOP</code><br>在 中可以通过代理模式来实现<br><code>Spring</code> <code>AOP</code><br>代理模式分为<br>静态代理：一个接口，分别有一个真实实现和一个代理实现。<br>动态代理：通过代理类的代理，接口和实现类之间可以不直接发生联系，而可以在<br>运行期（ ）实现动态关联。<br><code>Runtime</code><br>动态代理有两种实现方式，可以通过 的动态代理实现也可以通过 来实现而<br>jdk cglib<br>默认是通过 的动态代理来实现的。 的动态代理必须要有接口的支持，而<br><code>AOP</code> jdk jdk<br>不需要，它是基于类的。<br>cglib<br>事务的描述：<br><code>Spring</code> <code>AOP</code></p>
+<p>在 里通过 里面先设定一个表达式，设定对<br>spring-common.xml <a href="aop:config" target="_blank" rel="noopener">aop:config</a><br>里那些方法 如：对 等开头的方法进行事务拦截。我<br>service add* ,delete<em>,update</em><br>们需要配置事务的传播（ ）特性 通常把增 删 改以外的操<br>propagation=”REQUIRED” , , ,<br>作需要配置成只读事务（ ） 只读事务可以提高性能。之后引入<br>read-only=”true” .<br>在 引用 （事务管理）在事务管理里再引入<br>tx:advice, tx:advice transactionManager ,<br>注入 ，最后通过 引入<br>sessionFactory,sessionFactory dataSource <a href="aop:config" target="_blank" rel="noopener">aop:config</a><br>。<br>txAdvice<br>实现 控制反转描述：<br><code>Spring</code> ioc<br>原来需要我们自己进行 的创建以及注入，而现在交给 容器去完成<br>bean spring bean<br>的创建以及注入。所谓的“控制反转”就是 对象控制权的转移，从程序代码本身转移<br>到了外部容器。<br>官方解释<br>:<br>控制反转即 ，它把传统上由程序代码直接操控的对象的调<br>IoC (Inversion of Control)<br>用权交给容器，通过容器来实现对象组件的装配和管理。所谓的“控制反转”概念就是<br>对组件对象控制权的转移，从程序代码本身转移到了外部容器。<br>事务概述</p>
+<h3 id="6-2"><a href="#6-2" class="headerlink" title="6.2"></a>6.2</h3><p>在数据库中 所谓事务是指一组逻辑操作单元即一组 语句。当这个单元中的一部分<br>, sql<br>操作失败 整个事务回滚，只有全部正确才完成提交。<br>,<br>判断事务是否配置成功的关键点在于出现异常时事务是否会回滚<br>事务的 属性<br>ACID<br>原子性（ ）</p>
+<h3 id="1-Atomicity"><a href="#1-Atomicity" class="headerlink" title="1. Atomicity"></a>1. Atomicity</h3><p>原子性是指事务是一个不可分割的工作单位，事务中的操作要么都发生，要么都不发生。</p>
+<h2 id="一、致性"><a href="#一、致性" class="headerlink" title="一、致性"></a>一、致性</h2><h3 id="2-Consistency"><a href="#2-Consistency" class="headerlink" title="2. Consistency"></a>2. Consistency</h3><p>事务必须使数据库从一个一致性状态变换到另外一个一致性状态。 数据不被破坏<br>( )<br>隔离性（ ）</p>
+<h3 id="3-Isolation"><a href="#3-Isolation" class="headerlink" title="3. Isolation"></a>3. Isolation</h3><p>事务的隔离性是指一个事务的执行不能被其他事务干扰。<br>持久性（ ）</p>
+<h3 id="4-Durability"><a href="#4-Durability" class="headerlink" title="4. Durability"></a>4. Durability</h3><p>持久性是指一个事务一旦被提交，它对数据库中数据的改变就是永久性的。即使系统重<br>启也不会丢失。<br>在 中，事务默认是自动提交的，每次执行一个 语句时，如果执行成功，就<br><code>JDBC</code> SQL<br>会向数据库自动提交，而不能回滚。<br>为了让多个 语句作为一个事务执行：<br>SQL<br>（ ）执行语句前调用 对象的 以取消自动提交<br>1 Connection setAutoCommit(false);</p>
+<p>事务。<br>（ ）在所有的 语句都成功执行后，调用 方法提交事务。<br>2 SQL commit();<br>（ ）在出现异常时，调用 方法回滚事务。<br>3 rollback();<br>权限概述</p>
+<h3 id="6-3"><a href="#6-3" class="headerlink" title="6.3"></a>6.3</h3><p>权限涉及到5张表：<br>用户表，角色表，权限表 菜单表 ，用户角色关联表，角色权限关联表。<br>( )<br>当用户登录时，根据用户名和密码到用户表验证信息是否合法，如果合法则获取用户信<br>息，之后根据用户 再到用户角色关联表中得到相关连的角色 集合 之后根据角色<br>id id ,<br>再到角色权限关联表中获取该角色所拥有的权限 集合，然后再根据权限 集合到<br>id id id<br>权限表（菜单表）中获取具体的菜单，展现给当前登录用户，从而达到不同用用户看到<br>不同的菜单权限。<br>我们通过 来给角色赋权并且通过 来展示菜单，以及通过 来管 理<br>ZTree ZTree ZTree<br>菜单即增加和编辑菜单。<br>我们做的权限控制到 级别 为了防止用户不登录直接输入 访问的这个弊端，通过<br>url , url<br>拦截器进行拦截验证。<br>业务场景</p>
+<h3 id="6-4OSCache"><a href="#6-4OSCache" class="headerlink" title="6.4OSCache"></a>6.4OSCache</h3><p>在我以前的项目中，我们考虑了系统性能问题，这个时候我们采用了 缓存，<br>Oscache<br>刚开始把这个功能交给了项目组中的另外一个同事来做的，但是他做完的时候他发现缓<br>存中明明已经缓存了数据，但是在取得时候发现没有数据，我们项目经理让我去帮忙看<br>看这个问题，我阅读完他的代码之后，我发现了他每次缓存的时候都是调用一个新的缓<br>存对象的方法，结果出现了明明已经走了缓存的方法而取不到数据的问题，通过我多年<br>的工作经验，我就想到了应该用单例模式去封装一个单例工具类来调用 。但<br>oscache<br>是，在后来的测试过程中，发现当并发访问的时候也会出现上述的问题，这个时候我直<br>接采取的 （双重判定锁）单例模式封装了工具类，既解决了线程安全问题，相对<br>DCL<br>的性能问题也考虑到了，这个问题才得到了完善的解决。<br>线程概述</p>
+<h3 id="6-5"><a href="#6-5" class="headerlink" title="6.5"></a>6.5</h3><p>线程的状态以及状态之间的相互转换：<br>、新建状态 ：新创建了一个线程对象。</p>
+<h3 id="1-New"><a href="#1-New" class="headerlink" title="1 (New)"></a>1 (New)</h3><p>、就绪状态 ：线程对象创建后，其他线程调用了该对象的 方法。该</p>
+<h3 id="2-Runnable-start"><a href="#2-Runnable-start" class="headerlink" title="2 (Runnable) start()"></a>2 (Runnable) start()</h3><p>状态的线程位于可运行线程池中，变得可运行，等待获取 的使用权。<br>CPU<br>、运行状态 ：就绪状态的线程获取了 ，执行程序代码。</p>
+<h3 id="3-Running-CPU"><a href="#3-Running-CPU" class="headerlink" title="3 (Running) CPU"></a>3 (Running) CPU</h3><p>、阻塞状态 ：阻塞状态是线程因为某种原因放弃 使用权，暂时停止运</p>
+<h3 id="4-Blocked-CPU"><a href="#4-Blocked-CPU" class="headerlink" title="4 (Blocked) CPU"></a>4 (Blocked) CPU</h3><p>行。直到线程进入就绪状态，才有机会转到运行状态。阻塞的情况分三种：<br>一 、等待阻塞：运行的线程执行 方法， 会把该线程放入等待池中。<br>( ) <code>wait</code>() <code>JVM</code><br>二 、同步阻塞：运行的线程在获取对象的同步锁时，若该同步锁被别的线程占用，<br>( )<br>则 会把该线程放入锁池中。<br><code>JVM</code><br>三 、其他阻塞：运行的线程执行 或 方法，或者发出了 请求时，<br>( ) sleep() join() I/O<br>会把该线程置为阻塞状态。当 状态超时、 等待线程终止或者超时、<br><code>JVM</code> sleep() join()<br>或者 处理完毕时，线程重新转入就绪状态。<br>I/O<br>、死亡状态 ：线程执行完了或者因异常退出了 方法，该线程结束生命周</p>
+<h3 id="5-Dead-run"><a href="#5-Dead-run" class="headerlink" title="5 (Dead) run()"></a>5 (Dead) run()</h3><p>期。<br>实现线程的两种方式：<br>是继承 类或实现 接口，但不管怎样，当 了这个对象后，线程<br><code>Thread</code> <code>Runnable</code> new<br>就已经进入了初始状态<br>和 的区别：<br><code>wait</code> sleep<br>线程访问：<br>锁池状态，之后等待锁释放，然后访问代码<br><code>wait</code><br>等待队列 释放资源 调用 或者 之后锁池状态 等待锁<br>( )—&gt; <code>notify</code> notifyall —&gt;(<br>释放 可运行状态 运行状态 访问代码<br>)—&gt; —&gt; —-&gt;<br>sleep,join<br>不释放资源 结束后直接进入可运行状态 运行状态 访问代码<br>–&gt; —&gt; —-&gt;<br>一个 控制台程序，默认运行两个线程，一个主线程，一个垃圾回收线程。<br>java<br>线程与进程的区别：<br>线程 与进程</p>
+<h3 id="1-Thread-Process"><a href="#1-Thread-Process" class="headerlink" title="1. (Thread) (Process)"></a>1. (Thread) (Process)</h3><p>进程定义的是应用程序与应用程序之间的边界，通常来说一个进程就代表一个与之对应<br>的应用程序。不同的进程之间不能共享代码和数据空间，而同一进程的不同线程可以共<br>享代码和数据空间。</p>
+<h2 id="一、个进程可以包括若干个线程"><a href="#一、个进程可以包括若干个线程" class="headerlink" title="一、个进程可以包括若干个线程"></a>一、个进程可以包括若干个线程</h2><p>2.<br>请求 超时问题</p>
+<h3 id="6-6Ajax-Session"><a href="#6-6Ajax-Session" class="headerlink" title="6.6Ajax Session"></a>6.6Ajax Session</h3><p>我在做项目时有时会遇到 超时问题，如果 超时，平常请求没有什么<br>session session<br>问题，通过拦截器可以正确跳到登陆页面，可是你如果用 请求的话这就出现问题<br>ajax<br>了，因为 是异步的，局部刷新，所以登陆界面不会再全页面中显示，他只会显示<br>ajax<br>到页面的一部分当中。所以根据我这几年的经验找到了我认为比较好的一种方法。因为<br>那我用的框架是和 集成的，所以就在拦截器中进行设置：<br>struts2<br>首先判断 是否为空就是判断 是否超时，如果超时就取出请求的<br>session session head<br>头 信 息 ， 如 果 不 为 空 就 和<br>request.getHeader(“x-requested-with”)<br>标识 进行比较<br>XMLHttpRequest(Ajax )<br>(request.getHeader(“x-requested-with”).equalsIgnoreCase(“XMLHttpRequest”)</p>
+<p>如果相等说明此请求是 请求。<br>)) ajax<br>如果是 请求就可以用 键 值 来设置一个标识来告诉用户<br>ajax response.setHeader(“ “,” “)<br>这是 请求并且 超时时发出的，这样我就可以在回调函数中取出自己设置<br>ajax session<br>的那个唯一标识： 如果取出的值是和自己<br>XMLHttpRequest.getResponseHeader(“”);<br>在后台中设置的值一样的话，就证明 已经超时，这样就可以设置<br>session<br>登陆界面 ，来跳转到登陆界面了。<br>window.location.replace(“ “)<br>这样做虽然解决了问题，但是，会在每个回调函数中写入那些代码，这样的话代码就会<br>显得特别零散，所以就想能不能定义一个全局的设置所以就找到了 的<br>jqery ajaxSetUp<br>方法，通过 对 的 进行全局的判断 就相当于 的<br>ajaxSetUp jqery ajax (ajaxSetUp ajax<br>拦截器 ，通过设置 里的 ，它就相当于回调函数，这样那就弥补<br>) ajaxSetUp complete<br>了上一方法的不足。<br>我 做 项 目 时 还 用 到 ， 这 是 请 求 时 的 事 件 ；<br>$(document).ajaxStart() ajax<br>，这是 请求成功后的事件。我一般用他们来显示遮<br>$(document).ajaxSuccess() <code>AJAX</code><br>罩层和隐藏遮罩层用的加遮罩层是为了不让用户重复提交，更提高了用户体验度，让用<br>户知道已经提交了。<br>线程池概述</p>
+<h3 id="6-7Java"><a href="#6-7Java" class="headerlink" title="6.7Java"></a>6.7Java</h3><p>java线程池的工作原理和数据库连接池的差不多，因为每次重新创建线程都是很耗资<br>源的操作，所以我们可以建立一个线程池，这样当需要用到线程进行某些操作时，就可<br>以直接去线程池里面找到空闲的线程，这样就可以直接使用，而不用等到用到的时候再<br>去创建，用完之后可以把该线程重新放入线程池供其他请求使用从而提高应用程序的性<br>能。<br>线程池的核心流程:</p>
+<h3 id="1-构建一个-ThreadPoolExecutor-并指定默认要创建的线程的数量"><a href="#1-构建一个-ThreadPoolExecutor-并指定默认要创建的线程的数量" class="headerlink" title="1.构建一个 ThreadPoolExecutor 并指定默认要创建的线程的数量"></a>1.构建一个 ThreadPoolExecutor 并指定默认要创建的线程的数量</h3><h3 id="2-通过-threadPool-execute"><a href="#2-通过-threadPool-execute" class="headerlink" title="2.通过 threadPool.execute()"></a>2.通过 threadPool.execute()</h3><p>去添加一个个要执行的线程即实现了Runable接口的java类</p>
+<h3 id="3-在实现了Runable接口的java类的run方法中写入具体的业务代码"><a href="#3-在实现了Runable接口的java类的run方法中写入具体的业务代码" class="headerlink" title="3.在实现了Runable接口的java类的run方法中写入具体的业务代码"></a>3.在实现了Runable接口的java类的run方法中写入具体的业务代码</h3><p>线程池的业务场景：<br>我在工作的时候，当时一个同事给我提了一个需求，目前有大量的图片需要处理生产缩<br>略图并进行加水印，因为按照普通的处理方法一个个的进行处理太慢了，问我有没有好<br>的解决方案，这个时候我就想到了java中的线程池，我构建了一个线程数为5个线程<br>池，然后采用分段批量提取的方式每500条为一组数据进行图片信息的提取，然后再把<br>这些通过Threadpool的execute方法交给线程池中的线程进行处理，即充分使用了CPU<br>硬件资源又加快了大数据情况下程序的处理效率。<br>我当时在工作的过程中，认识一个做电商的朋友，他们当时公司才起步，很多技术都不<br>成熟，所以就常常和我探讨一些技术问题，有次他向我请教一个问题，问我如何才能提<br>高网站的性能，我根据自己在项目中的经验以及自己以前阅读的关于优化方面的资料给<br>他提出了很多建议，如用lucene进行全文检索，用memcached进行分布式缓存，以及<br>通过spring定时器结合freeMarker模板引擎来生成静态页面，由于要生成的页面的数</p>
+<p>量比较多，考虑到程序的性能，我建议他结合java的线程池进行工作，这样就可以充<br>分使用了CPU硬件资源又加快了大数据情况下程序的处理效率。<br>概述</p>
+<h3 id="6-8OSCache"><a href="#6-8OSCache" class="headerlink" title="6.8OSCache"></a>6.8OSCache</h3><p>是一个高性能的 框架，可以和任何 代码进行集成，并且还可以通<br>oscache j2ee java<br>过标签对页面内容进行缓存，还以缓存请求。<br>我们通常将那些频繁访问但是又不是经常改变的数据进行缓存。为了保证缓存数据的有<br>效性，在数据发生改变的时候，我们要刷新缓存，避免脏数据的出现。刷新缓存的策略<br>有两种，一种是定时刷新，一种手动刷新。<br>缓存数据的时机通常也分为两种，即在 容器 启动时候加载数据进行缓存，<br>tomcat(web )<br>另外也可以在用户第一次访问数据的时候进行缓存，这个相当于缓存的立即加载和按需<br>加载。<br>缓存的层次如下 缓存越靠前对性能的提升越大一<br>:jsp–&gt;action–&gt;service–&gt;dao,<br>个 里面可以有多个 一个 中可以有多个 或者多个<br>action service, service dao service<br>任何类之间都可以进行相互调用，可以通过构造函数传参， 传参或者是方法传<br>set,get<br>参将相关的类连接起来。<br>单例业务场景</p>
+<h3 id="6-9OSCache-autocomplete"><a href="#6-9OSCache-autocomplete" class="headerlink" title="6.9OSCache+autocomplete+"></a>6.9OSCache+autocomplete+</h3><p>在我以前做某项目的过程中，其中我们在做产品列表的查询的时候为了提高用户的体验<br>度，我们使用了 插件来代替 进行品牌的选择，才开始的时候每<br>autocomplete <code>select</code><br>次都要根据用户输入的信息去查询数据库进行模糊匹配返回结果，后来我们考虑到系统<br>的性能，因此我们采用了 缓存，才开始这个功能是交给我们项目组中的另外<br>oscache</p>
+<h2 id="一、个同事来做的"><a href="#一、个同事来做的" class="headerlink" title="一、个同事来做的"></a>一、个同事来做的</h2><p>已经有时我们需要的数据，但是从缓存里面取的时候，发现没有，之后项目经理让我去<br>帮这个同事看看这个问题，我经过阅读他的代码发现，它里面在使用缓存的时候，针对<br>于每次方法的调用都产生一个新的实例，结果导致了上面的问题，这个时候我想起了可<br>以使用设计模式中的单例模式来解决这个问题，才开始我直接采用了普通的单列模式，<br>但是后来在测试的过程中，发现当用户并发量大的时候还是会出现上面的问题，之后我<br>再次考虑了代码，最后发现是因为没有给单列模式加锁的原因，从而导致了大用户并发<br>的时候，线程安全的问题，之后我便在方法上加上了 关键字，解决上述<br><code>synchronized</code><br>的问题，但是后来测试人员反馈，觉的这段的性能有问题，我考虑之后便采用在方法体<br>内加锁并结合双重判定的方式解决了上面的问题。我们是将数据在 启动的时候<br>tomcat<br>加载到缓存中，之后用户进行查询的时候直接从缓存中获取数据，根据前缀匹配进行查<br>询，将结果返回给用户。这样在提高用户体验度的同时也提高性能。</p>
+<p>缓存概述</p>
+<h3 id="6-10"><a href="#6-10" class="headerlink" title="6.10"></a>6.10</h3><p>应用程序为了提高性能，可以通过使用缓存来达到目的，缓存的存储介质可以内存或者<br>硬盘，通常将数据存储在内存里，确切的说是jvm的内存中，缓存是基于Map这种思<br>想构建的，以键值对的方式进行存取，之所以还可以将缓存的数据存储在硬盘中，是因<br>为内存资源相当有限和宝贵，所以当内存资源不足的时候，就可以将其存储到硬盘中，<br>虽然硬盘的存取速度比内存要慢，但是因为减少了网络通信量，所以还是提高程序的性<br>能。缓存可以分为客户端缓存和服务器端缓存，所谓的客户端缓存通常指的是IE浏览<br>器的缓存，服务器端缓存指的web服务器的缓存，通常可以通过第三方组件实现，如<br>oscache,memcache。<br>我们通常将那些频繁访问但是又不是经常改变的数据进行缓存。为了保证缓存数据的有<br>效性，在数据发生改变的时候，我们要刷新缓存，避免脏数据的出现。刷新缓存的策略<br>有两种，一种是定时刷新，一种手动刷新。<br>缓存的层次如下:jsp–&gt;action–&gt;service(通常放置在service)–&gt;dao,缓存越靠前对性能的提<br>升越大<br>缓存的策略:(缓存空间不足需要进行清理的时候使用)<br><code>LRU</code>:最近最少使用原则.(理解:存储书)<br>FIFO:先进先出的缓存策略.(理解:排队)</p>
+<p><strong>Q:</strong> 你来说说缓存？说说你对缓存的理解（如果遇到重复的，就可以省略）<br>我们在项目中使用缓存的目的是为了提高应用程序的性能，减少访问数据库的次数，从<br>而提高应用程序的吞吐量。我们通常将权限，菜单,组织机构这些频繁访问但是不经常<br>改变的基础数据进行缓存，其中我在做()某某项目的时候就通过oscache对ZTree的树<br>形菜单进行了缓存，并且在做的时候和单列设计模式进行结合，考虑到多线程下的安全<br>问题，还对单例模式加入了双重判定锁的检查方式。<br>实现页面静态化业务场景</p>
+<h3 id="6-11"><a href="#6-11" class="headerlink" title="6.11"></a>6.11</h3><p>我们在做某项目时，涉及到程序访问的性能问题，这时候我们想到可以通过静态化来提<br>高用户访问时候的性能，所以我们就采用了freemarker模板引擎，考虑到页面也是要有<br>动态的变化的，所以我们采用spring定时器在每天晚上2点钟的时候定时再次生成html<br>静态页面，考虑发布时候的性能问题，我们又采取线程池技术，让多个线程同时发布，<br>从而缩减发布时间。</p>
+<p>线程安全描述</p>
+<h3 id="6-12servlet"><a href="#6-12servlet" class="headerlink" title="6.12servlet"></a>6.12servlet</h3><p>servlet是单列的，对于所有请求都使用一个实例，所以如果有全局变量被多线程使用的<br>时候，就会出现线程安全问题。<br>解决这个问题有三种方案:<br>1.实现singleThreadModel接口，这样对于每次请求都会创建一个新的servlet实例，这<br>样就会消耗服务端内存，降低性能，但是这个接口已经过时，不推荐使用。<br>2.可以通过加锁(synchroniezd关键字)来避免线程安全问题。这个时候虽然还是单列，但<br>是对于多线程的访问，每次只能有一个请求进行方法体内执行，只有执行完毕后，其他<br>线程才允许访问，降低吞吐量。<br>3.避免使用全局变量，使用局部变量可以避免线程安全问题，强烈推荐使用此方法来解<br>决servlet线程安全的问题。<br>工作流引擎描述</p>
+<h3 id="6-13-jbpm4"><a href="#6-13-jbpm4" class="headerlink" title="6.13(jbpm4) :"></a>6.13(jbpm4) :</h3><p>JPBM是JBOSS旗下的一个开源的基于hibernate的工作流引擎。工作流就是在日常生活<br>中，我们一些常见的如请假流程、采购流程、入职流程，通俗的来讲就是一些在现实生<br>活中的流程以信息化以程序的方式实现。</p>
+<h2 id="一、个工作流首先需要进行流程定义"><a href="#一、个工作流首先需要进行流程定义" class="headerlink" title="一、个工作流首先需要进行流程定义"></a>一、个工作流首先需要进行流程定义</h2><p>环节、活动节点、活动环节，并且节点也可以分为两大类型：人工节点和自动节点，人<br>工节点有start开始节点、end结束节点、task任务节点，自动节点有decision判断节点、<br>fork分支节点、join聚合节点和state状态节点，并且一个流程有且只有一个开始节点，<br>但可以有多个结束节点。<br>流程定义是静止的，它在运行状态时会转换成流程实例，一个流程定义可以对应多个流<br>程实例。流程运行后，会产生两个文件，<em>.jdpl.xml文件和</em>.png图片文件，也会生成18<br>张数据库表，常用且核心的表有JBPM4_LOB 存储表，主要存储xml文件和png图片、<br>JBPM4_TASK 任务表、JBPM4_EXECUTION 流程实例表、JBPM4_VARIABLE变量表。<br>图形化的灵活定制（主动说）<br>可以根据需求进行流程图的改变的，即定义的流程图是可以根据需要改变的，而不是死<br>的。<br>可以进行图形化的监控(主动说)<br>输出图片<br>获取活动节点的坐标<br>进行叠加<br>判断节点:(主动说，也可以了解)<br>实现implementsDecisionHandler接口并重写decide方法,</p>
+<p>返回的字符串要和xml中配置的transition的name保持一致。<br>分支判定节点<br>JBPM有五大核心类：<br>ProcessEngine：主要获取各种的Service<br>RepositoryService：主要发布流程定义<br>ExecutionService：主要操作流程实例<br>TaskService：主要操作人工服务<br>HistoryService：主要操作历史服务。<br>核心方法：<br>读取jbpm定义的文件生成zip包存到lob表中：createDeployment()<br>获取流程定义列表：createProcessDefinitionQuery<br>根据定义的key或id来启动流程实例：startProcessInstanceByKey(id)<br>获取待办任务列表：findPersonalTasks(userName)<br>完成指定任务列表：completeTask(*.getActivityId())<br>获取历史任务列表：createHistoryTaskQuery()<br>获取流程实例的ID：task.getExecutionId()<br>(了解的表)<br>JBPM4_HIST_ACTINST 流程活动(节点) 实例表<br>JBPM4_HIST_DETAIL 流程历史详细表<br>JBPM4_HIST_PROCINST 流程实例历史表<br>JBPM4_HIST_TASK 流程任务实例历史表<br>JBPM4_HIST_VAR 流程变量( 上下文) 历史表<br>业务场景</p>
+<h3 id="6-14JPBM"><a href="#6-14JPBM" class="headerlink" title="6.14JPBM"></a>6.14JPBM</h3><p>首先进行请假的流程定义，我们流程的定义是（员工提交请假单—》经理审批—》总监<br>审批—》总经理审批—》结束），通过repositoryService将其发布部署到jbpm4_lob表中，<br>之后获取流程定义列表，选中请假的流程定义，员工开始进行请假单的填写，保存并通<br>过executionService开启流程实例，然后用taskService获取经理的待办任务列表，选中<br>待办任务，进行审批，通过调用taskService.completeTask()进入到总监审批环节，然后<br>用总监进行登录，同样获取待办任务列表，然后调用taskService.completeTask()进入总<br>经理审批环节，总经理审批之后，结束流程。在这个过程中我们还可以根据historyService<br>查看当前登录人已办的任务列表。<br>描述</p>
+<h3 id="6-15Ant"><a href="#6-15Ant" class="headerlink" title="6.15Ant"></a>6.15Ant</h3><p>Ant是apache旗下的对项目进行自动打包、编译、部署的构建工具，他主要具有轻量<br>级并且跨平台的特性，而且基于jvm，默认文件名为build.xml<br>Ant主要的标签：</p>
+<p>Project 根标签，<br>target 任务标签，<br>property 属性标签，自定义键/值 供多次使用，<br>java 执行编译后的java文件<br>javac 编译java文件<br>war 打成war包<br>其它标签：copy，delete，mkdir，move，echo等。<br>描述</p>
+<h3 id="6-16FreeMarker"><a href="#6-16FreeMarker" class="headerlink" title="6.16FreeMarker"></a>6.16FreeMarker</h3><p>FreeMarker是一个用Java语言编写的模板引擎，它是基于模板来生成文本输出的通用<br>工具。Freemarker可以生成HTML， <code>XML</code>，JSP或Java等多种文本输出。<br>工作原理：定义模板文件，嵌入数据源，通过模板显示准备的数据<br>（数据 + 模板 = 输出）<br>我们在使用模板中发现freemarker具有许多优点，它彻底的分离表现层和业务逻辑，模<br>板只负责数据在页面中的表现，不涉及任何的逻辑代码，所以使得开发过程中的人员分<br>工更加明确，作为界面开发人员，只需专心创建HTML文件、图像以及Web页面的其<br>他可视化方面，不用理会数据；而程序开发人员则专注于系统实现，负责为页面准备要<br>显示的数据。<br>如果使用jsp来展示，开发阶段进行功能调适时，需要频繁的修改JSP，每次修改都要<br>编译和转换，浪费了大量时间，FreeMarker模板技术不存在编译和转换的问题，在开发<br>过程中，我们在不必在等待界面设计开发人员完成页面原型后再来开发程序。由此使用<br>freemarker还可以大大提高开发效率。<br>描述</p>
+<h3 id="6-17webService"><a href="#6-17webService" class="headerlink" title="6.17webService"></a>6.17webService</h3><p>（主动说）<br>webservice是SOA（面向服务编程）的一种实现，主要是用来实现异构平台通信也就<br>是不同平台不同项目之间的数据传输，从而避免了信息孤岛的问题，它之所以能够进行<br>异构平台通信是因为它是完全基于xml的，所以说，webService是跨平台，跨语言，跨<br>框架的，在 java 中通常有三种技术框架分别是 xfire,cxf,axis2。我们为了保证<br>webservice的安全性，采用了基于WS-Security标准的安全验证(使用回调函数)。<br>（没必要主动说）<br>webservice的三要素分别是：<br>wsdl（webservicedescriptionlanguage）<br>用来描述发布的接口（服务）</p>
+<p>soap(simpleobjectaccessprotocol)<br>是xml和http的结合，是webservice数据通信的协议<br>uddi 用来管理，查询webService的服务<br>（没必要主动说）<br>webservice的具体三种实现方式（框架）或者三种实现框架的区别<br>1.Axis2:可以用多种语言开发，是一个重量级框架，功能非常强大，但是它的性能比较<br>低。<br>2.Xfire：它相比Axis2来说是一个轻量级框架，它的性能要比Axis2高。<br>3.cxf：是Xfire的升级版，就好比是，struts2是webwork的升级，然后cxf和spring集<br>成起来非常方便，简易，性能方面也要比Xfire高。<br>【注】jdk6 自带的webservice jws<br>（主动说）<br>业务场景<br>我在以前做项目的时候，其中遇到一个功能，需要进行两个项目之间的数据的传输，项<br>目经理让我去完成这个任务，我根据以往的项目经验，想到两种解决方案，第一种就是<br>开放另外一个项目的数据库的权限给我，然后我直接通过访问另外一个项目的数据库，<br>来得到需要的信息，但后来我分析了下，觉的这种方式不安全，而且因为当时这个项目<br>是另外一家公司负责在做，所以数据库里面的表结构，以及以后牵涉到的责任问题都很<br>多，所以我就采用了第二种方案，即通过webservices的方式，进行异构系统之间数据<br>信息的传递，webservices的具体实现，有xfire,cxf,axis2,我根据以往的项目经验，了解<br>到cxf是xfire的升级版本，适用于java语言，xfire/cxf 性能比axis2要高，并且和spring<br>整合起来也比较方便，而axis2支持更多的语言，性能相对于cxf要低，通过上面分析，<br>结合我们目前的两个项目都是基于java语言的，所以我采用cxf这种方式实现了两个项<br>目之间数据的传递，我们为了保证webservice的安全性我们采用了基于WS-Security标<br>准的安全验证(使用CXF回调函数)。<br>（没必要主动说）<br>webservice服务端配置流程<br>首先在web.xml中引入cxfServlet核心类，指定对以/cxf开头的url路径提供webservice<br>服务，之后我们在要发布成webservice接口上添加@Webservice 注解，而且还要在实<br>现类上添加同样的 webservice 注解并且要说明实现了哪个接口，之后在<br>spring-webservice.xml 中发布webservice服务，通过jaxws:endpoint这个标签，并且在<br>标签配置implementor和address来表明实现服务的类，以及发布的地址，最后在浏览<br>器中输入相关的webservice地址?wsdl来验证服务是否发布成功。<br>（没必要主动说）<br>webservice客户端的配置<br>首先通过wsdl2java根据发布的webservice服务端地址的wsdl生成客户端调用的中间桥<br>梁java 类，将生成的java 类拷贝到客户端项目中，配置 spring-client.xml 文件，通过<br>jaxws:client定义一个bean,并通过address属性指明要访问的webservice的服务地址，</p>
+<p>通过serviceClass指明充当中间桥梁的服务类，之后获取该bean,就可以通过它来访问发<br>布的webservice接口中的方法。<br>索引概述</p>
+<h3 id="6-18oracle"><a href="#6-18oracle" class="headerlink" title="6.18oracle"></a>6.18oracle</h3><p>索引是与表相关的一个可选结构，可以提高sql语句的检索效率，相当于我们的字典目<br>录 ，可以快速进行定位 ，所以可以减少磁盘I/O，但是因为索引在物理与逻辑上都是<br>独立于表的数据它会占用一定的物理空间(额外磁盘空间) 所以并不是索引越多越好而<br>我们应该根据业务需求去创建索引,而且进行增删改操作时 oracle又要自动维护索引<br>所以在一定程度上也降低了维护速度，而且我们在创建索引和维护索引要耗费时间，这<br>种时间随着数据量的增加而增加，我们一般创建索引呢是这样创建的 create index<br>索引名 on 表名(字段)，索引又分为普通索引 唯一索引(unique) 单个索引 复合索<br>引(又叫组合索引，在索引建立语句中同时可包含多个字段名)，顺序索引，散列索引,<br>位图索引。<br>存储过程</p>
+<h3 id="6-19oracle"><a href="#6-19oracle" class="headerlink" title="6.19oracle"></a>6.19oracle</h3><p>存储过程就是封装一些sql的集合，也就是一条条的sql语句，过程的优点就是简化了<br>sql命令加上它是预编译的，所以它的执行效率和性能较高，再者，如果不调用过程的<br>话就要和数据库发生多次交互，调用过程只需传一个命令所有的那些执行逻辑都在数据<br>库端执行，所以说它降低了网络的通信量，其次，存储过程大大提高了安全性，这就是<br>优点。<br>缺点呢，就是不同的数据库对过程支持的关键字支持的关键字都是不一样的，所以它的<br>移植性是非常差的，再者，它的维护性难度也比较大，因为它没有专业的调试和维护工<br>具，所以说它维护起来比较麻烦，这就是存储过程的基本概述。<br>业务场景</p>
+<h3 id="6-20Junit"><a href="#6-20Junit" class="headerlink" title="6.20Junit"></a>6.20Junit</h3><p>在我们开发项目的时候为了提高代码的性能和保证逻辑正确性，在我们编写代码后往往<br>都要进行单元测试，来验证代码，当时我们公司开发人员全部使用的main方法来进行<br>验证，但是使用mian的最大缺点就是不能将多个类同时进行验证，验证的结果不直观，<br>测试复杂（每个类都要写main方法，单个运行），一定程度上浪费时间，所有我和项目<br>经理提议使用专业测试工具Junit来进行测试，因为Junit是一个Java语言的单元测试<br>框架 ，测试简单，不仅可以提供工作效率和代码的质量，也提高团队的合作能力，我<br>提议后我们进行了Junit的培训使用Junit4加注解的方式来测试。</p>
+<p>实 现 负 载 均 衡 及</p>
+<h3 id="6-21Apache-Tomcat"><a href="#6-21Apache-Tomcat" class="headerlink" title="6.21Apache+Tomcat"></a>6.21Apache+Tomcat</h3><p>复制<br>seesion<br>当我们tomcat访问量大,线程连接数不够时,我们考虑到了tomcat的负载均衡来分<br>担过多的访问.性能方面负载均衡也能利用多台tomcat来增大内存量,流程,准备工<br>作apache,Jk_mod,tomcat,在apache的conf/httpd.conf文件中 使用include 标签引<br>入 我 们 自 定 义 的 一 个 mood_jl.conf, 在 modules 中 引 入 下 载 的<br>k_mod-apache-X.X.XX.so文件,在其中引入我们的.so,及work.properties文件,及指定<br>负 载 分 配 控 制 器 controller, 在 work.properties 文 件 中<br>worker.list=controller,tomcat1,tomcat2 指定 service,worker.tomcat1.port Ajp 端口<br>号,type 是 ajp,host 为指定 ip,lbfactor 指定分配权重值越大分担请求越<br>多,worker.controller.type=lbworker.controller.balanced_workers=tomcat1,tomcat2 指<br>定分担请求的 tomcatSession 的复制在 tomcat 中 service.xml 中 Engine 标签加入<br>jvmRoute 值为work,properties中指定的tomcat名称,然后打开&lt;Cluster标签的注<br>释，最后在应用中程序的web.xml文件中增加<distributable>。<br>我们在做这个项目时，我们考虑到服务器性能的问题，我们最开始想到使用纵向扩<br>展，来增加硬件的配置提高其性能，但这样做比较耗费资金，而且服务器内存空间<br>也是有限的；所以后来就想到使用横向扩展来达到这一目的。<br>当时我们的apache是通过jk借助于ajp协议与tomcat进行通信的，在我们不进<br>行负载均衡之前，那所有的请求都由一台tomcat进行处理，这样会使我们的tomcat<br>所承受的压力增大，而我们进行负载均衡之后，同样数量的请求经过apache和jk<br>将其分发到多台tomcat进行处理，从而降低每台tomcat所承受的压力,而且当其<br>中一台机器宕机时，其他机器还可以继续提供服务，保证服务不间断。<br>在这个过程中，我们遇到了session问题，然后我此昂到用session复制来解决这<br>个问题；在apache的配置文件中增加session粘带特性:<br>worker.lb.sticky_session=1<br>worker.lb.sticky_session_force=0<br>Tomcat的配置<br>修改server.xml文件：<br><engine name="Catalina" defaulthost="localhost" jvmroute="tomcat2">增加<br>jvmRoute=”tomcat2” *. jvmRoute赋的值为worker.properties中配置的相<br>应的server名一致<br><cluster classname="org.apache.catalina.ha.tcp.SimpleTcpCluster"> 将此<br>配置的注释去掉<br>修改应用的web.xml文件</cluster></engine></distributable></p>
+<p>在应用中的web.xml文件中增加<distributable>。<br>如果这样做，当第一次访问的时候，会把所以数据全部缓存到第一台服务器上，通<br>过web配置文件，会把第一台缓存的数据全部复制到第二胎服务器上，这样做就加<br>大网路通信量，导致阻塞，所以我们就想到了可以通过memcached分布式缓存来存<br>取session从而解决上述问题。<br>业务场景</distributable></p>
+<h3 id="6-22Ant"><a href="#6-22Ant" class="headerlink" title="6.22Ant"></a>6.22Ant</h3><p>Ant是基于java语言编写的，因此具有跨平台的特性，此外还具有简洁方便，灵活配置<br>的特性，因此我就在XX项目中使用ant进行项目的编译，打包，部署操作。使用ant<br>之后，如果我们在客户那里修改代码后，就可以直接使用ant进行编译，打包，部署，<br>而不需要为了编译，打包，部署专门在客户那里安装eclipse.此外使用ant也可以直接<br>和svn进行交互，下载源码的同时进行编译，打包，部署。<br>业务场景</p>
+<h3 id="6-23maven"><a href="#6-23maven" class="headerlink" title="6.23maven"></a>6.23maven</h3><p>maven业务场景<br>前段时间在研究maven，知道maven是一个项目管理工具，其核心特点就是通过maven<br>可以进行包的依赖管理，保证jar包版本的一致性，以及可以使多个项目共享jar包，<br>从而能够在开发大型j2ee应用的时候，减小项目的大小，并且和ant比起来，maven<br>根据“约定优于配置”的特性，可以对其项目的编译打包部署进行了更为抽象的封装，<br>使得自己不需要像 ant 那样进行详细配置文件的编写，直接使用系统预定好的 mvn<br>clean,compile,test,package等命令进行项目的操作。于是我就在XX项目中采用了maven,<br>为了保证团队中的成员能够节省下载jar包所需要的时间，于是我就采用nexus搭建了<br>在局域网内的maven私服，然后通过配置settings.xml中建立mirror镜像，将所有下载<br>jar包的请求都转发到maven私服上，之后通过在pom.xml即(projectobjectmodel)中配<br>置项目所依赖的jar包，从而达到在构建项目的时候，先从本地仓库中查找，如果不存<br>在从内部私服查找，如果不存在最后再从外网central服务器查找的机制，达到了节省<br>下载带宽，提高开发效率，以及jar包重用的目的。<br>ant业务场景<br>ant是基于java语言编写的，因此具有跨平台的特性，此外还具有简洁方便，灵活配置<br>的特性，因此我就在XX项目中使用ant进行项目的编译，打包，部署操作。使用ant<br>之后，如果我们在客户那里修改代码后，就可以直接使用ant进行编译，打包，部署，<br>而不需要为了编译，打包，部署专门在客户那里安装eclipse.此外使用ant也可以直接<br>和svn进行交互，下载源码的同时进行编译，打包，部署。<br>maven的常用命令<br>mvneclipse:cleaneclipse:eclipse-Dwtpversion=2.0<br>mvncleanpackage</p>
+<p>maven的生命周期是独立的，但是生命周期下的阶段是相互关联并且延续的。<br>maven的生命周期<br>clean(清理):clean;default(默认):compile,test,packageinstall;site(站点)<br>的操作步骤</p>
+<h3 id="6-24bugfree"><a href="#6-24bugfree" class="headerlink" title="6.24bugfree"></a>6.24bugfree</h3><p>我们在使用bugfree的时候我们首先登陆的时候是以测试员的身份登陆的，也就是系统<br>管理员用户；测试员在登陆后首先应该给要测试的项目的相关负责人，每人创建一个账<br>号（也就是在登陆后的页面的后台管理中创建用户），用户都新建完成之后就新建组，<br>把要测试的项目的用户添加到组中。最后就新建项目并且新建该项目的模块。新建完项<br>目之后就是开始测试程序，在程序中遇到bug以后就把错误截图，在到bugfree中新建<br>bug填写相关的信息和要指派的人（出错模块的负责人）和把刚才的错误截图作为附件</p>
+<h2 id="一、并传送过去"><a href="#一、并传送过去" class="headerlink" title="一、并传送过去"></a>一、并传送过去</h2><p>开发人员每天早上上班的第一件事就是用自己的用户登录bugfree，然后输入查询条件<br>看看前一天有没有指派给自己的bug需要解决的如果有就进行解决。<br>开发人员把对应的bug解决之后就去bugfree上把bug对应的状态改成已解决状态，然<br>后进行保存提交，这样bug的状态就变成已解决状态。测试人员上线查看已解决状态的<br>bug并再次进行测试，如果经过测试bug的问题已解决，就可以把bug关闭；如果经过<br>测试，发现仍然存在bug，就把bug激活；这样等开发人员再次登录的时候就可以再次<br>看到这个未解决的bug，再次进行解决，如此反复直到bug全部解决，因为bugfree对<br>bug的修改都有保留，所有我们可以看到bug的一步步的完善，直到最后把bug关闭。<br>Bug的三种状态：未解决(Active)（测试人员）、已解决(Resolved)(开发人员)、关闭<br>(Closed)（测试人员）<br>的配置</p>
+<h3 id="6-25Axis2"><a href="#6-25Axis2" class="headerlink" title="6.25Axis2"></a>6.25Axis2</h3><p>axis2服务端配置流程</p>
+<h3 id="1-引入相关的jar包并且在web-xml中配置axis2的核心控制器-axisServlet"><a href="#1-引入相关的jar包并且在web-xml中配置axis2的核心控制器-axisServlet" class="headerlink" title="1.引入相关的jar包并且在web.xml中配置axis2的核心控制器 axisServlet"></a>1.引入相关的jar包并且在web.xml中配置axis2的核心控制器 axisServlet</h3><h3 id="2-在web-inf下建立相关的三层文件夹结构"><a href="#2-在web-inf下建立相关的三层文件夹结构" class="headerlink" title="2.在web-inf下建立相关的三层文件夹结构:"></a>2.在web-inf下建立相关的三层文件夹结构:</h3><p>services–&gt;自定义文件夹名–&gt;META-INF–&gt;servies.xml</p>
+<h3 id="3-在servies-xml中配置service的name以及对应的springBeanName"><a href="#3-在servies-xml中配置service的name以及对应的springBeanName" class="headerlink" title="3.在servies.xml中配置service的name以及对应的springBeanName"></a>3.在servies.xml中配置service的name以及对应的springBeanName</h3><p>4.在浏览器中输入webservice的服务端地址并加上?wsdl来进行测试，看是否发布成功<br>axis2客户端配置流程<br>通过wsdl2java根据webservice服务端的url生成客户端代码将代码引入项目的文件夹<br>中进行正常访问</p>
+<p>定时器</p>
+<h3 id="6-26spring"><a href="#6-26spring" class="headerlink" title="6.26spring"></a>6.26spring</h3><p>每隔固定的时间执行</p>
+<h3 id="1-建立一个triggers触发器集合"><a href="#1-建立一个triggers触发器集合" class="headerlink" title="1.建立一个triggers触发器集合"></a>1.建立一个triggers触发器集合</h3><h3 id="2-建立SimpleTriggerBean并且指定每次间隔的时间以及执行的次数以及要执行的目"><a href="#2-建立SimpleTriggerBean并且指定每次间隔的时间以及执行的次数以及要执行的目" class="headerlink" title="2.建立SimpleTriggerBean并且指定每次间隔的时间以及执行的次数以及要执行的目"></a>2.建立SimpleTriggerBean并且指定每次间隔的时间以及执行的次数以及要执行的目</h3><p>标</p>
+<h3 id="3-通过-targetObject以及targetMethod找到要执行的具体类的具体方法"><a href="#3-通过-targetObject以及targetMethod找到要执行的具体类的具体方法" class="headerlink" title="3.通过 targetObject以及targetMethod找到要执行的具体类的具体方法"></a>3.通过 targetObject以及targetMethod找到要执行的具体类的具体方法</h3><p>目标对象是一个普通的java类<br>每到指定的时间执行</p>
+<h3 id="1-建立一个triggers触发器集合-1"><a href="#1-建立一个triggers触发器集合-1" class="headerlink" title="1.建立一个triggers触发器集合."></a>1.建立一个triggers触发器集合.</h3><h3 id="2-建立CronTriggerBean指定cron表达式以及要执行的目标"><a href="#2-建立CronTriggerBean指定cron表达式以及要执行的目标" class="headerlink" title="2.建立CronTriggerBean指定cron表达式以及要执行的目标"></a>2.建立CronTriggerBean指定cron表达式以及要执行的目标</h3><h3 id="3-通过-targetObject以及targetMethod找到要执行的具体类的具体方法-1"><a href="#3-通过-targetObject以及targetMethod找到要执行的具体类的具体方法-1" class="headerlink" title="3.通过 targetObject以及targetMethod找到要执行的具体类的具体方法"></a>3.通过 targetObject以及targetMethod找到要执行的具体类的具体方法</h3><p>目标对象是一个普通的java类<br>概述</p>
+<h3 id="6-27Ext"><a href="#6-27Ext" class="headerlink" title="6.27Ext"></a>6.27Ext</h3><p>据我了解Ext是一个用js编写RIA框架，它可以和各种后台语言结合使用。我在项目<br>中用Ext来完成的模块大概情况是这个样子，首先我通过layout等于border的这种方<br>式来进行布局，分为上下左右中，然后在左边用ext tree来进行菜单的展示，之后在<br>中间区域通过tabs来加入选项卡，而在选项卡中就是一个个的grid以及form，其中<br>我在做grid的时候，首先通过store来存取后台返回的符合model格式数据集，store<br>是通过proxy和后台的contoller进行交互，之后把store赋值给grid的store属性<br>并且通过renderTO在指定的位置进行渲染展示。<br>Grid问题:<br>当时我在做grid的时候，发现数据没有展示出来，我通过f12进行跟踪，发现压根就<br>没有发送请求，后来我分析了下，发现因为没有调用store的loadPage方法，所以导<br>致了这个问题。除此之外在我们做项目的过程中，我手底下带的一个人同样在负责grid<br>的时候，数据可以正常展示，但分页信息没有展示，通过跟踪他的代码发现是因为他没<br>有把store属性赋值给分页工具条，所以才导致了这个问题。<br>tabs选项卡：<br>当我在做tab选项卡这一模块的时候，我首先在加载页面的时候用TabPanel创建了一<br>个tab页面，让它展示在中间位置，然后点击左边Tree菜单调用add方法动态添加一<br>个个的tab选项卡，但是做的过程中出现了相同的选项卡会重复添加的问题，我查了一<br>些相关资料，最后通过tab的id或者一个唯一标识判断tab是否选中，如果选中则调<br>用setActiveTab来激活该选项卡，让它选中，否则就添加一个tab。最后达到了tab<br>不存在就添加，存在就选中的效果。<br>了解:</p>
+<p>Ext4.0也支持前端的MVC开发模式.</p>
+<p><strong>Q:</strong> 为啥没采用mvc的开发模式？<br>我们当时因为时间方面的原因，项目经理就决定用普通的这种开发模式进行开发，并没<br>有采用Ext4.0这种mvc模式的特性。但我认为他们的核心操作流程是一致的所以对我<br>来说去学习和使用这种方式并没有什么难度。<br>的概述</p>
+<h3 id="6-28lucene"><a href="#6-28lucene" class="headerlink" title="6.28lucene"></a>6.28lucene</h3><p>lucene是一个全文检索引擎，在进行模糊匹配的时候，他可以用来替代数据库中的like,<br>从而在匹配准确性以及性能进行大幅度的提高。我在做XX项目的XX模块的时候，就是<br>用lucene来进行全文检索用IK分词器来进行分词。从而实现了高亮显示关键词，分页，<br>排序，多字段，多条件的高性能搜索。在从数据中取数据生成索引的时候，因为表中的<br>数据量比较大，防止一次取出所导致内存溢出问题，我采用了分段批量提取的方式进行，<br>除此之外我们对后续增加的数据根据优先级的不同采取不同的策略，对于那些需要及时<br>显示的数据我们通过spring定时器 在短时间内(30分钟)进行增量索引的生成，对于<br>那些不需要及时展示的数据,我们通过spring定时器在每天晚上凌晨的时候进行索引<br>的重新生成。<br>线程池作用</p>
+<h3 id="6-29"><a href="#6-29" class="headerlink" title="6.29"></a>6.29</h3><p>1.减少了创建和销毁线程的次数，每个线程都可以被重复利用，可执行多个任务。<br>2. 可以根据系统的承受能力，调整线程池中线程的数目，防止因为消耗过多的内存，<br>而导致服务器宕机(每个线程需要大约1MB内存，线程开的越多，消耗的内存也就<br>越大，最后宕机)。<br>通常我们使用的线程池是实现了ExecutorService的ThreadPoolExecutor。<br>是如何和 进行整合</p>
+<h3 id="6-30jbpm-spring"><a href="#6-30jbpm-spring" class="headerlink" title="6.30jbpm spring"></a>6.30jbpm spring</h3><ol>
+<li>通过在spring-common.xml配置文件中配置springHelper，通过springHelper创<br>建 processEngine，再通过 processEngine 获取各种工作流的 Service，如<br>repositoryService，executionService，historyService，taskService</li>
+</ol>
+<h3 id="2-在src根目录下新建jbpm-cfg-xml文件"><a href="#2-在src根目录下新建jbpm-cfg-xml文件" class="headerlink" title="2. 在src根目录下新建jbpm.cfg.xml文件"></a>2. 在src根目录下新建jbpm.cfg.xml文件</h3><p>优化</p>
+<h3 id="6-31Tomcat"><a href="#6-31Tomcat" class="headerlink" title="6.31Tomcat"></a>6.31Tomcat</h3><p>增大内存(堆，持久代)并开启server模式<br>我在做XXX项目时,用到了poi导入和导出数据,由于公司的业务比较繁多,数据量很大,<br>测试时报内存溢出,经过我的分析再结合上网查阅资料,发现可能是tomcat内存不足,<br>需要增大,修改配置文件后测试不再报错。<br>tomcat增大内存的方式通过修改tomcat配置文件window下， 在bin/catalina.bat文件<br>中最前面添加：<br>setJAVA_OPTS=-XX:PermSize=64M-XX:MaxPermSize=128m–Xms1024m-Xmx1024m<br>linux下，在catalina.sh最前面增加：<br>JAVA_OPTS=”-XX:PermSize=64M -XX:MaxPermSize=128m –Xms1024m -Xmx1024m “<br>-client–service<br>当我们在cmd中运行-java时,黑窗口会出现-client-service这两参数.其作用是设置<br>虚拟机运行模式;client模式启动比较快，但运行时性能和内存管理效率不如server<br>模式，通常用于客户端应用程序。server模式启动比client慢，但可获得更高的运<br>行性能。Windows默认为client，如果要使用server模式，就需要在启动虚拟机时<br>加-server参数，以获得更高性能，对服务器端应用，推荐采用server模式，尤其<br>是多个CPU的系统。在Linux，Solaris上,默认值为server模式.<br>JDK版本<br>影响虚拟机还有JDK的版本,JDK分为32位,64位两种版本,32位装在32位系统,64<br>位系统可以装32位和64位JDK.64位JDK性能优于32位JDK.<br>测试的命令 java-xmx数值m–version 报错配置大小失败，反之成功。<br>增加Tomcat 最大连接数<br>使用场景<br>我在做完一个XXX项目后,测试时发现并发数量增加到一定程度就会很卡,于是我想<br>到了是不是tomcat最大连接数设置有限制.果不其然,配置文件中最大值才500,于是我更<br>改了最大连接数,根据业务我修改了连接数为2000,完美的解决了这个问题;<br>修改方法在conf/service.xml中默认值<br>&lt;Connectorport=”8080”maxHttpHeaderSize=”8192”maxThreads=”1500”<br>minSpareThreads=”30”maxSpareThreads=”75”enableLookups=”false”<br>redirectPort=”8443”acceptCount=”100”connectionTimeout=”20000”<br>disableUploadTimeout=”true”/&gt;,修改maxthreads的值即可<br>tomcat进行gzip压缩从而降低网络传输量<br>tomcat 压缩设置tomcat压缩gzip启用</p>
+<p><code>HTTP</code> 压缩可以大大提高浏览网站的速度，它的原理是，在客户端请求服务器对应资源<br>后，从服务器端将资源文件压缩，再输出到客户端，由客户端的浏览器负责解压缩并浏<br>览。相对于普通的浏览过程HTML,<code>CSS</code>,Javascript ，Text ，它可以节省60%左右的流量。<br>更为重要的是，它可以对动态生成的，包括CGI、PHP ，<code>JSP</code> ，ASP ，<code>Servlet</code>,SHTML等<br>输出的网页也能进行压缩，压缩效率也很高。<br>启用tomcat 的gzip 压缩<br>要使用gzip压缩功能，你需要在Connector节点中加上如下属性<br>ompression=”on” 打开压缩功能<br>compressionMinSize=”50” 启用压缩的输出内容大小，默认为2KB<br>noCompressionUserAgents=”gozilla，traviata” 对于以下的浏览器，不启用压缩<br>compressableMimeType=”text/html,text/xml,text/javascript,text/css,text/plain” 哪些资源<br>类型需要压缩<br>&lt;Connectorport=”80”protocol=”<code>HTTP</code>/1.1”<br>connectionTimeout=”20000”<br>redirectPort=”8443”executor=”tomcatThreadPool”URIEncoding=”utf-8”<br>compression=”on”<br>compressionMinSize=”50”noCompressionUserAgents=”gozilla，traviata”<br>compressableMimeType=”text/html,text/xml,text/javascript,text/css,text/plain”<br>/&gt;<br>的介绍</p>
+<h3 id="6-32memcached"><a href="#6-32memcached" class="headerlink" title="6.32memcached"></a>6.32memcached</h3><p>memcached是一个用C语言开发的分布式的缓存，内部基于类似hashMap的结构。它的<br>优点是协议简单，内置内存存储，并且他的分布式算法是在客户端完成的，不需要服务<br>器端进行通信，我们当时在做项目的时候因为考虑到项目的高可用性高扩展性，因此在<br>服务器部署方面采用了apache+jk+tomcat这种负载均衡的方式，但是也带来了一个问<br>题就是session共享的问题，虽然可以通过session复制来解决这个问题，但是在性能<br>方面存在缺陷，所以最后我们采用了用 memcached 来存储 session，这样既解决了<br>session共享问题，也解决了session复制那种方式所产生的性能问题。<br>了解(不必主动说，但别人问的话一定要知道)<br>memcached是以KEY-VALUE的方式进行数据存储的，KEY的大小限制：Key（max）&lt;=250<br>个字符；VALUE在存储时有限制：Value（max）&lt;= 1M；根据最近最少使用原则删除对<br>象即LRU.memcached默认过期时间：ExpiresTime（max）= 30（days）</p>
+<p>优化篇<br>代码优化</p>
+<h3 id="7-1"><a href="#7-1" class="headerlink" title="7.1"></a>7.1</h3><p>代码结构层次的优化 目的 更加方便代码的维护 可维护性，可读性<br>( : – )<br>代码注释 代码规范</p>
+<h3 id="1"><a href="#1" class="headerlink" title="1. ( )"></a>1. ( )</h3><p>工具类的封装 方便代码的维护，使代码结构更加清晰不臃肿，保证团队里代码</p>
+<h3 id="2"><a href="#2" class="headerlink" title="2. ("></a>2. (</h3><p>质量一致性<br>)<br>公共部分的提取<br>3.<br>代码性能的优化 目的 使程序的性能最优化<br>( : )<br>使用一些性能比较高的类</p>
+<h3 id="1-bufferInputStream"><a href="#1-bufferInputStream" class="headerlink" title="1. (bufferInputStream)"></a>1. (bufferInputStream)</h3><p>缓冲区块的大小 或者</p>
+<h3 id="2-4k-8k"><a href="#2-4k-8k" class="headerlink" title="2. (4k 8k)"></a>2. (4k 8k)</h3><p>公共部分的提取<br>3.<br>通常要用 替代 加号拼接</p>
+<h3 id="4-stringbuffer-string"><a href="#4-stringbuffer-string" class="headerlink" title="4. stringbuffer string"></a>4. stringbuffer string</h3><p>业务优化</p>
+<h3 id="7-2"><a href="#7-2" class="headerlink" title="7.2"></a>7.2</h3><p>我们做项目的时候业务优化这方面最主要是从用户体验度角度进行考虑 减少用户操作<br>,<br>的步骤提高工作效率，通常有以下几种：<br>可以通过 属性来改变 键盘的操作顺序</p>
+<h3 id="1-tabindex-tab"><a href="#1-tabindex-tab" class="headerlink" title="1. tabindex tab"></a>1. tabindex tab</h3><p>可以通过回车键来进行搜索或者提交操作<br>2.<br>对于单选按钮和复选按钮可以通过操作后面的文本来选择前面的单选按钮从及<br>3.<br>复选按钮<br>添加的信息要按照 倒序进行排列</p>
+<h3 id="4-id"><a href="#4-id" class="headerlink" title="4. id"></a>4. id</h3><p>进行搜索操作时加入 操作（不仅告诉用户所进行的请求正在被处理，</p>
+<h3 id="5-jsloading"><a href="#5-jsloading" class="headerlink" title="5. jsloading"></a>5. jsloading</h3><p>而且防止用户多次点击提交操作）<br>当进行删除操作的时候要弹出提示框，警告用户要进行删除操作，是否确认。<br>6.<br>根据 在用户登录成功后直接跳到想要访问的资源。</p>
+<h3 id="7-returnURL"><a href="#7-returnURL" class="headerlink" title="7. returnURL"></a>7. returnURL</h3><p>进行删除操作时通过 提示用户是否确认删除操作，操作完后提示操作</p>
+<h3 id="8-confirm"><a href="#8-confirm" class="headerlink" title="8. confirm"></a>8. confirm</h3><p>是否成功。<br>减少用户操作的步骤<br>9.<br>使用 插件快速进行搜索</p>
+<h3 id="10-autocomplete"><a href="#10-autocomplete" class="headerlink" title="10. autocomplete"></a>10. autocomplete</h3><p>通过 ，以及 来提高用户的体验度</p>
+<h3 id="11-ztree-kindeiditor"><a href="#11-ztree-kindeiditor" class="headerlink" title="11. ztree kindeiditor"></a>11. ztree kindeiditor</h3><p>必背，必做<br>:<br>可以通过回车键来进行搜索或者提交操作<br>1.<br>添加的信息要按照 倒序进行排列</p>
+<h3 id="2-id"><a href="#2-id" class="headerlink" title="2. id"></a>2. id</h3><p>进行搜索操作时加入 操作（不仅告诉用户所进行的请求正在被处理，</p>
+<h3 id="3-jsloading"><a href="#3-jsloading" class="headerlink" title="3. jsloading"></a>3. jsloading</h3><p>而且防止用户多次点击提交操作）<br>当进行删除操作的时候要弹出提示框，警告用户要进行删除操作，是否确认 如</p>
+<h3 id="4"><a href="#4" class="headerlink" title="4. ,"></a>4. ,</h3><p>果删除成功则弹出提示框告诉用户。<br>减少用户操作的步骤<br>5.<br>通过 ，以及 来提高用户的体验度。</p>
+<h3 id="6-ztree-kindeiditor"><a href="#6-ztree-kindeiditor" class="headerlink" title="6. ztree kindeiditor"></a>6. ztree kindeiditor</h3><p>优化</p>
+<h3 id="7-3sql"><a href="#7-3sql" class="headerlink" title="7.3sql"></a>7.3sql</h3><p>1、SELECT子句中避免使用 <em>， 尽量应该根据业务需求按字段进行查询<br>2、尽量多使用COMMIT如对大数据量的分段批量提交释放了资源，减轻了服务器压力<br>3、在写sql语句的话，尽量保持每次查询的sql语句字段用大写，因为oracle总是先解析<br>sql语句，把小写的字母转换成大写的再执行<br>4、用UNION-ALL 替换UNION，因为UNION-ALL不会过滤重复数据，所执行效率要快于UNION,<br>并且UNION可以自动排序，而UNION-ALL不会<br>5、避免在索引列上使用计算和函数,这样索引就不能使用<br>Sql优化精简版：<br>1.(重点)(必须说)SELECT语句中避免使用 *，尽量应该根据业务需求按字段进行查询<br>举例：如果表中有个字段用的是clob或者是blob这种大数据字段的话，<br>他们的查询应该根据业务需要来进行指定字段的查询，切记勿直接用</em></p>
+<h3 id="2-重点-删除重复记录-oracle-："><a href="#2-重点-删除重复记录-oracle-：" class="headerlink" title="2.(重点) 删除重复记录(oracle)："></a>2.(重点) 删除重复记录(oracle)：</h3><p>最高效的删除重复记录方法 ( 因为使用了ROWID)例子：<br>DELETE FROM EMPE WHERE E.ROWID&gt;(SELECTMIN(X.ROWID)<br>FROM EMPX WHERE X.EMP_NO=E.EMP_NO);<br>3. 用&gt;=替换&gt;<br>如一个表有100万记录，一个数值型字段A，<br>A=0时，有30万条；<br>A=1时，有30万条；<br>A=2时，有39万条；<br>A=3时，有1万记录。<br>那么执行 A&gt;2 与 A&gt;=3 的效果就有很大的区别了，因为 A&gt;2 时，<br>ORACLE会先找出为2的记录索引再进行比较，<br>而A&gt;=3时ORACLE则直接找到=3的记录索引。</p>
+<h3 id="4-重点-尽量多使用COMMIT"><a href="#4-重点-尽量多使用COMMIT" class="headerlink" title="4.(重点)尽量多使用COMMIT"></a>4.(重点)尽量多使用COMMIT</h3><p>如对大数据量的分段批量提交</p>
+<h3 id="5-重点-用NOTEXISTS-或（外连接-判断为空）方案-替换-NOTIN操作符"><a href="#5-重点-用NOTEXISTS-或（外连接-判断为空）方案-替换-NOTIN操作符" class="headerlink" title="5.(重点)用NOTEXISTS 或（外连接+判断为空）方案 替换 NOTIN操作符"></a>5.(重点)用NOTEXISTS 或（外连接+判断为空）方案 替换 NOTIN操作符</h3><p>此操作是强列推荐不使用的，因为它不能应用表的索引。<br>推荐方案：用NOTEXISTS 或（外连接+判断为空）方案代替</p>
+<h3 id="6-重点-必须说-LIKE操作符-大数据的全文检索使用luncene-solr"><a href="#6-重点-必须说-LIKE操作符-大数据的全文检索使用luncene-solr" class="headerlink" title="6.(重点 必须说)LIKE操作符(大数据的全文检索使用luncene)(solr)"></a>6.(重点 必须说)LIKE操作符(大数据的全文检索使用luncene)(solr)</h3><p>因为使用like不当，会导致性能问题，原因是like在左右两边都有</p>
+<p>%的时候，不会使用索引<br>如LIKE’%5400%’ 这种查询不会引用索引，<br>而LIKE’X5400%’ 则会引用范围索引。</p>
+<h2 id="一、个实际例子"><a href="#一、个实际例子" class="headerlink" title="一、个实际例子"></a>一、个实际例子</h2><p>查询营业编号 YY_BHLIKE’%5400%’ 这个条件会产生全表扫描，<br>如果改成 YY_BHLIKE’X5400%’ORYY_BHLIKE’B5400%’<br>则会利用 YY_BH 的索引进行两个范围的查询，性能肯定大大提高。<br>7.(重点,必须说)避免在索引列上使用计算和函数,这样索引就不能使用<br>举例:<br>低效：<br>SELECT … FROM DEPT WHERESAL*12&gt;25000;<br>高效:<br>SELECT … FROMDEPTWHERESAL&gt;25000/12;<br>8.(重点 必须说)用UNION-ALL 替换UNION，<br>因为UNION-ALL不会过滤重复数据而且不会自动排序，所执行效率要快于UNION。<br>9. （优化,重点,3个方面 a.缓存 b.分段批量 c.存储过程）减少访问数据库的次数<br>举例:如果批量删除多条数据，可以用 delete fromtableNamewhereidin(1,2,3)<br>而不要用多条delete语句进行删除</p>
+<h3 id="10-（重点-必须说）用TRUNCATE替代DELETE"><a href="#10-（重点-必须说）用TRUNCATE替代DELETE" class="headerlink" title="10.（重点 必须说）用TRUNCATE替代DELETE"></a>10.（重点 必须说）用TRUNCATE替代DELETE</h3><p>TRUNCATE不记录日志，DELETE记录日志，所以TRUNCATE要快于DELETE<br>但是一旦用TRUNCATE进行删除就不能进行恢复,TRUNCATE是删除整张表的数据<br>不能加where条件。<br>=================================================================<br>mysql,sqlserver中如果id为自增类型，那么如果用TRUNCATE删除，则id字段再插入数<br>据时从1开始，如果delete删除的话，则从删除之前的id的值继续增长。<br>防 注入</p>
+<h3 id="7-4-sql"><a href="#7-4-sql" class="headerlink" title="7.4 sql"></a>7.4 sql</h3><p>针对防sql注入，我们通常是这样做的：<br>首先在前台页面对用户输入信息进行js验证，对一些特殊字符进行屏蔽，比如：or,单<br>引号，–，= ，还有就是限制用户名输入的长度，我们一般将其限制在6—13位。另外，<br>对于用户的敏感信息我们进行Md5加密，还有，为了增加用户体验度和用户友好度，<br>为了不使用户看到一些详细的异常信息我们会进行错误信息页面的定制，像404,500错<br>误。另一个我层面讲，这样做也是为了保护我们的一些重要信息。此外，我们会给特定<br>的人分配特定的权限，而不是给其分配管理员权限！<br>sql注入<br>所谓SQL注入，就是通过一些含有特殊字符的sql语句发送到服务器欺骗服务器并进行</p>
+<p>攻击。（特殊字符：or, 单引号，–，空格）<br>Sql注入的防护<br>1.永远不要信任用户的输入。对用户的输入进行校验，可以通过正则表达式（js正则或<br>者java后台正则），或限制长度；对单引号和双”-“进行转换等。<br>2.永远不要使用动态拼装sql，使用参数化的sql。（永远不要使用+号拼接sql字符串，</p>
+<p><strong>Q:</strong> 而是使用？传参的方式进行）</p>
+<h3 id="3-不要给用户太高的权限而根据需求进行赋权"><a href="#3-不要给用户太高的权限而根据需求进行赋权" class="headerlink" title="3.不要给用户太高的权限而根据需求进行赋权"></a>3.不要给用户太高的权限而根据需求进行赋权</h3><p>4.对敏感信息进行加密 如md5(单向加密不可逆转)。<br>5.自定义错误页面。目的是为了不把我们的程序的bug暴露在别有用心的人的面前。而<br>去不会让用户看到报错的页面，也提高了用户的体验度。<br>SQL注入防范<br>使用参数化的过滤性语句<br>要防御SQL注入，用户的输入就绝对不能直接被嵌入到SQL语句中。恰恰相反，用户<br>的输入必须进行过滤，或者使用参数化的语句。参数化的语句使用参数而不是将用户输<br>入嵌入到语句中。在多数情况中，SQL语句就得以修正。然后，用户输入就被限于一个<br>参数。<br>输入验证<br>检查用户输入的合法性，确信输入的内容只包含合法的数据。数据检查应当在客户端和<br>服务器端（java代码）都执行之所以要执行服务器端验证，是为了弥补客户端验证机制<br>脆弱的安全性。<br>在客户端，攻击者完全有可能获得网页的源代码，修改验证合法性的脚本（或者直接删<br>除脚本），然后将非法内容通过修改后的表单提交给服务器。因此，要保证验证操作确<br>实已经执行，唯一的办法就是在服务器端也执行验证。你可以使用许多内建的验证对象，<br>例如RegularExpressionValidator，它们能够自动生成验证用的客户端脚本，当然你也可<br>以插入服务器端的方法调用。如果找不到现成的验证对象，你可以通过CustomValidator<br>自己创建一个。<br>错误消息处理<br>防范SQL注入，还要避免出现一些详细的错误消息，因为黑客们可以利用这些消息。要<br>使用一种标准的输入确认机制来验证所有的输入数据的长度、类型、语句、企业规则等。<br>加密处理<br>将用户登录名称、密码等数据加密保存。加密用户输入的数据，然后再将它与数据库中<br>保存的数据比较，这相当于对用户输入的数据进行了“消毒”处理，用户输入的数据不再<br>对数据库有任何特殊的意义，从而也就防止了攻击者注入SQL命令。<br>存储过程来执行所有的查询<br>SQL参数的传递方式将防止攻击者利用单引号和连字符实施攻击。此外，它还使得数据<br>库权限可以限制到只允许特定的存储过程执行，所有的用户输入必须遵从被调用的存储<br>过程的安全上下文，这样就很难再发生注入式攻击了。<br>使用专业的漏洞扫描工具</p>
+<p>攻击者们目前正在自动搜索攻击目标并实施攻击，其技术甚至可以轻易地被应用于其它<br>的 Web 架构中的漏洞。企业应当投资于一些专业的漏洞扫描工具，如大名鼎鼎的<br>Acunetix的Web漏洞扫描程序等。一个完善的漏洞扫描程序不同于网络扫描程序，它<br>专门查找网站上的SQL注入式漏洞。最新的漏洞扫描程序可以查找最新发现的漏洞。<br>确保数据库安全<br>锁定你的数据库的安全，只给访问数据库的web应用功能所需的最低的权限，撤销不<br>必要的公共许可，使用强大的加密技术来保护敏感数据并维护审查跟踪。如果web应<br>用不需要访问某些表，那么确认它没有访问这些表的权限。如果web应用只需要只读<br>的权限，那么就禁止它对此表的 drop 、insert、update、delete 的权限，并确保数据<br>库打了最新补丁。<br>安全审评<br>在部署应用系统前，始终要做安全审评。建立一个正式的安全过程，并且每次做更新时，<br>要对所有的编码做审评。开发队伍在正式上线前会做很详细的安全审评，然后在几周或<br>几个月之后他们做一些很小的更新时，他们会跳过安全审评这关， “就是一个小小的更<br>新，我们以后再做编码审评好了”。请始终坚持做安全审评。<br>数据库中常用术语</p>
+<h3 id="7-5"><a href="#7-5" class="headerlink" title="7.5"></a>7.5</h3><p>ddl:数据定义语言 CreateDropAlter<br>dml:数据操纵语言 insertupdatedeleteselect<br>dcl:数据控制语言 grantrevoke<br>tcl:事务控制语言 commitrollback<br>深入 虚拟机以及大数据</p>
+<h3 id="7-6-java"><a href="#7-6-java" class="headerlink" title="7.6 java"></a>7.6 java</h3><h3 id="1、jvm-的相关概念"><a href="#1、jvm-的相关概念" class="headerlink" title="1、jvm 的相关概念"></a>1、jvm 的相关概念</h3><p>当List放了大量的数据超过jvm中所能容纳的内存后，就会发生堆溢出。当递归调用没<br>有临界退出条件就会出现 栈溢出。<br>当批量导入大量数据或者用dom4j解析大的xml文件的时候，会出现 堆溢出，这个时候<br>可以通过分段批量提交以及用sax代替dom4j来解决问题。<br>heap(堆)，stack(栈)<br>jvm的结构细分及其概述?<br>Java 虚拟机有一个堆，堆是运行时数据区域，所有类实例和数组的内存均从此处分配。</p>
+<p>堆是在 Java 虚拟机启动时创建的。”“在 <code>JVM</code> 中堆之外的内存称为非堆内存(Non-heap<br>memory)”。可以看出JVM主要管理两种类型的内存：堆和非堆。简单来说堆就是Java代<br>码可及的内存，是留给开发人员使用的；非堆就是JVM留给自己用的。</p>
+<p><strong>Q:</strong> jvm 内存结构？<br>堆： 逻辑上是连续,物理上可以处于不连续的内存空间中，里面存储的是对象实例以及数<br>组。可以细分为新生代，老生代。通过-Xmx和-Xms控制大小。<br>虚拟机栈：基本数据类型，对象引用(地址，指针)。<br>本地方法栈（了解）:它与虚拟机栈发挥的作用差不多，区别在于虚拟机栈为java方法<br>的执行提供服务，而本地方法栈为虚拟机使用到的Native(本地)方法服务。<br>方法区：放了所加载的类的信息（名称、修饰符等）、类中的静态变量、类中定义为final<br>类型的常量、类中的 <code>Field</code> 信息、类中的方法信息在 Sun <code>JDK</code> 中这块区域对应的为<br>PermanetGeneration，又称为持久代，默认为64M，可通过-XX:PermSize以及-XX:MaxPermSize<br>来指定其大小。<br>在服务器启动的时候报内存溢出是因为方法区太小，也就相当于持久代的内存太小。<br>通过-XX:PermSize以及-XX:MaxPermSize来指定其大小，可以解决这个问题。<br>常量池是方法区的一部分,用来存储常量信息。如String就存储在常量池中。<br>计数器（了解）:通过该计数器的值来选取下一条要执行的字节码指令。</p>
+<p><strong>Q:</strong> GC是什么，为什么要有GC？<br>GC就是垃圾回收，java这种语言是动态分配内存大小的，并且依靠垃圾回收机制来完成<br>对分配内存空间的回收，从而来避免内存溢出的问题，也在一定程度上降低了程序员工作<br>的复杂度。<br>jvm中的GC采用了generation（分代回收）算法，因为大多数的对象存活的时间比较短，<br>而少部分的对象才能够长时间存活。因此，jvm将堆内存划分为年轻代（younggeneration）<br>和年老代（oldgeneration）。年轻代中的对象通常建立时间不久，且大部分生命周期也很<br>短；年老代中的对象则已经创建比较久了，其声明周期也相对年轻代比较长。按照上面的<br>划分，jvm在做GC时也进行了区别对待，对年轻代GC会相对比较频繁，且采用了copying(复<br>制)算法；年老代的GC相对比较少，且采用的是tracing算法的一种，是标记-清除-压缩。<br>JVM内存限制(最大值)<br>JVM内存的最大值跟操作系统有很大的关系。<br>简单的说就32位处理器虽然 可控内存空间有4GB,但是具体的操作系统会给一个限制，<br>这个限制一般是2GB-3GB（一般来说Windows系统下为1.5G-2G，Linux系统 下为2G-3G），<br>而64bit以上的处理器就不会有限制了。</p>
+<p>Java 监视和管理控制台：<br>JConsole 使您能够在运行时监视各种 <code>JVM</code> 资源统计信息。这种特性特别适用于检测死<br>锁、内存泄漏。它可以连接到一个本地或远程 <code>JVM</code> 并可用来进行监视：<br>线程状态（包括相关的锁）<br>内存使用情况<br>垃圾收集<br>运行时信息<br><code>JVM</code> 信息<br>jvm的调优?<br>开启-Server模式，增大堆的大小，以及持久代的大小，从而提高程序的运行效率，并且<br>将初始堆大小和最大堆大小设置为一样的值从而避免了堆增长会带来额外压力。持久代大<br>小的设置同理，也设置为初始大小和最大大小一样大。</p>
+<p><strong>Q:</strong> jvm的类加载机制? jvm中类的生命周期？<br>生命周期：加载、连接、初始化，使用，卸载<br>对象基本上都是在jvm的堆区中创建，在创建对象之前，会触发类加载（加载、连接、初<br>始化），当类初始化完成后，根据类信息在堆中实例化类对象，初始化非静态变量、非静<br>态代码以及默认构造方法，当对象使用完之后会在合适的时候被jvm垃圾收集器回收。<br>要经过三步：加载（Load），链接（Link），初始化（Initializ）。其中链接又可分为校验（Verify），<br>准备（Prepare），解析（Resolve）三步。ClassLoader就是用来装载的。通过指定的className，<br>找到二进制码，生成Class实例，放到JVM中。<br>ClassLoader从顶向下分为：<br>BootstrapClassLoader:引导类加载器，它负责加载Java的核心类(如rt.jar)<br>ExtensionClassLoader:扩展类加载器, 它负责加载JRE的扩展目录（JAVA_HOME/jre/lib/ext）<br>中的JAR包<br>SystemClassLoader:系统（也称为应用）类加载器， 它负责在JVM被启动时加载来自在命<br>令java中的-classpath中的JAR包<br>User-DefinedClassLoader：用户自定义的类加载器<br>linux中的命令：<br>ps-ef|grep:查看进程信息<br>vi:文件编辑命令<br>more:分页查看命令</p>
+<p>top:常用的性能分析工具,能够实时显示系统中各个进程的资源占用状况<br>ifconfig:显示或配置网络设备的命令<br>ping:它通常用来测试与目标主机的连通性<br>rsync、scp：文件同步命令</p>
+<h3 id="2、云计算-大数据的具体技术实现方案："><a href="#2、云计算-大数据的具体技术实现方案：" class="headerlink" title="2、云计算+大数据的具体技术实现方案："></a>2、云计算+大数据的具体技术实现方案：</h3><p>Hadoop是一个能够对大量数据进行分布式处理的软件框架。它以并行的方式工作，通过<br>并行处理加快处理速度，维护多个工作数据副本，具有可伸缩性，能够处理 PB 级数据.<br>hadoop 由许多元素构成。其最底部是HDFS，它存储 Hadoop 集群中所有存储节点上的<br>文件。<br>HDFS的上一层是MapReduce 引擎。<br>hadoop下的子项目:<br>HDFS:Hadoop分布式文件系统<br>MapReduce：并行计算框架（建立在HDFS上的）<br>HBase: 类似GoogleBigTable的分布式NoSQL 列数据库<br>Hive：数据仓库工具<br>Zookeeper：分布式锁设施<br>Pig: 大数据分析平台，为用户提供多种接口<br>行业知识(了解):<br>存储容量：是该存储设备上可以存储数据的最大数量，通常使用千字节（kbkilobyte）、兆<br>字节（MBmegabyte）、吉字节（GB,gigabyte）、太字节（TB ，terabyte）和PB(Petabyte)、<br>EB(Exabyte)等来衡量。<br>1KB=2(10)B=1024B； 括号中的数字为2的指数(即多少次方)<br>1MB=2(10)KB=1024KB=2(20)B；<br>1GB=2(10)MB=1024MB=2(30)B。<br>1TB=2(10)GB=1024GB=2(40)B<br>1PB=2(10)TB=1024TB=2(50)B<br>1EB=2(10)PB=1024PB=2(60)B<br>1Byte(相當於一個英文字母，您的名字相當6Bytes(6B)。<br>Kilobyte(KB)=1024B相當於一則短篇故事的內容。<br>Megabyte(MB)=l024KB相當於一則短篇小說的文字內容。<br>Gigabyte(GB)=1024MB相當於貝多芬第五樂章交響曲的樂譜內容。<br>Terabyte(TB)=1024GB相當於一家大型醫院中所有的X光圖片資訊量。<br>Petabyte(PB)=l024TB相當於50%的全美學術研究圖書館藏書資訊內容。<br>Exabyte (EB)=1024PB；5EB相當於至今全世界人類所講過的話語。<br>Zettabyte(ZB)=1024EB如同全世界海灘上的沙子數量總和。<br>Yottabyte(YB)=1024ZB相當於7000位人類體內的微細胞總和。</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+            
+            <div class="reprint1">
+                <p>
+                    <span class="reprint1-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+                    </span>
+                    <a href="https://liaoxingwang.github.io" class="b-link-green">屿</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2025/08/05/blog-open-source-java-interview-java-kai-fa-ren-yuan-mian-shi-bao-dian-java-ban/" class="b-link-green">Java开发人员面试宝典(Java版)</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    
+
+    
+        <link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="card-content">
+        <div class="giscus-wrapper" style="overflow: hidden; max-width: 100%;">
+            <div class="giscus"></div>
+        </div>
+    </div>
+</div>
+
+<script src="https://giscus.app/client.js"
+    data-repo="liaoxingwang/liaoxingwang.github.io"
+    data-repo-id="R_kgDONgefmg"
+    data-category="Announcements"
+    data-category-id="DIC_kwDONgefms4DCjUZ"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="preferred_color_scheme"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async>
+</script>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2025/08/05/blog-open-source-java-interview-java-zui-xin-mian-shi-wen-dang/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Java最新面试文档">
+                        
+                        <span class="card-title">Java最新面试文档</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            什么是 ？它有哪些核心功能？ Dubbo是以高性能RPC框架，它提供了分布式架构下的服务之间通信方案，使 得开发者可以不需要关心网络通信的细节。通过该框架可以使得远程服务调用方 式和本地服务调用方式一样简单。 Dubbo是一款高性能、轻量级的开源 RPC 框架。由 10 层模式构成，整个分层 通过这
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2025-08-05
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java面试-综合/" class="post-category" target="_blank">
+                                    Java面试/综合
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/面试/" target="_blank">
+                        <span class="chip bg-color">面试</span>
+                    </a>
+                    
+                    <a href="/tags/Java面试/" target="_blank">
+                        <span class="chip bg-color">Java面试</span>
+                    </a>
+                    
+                    <a href="/tags/综合/" target="_blank">
+                        <span class="chip bg-color">综合</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2025/08/04/blog-open-source-java-interview-java-mian-shi-ti-wen-da-he-ji-lan-qiao-yun-ke/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Java 面试题问答合集（蓝桥云课）">
+                        
+                        <span class="card-title">Java 面试题问答合集（蓝桥云课）</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            （一）Java 核心基础篇 1. 讲讲 Java 语言的三大特性。 Java 语言的最重要三大特征是：封装、继承、多态。 其中封装指的是把一个对象属性私有化，同时提供一些可以给外界访问该属 性的方法。比如写一个类时会用 `private` 修饰属性，用 `public` 修饰的 set 和 get
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2025-08-04
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java面试-综合/" class="post-category" target="_blank">
+                                    Java面试/综合
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/面试/" target="_blank">
+                        <span class="chip bg-color">面试</span>
+                    </a>
+                    
+                    <a href="/tags/Java面试/" target="_blank">
+                        <span class="chip bg-color">Java面试</span>
+                    </a>
+                    
+                    <a href="/tags/综合/" target="_blank">
+                        <span class="chip bg-color">综合</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 屿<br />'
+            + '作者: SK<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4, h5'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4, h5').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+        <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&copy; 理想热爱.
+
+            <br>
+            <span id="sitetime"></span><span class="my-face">ღゝ◡╹)ノ♡</span>
+            <br>
+
+            
+
+            
+                    
+                        <span id="busuanzi_container_site_pv" style='display:none'></span>
+                        总访问量: <span id="busuanzi_value_site_pv" class="white-color"></span>
+                    
+
+                    
+                        <span id="busuanzi_container_site_uv" style='display:none'></span>
+                        人次&nbsp; | &nbsp;访客人数: <span id="busuanzi_value_site_uv" class="white-color"></span> 人
+                    
+
+            
+
+            
+                &nbsp; | &nbsp;字数统计:&nbsp;
+                <span class="white-color">1296.3k</span> 字
+            
+
+            
+            <br>
+
+        </div>
+
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/liaoxingwang" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+ 
+    <a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=807928930@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+
+    <a href="https://zhihu.com/people/zbozci" class="tooltipped" target="_blank" data-tooltip="访问我的知乎" data-position="top" data-delay="50">
+        <i class="fa fa-inverse">知</i>
+    </a>
+
+
+
+    <a href="http://wpa.qq.com/msgrd?v=3&uin=807928930&site=qq&menu=yes" class="tooltipped" target="_blank" data-tooltip="访问我的QQ空间" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+    <a href="https://weibo.com/jamsJJYY" class="tooltipped" target="_blank" data-tooltip="关注我的微博" data-position="top" data-delay="50">
+        <i class="fa fa-weibo"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+
+        var t1 = Date.UTC(2022, 10, 24, 00, 00, 00); //北京时间2019-8-1 00:00:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes *
+            minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已勉强运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours +
+            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒" ;
+    } /*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+
+
+
+
+
+
+        <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+        <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+        <script src="/libs/materialize/materialize.min.js"></script>
+        <script src="https://cdn.bootcss.com/masonry/4.2.2/masonry.pkgd.min.js"></script>
+        <script src="https://cdn.bootcss.com/aos/3.0.0-beta.6/aos.js"></script>
+        <script src="https://cdn.bootcss.com/scrollprogress/3.0.2/scrollProgress.min.js"></script>
+        <script src="https://cdn.bootcss.com/lightgallery/1.6.12/js/lightgallery-all.min.js"></script>
+        <script src="/js/matery.js"></script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+        
+            <script src="/libs/others/clicklove.js"></script>
+        
+
+        
+            <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        
+
+        <!-- liaoxingwang add 2019.08.28 -->
+        <script type="text/javascript">
+            var OriginTitile = document.title,
+                st;
+            document.addEventListener("visibilitychange", function () {
+                document.hidden ? (document.title = "看不见我🙈~看不见我🙈~", clearTimeout(st)) : (document.title =
+                    "(๑•̀ㅂ•́) ✧被发现了～", st = setTimeout(function () {
+                        document.title = OriginTitile
+                    }, 3e3))
+            })
+        </script>
+
+        <!-- 鼠标点击烟花爆炸效果  liaoxingwang add 2019.09.09 -->
+        
+
+        <!-- 背景雪花飘落特效liaoxingwang add 2019.09.10 -->
+        
+
+        <!-- 鼠标点击文字特效 liaoxingwang add 2019.09.10-->
+        
+            <script src="/js/wenzi.js" type="text/javascript"></script>
+        
+
+        <!-- 背景雪花飘落特效 liaoxingwang add 2019.09.10 -->
+        
+
+        <!-- 在线聊天工具  liaoxingwang add 2019.09.11 -->
+        
+
+        <!-- 背景 canvas-nest  洪卫 shw 2018  add 2019.09.15-->
+        
+
+        <!-- 背景静止彩带  洪卫 shw 2018  add 2019.09.15-->
+        
+            <script type="text/javascript">
+            var windowWidth = $(window).width();
+            if (windowWidth > 992) {
+                document.write('<script type="text/javascript" size="150" alpha="0.6" zIndex="-1" src="/libs/background/ribbon.min.js"><\/script>');
+            }
+            </script>
+        
+
+        <!-- 背景动态彩带 洪卫 shw 2018  add 2019.09.15-->
+        
+            <script type="text/javascript">
+            var windowWidth = $(window).width();
+            if (windowWidth > 992) {
+                document.write('<script type="text/javascript" src="/libs/background/ribbon-dynamic.js"><\/script>');
+            }
+            </script>
+        
+
+    
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z\d\-\.\+]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(t.test(e.href)||r.test(e.href))&&(e.href=a.dataset.original)})});</script><script>(r=>{r.imageLazyLoadSetting.processImages=t;var a=r.imageLazyLoadSetting.isSPA,o=r.imageLazyLoadSetting.preloadRatio||1,d=i();function i(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(t){(a||t)&&(d=i());for(var e,n=0;n<d.length;n++)0<=(e=(e=d[n]).getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(r.innerHeight*o||document.documentElement.clientHeight*o)&&(()=>{var t,e,a,o,i=d[n];e=function(){d=d.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).dataset.loaded||(t.hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(a=new Image,o=t.getAttribute("data-original"),a.onload=function(){t.src=o,t.removeAttribute("data-original"),t.setAttribute("data-loaded",!0),e&&e()},a.onerror=function(){t.removeAttribute("data-original"),t.setAttribute("data-loaded",!1),t.src=o},t.src!==o&&(a.src=o)))})()}function e(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",e),r.addEventListener("resize",e),r.addEventListener("orientationchange",e)})(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
+</html>

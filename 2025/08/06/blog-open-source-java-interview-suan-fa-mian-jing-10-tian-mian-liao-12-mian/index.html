@@ -1,0 +1,1421 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+    
+
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="算法面经｜10天面了12面！, 商单接企业项目外包 软件开发 整包服务 移动开发 移动开发团队 移动开发项目">
+    <meta name="baidu-site-verification" content="fmlEuI34ir">
+    <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
+    <meta name="description" content="1. 写在前面从一头雾水到大厂推荐算法实习offer，短短两个月里一路摸索，经历了重重陷阱和挑战，几次差点心态崩了又挺过来。这次通过复盘找实习遇到的各种坑，进行经验总结，希望帮助大家更好地准备秋招，一起加油！
+2. 这两个月的经历首先，对过">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="算法面经｜10天面了12面！ | 屿">
+    <meta property="og:description" content="1. 写在前面从一头雾水到大厂推荐算法实习offer，短短两个月里一路摸索，经历了重重陷阱和挑战，几次差点心态崩了又挺过来。这次通过复盘找实习遇到的各种坑，进行经验总结，希望帮助大家更好地准备秋招，一起加油！
+2. 这两个月的经历首先，对过">
+    <meta property="og:url" content="https://liaoxingwang.github.io2025/08/06/blog-open-source-java-interview-suan-fa-mian-jing-10-tian-mian-liao-12-mian/">
+    <meta property="og:image" content="https://liaoxingwang.github.io/medias/banner/0.jpg">
+    <meta property="og:site_name" content="屿">
+    <meta property="og:locale" content="zh_CN">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="算法面经｜10天面了12面！ | 屿">
+    <meta name="twitter:description" content="1. 写在前面从一头雾水到大厂推荐算法实习offer，短短两个月里一路摸索，经历了重重陷阱和挑战，几次差点心态崩了又挺过来。这次通过复盘找实习遇到的各种坑，进行经验总结，希望帮助大家更好地准备秋招，一起加油！
+2. 这两个月的经历首先，对过">
+    <meta name="twitter:image" content="https://liaoxingwang.github.io/medias/banner/0.jpg">
+
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>算法面经｜10天面了12面！ | 屿</title>
+    <link rel="icon" type="image/jpeg" href="/medias/avatars/hwsun.jpg">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/aos/3.0.0-beta.6/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/lightgallery/1.6.12/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <style type="text/css">
+        
+
+            code[class*="language-"],
+            pre[class*="language-"] {
+                white-space: pre !important;
+            }
+
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?46e79e71af0709a5b9106bf20cecc493";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+    
+    
+        <script>
+            (function(){
+                var bp = document.createElement('script');
+                var curProtocol = window.location.protocol.split(':')[0];
+                if (curProtocol === 'https') {
+                    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+                }
+                else {
+                    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                }
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(bp, s);
+            })();
+        </script>
+    
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+    <body>
+
+        <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <span class="logo-span">屿</span>
+                </a>
+            </div>
+            
+
+
+<!-- <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/AV" class="waves-effect waves-light">
+            
+            <i class="fa fa-music"></i>
+            
+            <span>视听</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/galleries" class="waves-effect waves-light">
+            
+            <i class="fa fa-photo"></i>
+            
+            <span>相册</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于我</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/contact" class="waves-effect waves-light">
+            
+            <i class="fa fa-envelope"></i>
+            
+            <span>留言板</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul> -->
+
+<!-- 支持二级菜单特性 liaoxingwang modify 2019.09.17  -->
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right nav-menu">
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/" class="waves-effect waves-light">
+              
+                <i class="fa fa-home"></i>
+              
+              <span>首页</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/tags" class="waves-effect waves-light">
+              
+                <i class="fa fa-tags"></i>
+              
+              <span>标签</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/categories" class="waves-effect waves-light">
+              
+                <i class="fa fa-bookmark"></i>
+              
+              <span>分类</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/archives" class="waves-effect waves-light">
+              
+                <i class="fa fa-archive"></i>
+              
+              <span>归档</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/AV" class="waves-effect waves-light">
+              
+                <i class="fa fa-music"></i>
+              
+              <span>视听</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/galleries" class="waves-effect waves-light">
+              
+                <i class="fa fa-photo"></i>
+              
+              <span>相册</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/about" class="waves-effect waves-light">
+              
+                <i class="fa fa-user-circle-o"></i>
+              
+              <span>关于我</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/contact" class="waves-effect waves-light">
+              
+                <i class="fa fa-envelope"></i>
+              
+              <span>留言板</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/friends" class="waves-effect waves-light">
+              
+                <i class="fa fa-address-book"></i>
+              
+              <span>友情链接</span>
+            </a>
+
+            
+      </li>
+    
+
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <div class="logo-name">屿</div>
+        <div class="logo-desc">
+            
+            湖南工业大学 | 计算机科学与技术
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/AV" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-music"></i>
+                
+                视听
+            </a>
+        </li>
+        
+        <li>
+            <a href="/galleries" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-photo"></i>
+                
+                相册
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于我
+            </a>
+        </li>
+        
+        <li>
+            <a href="/contact" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-envelope"></i>
+                
+                留言板
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/liaoxingwang/" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+
+   
+   
+<!-- 支持二级菜单特性 liaoxingwang modify 2019.09.17  -->
+<!-- <ul class="menu-list mobile-menu-list">
+    
+        <li class="m-nav-item">
+                
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-home"></i>
+                        
+                        首页
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/tags" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-tags"></i>
+                        
+                        标签
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/categories" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-bookmark"></i>
+                        
+                        分类
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/archives" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-archive"></i>
+                        
+                        归档
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/AV" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-music"></i>
+                        
+                        视听
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/galleries" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-photo"></i>
+                        
+                        相册
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/about" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-user-circle-o"></i>
+                        
+                        关于我
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/contact" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-envelope"></i>
+                        
+                        留言板
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/friends" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-address-book"></i>
+                        
+                        友情链接
+                    </a>
+              
+            </li>
+        
+
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/liaoxingwang/" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul> -->
+
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/liaoxingwang/" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+        
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        算法面经｜10天面了12面！
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        
+<!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/面试/" target="_blank">
+                                <span class="chip bg-color">面试</span>
+                            </a>
+                        
+                            <a href="/tags/Java面试/" target="_blank">
+                                <span class="chip bg-color">Java面试</span>
+                            </a>
+                        
+                            <a href="/tags/大厂面经/" target="_blank">
+                                <span class="chip bg-color">大厂面经</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Java面试-大厂面经/" class="post-category" target="_blank">
+                                Java面试/大厂面经
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2025-08-06
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
+                    
+                        SK
+                    
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        5.2k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        17 分
+                    </div>
+                    
+                
+
+                
+                        <span id="busuanzi_container_site_pv" style='display:none'></span>
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv" ></span>
+
+                
+
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h3 id="1-写在前面"><a href="#1-写在前面" class="headerlink" title="1. 写在前面"></a>1. 写在前面</h3><p>从一头雾水到大厂推荐算法实习offer，短短两个月里一路摸索，经历了重重陷阱和<br>挑战，几次差点心态崩了又挺过来。这次通过复盘找实习遇到的各种坑，进行经验总<br>结，希望帮助大家更好地准备秋招，一起加油！</p>
+<h3 id="2-这两个月的经历"><a href="#2-这两个月的经历" class="headerlink" title="2. 这两个月的经历"></a>2. 这两个月的经历</h3><p>首先，对过去的两个多月找实习进行回顾，大体可以分为准备实习，制作简历，开始<br>投递和开始笔试和面试和offer这几个阶段。<br>准备实习<br>我是从3月5号开始准备找实习的，由于我也是半路出家开始学习的推荐算法(大约半<br>年时间)，所以并没有拿得出手的经历(写在简历上的)，也就是大家普遍的一个问<br>题，没啥可写的。所以3月份，我想先丰富下简历，考虑到推荐系统的话，偏实践一<br>些嘛，所以用了大约20天的时间，学习了一个偏工业上的推荐系统项目，然后把它写<br>到了简历上去，但学习完了之后，就到3月底了，emmm, 于是就与第一个坑有了一次<br>邂逅，这个坑就是：工业性质的推荐项目对找实习不重要，3月份花了大量的时间做<br>这个，性价比很低。<br>这个坑带来的后果就是错过了找实习的最佳时间(3月)，信息闭塞再加上偷懒，导致<br>我后面特别的被动，因为我后来知道了实习岗位是一个萝卜一个坑，时机很重要，算<br>法岗本身就少，好多小公司三月份就完事了，早投还有很多被捞的机会等，唉，只可<br>惜我是3月底才发现的。还好，由于我研究生一直学习着机器学习和深度学习，所以<br>这两块没有准备太长时间，只是有些慌。而慌则乱，下面就一个接一个的坑了。<br>制作简历<br>简历总共2个晚上我就写完了，因为当时光想着要快，得抓住机会试错。一些竞赛、<br>论文经历，技能啥的，也是写了足足两页。感觉也还可以，而且除了推荐岗，感觉也<br>可以找数据挖掘或者机器学习岗位，就都投了。<br>这里面犯了三个简历大忌: 语言潦草(没好好梳理语言和包装) + 逻辑杂乱(时空序列<br>预测和推荐写一块) + 一份简历应对所有岗位。<br>出问题的原因，首先是第一次找实习，没有意识到简历的重要性，之前都是听学长学<br>姐说简历很重要啥的，但听和亲身体会真的是两码事，再加上当时有些慌乱，导致简<br>历的环节，没有好好思考该怎么制作，又加上自以为是的小聪明……所以不用想，也<br>知道我后面的结果了。<br>But，或许还不是我想的那么简单。<br>开始投递</p>
+<p>4月3号，投递简历正赶上清明节放假，我打开牛客，找到暑期实习，搜推荐系统，发<br>现这时候只有字节和快手的推荐算法实习生岗位，我天，虽然这俩是比较想去的，但<br>也不能直接就干这俩吧，这还一点经验都没有，不过纠结了一下，还是投了，因为当<br>时就这俩呀，无可选择，当时真以为大厂都快完事了，所以想着先投再说了。<br>然后再搜机器学习，发现了阿里的推荐算法岗，美团的数据挖掘岗，没有犹豫，投。<br>4月4号，再搜推荐系统，又出了个腾讯微保推荐算法和滴滴推荐算法以及360广告算<br>法，不犹豫，投。<br>这一连串投了5到6家，然后就是等消息了。等消息可真的是煎熬。<br>阿里是最快的，简历过了，然后约了笔试，其次是腾讯微保，约了笔试，快手简历没<br>过，字节和美团没消息的状态。但等了3天了，又有点小慌，再投，又去了字节的官<br>网和走了学长的内推，又投。这时候京东又发现有搜索岗位NLP+推荐，也投了，结果<br>岗位不匹配。而字节和美团依然没消息。这时候真的是慌得一批呀，不过又阿里和腾<br>讯微保的笔试挂着，依然得好好复习。<br>阿里笔试完了之后，美团和字节也有消息了，也是约了笔试。<br>所以，找实习来说，简历还是能敲一下门的，不过有两个坑：<br>（1）尽量不要只从牛客上投简历。我当时由于信息闭塞，啥也不懂也没找人问，看<br>看身边人都这样，呵呵，殊不知进了个大坑。牛客上投简历，其实也是走内推，在这<br>里面投，第一个是看不到地点，第二个是看不到部门，第三个是看不到实时反馈或者<br>流程进行到第几步，第四个是如果投过去的那个人没来得及提交到相应的hr手里，那<br>么相当于简历根本没投过去。这四个，啥后果可想而知。<br>（2）再就是切忌在同一阶段投一个公司的多个部门，因为只要有一个部门接了简<br>历，这个公司里其他部门就根本拿不到了，除非前面的部门放出来。<br>这俩个坑带来的后果是，虽然投了简历，但对进展一无所知，只能被动等待对方联<br>系；有一些简历白投，比如字节的那三个，其中两次投递其实浪费了。<br>总结一下：投简历最好考虑多个渠道，比如找靠谱人内推，比如去公司的官网投递，<br>比如用Boss 直聘啥的，这个我还是没用过。因为我当时发现这个问题，依然是太晚<br>了，好多都通过牛客投出去了，再用这个软件或者官网投递，又相当于走第二步坑，<br>并且当时对自己的定位不明确，对各个部门也不了解，根本不知道对接或者想去啥部<br>门啥的。核心还是对自己定位不太明确，兴趣太多，但不集中。<br>笔试<br>4月7号到15号，是笔试的时间，字节总共参加了3场笔试，阿里，腾讯微保和美团，<br>还是场景题算法题为主，笔试也是遇到了一些坑的，对刷题存在一些误区，这个我之</p>
+<p>前总结了一篇文章。这里就不说了。<br>面试<br>4月20号-30号期间，是面试的高峰期，10天的时间面了12面，这个过程更是高度紧张<br>加煎熬哇。从投递简历开始的那一刻，我就无法好好的入睡了，始终把心悬挂起来，<br>而最后的这10天，紧张和焦虑到了顶峰，10天的时间，而此时手头啥也没有，再加上<br>我老师那边还有改论文写材料的一些事情，再加上各种孤独，我滴天，短短这10天，<br>我心态应该是崩了两到三次，但还好都让我自己把自己忽悠过来了。这期间也需要感<br>谢下张一鸣老师那篇”平常心”的演讲，以及中科院那个博士的感谢信，还有些类似的<br>文章(“鸡汤有时候还是挺香的”)。回到正轨，谈面试。<br>这里具体的问题就不整理了，这个和每个人的简历有关，介绍自己，介绍项目，然后<br>提问+手撕，基本上流程都差不多，而介绍项目基本上会占用大部分时间，所以这个<br>不同的人不一样。而提问的知识，这个不同公司侧重点也不一样，涉及的面也很广，<br>所以这块就需要面经来补充啦，多研究研究面经吧还是。下面说体验:<br>（1）第一次面试<br>腾讯微保一面，推荐算法的。这个是我的第一次面试，准备并不是很充分，还超级紧<br>张，自我介绍和项目啥的说的都不是很好，面试官的问题主要包括机器学习基础，智<br>力题，推荐场景题和开放的题目，第一次接触智力题, 一下子懵逼了，其他的感觉还<br>好，不过最终没消息了，又从牛客上投的，所以并不知道啥情况，应该是挂了。<br>感想：这次挂了之后,赶紧找上面存在的问题，自我介绍和项目介绍不行，并且由于<br>简历上时序比赛和推荐比赛同在，这次面试面推荐竟然介绍了时序比赛，所以后面又<br>重新梳理比赛，总结语言。其次就是有些慌，智力题场景题啥的没仔细考虑，拿到问<br>题张口就来，没有给面试官好好剖析下题目，缺乏交流，给面试官的感觉应该是这孩<br>子分析问题比较鲁莽，现在回头想，第一次面试的问题还真不少哇。<br>（2）第二次面试<br>是字节一面，做在线教育，问的还是比较深的，主要包括项目中涉及的DL问题，推荐<br>模型以及ML问题，然后是手撕一道hard(连续无重复子串)，LeetCode上的原题改版，<br>只可惜，思路正确，但没撕出来，那时候滑动窗口是刚接触，没弄清楚怎么滑，再加<br>上第一次手撕，脑瓜子嗡嗡的当时。这次说实话对自信打击挺大的，但面试官给过<br>了。所以面试这东西有时候真的是玄幻，无法预料。<br>感想: 刷题还是不够，手撕的能力欠缺，这个确实没有啥好方法，只能靠着不停的积<br>累和刷题，以及不停的总结了。<br>（3）其他面试情况</p>
+<p>阿里一面，推荐算法，但好像是toB的，简单谈了谈项目，问了些项目上的细节，然<br>后让等二面，结果也没等来二面，阿里这次的体验这次并不是很好。<br>360一面，问的很广，多方位考察，ML，DL，C++，操作系统那一套，然后手撕，计算<br>机基础的那些只有些潜在的印象了，回答的并不是很好感觉，但面试官人超级好感<br>觉，过。这次认识到了基础的重要性，包括数据结构，操作系统等，也知道C++的重<br>要性，还是要捡起来的。<br>字节二面，有了前面的教训，进行了一波总结和准备，二面相对来说就好多了，在一<br>面基础上更加深挖，并伴有智力题和概率题了，过，字节体验还是可以的，不过水平<br>也是很高。<br>滴滴，一面和二面持续了5个小时，这个是问的比较细了，也非常广，后面面试官直<br>接看着我的博客和GitHub问的，所以这个不同的人会不一样。面试官水平非常高，说<br>的时候都是让他自己能自己推出来的程度才行。这个过+OC<br>字节HR面，在线教育部门竟然是两面，也是出乎意料的，这个就相对来说较为轻松<br>了，个人优缺点，前两次体验等，这个过+OC。<br>美团一面，这个就比较惨了，投到了数据挖掘岗，但我介绍的时候发现我找推荐，但<br>他那部门没推荐算法，所以比较尴尬了，我也没法介绍推荐比赛，全程跟着面试官的<br>思路跑了，问机器学习，深度学习，场景题，智力题，python基础等等，最后手撕题<br>原地哈希的那种，也是思路对，没撕出来，但感觉没问题呀，课下写了一遍也过了，<br>可能是太紧张有地方出错了吧，这次体验就不太好了，结果显然挂。面试官也比较严<br>肃，自信也受到了一定的打击。不过发现了简历有问题，也发现知识上也有很多的漏<br>洞，给了我很大的教训。<br>清晰的记得，4月28，目前只有一个口头oc，还是六月份才启动申请，所以当时自信<br>即将为0。准备放弃，但突然360打来电话约二面，瞬间又看到了点希望。<br>360二面，由于面试官看到了我之前博客总结，发现大部分ML和DL的知识，所以直接<br>避开不问了，介绍完项目之后，给了个数学题，主要是英文的，考察朴素贝叶斯和全<br>概率公式，我天，之前准备实习是没看这两块的，不过，在面试官的一点点翻译帮助<br>下，顺利搞定，这个面试官也超级nice，最后还给我讲了广告和普通推荐的区别，推<br>荐了广告算法的一些资料，过。<br>这时候，进入五一了，我手里面已经没有任何牌了，本来想打算既然这样了，就好好<br>休息休息，玩玩，毕竟一个多月的高压紧张，长时间可能会出问题，但老师那边需要<br>改论文，并且360打电话说假期之后约三面，得，五一也没休息得逞，又进入了一个<br>紧张状态。</p>
+<p>360三面，这次面试官又考察的比较全，项目谈的少了点，MLDL和推荐模型挖了一些<br>深知识，算法策略和思维能力以及基础C++，Java锁机制，数据结构底层，再加上场<br>景题啥的，感觉这次答得就不大行了，再加上这个过了五一的一个假期，我发现ML<br>DL的基础也记得有些模糊了，不过运气成分在，面试官给过了。<br>总结：通过这次，我真的发现自己有很多的知识漏洞，主要来自于计算机基础，<br>C++，和推荐方面的算法思维，急需补充和学习，再加上之前简历方面的各种漏洞，<br>缺少比较出色的项目等，后面的几个就没有面了，这段时间真的是压力超级大，越面<br>自信越不行(是因为真认识到自己的各种不足了，所以到后面心理没底)，而有面试根<br>本就无心学习，所以真的想着尽快结束，然后静下心去补基础，所以大约5月10号的<br>时候，停。当然后面几天由于焦急等offer，也没静下心来学习。<br>（4）offer情况<br>这次拿到了滴滴，字节和360的offer，前两个是做推荐，而最后一个是做广告，通过<br>这几天的了解，发现推荐和广告真的是差别很大的，不是一回事，广告本身是很复杂<br>的一个东西，涉及到广告主，平台以及用户的三方博弈，并且考虑的因素和推荐也不<br>太一样。当然，这两个都是和具体的业务强相关，而这两个方向上，我都是小白，虽<br>然都想学，但简单的衡量了下自己目前的水平，距离秋招的时间，以及自己的精力，<br>还是选择了前者。</p>
+<h3 id="3-经验总结"><a href="#3-经验总结" class="headerlink" title="3. 经验总结"></a>3. 经验总结</h3><p>如今算是秋招前奏，体验了一波，对于未来找的岗位，对于找工作的整体流程等清晰<br>了很多，这是个玩心态的过程，时间调整和各种规划调整，还是挺锻炼人的。<br>下面通过上面的几个坑总结下经验，助力秋招。</p>
+<ol>
+<li>自我定位：先对自己的未来有个定位，然后有个大体计划，这个非常重要，<br>得知道自己想找啥岗位，对应的每个公司有啥部门，然后提前做了解，包括部<br>门自身信息和岗位要求，这样才能高效的”对症下药”。真的不能海投和乱投，<br>这样会白花费掉很多心力，面试多了有时候也不是好事，第一个是费时间，第</li>
+</ol>
+<h2 id="二、个是有面试挂着"><a href="#二、个是有面试挂着" class="headerlink" title="二、个是有面试挂着"></a>二、个是有面试挂着</h2><ol start="2">
+<li>早投早准备。一定要把握好秋招各大公司的招聘时间点，包括提前批和正式<br>秋招的，准备好了就开始投，投递可以采用多种渠道，不要仅用牛客，可以通<br>过找一些师兄师姐内推，这样能熟悉部门的相关情况，也有简历筛选方面的优<br>势，但是并不会有啥捷径，不要偷懒哈哈。</li>
+<li>写简历时考虑面试官会问什么。不要乱写，写到上面的每个点必须要彻底明<br>白，并且还要想好可能引申的一些点，切忌太分散，这样让面试官不知道问</li>
+</ol>
+<p>啥，自己介绍的时候也不知道如何介绍，会很尴尬。简历上的内容要和意愿岗<br>位匹配，然后精简。<br>4. 切忌贪多。知识不要贪多，还是做减法，先以自己简历的内容为主，然后往<br>外扩散，每个大厂侧重点都不一样，可以提前通过刷面经来了解大厂的面试风<br>格，做相应准备，不要盲目的光补基础，这样效率不高。<br>5. 重视心态。要对自己有信心，可以找几个伙伴一块准备，还能互相交个流，<br>谈个心啥的，有些焦虑和紧张，互相聊聊就抵消了，焦虑和紧张这俩哥们肯定<br>避免不了，大家都有，慢慢习惯了，面多了，就好啦。</p>
+<h3 id="6-最后，对于算法岗而言："><a href="#6-最后，对于算法岗而言：" class="headerlink" title="6. 最后，对于算法岗而言："></a>6. 最后，对于算法岗而言：</h3><p>回归本真。对于算法工程师，我发现依然是算法思维最重要，也就是对于某个方法，</p>
+<p><strong>Q:</strong> 在明白了原理之后，一定要知其所以然，为啥要这样？为啥这样就会有效？别的方法</p>
+<p><strong>Q:</strong> 为啥就不行呢？ 这种方法行了之后，还有没有啥问题？还能不能更行呢？算法工程<br>师的话这种思维会非常重要，但需要慢慢培养的，所以找算法来说，一定要刻意去培<br>养这种思维，而这种思维往往来源于读论文，基于真实实践等，所以打比赛，看论<br>文，看大佬的博客，以及基于业务场景做项目是非常好的机会，一定要珍惜。<br>工程能力。对于推荐算法工程师，工程也很重要，也需要考虑具体业务场景，但这些<br>东西都不是在学校能培养出来的，这也就是找实习的另一个原因。但是对于学生小白<br>找实习的话，时间有限，还是找准重点。我花了20天准备的工业推荐项目，没给我助<br>上一点力，反而可能会给我减分，因为这算蛮力，而不是思维。<br>基础扎实。算法岗，计算机的底层基础也非常重要，也得好好看看数据结构算法等基<br>础知识，还需要学习一门硬性语言，简历上只熟悉python也有点尴尬，面试官都不好<br>意思在语言上提问，C++和Java也应该熟悉一门的。一般python+C++组合的多。目前<br>了解到，如果找推荐的话，往往会和四五门语言打交道，python和C++，SQL得熟悉，<br>Java和scala现用现学。<br>到这里基本上就差不多了，把这些东西记录下来，一个是提醒自己后面还得好好努<br>力，结合实际场景多思考积累经验，抓紧制定计划在实习的这段时间弥补。第二个算<br>是还愿，希望能帮助更多的小伙伴，尤其是没机会实习的伙伴们。这是我亲自趟到的<br>坑，如果你也趟到了一些，也欢迎偷偷的告诉我呀，秋招一起加油!</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+            
+            <div class="reprint1">
+                <p>
+                    <span class="reprint1-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+                    </span>
+                    <a href="https://liaoxingwang.github.io" class="b-link-green">屿</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2025/08/06/blog-open-source-java-interview-suan-fa-mian-jing-10-tian-mian-liao-12-mian/" class="b-link-green">算法面经｜10天面了12面！</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    
+
+    
+        <link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="card-content">
+        <div class="giscus-wrapper" style="overflow: hidden; max-width: 100%;">
+            <div class="giscus"></div>
+        </div>
+    </div>
+</div>
+
+<script src="https://giscus.app/client.js"
+    data-repo="liaoxingwang/liaoxingwang.github.io"
+    data-repo-id="R_kgDONgefmg"
+    data-category="Announcements"
+    data-category-id="DIC_kwDONgefms4DCjUZ"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="preferred_color_scheme"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async>
+</script>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2025/08/06/blog-open-source-java-interview-mei-tuan-java-kai-fa-mian-jing/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="美团Java开发面经">
+                        
+                        <span class="card-title">美团Java开发面经</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            聊了一下RCP和数据库细节和原理。 1,内存文件映射断电数据是否可以保存？ 2,为什么TCP需要拆包和拼包？ 3,什么是广播？广播与多播的区别？ 4,线程池拒绝策略有哪些？ 5,AQS的使用场景和使用方式？ 6,有哪些线程安全的map？有哪些线程安全的队列？ listedbockingque的同步原
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2025-08-06
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java面试-大厂面经/" class="post-category" target="_blank">
+                                    Java面试/大厂面经
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/面试/" target="_blank">
+                        <span class="chip bg-color">面试</span>
+                    </a>
+                    
+                    <a href="/tags/Java面试/" target="_blank">
+                        <span class="chip bg-color">Java面试</span>
+                    </a>
+                    
+                    <a href="/tags/大厂面经/" target="_blank">
+                        <span class="chip bg-color">大厂面经</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2025/08/06/blog-open-source-java-interview-ji-zhu-ren-zuo-dao-na-xie-cai-neng-jin-a-li/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="技术人做到哪些才能进阿里">
+                        
+                        <span class="card-title">技术人做到哪些才能进阿里</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            无论是在公众号后台，还是我的个人微信上，经常会有有很多读者会问我以下类似的 达到什么水平才能进阿里？ 阿里的P6有哪些要求？ 我想进阿里，我要准备什么？ 到底什么样才算是高级开发？ 这些问题我之前从来都是不回答的，因为我那个时候也不太知道标准答案是什么。 前几天，写了一篇《没想到，我都来阿里5年了》
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2025-08-06
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java面试-大厂面经/" class="post-category" target="_blank">
+                                    Java面试/大厂面经
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/面试/" target="_blank">
+                        <span class="chip bg-color">面试</span>
+                    </a>
+                    
+                    <a href="/tags/Java面试/" target="_blank">
+                        <span class="chip bg-color">Java面试</span>
+                    </a>
+                    
+                    <a href="/tags/大厂面经/" target="_blank">
+                        <span class="chip bg-color">大厂面经</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 屿<br />'
+            + '作者: SK<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4, h5'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4, h5').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+        <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&copy; 理想热爱.
+
+            <br>
+            <span id="sitetime"></span><span class="my-face">ღゝ◡╹)ノ♡</span>
+            <br>
+
+            
+
+            
+                    
+                        <span id="busuanzi_container_site_pv" style='display:none'></span>
+                        总访问量: <span id="busuanzi_value_site_pv" class="white-color"></span>
+                    
+
+                    
+                        <span id="busuanzi_container_site_uv" style='display:none'></span>
+                        人次&nbsp; | &nbsp;访客人数: <span id="busuanzi_value_site_uv" class="white-color"></span> 人
+                    
+
+            
+
+            
+                &nbsp; | &nbsp;字数统计:&nbsp;
+                <span class="white-color">1296.3k</span> 字
+            
+
+            
+            <br>
+
+        </div>
+
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/liaoxingwang" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+ 
+    <a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=807928930@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+
+    <a href="https://zhihu.com/people/zbozci" class="tooltipped" target="_blank" data-tooltip="访问我的知乎" data-position="top" data-delay="50">
+        <i class="fa fa-inverse">知</i>
+    </a>
+
+
+
+    <a href="http://wpa.qq.com/msgrd?v=3&uin=807928930&site=qq&menu=yes" class="tooltipped" target="_blank" data-tooltip="访问我的QQ空间" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+    <a href="https://weibo.com/jamsJJYY" class="tooltipped" target="_blank" data-tooltip="关注我的微博" data-position="top" data-delay="50">
+        <i class="fa fa-weibo"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+
+        var t1 = Date.UTC(2022, 10, 24, 00, 00, 00); //北京时间2019-8-1 00:00:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes *
+            minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已勉强运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours +
+            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒" ;
+    } /*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+
+
+
+
+
+
+        <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+        <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+        <script src="/libs/materialize/materialize.min.js"></script>
+        <script src="https://cdn.bootcss.com/masonry/4.2.2/masonry.pkgd.min.js"></script>
+        <script src="https://cdn.bootcss.com/aos/3.0.0-beta.6/aos.js"></script>
+        <script src="https://cdn.bootcss.com/scrollprogress/3.0.2/scrollProgress.min.js"></script>
+        <script src="https://cdn.bootcss.com/lightgallery/1.6.12/js/lightgallery-all.min.js"></script>
+        <script src="/js/matery.js"></script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+        
+            <script src="/libs/others/clicklove.js"></script>
+        
+
+        
+            <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        
+
+        <!-- liaoxingwang add 2019.08.28 -->
+        <script type="text/javascript">
+            var OriginTitile = document.title,
+                st;
+            document.addEventListener("visibilitychange", function () {
+                document.hidden ? (document.title = "看不见我🙈~看不见我🙈~", clearTimeout(st)) : (document.title =
+                    "(๑•̀ㅂ•́) ✧被发现了～", st = setTimeout(function () {
+                        document.title = OriginTitile
+                    }, 3e3))
+            })
+        </script>
+
+        <!-- 鼠标点击烟花爆炸效果  liaoxingwang add 2019.09.09 -->
+        
+
+        <!-- 背景雪花飘落特效liaoxingwang add 2019.09.10 -->
+        
+
+        <!-- 鼠标点击文字特效 liaoxingwang add 2019.09.10-->
+        
+            <script src="/js/wenzi.js" type="text/javascript"></script>
+        
+
+        <!-- 背景雪花飘落特效 liaoxingwang add 2019.09.10 -->
+        
+
+        <!-- 在线聊天工具  liaoxingwang add 2019.09.11 -->
+        
+
+        <!-- 背景 canvas-nest  洪卫 shw 2018  add 2019.09.15-->
+        
+
+        <!-- 背景静止彩带  洪卫 shw 2018  add 2019.09.15-->
+        
+            <script type="text/javascript">
+            var windowWidth = $(window).width();
+            if (windowWidth > 992) {
+                document.write('<script type="text/javascript" size="150" alpha="0.6" zIndex="-1" src="/libs/background/ribbon.min.js"><\/script>');
+            }
+            </script>
+        
+
+        <!-- 背景动态彩带 洪卫 shw 2018  add 2019.09.15-->
+        
+            <script type="text/javascript">
+            var windowWidth = $(window).width();
+            if (windowWidth > 992) {
+                document.write('<script type="text/javascript" src="/libs/background/ribbon-dynamic.js"><\/script>');
+            }
+            </script>
+        
+
+    
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z\d\-\.\+]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(t.test(e.href)||r.test(e.href))&&(e.href=a.dataset.original)})});</script><script>(r=>{r.imageLazyLoadSetting.processImages=t;var a=r.imageLazyLoadSetting.isSPA,o=r.imageLazyLoadSetting.preloadRatio||1,d=i();function i(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(t){(a||t)&&(d=i());for(var e,n=0;n<d.length;n++)0<=(e=(e=d[n]).getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(r.innerHeight*o||document.documentElement.clientHeight*o)&&(()=>{var t,e,a,o,i=d[n];e=function(){d=d.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).dataset.loaded||(t.hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(a=new Image,o=t.getAttribute("data-original"),a.onload=function(){t.src=o,t.removeAttribute("data-original"),t.setAttribute("data-loaded",!0),e&&e()},a.onerror=function(){t.removeAttribute("data-original"),t.setAttribute("data-loaded",!1),t.src=o},t.src!==o&&(a.src=o)))})()}function e(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",e),r.addEventListener("resize",e),r.addEventListener("orientationchange",e)})(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
+</html>

@@ -1,0 +1,1441 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+    
+
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="腾讯&amp;阿里&amp;携程面经, 商单接企业项目外包 软件开发 整包服务 移动开发 移动开发团队 移动开发项目">
+    <meta name="baidu-site-verification" content="fmlEuI34ir">
+    <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
+    <meta name="description" content="阿里一面没打招呼突击电话面试（30min）
+Q: 地点ok？时间ok？（base杭州，暑期，全部ok ok ok）简单自我介绍一
+Q: 下，项目经历选一个说说？
+Q: 项目中对于没有标签的数据，怎么处理，还有什么别的方法？（我用的远程监督，">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="腾讯&amp;阿里&amp;携程面经 | 屿">
+    <meta property="og:description" content="阿里一面没打招呼突击电话面试（30min）
+Q: 地点ok？时间ok？（base杭州，暑期，全部ok ok ok）简单自我介绍一
+Q: 下，项目经历选一个说说？
+Q: 项目中对于没有标签的数据，怎么处理，还有什么别的方法？（我用的远程监督，">
+    <meta property="og:url" content="https://liaoxingwang.github.io2025/08/06/blog-open-source-java-interview-teng-xun-a-li-xi-cheng-mian-jing/">
+    <meta property="og:image" content="https://liaoxingwang.github.io/medias/banner/0.jpg">
+    <meta property="og:site_name" content="屿">
+    <meta property="og:locale" content="zh_CN">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="腾讯&amp;阿里&amp;携程面经 | 屿">
+    <meta name="twitter:description" content="阿里一面没打招呼突击电话面试（30min）
+Q: 地点ok？时间ok？（base杭州，暑期，全部ok ok ok）简单自我介绍一
+Q: 下，项目经历选一个说说？
+Q: 项目中对于没有标签的数据，怎么处理，还有什么别的方法？（我用的远程监督，">
+    <meta name="twitter:image" content="https://liaoxingwang.github.io/medias/banner/0.jpg">
+
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>腾讯&amp;阿里&amp;携程面经 | 屿</title>
+    <link rel="icon" type="image/jpeg" href="/medias/avatars/hwsun.jpg">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/aos/3.0.0-beta.6/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/lightgallery/1.6.12/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <style type="text/css">
+        
+
+            code[class*="language-"],
+            pre[class*="language-"] {
+                white-space: pre !important;
+            }
+
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?46e79e71af0709a5b9106bf20cecc493";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+    
+    
+        <script>
+            (function(){
+                var bp = document.createElement('script');
+                var curProtocol = window.location.protocol.split(':')[0];
+                if (curProtocol === 'https') {
+                    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+                }
+                else {
+                    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                }
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(bp, s);
+            })();
+        </script>
+    
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+    <body>
+
+        <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <span class="logo-span">屿</span>
+                </a>
+            </div>
+            
+
+
+<!-- <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/AV" class="waves-effect waves-light">
+            
+            <i class="fa fa-music"></i>
+            
+            <span>视听</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/galleries" class="waves-effect waves-light">
+            
+            <i class="fa fa-photo"></i>
+            
+            <span>相册</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于我</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/contact" class="waves-effect waves-light">
+            
+            <i class="fa fa-envelope"></i>
+            
+            <span>留言板</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul> -->
+
+<!-- 支持二级菜单特性 liaoxingwang modify 2019.09.17  -->
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right nav-menu">
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/" class="waves-effect waves-light">
+              
+                <i class="fa fa-home"></i>
+              
+              <span>首页</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/tags" class="waves-effect waves-light">
+              
+                <i class="fa fa-tags"></i>
+              
+              <span>标签</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/categories" class="waves-effect waves-light">
+              
+                <i class="fa fa-bookmark"></i>
+              
+              <span>分类</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/archives" class="waves-effect waves-light">
+              
+                <i class="fa fa-archive"></i>
+              
+              <span>归档</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/AV" class="waves-effect waves-light">
+              
+                <i class="fa fa-music"></i>
+              
+              <span>视听</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/galleries" class="waves-effect waves-light">
+              
+                <i class="fa fa-photo"></i>
+              
+              <span>相册</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/about" class="waves-effect waves-light">
+              
+                <i class="fa fa-user-circle-o"></i>
+              
+              <span>关于我</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/contact" class="waves-effect waves-light">
+              
+                <i class="fa fa-envelope"></i>
+              
+              <span>留言板</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/friends" class="waves-effect waves-light">
+              
+                <i class="fa fa-address-book"></i>
+              
+              <span>友情链接</span>
+            </a>
+
+            
+      </li>
+    
+
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <div class="logo-name">屿</div>
+        <div class="logo-desc">
+            
+            湖南工业大学 | 计算机科学与技术
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/AV" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-music"></i>
+                
+                视听
+            </a>
+        </li>
+        
+        <li>
+            <a href="/galleries" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-photo"></i>
+                
+                相册
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于我
+            </a>
+        </li>
+        
+        <li>
+            <a href="/contact" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-envelope"></i>
+                
+                留言板
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/liaoxingwang/" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+
+   
+   
+<!-- 支持二级菜单特性 liaoxingwang modify 2019.09.17  -->
+<!-- <ul class="menu-list mobile-menu-list">
+    
+        <li class="m-nav-item">
+                
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-home"></i>
+                        
+                        首页
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/tags" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-tags"></i>
+                        
+                        标签
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/categories" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-bookmark"></i>
+                        
+                        分类
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/archives" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-archive"></i>
+                        
+                        归档
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/AV" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-music"></i>
+                        
+                        视听
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/galleries" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-photo"></i>
+                        
+                        相册
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/about" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-user-circle-o"></i>
+                        
+                        关于我
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/contact" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-envelope"></i>
+                        
+                        留言板
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/friends" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-address-book"></i>
+                        
+                        友情链接
+                    </a>
+              
+            </li>
+        
+
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/liaoxingwang/" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul> -->
+
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/liaoxingwang/" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+        
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        腾讯&amp;阿里&amp;携程面经
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        
+<!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/面试/" target="_blank">
+                                <span class="chip bg-color">面试</span>
+                            </a>
+                        
+                            <a href="/tags/Java面试/" target="_blank">
+                                <span class="chip bg-color">Java面试</span>
+                            </a>
+                        
+                            <a href="/tags/大厂面经/" target="_blank">
+                                <span class="chip bg-color">大厂面经</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Java面试-大厂面经/" class="post-category" target="_blank">
+                                Java面试/大厂面经
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2025-08-06
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
+                    
+                        SK
+                    
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        2.9k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        10 分
+                    </div>
+                    
+                
+
+                
+                        <span id="busuanzi_container_site_pv" style='display:none'></span>
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv" ></span>
+
+                
+
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>阿里<br>一面<br>没打招呼突击电话面试（30min）</p>
+<p><strong>Q:</strong> 地点ok？时间ok？（base杭州，暑期，全部ok ok ok）简单自我介绍一</p>
+<p><strong>Q:</strong> 下，项目经历选一个说说？</p>
+<p><strong>Q:</strong> 项目中对于没有标签的数据，怎么处理，还有什么别的方法？（我用的远<br>程监督，别的还有one-shot zero-shot label embedding）<br>假设一个情景题，微博创立初期，短文本，10w数据集，无监督，分类怎<br>么做（我答的用label embedding做或者用embedding+聚类kmeans）</p>
+<p><strong>Q:</strong> embedding怎么实现？（fasttext or word2vec，不能用BERT，数据量<br>大不合适）补充：你说的是词向量，句子向量怎么做呢（+average pooling最<br>常用，还有别的方法没列举）</p>
+<p><strong>Q:</strong> 除了你说的方法，还有别的方法可以吗？U-learning听说过吗？（没听</p>
+<p><strong>Q:</strong> 清？啥learing？这个真不知道，只听说过Q-learning）</p>
+<p><strong>Q:</strong> kmeans的k怎么选择，这么做效果好吗？为什么？（k不知道，具体情况<br>具体分析吧（编不出来了），效果不好）<br>那如果不用聚类，别的方法怎么做，提示：抽取关键字（关键字抽取可以<br>用词与句子做相似度匹配）<br>按你说的做不具有通用性， 那如果是长文本，又怎么做，有什么区别（长<br>文本用词频统计+停用词过滤）<br>你没回答出我想要的答案，因为一个微博可能属于多个类别（多类别无监<br>督分类）</p>
+<p><strong>Q:</strong> 快排知道吗？稳定不？（不稳定，因为会交换顺序）</p>
+<p><strong>Q:</strong> bagging、boosting知道吗？（知道，属于ensemble，叽里哇啦叽里哇<br>啦）<br>用啥语言，用啥框架（python，pytorch）</p>
+<p><strong>Q:</strong> 反问：实习时间？</p>
+<p><strong>Q:</strong> 反问：表现如何？<br>个人体会：面试官人超好，很客气。感觉工程能力还有待提高，很多东西<br>还是停留在理论上。kmeans自己挖的坑，无语了。。。后面问了大佬，这个情<br>景题可能是LDA之类的主题模型，或者是手动标记数据，再训练。或者是用迁<br>移学习。</p>
+<p>二面<br>约好的电话面试（30min）<br>自我介绍，问论文（简单介绍一下）<br>问比赛，效果怎么样，名次之类的（问啥答啥）</p>
+<h2 id="二、叉树有了解吗"><a href="#二、叉树有了解吗" class="headerlink" title="二、叉树有了解吗"></a>二、叉树有了解吗</h2><p>像没有，都是用python做的）<br>动态规划了解吗，解释一下，填表是怎么做的（吧啦吧啦）</p>
+<p><strong>Q:</strong> 操作系统了解吗？（本科学过，现在忘了。。）<br>Linux会用吗（会，一般用来跑实验和配环境）<code>Linux</code> debug的时候怎么做<br>的（我用的nohup，输出log日志来debug）</p>
+<p><strong>Q:</strong> 计算机网络学过吗？（本科学过，现在忘了。。）那学过哪些课（ML<br>DeepL NLP）DeepL的课程作业有吗（没）<br>BERT模型说一下，历史、演变说一下（RNN、LSTM、ELMo、<br>Attention、Transformer、GPT、BERT、Auto-Encoder、Auto-<br>Regression、Positional Encoder）<br>情感分析怎么做的说一下，对你后面有没有什么启发（根据项目说的，样<br>本不均衡、评价指标等等）<br>别的语言会吗，java，c（本科学过，熟练度不高，现在捡起来很快）<br>有没有关注什么学术平台，或者线下的学术活动（知乎、群、机器之心、<br>自己组织线下交流活动）<br>反问：表现如何<br>反问：钉钉这边的业务是什么<br>个人体会：面试官很客气，像聊天一样，很顺畅。<br>携程<br>一面<br>自我介绍，实习时间，22年可以嘛（22年看情况）<br>分词知道嘛jieba说一说（知道，维特比算法巴拉巴拉）</p>
+<p><strong>Q:</strong> 分词种新词发现怎么做？（几里哇啦扯了一堆）你说的好像和我不是一个<br>东西，新词发现有哪些常用方法（啊。。。不知道）<br>维特比算法中的DAG知道吗，怎么构建的（知道，扯了一堆）</p>
+<p><strong>Q:</strong> 所以DAG怎么构建你没有说（构建。。？不是根据统计信息得到的嘛？不<br>知道）</p>
+<p>看你熟悉维特比算法，HMM知道不（知道的…（西麻哒！！））<br>logP(O|A,B,pi)怎么变成只有ABpi的式子（啊这。。。扯了一堆，三个问<br>题，参数估计，d-separated，动态规划（完全扯错了方向））<br>感觉你说的和我不在一个频道上（哭，真忘了，没想到会问这么细）<br>看你论文用了BERT，说一下BERT和transformer的positional<br>embedding有啥区别（多了一个矩阵，多了一个dropout几里哇啦）<br>这个positional embedding怎么生成的（cos，sin生成的，相当于一个<br>look up tabel）<br>positional embedding公式写一下吧（啊，这个没背啊）<br>sigmoid当数据太大的时候不敏感怎么办（normalization）<br>最后做个笔试，用np实现一个LSTM，初始化权0.5（啊，能不能写伪代</p>
+<p><strong>Q:</strong> 码？）不能写伪代码，要跑出来。（啊这。。。我好多np函数用法没背下来怎<br>么办）你让我有点惊讶，居然没记下来这些常用方法（啊这个sigmoid怎么调</p>
+<p><strong>Q:</strong> 用来着？）你自己写（啊好的好的，还好记得公式）<br>能运行下不（可以，然后炸了）你这bug在哪你知道不（应该是矩阵搞炸<br>了）是的，怎么改（矩阵操作函数名忘了）好吧我提醒一下，把math.exp改成<br>np.exp（啊好的好的）你这又有一个bug（啊变量名写错了，改一下改一下）<br>跑通了，说一下思路吧（简单解释了下代码思路，理论应该是对的）</p>
+<p><strong>Q:</strong> 反问：表现如何？<br>反问：一共有几面<br>个人体会：铁凉凉，不用看了，这也太难顶了，手撕LSTM还问了一堆机器<br>学习东西，本来是准备的论文，BERT，word2vec，结果都没问。这波死的及<br>其惨烈~HMM，新词发现，这俩不熟，赶快补，还有coding能力不够，找机<br>会多写代码！！！<br>二面<br>自我介绍，聊项目论文。<br>BERT和RNN之类的区别（Auto Encoder与Auto regression，吧啦吧啦<br>）<br>BERT的缺点，什么情况无法处理，双重否定，数值可以处理吗（应该不太<br>明感）</p>
+<p><strong>Q:</strong> BERT的输入长度多少？（最大512） 超出怎么办（截断，数据预处理减少<br>无关数据。实在太长直接上LSTM、Transforemer-XL）</p>
+<p><strong>Q:</strong> 实体抽取怎么做的，有了解吗？（没有具体做，但是大概知道上NER这一<br>块的东西，其他不清楚了）</p>
+<h2 id="一、个算法题"><a href="#一、个算法题" class="headerlink" title="一、个算法题"></a>一、个算法题</h2><blockquote>
+<p>330, 4-&gt;4, 1234-&gt;2000, 4321-&gt;4321（20min没做出来，说了下思路，暴<br>力递归）<br>个人体会：这个面试官又迟到10min，携程感觉不太守时，不喜欢，然后<br>办公环境看起来也不太行，总的来说不太行。最后算法题没写出来，估计是凉<br>了，不过这个面试官比上一个态度好很多。<br>腾讯<br>一面<br>腾讯会议面试（30min）<br>自我介绍，每个项目，一个个讲讲<br>论文1中样本怎么获取的（远程监督）继续深挖<br>论文2介绍一下（吧啦吧啦）<br>BERT怎么做分类的说一下（feature based fine turning）<br>比赛做了什么，改动了什么，和第一差距在哪（吧啦吧啦）<br>多任务用和不用的区别在哪（pipline存在误差传递，多任务2个loss加一<br>起）<br>2个loss的超参数怎么获取（经验+网格搜索）这样可能很慢，贝叶斯优化<br>了解吗（不是很了解，只记得是启发式算法）<br>tf会用吗，和pytorch有什么区别（不会，一般都是pytorch，tf有<br>session、graph什么的比较麻烦记得好像，其他不清楚了）<br>其他语言会吗（本科学过、捡起来很快）大数据开发会吗（不会，只听<br>过）<br>树模型和深度学习的区别（只知道效果有差距，具体不太清楚）二者可以<br>结合吗（不是很清楚）<br>树模型介绍一下（决策树、GBDT、XGBOOST、随机森林）核心思想介绍<br>下（吧啦吧啦）<br>Adaboost和GBDT区别（Adaboost对错误给更高的权重，GBDT多个子<br>树加起来（不知道说的对不对））<br>树模型和机器学习比如LR有啥区别（树模型有比较好的可以解释性（这个<br>答案好像不是很满意，应该是稀疏性的问题））</p>
+</blockquote>
+<p>稀疏性问题怎么解决（变成dense向量，说了一些分布式表示和one-hot<br>的区别（不知道答偏了没有））<br>推荐系统了解吗（不是特别的了解）想做哪一块（NLP这块吧）推荐转岗<br>可以吗（可）<br>反问：业务有哪些呢<br>反问：技术栈要求<br>反问：面试不足的地方有哪些<br>个人体会：面试官语速快的飞起，有种压力面的感觉，前面说项目的时候<br>打断了好几次，把我说话节奏都带的快了。还有就是coding能力不够，工业界<br>的一些东西还是缺乏<br>二面<br>腾讯平台面试（1h20min）<br>自我介绍，问项目。<br>attention知道吗，用过吗（BERT里用过，不是我写的）写一下公式（从<br>attention说到self-attention）<br>q、k、v是啥意思（解释了一下）qk可以用别的方法代替吗（可以，只要<br>是计算距离的方法就行，比如说余弦距离）<br>self-attention和attention的区别（说了一堆好像没答道点上，最核心应<br>该是attention只计算q和v）<br>BERT和其他序列模型区别（BERT不是序列模型，Auto-Encoder的模型，<br>其他比如LSTM是Auto-Regression）<br>推荐算法了解吗（不太了解，只知道协同过滤）<br>机器学习了解吗（了解），LR损失函数写一下（吧啦吧啦写了下，最后y<br>写错了，应该放log外面）</p>
+<p><strong>Q:</strong> FM了解吗？（不了解）Wide&amp;Deep了解吗？（不了解，好像都是推荐系<br>统的那边）<br>XGBOOT说一下（说了下和GBDT区别，之类的）为什么二阶导数好（信<br>息更丰富）二阶导数也会更好的拟合（对对对）<br>LSTM解决了RNN什么问题（长依赖，梯度消失梯度爆炸之类的）</p>
+<p><strong>Q:</strong> LSTM还有一个什么特点？（啥。。。不知道了）做加法比做乘法快（喔喔</p>
+<p><strong>Q:</strong> 喔，可能想问三个门并行化？没太理解）<br>转岗推荐可以吗（可）</p>
+<p>说说对推荐系统理解（只知道协同过滤，时间一致性吧啦吧啦）<br>Embedding的理解，说说（表示学习吧啦吧啦说一堆）<br>写一个二叉树的后序遍历，非递归，手写（双栈法，输出的时候有点小问<br>题）<br>算法题手写：最大子段和（暴力法）<br>反问：面试表现<br>反问：推荐的技术栈<br>个人体会：体验很好，就是写代码有点紧张。腾讯的速度还是很快的，不<br>得不感叹。<br>HR面<br>腾讯会议面试（18min）<br>自我介绍，实习时间，信息确认<br>挑一个项目说一下<br>项目中的收获是什么<br>说2个项目中的难点，怎么解决的<br>希望实习获得什么<br>别的公司进度<br>有重大疾病吗<br>如何和别的部门协调资源<br>实习和实验室做项目区别<br>给自己之前2个面试打分<br>反问：表现怎么样<br>反问：base地（北京、深圳）<br>个人体会：腾讯速度真的快的飞起，结束了就云证。昨天2面今天就HR，<br>不得不说太快了。HR态度很客气，体验很好</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+            
+            <div class="reprint1">
+                <p>
+                    <span class="reprint1-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+                    </span>
+                    <a href="https://liaoxingwang.github.io" class="b-link-green">屿</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2025/08/06/blog-open-source-java-interview-teng-xun-a-li-xi-cheng-mian-jing/" class="b-link-green">腾讯&amp;阿里&amp;携程面经</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    
+
+    
+        <link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="card-content">
+        <div class="giscus-wrapper" style="overflow: hidden; max-width: 100%;">
+            <div class="giscus"></div>
+        </div>
+    </div>
+</div>
+
+<script src="https://giscus.app/client.js"
+    data-repo="liaoxingwang/liaoxingwang.github.io"
+    data-repo-id="R_kgDONgefmg"
+    data-category="Announcements"
+    data-category-id="DIC_kwDONgefms4DCjUZ"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="preferred_color_scheme"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async>
+</script>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2025/08/06/blog-open-source-java-interview-teng-xun-xiao-zhao-mian-jing/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="腾讯校招面经">
+                        
+                        <span class="card-title">腾讯校招面经</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            2、小朋友用家长手机号登微信被诈骗的场景，如何减少这种情况发生? 10、基于商户模块提出一个需求，问怎么去设计? （三）腾讯的群面面经∶产品策划/运营方向。 这次踩了好几个坑，分享一下： 框架在一次提出以后，很难尽善尽美做到最好。如果有问题一定要及时调整。 不要光顾着想新的 idea。 尤其是负责记
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2025-08-06
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java面试-大厂面经/" class="post-category" target="_blank">
+                                    Java面试/大厂面经
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/面试/" target="_blank">
+                        <span class="chip bg-color">面试</span>
+                    </a>
+                    
+                    <a href="/tags/Java面试/" target="_blank">
+                        <span class="chip bg-color">Java面试</span>
+                    </a>
+                    
+                    <a href="/tags/大厂面经/" target="_blank">
+                        <span class="chip bg-color">大厂面经</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2025/08/06/blog-open-source-java-interview-mei-tuan-he-ma-yi-jin-fu-mian-shi-bi-ji/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="美团和蚂蚁金服面试笔记">
+                        
+                        <span class="card-title">美团和蚂蚁金服面试笔记</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Java方法区和堆一样，方法区是一块所有线程共享的内存区域，他保存系统的 类信息。比如类的字段、方法、常量池等。方法区的大小决定系统可以保存多少个类。如果 系统定义太多的类，导致方法区溢出。虚拟机同样会抛出内存溢出的错误。方法区可以理解 主要保存计算过程的中间结果，同时作为计算过程中的变量临时的存储
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2025-08-06
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java面试-大厂面经/" class="post-category" target="_blank">
+                                    Java面试/大厂面经
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/面试/" target="_blank">
+                        <span class="chip bg-color">面试</span>
+                    </a>
+                    
+                    <a href="/tags/Java面试/" target="_blank">
+                        <span class="chip bg-color">Java面试</span>
+                    </a>
+                    
+                    <a href="/tags/大厂面经/" target="_blank">
+                        <span class="chip bg-color">大厂面经</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 屿<br />'
+            + '作者: SK<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4, h5'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4, h5').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+        <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&copy; 理想热爱.
+
+            <br>
+            <span id="sitetime"></span><span class="my-face">ღゝ◡╹)ノ♡</span>
+            <br>
+
+            
+
+            
+                    
+                        <span id="busuanzi_container_site_pv" style='display:none'></span>
+                        总访问量: <span id="busuanzi_value_site_pv" class="white-color"></span>
+                    
+
+                    
+                        <span id="busuanzi_container_site_uv" style='display:none'></span>
+                        人次&nbsp; | &nbsp;访客人数: <span id="busuanzi_value_site_uv" class="white-color"></span> 人
+                    
+
+            
+
+            
+                &nbsp; | &nbsp;字数统计:&nbsp;
+                <span class="white-color">1296.3k</span> 字
+            
+
+            
+            <br>
+
+        </div>
+
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/liaoxingwang" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+ 
+    <a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=807928930@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+
+    <a href="https://zhihu.com/people/zbozci" class="tooltipped" target="_blank" data-tooltip="访问我的知乎" data-position="top" data-delay="50">
+        <i class="fa fa-inverse">知</i>
+    </a>
+
+
+
+    <a href="http://wpa.qq.com/msgrd?v=3&uin=807928930&site=qq&menu=yes" class="tooltipped" target="_blank" data-tooltip="访问我的QQ空间" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+    <a href="https://weibo.com/jamsJJYY" class="tooltipped" target="_blank" data-tooltip="关注我的微博" data-position="top" data-delay="50">
+        <i class="fa fa-weibo"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+
+        var t1 = Date.UTC(2022, 10, 24, 00, 00, 00); //北京时间2019-8-1 00:00:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes *
+            minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已勉强运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours +
+            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒" ;
+    } /*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+
+
+
+
+
+
+        <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+        <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+        <script src="/libs/materialize/materialize.min.js"></script>
+        <script src="https://cdn.bootcss.com/masonry/4.2.2/masonry.pkgd.min.js"></script>
+        <script src="https://cdn.bootcss.com/aos/3.0.0-beta.6/aos.js"></script>
+        <script src="https://cdn.bootcss.com/scrollprogress/3.0.2/scrollProgress.min.js"></script>
+        <script src="https://cdn.bootcss.com/lightgallery/1.6.12/js/lightgallery-all.min.js"></script>
+        <script src="/js/matery.js"></script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+        
+            <script src="/libs/others/clicklove.js"></script>
+        
+
+        
+            <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        
+
+        <!-- liaoxingwang add 2019.08.28 -->
+        <script type="text/javascript">
+            var OriginTitile = document.title,
+                st;
+            document.addEventListener("visibilitychange", function () {
+                document.hidden ? (document.title = "看不见我🙈~看不见我🙈~", clearTimeout(st)) : (document.title =
+                    "(๑•̀ㅂ•́) ✧被发现了～", st = setTimeout(function () {
+                        document.title = OriginTitile
+                    }, 3e3))
+            })
+        </script>
+
+        <!-- 鼠标点击烟花爆炸效果  liaoxingwang add 2019.09.09 -->
+        
+
+        <!-- 背景雪花飘落特效liaoxingwang add 2019.09.10 -->
+        
+
+        <!-- 鼠标点击文字特效 liaoxingwang add 2019.09.10-->
+        
+            <script src="/js/wenzi.js" type="text/javascript"></script>
+        
+
+        <!-- 背景雪花飘落特效 liaoxingwang add 2019.09.10 -->
+        
+
+        <!-- 在线聊天工具  liaoxingwang add 2019.09.11 -->
+        
+
+        <!-- 背景 canvas-nest  洪卫 shw 2018  add 2019.09.15-->
+        
+
+        <!-- 背景静止彩带  洪卫 shw 2018  add 2019.09.15-->
+        
+            <script type="text/javascript">
+            var windowWidth = $(window).width();
+            if (windowWidth > 992) {
+                document.write('<script type="text/javascript" size="150" alpha="0.6" zIndex="-1" src="/libs/background/ribbon.min.js"><\/script>');
+            }
+            </script>
+        
+
+        <!-- 背景动态彩带 洪卫 shw 2018  add 2019.09.15-->
+        
+            <script type="text/javascript">
+            var windowWidth = $(window).width();
+            if (windowWidth > 992) {
+                document.write('<script type="text/javascript" src="/libs/background/ribbon-dynamic.js"><\/script>');
+            }
+            </script>
+        
+
+    
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z\d\-\.\+]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(t.test(e.href)||r.test(e.href))&&(e.href=a.dataset.original)})});</script><script>(r=>{r.imageLazyLoadSetting.processImages=t;var a=r.imageLazyLoadSetting.isSPA,o=r.imageLazyLoadSetting.preloadRatio||1,d=i();function i(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(t){(a||t)&&(d=i());for(var e,n=0;n<d.length;n++)0<=(e=(e=d[n]).getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(r.innerHeight*o||document.documentElement.clientHeight*o)&&(()=>{var t,e,a,o,i=d[n];e=function(){d=d.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).dataset.loaded||(t.hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(a=new Image,o=t.getAttribute("data-original"),a.onload=function(){t.src=o,t.removeAttribute("data-original"),t.setAttribute("data-loaded",!0),e&&e()},a.onerror=function(){t.removeAttribute("data-original"),t.setAttribute("data-loaded",!1),t.src=o},t.src!==o&&(a.src=o)))})()}function e(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",e),r.addEventListener("resize",e),r.addEventListener("orientationchange",e)})(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
+</html>

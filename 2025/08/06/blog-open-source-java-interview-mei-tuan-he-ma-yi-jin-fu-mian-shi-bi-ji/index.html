@@ -1,0 +1,1455 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+    
+
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="美团和蚂蚁金服面试笔记, 商单接企业项目外包 软件开发 整包服务 移动开发 移动开发团队 移动开发项目">
+    <meta name="baidu-site-verification" content="fmlEuI34ir">
+    <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
+    <meta name="description" content="Java内存模型线程公有方法区：Java方法区和堆一样，方法区是一块所有线程共享的内存区域，他保存系统的类信息。比如类的字段、方法、常量池等。方法区的大小决定系统可以保存多少个类。如果系统定义太多的类，导致方法区溢出。虚拟机同样会抛出内存溢">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="美团和蚂蚁金服面试笔记 | 屿">
+    <meta property="og:description" content="Java内存模型线程公有方法区：Java方法区和堆一样，方法区是一块所有线程共享的内存区域，他保存系统的类信息。比如类的字段、方法、常量池等。方法区的大小决定系统可以保存多少个类。如果系统定义太多的类，导致方法区溢出。虚拟机同样会抛出内存溢">
+    <meta property="og:url" content="https://liaoxingwang.github.io2025/08/06/blog-open-source-java-interview-mei-tuan-he-ma-yi-jin-fu-mian-shi-bi-ji/">
+    <meta property="og:image" content="https://liaoxingwang.github.io/medias/banner/0.jpg">
+    <meta property="og:site_name" content="屿">
+    <meta property="og:locale" content="zh_CN">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="美团和蚂蚁金服面试笔记 | 屿">
+    <meta name="twitter:description" content="Java内存模型线程公有方法区：Java方法区和堆一样，方法区是一块所有线程共享的内存区域，他保存系统的类信息。比如类的字段、方法、常量池等。方法区的大小决定系统可以保存多少个类。如果系统定义太多的类，导致方法区溢出。虚拟机同样会抛出内存溢">
+    <meta name="twitter:image" content="https://liaoxingwang.github.io/medias/banner/0.jpg">
+
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>美团和蚂蚁金服面试笔记 | 屿</title>
+    <link rel="icon" type="image/jpeg" href="/medias/avatars/hwsun.jpg">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/aos/3.0.0-beta.6/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/lightgallery/1.6.12/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <style type="text/css">
+        
+
+            code[class*="language-"],
+            pre[class*="language-"] {
+                white-space: pre !important;
+            }
+
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?46e79e71af0709a5b9106bf20cecc493";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+    
+    
+        <script>
+            (function(){
+                var bp = document.createElement('script');
+                var curProtocol = window.location.protocol.split(':')[0];
+                if (curProtocol === 'https') {
+                    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+                }
+                else {
+                    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                }
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(bp, s);
+            })();
+        </script>
+    
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+    <body>
+
+        <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <span class="logo-span">屿</span>
+                </a>
+            </div>
+            
+
+
+<!-- <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/AV" class="waves-effect waves-light">
+            
+            <i class="fa fa-music"></i>
+            
+            <span>视听</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/galleries" class="waves-effect waves-light">
+            
+            <i class="fa fa-photo"></i>
+            
+            <span>相册</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于我</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/contact" class="waves-effect waves-light">
+            
+            <i class="fa fa-envelope"></i>
+            
+            <span>留言板</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul> -->
+
+<!-- 支持二级菜单特性 liaoxingwang modify 2019.09.17  -->
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right nav-menu">
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/" class="waves-effect waves-light">
+              
+                <i class="fa fa-home"></i>
+              
+              <span>首页</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/tags" class="waves-effect waves-light">
+              
+                <i class="fa fa-tags"></i>
+              
+              <span>标签</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/categories" class="waves-effect waves-light">
+              
+                <i class="fa fa-bookmark"></i>
+              
+              <span>分类</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/archives" class="waves-effect waves-light">
+              
+                <i class="fa fa-archive"></i>
+              
+              <span>归档</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/AV" class="waves-effect waves-light">
+              
+                <i class="fa fa-music"></i>
+              
+              <span>视听</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/galleries" class="waves-effect waves-light">
+              
+                <i class="fa fa-photo"></i>
+              
+              <span>相册</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/about" class="waves-effect waves-light">
+              
+                <i class="fa fa-user-circle-o"></i>
+              
+              <span>关于我</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/contact" class="waves-effect waves-light">
+              
+                <i class="fa fa-envelope"></i>
+              
+              <span>留言板</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/friends" class="waves-effect waves-light">
+              
+                <i class="fa fa-address-book"></i>
+              
+              <span>友情链接</span>
+            </a>
+
+            
+      </li>
+    
+
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <div class="logo-name">屿</div>
+        <div class="logo-desc">
+            
+            湖南工业大学 | 计算机科学与技术
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/AV" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-music"></i>
+                
+                视听
+            </a>
+        </li>
+        
+        <li>
+            <a href="/galleries" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-photo"></i>
+                
+                相册
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于我
+            </a>
+        </li>
+        
+        <li>
+            <a href="/contact" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-envelope"></i>
+                
+                留言板
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/liaoxingwang/" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+
+   
+   
+<!-- 支持二级菜单特性 liaoxingwang modify 2019.09.17  -->
+<!-- <ul class="menu-list mobile-menu-list">
+    
+        <li class="m-nav-item">
+                
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-home"></i>
+                        
+                        首页
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/tags" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-tags"></i>
+                        
+                        标签
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/categories" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-bookmark"></i>
+                        
+                        分类
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/archives" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-archive"></i>
+                        
+                        归档
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/AV" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-music"></i>
+                        
+                        视听
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/galleries" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-photo"></i>
+                        
+                        相册
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/about" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-user-circle-o"></i>
+                        
+                        关于我
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/contact" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-envelope"></i>
+                        
+                        留言板
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/friends" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-address-book"></i>
+                        
+                        友情链接
+                    </a>
+              
+            </li>
+        
+
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/liaoxingwang/" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul> -->
+
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/liaoxingwang/" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+        
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        美团和蚂蚁金服面试笔记
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        
+<!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/面试/" target="_blank">
+                                <span class="chip bg-color">面试</span>
+                            </a>
+                        
+                            <a href="/tags/Java面试/" target="_blank">
+                                <span class="chip bg-color">Java面试</span>
+                            </a>
+                        
+                            <a href="/tags/大厂面经/" target="_blank">
+                                <span class="chip bg-color">大厂面经</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Java面试-大厂面经/" class="post-category" target="_blank">
+                                Java面试/大厂面经
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2025-08-06
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
+                    
+                        SK
+                    
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        11.5k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        40 分
+                    </div>
+                    
+                
+
+                
+                        <span id="busuanzi_container_site_pv" style='display:none'></span>
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv" ></span>
+
+                
+
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>Java内存模型<br>线程公有<br>方法区：<br>Java方法区和堆一样，方法区是一块所有线程共享的内存区域，他保存系统的<br>类信息。比如类的字段、方法、常量池等。方法区的大小决定系统可以保存多少个类。如果<br>系统定义太多的类，导致方法区溢出。虚拟机同样会抛出内存溢出的错误。方法区可以理解<br>为永久区。<br>堆<br>虚拟机栈<br>局部变量表<br>运行时常量池<br>操作数栈<br>主要保存计算过程的中间结果，同时作为计算过程中的变量临时的存储空间<br>动态连接<br>方法返回地址<br>本地方法区<br>程序计数器<br>堆讲解<br>有限分配Eden区–&gt;空间分配担保机制<br>大对象直接进入老年代–&gt;避免在Eden区和Survivor区之间产生大量的内存复制<br>对象晋升<br>年龄阀值 –&gt; -XX:MaxTenuringThreshold, 默认15<br>动态年龄判定 –&gt; 然而VM并不总是要求对象的年龄必须达到<br>MaxTenuringThreshold才能晋升老年代:<br>如果在Survivor空间中相同年龄所有对象大小的总和大于<br>Survivor空间的一半,<br>年龄大于或等于该年龄的对象就可以直接进入老年代, 而无须<br>等到晋升年龄.<br>对象生死判定<br>可达性分析算法<br>方法区: 类静态属性引用的对象;<br>方法区: 常量引用的对象。<br>虚拟机栈(本地变量表)中引用的对象。<br>本地方法栈JNI(Native方法)中引用的对象。</p>
+<p>垃圾回算法4种</p>
+<h3 id="1、引用计数"><a href="#1、引用计数" class="headerlink" title="1、引用计数"></a>1、引用计数</h3><h3 id="2、复制算法"><a href="#2、复制算法" class="headerlink" title="2、复制算法"></a>2、复制算法</h3><h3 id="3、标记清楚算法"><a href="#3、标记清楚算法" class="headerlink" title="3、标记清楚算法"></a>3、标记清楚算法</h3><h3 id="4、标记整理算法"><a href="#4、标记整理算法" class="headerlink" title="4、标记整理算法"></a>4、标记整理算法</h3><p>垃圾回收器<br>目前 没有完美的垃圾收集器，更没有万能的垃圾回收器，只有针对具体应用最适<br>合的垃圾收集器</p>
+<h3 id="1、serial-串行"><a href="#1、serial-串行" class="headerlink" title="1、serial 串行"></a>1、serial 串行</h3><h3 id="2、paranew-并行"><a href="#2、paranew-并行" class="headerlink" title="2、paranew 并行"></a>2、paranew 并行</h3><h3 id="3、cms-并法"><a href="#3、cms-并法" class="headerlink" title="3、cms 并法"></a>3、cms 并法</h3><h3 id="4、G1"><a href="#4、G1" class="headerlink" title="4、G1"></a>4、G1</h3><p>垃圾回收器<br>年轻代<br>Serial收集器—Serial Old收集器：简单高效</p>
+<h2 id="一、个线程的收集器"><a href="#一、个线程的收集器" class="headerlink" title="一、个线程的收集器"></a>一、个线程的收集器</h2><p>到他结束收集为止。<br>设置参数：-XX:+UseSerialGC<br>开启后会使用Serial(Young区用)+ Serial Old(Old区用)的收集器组合<br>表示：新生代、老年代都会使用串行垃圾收集器，新生代使用复制算法<br>ParNew收集器<br>使用多线程进行垃圾回收，在垃圾收集时，会stw暂停其他所有的工作线<br>程<br>ParNew收集器其实就是Serial收集器新生代的并行多线程版本，最常见的<br>应用场景时老年代配合CMS工作<br>设置参数：-XX:+UserParNewGC 启用ParNew收集器，只影响新生代的收<br>集，不影响老年代<br>开启后ParNew(Young区用)+Serial Old收集器组合，新生代使用复制算<br>法，老年代使用标记-整理算法<br>备注：-XX:ParallelGCThreads 限制线程数量，默认开启和CPU数目相同<br>的线程数<br>Parallel Scavenge收集器：jdk1.8默认垃圾回收器<br>Parallel Scavenge收集器类似ParNew也是一个新生代垃圾回收器，使用<br>复制算法，也是一个并行的多线程</p>
+<p>的垃圾回收器，俗称吞吐量优先的垃圾收集器，一句话，穿行收集器在新<br>生代和老年代的并行化<br>他最关注的是<br>可控的吞吐量：用户代码运行的时间/（用户代码运行的时间+垃圾收<br>集的时间），高吞吐量意味着高效利用<br>cpu的时间，他多用户后台运算而不需要太多的交互任务<br>自适应调节策略：这也是ParallelScavenge收集器与ParNew收集器的</p>
+<h2 id="一、个重要区别"><a href="#一、个重要区别" class="headerlink" title="一、个重要区别"></a>一、个重要区别</h2><p>会根据当前运行情况收集性能控制信息，动态调整这些参数以提<br>供最合适的停顿时间（-XX:MaxGCPauseMillis）<br>或最大吞吐量）<br>设置参数：-XX:+UseParallelGC或-XX:+UseParllelOldGC(相互激活)，开<br>启该参数后，新生代使用复制算法<br>老年代使用标记-整理算法<br>老年代<br>Serial Old收集器<br>Parallel Old收集器<br>CMS收集器<br>优点<br>并发标记清楚，并发收集地停顿，并发指的是与用户线程一起执行<br>缺点<br>CMS在收集与应用线程会同事增加对对内存的占用，也就是CMS必须在<br>老年代用尽之前完成垃圾回收，否则CMS回收失败时<br>会出发担保机制，串行老年代收集器将会以STW的方式进行一次GC，<br>从而造成较大的停顿时间<br>标记-清除：产生大量空间碎片，-XX:CMSFullGCsBeForeCompaction<br>来设置多少次full gc之后进行一次整理，<br>参数设置：-XX:+UseConcMarkSweepGC 开启该参数后，会自动将-<br>XX:+UserParNewGC打开<br>开启参数后：ParNew(Young区用)+<code>CMS</code>(Old区用)+Serial Old的收集器组<br>合（CMS出错后的备用收集器）</p>
+<h2 id="四、个阶段"><a href="#四、个阶段" class="headerlink" title="四、个阶段"></a>四、个阶段</h2><p>初始标记—&gt; STW. 只是标记一下GC Roots能直接关联的对象，速度<br>很快，仍然需要暂停所有的工作线程</p>
+<p>并发标记—&gt; 和用户线程一起工作，不需要暂停工作线程，主要标<br>记过程，标记全部对象<br>重新标记—&gt; STW. 对之前标记的对象进行二次确认<br>并发清除—&gt; 和并发标记这两个阶段是最耗时的<br>特点：<br>CMS收集器是一种以获取最短回收停顿时间为目标的收集器，这类应<br>用尤其重视服务器的响应速度，希望停顿时间最最短，<br>CMS非常适合对内存大，CPU核数多的服务器端应用，也是G1出现之前<br>大型应用首选的垃圾回收器<br>缺点<br>无法处理浮动垃圾<br>标记-清除：产生大量空间碎片，当然可以设置多少次full gc之后进<br>行一次整理，=0的情况下，就变成了标记-整理<br>分区收集<br>G1收集器 –&gt; G1将整个Java堆划分为多个大小相等的独立区域(Region),<br>虽然还保留有新生代和老年代的概念, 但新生代和老年代不再是<br>物理隔离的了,<br>它们都是一部分Region(不需要连续)的集合.<br>分区：<br>E：Eden区<br>S：Survivor区<br>O：Old区<br>H：超大对象区,如果一个对象占用的空间超过了分区容量的50%以上，<code>G1</code><br>收集器就认为这是一个巨型对象，这些巨型对象默认会直接分配到老年到<br>但是如果他是一个短期存在的巨型对象，就会对垃圾收集器产生负面<br>影响，为了解决这个问题，G1划分了多了个H区，专门用来存储巨型对象<br>如果一个H区存不下，会寻找多个连续的H区来存储，有时候没有连续<br>的空间，就进行full GC<br>并发标记阶段<br>在与应用程序并发执行的过程中会计算活跃度信息.<br>这些活跃度信息标识出那些regions最适合在STW期间回收<br>不像CMS有清理阶段.<br>再次标记阶段<br>使用Snapshot-at-the-Beginning(SATB)算法比CMS快得多.<br>空region直接被回收.</p>
+<p>拷贝/清理阶段<br>年轻代与老年代同时回收.<br>老年代内存回收会基于他的活跃度信息.<br>G1收集器相对于CMS收集器的优点<br>G1在压缩空间方面有优势<br>G1通过将内存空间分成区域（Region）的方式避免内存碎片问题<br>Eden, Survivor, Old区不再固定、在内存使用效率上来说更灵活<br>G1可以通过设置预期停顿时间（Pause Time）来控制垃圾收集时间避免应<br>用雪崩现象<br>G1在回收内存后会马上同时做合并空闲内存的工作、而CMS默认是在<br>STW（stop the world）的时候做<br>G1会在Young GC中使用、而CMS只能在O区使用<br>jvm小工具<br>jps 打印Hotspot VM进程 VMID、JVM参数、main()函数参数、主类<br>名/Jar路径<br>jstat 查看Hotspot VM 运行时信息 类加载、内存、GC[可分代查看]、JIT编译<br>jinfo 查看和修改虚拟机各项配置<br>jmap heapdump: 生成VM堆转储快照、查询finalize执行队列、Java堆和永久代详细<br>信息<br>jstack 查看VM当前时刻的线程快照: 当前VM内每一条线程正在执行的方法堆栈集合<br>javap 查看经javac之后产生的JVM字节码代码<br>jcmd 一个多功能工具, 可以用来导出堆, 查看Java进程、导出线程信息、 执行<br>GC、查看性能相关数据等<br>jconsole 可以查看内存、线程、类、CPU信息, 以及对JMX MBean进行管理<br>jvisualvm 可以监控内存泄露、跟踪垃圾回收、执行时内存分析、CPU分析、线程分<br>析…<br>java.lang.StackOverflowError<br>递归调用，容易导致栈溢出<br>java.lang.OutOfMemoryError:Java heap space<br>堆空间不足导致Java heap spacke<br>java.lang.OutOfMemoryError:Direct buffer memory<br>nio磁盘不足导致direct buffer memory<br>java.lang.OutOfMemoryError:GC overhead limit exceeded<br>频繁垃圾回收，却没有释放空间，导致Gc overhead limit execpte</p>
+<p>java.lang.OutOfMemoryError:unable to create new native thread<br>高并发unable create new native thread<br>java.lang.OutOfMemoryError:Metaspace<br>原空间大小，只受本地内存限制<br>java.lang.OutOfMemoryError: PermGen space<br>类或者方法不能被加载到老年代。它可能出现在一个程序加载很多类的时候，比如引用<br>了很多第三方的库<br>java.lang.OutOfMemoryError: Requested array size exceeds VM limit<br>创建的数组大于堆内存的空间<br>java.lang.OutOfMemoryError: request <size> bytes for <reason>. Out of swap<br>space?<br>同样是本地方法内存分配失败，只不过是JNI或者本地方法或者Java虚拟机发现；<br>redis数据结构实现</reason></size></p>
+<h2 id="二、进制"><a href="#二、进制" class="headerlink" title="二、进制"></a>二、进制</h2><p>缓存穿透：缓存中没有，数据库中也没有（解决方案布隆过滤器，数据库中的数据提前<br>加载到布隆过滤器中，存在1，不存在0）<br>布隆过滤器，多个hash算法，把数据库中的数据映射到布隆过滤器中，保证布隆过<br>滤器中有的，数据库中不一定有，<br>布隆过滤器中没有的数据库中肯定没有<br>缓存击穿：缓存中没有，数据库中有（针对并发而言）<br>分布式锁来解决，限流，拒绝策略<br>缓存雪崩<br>因为缓存失效导致数据未加载到缓存中，或者缓存同一时间大面积的实效，从而导<br>致所有的请求都去查询数据库，<br>导致数据库cpu和内存负载过高，甚至宕机<br>分布式锁：三个步骤，加锁、解锁、锁超时</p>
+<h3 id="1、加锁：lua脚本实现SET-lock-key-random-value-NX-PX-5000"><a href="#1、加锁：lua脚本实现SET-lock-key-random-value-NX-PX-5000" class="headerlink" title="1、加锁：lua脚本实现SET lock_key random_value NX PX 5000"></a>1、加锁：lua脚本实现SET lock_key random_value NX PX 5000</h3><h3 id="2、解锁：删除key"><a href="#2、解锁：删除key" class="headerlink" title="2、解锁：删除key"></a>2、解锁：删除key</h3><p>3、伴随线程定时检查过期时间，不断延期，自旋锁<br>volitile<br>在变量改变之后，会立刻从cpu高速缓存写到内存<br>会通知其他cpu缓存中的该变量的值设置成无效，用到该变量时会到内存中重新读取该<br>变量的值。<br>Lock指令保证了缓存一致性原理。</p>
+<p>指令重排<br><code>synchronized</code><br>对象锁:方法锁（默认锁对象为 this 当前实例对象）,同步代码块锁（自己指定锁对<br>象）<br>类锁:修饰静态方法，锁 class 对象<br>可重入：可重入的原理，就和前面提到的 monitor 计数器类似。对象本身有一把锁，<br><code>JVM</code> 会跟踪对象被加锁的次数：<br>避免死锁、提升封装性<br>粒度是线程而不是调用<br>不可中断<br>特点<br>效率低<br>锁的释放情况少<br>试图获得锁时不能设定超时时间<br>不能中断一个正在试图获得锁的线程<br>不够灵活<br>加锁和释放锁的时机单一<br>每个锁仅有单一的条件(某个对象)，可能不够<br>无法知道是否成功获取到锁<br>Java线程池<br>corePoolSize：核心线程数<br>maximumPoolSize：最大线程数<br>keepAliveTime：线程存活时间<br>unit：存活单位<br>workQueue：阻塞队列<br>count &lt; corePoolSize: 创建新线程执行任务<br>count &gt; corePoolSize: workQueue是否满，否：添加到阻塞队列等待执行，是：判断<br>count &gt; maximumPoolSize拒绝策略，创建新线程执行任务<br>常见线程池<br>固定容量线程池：newFixedThreadPool(int nThreads, ThreadFactory<br>threadFactory)<br>Cached线程池：newCachedThreadPool()降低资源消耗<br>单线程线程池: newSingleThreadExecutor()<br>定时线程池: newScheduledThreadPool()<br>优点</p>
+<p>降低资源消耗<br>提高响应速度<br>提高线程的可管理性<br>限流算法<br>固定窗口算法：就是通过维护一个单位时间内的计数值，每当一个请求通过时，就将计<br>数值加1，当计数值超过预先设定的阈值时，<br>就拒绝单位时间内的其他请求。如果单位时间已经结束，则将计数器清<br>零，开启下一轮的计数。<br>滑动窗口算法<br>漏桶算法：特点<br>漏桶具有固定容量，出口流量速率是固定常量（流出请求）<br>入口流量可以以任意速率流入到漏桶中（流入请求）<br>如果入口流量超出了桶的容量，则流入流量会溢出（新请求被拒绝）<br>令牌桶算法：特点<br>最多可以存发b个令牌。如果令牌到达时令牌桶已经满了，那么这个令牌会被丢弃<br>请求到来时，如果令牌桶中少于n个令牌，那么不会删除令牌。该请求会被限流<br>（阻塞活拒绝）<br>算法允许最大b(令牌桶大小)个请求的突发<br>MQ<br>消息丢失<br>事物机制<br>此时可以选择用 RabbitMQ 提供的事务功能，就是生产者发送数据之前开启<br>RabbitMQ 事务channel.txSelect，然后发送消息，<br>如果消息没有成功被 RabbitMQ 接收到，那么生产者会收到异常报错，此时就<br>可以回滚事务channel.txRollback，然后重试发送消息；<br>如果收到了消息，那么可以提交事务channel.txCommit。<br>cnofirm机制<br>如果你要确保说写 RabbitMQ 的消息别丢，可以开启 confirm 模式，在生产<br>者那里设置开启 confirm 模式之后，<br>你每次写的消息都会分配一个唯一的 id，然后如果写入了 RabbitMQ 中，<br>RabbitMQ 会给你回传一个 ack 消息，<br>告诉你说这个消息 ok 了。如果 RabbitMQ 没能处理这个消息，会回调你的一<br>个 nack 接口，告诉你这个消息接收失败，你可以重试。<br>而且你可以结合这个机制自己在内存里维护每个消息 id 的状态，如果超过一<br>定时间还没接收到这个消息的回调，那么你可以重发。</p>
+<p>组合方案<br>生产者<br>开启RabbktMQ事务—-&gt;（同步，不推荐）<br>开启confirm模式—-&gt;（异步，推荐）<br>MQ：开启RabbitMq持久化<br>消费者：关闭RabbitMq自动化ACK<br>RabbitMQ</p>
+<h3 id="1、消息持久化："><a href="#1、消息持久化：" class="headerlink" title="1、消息持久化："></a>1、消息持久化：</h3><p>Exchange 设置持久化：durable:true<br><code>Queue</code> 设置持久化<br>Message持久化发送</p>
+<h3 id="2、ACK确认机制"><a href="#2、ACK确认机制" class="headerlink" title="2、ACK确认机制"></a>2、ACK确认机制</h3><p>消息发送确认<br>消息接收确认</p>
+<h3 id="3、设置集群镜像模式"><a href="#3、设置集群镜像模式" class="headerlink" title="3、设置集群镜像模式"></a>3、设置集群镜像模式</h3><h3 id="4、消息补偿机制"><a href="#4、消息补偿机制" class="headerlink" title="4、消息补偿机制"></a>4、消息补偿机制</h3><p>消息必达<br>消息落地<br>上半场<br>MQ-client将消息发送给MQ-server<br>MQ-server将消息落地，落地后即为发送成功<br>MQ-server将应答发送给MQ-client（此时回调业务方是API：<br>SendCallback）<br>下半场<br>MQ-server将消息发送给MQ-client（此时回调业务方是API：<br>RecvCallback）<br>MQ-client回复应答给MQ-server（此时业务方主动调用API：SendAck）<br>MQ-server收到ack，将之前已经落地的消息删除，完成消息的可靠投递<br>MQ消息投递的上下半场，都可以出现消息丢失，为了降低消息丢失的概率，MQ<br>需要进行超时和重传。<br>消息重试、重传、反向确认<br>消息顺序性到达<br>RabbitMQ<br>拆分多个 queue，每个 queue 一个 consumer，就是多一些 queue 而已，确<br>实是麻烦点；</p>
+<p>或者就一个 queue 但是对应一个 consumer，然后这个 consumer 内部用内存<br>队列做排队，然后分发给底层不同的 worker 来处理。<br>消息重复性消费<br>消息做幂等性处理，同一条消息设置一条唯一的uuid，或者唯一值，当服务端消费<br>消息的时候先去查询库中这条消息是否已经存在，如果已经存在则不消费，如果不存在测消<br>费<br>mysql索引<br>索引定义<br>就是按照用户任意指定的字段对数据进行排序的一种数据结构<br>sql调优<br>最左前缀原则<br>架构<br>第一层：处理客户端连接、授权认证等。<br>第二层：服务器层，负责查询语句的解析、优化、缓存以及内置函数的实现、存储<br>过程等<br>第三层：存储引擎，负责 <code>MySQL</code> 中数据的存储和提取。<code>MySQL</code> 中服务器层不管理<br>事务，事务是由存储引擎实现的。<br>MyISAM：表级锁<br>Innodb：表级锁+行级锁<br>redolog（重做日志）<br>redo log 用于保证事务持久性<br>InnoDB 作为 <code>MySQL</code> 的存储引擎，数据是存放在磁盘中的，但如果每次读写数据都<br>需要磁盘 IO，效率会很低。<br>为此，InnoDB 提供了缓存(Buffer Pool)，Buffer Pool 中包含了磁盘中部分数据<br>页的映射，作为访问数据库的缓冲：<br>当从数据库读取数据时，会首先从 Buffer Pool 中读取，如果 Buffer Pool<br>中没有，则从磁盘读取后放入 Buffer Pool。<br>当向数据库写入数据时，会首先写入 Buffer Pool，Buffer Pool 中修改的数<br>据会定期刷新到磁盘中(这一过程称为刷脏)。<br>Buffer Pool 的使用大大提高了读写数据的效率，但是也带来了新的问题：如<br>果 <code>MySQL</code> 宕机，而此时 Buffer Pool 中修改的数据还没有刷新到磁盘，就会导致数据的丢<br>失，事务的持久性无法保证。<br>于是，redo log 被引入来解决这个问题：当数据修改时，除了修改 Buffer<br>Pool 中的数据，还会在 redo log 记录这次操作;当事务提交时，会调用 fsync 接口对</p>
+<p>redo log 进行刷盘。<br>如果 <code>MySQL</code> 宕机，重启时可以读取 redo log 中的数据，对数据库进行恢<br>复。<br>undolog（回滚日志）<br>undo log 则是事务原子性和隔离性实现的基础<br>InnoDB 实现回滚，靠的是 undo log：<br>当事务对数据库进行修改时，InnoDB 会生成对应的 undo log。<br>如果事务执行失败或调用了 rollback，导致事务需要回滚，便可以利用 undo<br>log 中的信息将数据回滚到修改之前的样子。<br>binlog<br>binlog 是用于 point-in-time recovery 的，保证服务器可以基于时间点恢复数<br>据，此外 binlog 还用于主从复制。<br>事务隔离级别<br>Read Uncommitted:脏读+可重复读+幻读<br>在该隔离级别，所有事务都可以看到其他未提交事务的执行结果。本隔离级别<br>很少用于实际应用，因为它的性能也不比其他级别好多少。读取未提交的数据，也被称之为<br>脏读<br>Read Committed:幻读+不可重复读<br>这是大多数数据库系统的默认隔离级别（但不是MySQL默认的）。它满足了隔<br>离的简单定义：一个事务只能看见已经提交事务所做的改变。这种隔离级别 也支持所谓的<br>不可重复读<br>Repeatable Read:幻读<br>这是MySQL的默认事务隔离级别，它确保同一事务的多个实例在并发读取数据<br>时，会看到同样的数据行。不过理论上，这会导致另一个棘手的问题：幻读 （Phantom<br>Read）。简单的说，幻读指当用户读取某一范围的数据行时，另一个事务又在该范围内插入<br>了新行，当用户再读取该范围的数据行时，会发现有新的“幻影” 行。InnoDB和Falcon存<br>储引擎通过多版本并发控制（MVCC，Multiversion Concurrency Control）机制解决了该问<br>题<br><code>Serializable</code>：<br>这是最高的隔离级别，它通过强制事务排序，使之不可能相互冲突，从而解决<br>幻读问题。简言之，它是在每个读的数据行上加上共享锁。在这个级别，可能导致大量的超<br>时现象和锁竞争。<br>经典问题<br>脏读：</p>
+<p>当前事务(A)中可以读到其他事务(B)未提交的数据(脏数据)，这种现象是脏<br>读。<br>不可重复读<br>在事务 A 中先后两次读取同一个数据，两次读取的结果不一样，这种现象称<br>为不可重复读。<br>幻读<br>在事务 A 中按照某个条件先后两次查询数据库，两次查询结果的条数不同，<br>这种现象称为幻读。<br>MVCC<br>RR 解决脏读、不可重复读、幻读等问题，使用的是 MVCC：MVCC 全称 Multi-<br>Version Concurrency Control，即多版本的并发控制协议。<br>MVCC 的特点：在同一时刻，不同的事务读取到的数据可能是不同的(即多版本)；<br>MVCC 最大的优点是读不加锁，因此读写不冲突，并发性能好。InnoDB 实现<br>MVCC，多个版本的数据可以共存，主要是依靠数据的隐藏列(也可以称之为标记位)和 undo<br>log。<br>其中数据的隐藏列包括了该行数据的版本号、删除时间、指向 undo log 的指针等<br>等。<br>Innodb死锁<br>死锁一般是两个或两个以上事务相互等待对方释放锁，形成死循环所造成的<br>可能的几种死锁<br>多个事务按不同的顺序锁定相同的数据集导致的死锁：如果多个事务按不同的<br>顺序锁定相同的数据集，此时事务之间就会形成循环等待造成死锁，这是一种最常见也比较<br>容易理解的死锁。<br>索引不合理导致的死锁：由于InnoDB的锁是加在索引上的，因此索引不合理将<br>直接导致锁定范围增大，发生锁冲突和死锁的的概率也随着增加。<br>唯一键值冲突导致的死锁：这个场景主要发生在三个或三个以上的事务同时进<br>行唯一键值相同的记录插入操作<br>死锁预防策略<br>减少事务操作的记录数<br>合理设置索引（索引的粒度为一条记录）<br>对事务中要操作的记录进行排序<br>避免使用唯一键值约<br>总结<br>原子性：</p>
+<p>语句要么全执行，要么全不执行，是事务最核心的特性。事务本身就是以原子<br>性来定义的;实现主要基于 undo log。<br>持久性：<br>保证事务提交后不会因为宕机等原因导致数据丢失;实现主要基于 redo log。<br>隔离性：<br>保证事务执行尽可能不受其他事务影响;InnoDB 默认的隔离级别是 RR，RR 的<br>实现主要基于锁机制、数据的隐藏列、undo log 和类 next-key lock 机制。</p>
+<h2 id="一、致性"><a href="#一、致性" class="headerlink" title="一、致性"></a>一、致性</h2><p>事务追求的最终目标，一致性的实现既需要数据库层面的保障，也需要应用层<br>面的保障。<br>数据结构对比<br>hash表<br>范围查询非常不方便，需要遍历所有元素<br>AVL绝对平衡树<br>等值查询要比hash表慢一点，支持范围查询<br>B+树</p>
+<h2 id="一、个节点有多个元素"><a href="#一、个节点有多个元素" class="headerlink" title="一、个节点有多个元素"></a>一、个节点有多个元素</h2><p>围，子节点间有指针，范围查询根据指针就可以查出来<br>叶子节点具有相同的深度，叶节点得指针为空<br>所有索引元素不重复<br>节点中的数据索引从左到右递增排列<br>特点<br>非叶子节点不存储data，只存储索引，可以存放更多的索引<br>也子节点包含所有索引字段<br>也子节点用指针链接，提高区间访问的性能<br>红黑树<br>数据在一定程度上回会产生偏移，造成树得高度特别高，造成多次io，耗费系<br>统性能<br>主键：一级索引，非主键索引称为：二级索引<br>MyISAM<br>索引文件盒数据文件是分离得（非聚集得）<br>InnoDB<br>表数据文件本身就是按B+ Tree组织的一个索引结构文件<br>聚集索引-也子节点包含了完整的数据记录</p>
+<p><strong>Q:</strong> 为什么InnoDB表必须有主见，并且土建使用整型得自增主键？</p>
+<p><strong>Q:</strong> 为什么非主键索引结构也子节点存储得是主键值？(一致性和节省存储空间)<br>如果用户没有创建索引，mysql会隐藏的创建一列。<br>ACID: 原子性，一致性，隔离型，持久性<br>分布式事务<br>两阶段提交协议：<br>概念</p>
+<h2 id="二、阶段提交的算法思路可以概括为"><a href="#二、阶段提交的算法思路可以概括为" class="headerlink" title="二、阶段提交的算法思路可以概括为"></a>二、阶段提交的算法思路可以概括为</h2><p>再由协调者根据所有参与者的反馈情报决定各参与者是否要提交操作还是中止操作。<br>请求阶段(表决)：<br>事务协调者通知每个参与者准备提交或取消事务，然后进入表决过<br>程，参与者要么在本地执行事务，写本地的redo和undo日志，但不提交，到达一种”万事俱<br>备，只欠东风”的状态。请求阶段，参与者将告知协调者自己的决策: 同意(事务参与者本地<br>作业执行成功)或取消（本地作业执行故障）<br>提交阶段(执行):<br>在该阶段，写调整将基于第一个阶段的投票结果进行决策: 提交或取<br>消<br>缺点<br>1、同步阻塞问题。执行过程中，所有参与节点都是事务阻塞型的。<br>2、由于协调者的重要性，一旦协调者发生故障。参与者会一直阻塞<br>下去。<br>3、数据不一致.在二阶段提交的阶段二中，当协调者向参与者发送<br>commit请求之后，发生了局部网络异常或者在发送commit请求过程中协调者发生了故障，这<br>回导致只有一部分参与者接受到了commit请求。</p>
+<h2 id="三、阶段提交协议"><a href="#三、阶段提交协议" class="headerlink" title="三、阶段提交协议"></a>三、阶段提交协议</h2><p>改进：</p>
+<h2 id="三、阶段提交协议在协调者和参与者中都引入超时机制"><a href="#三、阶段提交协议在协调者和参与者中都引入超时机制" class="headerlink" title="三、阶段提交协议在协调者和参与者中都引入超时机制"></a>三、阶段提交协议在协调者和参与者中都引入超时机制</h2><p>提交协议的第一个阶段拆分成了两步：询问，然后再锁资源，最后真正提交。<br>执行步骤<br>CanCommit阶段：协调者向参与者发送commit请求，参与者如果可以<br>提交就返回Yes响应，否则返回No响应。Coordinator根据Cohort的反应情况来决定是否可以<br>继续事务的PreCommit操作。<br>PreCommit阶段：协调者向参与者发送准备提交的信息<br>DoCommit阶段：根据第二阶段的反馈，来最终确认是提交事务还是会<br>滚事务<br>BASE理论：</p>
+<p>BASE是指基本可用（Basically Available）、软状态（ Soft State）、<br>最终一致性（ Eventual Consistency）。<br>BASE理论是对CAP理论的延伸，思想是即使无法做到强一致性（CAP的一致<br>性就是强一致性），但可以采用适当的采取弱一致性，即最终一致性。<br>CAP定理：<br>CAP是一个已经经过证实的理论：一个分布式系统最多只能同时满足一致<br>性（Consistency）、可用性（Availability）和分区容错性（Partition tolerance）这三<br>项中的两项。<br>柔性事务中的服务模式：<br>1、可查询操作：服务操作具有全局唯一的标识，操作唯一的确定的时<br>间。</p>
+<h3 id="2、幂等操作：重复调用多次产生的业务结果与调用一次产生的结果相"><a href="#2、幂等操作：重复调用多次产生的业务结果与调用一次产生的结果相" class="headerlink" title="2、幂等操作：重复调用多次产生的业务结果与调用一次产生的结果相"></a>2、幂等操作：重复调用多次产生的业务结果与调用一次产生的结果相</h3><p>同。一是通过业务操作实现幂等性，二是系统缓存所有请求 与处理的结果，最后是检测<br>到重复请求之后，自动返回之前的处理结果。<br>3、TCC操作：Try阶段，尝试执行业务，完成所有业务的检查，实现一致<br>性；预留必须的业务资源，实现准隔离性。Confirm阶段：真正的去执行业务，不做任何检<br>查，仅适用Try阶段预留的业务资源，Confirm操作还要满足幂等性。Cancel阶段：取消执行<br>业务，释放Try阶段预留的业务资源，Cancel操作要满足幂等性。TCC与2PC(两阶段提交)协<br>议的区别：TCC位于业务服务层而不是资源层，TCC没有单独准备阶段，Try操作兼备资源操<br>作与准备的能力，TCC中Try操作可以灵活的选择业务资源，锁定粒度。TCC的开发成本比2PC<br>高。实际上TCC也属于两阶段操作，但是TCC不等同于2PC操作。<br>4、可补偿操作：Do阶段：真正的执行业务处理，业务处理结果外部可<br>见。Compensate阶段：抵消或者部分撤销正向业务操作的业务结果，补偿操作满足幂等性。<br>约束：补偿操作在业务上可行，由于业务执行结果未隔离或者补偿不完整带来的风险与成本<br>可控。实际上，TCC的Confirm和Cancel操作可以看做是补偿操作<br>聚集索引：数据与索引存储到一块就是聚集索引<br>生成条件<br>1、一般会选择主键列作为聚集索引列。<br>2、如果没有主键，会选择唯一键。<br>3、如果都没有。<br>结构</p>
+<h3 id="1、按照聚集索引列的值得顺序，存储数据页"><a href="#1、按照聚集索引列的值得顺序，存储数据页" class="headerlink" title="1、按照聚集索引列的值得顺序，存储数据页"></a>1、按照聚集索引列的值得顺序，存储数据页</h3><p><code>Spring</code><br>spring Aop<br>涉及名词</p>
+<h3 id="1、切面（Aspect）："><a href="#1、切面（Aspect）：" class="headerlink" title="1、切面（Aspect）："></a>1、切面（Aspect）：</h3><p>共有功能的实现。如日志切面、权限切面、验签切面等。在实际开发中通<br>常是一个存放共有功能实现的标准Java类。当Java类使用了@Aspect注解修饰时，就能被AOP<br>容器识别为切面。</p>
+<h3 id="2、通知（Advice）："><a href="#2、通知（Advice）：" class="headerlink" title="2、通知（Advice）："></a>2、通知（Advice）：</h3><p>切面的具体实现。就是要给目标对象织入的事情。以目标方法为参照点，<br>根据放置的地方不同，可分为前置通知（Before）、后置通知（AfterReturning）、异常通<br>知（AfterThrowing）、最终通知（After）与环绕通知（Around）5种。在实际开发中通常<br>是切面类中的一个方法，具体属于哪类通知，通过方法上的注解区分。</p>
+<h3 id="3、连接点（JoinPoint）："><a href="#3、连接点（JoinPoint）：" class="headerlink" title="3、连接点（JoinPoint）："></a>3、连接点（JoinPoint）：</h3><p>程序在运行过程中能够插入切面的地点。例如，方法调用、异常抛出等。<br>Spring只支持方法级的连接点。一个类的所有方法前、后、抛出异常时等都是连接点。</p>
+<h3 id="4、切入点（Pointcut）"><a href="#4、切入点（Pointcut）" class="headerlink" title="4、切入点（Pointcut）"></a>4、切入点（Pointcut）</h3><p>用于定义通知应该切入到哪些连接点上。不同的通知通常需要切入到不同<br>的连接点上，这种精准的匹配是由切入点的正则表达式来定义的。</p>
+<h3 id="5、目标对象-Target"><a href="#5、目标对象-Target" class="headerlink" title="5、目标对象(Target)"></a>5、目标对象(Target)</h3><p>那些即将切入切面的对象，也就是那些被通知的对象。这些对象专注业务<br>本身的逻辑，所有的共有功能等待AOP容器的切入</p>
+<h3 id="6、代理对象（Proxy）"><a href="#6、代理对象（Proxy）" class="headerlink" title="6、代理对象（Proxy）"></a>6、代理对象（Proxy）</h3><p>将通知应用到目标对象之后被动态创建的对象。可以简单地理解为，代理<br>对象的功能等于目标对象本身业务逻辑加上共有功能。代理对象对于使用者而言是透明的，<br>是程序运行过程中的产物。目标对象被织入共有功能后产生的对象。</p>
+<h3 id="7、织入-Weaving"><a href="#7、织入-Weaving" class="headerlink" title="7、织入(Weaving)"></a>7、织入(Weaving)</h3><p>将切面应用到目标对象从而创建一个新的代理对象的过程。这个过程可以<br>发生在编译时、类加载时、运行时。Spring是在运行时完成织入，运行时织入通过Java语言<br>的反射机制与动态代理机制来动态实现。<br>优点</p>
+<h3 id="1、降低模块的耦合度"><a href="#1、降低模块的耦合度" class="headerlink" title="1、降低模块的耦合度"></a>1、降低模块的耦合度</h3><h3 id="2、使系统更加容易扩展"><a href="#2、使系统更加容易扩展" class="headerlink" title="2、使系统更加容易扩展"></a>2、使系统更加容易扩展</h3><h3 id="3、提高代码复用性"><a href="#3、提高代码复用性" class="headerlink" title="3、提高代码复用性"></a>3、提高代码复用性</h3><p>JDK动态代理：只能代理接口<br>CGLIG动态代理：字节码技术完成代理，不能代理final类<br>spring ioc<br>优点：<br>1、bean能够实现集中管理，实现累的可配置和易管理</p>
+<h3 id="2、降低类与类之间的耦合度"><a href="#2、降低类与类之间的耦合度" class="headerlink" title="2、降低类与类之间的耦合度"></a>2、降低类与类之间的耦合度</h3><p>流程:(循环依赖-currentHashMap,Lasy)<br>1、实例化一个ApplicationContext的对象；<br>2：调用bean工厂后置处理器完成扫描；<br>3：循环解析扫描出来的类信息；<br>4、实例化一个BeanDefinition对象来存储解析出来的信息；</p>
+<h3 id="5、把实例化好的beanDefinition对象put到beanDefinitionMap当中缓存起"><a href="#5、把实例化好的beanDefinition对象put到beanDefinitionMap当中缓存起" class="headerlink" title="5、把实例化好的beanDefinition对象put到beanDefinitionMap当中缓存起"></a>5、把实例化好的beanDefinition对象put到beanDefinitionMap当中缓存起</h3><p>来，以便后面实例化bean；<br>6、再次调用bean工厂后置处理器；<br>7：当然spring还会干很多事情，比如国际化，比如注册BeanPostProcessor等<br>等，如果我们只关心如何实例化一个bean的话那么这一步就是spring调用<br>finishBeanFactoryInitialization方法来实例化单例的bean，实例化之前spring要做验<br>证，需要遍历所有扫描出来的类，依次判断这个bean是否Lazy，是否prototype，是否<br>abstract等等；<br>8：如果验证完成spring在实例化一个bean之前需要推断构造方法，因为<br>spring实例化对象是通过构造方法反射，故而需要知道用哪个构造方法；<br>9：推断完构造方法之后spring调用构造方法反射实例化一个对象；注意我这<br>里说的是对象、对象、对象；这个时候对象已经实例化出来了，但是并不是一个完整的<br>bean，最简单的体现是这个时候实例化出来的对象属性是没有注入，所以不是一个完整的<br>bean；</p>
+<p><strong>Q:</strong> 10：spring处理合并后的beanDefinition(合并？是spring当中非常重要的一<br>块内容，后面的文章我会分析)；<br>11：判断是否需要完成属性注入<br>12：如果需要完成属性注入，则开始注入属性</p>
+<h3 id="13、判断bean的类型回调Aware接口"><a href="#13、判断bean的类型回调Aware接口" class="headerlink" title="13、判断bean的类型回调Aware接口"></a>13、判断bean的类型回调Aware接口</h3><h3 id="14、调用生命周期回调方法"><a href="#14、调用生命周期回调方法" class="headerlink" title="14、调用生命周期回调方法"></a>14、调用生命周期回调方法</h3><h3 id="15、如果需要代理则完成代理"><a href="#15、如果需要代理则完成代理" class="headerlink" title="15、如果需要代理则完成代理"></a>15、如果需要代理则完成代理</h3><h3 id="16、put到单例池——bean完成——存在spring容器当中"><a href="#16、put到单例池——bean完成——存在spring容器当中" class="headerlink" title="16、put到单例池——bean完成——存在spring容器当中"></a>16、put到单例池——bean完成——存在spring容器当中</h3><p>事务传播机制<br>required:支持当前事务，如果当前没有事务，就新建一个事物，这就是最常用得<br>选择<br>supports:支持当前事务，如果当前没有事务，就以非事物方式执行<br>mandatory:支持当前事物，如果当前没有事务，就抛出异常<br>required_new:新建事务，如果存在事务，把当前事务挂起来<br>not_supported:以非实物方式执行操作，如果当前存在事务，就把当前事务挂起来</p>
+<p>never:以非事务得方式运行，如果当前存在事务，则抛出异常<br>nested:如果当前存在事务，则在嵌套事务内执行，如果当前没有事物，则运行与<br>PROPAGATION_REQUIRED类似的操作。<br>Java锁<br>乐观锁<br>顾名思义，就是很乐观，每次去拿数据的时候都认为别人不会修改，所以不会上<br>锁，但是在更新的时候会判断一下在此期间别人有没有去更新这个数据，可以使用版本号等<br>机制。乐观锁适用于多读的应用类型，这样可以提高吞吐量，在Java中<br>java.util.concurrent.atomic包下面的原子变量类就是使用了乐观锁的一种实现方式<br><code>CAS</code>(Compare and Swap 比较并交换)实现的。<br>乐观锁在Java中的使用，是无锁编程，常常采用的是CAS算法，典型的例子就是原<br>子类，通过CAS自旋实现原子操作的更新。<br>悲观锁<br>总是假设最坏的情况，每次去拿数据的时候都认为别人会修改，所以每次在拿数据<br>的时候都会上锁，这样别人想拿这个数据就会阻塞直到它拿到锁。比如Java里面的同步原语<br>synchronized关键字的实现就是悲观锁。悲观锁适合写操作非常多的场景，乐观锁适合读操<br>作非常多的场景，不加锁会带来大量的性能提升。<br>独享锁<br>独享锁是指该锁一次只能被一个线程所持有（ReadWriteLock读锁是共享锁）<br>共享锁<br>共享锁是指该锁可被多个线程所持有（ReadWriteLock写锁，synchronized是共享<br>锁）<br>互斥锁<br>互斥锁在Java中的具体实现就是ReentrantLock。<br>读写锁<br>读写锁在Java中的具体实现就是ReadWriteLock。<br>可重入锁<br>可重入锁又名递归锁，是指在同一个线程在外层方法获取锁的时候，在进入内层方<br>法会自动获取锁。说的有点抽象，下面会有一个代码的示例。<br>对于Java ReetrantLock而言，从名字就可以看出是一个重入锁，其名字是Re<br>entrant Lock 重新进入锁。<br>对于Synchronized而言，也是一个可重入锁。可重入锁的一个好处是可一定程度避<br>免死锁。<br>公平锁<br>公平锁是指多个线程按照申请锁的顺序来获取锁。</p>
+<p>非公平锁<br>非公平锁是指多个线程获取锁的顺序并不是按照申请锁的顺序，有可能后申请的线<br>程比先申请的线程优先获取锁。有可能，会造成优先级反转或者饥饿现象<br>对于Java ReetrantLock而言，通过构造函数指定该锁是否是公平锁，默认是非公<br>平锁。非公平锁的优点在于吞吐量比公平锁大。<br>分段锁<br>分段锁其实是一种锁的设计，并不是具体的一种锁，对于ConcurrentHashMap而<br>言，其并发的实现就是通过分段锁的形式来实现高效的并发操作。<br>偏向锁<br>偏向锁是指一段同步代码一直被一个线程所访问，那么该线程会自动获取锁。降低<br>获取锁的代价。<br>轻量级锁<br>轻量级锁是指当锁是偏向锁的时候，被另一个线程所访问，偏向锁就会升级为轻量<br>级锁，其他线程会通过自旋的形式尝试获取锁，不会阻塞，提高性能。<br>重量级锁<br>重量级锁是指当锁为轻量级锁的时候，另一个线程虽然是自旋，但自旋不会一直持<br>续下去，当自旋一定次数的时候，还没有获取到锁，就会进入阻塞，该锁膨胀为重量级锁。<br>重量级锁会让他申请的线程进入阻塞，性能降低。<br>自旋锁<br>自旋锁是指尝试获取锁的线程不会立即阻塞，而是采用循环的方式去尝试获取锁，<br>这样的好处是减少线程上下文切换的消耗，缺点是循环会消耗CPU。<br>dubbo<br>1、Provider –&gt; 暴露服务的服务提供方<br>2、<code>Consumer</code> –&gt; 调用远程服务的服务消费方<br>3、Registry –&gt; 服务注册与发现的注册中心<br>4、Monitor –&gt; 统计服务的调用次数和调用时间的监控中心<br>5、Container –&gt; 服务运行容器<br>dubbo协议<br>dubbo<br>http<br>rest<br>redis<br>memcached<br>负载均衡策略<br>1、random loadbalance：安权重设置随机概率（默认）；</p>
+<p>2、roundrobin loadbalance：轮寻，按照公约后权重设置轮训比例；<br>3、lastactive loadbalance：最少活跃调用数，若相同则随机；</p>
+<h3 id="4、consistenthash：一致性Hash"><a href="#4、consistenthash：一致性Hash" class="headerlink" title="4、consistenthash：一致性Hash"></a>4、consistenthash：一致性Hash</h3><p>容错方案<br>Failover Cluster:失败自动切换，自动重试其他服务器<br>Failfast Cluster:快速失败，立即报错，直发起一次调用<br>Failsafe Cluster:失败安全，出现异常时，直接忽略<br>Failback Cluster：失败自动回复，记录失败请求，定时重发<br>Forking Cluster：并行多个服务器，只要一个成功立即返回<br>Broadcast Cluster：广播逐个调用所有提供这，任意一个报错则报错</p>
+<p><strong>Q:</strong> Dubbo服务之间的调用是阻塞的吗？<br>默认是同步等待结果阻塞的，支持异步调用。<br>Dubbo 是基于 <code>NIO</code> 的非阻塞实现并行调用，客户端不需要启动多线程即可完成并<br>行调用多个远程服务，相对<br>多线程开销较小，异步调用会返回一个 <code>Future</code> 对象。<br>Dubbo暂时不支持分布式事务。</p>
+<p><strong>Q:</strong> Dubbo的管理控制台能做什么？<br>管理控制台主要包含：路由规则，动态配置，服务降级，访问控制，权重调整，负<br>载均衡，等管理功能。<br>注：dubbo源码中的dubbo-admin模块打成war包，发布运行即可得到dubbo控制管理<br>界面。<br>Dubbo 服务暴露的过程<br>Dubbo 会在 <code>Spring</code> 实例化完 bean 之后，在刷新容器最后一步发布<br>ContextRefreshEvent 事件的时候，通知<br>实现了 ApplicationListener 的 ServiceBean 类进行回调 onApplicationEvent<br>事件方法，Dubbo 会在这个方法<br>中调用 ServiceBean 父类 ServiceConfig 的 export 方法，而该方法真正实现了<br>服务的（异步或者非异步）发<br>布。</p>
+<p><strong>Q:</strong> 当一个服务接口有多种实现时怎么做？<br>当一个接口有多种实现时，可以用 group 属性来分组，服务提供方和消费方都指<br>定同一个 group 即可。<br>服务上线怎么兼容旧版本<br>可以用版本号（version）过渡，多个不同版本的服务注册到注册中心，版本号不<br>同的服务相互间不引用。这个和服务分组的概念有一点类似。</p>
+<p><strong>Q:</strong> 你觉得用 Dubbo 好还是 Spring Cloud 好？<br>扩展性的问题，没有好坏，只有适合不适合，我更倾向于使用 Dubbo, <code>Spring</code><br>Cloud 版本升级太快，组件更新替换太频繁，配置太繁琐。<br>ZooKeeper<br>概念<br>是一个典型的分布式数据一致性解决方案，分布式应用程序可以基于<br>ZooKeeper 实现诸如数据发布/订阅、负载均衡、命名服务、分布式协调/通知、集群管理、<br>Master 选举、分布式锁和分布式队列等功能。<br>特点<br>顺序一致性： 从同一客户端发起的事务请求，最终将会严格地按照顺序被应<br>用到 ZooKeeper 中去。<br>原子性： 所有事务请求的处理结果在整个集群中所有机器上的应用情况是一<br>致的，也就是说，要么整个集群中所有的机器都成功应用了某一个事务，要么都没有应用。<br>单一系统映像： 无论客户端连到哪一个 ZooKeeper 服务器上，其看到的服务<br>端数据模型都是一致的。<br>可靠性： 一旦一次更改请求被应用，更改的结果就会被持久化，直到被下一<br>次更改覆盖<br>ZAB 协议&amp;Paxos算法<br>Paxos 算法应该可以说是 ZooKeeper 的灵魂了。但是，ZooKeeper 并没有完<br>全采用 Paxos算法 ，而是使用 ZAB 协议作为其保证数据一致性的核心算法。另外，在<br>ZooKeeper的官方文档中也指出，ZAB协议并不像 Paxos 算法那样，是一种通用的分布式一<br>致性算法，它是一种特别为Zookeeper设计的崩溃可恢复的原子消息广播算法。<br>AB 协议介绍<br>ZAB（ZooKeeper Atomic Broadcast 原子广播） 协议是为分布式协调服务<br>ZooKeeper 专门设计的一种支持崩溃恢复的原子广播协议。 在 ZooKeeper 中，主要依赖<br>ZAB 协议来实现分布式数据一致性，基于该协议，ZooKeeper 实现了一种主备模式的系统架<br>构来保持集群中各个副本之间的数据一致性。<br>ZAB 协议两种基本的模式：崩溃恢复和消息广播<br>Paxos算法</p>
+<h3 id="1、是一种基于消息传递得一致性算法"><a href="#1、是一种基于消息传递得一致性算法" class="headerlink" title="1、是一种基于消息传递得一致性算法"></a>1、是一种基于消息传递得一致性算法</h3><p>权限(ACL)<br>create：创建子节点权限<br>read：获取节点数据和子节点列表的权限<br>write：更新节点数据的权限<br>delete：删除子节点的权限</p>
+<p>admin：设置节点acl得权限<br>节点类型<br>PERSISTENT：永久节点：节点创建后会被持久化，只有主动调用delete方法的<br>时候才可以删除节点<br>PERSISTENT_SEQUENTIAL：持久化排序节点<br>EPHEMERAL：临时节点：节点创建后在创建者超时连接或失去连接的时候，节<br>点会被删除。临时节点下不能存在字节点<br>EPHEMERAL_SEQUENTIAL：临时排序节点<br>系统运行速度变得越来越慢<br>1、之前怀疑是网络，I/O问题，观察网络和磁盘io占用很小<br>2、怀疑是由于内存占用太高导致的，然后机器内存剩余80G左右，应用内存占用均正<br>常。机器CPU占用70%以下<br>3、分析heapdump和gc，jstack日志没有发现明显的异常，应用也没有任何报错，无<br>解。<br>4、对出问题的应用使用jmap -histo:live [pid]命令，应用会恢复正常，目前测试了<br>出问题的几个应用，都有效果，但是目前还不清楚原因。<br>5、怀疑内存泄露，但是从dump来看并没有什么异常，出问题的应用堆栈基本都在执行<br>数据库操作，就是慢，而且出问题的应用CPU占用比较高达到90%以上。<br>线程死锁条件<br>互斥条件：一个资源每次只能被一个进程使用。<br>请求与保持条件：一个进程因请求资源而阻塞时，对已获得的资源保持不放。<br>不剥夺条件：进程已获得的资源，在末使用完之前，不能强行剥夺。<br>循环等待条件：若干进程之间形成一种头尾相接的循环等待资源关系。<br>避免死锁最简单的方法就是阻止循环等待条件<br>Mybatis</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+            
+            <div class="reprint1">
+                <p>
+                    <span class="reprint1-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+                    </span>
+                    <a href="https://liaoxingwang.github.io" class="b-link-green">屿</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2025/08/06/blog-open-source-java-interview-mei-tuan-he-ma-yi-jin-fu-mian-shi-bi-ji/" class="b-link-green">美团和蚂蚁金服面试笔记</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    
+
+    
+        <link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="card-content">
+        <div class="giscus-wrapper" style="overflow: hidden; max-width: 100%;">
+            <div class="giscus"></div>
+        </div>
+    </div>
+</div>
+
+<script src="https://giscus.app/client.js"
+    data-repo="liaoxingwang/liaoxingwang.github.io"
+    data-repo-id="R_kgDONgefmg"
+    data-category="Announcements"
+    data-category-id="DIC_kwDONgefms4DCjUZ"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="preferred_color_scheme"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async>
+</script>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2025/08/06/blog-open-source-java-interview-teng-xun-a-li-xi-cheng-mian-jing/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="腾讯&阿里&携程面经">
+                        
+                        <span class="card-title">腾讯&阿里&携程面经</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            没打招呼突击电话面试（30min） 地点ok？时间ok？（base杭州，暑期，全部ok ok ok）简单自我介绍一 下，项目经历选一个说说？ 项目中对于没有标签的数据，怎么处理，还有什么别的方法？（我用的远 程监督，别的还有one-shot zero-shot label embedding） 假设
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2025-08-06
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java面试-大厂面经/" class="post-category" target="_blank">
+                                    Java面试/大厂面经
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/面试/" target="_blank">
+                        <span class="chip bg-color">面试</span>
+                    </a>
+                    
+                    <a href="/tags/Java面试/" target="_blank">
+                        <span class="chip bg-color">Java面试</span>
+                    </a>
+                    
+                    <a href="/tags/大厂面经/" target="_blank">
+                        <span class="chip bg-color">大厂面经</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2025/08/06/blog-open-source-java-interview-mei-tuan-java-kai-fa-mian-jing/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="美团Java开发面经">
+                        
+                        <span class="card-title">美团Java开发面经</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            聊了一下RCP和数据库细节和原理。 1,内存文件映射断电数据是否可以保存？ 2,为什么TCP需要拆包和拼包？ 3,什么是广播？广播与多播的区别？ 4,线程池拒绝策略有哪些？ 5,AQS的使用场景和使用方式？ 6,有哪些线程安全的map？有哪些线程安全的队列？ listedbockingque的同步原
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2025-08-06
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java面试-大厂面经/" class="post-category" target="_blank">
+                                    Java面试/大厂面经
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/面试/" target="_blank">
+                        <span class="chip bg-color">面试</span>
+                    </a>
+                    
+                    <a href="/tags/Java面试/" target="_blank">
+                        <span class="chip bg-color">Java面试</span>
+                    </a>
+                    
+                    <a href="/tags/大厂面经/" target="_blank">
+                        <span class="chip bg-color">大厂面经</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 屿<br />'
+            + '作者: SK<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4, h5'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4, h5').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+        <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&copy; 理想热爱.
+
+            <br>
+            <span id="sitetime"></span><span class="my-face">ღゝ◡╹)ノ♡</span>
+            <br>
+
+            
+
+            
+                    
+                        <span id="busuanzi_container_site_pv" style='display:none'></span>
+                        总访问量: <span id="busuanzi_value_site_pv" class="white-color"></span>
+                    
+
+                    
+                        <span id="busuanzi_container_site_uv" style='display:none'></span>
+                        人次&nbsp; | &nbsp;访客人数: <span id="busuanzi_value_site_uv" class="white-color"></span> 人
+                    
+
+            
+
+            
+                &nbsp; | &nbsp;字数统计:&nbsp;
+                <span class="white-color">1296.3k</span> 字
+            
+
+            
+            <br>
+
+        </div>
+
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/liaoxingwang" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+ 
+    <a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=807928930@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+
+    <a href="https://zhihu.com/people/zbozci" class="tooltipped" target="_blank" data-tooltip="访问我的知乎" data-position="top" data-delay="50">
+        <i class="fa fa-inverse">知</i>
+    </a>
+
+
+
+    <a href="http://wpa.qq.com/msgrd?v=3&uin=807928930&site=qq&menu=yes" class="tooltipped" target="_blank" data-tooltip="访问我的QQ空间" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+    <a href="https://weibo.com/jamsJJYY" class="tooltipped" target="_blank" data-tooltip="关注我的微博" data-position="top" data-delay="50">
+        <i class="fa fa-weibo"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+
+        var t1 = Date.UTC(2022, 10, 24, 00, 00, 00); //北京时间2019-8-1 00:00:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes *
+            minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已勉强运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours +
+            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒" ;
+    } /*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+
+
+
+
+
+
+        <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+        <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+        <script src="/libs/materialize/materialize.min.js"></script>
+        <script src="https://cdn.bootcss.com/masonry/4.2.2/masonry.pkgd.min.js"></script>
+        <script src="https://cdn.bootcss.com/aos/3.0.0-beta.6/aos.js"></script>
+        <script src="https://cdn.bootcss.com/scrollprogress/3.0.2/scrollProgress.min.js"></script>
+        <script src="https://cdn.bootcss.com/lightgallery/1.6.12/js/lightgallery-all.min.js"></script>
+        <script src="/js/matery.js"></script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+        
+            <script src="/libs/others/clicklove.js"></script>
+        
+
+        
+            <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        
+
+        <!-- liaoxingwang add 2019.08.28 -->
+        <script type="text/javascript">
+            var OriginTitile = document.title,
+                st;
+            document.addEventListener("visibilitychange", function () {
+                document.hidden ? (document.title = "看不见我🙈~看不见我🙈~", clearTimeout(st)) : (document.title =
+                    "(๑•̀ㅂ•́) ✧被发现了～", st = setTimeout(function () {
+                        document.title = OriginTitile
+                    }, 3e3))
+            })
+        </script>
+
+        <!-- 鼠标点击烟花爆炸效果  liaoxingwang add 2019.09.09 -->
+        
+
+        <!-- 背景雪花飘落特效liaoxingwang add 2019.09.10 -->
+        
+
+        <!-- 鼠标点击文字特效 liaoxingwang add 2019.09.10-->
+        
+            <script src="/js/wenzi.js" type="text/javascript"></script>
+        
+
+        <!-- 背景雪花飘落特效 liaoxingwang add 2019.09.10 -->
+        
+
+        <!-- 在线聊天工具  liaoxingwang add 2019.09.11 -->
+        
+
+        <!-- 背景 canvas-nest  洪卫 shw 2018  add 2019.09.15-->
+        
+
+        <!-- 背景静止彩带  洪卫 shw 2018  add 2019.09.15-->
+        
+            <script type="text/javascript">
+            var windowWidth = $(window).width();
+            if (windowWidth > 992) {
+                document.write('<script type="text/javascript" size="150" alpha="0.6" zIndex="-1" src="/libs/background/ribbon.min.js"><\/script>');
+            }
+            </script>
+        
+
+        <!-- 背景动态彩带 洪卫 shw 2018  add 2019.09.15-->
+        
+            <script type="text/javascript">
+            var windowWidth = $(window).width();
+            if (windowWidth > 992) {
+                document.write('<script type="text/javascript" src="/libs/background/ribbon-dynamic.js"><\/script>');
+            }
+            </script>
+        
+
+    
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z\d\-\.\+]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(t.test(e.href)||r.test(e.href))&&(e.href=a.dataset.original)})});</script><script>(r=>{r.imageLazyLoadSetting.processImages=t;var a=r.imageLazyLoadSetting.isSPA,o=r.imageLazyLoadSetting.preloadRatio||1,d=i();function i(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(t){(a||t)&&(d=i());for(var e,n=0;n<d.length;n++)0<=(e=(e=d[n]).getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(r.innerHeight*o||document.documentElement.clientHeight*o)&&(()=>{var t,e,a,o,i=d[n];e=function(){d=d.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).dataset.loaded||(t.hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(a=new Image,o=t.getAttribute("data-original"),a.onload=function(){t.src=o,t.removeAttribute("data-original"),t.setAttribute("data-loaded",!0),e&&e()},a.onerror=function(){t.removeAttribute("data-original"),t.setAttribute("data-loaded",!1),t.src=o},t.src!==o&&(a.src=o)))})()}function e(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",e),r.addEventListener("resize",e),r.addEventListener("orientationchange",e)})(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
+</html>
