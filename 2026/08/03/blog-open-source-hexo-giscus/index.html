@@ -14,13 +14,32 @@ Error: Request failed with status code 403
 ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Hexo博客评论系统从Gitalk迁移到Giscus | 屿">
+    <meta property="og:description" content="背景博客一直在用 Gitalk 作为评论系统，是基于 GitHub Issues 的 OAuth 方案。最近发现评论区无法加载，控制台报 403 错误：
+Error: Request failed with status code 403
+">
+    <meta property="og:url" content="https://liaoxingwang.github.io2026/08/03/blog-open-source-hexo-giscus/">
+    <meta property="og:image" content="https://liaoxingwang.github.io/medias/banner/0.jpg">
+    <meta property="og:site_name" content="屿">
+    <meta property="og:locale" content="zh_CN">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hexo博客评论系统从Gitalk迁移到Giscus | 屿">
+    <meta name="twitter:description" content="背景博客一直在用 Gitalk 作为评论系统，是基于 GitHub Issues 的 OAuth 方案。最近发现评论区无法加载，控制台报 403 错误：
+Error: Request failed with status code 403
+">
+    <meta name="twitter:image" content="https://liaoxingwang.github.io/medias/banner/0.jpg">
+
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Hexo博客评论系统从Gitalk迁移到Giscus | 屿</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="icon" type="image/jpeg" href="/medias/avatars/hwsun.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
@@ -766,7 +785,7 @@ Error: Request failed with status code 403
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        901
+                        920
                     </div>
                     
 
@@ -844,12 +863,12 @@ https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token<
     <span class="token attr-name">data-theme</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>preferred_color_scheme<span class="token punctuation">"</span></span>
     <span class="token attr-name">data-lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>zh-CN<span class="token punctuation">"</span></span>
     <span class="token attr-name">crossorigin</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>anonymous<span class="token punctuation">"</span></span>
-    <span class="token attr-name">async</span><span class="token punctuation">></span></span><span class="token script language-javascript">
-</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token attr-name">async</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>然后在文章详情模板 <code>post-detail.ejs</code> 中添加引用，停用原有的 Gitalk。</p>
-<pre class="line-numbers language-ejs"><code class="language-ejs"><% if (theme.giscus && theme.giscus.enable) { %>
-    <%- partial('_partial/giscus') %>
-<% } %><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-ejs"><code class="language-ejs">&lt;% if (theme.giscus &amp;&amp; theme.giscus.enable) { %&gt;
+    &lt;%- partial('_partial/giscus') %&gt;
+&lt;% } %&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h3 id="4-配置文件"><a href="#4-配置文件" class="headerlink" title="4. 配置文件"></a>4. 配置文件</h3><p>在主题 <code>_config.yml</code> 中添加 Giscus 配置，同时禁用 Gitalk：</p>
 <pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">gitalk</span><span class="token punctuation">:</span>
   <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
@@ -1277,7 +1296,7 @@ https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token<
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">96.7k</span> 字
+                <span class="white-color">97.2k</span> 字
             
 
             
@@ -1469,7 +1488,7 @@ $(function () {
             </script>
         
 
-    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script>
+    
         <style>
             [bg-lazy] {
                 background-image: none !important;
@@ -1482,5 +1501,5 @@ $(function () {
                 preloadRatio: 1,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z\d\-\.\+]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(t.test(e.href)||r.test(e.href))&&(e.href=a.dataset.original)})});</script><script>(r=>{r.imageLazyLoadSetting.processImages=t;var a=r.imageLazyLoadSetting.isSPA,o=r.imageLazyLoadSetting.preloadRatio||1,d=i();function i(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(t){(a||t)&&(d=i());for(var e,n=0;n<d.length;n++)0<=(e=(e=d[n]).getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(r.innerHeight*o||document.documentElement.clientHeight*o)&&(()=>{var t,e,a,o,i=d[n];e=function(){d=d.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).dataset.loaded||(t.hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(a=new Image,o=t.getAttribute("data-original"),a.onload=function(){t.src=o,t.removeAttribute("data-original"),t.setAttribute("data-loaded",!0),e&&e()},a.onerror=function(){t.removeAttribute("data-original"),t.setAttribute("data-loaded",!1),t.src=o},t.src!==o&&(a.src=o)))})()}function e(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",e),r.addEventListener("resize",e),r.addEventListener("orientationchange",e)})(this);</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z\d\-\.\+]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(t.test(e.href)||r.test(e.href))&&(e.href=a.dataset.original)})});</script><script>(r=>{r.imageLazyLoadSetting.processImages=t;var a=r.imageLazyLoadSetting.isSPA,o=r.imageLazyLoadSetting.preloadRatio||1,d=i();function i(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(t){(a||t)&&(d=i());for(var e,n=0;n<d.length;n++)0<=(e=(e=d[n]).getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(r.innerHeight*o||document.documentElement.clientHeight*o)&&(()=>{var t,e,a,o,i=d[n];e=function(){d=d.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).dataset.loaded||(t.hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(a=new Image,o=t.getAttribute("data-original"),a.onload=function(){t.src=o,t.removeAttribute("data-original"),t.setAttribute("data-loaded",!0),e&&e()},a.onerror=function(){t.removeAttribute("data-original"),t.setAttribute("data-loaded",!1),t.src=o},t.src!==o&&(a.src=o)))})()}function e(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",e),r.addEventListener("resize",e),r.addEventListener("orientationchange",e)})(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
 </html>
