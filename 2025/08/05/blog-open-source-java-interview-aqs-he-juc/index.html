@@ -6,28 +6,37 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="商单接企业项目外包 软件开发 整包服务 移动开发 移动开发团队 移动开发项目">
+    <meta name="keywords" content="AQS和JUC, 商单接企业项目外包 软件开发 整包服务 移动开发 移动开发团队 移动开发项目">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-    <meta name="description" content="
-title: AQS和JUCdate: 2025-08-05 09:00:00author: SKimg:coverImg: /medias/banner/0.jpgtop: falsecover: truetoc: truemathja">
+    <meta name="description" content="【讲义】第讲：AQS和JUC
+⼀、ReentrantLock重⼊锁
+.&amp;gt; 概述
+.&amp;gt; 中断响应 lockInterruptibly()
+.&amp;gt; 锁申请等待限时 tryLock(long time, TimeUnit unit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
     <!-- Open Graph / Social Sharing -->
     <meta property="og:type" content="article">
-    <meta property="og:title" content="屿">
-    <meta property="og:description" content="
-title: AQS和JUCdate: 2025-08-05 09:00:00author: SKimg:coverImg: /medias/banner/0.jpgtop: falsecover: truetoc: truemathja">
-    <meta property="og:url" content="https://liaoxingwang.github.io2026/08/04/blog-open-source-java-interview-aqs-he-juc/">
+    <meta property="og:title" content="AQS和JUC | 屿">
+    <meta property="og:description" content="【讲义】第讲：AQS和JUC
+⼀、ReentrantLock重⼊锁
+.&amp;gt; 概述
+.&amp;gt; 中断响应 lockInterruptibly()
+.&amp;gt; 锁申请等待限时 tryLock(long time, TimeUnit unit">
+    <meta property="og:url" content="https://liaoxingwang.github.io2025/08/05/blog-open-source-java-interview-aqs-he-juc/">
     <meta property="og:image" content="https://liaoxingwang.github.io/medias/banner/0.jpg">
     <meta property="og:site_name" content="屿">
     <meta property="og:locale" content="zh_CN">
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="屿">
-    <meta name="twitter:description" content="
-title: AQS和JUCdate: 2025-08-05 09:00:00author: SKimg:coverImg: /medias/banner/0.jpgtop: falsecover: truetoc: truemathja">
+    <meta name="twitter:title" content="AQS和JUC | 屿">
+    <meta name="twitter:description" content="【讲义】第讲：AQS和JUC
+⼀、ReentrantLock重⼊锁
+.&amp;gt; 概述
+.&amp;gt; 中断响应 lockInterruptibly()
+.&amp;gt; 锁申请等待限时 tryLock(long time, TimeUnit unit">
     <meta name="twitter:image" content="https://liaoxingwang.github.io/medias/banner/0.jpg">
 
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -35,7 +44,7 @@ title: AQS和JUCdate: 2025-08-05 09:00:00author: SKimg:coverImg: /medias/banner/
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>屿</title>
+    <title>AQS和JUC | 屿</title>
     <link rel="icon" type="image/jpeg" href="/medias/avatars/hwsun.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -631,13 +640,13 @@ title: AQS和JUCdate: 2025-08-05 09:00:00author: SKimg:coverImg: /medias/banner/
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        
+                        AQS和JUC
                     </div>
                 </div>
             </div>
@@ -747,12 +756,33 @@ title: AQS和JUCdate: 2025-08-05 09:00:00author: SKimg:coverImg: /medias/banner/
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/面试/" target="_blank">
+                                <span class="chip bg-color">面试</span>
+                            </a>
+                        
+                            <a href="/tags/Java面试/" target="_blank">
+                                <span class="chip bg-color">Java面试</span>
+                            </a>
+                        
+                            <a href="/tags/2024/" target="_blank">
+                                <span class="chip bg-color">2024</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Java面试-2024/" class="post-category" target="_blank">
+                                Java面试/2024
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -760,7 +790,7 @@ title: AQS和JUCdate: 2025-08-05 09:00:00author: SKimg:coverImg: /medias/banner/
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2026-08-04
+                    2025-08-05
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -774,7 +804,7 @@ title: AQS和JUCdate: 2025-08-05 09:00:00author: SKimg:coverImg: /medias/banner/
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        2.3k
+                        2.2k
                     </div>
                     
 
@@ -798,43 +828,156 @@ title: AQS和JUCdate: 2025-08-05 09:00:00author: SKimg:coverImg: /medias/banner/
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <hr>
-<p>title: AQS和JUC<br>date: 2025-08-05 09:00:00<br>author: SK<br>img:<br>coverImg: /medias/banner/0.jpg<br>top: false<br>cover: true<br>toc: true<br>mathjax: false<br>summary: “【讲义】第讲：AQS和JUC ⼀、ReentrantLock重⼊锁 .&gt; 中断响应 lockInterruptibly() .&gt; 锁申请等待限时 tryLock(long time, TimeUnit unit) .&gt; 公平锁和⾮公平锁 .&gt; AQS源码解析 ⼆、Condition”</p>
-<p>tags:</p>
-<ul>
-<li>2024</li>
-<li>Java面试</li>
-<li>面试</li>
-</ul>
-<p>categories:</p>
-<ul>
-<li>Java面试/2024<br>password:</li>
-</ul>
-<hr>
-<p>【讲义】第讲：AQS和JUC<br>⼀、ReentrantLock重⼊锁<br>.&gt; 概述<br>.&gt; 中断响应 lockInterruptibly()<br>.&gt; 锁申请等待限时 tryLock(long time, TimeUnit unit)<br>.&gt; 公平锁和⾮公平锁<br>.&gt; AQS源码解析<br>⼆、Condition重⼊锁的搭配类</p>
-<h2 id="三、Semaphore信号量"><a href="#三、Semaphore信号量" class="headerlink" title="三、Semaphore信号量"></a>三、Semaphore信号量</h2><h2 id="四、ReadWriteLock读写锁"><a href="#四、ReadWriteLock读写锁" class="headerlink" title="四、ReadWriteLock读写锁"></a>四、ReadWriteLock读写锁</h2><h2 id="五、CountDownLatch倒计时器"><a href="#五、CountDownLatch倒计时器" class="headerlink" title="五、CountDownLatch倒计时器"></a>五、CountDownLatch倒计时器</h2><h2 id="六、CyclicBarrier循环栅栏"><a href="#六、CyclicBarrier循环栅栏" class="headerlink" title="六、CyclicBarrier循环栅栏"></a>六、CyclicBarrier循环栅栏</h2><h2 id="七、LockSupport线程阻塞⼯具类"><a href="#七、LockSupport线程阻塞⼯具类" class="headerlink" title="七、LockSupport线程阻塞⼯具类"></a>七、LockSupport线程阻塞⼯具类</h2><p>⼀、ReentrantLock重⼊锁<br>. &gt; 概述</p>
-<h3 id="1-1"><a href="#1-1" class="headerlink" title="1 1"></a>1 1</h3><p>●<br>重⼊锁可以完全替代synchronized关键字。在JDK5.0的早期版本中，重⼊锁的性能远远好于<br><code>synchronized</code>，但从JDK6.0开始，JDK在synchronized上做了⼤量的优化，使得两者的性能差距并<br>不⼤。重⼊锁对逻辑控制的灵活性要远远好于synchronized。<br>●<br>重⼊锁常⽤⽅法<br>void lock()：获得锁，如果锁已经被占⽤，则等待。<br>void lockInterruptibly()：获得锁，但优先响应中断。<br>boolean tryLock()：尝试获得锁，如果成功，返回true；如果失败则返回false；获得不到锁，则不进<br>⾏等待，⽴即返回。<br>boolean tryLock(long time, TimeUnit unit)：在给定时间内尝试获得锁。<br>boolean isHeldByCurrentThread()：判断担⼼线程是否持有锁。<br>void unlock()：释放锁。<br>●<br>下⾯是使⽤重⼊锁的简单示例：</p>
-<p>之所以称之为重⼊锁，就是⼀个线程允许反复进⼊。当然，这⾥的反复仅仅局限于⼀个线程；如<br>●<br>果同⼀个线程多次获锁，那么在释放锁的时候，也必须释放相同次数。如果释放锁的次数多，那么<br>会得到⼀个java.lang.IllegalMonitorStateException异常，反之，如果释放锁的次数少，那么相当<br>于线程还持有这个锁。如下所示：</p>
+                <p>【讲义】第讲：AQS和JUC</p>
+<p>⼀、ReentrantLock重⼊锁</p>
+<p>.&gt; 概述</p>
+<p>.&gt; 中断响应 lockInterruptibly()</p>
+<p>.&gt; 锁申请等待限时 tryLock(long time, TimeUnit unit)</p>
+<p>.&gt; 公平锁和⾮公平锁</p>
+<p>.&gt; AQS源码解析</p>
+<p>⼆、Condition重⼊锁的搭配类</p>
+<h2 id="三、Semaphore信号量"><a href="#三、Semaphore信号量" class="headerlink" title="三、Semaphore信号量"></a>三、Semaphore信号量</h2><h2 id="四、ReadWriteLock读写锁"><a href="#四、ReadWriteLock读写锁" class="headerlink" title="四、ReadWriteLock读写锁"></a>四、ReadWriteLock读写锁</h2><h2 id="五、CountDownLatch倒计时器"><a href="#五、CountDownLatch倒计时器" class="headerlink" title="五、CountDownLatch倒计时器"></a>五、CountDownLatch倒计时器</h2><h2 id="六、CyclicBarrier循环栅栏"><a href="#六、CyclicBarrier循环栅栏" class="headerlink" title="六、CyclicBarrier循环栅栏"></a>六、CyclicBarrier循环栅栏</h2><h2 id="七、LockSupport线程阻塞⼯具类"><a href="#七、LockSupport线程阻塞⼯具类" class="headerlink" title="七、LockSupport线程阻塞⼯具类"></a>七、LockSupport线程阻塞⼯具类</h2><p>⼀、ReentrantLock重⼊锁</p>
+<p>. &gt; 概述</p>
+<h3 id="1-1"><a href="#1-1" class="headerlink" title="1 1"></a>1 1</h3><p>●</p>
+<p>重⼊锁可以完全替代synchronized关键字。在JDK5.0的早期版本中，重⼊锁的性能远远好于</p>
+<p><code>synchronized</code>，但从JDK6.0开始，JDK在synchronized上做了⼤量的优化，使得两者的性能差距并</p>
+<p>不⼤。重⼊锁对逻辑控制的灵活性要远远好于synchronized。</p>
+<p>●</p>
+<p>重⼊锁常⽤⽅法</p>
+<p>void lock()：获得锁，如果锁已经被占⽤，则等待。</p>
+<p>void lockInterruptibly()：获得锁，但优先响应中断。</p>
+<p>boolean tryLock()：尝试获得锁，如果成功，返回true；如果失败则返回false；获得不到锁，则不进</p>
+<p>⾏等待，⽴即返回。</p>
+<p>boolean tryLock(long time, TimeUnit unit)：在给定时间内尝试获得锁。</p>
+<p>boolean isHeldByCurrentThread()：判断担⼼线程是否持有锁。</p>
+<p>void unlock()：释放锁。</p>
+<p>●</p>
+<p>下⾯是使⽤重⼊锁的简单示例：</p>
+<p>之所以称之为重⼊锁，就是⼀个线程允许反复进⼊。当然，这⾥的反复仅仅局限于⼀个线程；如</p>
+<p>●</p>
+<p>果同⼀个线程多次获锁，那么在释放锁的时候，也必须释放相同次数。如果释放锁的次数多，那么</p>
+<p>会得到⼀个java.lang.IllegalMonitorStateException异常，反之，如果释放锁的次数少，那么相当</p>
+<p>于线程还持有这个锁。如下所示：</p>
 <p>. &gt; 中断响应 lockInterruptibly()</p>
-<h3 id="1-2"><a href="#1-2" class="headerlink" title="1 2"></a>1 2</h3><p>如果使⽤<code>synchronized</code>，要么获得锁，要么保持等待。⽽如果使⽤了重⼊锁，则提供了另⼀种可<br>●<br>能，那就是线程可以被中断。也就是在等待锁的过程中，程序可以根据需要取消对锁的请求。即：<br>如果⼀个线程正在等待锁，那么它依然可以收到⼀个通知，被告知⽆须再等待，可以停⽌⼯作了。<br>可以很好的应对死锁问题。示例如下所示：</p>
+<h3 id="1-2"><a href="#1-2" class="headerlink" title="1 2"></a>1 2</h3><p>如果使⽤<code>synchronized</code>，要么获得锁，要么保持等待。⽽如果使⽤了重⼊锁，则提供了另⼀种可</p>
+<p>●</p>
+<p>能，那就是线程可以被中断。也就是在等待锁的过程中，程序可以根据需要取消对锁的请求。即：</p>
+<p>如果⼀个线程正在等待锁，那么它依然可以收到⼀个通知，被告知⽆须再等待，可以停⽌⼯作了。</p>
+<p>可以很好的应对死锁问题。示例如下所示：</p>
 <p>. &gt; 锁申请等待限时 tryLock(long time, TimeUnit unit)</p>
-<h3 id="1-3"><a href="#1-3" class="headerlink" title="1 3"></a>1 3</h3><p>除了等待外部通知之外，要避免死锁还有另外⼀种⽅式，就是限时等待。以下⾯为例，线程尝试<br>●<br>获得锁，如果没有获得锁，则等待5秒钟。如果5秒钟之后依然没有获得锁，则返回false，表示获得<br>锁失败。<br>tryLock()⽅法也可以不带参数直接运⾏。在这种情况下，当前线程会尝试获得锁，如果锁并未被其<br>●<br>他线程占⽤，则申请锁会成功，并⽴即返回true。如果锁被其他线程占⽤，则当前线程不会进<br>⾏等待，⽽是⽴即返回false。这种模式不会引起线程等待，因此也不会产⽣死锁。</p>
+<h3 id="1-3"><a href="#1-3" class="headerlink" title="1 3"></a>1 3</h3><p>除了等待外部通知之外，要避免死锁还有另外⼀种⽅式，就是限时等待。以下⾯为例，线程尝试</p>
+<p>●</p>
+<p>获得锁，如果没有获得锁，则等待5秒钟。如果5秒钟之后依然没有获得锁，则返回false，表示获得</p>
+<p>锁失败。</p>
+<p>tryLock()⽅法也可以不带参数直接运⾏。在这种情况下，当前线程会尝试获得锁，如果锁并未被其</p>
+<p>●</p>
+<p>他线程占⽤，则申请锁会成功，并⽴即返回true。如果锁被其他线程占⽤，则当前线程不会进</p>
+<p>⾏等待，⽽是⽴即返回false。这种模式不会引起线程等待，因此也不会产⽣死锁。</p>
 <p>. &gt; 公平锁和⾮公平锁</p>
-<h3 id="1-4"><a href="#1-4" class="headerlink" title="1 4"></a>1 4</h3><p>在⼤多数情况下，锁的申请都是⾮公平锁。系统只是会从这个锁的等待线程中随机选择⼀个。类似<br>●<br>⼤家买票不去排队，乱哄哄的围在售票窗⼝前，售票员忙得焦头烂额，也顾不及谁先谁后，随便找<br>⼀个⼈出票就完事⼉了。</p>
-<p>当⼊参为true时，则采⽤公平锁⽅式。要求系统维护⼀个有序队列，因此公平锁的实现成本⽐较<br>●<br>⾼，性能相对也⾮常低下。因此，默认情况下，锁是⾮公平的。如果没有特别的需求，也不需要使<br>⽤公平锁。</p>
+<h3 id="1-4"><a href="#1-4" class="headerlink" title="1 4"></a>1 4</h3><p>在⼤多数情况下，锁的申请都是⾮公平锁。系统只是会从这个锁的等待线程中随机选择⼀个。类似</p>
+<p>●</p>
+<p>⼤家买票不去排队，乱哄哄的围在售票窗⼝前，售票员忙得焦头烂额，也顾不及谁先谁后，随便找</p>
+<p>⼀个⼈出票就完事⼉了。</p>
+<p>当⼊参为true时，则采⽤公平锁⽅式。要求系统维护⼀个有序队列，因此公平锁的实现成本⽐较</p>
+<p>●</p>
+<p>⾼，性能相对也⾮常低下。因此，默认情况下，锁是⾮公平的。如果没有特别的需求，也不需要使</p>
+<p>⽤公平锁。</p>
 <p>. &gt; AQS源码解析</p>
-<h3 id="1-5"><a href="#1-5" class="headerlink" title="1 5"></a>1 5</h3><p>●<br>详情请⻅：【源码解析】AbstractQueuedSynchronizer.pdf<br>⼆、Condition重⼊锁的搭配类<br>●<br>相同点<br>Condition和Object的wait()、<code>notify</code>()⽅法的作⽤是⼤致相同的，对应关系如下所示：<br>●<br>Condition.await()—&gt;<code>Object</code>.<code>wait</code>()<br>●<br>Condition.signal()—&gt;<code>Object</code>.<code>notify</code>()<br>●<br>Condition.signalAll()—&gt;<code>Object</code>.<code>notifyAll</code>()<br>●<br>不同点<br><code>Object</code>.<code>wait</code>()和Object.<code>notify</code>()⽅法是和Synchronized关键字合作使⽤的；⽽Condition是与<br>ReentrantLock相关联的。<br>●<br>Condition常⽤⽅法</p>
-<p>void await()：<br>会使当前线程等待，同时释放当前锁，当其他线程中使⽤signal()或者signalAll()⽅法时，线程会<br>重新获得锁并继续执⾏。或者当线程被中断是，也能跳出等待。这和Object.<code>wait</code>()⽅法很相似。<br>void awaitUninterruptibly()：<br>与await()⽅法基本相同，区别是它不会在等待过程中响应中断。<br>long awaitNanos(long nanosTimeout)：<br>如果nanosTimeout时间内，没有被执⾏signal，则解除等待状态。<br>boolean await(long time, TimeUnit unit)：<br>如果time时间内，没有被执⾏signal，则解除等待状态。<br>boolean awaitUntil(Date deadline)：<br>如果deadline时间内，没有被执⾏signal，则解除等待状态。<br>void signal()：<br>⽤于唤醒⼀个正在等待中的线程。<br>void signalAll()：<br>⽤于唤醒所有正在等待中的线程。<br>●<br>Condition使⽤示例:</p>
-<h2 id="三、Semaphore信号量-1"><a href="#三、Semaphore信号量-1" class="headerlink" title="三、Semaphore信号量"></a>三、Semaphore信号量</h2><p>⼴义上说，Semapore信号量是对锁的⼀种扩展；因为⽆论是内部锁synchronized，还是重⼊锁<br>●</p>
-<p><code>ReentrantLock</code>，⼀次都只允许⼀个线程访问某⼀资源，⽽信号量却可以指定多个线程同时访<br>问某⼀个资源。<br>●<br>信息量主要提供了⼀下构造函数，必须要指定信号量的准⼊数，即：同时能申请多少个许可<br><code>public</code> <code>Semaphore</code>(int permits); // permits：准⼊数<br><code>public</code> <code>Semaphore</code>(int permits, boolean fair); // permits：准⼊数，fair：是否公平获得锁<br>●<br>信息量主要⽅法如下所示：<br><code>public</code> void acquire(); 尝试获得⼀个准⼊的许可。若⽆法获得，则线程会等待，直到有线程释放<br>⼀个许可或者当前线程被中断。<br><code>public</code> void acquireUninterruptibly(); 具有acquire⼀样的功能，但是不响应中断。<br><code>public</code> void tryAcquire(); 尝试获得⼀个许可，如果成功就返回true，失败则返回false。<br><code>public</code> void tryAcquire(long timeout, TimeUnit unit); 在指定时间内，尝试获得⼀个许可，如果成功<br>就返回true，失败则返回false。<br><code>public</code> void release(); 资源访问结束后，释放⼀个许可。<br>●<br>申请了4个准⼊，循环10个线程，那么将会以4个线程⼀组为单位进⾏执⾏输出</p>
-<h2 id="四、ReadWriteLock读写锁-1"><a href="#四、ReadWriteLock读写锁-1" class="headerlink" title="四、ReadWriteLock读写锁"></a>四、ReadWriteLock读写锁</h2><p>●<br>ReadWriteLock是JDK5中提供的读写分离锁。它允许多个线程同时读。但是考虑到数据的完整性，<br>写写操作和读写操作间依然是需要相互等待和持有锁的。读写锁的访问约束情况如下所示：</p>
-<p>●<br>下⾯例⼦中，我们使⽤普通锁，执⾏读写操作：<br>下⾯例⼦中，我们使⽤读写锁（只需要将上⾯例⼦中openRWLock=true即可）执⾏读写操作，如<br>●</p>
-<p>下所示：<br>所以，如果在系统中，读操作的次数远远⼤于写操作，那么读写锁就可以发挥最⼤的效果，提升系<br>●<br>统的性能。</p>
-<h2 id="五、CountDownLatch倒计时器-1"><a href="#五、CountDownLatch倒计时器-1" class="headerlink" title="五、CountDownLatch倒计时器"></a>五、CountDownLatch倒计时器</h2><p>CountDownLatch是⼀个多线程控制⼯具。⽤来控制线程的等待。设置需要countDown的数量<br>●<br>num，然后每⼀个线程执⾏完毕后，调⽤countDown()⽅法，⽽主线程调⽤await()⽅法执⾏等待，<br>直到num个⼦线程执⾏了countDown()⽅法 ，则主线程开始继续执⾏。</p>
-<h2 id="六、CyclicBarrier循环栅栏-1"><a href="#六、CyclicBarrier循环栅栏-1" class="headerlink" title="六、CyclicBarrier循环栅栏"></a>六、CyclicBarrier循环栅栏</h2><p>CyclicBarrier与CountDownLatch⾮常类似，它⽀持计数器的反复使⽤，CyclicBarrier可以<br>●<br>理解为循环栅栏。CyclicBarrier可以接收⼀个参数作为Runnable barrierAction，每当计数器<br>⼀次计数完成后——<code>CyclicBarrier</code>.await()时，系统会执⾏的动作。</p>
-<p><code>CyclicBarrier</code>.await()⽅法可能会抛出两种异常：⼀个是InterruptedException，也就是<br>●<br>在等待过程中，线程被中断，应该说这是⼀个⾮常通⽤的异常，⼤部分迫使线程等待的⽅法都可能<br>会抛出这个异常，使得线程在等待时依然可以响应外部紧急事件。另外⼀个异常则是CyclicBarrier<br>特有的BrokenBarrierException，⼀旦遇到这个异常，则表示当前的CyclicBarrier已经破损<br>了，可能系统已经没有办法等待所有线程到⻬了。如果继续等待，可能就是徒劳⽆功的，因此就此<br>结束吧。</p>
-<h2 id="七、LockSupport线程阻塞⼯具类-1"><a href="#七、LockSupport线程阻塞⼯具类-1" class="headerlink" title="七、LockSupport线程阻塞⼯具类"></a>七、LockSupport线程阻塞⼯具类</h2><p>LockSupport是⼀个⾮常⽅便实⽤的线程阻塞⼯具，它可以在线程内任意位置让线程阻塞。和<br>●<br><code>Thread</code>.suspend()相⽐，它弥补了由于resume()在前发⽣，导致线程⽆法继续执⾏的情况。和<br><code>Object</code>.<code>wait</code>()⽅法相⽐，它不需要先获得某个对象的锁，也不会抛出InterruptedException<br>异常。<br>park()可以阻塞当前线程，其中每⼀个线程都有⼀个许可，该许可默认为[不可⽤]。如果该许可<br>●<br>是[可⽤]状态，那么park()⽅法会⽴即返回，消费这个许可，将该许可变更为[不可⽤]状态，流<br>程代码可以继续执⾏。如果该许可是[不可⽤]状态，那么park()⽅法将会阻塞；<br>unpark⽅法，将指定线程的⼀个许可变为[可⽤]状态。如下表所示：</p>
-<p>●<br>示例⼀：先执⾏unpark()⽅法再执⾏park()⽅法，也不会造成永久卡死线程。如下所示：<br>示例⼆：LockSupport.park()还能⽀持中断。但是它不会抛InterruptedException异常。<br>●<br>它只会默默的返回，但是我们可以从Thread.interrupted()等⽅法获得中断标记。</p>
+<h3 id="1-5"><a href="#1-5" class="headerlink" title="1 5"></a>1 5</h3><p>●</p>
+<p>详情请⻅：【源码解析】AbstractQueuedSynchronizer.pdf</p>
+<p>⼆、Condition重⼊锁的搭配类</p>
+<p>●</p>
+<p>相同点</p>
+<p>Condition和Object的wait()、<code>notify</code>()⽅法的作⽤是⼤致相同的，对应关系如下所示：</p>
+<p>●</p>
+<p>Condition.await()—&gt;<code>Object</code>.<code>wait</code>()</p>
+<p>●</p>
+<p>Condition.signal()—&gt;<code>Object</code>.<code>notify</code>()</p>
+<p>●</p>
+<p>Condition.signalAll()—&gt;<code>Object</code>.<code>notifyAll</code>()</p>
+<p>●</p>
+<p>不同点</p>
+<p><code>Object</code>.<code>wait</code>()和Object.<code>notify</code>()⽅法是和Synchronized关键字合作使⽤的；⽽Condition是与</p>
+<p>ReentrantLock相关联的。</p>
+<p>●</p>
+<p>Condition常⽤⽅法</p>
+<p>void await()：</p>
+<p>会使当前线程等待，同时释放当前锁，当其他线程中使⽤signal()或者signalAll()⽅法时，线程会</p>
+<p>重新获得锁并继续执⾏。或者当线程被中断是，也能跳出等待。这和Object.<code>wait</code>()⽅法很相似。</p>
+<p>void awaitUninterruptibly()：</p>
+<p>与await()⽅法基本相同，区别是它不会在等待过程中响应中断。</p>
+<p>long awaitNanos(long nanosTimeout)：</p>
+<p>如果nanosTimeout时间内，没有被执⾏signal，则解除等待状态。</p>
+<p>boolean await(long time, TimeUnit unit)：</p>
+<p>如果time时间内，没有被执⾏signal，则解除等待状态。</p>
+<p>boolean awaitUntil(Date deadline)：</p>
+<p>如果deadline时间内，没有被执⾏signal，则解除等待状态。</p>
+<p>void signal()：</p>
+<p>⽤于唤醒⼀个正在等待中的线程。</p>
+<p>void signalAll()：</p>
+<p>⽤于唤醒所有正在等待中的线程。</p>
+<p>●</p>
+<p>Condition使⽤示例:</p>
+<h2 id="三、Semaphore信号量-1"><a href="#三、Semaphore信号量-1" class="headerlink" title="三、Semaphore信号量"></a>三、Semaphore信号量</h2><p>⼴义上说，Semapore信号量是对锁的⼀种扩展；因为⽆论是内部锁synchronized，还是重⼊锁</p>
+<p>●</p>
+<p><code>ReentrantLock</code>，⼀次都只允许⼀个线程访问某⼀资源，⽽信号量却可以指定多个线程同时访</p>
+<p>问某⼀个资源。</p>
+<p>●</p>
+<p>信息量主要提供了⼀下构造函数，必须要指定信号量的准⼊数，即：同时能申请多少个许可</p>
+<p><code>public</code> <code>Semaphore</code>(int permits); // permits：准⼊数</p>
+<p><code>public</code> <code>Semaphore</code>(int permits, boolean fair); // permits：准⼊数，fair：是否公平获得锁</p>
+<p>●</p>
+<p>信息量主要⽅法如下所示：</p>
+<p><code>public</code> void acquire(); 尝试获得⼀个准⼊的许可。若⽆法获得，则线程会等待，直到有线程释放</p>
+<p>⼀个许可或者当前线程被中断。</p>
+<p><code>public</code> void acquireUninterruptibly(); 具有acquire⼀样的功能，但是不响应中断。</p>
+<p><code>public</code> void tryAcquire(); 尝试获得⼀个许可，如果成功就返回true，失败则返回false。</p>
+<p><code>public</code> void tryAcquire(long timeout, TimeUnit unit); 在指定时间内，尝试获得⼀个许可，如果成功</p>
+<p>就返回true，失败则返回false。</p>
+<p><code>public</code> void release(); 资源访问结束后，释放⼀个许可。</p>
+<p>●</p>
+<p>申请了4个准⼊，循环10个线程，那么将会以4个线程⼀组为单位进⾏执⾏输出</p>
+<h2 id="四、ReadWriteLock读写锁-1"><a href="#四、ReadWriteLock读写锁-1" class="headerlink" title="四、ReadWriteLock读写锁"></a>四、ReadWriteLock读写锁</h2><p>●</p>
+<p>ReadWriteLock是JDK5中提供的读写分离锁。它允许多个线程同时读。但是考虑到数据的完整性，</p>
+<p>写写操作和读写操作间依然是需要相互等待和持有锁的。读写锁的访问约束情况如下所示：</p>
+<p>●</p>
+<p>下⾯例⼦中，我们使⽤普通锁，执⾏读写操作：</p>
+<p>下⾯例⼦中，我们使⽤读写锁（只需要将上⾯例⼦中openRWLock=true即可）执⾏读写操作，如</p>
+<p>●</p>
+<p>下所示：</p>
+<p>所以，如果在系统中，读操作的次数远远⼤于写操作，那么读写锁就可以发挥最⼤的效果，提升系</p>
+<p>●</p>
+<p>统的性能。</p>
+<h2 id="五、CountDownLatch倒计时器-1"><a href="#五、CountDownLatch倒计时器-1" class="headerlink" title="五、CountDownLatch倒计时器"></a>五、CountDownLatch倒计时器</h2><p>CountDownLatch是⼀个多线程控制⼯具。⽤来控制线程的等待。设置需要countDown的数量</p>
+<p>●</p>
+<p>num，然后每⼀个线程执⾏完毕后，调⽤countDown()⽅法，⽽主线程调⽤await()⽅法执⾏等待，</p>
+<p>直到num个⼦线程执⾏了countDown()⽅法 ，则主线程开始继续执⾏。</p>
+<h2 id="六、CyclicBarrier循环栅栏-1"><a href="#六、CyclicBarrier循环栅栏-1" class="headerlink" title="六、CyclicBarrier循环栅栏"></a>六、CyclicBarrier循环栅栏</h2><p>CyclicBarrier与CountDownLatch⾮常类似，它⽀持计数器的反复使⽤，CyclicBarrier可以</p>
+<p>●</p>
+<p>理解为循环栅栏。CyclicBarrier可以接收⼀个参数作为Runnable barrierAction，每当计数器</p>
+<p>⼀次计数完成后——<code>CyclicBarrier</code>.await()时，系统会执⾏的动作。</p>
+<p><code>CyclicBarrier</code>.await()⽅法可能会抛出两种异常：⼀个是InterruptedException，也就是</p>
+<p>●</p>
+<p>在等待过程中，线程被中断，应该说这是⼀个⾮常通⽤的异常，⼤部分迫使线程等待的⽅法都可能</p>
+<p>会抛出这个异常，使得线程在等待时依然可以响应外部紧急事件。另外⼀个异常则是CyclicBarrier</p>
+<p>特有的BrokenBarrierException，⼀旦遇到这个异常，则表示当前的CyclicBarrier已经破损</p>
+<p>了，可能系统已经没有办法等待所有线程到⻬了。如果继续等待，可能就是徒劳⽆功的，因此就此</p>
+<p>结束吧。</p>
+<h2 id="七、LockSupport线程阻塞⼯具类-1"><a href="#七、LockSupport线程阻塞⼯具类-1" class="headerlink" title="七、LockSupport线程阻塞⼯具类"></a>七、LockSupport线程阻塞⼯具类</h2><p>LockSupport是⼀个⾮常⽅便实⽤的线程阻塞⼯具，它可以在线程内任意位置让线程阻塞。和</p>
+<p>●</p>
+<p><code>Thread</code>.suspend()相⽐，它弥补了由于resume()在前发⽣，导致线程⽆法继续执⾏的情况。和</p>
+<p><code>Object</code>.<code>wait</code>()⽅法相⽐，它不需要先获得某个对象的锁，也不会抛出InterruptedException</p>
+<p>异常。</p>
+<p>park()可以阻塞当前线程，其中每⼀个线程都有⼀个许可，该许可默认为[不可⽤]。如果该许可</p>
+<p>●</p>
+<p>是[可⽤]状态，那么park()⽅法会⽴即返回，消费这个许可，将该许可变更为[不可⽤]状态，流</p>
+<p>程代码可以继续执⾏。如果该许可是[不可⽤]状态，那么park()⽅法将会阻塞；</p>
+<p>unpark⽅法，将指定线程的⼀个许可变为[可⽤]状态。如下表所示：</p>
+<p>●</p>
+<p>示例⼀：先执⾏unpark()⽅法再执⾏park()⽅法，也不会造成永久卡死线程。如下所示：</p>
+<p>示例⼆：LockSupport.park()还能⽀持中断。但是它不会抛InterruptedException异常。</p>
+<p>●</p>
+<p>它只会默默的返回，但是我们可以从Thread.interrupted()等⽅法获得中断标记。</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -879,7 +1022,7 @@ title: AQS和JUCdate: 2025-08-05 09:00:00author: SKimg:coverImg: /medias/banner/
                     </span>
                     <a href="https://liaoxingwang.github.io" class="b-link-green">屿</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2026/08/04/blog-open-source-java-interview-aqs-he-juc/" class="b-link-green"></a>
+                    <a href="/2025/08/05/blog-open-source-java-interview-aqs-he-juc/" class="b-link-green">AQS和JUC</a>
                 </p>
             </div>
 
@@ -935,30 +1078,52 @@ title: AQS和JUCdate: 2025-08-05 09:00:00author: SKimg:coverImg: /medias/banner/
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2026/08/04/blog-open-source-java-interview-bing-fa-rong-qi-he-xian-cheng-chi/">
+                <a href="/2025/08/05/blog-open-source-java-interview-java-he-xin-mian-shi-zhi-shi-zheng-li/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="JAVA核心面试知识整理">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">JAVA核心面试知识整理</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-title: 并发容器和线程池date: 2025-08-05 16:00:00author: SKimg:coverImg: /medias/banner/0.jpgtop: falsecover: truetoc: truemathj
+                            2.3.1.4. MinorGC的过程（复制->清空->互换） 1：eden、servicorFrom 复制到ServicorTo，年龄+1 2：清空eden、servicorFrom 3：ServicorTo和ServicorFrom互换 2.9.1.8. 类构造器<client> 13/04/2
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2026-08-04
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2025-08-05
                         </span>
                         <span class="publish-author">
                             
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java面试-2024/" class="post-category" target="_blank">
+                                    Java面试/2024
+                                </a>
+                            
+                            
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/面试/" target="_blank">
+                        <span class="chip bg-color">面试</span>
+                    </a>
+                    
+                    <a href="/tags/Java面试/" target="_blank">
+                        <span class="chip bg-color">Java面试</span>
+                    </a>
+                    
+                    <a href="/tags/2024/" target="_blank">
+                        <span class="chip bg-color">2024</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -970,26 +1135,33 @@ title: 并发容器和线程池date: 2025-08-05 16:00:00author: SKimg:coverImg: 
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2026/08/03/blog-open-source-hexo-giscus/">
+                <a href="/2025/08/05/blog-open-source-java-interview-2024-java-offer-shou-ge-zhi-nan/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Hexo博客评论系统从Gitalk迁移到Giscus">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="2024 Java offer 收割指南">
                         
-                        <span class="card-title">Hexo博客评论系统从Gitalk迁移到Giscus</span>
+                        <span class="card-title">2024 Java offer 收割指南</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            记录 Hexo 博客将评论系统从 Gitalk 迁移到 Giscus 的过程，以及移动端 CSS 加载问题的排查与修复。
+                            最新百度、阿里、字节 Java 面试题集 1.JAVA中的几种基本数据类型是什么，各自占用多少字节。 2.String类能被继承吗，为什么。 3.String，Stringbuffer，StringBuilder的区别。 4.ArrayList和LinkedList有什么区别。 5.讲讲类的实例
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2026-08-03
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2025-08-05
                             </span>
                         <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java面试-2024/" class="post-category" target="_blank">
+                                    Java面试/2024
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -997,12 +1169,16 @@ title: 并发容器和线程池date: 2025-08-05 16:00:00author: SKimg:coverImg: 
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Hexo/" target="_blank">
-                        <span class="chip bg-color">Hexo</span>
+                    <a href="/tags/面试/" target="_blank">
+                        <span class="chip bg-color">面试</span>
                     </a>
                     
-                    <a href="/tags/GitHub/" target="_blank">
-                        <span class="chip bg-color">GitHub</span>
+                    <a href="/tags/Java面试/" target="_blank">
+                        <span class="chip bg-color">Java面试</span>
+                    </a>
+                    
+                    <a href="/tags/2024/" target="_blank">
+                        <span class="chip bg-color">2024</span>
                     </a>
                     
                 </div>
@@ -1177,7 +1353,7 @@ title: 并发容器和线程池date: 2025-08-05 16:00:00author: SKimg:coverImg: 
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">2588.7k</span> 字
+                <span class="white-color">2588.6k</span> 字
             
 
             
@@ -1369,7 +1545,7 @@ $(function () {
             </script>
         
 
-    
+    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script>
         <style>
             [bg-lazy] {
                 background-image: none !important;
@@ -1382,5 +1558,5 @@ $(function () {
                 preloadRatio: 1,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z\d\-\.\+]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(t.test(e.href)||r.test(e.href))&&(e.href=a.dataset.original)})});</script><script>(r=>{r.imageLazyLoadSetting.processImages=t;var a=r.imageLazyLoadSetting.isSPA,o=r.imageLazyLoadSetting.preloadRatio||1,d=i();function i(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(t){(a||t)&&(d=i());for(var e,n=0;n<d.length;n++)0<=(e=(e=d[n]).getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(r.innerHeight*o||document.documentElement.clientHeight*o)&&(()=>{var t,e,a,o,i=d[n];e=function(){d=d.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).dataset.loaded||(t.hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(a=new Image,o=t.getAttribute("data-original"),a.onload=function(){t.src=o,t.removeAttribute("data-original"),t.setAttribute("data-loaded",!0),e&&e()},a.onerror=function(){t.removeAttribute("data-original"),t.setAttribute("data-loaded",!1),t.src=o},t.src!==o&&(a.src=o)))})()}function e(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",e),r.addEventListener("resize",e),r.addEventListener("orientationchange",e)})(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z\d\-\.\+]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(t.test(e.href)||r.test(e.href))&&(e.href=a.dataset.original)})});</script><script>(r=>{r.imageLazyLoadSetting.processImages=t;var a=r.imageLazyLoadSetting.isSPA,o=r.imageLazyLoadSetting.preloadRatio||1,d=i();function i(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(t){(a||t)&&(d=i());for(var e,n=0;n<d.length;n++)0<=(e=(e=d[n]).getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(r.innerHeight*o||document.documentElement.clientHeight*o)&&(()=>{var t,e,a,o,i=d[n];e=function(){d=d.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).dataset.loaded||(t.hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(a=new Image,o=t.getAttribute("data-original"),a.onload=function(){t.src=o,t.removeAttribute("data-original"),t.setAttribute("data-loaded",!0),e&&e()},a.onerror=function(){t.removeAttribute("data-original"),t.setAttribute("data-loaded",!1),t.src=o},t.src!==o&&(a.src=o)))})()}function e(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",e),r.addEventListener("resize",e),r.addEventListener("orientationchange",e)})(this);</script></body>
 </html>

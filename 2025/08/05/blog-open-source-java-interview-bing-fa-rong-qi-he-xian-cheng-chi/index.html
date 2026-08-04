@@ -6,28 +6,49 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="商单接企业项目外包 软件开发 整包服务 移动开发 移动开发团队 移动开发项目">
+    <meta name="keywords" content="并发容器和线程池, 商单接企业项目外包 软件开发 整包服务 移动开发 移动开发团队 移动开发项目">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-    <meta name="description" content="
-title: 并发容器和线程池date: 2025-08-05 16:00:00author: SKimg:coverImg: /medias/banner/0.jpgtop: falsecover: truetoc: truemathj">
+    <meta name="description" content="【讲义】第讲：并发容器和线程池
+⼀、并发容器
+.&amp;gt; 概述
+.&amp;gt; ConcurrentHashMap
+.&amp;gt; ConcurrentLinkedQueue
+..&amp;gt; add
+..&amp;gt; remove
+..&amp;gt; 哨兵
+.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
     <!-- Open Graph / Social Sharing -->
     <meta property="og:type" content="article">
-    <meta property="og:title" content="屿">
-    <meta property="og:description" content="
-title: 并发容器和线程池date: 2025-08-05 16:00:00author: SKimg:coverImg: /medias/banner/0.jpgtop: falsecover: truetoc: truemathj">
-    <meta property="og:url" content="https://liaoxingwang.github.io2026/08/04/blog-open-source-java-interview-bing-fa-rong-qi-he-xian-cheng-chi/">
+    <meta property="og:title" content="并发容器和线程池 | 屿">
+    <meta property="og:description" content="【讲义】第讲：并发容器和线程池
+⼀、并发容器
+.&amp;gt; 概述
+.&amp;gt; ConcurrentHashMap
+.&amp;gt; ConcurrentLinkedQueue
+..&amp;gt; add
+..&amp;gt; remove
+..&amp;gt; 哨兵
+.">
+    <meta property="og:url" content="https://liaoxingwang.github.io2025/08/05/blog-open-source-java-interview-bing-fa-rong-qi-he-xian-cheng-chi/">
     <meta property="og:image" content="https://liaoxingwang.github.io/medias/banner/0.jpg">
     <meta property="og:site_name" content="屿">
     <meta property="og:locale" content="zh_CN">
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="屿">
-    <meta name="twitter:description" content="
-title: 并发容器和线程池date: 2025-08-05 16:00:00author: SKimg:coverImg: /medias/banner/0.jpgtop: falsecover: truetoc: truemathj">
+    <meta name="twitter:title" content="并发容器和线程池 | 屿">
+    <meta name="twitter:description" content="【讲义】第讲：并发容器和线程池
+⼀、并发容器
+.&amp;gt; 概述
+.&amp;gt; ConcurrentHashMap
+.&amp;gt; ConcurrentLinkedQueue
+..&amp;gt; add
+..&amp;gt; remove
+..&amp;gt; 哨兵
+.">
     <meta name="twitter:image" content="https://liaoxingwang.github.io/medias/banner/0.jpg">
 
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -35,7 +56,7 @@ title: 并发容器和线程池date: 2025-08-05 16:00:00author: SKimg:coverImg: 
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>屿</title>
+    <title>并发容器和线程池 | 屿</title>
     <link rel="icon" type="image/jpeg" href="/medias/avatars/hwsun.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -631,13 +652,13 @@ title: 并发容器和线程池date: 2025-08-05 16:00:00author: SKimg:coverImg: 
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        
+                        并发容器和线程池
                     </div>
                 </div>
             </div>
@@ -747,12 +768,33 @@ title: 并发容器和线程池date: 2025-08-05 16:00:00author: SKimg:coverImg: 
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/面试/" target="_blank">
+                                <span class="chip bg-color">面试</span>
+                            </a>
+                        
+                            <a href="/tags/Java面试/" target="_blank">
+                                <span class="chip bg-color">Java面试</span>
+                            </a>
+                        
+                            <a href="/tags/2024/" target="_blank">
+                                <span class="chip bg-color">2024</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Java面试-2024/" class="post-category" target="_blank">
+                                Java面试/2024
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -760,7 +802,7 @@ title: 并发容器和线程池date: 2025-08-05 16:00:00author: SKimg:coverImg: 
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2026-08-04
+                    2025-08-05
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -774,7 +816,7 @@ title: 并发容器和线程池date: 2025-08-05 16:00:00author: SKimg:coverImg: 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        3k
+                        2.9k
                     </div>
                     
 
@@ -798,62 +840,240 @@ title: 并发容器和线程池date: 2025-08-05 16:00:00author: SKimg:coverImg: 
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <hr>
-<p>title: 并发容器和线程池<br>date: 2025-08-05 16:00:00<br>author: SK<br>img:<br>coverImg: /medias/banner/0.jpg<br>top: false<br>cover: true<br>toc: true<br>mathjax: false<br>summary: “【讲义】第讲：并发容器和线程池 .&gt; ConcurrentHashMap .&gt; ConcurrentLinkedQueue ..&gt; remove .&gt; CopyOnWriteArrayList .&gt; BlockingQueue ..&gt; ArrayBlockingQu”</p>
-<p>tags:</p>
-<ul>
-<li>2024</li>
-<li>Java面试</li>
-<li>面试</li>
-</ul>
-<p>categories:</p>
-<ul>
-<li>Java面试/2024<br>password:</li>
-</ul>
-<hr>
-<p>【讲义】第讲：并发容器和线程池<br>⼀、并发容器<br>.&gt; 概述<br>.&gt; <code>ConcurrentHashMap</code><br>.&gt; ConcurrentLinkedQueue<br>..&gt; add<br>..&gt; remove<br>..&gt; 哨兵<br>.&gt; CopyOnWriteArrayList<br>.&gt; BlockingQueue<br>..&gt; ArrayBlockingQueue<br>..&gt; LinkedBlockingQueue<br>..&gt; SynchronousQueue<br>⼆、线程池<br>.&gt; <code>ThreadPoolExecutor</code><br>.&gt; ForkJoinPool<br>..&gt; 概述<br>..&gt; RecursiveTask执⾏有返回值任务<br>..&gt; RecursiveAction执⾏⽆返回值任务</p>
-<h2 id="三、Future"><a href="#三、Future" class="headerlink" title="三、Future"></a>三、Future</h2><p>.&gt; FutureTask<br>.&gt; <code>CompletableFuture</code><br>..&gt; 执⾏通知<br>..&gt; 执⾏异步任务<br>⼀、并发容器<br>. &gt; 概述</p>
-<h3 id="1-1"><a href="#1-1" class="headerlink" title="1 1"></a>1 1</h3><p>JDK提供的这些容器⼤部分在java.util.concurrent包中。我们挑选出⼀些⽐较有代表性的并发容器<br>●</p>
-<p>类，来感受⼀下JDK⾃带的并发集合带来的“快感”。<br>. &gt; <code>ConcurrentHashMap</code></p>
-<h3 id="1-2"><a href="#1-2" class="headerlink" title="1 2"></a>1 2</h3><p>●<br>详情请⻅：【源码解析】<code>ConcurrentHashMap</code>.pdf<br>. &gt; ConcurrentLinkedQueue</p>
-<h3 id="1-3"><a href="#1-3" class="headerlink" title="1 3"></a>1 3</h3><p>ConcurrentLinkedQueue是⼀个基于链接节点的⽆界线程安全队列，它采⽤先进先出的规则对节点<br>●<br>进⾏排序，当我们添加⼀个元素的时候，它会添加到队列的尾部，当我们获取⼀个元素时，它会返<br>回队列头部的元素。<br>ConcurrentLinkedQueue算是在⾼并发环境中性能最好的队列。底层由单向链表组成，每个节点结<br>●<br>构如下所示：<br>●<br>构造函数中，创建了⼀个空节点作为链表中的第⼀个Node节点<br>. . &gt; add</p>
-<h3 id="1-3-1"><a href="#1-3-1" class="headerlink" title="1 3 1"></a>1 3 1</h3><p>●<br>向容器中添加元素，源码如下所示：</p>
-<p>●<br>关于t != (t = tail)的判断，⾸先，“!=”并不是原⼦操作，它是可以被中断的。也就是说，在执<br>⾏“!=”时，会先取得t的值，再执⾏t=tail，并取得新的t值。然后⽐较这两个值是否相等。下<br>⾯例⼦演示了这种情况：</p>
-<p>●<br>添加节点如下所示：</p>
-<p>【解释】<br>我们从上⾯的图可以看到，对tail的更新是会产⽣滞后的，也就是每次更新都会跳跃两个元素。这<br>●<br>么做的⽬的，就是为了减少cas操作的次数。例如，我们完全可以在上述代码中通过<br>if(p.casNext(null, newNode) &amp;&amp; casTail(t, newNode)) 这种⽅式，保证最新节点拼接到链表末<br>尾，并且tail指针永远指向末尾，但是，由于CAS⼀般都⽤在⽆限⾃旋的场景中，那么对于效率的<br>损耗就⽐较⼤了。⽽通过两次操作才更新⼀次tail，可以有效减少性能消耗。<br>. . &gt; remove</p>
-<h3 id="1-3-2"><a href="#1-3-2" class="headerlink" title="1 3 2"></a>1 3 2</h3><p>●<br>删除元素操作，源码如下所示：<br>●<br>删除节点对链表的操作，如下图所示：</p>
+                <p>【讲义】第讲：并发容器和线程池</p>
+<p>⼀、并发容器</p>
+<p>.&gt; 概述</p>
+<p>.&gt; <code>ConcurrentHashMap</code></p>
+<p>.&gt; ConcurrentLinkedQueue</p>
+<p>..&gt; add</p>
+<p>..&gt; remove</p>
+<p>..&gt; 哨兵</p>
+<p>.&gt; CopyOnWriteArrayList</p>
+<p>.&gt; BlockingQueue</p>
+<p>..&gt; ArrayBlockingQueue</p>
+<p>..&gt; LinkedBlockingQueue</p>
+<p>..&gt; SynchronousQueue</p>
+<p>⼆、线程池</p>
+<p>.&gt; <code>ThreadPoolExecutor</code></p>
+<p>.&gt; ForkJoinPool</p>
+<p>..&gt; 概述</p>
+<p>..&gt; RecursiveTask执⾏有返回值任务</p>
+<p>..&gt; RecursiveAction执⾏⽆返回值任务</p>
+<h2 id="三、Future"><a href="#三、Future" class="headerlink" title="三、Future"></a>三、Future</h2><p>.&gt; FutureTask</p>
+<p>.&gt; <code>CompletableFuture</code></p>
+<p>..&gt; 执⾏通知</p>
+<p>..&gt; 执⾏异步任务</p>
+<p>⼀、并发容器</p>
+<p>. &gt; 概述</p>
+<h3 id="1-1"><a href="#1-1" class="headerlink" title="1 1"></a>1 1</h3><p>JDK提供的这些容器⼤部分在java.util.concurrent包中。我们挑选出⼀些⽐较有代表性的并发容器</p>
+<p>●</p>
+<p>类，来感受⼀下JDK⾃带的并发集合带来的“快感”。</p>
+<p>. &gt; <code>ConcurrentHashMap</code></p>
+<h3 id="1-2"><a href="#1-2" class="headerlink" title="1 2"></a>1 2</h3><p>●</p>
+<p>详情请⻅：【源码解析】<code>ConcurrentHashMap</code>.pdf</p>
+<p>. &gt; ConcurrentLinkedQueue</p>
+<h3 id="1-3"><a href="#1-3" class="headerlink" title="1 3"></a>1 3</h3><p>ConcurrentLinkedQueue是⼀个基于链接节点的⽆界线程安全队列，它采⽤先进先出的规则对节点</p>
+<p>●</p>
+<p>进⾏排序，当我们添加⼀个元素的时候，它会添加到队列的尾部，当我们获取⼀个元素时，它会返</p>
+<p>回队列头部的元素。</p>
+<p>ConcurrentLinkedQueue算是在⾼并发环境中性能最好的队列。底层由单向链表组成，每个节点结</p>
+<p>●</p>
+<p>构如下所示：</p>
+<p>●</p>
+<p>构造函数中，创建了⼀个空节点作为链表中的第⼀个Node节点</p>
+<p>. . &gt; add</p>
+<h3 id="1-3-1"><a href="#1-3-1" class="headerlink" title="1 3 1"></a>1 3 1</h3><p>●</p>
+<p>向容器中添加元素，源码如下所示：</p>
+<p>●</p>
+<p>关于t != (t = tail)的判断，⾸先，“!=”并不是原⼦操作，它是可以被中断的。也就是说，在执</p>
+<p>⾏“!=”时，会先取得t的值，再执⾏t=tail，并取得新的t值。然后⽐较这两个值是否相等。下</p>
+<p>⾯例⼦演示了这种情况：</p>
+<p>●</p>
+<p>添加节点如下所示：</p>
+<p>【解释】</p>
+<p>我们从上⾯的图可以看到，对tail的更新是会产⽣滞后的，也就是每次更新都会跳跃两个元素。这</p>
+<p>●</p>
+<p>么做的⽬的，就是为了减少cas操作的次数。例如，我们完全可以在上述代码中通过</p>
+<p>if(p.casNext(null, newNode) &amp;&amp; casTail(t, newNode)) 这种⽅式，保证最新节点拼接到链表末</p>
+<p>尾，并且tail指针永远指向末尾，但是，由于CAS⼀般都⽤在⽆限⾃旋的场景中，那么对于效率的</p>
+<p>损耗就⽐较⼤了。⽽通过两次操作才更新⼀次tail，可以有效减少性能消耗。</p>
+<p>. . &gt; remove</p>
+<h3 id="1-3-2"><a href="#1-3-2" class="headerlink" title="1 3 2"></a>1 3 2</h3><p>●</p>
+<p>删除元素操作，源码如下所示：</p>
+<p>●</p>
+<p>删除节点对链表的操作，如下图所示：</p>
 <p>. . &gt; 哨兵</p>
-<h3 id="1-3-3"><a href="#1-3-3" class="headerlink" title="1 3 3"></a>1 3 3</h3><p>●<br>我们来演示⼀下哨兵节点产⽣的原因：</p>
+<h3 id="1-3-3"><a href="#1-3-3" class="headerlink" title="1 3 3"></a>1 3 3</h3><p>●</p>
+<p>我们来演示⼀下哨兵节点产⽣的原因：</p>
 <p>. &gt; CopyOnWriteArrayList</p>
-<h3 id="1-4"><a href="#1-4" class="headerlink" title="1 4"></a>1 4</h3><p>在⼤多数的应⽤场景中，读操作的⽐例远远⼤于写操作。那么，当执⾏读操作的时候，对数据是没<br>●<br>有修改的，所以，⽆须对数据进⾏加锁操作。⽽针对于写操作的场景中，则需要加锁来保证数据的<br>正确性。<br>⽽CopyOnWriteArrayList就可以满⾜上⾯所说的场景，即：读操作是不加锁的。⽽写操作也不会<br>●<br>阻塞读的操作，它采⽤了CopyOnWrite⽅式来解决写操作的问题，即：写⼊操作时，进⾏⼀次⾃我<br>复制产⽣⼀个副本，写操作就在副本中执⾏，写完之后，再将副本替换原来的数据。这样，就可以<br>在写数据的同时不影响读数据操作。<br>●<br>读操作源码如下所示：</p>
-<p>【解释】<br>读操作⽐较简单，就是从数组中获取对应下标为index的元素，⽽由于读操作并不需要加锁，所以，<br>get⽅法就是⼀个普通的不加锁的⽅法。<br>●<br>写操作源码如下所示：<br>【解释】<br>●<br>执⾏写操作时，⾸先进⾏lock加锁，然后复制原数组创建⼀个⻓度加1的新数组，即：副本数组。<br>执⾏新增操作时，都是针对副本数组进⾏操作的。当操作新增操作完毕后，将副本数组替换旧的<br>数组。由于array是volatile的，所以当替换后，在多线程之间是可⻅的。<br>这样做的特点，就是，当执⾏写操作的时候，针对的是副本数组；⽽读操作，⼀直是针对着原数<br>●<br>组；所以，写操作是不会阻塞读操作的。<br>. &gt; BlockingQueue</p>
-<h3 id="1-5"><a href="#1-5" class="headerlink" title="1 5"></a>1 5</h3><p>●<br>阻塞队列常⽤⽅法</p>
-<p>由于使⽤offer⽅法时，如果队列已经满了，那么则⽆法插⼊成功，会⽴即返回false；同样的，当我<br>●<br>们调⽤<code>poll</code>⽅法的时候，如果队列中是空的，则也会⽴即返回false；⽽⽐起⽴即返回的情况，我们<br>更关注于put和take这种插⼊或移除失败，在当前阻塞的情况是如何实现的。下⾯我们就医<br>ArrayBlockingQueue和LinkedBlockingQueue为例。<br>. . &gt; ArrayBlockingQueue</p>
-<h3 id="1-5-1"><a href="#1-5-1" class="headerlink" title="1 5 1"></a>1 5 1</h3><p>●<br>构造函数，默认采⽤⾮公平锁<br>【解释】<br>●<br>由操作函数⼊参capacity来指定底层存储元素数组⻓度的⼤⼩。<br>●<br>并且初始化了需要加锁使⽤的ReentrantLock实例，默认采⽤的是⾮公平锁。<br>●<br>notEmpty⽤于执⾏take时进⾏await()等待操作，put时进⾏signal()唤醒操作。<br>●<br>notFull⽤于执⾏take时进⾏signal()唤醒操作，put时进⾏await()等待操作。<br>●<br>put⽅法</p>
-<p>【解释】<br>在执⾏put⽅法逻辑之前，⾸先尝试获得可中断锁——即：lock.lockInterruptibly()，当执⾏<br>●<br>interrupt操作时，该锁可以被中断。<br>如果数组中元素的个数（count）等于数组的⻓度了，也就说明队列满了，那么就在该线程上执⾏<br>●<br>等待操作——notFull.await()；<br>●<br>如果队列没有满，则调⽤enqueue(e)⽅法执⾏⼊列操作。<br>●<br>⼊列操作⾸先会将待插⼊值x放⼊数组下标为putIndex的位置上，然后再将putIndex加1，来指向<br>下⼀次插⼊的下标位置。此处需要注意的是，如果加1后的putIndex等于了数组的⻓度，那么说明<br>已经越界了（因为putIndex是从0开始的），那么此时将putIndex置为0，即：待插⼊的指针指向<br>了数组的头部。做循环式插⼊。<br>最后，执⾏count++来计算元素总个数，并且调⽤notEmpty.signal()⽅法来解除阻塞（即：当队<br>●<br>列为空的时候，执⾏take⽅法会被notEmpty.await()阻塞）<br>●<br>take⽅法</p>
-<p>【解释】<br>take⽅法跟上⾯我们看的put⽅法类似，区别是出队的指针是takeIndex。如果队列中为空，那么<br>●<br>当调⽤take⽅法执⾏出队操作时，就会执⾏notEmpty.await()⽅法执⾏等待操作，并释放锁资<br>源。当调⽤put⽅法向队列中放⼊元素之后 ，会调⽤notEmpty.signal⽅法对等待的线程执⾏唤醒<br>操作。那么线程继续执⾏出队操作，执⾏完毕后，会调⽤notFull.signal⽅法来唤醒在notFull上⾯<br>await的线程。<br>. . &gt; LinkedBlockingQueue</p>
-<h3 id="1-5-2"><a href="#1-5-2" class="headerlink" title="1 5 2"></a>1 5 2</h3><p>●<br>构造函数，默认⻓度为2^31，⼤概21亿多</p>
-<p>【解释】<br>●<br>在构造函数中，创建⼀个空的节点，作为整个链表的头节点。<br>●<br>put源码和注释如下所示：<br>●<br>take源码和注释如下所示：</p>
+<h3 id="1-4"><a href="#1-4" class="headerlink" title="1 4"></a>1 4</h3><p>在⼤多数的应⽤场景中，读操作的⽐例远远⼤于写操作。那么，当执⾏读操作的时候，对数据是没</p>
+<p>●</p>
+<p>有修改的，所以，⽆须对数据进⾏加锁操作。⽽针对于写操作的场景中，则需要加锁来保证数据的</p>
+<p>正确性。</p>
+<p>⽽CopyOnWriteArrayList就可以满⾜上⾯所说的场景，即：读操作是不加锁的。⽽写操作也不会</p>
+<p>●</p>
+<p>阻塞读的操作，它采⽤了CopyOnWrite⽅式来解决写操作的问题，即：写⼊操作时，进⾏⼀次⾃我</p>
+<p>复制产⽣⼀个副本，写操作就在副本中执⾏，写完之后，再将副本替换原来的数据。这样，就可以</p>
+<p>在写数据的同时不影响读数据操作。</p>
+<p>●</p>
+<p>读操作源码如下所示：</p>
+<p>【解释】</p>
+<p>读操作⽐较简单，就是从数组中获取对应下标为index的元素，⽽由于读操作并不需要加锁，所以，</p>
+<p>get⽅法就是⼀个普通的不加锁的⽅法。</p>
+<p>●</p>
+<p>写操作源码如下所示：</p>
+<p>【解释】</p>
+<p>●</p>
+<p>执⾏写操作时，⾸先进⾏lock加锁，然后复制原数组创建⼀个⻓度加1的新数组，即：副本数组。</p>
+<p>执⾏新增操作时，都是针对副本数组进⾏操作的。当操作新增操作完毕后，将副本数组替换旧的</p>
+<p>数组。由于array是volatile的，所以当替换后，在多线程之间是可⻅的。</p>
+<p>这样做的特点，就是，当执⾏写操作的时候，针对的是副本数组；⽽读操作，⼀直是针对着原数</p>
+<p>●</p>
+<p>组；所以，写操作是不会阻塞读操作的。</p>
+<p>. &gt; BlockingQueue</p>
+<h3 id="1-5"><a href="#1-5" class="headerlink" title="1 5"></a>1 5</h3><p>●</p>
+<p>阻塞队列常⽤⽅法</p>
+<p>由于使⽤offer⽅法时，如果队列已经满了，那么则⽆法插⼊成功，会⽴即返回false；同样的，当我</p>
+<p>●</p>
+<p>们调⽤<code>poll</code>⽅法的时候，如果队列中是空的，则也会⽴即返回false；⽽⽐起⽴即返回的情况，我们</p>
+<p>更关注于put和take这种插⼊或移除失败，在当前阻塞的情况是如何实现的。下⾯我们就医</p>
+<p>ArrayBlockingQueue和LinkedBlockingQueue为例。</p>
+<p>. . &gt; ArrayBlockingQueue</p>
+<h3 id="1-5-1"><a href="#1-5-1" class="headerlink" title="1 5 1"></a>1 5 1</h3><p>●</p>
+<p>构造函数，默认采⽤⾮公平锁</p>
+<p>【解释】</p>
+<p>●</p>
+<p>由操作函数⼊参capacity来指定底层存储元素数组⻓度的⼤⼩。</p>
+<p>●</p>
+<p>并且初始化了需要加锁使⽤的ReentrantLock实例，默认采⽤的是⾮公平锁。</p>
+<p>●</p>
+<p>notEmpty⽤于执⾏take时进⾏await()等待操作，put时进⾏signal()唤醒操作。</p>
+<p>●</p>
+<p>notFull⽤于执⾏take时进⾏signal()唤醒操作，put时进⾏await()等待操作。</p>
+<p>●</p>
+<p>put⽅法</p>
+<p>【解释】</p>
+<p>在执⾏put⽅法逻辑之前，⾸先尝试获得可中断锁——即：lock.lockInterruptibly()，当执⾏</p>
+<p>●</p>
+<p>interrupt操作时，该锁可以被中断。</p>
+<p>如果数组中元素的个数（count）等于数组的⻓度了，也就说明队列满了，那么就在该线程上执⾏</p>
+<p>●</p>
+<p>等待操作——notFull.await()；</p>
+<p>●</p>
+<p>如果队列没有满，则调⽤enqueue(e)⽅法执⾏⼊列操作。</p>
+<p>●</p>
+<p>⼊列操作⾸先会将待插⼊值x放⼊数组下标为putIndex的位置上，然后再将putIndex加1，来指向</p>
+<p>下⼀次插⼊的下标位置。此处需要注意的是，如果加1后的putIndex等于了数组的⻓度，那么说明</p>
+<p>已经越界了（因为putIndex是从0开始的），那么此时将putIndex置为0，即：待插⼊的指针指向</p>
+<p>了数组的头部。做循环式插⼊。</p>
+<p>最后，执⾏count++来计算元素总个数，并且调⽤notEmpty.signal()⽅法来解除阻塞（即：当队</p>
+<p>●</p>
+<p>列为空的时候，执⾏take⽅法会被notEmpty.await()阻塞）</p>
+<p>●</p>
+<p>take⽅法</p>
+<p>【解释】</p>
+<p>take⽅法跟上⾯我们看的put⽅法类似，区别是出队的指针是takeIndex。如果队列中为空，那么</p>
+<p>●</p>
+<p>当调⽤take⽅法执⾏出队操作时，就会执⾏notEmpty.await()⽅法执⾏等待操作，并释放锁资</p>
+<p>源。当调⽤put⽅法向队列中放⼊元素之后 ，会调⽤notEmpty.signal⽅法对等待的线程执⾏唤醒</p>
+<p>操作。那么线程继续执⾏出队操作，执⾏完毕后，会调⽤notFull.signal⽅法来唤醒在notFull上⾯</p>
+<p>await的线程。</p>
+<p>. . &gt; LinkedBlockingQueue</p>
+<h3 id="1-5-2"><a href="#1-5-2" class="headerlink" title="1 5 2"></a>1 5 2</h3><p>●</p>
+<p>构造函数，默认⻓度为2^31，⼤概21亿多</p>
+<p>【解释】</p>
+<p>●</p>
+<p>在构造函数中，创建⼀个空的节点，作为整个链表的头节点。</p>
+<p>●</p>
+<p>put源码和注释如下所示：</p>
+<p>●</p>
+<p>take源码和注释如下所示：</p>
 <p>. . &gt; SynchronousQueue</p>
-<h3 id="1-5-3"><a href="#1-5-3" class="headerlink" title="1 5 3"></a>1 5 3</h3><p>●<br>详情请⻅：【源码解析】SynchronousQueue.pdf<br>⼆、线程池<br>. &gt; <code>ThreadPoolExecutor</code></p>
-<h3 id="2-1"><a href="#2-1" class="headerlink" title="2 1"></a>2 1</h3><p>●<br>详情请⻅：【源码解析】<code>ThreadPoolExecutor</code>.pdf<br>. &gt; ForkJoinPool</p>
+<h3 id="1-5-3"><a href="#1-5-3" class="headerlink" title="1 5 3"></a>1 5 3</h3><p>●</p>
+<p>详情请⻅：【源码解析】SynchronousQueue.pdf</p>
+<p>⼆、线程池</p>
+<p>. &gt; <code>ThreadPoolExecutor</code></p>
+<h3 id="2-1"><a href="#2-1" class="headerlink" title="2 1"></a>2 1</h3><p>●</p>
+<p>详情请⻅：【源码解析】<code>ThreadPoolExecutor</code>.pdf</p>
+<p>. &gt; ForkJoinPool</p>
 <h3 id="2-2"><a href="#2-2" class="headerlink" title="2 2"></a>2 2</h3><p>. . &gt; 概述</p>
-<h3 id="2-2-1"><a href="#2-2-1" class="headerlink" title="2 2 1"></a>2 2 1</h3><p>ForkJoinPool可以给我们提供分⽽治之的功能，当我们有⼤量任务需要处理的时候，我们可以将<br>●<br>其分为N个批次，然后每个批次开启⼦线程去并发执⾏，当⼦线程都执⾏完毕后，再对结果进⾏汇<br>总计算。这种思想就类似于Hadoop的MapReduce⽅式。其中，fork表示开启⼀个执⾏分⽀，即：<br>创建⼦线程去执⾏某些任务。⽽join我们在前⾯也介绍过，它具有等待的含义，也就是使⽤fork()后</p>
-<p>系统多了⼀个执⾏分⽀或执⾏线程，所以需要等待这个分⽀执⾏完毕，才能进⾏最后结果汇总的计<br>算。如下图所示：<br>如果我们随意的去fork线程，那么就会导致系统开启了很多⼦线程⽽造成系统开销过⼤，从⽽影响<br>●<br>系统的性能。所以，JDK为我们提供了ForkJoinPool线程池⽤来解决这个问题。它采⽤对于fork()⽅<br>法并不着急开启线程，⽽是提交给ForkJoinPool线程池去进⾏处理，从⽽节省系统开⽀。由于线程<br>池的优化，提交的任务和线程数量并不是⼀对⼀的关系。在绝⼤多数情况下，⼀个物理线程实际上<br>是需要处理多个逻辑任务的。因此，每个线程必然需要拥有⼀个任务队列。 因此，在实际执⾏过程<br>中，可能過到这么⼀种情况：线程A已经把⾃⼰的任务都执⾏完成了， ⽽线程B还有⼀堆任务等着处<br>理，此时，线程A就会“帮助”线程 B，从线程B的任务队列中拿⼀个任务过来处理，尽可能地达到平<br>街。从⽽显示了这种互相帮助的精神。但是，其中⼀个值得注意的地⽅是，当线程试图帮助别⼈<br>时，总是从任务队列的底部开始拿数据，⽽线程试因执⾏⾃⼰的任务时，则是从相反的顶部开始<br>拿。因此这种⾏为也⼗分有利于避免数据竞争。如下图所示：</p>
+<h3 id="2-2-1"><a href="#2-2-1" class="headerlink" title="2 2 1"></a>2 2 1</h3><p>ForkJoinPool可以给我们提供分⽽治之的功能，当我们有⼤量任务需要处理的时候，我们可以将</p>
+<p>●</p>
+<p>其分为N个批次，然后每个批次开启⼦线程去并发执⾏，当⼦线程都执⾏完毕后，再对结果进⾏汇</p>
+<p>总计算。这种思想就类似于Hadoop的MapReduce⽅式。其中，fork表示开启⼀个执⾏分⽀，即：</p>
+<p>创建⼦线程去执⾏某些任务。⽽join我们在前⾯也介绍过，它具有等待的含义，也就是使⽤fork()后</p>
+<p>系统多了⼀个执⾏分⽀或执⾏线程，所以需要等待这个分⽀执⾏完毕，才能进⾏最后结果汇总的计</p>
+<p>算。如下图所示：</p>
+<p>如果我们随意的去fork线程，那么就会导致系统开启了很多⼦线程⽽造成系统开销过⼤，从⽽影响</p>
+<p>●</p>
+<p>系统的性能。所以，JDK为我们提供了ForkJoinPool线程池⽤来解决这个问题。它采⽤对于fork()⽅</p>
+<p>法并不着急开启线程，⽽是提交给ForkJoinPool线程池去进⾏处理，从⽽节省系统开⽀。由于线程</p>
+<p>池的优化，提交的任务和线程数量并不是⼀对⼀的关系。在绝⼤多数情况下，⼀个物理线程实际上</p>
+<p>是需要处理多个逻辑任务的。因此，每个线程必然需要拥有⼀个任务队列。 因此，在实际执⾏过程</p>
+<p>中，可能過到这么⼀种情况：线程A已经把⾃⼰的任务都执⾏完成了， ⽽线程B还有⼀堆任务等着处</p>
+<p>理，此时，线程A就会“帮助”线程 B，从线程B的任务队列中拿⼀个任务过来处理，尽可能地达到平</p>
+<p>街。从⽽显示了这种互相帮助的精神。但是，其中⼀个值得注意的地⽅是，当线程试图帮助别⼈</p>
+<p>时，总是从任务队列的底部开始拿数据，⽽线程试因执⾏⾃⼰的任务时，则是从相反的顶部开始</p>
+<p>拿。因此这种⾏为也⼗分有利于避免数据竞争。如下图所示：</p>
 <p>. . &gt; RecursiveTask执⾏有返回值任务</p>
-<h3 id="2-2-2"><a href="#2-2-2" class="headerlink" title="2 2 2"></a>2 2 2</h3><p>●<br>通过RecursiveTask的⼦类，实现带返回值的计算</p>
+<h3 id="2-2-2"><a href="#2-2-2" class="headerlink" title="2 2 2"></a>2 2 2</h3><p>●</p>
+<p>通过RecursiveTask的⼦类，实现带返回值的计算</p>
 <p>. . &gt; RecursiveAction执⾏⽆返回值任务</p>
-<h3 id="2-2-1-1"><a href="#2-2-1-1" class="headerlink" title="2 2 1"></a>2 2 1</h3><p>●<br>通过RecursiveAction的⼦类，实现不带返回值的计算</p>
-<h2 id="三、Future-1"><a href="#三、Future-1" class="headerlink" title="三、Future"></a>三、Future</h2><p>●<br>JDK内置的Future模式</p>
-<p>可以通过调⽤线程池的submit⽅法，返回Future，然后调⽤get⽅法来获得⼦线程计算的结果值，如<br>●<br>下所示：</p>
+<h3 id="2-2-1-1"><a href="#2-2-1-1" class="headerlink" title="2 2 1"></a>2 2 1</h3><p>●</p>
+<p>通过RecursiveAction的⼦类，实现不带返回值的计算</p>
+<h2 id="三、Future-1"><a href="#三、Future-1" class="headerlink" title="三、Future"></a>三、Future</h2><p>●</p>
+<p>JDK内置的Future模式</p>
+<p>可以通过调⽤线程池的submit⽅法，返回Future，然后调⽤get⽅法来获得⼦线程计算的结果值，如</p>
+<p>●</p>
+<p>下所示：</p>
 <p>. &gt; FutureTask</p>
-<h3 id="3-1"><a href="#3-1" class="headerlink" title="3 1"></a>3 1</h3><p>FutureTask是RunnableFuture的⼀个具体实现，它内部有⼀个内部类Sync，它赋值内部逻辑的实<br>●<br>现。⽽Sync会最终调⽤Callable接⼝，完成实际数据的组装⼯作。<br>Callable接⼝有⼀个call()⽅法，通过⽅法内部的计算，可以将结果返回出来。这个Callable接⼝也<br>●<br>是这个Future框架和应⽤程序直接的重要桥梁。我们可以将需要实现的逻辑在call()⽅法中实现。通<br>常，我们会使⽤Callable实例构造⼀个FutureTask实例，并将它提交给线程池。<br>●<br>下⾯是具体实现的例⼦：</p>
-<p>【解释】<br>●<br>我们把需要实现的逻辑在Callable接⼝的call⽅法中实现。<br>●<br>当构造FutureTask时，将Callable实例传给它，告诉FutureTask去做什么事情可以有返回值。<br>然后，我们将FutureTask提交（submit）给线程池。显然，作为⼀个简单的任务提交，这⾥必然<br>●<br>是⽴即返回的，因此程序不会阻塞。<br>接下来，我们不⽤关系数据是如何计算和产⽣的，我们放⼿去做其他事情（例如：上⾯例⼦中<br>●<br>Sleep了2秒钟），然后，当我们需要计算的结果时，调⽤FutureTask的get()⽅法获得计算结果。</p>
+<h3 id="3-1"><a href="#3-1" class="headerlink" title="3 1"></a>3 1</h3><p>FutureTask是RunnableFuture的⼀个具体实现，它内部有⼀个内部类Sync，它赋值内部逻辑的实</p>
+<p>●</p>
+<p>现。⽽Sync会最终调⽤Callable接⼝，完成实际数据的组装⼯作。</p>
+<p>Callable接⼝有⼀个call()⽅法，通过⽅法内部的计算，可以将结果返回出来。这个Callable接⼝也</p>
+<p>●</p>
+<p>是这个Future框架和应⽤程序直接的重要桥梁。我们可以将需要实现的逻辑在call()⽅法中实现。通</p>
+<p>常，我们会使⽤Callable实例构造⼀个FutureTask实例，并将它提交给线程池。</p>
+<p>●</p>
+<p>下⾯是具体实现的例⼦：</p>
+<p>【解释】</p>
+<p>●</p>
+<p>我们把需要实现的逻辑在Callable接⼝的call⽅法中实现。</p>
+<p>●</p>
+<p>当构造FutureTask时，将Callable实例传给它，告诉FutureTask去做什么事情可以有返回值。</p>
+<p>然后，我们将FutureTask提交（submit）给线程池。显然，作为⼀个简单的任务提交，这⾥必然</p>
+<p>●</p>
+<p>是⽴即返回的，因此程序不会阻塞。</p>
+<p>接下来，我们不⽤关系数据是如何计算和产⽣的，我们放⼿去做其他事情（例如：上⾯例⼦中</p>
+<p>●</p>
+<p>Sleep了2秒钟），然后，当我们需要计算的结果时，调⽤FutureTask的get()⽅法获得计算结果。</p>
 <p>. &gt; <code>CompletableFuture</code></p>
-<h3 id="3-2"><a href="#3-2" class="headerlink" title="3 2"></a>3 2</h3><p>●<br>在Java 8中，新增了CompletableFuture类作为Future的增强类。它实现了CompletionStage接<br>⼝，该接⼝有38个⽅法，是为了函数式编程中的流式调⽤准备的。<br>. . &gt; 执⾏通知</p>
-<h3 id="3-2-1"><a href="#3-2-1" class="headerlink" title="3 2 1"></a>3 2 1</h3><p>如果需要向CompletableFuture请求⼀个数据，但是需要数据准备好才能发起这个请求，那么此<br>●<br>时，我们就可以利⽤⼿动设置CompletableFuture的完成状态。下⾯例⼦中，我们获取并打印被通<br>知的值：<br>. . &gt; 执⾏异步任务</p>
-<h3 id="3-2-2"><a href="#3-2-2" class="headerlink" title="3 2 2"></a>3 2 2</h3><p>●<br>可以通过supplyAsync和runAsync来执⾏异步任务，具体⽅法如下所示：<br>【解释】<br>●<br>supplyAsync()⽅法⽤于那些需要有返回值的场景；<br>●<br>runAsync()⽅法⽤于没有返回值的场景；<br>在这两个⽅法中，都分别有⼀个⽅法可以接收⼀个Executor参数。这就使我们可以让<br>●</p>
-<p><code>Supplier</code><u>或者Runnable在指定的线程池中⼯作。如果不确定，则在默认的系统公共的<br>ForkJoinPool.common线程池中执⾏。<br>●<br>在Java 8中，新增了ForkJoinPool.commonPool()⽅法。它可以获得⼀个公共的ForkJoin线程<br>池。这个公共线程池中的所有线程都是Daemon线程。这意味着如果主线程退出，这些线程⽆论<br>是否执⾏完毕，都会退出系统。<br>●<br>下⾯是异步任务的例⼦：</u></p>
+<h3 id="3-2"><a href="#3-2" class="headerlink" title="3 2"></a>3 2</h3><p>●</p>
+<p>在Java 8中，新增了CompletableFuture类作为Future的增强类。它实现了CompletionStage接</p>
+<p>⼝，该接⼝有38个⽅法，是为了函数式编程中的流式调⽤准备的。</p>
+<p>. . &gt; 执⾏通知</p>
+<h3 id="3-2-1"><a href="#3-2-1" class="headerlink" title="3 2 1"></a>3 2 1</h3><p>如果需要向CompletableFuture请求⼀个数据，但是需要数据准备好才能发起这个请求，那么此</p>
+<p>●</p>
+<p>时，我们就可以利⽤⼿动设置CompletableFuture的完成状态。下⾯例⼦中，我们获取并打印被通</p>
+<p>知的值：</p>
+<p>. . &gt; 执⾏异步任务</p>
+<h3 id="3-2-2"><a href="#3-2-2" class="headerlink" title="3 2 2"></a>3 2 2</h3><p>●</p>
+<p>可以通过supplyAsync和runAsync来执⾏异步任务，具体⽅法如下所示：</p>
+<p>【解释】</p>
+<p>●</p>
+<p>supplyAsync()⽅法⽤于那些需要有返回值的场景；</p>
+<p>●</p>
+<p>runAsync()⽅法⽤于没有返回值的场景；</p>
+<p>在这两个⽅法中，都分别有⼀个⽅法可以接收⼀个Executor参数。这就使我们可以让</p>
+<p>●</p>
+<p><code>Supplier</code><u>或者Runnable在指定的线程池中⼯作。如果不确定，则在默认的系统公共的</u></p>
+<p>ForkJoinPool.common线程池中执⾏。</p>
+<p>●</p>
+<p>在Java 8中，新增了ForkJoinPool.commonPool()⽅法。它可以获得⼀个公共的ForkJoin线程</p>
+<p>池。这个公共线程池中的所有线程都是Daemon线程。这意味着如果主线程退出，这些线程⽆论</p>
+<p>是否执⾏完毕，都会退出系统。</p>
+<p>●</p>
+<p>下⾯是异步任务的例⼦：</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -898,7 +1118,7 @@ title: 并发容器和线程池date: 2025-08-05 16:00:00author: SKimg:coverImg: 
                     </span>
                     <a href="https://liaoxingwang.github.io" class="b-link-green">屿</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2026/08/04/blog-open-source-java-interview-bing-fa-rong-qi-he-xian-cheng-chi/" class="b-link-green"></a>
+                    <a href="/2025/08/05/blog-open-source-java-interview-bing-fa-rong-qi-he-xian-cheng-chi/" class="b-link-green">并发容器和线程池</a>
                 </p>
             </div>
 
@@ -954,30 +1174,52 @@ title: 并发容器和线程池date: 2025-08-05 16:00:00author: SKimg:coverImg: 
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2026/08/04/blog-open-source-java-interview-bing-fa-bian-cheng-ji-chu-zhi-shi/">
+                <a href="/2025/08/05/blog-open-source-java-interview-bing-fa-bian-cheng-ji-chu-zhi-shi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="并发编程基础知识">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">并发编程基础知识</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-title: 并发编程基础知识date: 2025-08-05 17:00:00author: SKimg:coverImg: /medias/banner/0.jpgtop: falsecover: truetoc: truemathj
+                            【讲义】第讲：并发编程基础知识 .> 原⼦性（Atomicity） .> 可⻅性（Visibility） .> 有序性（Ordering） ..> 指令重排 ..> Happen-Before规则 .> stop（被废弃） .> interrupt&isInterr
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2026-08-04
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2025-08-05
                         </span>
                         <span class="publish-author">
                             
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java面试-2024/" class="post-category" target="_blank">
+                                    Java面试/2024
+                                </a>
+                            
+                            
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/面试/" target="_blank">
+                        <span class="chip bg-color">面试</span>
+                    </a>
+                    
+                    <a href="/tags/Java面试/" target="_blank">
+                        <span class="chip bg-color">Java面试</span>
+                    </a>
+                    
+                    <a href="/tags/2024/" target="_blank">
+                        <span class="chip bg-color">2024</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -989,30 +1231,52 @@ title: 并发编程基础知识date: 2025-08-05 17:00:00author: SKimg:coverImg: 
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2026/08/04/blog-open-source-java-interview-aqs-he-juc/">
+                <a href="/2025/08/05/blog-open-source-java-interview-spring-mian-shi-zhuan-ti/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Spring面试专题">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">Spring面试专题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-title: AQS和JUCdate: 2025-08-05 09:00:00author: SKimg:coverImg: /medias/banner/0.jpgtop: falsecover: truetoc: truemathja
+                            以下为spring常见面试问题： Spring框架是一个为Java应用程序的开发提供了综合、广泛的基础性支持的Java平台。 Spring帮助开发者解决了开发中基础性的问题，使得开发人员可以专注于应用程序的开发。 Spring框架本身亦是按照设计模式精心打造，这使得我们可以在开发环境中安心的集成Sp
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2026-08-04
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2025-08-05
                             </span>
                         <span class="publish-author">
                             
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java面试-2024/" class="post-category" target="_blank">
+                                    Java面试/2024
+                                </a>
+                            
+                            
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/面试/" target="_blank">
+                        <span class="chip bg-color">面试</span>
+                    </a>
+                    
+                    <a href="/tags/Java面试/" target="_blank">
+                        <span class="chip bg-color">Java面试</span>
+                    </a>
+                    
+                    <a href="/tags/2024/" target="_blank">
+                        <span class="chip bg-color">2024</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -1185,7 +1449,7 @@ title: AQS和JUCdate: 2025-08-05 09:00:00author: SKimg:coverImg: /medias/banner/
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">2588.7k</span> 字
+                <span class="white-color">2588.6k</span> 字
             
 
             
@@ -1377,7 +1641,7 @@ $(function () {
             </script>
         
 
-    
+    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script>
         <style>
             [bg-lazy] {
                 background-image: none !important;
@@ -1390,5 +1654,5 @@ $(function () {
                 preloadRatio: 1,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z\d\-\.\+]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(t.test(e.href)||r.test(e.href))&&(e.href=a.dataset.original)})});</script><script>(r=>{r.imageLazyLoadSetting.processImages=t;var a=r.imageLazyLoadSetting.isSPA,o=r.imageLazyLoadSetting.preloadRatio||1,d=i();function i(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(t){(a||t)&&(d=i());for(var e,n=0;n<d.length;n++)0<=(e=(e=d[n]).getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(r.innerHeight*o||document.documentElement.clientHeight*o)&&(()=>{var t,e,a,o,i=d[n];e=function(){d=d.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).dataset.loaded||(t.hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(a=new Image,o=t.getAttribute("data-original"),a.onload=function(){t.src=o,t.removeAttribute("data-original"),t.setAttribute("data-loaded",!0),e&&e()},a.onerror=function(){t.removeAttribute("data-original"),t.setAttribute("data-loaded",!1),t.src=o},t.src!==o&&(a.src=o)))})()}function e(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",e),r.addEventListener("resize",e),r.addEventListener("orientationchange",e)})(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z\d\-\.\+]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(t.test(e.href)||r.test(e.href))&&(e.href=a.dataset.original)})});</script><script>(r=>{r.imageLazyLoadSetting.processImages=t;var a=r.imageLazyLoadSetting.isSPA,o=r.imageLazyLoadSetting.preloadRatio||1,d=i();function i(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(t){(a||t)&&(d=i());for(var e,n=0;n<d.length;n++)0<=(e=(e=d[n]).getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(r.innerHeight*o||document.documentElement.clientHeight*o)&&(()=>{var t,e,a,o,i=d[n];e=function(){d=d.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).dataset.loaded||(t.hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(a=new Image,o=t.getAttribute("data-original"),a.onload=function(){t.src=o,t.removeAttribute("data-original"),t.setAttribute("data-loaded",!0),e&&e()},a.onerror=function(){t.removeAttribute("data-original"),t.setAttribute("data-loaded",!1),t.src=o},t.src!==o&&(a.src=o)))})()}function e(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",e),r.addEventListener("resize",e),r.addEventListener("orientationchange",e)})(this);</script></body>
 </html>
