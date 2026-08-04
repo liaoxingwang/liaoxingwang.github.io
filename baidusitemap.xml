@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://liaoxingwang.github.io/2024/03/18/blog-open-source-codelayering/</loc>
+    <lastmod>2026-08-04</lastmod>
+  </url>
+  <url>
     <loc>https://liaoxingwang.github.io/2026/08/03/blog-open-source-hexo-giscus/</loc>
     <lastmod>2026-08-03</lastmod>
   </url>
@@ -37,15 +41,19 @@
     <lastmod>2026-08-03</lastmod>
   </url>
   <url>
-    <loc>https://liaoxingwang.github.io/2023/05/12/blog-open-source-linux/</loc>
-    <lastmod>2026-08-03</lastmod>
-  </url>
-  <url>
     <loc>https://liaoxingwang.github.io/2023/05/12/blog-open-source-mybatis-plus/</loc>
     <lastmod>2026-08-03</lastmod>
   </url>
   <url>
     <loc>https://liaoxingwang.github.io/2024/12/21/blog-open-source-javanote/</loc>
+    <lastmod>2026-08-03</lastmod>
+  </url>
+  <url>
+    <loc>https://liaoxingwang.github.io/2023/05/12/blog-open-source-linux/</loc>
+    <lastmod>2026-08-03</lastmod>
+  </url>
+  <url>
+    <loc>https://liaoxingwang.github.io/2023/03/22/blog-open-source-java-environment/</loc>
     <lastmod>2026-08-03</lastmod>
   </url>
   <url>
@@ -61,15 +69,7 @@
     <lastmod>2026-08-03</lastmod>
   </url>
   <url>
-    <loc>https://liaoxingwang.github.io/2023/03/22/blog-open-source-java-environment/</loc>
-    <lastmod>2026-08-03</lastmod>
-  </url>
-  <url>
     <loc>https://liaoxingwang.github.io/2024/04/16/blog-open-source-design-patterns/</loc>
-    <lastmod>2026-08-03</lastmod>
-  </url>
-  <url>
-    <loc>https://liaoxingwang.github.io/2024/03/18/blog-open-source-codelayering/</loc>
     <lastmod>2026-08-03</lastmod>
   </url>
   <url>

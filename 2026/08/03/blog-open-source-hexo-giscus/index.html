@@ -785,7 +785,7 @@ Error: Request failed with status code 403
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        920
+                        901
                     </div>
                     
 
@@ -863,12 +863,12 @@ https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token<
     <span class="token attr-name">data-theme</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>preferred_color_scheme<span class="token punctuation">"</span></span>
     <span class="token attr-name">data-lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>zh-CN<span class="token punctuation">"</span></span>
     <span class="token attr-name">crossorigin</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>anonymous<span class="token punctuation">"</span></span>
-    <span class="token attr-name">async</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
-</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token attr-name">async</span><span class="token punctuation">></span></span><span class="token script language-javascript">
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>然后在文章详情模板 <code>post-detail.ejs</code> 中添加引用，停用原有的 Gitalk。</p>
-<pre class="line-numbers language-ejs"><code class="language-ejs">&lt;% if (theme.giscus &amp;&amp; theme.giscus.enable) { %&gt;
-    &lt;%- partial('_partial/giscus') %&gt;
-&lt;% } %&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-ejs"><code class="language-ejs"><% if (theme.giscus && theme.giscus.enable) { %>
+    <%- partial('_partial/giscus') %>
+<% } %><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h3 id="4-配置文件"><a href="#4-配置文件" class="headerlink" title="4. 配置文件"></a>4. 配置文件</h3><p>在主题 <code>_config.yml</code> 中添加 Giscus 配置，同时禁用 Gitalk：</p>
 <pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">gitalk</span><span class="token punctuation">:</span>
   <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
@@ -1296,7 +1296,7 @@ https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token<
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">97.2k</span> 字
+                <span class="white-color">96.7k</span> 字
             
 
             

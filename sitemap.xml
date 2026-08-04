@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://liaoxingwang.github.io/2024/03/18/blog-open-source-codelayering/</loc>
+    
+    <lastmod>2026-08-04T03:00:19.043Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://liaoxingwang.github.io/contact/index.html</loc>
     
     <lastmod>2026-08-04T02:05:08.995Z</lastmod>
@@ -51,14 +58,14 @@
   </url>
   
   <url>
-    <loc>https://liaoxingwang.github.io/archives/index.html</loc>
+    <loc>https://liaoxingwang.github.io/categories/index.html</loc>
     
     <lastmod>2026-08-03T03:50:40.716Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://liaoxingwang.github.io/categories/index.html</loc>
+    <loc>https://liaoxingwang.github.io/archives/index.html</loc>
     
     <lastmod>2026-08-03T03:50:40.716Z</lastmod>
     
@@ -128,13 +135,6 @@
   </url>
   
   <url>
-    <loc>https://liaoxingwang.github.io/2023/05/12/blog-open-source-linux/</loc>
-    
-    <lastmod>2026-08-03T03:50:40.708Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://liaoxingwang.github.io/2023/05/12/blog-open-source-mybatis-plus/</loc>
     
     <lastmod>2026-08-03T03:50:40.708Z</lastmod>
@@ -145,6 +145,20 @@
     <loc>https://liaoxingwang.github.io/2024/12/21/blog-open-source-javanote/</loc>
     
     <lastmod>2026-08-03T03:50:40.708Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://liaoxingwang.github.io/2023/05/12/blog-open-source-linux/</loc>
+    
+    <lastmod>2026-08-03T03:50:40.708Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://liaoxingwang.github.io/2023/03/22/blog-open-source-java-environment/</loc>
+    
+    <lastmod>2026-08-03T03:50:40.706Z</lastmod>
     
   </url>
   
@@ -170,23 +184,9 @@
   </url>
   
   <url>
-    <loc>https://liaoxingwang.github.io/2023/03/22/blog-open-source-java-environment/</loc>
-    
-    <lastmod>2026-08-03T03:50:40.706Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://liaoxingwang.github.io/2024/04/16/blog-open-source-design-patterns/</loc>
     
     <lastmod>2026-08-03T03:50:40.705Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://liaoxingwang.github.io/2024/03/18/blog-open-source-codelayering/</loc>
-    
-    <lastmod>2026-08-03T03:50:40.704Z</lastmod>
     
   </url>
   
