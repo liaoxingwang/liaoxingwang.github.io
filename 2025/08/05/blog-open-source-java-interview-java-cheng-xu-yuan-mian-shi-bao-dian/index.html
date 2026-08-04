@@ -1,0 +1,1452 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+    
+
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Java程序员面试宝典, 商单接企业项目外包 软件开发 整包服务 移动开发 移动开发团队 移动开发项目">
+    <meta name="baidu-site-verification" content="fmlEuI34ir">
+    <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
+    <meta name="description" content="http://www.javaeye.com - 做最棒的软件开发交流社区Java程序员面试宝典作者: HongCheng http://hongcheng.javaeye.comJava程序员面试宝典第 1 / 15 页 本书由JavaE">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Java程序员面试宝典 | 屿">
+    <meta property="og:description" content="http://www.javaeye.com - 做最棒的软件开发交流社区Java程序员面试宝典作者: HongCheng http://hongcheng.javaeye.comJava程序员面试宝典第 1 / 15 页 本书由JavaE">
+    <meta property="og:url" content="https://liaoxingwang.github.io2025/08/05/blog-open-source-java-interview-java-cheng-xu-yuan-mian-shi-bao-dian/">
+    <meta property="og:image" content="https://liaoxingwang.github.io/medias/banner/0.jpg">
+    <meta property="og:site_name" content="屿">
+    <meta property="og:locale" content="zh_CN">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Java程序员面试宝典 | 屿">
+    <meta name="twitter:description" content="http://www.javaeye.com - 做最棒的软件开发交流社区Java程序员面试宝典作者: HongCheng http://hongcheng.javaeye.comJava程序员面试宝典第 1 / 15 页 本书由JavaE">
+    <meta name="twitter:image" content="https://liaoxingwang.github.io/medias/banner/0.jpg">
+
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Java程序员面试宝典 | 屿</title>
+    <link rel="icon" type="image/jpeg" href="/medias/avatars/hwsun.jpg">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/aos/3.0.0-beta.6/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/lightgallery/1.6.12/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <style type="text/css">
+        
+
+            code[class*="language-"],
+            pre[class*="language-"] {
+                white-space: pre !important;
+            }
+
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?46e79e71af0709a5b9106bf20cecc493";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+    
+    
+        <script>
+            (function(){
+                var bp = document.createElement('script');
+                var curProtocol = window.location.protocol.split(':')[0];
+                if (curProtocol === 'https') {
+                    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+                }
+                else {
+                    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                }
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(bp, s);
+            })();
+        </script>
+    
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+    <body>
+
+        <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <span class="logo-span">屿</span>
+                </a>
+            </div>
+            
+
+
+<!-- <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/AV" class="waves-effect waves-light">
+            
+            <i class="fa fa-music"></i>
+            
+            <span>视听</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/galleries" class="waves-effect waves-light">
+            
+            <i class="fa fa-photo"></i>
+            
+            <span>相册</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于我</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/contact" class="waves-effect waves-light">
+            
+            <i class="fa fa-envelope"></i>
+            
+            <span>留言板</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul> -->
+
+<!-- 支持二级菜单特性 liaoxingwang modify 2019.09.17  -->
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right nav-menu">
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/" class="waves-effect waves-light">
+              
+                <i class="fa fa-home"></i>
+              
+              <span>首页</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/tags" class="waves-effect waves-light">
+              
+                <i class="fa fa-tags"></i>
+              
+              <span>标签</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/categories" class="waves-effect waves-light">
+              
+                <i class="fa fa-bookmark"></i>
+              
+              <span>分类</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/archives" class="waves-effect waves-light">
+              
+                <i class="fa fa-archive"></i>
+              
+              <span>归档</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/AV" class="waves-effect waves-light">
+              
+                <i class="fa fa-music"></i>
+              
+              <span>视听</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/galleries" class="waves-effect waves-light">
+              
+                <i class="fa fa-photo"></i>
+              
+              <span>相册</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/about" class="waves-effect waves-light">
+              
+                <i class="fa fa-user-circle-o"></i>
+              
+              <span>关于我</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/contact" class="waves-effect waves-light">
+              
+                <i class="fa fa-envelope"></i>
+              
+              <span>留言板</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/friends" class="waves-effect waves-light">
+              
+                <i class="fa fa-address-book"></i>
+              
+              <span>友情链接</span>
+            </a>
+
+            
+      </li>
+    
+
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <div class="logo-name">屿</div>
+        <div class="logo-desc">
+            
+            湖南工业大学 | 计算机科学与技术
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/AV" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-music"></i>
+                
+                视听
+            </a>
+        </li>
+        
+        <li>
+            <a href="/galleries" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-photo"></i>
+                
+                相册
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于我
+            </a>
+        </li>
+        
+        <li>
+            <a href="/contact" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-envelope"></i>
+                
+                留言板
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/liaoxingwang/" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+
+   
+   
+<!-- 支持二级菜单特性 liaoxingwang modify 2019.09.17  -->
+<!-- <ul class="menu-list mobile-menu-list">
+    
+        <li class="m-nav-item">
+                
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-home"></i>
+                        
+                        首页
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/tags" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-tags"></i>
+                        
+                        标签
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/categories" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-bookmark"></i>
+                        
+                        分类
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/archives" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-archive"></i>
+                        
+                        归档
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/AV" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-music"></i>
+                        
+                        视听
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/galleries" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-photo"></i>
+                        
+                        相册
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/about" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-user-circle-o"></i>
+                        
+                        关于我
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/contact" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-envelope"></i>
+                        
+                        留言板
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/friends" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-address-book"></i>
+                        
+                        友情链接
+                    </a>
+              
+            </li>
+        
+
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/liaoxingwang/" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul> -->
+
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/liaoxingwang/" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+        
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        Java程序员面试宝典
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        
+<!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/面试/" target="_blank">
+                                <span class="chip bg-color">面试</span>
+                            </a>
+                        
+                            <a href="/tags/Java面试/" target="_blank">
+                                <span class="chip bg-color">Java面试</span>
+                            </a>
+                        
+                            <a href="/tags/综合/" target="_blank">
+                                <span class="chip bg-color">综合</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Java面试-综合/" class="post-category" target="_blank">
+                                Java面试/综合
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2025-08-05
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
+                    
+                        SK
+                    
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        16k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        59 分
+                    </div>
+                    
+                
+
+                
+                        <span id="busuanzi_container_site_pv" style='display:none'></span>
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv" ></span>
+
+                
+
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p><a href="http://www.javaeye.com" target="_blank" rel="noopener">http://www.javaeye.com</a> - 做最棒的软件开发交流社区<br>Java程序员面试宝典<br>作者: HongCheng <a href="http://hongcheng.javaeye.com" target="_blank" rel="noopener">http://hongcheng.javaeye.com</a><br>Java程序员面试宝典<br>第 1 / 15 页 本书由JavaEye提供的电子书DIY功能自动生成于 2008-11-19</p>
+<p><a href="http://hongcheng.javaeye.com" target="_blank" rel="noopener">http://hongcheng.javaeye.com</a></p>
+<h3 id="1-Java基础"><a href="#1-Java基础" class="headerlink" title="1. Java基础"></a>1. Java基础</h3><p>1.1 Java程序员面试宝典 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .3<br>第 2 / 15 页</p>
+<p><a href="http://hongcheng.javaeye.com" target="_blank" rel="noopener">http://hongcheng.javaeye.com</a> 1.1 Java程序员面试宝典</p>
+<h3 id="1-1-Java程序员面试宝典"><a href="#1-1-Java程序员面试宝典" class="headerlink" title="1.1 Java程序员面试宝典"></a>1.1 Java程序员面试宝典</h3><p>发表时间: 2008-11-19 关键字: java基础<br>1、String是最基本的数据类型吗? 基本数据类型包括byte、int、char、long、float、double、boolean和short。 java.lang.String类是<br>final类型的，因此不可以继承这个类、不能修改这个类。为了提高效率节省空间，我们应该用StringBuffer类</p>
+<p><strong>Q:</strong> 2、应用服务器与WEB SERVER的区别？应用服务器：Weblogic、Tomcat、Jboss； WEB SERVER：IIS、 Apache<br>3、int 和 <code>Integer</code> 有什么区别 Java 提供两种不同的类型：引用类型和原始类型（或内置类型）。Int是java的原始数据类型，<code>Integer</code><br>是java为int提供的封装类。Java为每个原始类型提供了封装类。原始类型封装类booleanBoolean charCharacter byteByte shortShort<br>intInteger longLong floatFloat doubleDouble 引用类型和原始类型的行为完全不同，并且它们具有不同的语义。引用类型和原始类型<br>具有不同的特征和用法，它们包括：大小和速度问题，这种类型以哪种类型的数据结构存储，当引用类型和原始类型用作某个类的实<br>例数据时所指定的缺省值。对象引用实例变量的缺省值为 null，而原始类型实例变量的缺省值与它们的类型有关。<br>4、<code>String</code> 和StringBuffer的区别 JAVA平台提供了两个类：String和StringBuffer，它们可以储存和操作字符串，即包含多个字符的字<br>符数据。这个String类提供了数值不可改变的字符串。而这个StringBuffer类提供的字符串进行修改。当你知道字符数据要改变的时候你<br>就可以使用StringBuffer。典型地，你可以使用StringBuffers来动态构造字符数据。</p>
+<p><strong>Q:</strong> 5、运行时异常与一般异常有何异同？异常表示程序运行过程中可能出现的非正常状态，运行时异常表示虚拟机的通常操作中可能<br>遇到的异常，是一种常见运行错误。java编译器要求方法必须声明抛出可能发生的非运行时异常，但是并不要求必须声明抛出未被捕获<br>的运行时异常。<br>6、说出Servlet的生命周期，并说出Servlet和CGI的区别。 Servlet被服务器实例化后，容器运行其init方法，请求到达时运行其<br>service方法，service方法自动派遣运行与请求对应的doXXX方法（doGet，doPost）等，当服务器决定将实例销毁的时候调用其destroy<br>方法。与cgi的区别在于servlet处于服务器进程中，它通过多线程方式运行其service方法，一个实例可以服务于多个请求，并且其实例<br>一般不会销毁，而CGI对每个请求都产生新的进程，服务完成后就销毁，所以效率上低于servlet。<br>7、说出ArrayList,<code>Vector</code>, LinkedList的存储性能和特性 ArrayList和Vector都是使用数组方式存储数据，此数组元素数大于实际存储的<br>数据以便增加和插入元素，它们都允许直接按序号索引元素，但是插入元素要涉及数组元素移动等内存操作，所以索引数据快而插入<br>数据慢，Vector由于使用了synchronized方法（线程安全），通常性能上较ArrayList差，而LinkedList使用双向链表实现存储，按序号索<br>引数据需要进行前向或后向遍历，但是插入数据时只需要记录本项的前后项即可，所以插入速度较快。</p>
+<p><strong>Q:</strong> 8、EJB是基于哪些技术实现的？并说出SessionBean和EntityBean的区别，StatefulBean和StatelessBean的区别。 EJB包括<br>Session Bean、Entity Bean、Message Driven Bean，基于JNDI、RMI、JAT等技术实现。 SessionBean在J2EE应用程序中被用来完成<br>一些服务器端的业务操作，例如访问数据库、调用其他EJB组件。EntityBean被用来代表应用系统中用到的数据。对于客户机，<br>SessionBean是一种非持久性对象，它实现某些在服务器上运行的业务逻辑。对于客户机，EntityBean是一种持久性对象，它代表一个<br>存储在持久性存储器中的实体的对象视图，或是一个由现有企业应用程序实现的实体。 Session Bean 还可以再细分为 Stateful<br>Session Bean 与 Stateless Session Bean ，这两种的 Session Bean都可以将系统逻辑放在 method之中执行，不同的是 Stateful<br>Session Bean 可以记录呼叫者的状态，因此通常来说，一个使用者会有一个相对应的 Stateful Session Bean 的实体。Stateless<br>Session Bean 虽然也是逻辑组件，但是他却不负责记录使用者状态，也就是说当使用者呼叫 Stateless Session Bean 的时候，EJB<br>Container 并不会找寻特定的 Stateless Session Bean 的实体来执行这个 method。换言之，很可能数个使用者在执行某个 Stateless<br>Session Bean 的 methods 时，会是同一个 Bean 的 Instance 在执行。从内存方面来看， Stateful Session Bean 与 Stateless Session<br>Bean 比较， Stateful Session Bean 会消耗 J2EE Server 较多的内存，然而 Stateful Session Bean 的优势却在于他可以维持使用者的<br>第 3 / 15 页</p>
+<p><a href="http://hongcheng.javaeye.com" target="_blank" rel="noopener">http://hongcheng.javaeye.com</a> 1.1 Java程序员面试宝典<br>状态。<br>9、<code>Collection</code> 和 Collections的区别。 Collection是集合类的上级接口，继承与他的接口主要有Set 和List. Collections是针对集合类<br>的一个帮助类，他提供一系列静态方法实现对各种集合的搜索、排序、线程安全化等操作。<br>10、&amp;和&amp;&amp;的区别。 &amp;是位运算符，表示按位与运算，&amp;&amp;是逻辑运算符，表示逻辑与（and）。<br>11、HashMap和Hashtable的区别。 HashMap是Hashtable的轻量级实现（非线程安全的实现），他们都完成了Map接口，主要区<br>别在于HashMap允许空（null）键值（key）,由于非线程安全，效率上可能高于Hashtable。 HashMap允许将null作为一个entry的key或<br>者value，而Hashtable不允许。 HashMap把Hashtable的contains方法去掉了，改成containsvalue和containsKey。因为contains方法容<br>易让人引起误解。 Hashtable继承自Dictionary类，而HashMap是Java1.2引进的Map interface的一个实现。最大的不同是，<code>Hashtable</code><br>的方法是Synchronize的，而HashMap不是，在多个线程访问Hashtable时，不需要自己为它的方法实现同步，而HashMap 就必须为之<br>提供外同步。 Hashtable和HashMap采用的hash/rehash算法都大概一样，所以性能不会有很大的差异。<br>12、<code>final</code>, finally, finalize的区别。 <code>final</code> 用于声明属性，方法和类，分别表示属性不可变，方法不可覆盖，类不可继承。finally是异<br>常处理语句结构的一部分，表示总是执行。finalize是Object类的一个方法，在垃圾收集器执行的时候会调用被回收对象的此方法，可<br>以覆盖此方法提供垃圾收集时的其他资源回收，例如关闭文件等。<br>13、sleep() 和 <code>wait</code>() 有什么区别? sleep是线程类（<code>Thread</code>）的方法，导致此线程暂停执行指定时间，给执行机会给其他线程，但<br>是监控状态依然保持，到时后会自动恢复。调用sleep不会释放对象锁。wait是Object类的方法，对此对象调用wait方法导致本线程放弃<br>对象锁，进入等待此对象的等待锁定池，只有针对此对象发出notify方法（或notifyAll）后本线程才进入对象锁定池准备获得对象锁进<br>入运行状态。<br>14、Overload和Override的区别。Overloaded的方法是否可以改变返回值的类型? 方法的重写Overriding和重载Overloading是Java多<br>态性的不同表现。重写Overriding是父类与子类之间多态性的一种表现，重载Overloading是一个类中多态性的一种表现。如果在子类中<br>定义某方法与其父类有相同的名称和参数，我们说该方法被重写 (Overriding)。子类的对象使用这个方法时，将调用子类中的定义，对<br>它而言，父类中的定义如同被“屏蔽”了。如果在一个类中定义了多个同名的方法，它们或有不同的参数个数或有不同的参数类型，则称<br>为方法的重载(Overloading)。Overloaded的方法是可以改变返回值的类型。<br>15、error和exception有什么区别? error 表示恢复不是不可能但很困难的情况下的一种严重问题。比如说内存溢出。不可能指望程<br>序能处理这样的情况。 exception 表示一种设计或实现问题。也就是说，它表示如果程序运行正常，从不会发生的情况。</p>
+<p><strong>Q:</strong> 16、同步和异步有何异同，在什么情况下分别使用他们？举例说明。如果数据将在线程间共享。例如正在写的数据以后可能被另一个<br>线程读到，或者正在读的数据可能已经被另一个线程写过了，那么这些数据就是共享数据，必须进行同步存取。当应用程序在对象上<br>调用了一个需要花费很长时间来执行的方法，并且不希望让程序等待方法的返回时，就应该使用异步编程，在很多情况下采用异步途<br>径往往更有效率。<br>17、<code>abstract</code> class和interface有什么区别?声明方法的存在而不去实现它的类被叫做抽象类（<code>abstract</code> class），它用于要创建一个<br>体现某些基本行为的类，并为该类声明方法，但不能在该类中实现该类的情况。不能创建abstract 类的实例。然而可以创建一个变<br>量，其类型是一个抽象类，并让它指向具体子类的一个实例。不能有抽象构造函数或抽象静态方法。Abstract 类的子类为它们父类中<br>的所有抽象方法提供实现，否则它们也是抽象类为。取而代之，在子类中实现该方法。知道其行为的其它类可以在类中实现这些方<br>法。接口（<code>interface</code>）是抽象类的变体。在接口中，所有方法都是抽象的。多继承性可通过实现这样的接口而获得。接口中的所有方<br>法都是抽象的，没有一个有程序体。接口只可以定义static final成员变量。接口的实现与子类相似，除了该实现类不能从接口定义中继<br>承行为。当类实现特殊接口时，它定义（即将程序体给予）所有这种接口的方法。然后，它可以在实现了该接口的类的任何对象上调<br>第 4 / 15 页</p>
+<p><a href="http://hongcheng.javaeye.com" target="_blank" rel="noopener">http://hongcheng.javaeye.com</a> 1.1 Java程序员面试宝典<br>用接口的方法。由于有抽象类，它允许使用接口名作为引用变量的类型。通常的动态联编将生效。引用可以转换到接口类型或从接口<br>类型转换，instanceof 运算符可以用来决定某对象的类是否实现了接口。<br>18、heap和stack有什么区别。栈是一种线形集合，其添加和删除元素的操作应在同一段完成。栈按照后进先出的方式进行处理。<br>堆是栈的一个组成元素<br>19、forward 和redirect的区别forward是服务器请求资源，服务器直接访问目标地址的URL，把那个URL的响应内容读取过来，然后<br>把这些内容再发给浏览器，浏览器根本不知道服务器发送的内容是从哪儿来的，所以它的地址栏中还是原来的地址。 redirect就是服务<br>端根据逻辑,发送一个状态码,告诉浏览器重新去请求那个地址，一般来说浏览器会用刚才请求的所有参数重新请求，所以<br>session,request参数都可以获取。</p>
+<p><strong>Q:</strong> 20、EJB与JAVA BEAN的区别？Java Bean 是可复用的组件，对Java Bean并没有严格的规范，理论上讲，任何一个Java类都可以是<br>一个Bean。但通常情况下，由于Java Bean是被容器所创建（如Tomcat）的，所以Java Bean应具有一个无参的构造器，另外，通常<br>Java Bean还要实现Serializable接口用于实现Bean的持久性。Java Bean实际上相当于微软COM模型中的本地进程内COM组件，它是不<br>能被跨进程访问的。Enterprise Java Bean 相当于DCOM，即分布式组件。它是基于Java的远程方法调用（RMI）技术的，所以EJB可以<br>被远程访问（跨进程、跨计算机）。但EJB必须被布署在诸如Webspere、WebLogic这样的容器中，EJB客户从不直接访问真正的EJB组<br>件，而是通过其容器访问。EJB容器是EJB组件的代理，EJB组件由容器所创建和管理。客户通过容器来访问真正的EJB组件。<br>21、Static Nested <code>Class</code> 和 Inner Class的不同。 Static Nested Class是被声明为静态（<code>static</code>）的内部类，它可以不依赖于外部类<br>实例被实例化。而通常的内部类需要在外部类实例化后才能实例化。</p>
+<p><strong>Q:</strong> 22、JSP中动态INCLUDE与静态INCLUDE的区别？动态INCLUDE用jsp:include动作实现 &lt;jsp:include page=”included.jsp”<br>flush=”true” /&gt;它总是会检查所含文件中的变化，适合用于包含动态页面，并且可以带参数。静态INCLUDE用include伪码实现,定不会<br>检查所含文件的变化，适用于包含静态页面&lt;%@ include file=”included.htm” %&gt;<br>23、什么时候用assert。 assertion(断言)在软件开发中是一种常用的调试方式，很多开发语言中都支持这种机制。在实现中，<br>assertion就是在程序中的一条语句，它对一个boolean表达式进行检查，一个正确程序必须保证这个boolean表达式的值为true；如果该<br>值为false，说明程序已经处于不正确的状态下，系统将给出警告或退出。一般来说，assertion用于保证程序最基本、关键的正确性。<br>assertion检查通常在开发和测试时开启。为了提高性能，在软件发布后，assertion检查通常是关闭的。<br>24、GC是什么? 为什么要有GC? GC是垃圾收集的意思（Gabage <code>Collection</code>）,内存处理是编程人员容易出现问题的地方，忘记或者<br>错误的内存回收会导致程序或系统的不稳定甚至崩溃，Java提供的GC功能可以自动监测对象是否超过作用域从而达到自动回收内存的<br>目的，Java语言没有提供释放已分配内存的显示操作方法。<br>25、short s1 = 1; s1 = s1 + 1;有什么错? short s1 = 1; s1 += 1;有什么错? short s1 = 1; s1 = s1 + 1; （s1+1运算结果是int型，<br>需要强制转换类型） short s1 = 1; s1 += 1;（可以正确编译）<br>26、<code>Math</code>.round(11.5)等於多少? <code>Math</code>.round(-11.5)等於多少? <code>Math</code>.round(11.5)==12 <code>Math</code>.round(-11.5)==-11 round方法返回与<br>参数最接近的长整数，参数加1/2后求其floor.<br>27、<code>String</code> s = new <code>String</code>(“xyz”);创建了几个String <code>Object</code>? 两个<br>28、设计4个线程，其中两个线程每次对j增加1，另外两个线程对j每次减少1。写出程序。以下程序使用内部类实现线程，对j增减<br>的时候没有考虑顺序问题。 <code>public</code> class ThreadTest1{<code>private</code> int j; <code>public</code> <code>static</code> void main(<code>String</code> args[]){ ThreadTest1 tt=new<br>第 5 / 15 页</p>
+<p><a href="http://hongcheng.javaeye.com" target="_blank" rel="noopener">http://hongcheng.javaeye.com</a> 1.1 Java程序员面试宝典<br>ThreadTest1(); Inc inc=tt.new Inc(); Dec dec=tt.new Dec(); for(int i=0;i&lt;2;i++){ <code>Thread</code> t=new <code>Thread</code>(inc); t.start(); t=new<br><code>Thread</code>(dec); t.start(); } } <code>private</code> <code>synchronized</code> void inc(){ j++; <code>System</code>.out.println(<code>Thread</code>.currentThread().getName()+”-inc:”+j); }<br><code>private</code> <code>synchronized</code> void dec(){ j–; <code>System</code>.out.println(<code>Thread</code>.currentThread().getName()+”-dec:”+j); } class Inc <code>implements</code><br><code>Runnable</code>{ <code>public</code> void run(){ for(int i=0;i&lt;100;i++){ inc(); } } } class Dec <code>implements</code> <code>Runnable</code>{<code>public</code> void run(){ for(int<br>i=0;i&lt;100;i++){ dec(); } } } }<br>29、Java有没有goto? java中的保留字，现在没有在java中使用。<br>30、启动一个线程是用run()还是start()?启动一个线程是调用start()方法，使线程所代表的虚拟处理机处于可运行状态，这意味着它<br>可以由JVM调度并执行。这并不意味着线程就会立即运行。run()方法可以产生必须退出的标志来停止一个线程。</p>
+<p><strong>Q:</strong> 31、EJB包括（SessionBean,EntityBean）说出他们的生命周期，及如何管理事务的？ SessionBean：Stateless Session Bean 的生命<br>周期是由容器决定的，当客户机发出请求要建立一个Bean的实例时，EJB容器不一定要创建一个新的Bean的实例供客户机调用，而是<br>随便找一个现有的实例提供给客户机。当客户机第一次调用一个Stateful Session Bean 时，容器必须立即在服务器中创建一个新的<br>Bean实例，并关联到客户机上，以后此客户机调用Stateful Session Bean 的方法时容器会把调用分派到与此客户机相关联的Bean实<br>例。EntityBean：Entity Beans能存活相对较长的时间，并且状态是持续的。只要数据库中的数据存在，Entity beans就一直存活。而不<br>是按照应用程序或者服务进程来说的。即使EJB容器崩溃了，Entity beans也是存活的。Entity Beans生命周期能够被容器或者 Beans自<br>己管理。EJB通过以下技术管理实务：对象管理组织（OMG）的对象实务服务（OTS），Sun Microsystems的Transaction<br>Service（JTS）、Java Transaction API（JTA），开发组（X/Open）的XA接口。</p>
+<p><strong>Q:</strong> 32、应用服务器有那些？ BEA WebLogic Server，IBM WebSphere Application Server，Oracle9i Application Server，jBoss，Tomcat<br>33、给我一个你最常见到的runtime exception。 ArithmeticException, ArrayStoreException, BufferOverflowException,<br>BufferUnderflowException, CannotRedoException, CannotUndoException, ClassCastException, CMMException,<br>ConcurrentModificationException, DOMException, EmptyStackException, IllegalArgumentException, IllegalMonitorStateException,<br>IllegalPathStateException, IllegalStateException, ImagingOpException, IndexOutOfBoundsException, MissingResourceException,<br>NegativeArraySizeException, NoSuchElementException, NullPointerException, ProfileDataException, ProviderException,<br>RasterFormatException, SecurityException, SystemException, UndeclaredThrowableException, UnmodifiableSetException,<br>UnsupportedOperationException<br>34、接口是否可继承接口? 抽象类是否可实现(<code>implements</code>)接口? 抽象类是否可继承实体类(concrete class)? 接口可以继承接口。抽<br>象类可以实现(<code>implements</code>)接口，抽象类是否可继承实体类，但前提是实体类必须有明确的构造函数。<br>35、<code>List</code>, <code>Set</code>, Map是否继承自Collection接口? <code>List</code>，Set是，Map不是<br>36、说出数据连接池的工作机制是什么? J2EE服务器启动时会建立一定数量的池连接，并一直维持不少于此数目的池连接。客户端<br>程序需要连接时，池驱动程序会返回一个未使用的池连接并将其表记为忙。如果当前没有空闲连接，池驱动程序就新建一定数量的连<br>接，新建连接的数量有配置参数决定。当使用的池连接调用完成后，池驱动程序将此连接表记为空闲，其他调用就可以使用这个连<br>接。<br>37、abstract的method是否可同时是static,是否可同时是native，是否可同时是synchronized? 都不能</p>
+<p><strong>Q:</strong> 38、数组有没有length()这个方法? String有没有length()这个方法？数组没有length()这个方法，有length的属性。String有有length()<br>这个方法。<br>第 6 / 15 页</p>
+<p><a href="http://hongcheng.javaeye.com" target="_blank" rel="noopener">http://hongcheng.javaeye.com</a> 1.1 Java程序员面试宝典<br>39、Set里的元素是不能重复的，那么用什么方法来区分重复与否呢? 是用==还是equals()? 它们有何区别? Set里的元素是不能重复<br>的，那么用iterator()方法来区分重复与否。<code>equals</code>()是判读两个Set是否相等。<code>equals</code>()和==方法决定引用值是否指向同一对象equals()<br>在类中被覆盖，为的是当两个分离的对象的内容和类型相配的话，返回真值。<br>40、构造器Constructor是否可被override?构造器Constructor不能被继承，因此不能重写Overriding，但可以被重载Overloading。<br>41、是否可以继承String类?String类是final类故不可以继承。<br>42、swtich是否能作用在byte上，是否能作用在long上，是否能作用在String上?switch（expr1）中，expr1是一个整数表达式。因此<br>传递给 switch 和 case 语句的参数应该是 int、 short、 char 或者 byte。long,string 都不能作用于swtich。<br>43、try {}里有一个return语句，那么紧跟在这个try后的finally {}里的code会不会被执行，什么时候被执行，在return前还是后?会执<br>行，在return前执行。<br>44、编程题: 用最有效率的方法算出2乘以8等於几? 2 &lt;&lt; 3<br>45、两个对象值相同(x.<code>equals</code>(y) == true)，但却可有不同的hash code，这句话对不对?不对，有相同的hash code。<br>46、当一个对象被当作参数传递到一个方法后，此方法可改变这个对象的属性，并可返回变化后的结果，那么这里到底是值传递还是<br>引用传递? 是值传递。Java 编程语言只有值传递参数。当一个对象实例作为一个参数被传递到方法中时，参数的值就是对该对象的引<br>用。对象的内容可以在被调用的方法中改变，但对象的引用是永远不会改变的。<br>47、当一个线程进入一个对象的一个synchronized方法后，其它线程是否可进入此对象的其它方法? 不能，一个对象的一个<br>synchronized方法只能由一个线程访问。<br>48、编程题: 写一个Singleton出来。 Singleton模式主要作用是保证在Java应用程序中，一个类Class只有一个实例存在。一般<br>Singleton模式通常有几种种形式:第一种形式: 定义一个类，它的构造函数为private的，它有一个static的private的该类变量，在类初始<br>化时实例话，通过一个public的getInstance方法获取对它的引用,继而调用其中的方法。<code>public</code> class Singleton {<code>private</code> Singleton(){}<br><code>private</code> <code>static</code> Singleton instance = new Singleton(); <code>public</code> <code>static</code> Singleton getInstance() { return instance; } } 第二种形式:<br><code>public</code> class Singleton { <code>private</code> <code>static</code> Singleton instance = null; <code>public</code> <code>static</code> <code>synchronized</code> Singleton getInstance() { if<br>(instance==null) instance＝new Singleton(); return instance; } } 其他形式: 定义一个类，它的构造函数为private的，所有方法<br>为static的。一般认为第一种形式要更加安全些<br>49、Java的接口和C++的虚类的相同和不同处。由于Java不支持多继承，而有可能某个类或对象要使用分别在几个类或对象里面的<br>方法或属性，现有的单继承机制就不能满足要求。与继承相比，接口有更高的灵活性，因为接口中没有任何实现代码。当一个类实现<br>了接口以后，该类要实现接口里面所有的方法和属性，并且接口里面的属性在默认状态下面都是public <code>static</code>,所有方法默认情况下是<br><code>public</code>.一个类可以实现多个接口。<br>50、Java中的异常处理机制的简单原理和应用。当JAVA程序违反了JAVA的语义规则时，JAVA虚拟机就会将发生的错误表示为一个异<br>常。违反语义规则包括2种情况。一种是JAVA类库内置的语义检查。例如数组下标越界,会引发IndexOutOfBoundsException;访问null的<br>对象时会引发NullPointerException。另一种情况就是JAVA允许程序员扩展这种语义检查，程序员可以创建自己的异常，并自由选择在<br>何时用throw关键字引发异常。所有的异常都是java.lang.Thowable的子类。<br>第 7 / 15 页</p>
+<p><a href="http://hongcheng.javaeye.com" target="_blank" rel="noopener">http://hongcheng.javaeye.com</a> 1.1 Java程序员面试宝典<br>51、垃圾回收的优点和原理。并考虑2种回收机制。 Java语言中一个显著的特点就是引入了垃圾回收机制，使c++程序员最头疼的<br>内存管理的问题迎刃而解，它使得Java程序员在编写程序的时候不再需要考虑内存管理。由于有个垃圾回收机制，Java中的对象不再<br>有“作用域”的概念，只有对象的引用才有“作用域”。垃圾回收可以有效的防止内存泄露，有效的使用可以使用的内存。垃圾回收器通常<br>是作为一个单独的低级别的线程运行，不可预知的情况下对内存堆中已经死亡的或者长时间没有使用的对象进行清楚和回收，程序员<br>不能实时的调用垃圾回收器对某个对象或所有对象进行垃圾回收。回收机制有分代复制垃圾回收和标记垃圾回收，增量垃圾回收<br>52、请说出你所知道的线程同步的方法。 <code>wait</code>():使一个线程处于等待状态，并且释放所持有的对象的lock。sleep():使一个正在运行<br>的线程处于睡眠状态，是一个静态方法，调用此方法要捕捉InterruptedException异常。<code>notify</code>():唤醒一个处于等待状态的线程，注意的<br>是在调用此方法的时候，并不能确切的唤醒某一个等待状态的线程，而是由JVM确定唤醒哪个线程，而且不是按优先级。Allnotity():唤<br>醒所有处入等待状态的线程，注意并不是给所有唤醒线程一个对象的锁，而是让它们竞争。</p>
+<p><strong>Q:</strong> 53、你所知道的集合类都有哪些？主要方法？最常用的集合类是 List 和 Map。 List 的具体实现包括 ArrayList 和 Vector，它们是可<br>变大小的列表，比较适合构建、存储和操作任何类型对象的元素列表。 <code>List</code> 适用于按数值索引访问元素的情形。 <code>Map</code> 提供了一个更通<br>用的元素存储方法。 <code>Map</code> 集合类用于存储元素对（称作“键”和“值”），其中每个键映射到一个值。<br>54、描述一下JVM加载class文件的原理机制?JVM中类的装载是由ClassLoader和它的子类来实现的,Java ClassLoader 是一个重要的<br>Java运行时系统组件。它负责在运行时查找和装入类文件的类。<br>55、char型变量中能不能存贮一个中文汉字?为什么? 能够定义成为一个中文的，因为java中以unicode编码，一个char占16个字<br>节，所以放一个中文是没问题的<br>56、多线程有几种实现方法,都是什么?同步有几种实现方法,都是什么? 多线程有两种实现方法，分别是继承Thread类与实现<br>Runnable接口 ,同步的实现方面有两种，分别是synchronized,wait与notify<br>57、JSP的内置对象及方法。 request表示HttpServletRequest对象。它包含了有关浏览器请求的信息，并且提供了几个用于获取<br>cookie, header, 和session数据的有用的方法,response表示HttpServletResponse对象，并提供了几个用于设置送回浏览器的响应的方<br>法（如cookies,头信息等） out对象是javax.jsp.JspWriter的一个实例，并提供了几个方法使你能用于向浏览器回送输出结果。<br>pageContext表示一个javax.servlet.jsp.PageContext对象。它是用于方便存取各种范围的名字空间、servlet相关的对象的API，并且包装<br>了通用的servlet相关功能的方法。 session表示一个请求的javax.servlet.http.HttpSession对象。Session可以存贮用户的状态信息<br>applicaton 表示一个javax.servle.ServletContext对象。这有助于查找有关servlet引擎和servlet环境的信息 config表示一个<br>javax.servlet.ServletConfig对象。该对象用于存取servlet实例的初始化参数。 page表示从该页面产生的一个servlet实例<br>58、线程的基本概念、线程的基本状态以及状态之间的关系线程指在程序执行过程中，能够执行程序代码的一个执行单位，每个程<br>序至少都有一个线程，也就是程序本身。Java中的线程有四种状态分别是：运行、就绪、挂起、结束。<br>59、JSP的常用指令&lt;%@page language=”java” contenType=”text/html;charset=gb2312” session=”true” buffer=”64kb”<br>autoFlush=”true” isThreadSafe=”true” info=”text” errorPage=”error.jsp” isErrorPage=”true” isELIgnored=”true” pageEncoding=”gb2312”<br>import=”java.sql.*”%&gt;isErrorPage(是否能使用Exception对象)，isELIgnored(是否忽略表达式) &lt;%@include file=”filename”%&gt;&lt;%@taglib<br>prefix=”c”uri=”http://……”%&gt;</p>
+<p><strong>Q:</strong> 60、什么情况下调用doGet()和doPost()？Jsp页面中的form标签里的method属性为get时调用doGet()，为post时调用doPost()。<br>61、servlet的生命周期web容器加载servlet，生命周期开始。通过调用servlet的init()方法进行servlet的初始化。通过调用service()方法<br>实现，根据请求的不同调用不同的do***()方法。结束服务，web容器调用servlet的destroy()方法。<br>第 8 / 15 页</p>
+<p><a href="http://hongcheng.javaeye.com" target="_blank" rel="noopener">http://hongcheng.javaeye.com</a> 1.1 Java程序员面试宝典<br>62、如何现实servlet的单线程模式 &lt;%@ page isThreadSafe=”false”%&gt;<br>63、页面间对象传递的方法 request，session，application，cookie等</p>
+<p><strong>Q:</strong> 64、JSP和Servlet有哪些相同点和不同点，他们之间的联系是什么？ JSP是Servlet技术的扩展，本质上是Servlet的简易方式，更强<br>调应用的外表表达。JSP编译后是”类servlet”。Servlet和JSP最主要的不同点在于，Servlet的应用逻辑是在Java文件中，并且完全从表<br>示层中的HTML里分离开来。而JSP的情况是Java和HTML可以组合成一个扩展名为.jsp的文件。JSP侧重于视图，Servlet主要用于控制逻<br>辑。<br>65、四种会话跟踪技术 cookie,url重写,session,隐藏域<br>65,jsp的四种范围 page否是代表与一个页面相关的对象和属性。一个页面由一个编译好的 Java servlet 类（可以带有任何的 include<br>指令，但是没有 include 动作）表示。这既包括 servlet 又包括被编译成 servlet 的 <code>JSP</code> 页面 request是是代表与 Web 客户机发出的一<br>个请求相关的对象和属性。一个请求可能跨越多个页面，涉及多个 Web 组件（由于 forward 指令和 include 动作的关系） session是是<br>代表与用于某个 Web 客户机的一个用户体验相关的对象和属性。一个 Web 会话可以也经常会跨越多个客户机请求 application是是代<br>表与整个 Web 应用程序相关的对象和属性。这实质上是跨越整个 Web 应用程序，包括多个页面、请求和会话的一个全局作用域<br>66、Request对象的主要方法： setAttribute(<code>String</code> name,<code>Object</code>)：设置名字为name的request的参数值 getAttribute(<code>String</code> name)：<br>返回由name指定的属性值 getAttributeNames()：返回request对象所有属性的名字集合，结果是一个枚举的实例 getCookies()：返回客<br>户端的所有Cookie对象，结果是一个Cookie数组 getCharacterEncoding()：返回请求中的字符编码方式 getContentLength()：返回请求<br>的Body的长度 getHeader(<code>String</code> name)：获得HTTP协议定义的文件头信息 getHeaders(<code>String</code> name)：返回指定名字的request Header<br>的所有值，结果是一个枚举的实例 getHeaderNames()：返回所以request Header的名字，结果是一个枚举的实例 getInputStream()：<br>返回请求的输入流，用于获得请求中的数据 getMethod()：获得客户端向服务器端传送数据的方法 getParameter(<code>String</code> name)：获得客<br>户端传送给服务器端的有name指定的参数值 getParameterNames()：获得客户端传送给服务器端的所有参数的名字，结果是一个枚举<br>的实例 getParameterValues(<code>String</code> name)：获得有name指定的参数的所有值 getProtocol()：获取客户端向服务器端传送数据所依据的<br>协议名称 getQueryString()：获得查询字符串 getRequestURI()：获取发出请求字符串的客户端地址 getRemoteAddr()：获取客户端的IP<br>地址 getRemoteHost()：获取客户端的名字 getSession([<code>Boolean</code> create])：返回和请求相关Session getServerName()：获取服务器的名<br>字 getServletPath()：获取客户端所请求的脚本文件的路径 getServerPort()：获取服务器的端口号 removeAttribute(<code>String</code> name)：删除<br>请求中的一个属性</p>
+<p><strong>Q:</strong> 67、J2EE是技术还是平台还是框架？J2EE本身是一个标准，一个为企业分布式应用的开发提供的标准平台。 J2EE也是一个框架，<br>包括JDBC、JNDI、RMI、JMS、EJB、JTA等技术。</p>
+<p><strong>Q:</strong> 68、我们在web应用开发过程中经常遇到输出某种编码的字符，如iso8859-1等，如何输出一个某种编码的字符串？ Public String<br>translate (<code>String</code> str) { <code>String</code> tempStr = “”; try { tempStr = new <code>String</code>(str.getBytes(“ISO-8859-1”), “GBK”); tempStr = tempStr.trim(); }<br>catch (<code>Exception</code> e) { <code>System</code>.err.println(e.getMessage()); } return tempStr; }<br>69、简述逻辑操作(&amp;,|,^)与条件操作(&amp;&amp;,||)的区别。区别主要答两点：a.条件操作只能操作布尔型的,而逻辑操作不仅可以操作布尔<br>型,而且可以操作数值型b.逻辑操作不会产生短路</p>
+<p><strong>Q:</strong> 70、XML文档定义有几种形式？它们之间有何本质区别？解析XML文档有哪几种方式？ a: 两种形式 dtd schema，b: 本质区<br>别:schema本身是xml的，可以被XML解析器解析(这也是从DTD上发展schema的根本目的)，c:有DOM,SAX,STAX等 DOM:处理大型文件<br>时其性能下降的非常厉害。这个问题是由DOM的树结构所造成的，这种结构占用的内存较多，而且DOM必须在解析文件之前把整个文<br>第 9 / 15 页</p>
+<p><a href="http://hongcheng.javaeye.com" target="_blank" rel="noopener">http://hongcheng.javaeye.com</a> 1.1 Java程序员面试宝典<br>档装入内存,适合对XML的随机访问 SAX:不现于DOM,SAX是事件驱动型的XML解析方式。它顺序读取XML文件，不需要一次全部装载整<br>个文件。当遇到像文件开头，文档结束，或者标签开头与标签结束时，它会触发一个事件，用户通过在其回调事件中写入处理代码来<br>处理XML文件，适合对XML的顺序访问 STAX:Streaming API for <code>XML</code> (StAX)</p>
+<p><strong>Q:</strong> 71、简述synchronized和java.util.concurrent.locks.Lock的异同？主要相同点：Lock能完成synchronized所实现的所有功能主要不同<br>点：Lock有比synchronized更精确的线程语义和更好的性能。synchronized会自动释放锁，而Lock一定要求程序员手工释放，并且必须<br>在finally从句中释放。<br>72、EJB的角色和三个对象一个完整的基于EJB的分布式计算结构由六个角色组成，这六个角色可以由不同的开发商提供，每个角色<br>所作的工作必须遵循Sun公司提供的EJB规范，以保证彼此之间的兼容性。这六个角色分别是EJB组件开发者（Enterprise Bean<br>Provider） 、应用组合者（Application Assembler）、部署者（Deployer）、EJB 服务器提供者（EJB Server Provider）、EJB 容器提供<br>者（EJB Container Provider）、系统管理员（<code>System</code> Administrator）三个对象是Remote（Local）接口、Home（LocalHome）接口，<br>Bean类<br>73、EJB容器提供的服务主要提供声明周期管理、代码产生、持续性管理、安全、事务管理、锁和并发行管理等服务。</p>
+<p><strong>Q:</strong> 74、EJB规范规定EJB中禁止的操作有哪些？ 1.不能操作线程和线程API(线程API指非线程对象的方法如notify,wait等)，2.不能操作<br>awt，3.不能实现服务器功能，4.不能对静态属生存取，5.不能使用IO操作直接存取文件系统，6.不能加载本地库.，7.不能将this作为<br>变量和返回，8.不能循环调用。<br>75、remote接口和home接口主要作用remote接口定义了业务方法，用于EJB客户端调用业务方法。home接口是EJB工厂用于创建和<br>移除查找EJB实例<br>76、bean 实例的生命周期对于Stateless Session Bean、Entity Bean、Message Driven Bean一般存在缓冲池管理，而对于Entity Bean<br>和Statefull Session Bean存在Cache管理，通常包含创建实例，设置上下文、创建EJB <code>Object</code>（create）、业务方法调用、remove等过<br>程，对于存在缓冲池管理的Bean，在create之后实例并不从内存清除，而是采用缓冲池调度机制不断重用实例，而对于存在Cache管理<br>的Bean则通过激活和去激活机制保持Bean的状态并限制内存中实例数量。<br>77、EJB的激活机制以Stateful Session Bean 为例：其Cache大小决定了内存中可以同时存在的Bean实例的数量，根据MRU或NRU<br>算法，实例在激活和去激活状态之间迁移，激活机制是当客户端调用某个EJB实例业务方法时，如果对应EJB Object发现自己没有绑定<br>对应的Bean实例则从其去激活Bean存储中（通过序列化机制存储实例）回复（激活）此实例。状态变迁前会调用对应的ejbActive和<br>ejbPassivate方法。<br>78、EJB的几种类型会话（Session）Bean ，实体（Entity）Bean 消息驱动的（Message Driven）Bean ；会话Bean又可分为有状<br>态（Stateful）和无状态（Stateless）两种；实体Bean可分为Bean管理的持续性（BMP）和容器管理的持续性（CMP）两种<br>79、客服端调用EJB对象的几个基本步骤设置JNDI服务工厂以及JNDI服务地址系统属性，查找Home接口，从Home接口调用Create<br>方法创建Remote接口，通过Remote接口调用其业务方法。<br>80、如何给weblogic指定大小的内存? 在启动Weblogic的脚本中（位于所在Domian对应服务器目录下的startServerName），增加<br>set MEM_ARGS=-Xms32m -Xmx200m，可以调整最小内存为32M，最大200M</p>
+<h3 id="81、如何设定的weblogic的热启动模式-开发模式-与产品发布模式-可以在管理控制台中修改对应服务器的启动模式为开发或产品模"><a href="#81、如何设定的weblogic的热启动模式-开发模式-与产品发布模式-可以在管理控制台中修改对应服务器的启动模式为开发或产品模" class="headerlink" title="81、如何设定的weblogic的热启动模式(开发模式)与产品发布模式?可以在管理控制台中修改对应服务器的启动模式为开发或产品模"></a>81、如何设定的weblogic的热启动模式(开发模式)与产品发布模式?可以在管理控制台中修改对应服务器的启动模式为开发或产品模</h3><p>式之一。或者修改服务的启动文件或者commenv文件，增加set PRODUCTION_MODE=true。<br>第 10 / 15 页</p>
+<p><a href="http://hongcheng.javaeye.com" target="_blank" rel="noopener">http://hongcheng.javaeye.com</a> 1.1 Java程序员面试宝典<br>82、如何启动时不需输入用户名与密码?修改服务启动文件，增加 WLS_USER和WLS_PW项。也可以在boot.properties文件中增加加<br>密过的用户名和密码.<br>83、在weblogic管理制台中对一个应用域(或者说是一个网站,Domain)进行jms及ejb或连接池等相关信息进行配置后,实际保存在什么<br>文件中?保存在此Domain的config.xml文件中，它是服务器的核心配置文件。<br>84、说说weblogic中一个Domain的缺省目录结构?比如要将一个简单的helloWorld.jsp放入何目录下,然的在浏览器上就可打入http://<br>主机:端口号//helloword.jsp就可以看到运行结果了? 又比如这其中用到了一个自己写的javaBean该如何办? Domain目录\服务器目录<br>\applications，将应用目录放在此目录下将可以作为应用访问，如果是Web应用，应用目录需要满足Web应用目录要求，jsp文件可以<br>直接放在应用目录中，Javabean需要放在应用目录的WEB-INF目录的classes目录中，设置服务器的缺省应用将可以实现在浏览器上无<br>需输入应用名。<br>85、在weblogic中发布ejb需涉及到哪些配置文件不同类型的EJB涉及的配置文件不同，都涉及到的配置文件包括ejb-<br>jar.xml,weblogic-ejb-jar.xmlCMP实体Bean一般还需要weblogic-cmp-rdbms-jar.xml<br>86、如何在weblogic中进行ssl配置与客户端的认证配置或说说j2ee(标准)进行ssl的配置缺省安装中使用DemoIdentity.jks和<br>DemoTrust.jks KeyStore实现SSL，需要配置服务器使用Enable SSL，配置其端口，在产品模式下需要从CA获取私有密钥和数字证书，<br>创建identity和trust keystore，装载获得的密钥和数字证书。可以配置此SSL连接是单向还是双向的。<br>87、如何查看在weblogic中已经发布的EJB?可以使用管理控制台，在它的Deployment中可以查看所有已发布的EJB<br>88、CORBA是什么?用途是什么? CORBA 标准是公共对象请求代理结构(Common <code>Object</code> Request Broker Architecture)，由对象管理<br>组织 (<code>Object</code> Management Group，缩写为 OMG)标准化。它的组成是接口定义语言(IDL), 语言绑定(binding:也译为联编)和允许应用程序<br>间互操作的协议。其目的为：用不同的程序设计语言书写在不同的进程中运行，为不同的操作系统开发。<br>89、说说你所熟悉或听说过的j2ee中的几种常用模式?及对设计模式的一些看法 Session Facade Pattern：使用SessionBean访问<br>EntityBean；Message Facade Pattern：实现异步调用；EJB Command Pattern：使用Command JavaBeans取代SessionBean，实现轻<br>量级访问；Data Transfer <code>Object</code> Factory：通过DTO Factory简化EntityBean数据提供特性；Generic Attribute Access：通过<br>AttibuteAccess接口简化EntityBean数据提供特性；Business Interface：通过远程（本地）接口和Bean类实现相同接口规范业务逻辑一<br>致性；ＥＪＢ架构的设计好坏将直接影响系统的性能、可扩展性、可维护性、组件可重用性及开发效率。项目越复杂，项目队伍越庞<br>大则越能体现良好设计的重要性。<br>90、说说在weblogic中开发消息Bean时的persistent与non-persisten的差别persistent方式的MDB可以保证消息传递的可靠性,也就是<br>如果EJB容器出现问题而JMS服务器依然会将消息在此MDB可用的时候发送过来，而non－persistent方式的消息将被丢弃。</p>
+<p><strong>Q:</strong> 91、Servlet执行时一般实现哪几个方法？public void init(ServletConfig config)；public ServletConfig getServletConfig()；public String<br>getServletInfo()；<code>public</code> void service(ServletRequest request,ServletResponse response)；<code>public</code> void destroy()</p>
+<p><strong>Q:</strong> 92、常用的设计模式？说明工厂模式。 Java中的23种设计模式：Factory（工厂模式），Builder（建造模式）， Factory<br><code>Method</code>（工厂方法模式），Prototype（原始模型模式），Singleton（单例模式）， Facade（门面模式），Adapter（适配器模式），<br>Bridge（桥梁模式）， Composite（合成模式），Decorator（装饰模式）， Flyweight（享元模式）， Proxy（代理模式），<br>Command（命令模式）， Interpreter（解释器模式）， Visitor（访问者模式），<code>Iterator</code>（迭代子模式）， Mediator（调停者模式），<br>Memento（备忘录模式），Observer（观察者模式），State（状态模式），Strategy（策略模式），Template <code>Method</code>（模板方法模<br>第 11 / 15 页</p>
+<p><a href="http://hongcheng.javaeye.com" target="_blank" rel="noopener">http://hongcheng.javaeye.com</a> 1.1 Java程序员面试宝典<br>式）， Chain Of Responsibleity（责任链模式）。工厂模式：工厂模式是一种经常被使用到的模式，根据工厂模式实现的类可以根据提<br>供的数据生成一组类中某一个类的实例，通常这一组类有一个公共的抽象父类并且实现了相同的方法，但是这些方法针对不同的数据<br>进行了不同的操作。首先需要定义一个基类，该类的子类通过不同的方法实现了基类中的方法。然后需要定义一个工厂类，工厂类可<br>以根据条件生成不同的子类实例。当得到子类的实例后，开发人员可以调用基类中的方法而不必考虑到底返回的是哪一个子类的实<br>例。<br>93、EJB需直接实现它的业务接口或Home接口吗，请简述理由。远程接口和Home接口不需要直接实现，他们的实现代码是由服务<br>器产生的，程序运行中对应实现类会作为对应接口类型的实例被使用。</p>
+<p><strong>Q:</strong> 94、排序都有哪几种方法？请列举。用JAVA实现一个快速排序。排序的方法有：插入排序（直接插入排序、希尔排序），交换排序<br>（冒泡排序、快速排序），选择排序（直接选择排序、堆排序），归并排序，分配排序（箱排序、基数排序）快速排序的伪代码。/ /<br>使用快速排序方法对a[ 0 :n- 1 ]排序，从a[ 0 :n- 1 ]中选择一个元素作为m i d d l e，该元素为支点，把余下的元素分割为两段left 和r i<br>g h t，使得l e f t中的元素都小于等于支点，而right 中的元素都大于等于支点，递归地使用快速排序方法对left 进行排序，递归地使用<br>快速排序方法对right 进行排序，所得结果为l e f t + m i d d l e + r i g h t。<br>95、请对以下在J2EE中常用的名词进行解释(或简单描述)web容器：给处于其中的应用程序组件（<code>JSP</code>，SERVLET）提供一个环境，<br>使JSP,SERVLET直接更容器中的环境变量接口交互，不必关注其它系统问题。主要有WEB服务器来实现。例如：<br>TOMCAT,WEBLOGIC,WEBSPHERE等。该容器提供的接口严格遵守J2EE规范中的WEB APPLICATION 标准。我们把遵守以上标准的WEB<br>服务器就叫做J2EE中的WEB容器。EJB容器：Enterprise java bean 容器。更具有行业领域特色。他提供给运行在其中的组件EJB各种管<br>理功能。只要满足J2EE规范的EJB放入该容器，马上就会被容器进行高效率的管理。并且可以通过现成的接口来获得系统级别的服务。<br>例如邮件服务、事务管理。JNDI：（Java Naming &amp; Directory Interface）JAVA命名目录服务。主要提供的功能是：提供一个目录系<br>统，让其它各地的应用程序在其上面留下自己的索引，从而满足快速查找和定位分布式应用程序的功能。JMS：（Java Message<br>Service）JAVA消息服务。主要实现各个应用程序之间的通讯。包括点对点和广播。JTA：（Java Transaction API）JAVA事务服务。提<br>供各种分布式事务服务。应用程序只需调用其提供的接口即可。JAF：（Java Action FrameWork）JAVA安全认证框架。提供一些安全控<br>制方面的框架。让开发者通过各种部署和自定义实现自己的个性安全控制策略。RMI/IIOP:（Remote <code>Method</code> Invocation /internet对象<br>请求中介协议）他们主要用于通过远程调用服务。例如，远程有一台计算机上运行一个程序，它提供股票分析服务，我们可以在本地<br>计算机上实现对其直接调用。当然这是要通过一定的规范才能在异构的系统之间进行通信。RMI是JAVA特有的。</p>
+<p><strong>Q:</strong> 96、JAVA语言如何进行异常处理，关键字：throws,throw,try,catch,finally分别代表什么意义？在try块中可以抛出异常吗？ Java通过<br>面向对象的方法进行异常处理，把各种不同的异常进行分类，并提供了良好的接口。在Java中，每个异常都是一个对象，它是<br>Throwable类或其它子类的实例。当一个方法出现异常后便抛出一个异常对象，该对象中包含有异常信息，调用这个对象的方法可以捕<br>获到这个异常并进行处理。Java的异常处理是通过5个关键词来实现的：try、catch、throw、throws和finally。一般情况下是用try来执<br>行一段程序，如果出现异常，系统会抛出（throws）一个异常，这时候你可以通过它的类型来捕捉（catch）它，或最后（finally）由<br>缺省处理器来处理。用try来指定一块预防所有“异常”的程序。紧跟在try程序后面，应包含一个catch子句来指定你想要捕捉的“异常”的<br>类型。throw语句用来明确地抛出一个“异常”。throws用来标明一个成员函数可能抛出的各种“异常”。Finally为确保一段代码不管发生什<br>么“异常”都被执行一段代码。可以在一个成员函数调用的外面写一个try语句，在这个成员函数内部写另一个try语句保护其他代码。每<br>当遇到一个try语句，“异常”的框架就放到堆栈上面，直到所有的try语句都完成。如果下一级的try语句没有对某种“异常”进行处理，堆栈<br>就会展开，直到遇到有处理这种“异常”的try语句。</p>
+<p><strong>Q:</strong> 97、一个“.java”源文件中是否可以包括多个类（不是内部类）？有什么限制？可以。必须只有一个类名与文件名相同。<br>98、MVC的各个部分都有那些技术来实现?如何实现? MVC是Model－View－Controller的简写。”Model” 代表的是应用的业务逻辑<br>（通过JavaBean，EJB组件实现）， “View” 是应用的表示面（由JSP页面产生），”Controller” 是提供应用的处理过程控制（一般是一<br>个Servlet），通过这种设计模型把应用逻辑，处理过程和显示逻辑分成不同的组件实现。这些组件可以进行交互和重用。<br>第 12 / 15 页</p>
+<p><a href="http://hongcheng.javaeye.com" target="_blank" rel="noopener">http://hongcheng.javaeye.com</a> 1.1 Java程序员面试宝典</p>
+<h3 id="99、java中有几种方法可以实现一个线程？用什么关键字修饰同步方法-stop-和suspend-方法为何不推荐使用？有两种实现方"><a href="#99、java中有几种方法可以实现一个线程？用什么关键字修饰同步方法-stop-和suspend-方法为何不推荐使用？有两种实现方" class="headerlink" title="99、java中有几种方法可以实现一个线程？用什么关键字修饰同步方法? stop()和suspend()方法为何不推荐使用？有两种实现方"></a>99、java中有几种方法可以实现一个线程？用什么关键字修饰同步方法? stop()和suspend()方法为何不推荐使用？有两种实现方</h3><p>法，分别是继承Thread类与实现Runnable接口用synchronized关键字修饰同步方法反对使用stop()，是因为它不安全。它会解除由线程<br>获取的所有锁定，而且如果对象处于一种不连贯状态，那么其他线程能在那种状态下检查和修改它们。结果很难检查出真正的问题所<br>在。suspend()方法容易发生死锁。调用suspend()的时候，目标线程会停下来，但却仍然持有在这之前获得的锁定。此时，其他任何线<br>程都不能访问锁定的资源，除非被“挂起”的线程恢复运行。对任何线程来说，如果它们想恢复目标线程，同时又试图使用任何一个锁定<br>的资源，就会造成死锁。所以不应该使用suspend()，而应在自己的Thread类中置入一个标志，指出线程应该活动还是挂起。若标志指<br>出线程应该挂起，便用wait()命其进入等待状态。若标志指出线程应当恢复，则用一个notify()重新启动线程。</p>
+<p><strong>Q:</strong> 100、java中有几种类型的流？JDK为每种类型的流提供了一些抽象类以供继承，请说出他们分别是哪些类？字节流，字符流。字节<br>流继承于InputStream \ <code>OutputStream</code>，字符流继承于InputStreamReader \ OutputStreamWriter。在java.io包中还有许多其他的流，主<br>要是为了提高性能和使用方便。<br>101、java中会存在内存泄漏吗，请简单描述。会。如：int i,i2; return (i-i2); //when i为足够大的正数,i2为足够大的负数。结果会<br>造成溢位，导致错误。</p>
+<p><strong>Q:</strong> 102、java中实现多态的机制是什么？方法的重写Overriding和重载Overloading是Java多态性的不同表现。重写Overriding是父类与子<br>类之间多态性的一种表现，重载Overloading是一个类中多态性的一种表现。</p>
+<p><strong>Q:</strong> 103、垃圾回收器的基本原理是什么？垃圾回收器可以马上回收内存吗？有什么办法主动通知虚拟机进行垃圾回收？对于GC来说，<br>当程序员创建对象时，GC就开始监控这个对象的地址、大小以及使用情况。通常，GC采用有向图的方式记录和管理堆(heap)中的所有<br>对象。通过这种方式确定哪些对象是”可达的”，哪些对象是”不可达的”。当GC确定一些对象为”不可达”时，GC就有责任回收这些内存<br>空间。可以。程序员可以手动执行System.gc()，通知GC运行，但是Java语言规范并不保证GC一定会执行。</p>
+<p><strong>Q:</strong> 104、静态变量和实例变量的区别？static i = 10; //常量； class A a; a.i =10;//可变</p>
+<p><strong>Q:</strong> 105、什么是java序列化，如何实现java序列化？序列化就是一种用来处理对象流的机制，所谓对象流也就是将对象的内容进行流<br>化。可以对流化后的对象进行读写操作，也可将流化后的对象传输于网络之间。序列化是为了解决在对对象流进行读写操作时所引发<br>的问题。序列化的实现：将需要被序列化的类实现Serializable接口，该接口没有需要实现的方法，<code>implements</code> Serializable只是为了标<br>注该对象是可被序列化的，然后使用一个输出流(如：FileOutputStream)来构造一个ObjectOutputStream(对象流)对象，接着，使用<br>ObjectOutputStream对象的writeObject(<code>Object</code> obj)方法就可以将参数为obj的对象写出(即保存其状态)，要恢复的话则用输入流。</p>
+<p><strong>Q:</strong> 106、是否可以从一个static方法内部发出对非static方法的调用？不可以,如果其中包含对象的method()；不能保证对象初始化.</p>
+<p><strong>Q:</strong> 107、写clone()方法时，通常都有一行代码，是什么？Clone 有缺省行为，super.clone();他负责产生正确大小的空间，并逐位复制。</p>
+<p><strong>Q:</strong> 108、在JAVA中，如何跳出当前的多重嵌套循环？用break; return 方法。</p>
+<p><strong>Q:</strong> 109、List、Map、Set三个接口，存取元素时，各有什么特点？List 以特定次序来持有元素，可有重复元素。Set 无法拥有重复元<br>素,内部排序。<code>Map</code> 保存key-value值，value可多值。</p>
+<p><strong>Q:</strong> 110、J2EE是什么？J2EE是Sun公司提出的多层(multi-diered),分布式(distributed),基于组件(component-base)的企业级应用模型<br>(enterpriese application model).在这样的一个应用系统中，可按照功能划分为不同的组件，这些组件又可在不同计算机上，并且处于<br>相应的层次(tier)中。所属层次包括客户层(clietn tier)组件,web层和组件,Business层和组件,企业信息系统(EIS)层。<br>第 13 / 15 页</p>
+<p><a href="http://hongcheng.javaeye.com" target="_blank" rel="noopener">http://hongcheng.javaeye.com</a> 1.1 Java程序员面试宝典<br>111、UML方面标准建模语言UML。用例图,静态图(包括类图、对象图和包图),行为图,交互图(顺序图,合作图),实现图。<br>112、说出一些常用的类，包，接口，请各举5个常用的类：BufferedReader BufferedWriter FileReader FileWirter <code>String</code><br><code>Integer</code>；常用的包：java.lang java.awt java.io java.util java.sql；常用的接口：Remote <code>List</code> <code>Map</code> Document NodeList<br>113、开发中都用到了那些设计模式?用在什么场合? 每个模式都描述了一个在我们的环境中不断出现的问题，然后描述了该问题的<br>解决方案的核心。通过这种方式，你可以无数次地使用那些已有的解决方案，无需在重复相同的工作。主要用到了MVC的设计模式。<br>用来开发JSP/Servlet或者J2EE的相关应用。简单工厂模式等。<br>114、jsp有哪些动作?作用分别是什么? JSP共有以下6种基本动作 jsp:include：在页面被请求的时候引入一个文件。 jsp:useBean：<br>寻找或者实例化一个JavaBean。 jsp:setProperty：设置JavaBean的属性。 jsp:getProperty：输出某个JavaBean的属性。 jsp:forward：<br>把请求转到一个新的页面。 jsp:plugin：根据浏览器类型为Java插件生成OBJECT或EMBED标记。<br>115、Anonymous Inner <code>Class</code> (匿名内部类) 是否可以extends(继承)其它类，是否可以implements(实现)<code>interface</code>(接口)? 可以继承其<br>他类或完成其他接口，在swing编程中常用此方式。<br>116、BS与CS的联系与区别。<br>C/S是Client/Server的缩写。服务器通常采用高性能的PC、工作站或小型机，并采用大型数据库系统，如Oracle、Sybase、Informix<br>或 SQL Server。客户端需要安装专用的客户端软件。B/Ｓ是Brower/Server的缩写，客户机上只要安装一个浏览器（Browser），如<br>Netscape Navigator或Internet Explorer，服务器安装Oracle、Sybase、Informix或 SQL Server等数据库。在这种结构下，用户界面完全<br>通过WWW浏览器实现，一部分事务逻辑在前端实现，但是主要事务逻辑在服务器端实现。浏览器通过Ｗeb Server 同数据库进行数据<br>交互。<br>117、C/S 与 B/S 区别： (1)硬件环境不同: C/S 一般建立在专用的网络上, 小范围里的网络环境, 局域网之间再通过专门服务器<br>提供连接和数据交换服务. B/S 建立在广域网之上的, 不必是专门的网络硬件环境,例与电话上网, 租用设备. 信息自己管理. 有比C/<br>S更强的适应范围, 一般只要有操作系统和浏览器就行 (2)对安全要求不同 C/S 一般面向相对固定的用户群, 对信息安全的控<br>制能力很强. 一般高度机密的信息系统采用C/S 结构适宜. 可以通过B/S发布部分可公开信息. B/S 建立在广域网之上, 对安全的控<br>制能力相对弱, 可能面向不可知的用户。 (３)对程序架构不同 C/S 程序可以更加注重流程, 可以对权限多层次校验, 对系统运<br>行速度可以较少考虑. B/S 对安全以及访问速度的多重的考虑, 建立在需要更加优化的基础之上. 比C/S有更高的要求 B/S结构的程<br>序架构是发展的趋势, 从MS的.Net系列的BizTalk 2000 Exchange 2000等, 全面支持网络的构件搭建的系统. SUN 和IBM推的JavaBean<br>构件技术等,使 B/S更加成熟. (４)软件重用不同 C/S 程序可以不可避免的整体性考虑, 构件的重用性不如在B/S要求下的构件<br>的重用性好. B/S 对的多重结构,要求构件相对独立的功能. 能够相对较好的重用.就入买来的餐桌可以再利用,而不是做在墙上的石<br>头桌子 (５)系统维护不同 C/S 程序由于整体性, 必须整体考察, 处理出现的问题以及系统升级. 升级难. 可能是再做一个全新<br>的系统 B/S 构件组成,方面构件个别的更换,实现系统的无缝升级. 系统维护开销减到最小.用户从网上自己下载安装就可以实现升<br>级. (６)处理问题不同 C/S 程序可以处理用户面固定, 并且在相同区域, 安全要求高需求, 与操作系统相关. 应该都是相同的系<br>统 B/S 建立在广域网上, 面向不同的用户群, 分散地域, 这是C/S无法作到的. 与操作系统平台关系最小. (７)用户接口不同<br>C/S 多是建立的Window平台上,表现方法有限,对程序员普遍要求较高 B/S 建立在浏览器上, 有更加丰富和生动的表现方式与用<br>户交流. 并且大部分难度减低,减低开发成本. (８)信息流不同 C/S 程序一般是典型的中央集权的机械式处理, 交互性相对低<br>B/S 信息流向可变化, B-B B-C B-G等信息、流向的变化, 更像交易中心。<br>118、LINUX下线程，GDI类的解释。LINUX实现的就是基于核心轻量级进程的”一对一”线程模型，一个线程实体对应一个核心轻量级<br>进程，而线程之间的管理在核外函数库中实现。 GDI类为图像设备编程接口类库。<br>第 14 / 15 页</p>
+<p><a href="http://hongcheng.javaeye.com" target="_blank" rel="noopener">http://hongcheng.javaeye.com</a> 1.1 Java程序员面试宝典<br>119、STRUTS的应用(如STRUTS架构) Struts是采用Java <code>Servlet</code>/JavaServer Pages技术，开发Web应用程序的开放源码的<br>framework。 采用Struts能开发出基于MVC(Model-View-Controller)设计模式的应用构架。 Struts有如下的主要功能：一.包含一个<br>controller servlet，能将用户的请求发送到相应的Action对象。 二.JSP自由tag库，并且在controller servlet中提供关联支持，帮助开发<br>员创建交互式表单应用。三.提供了一系列实用对象：XML处理、通过Java reflection APIs自动处理JavaBeans属性、国际化的提示和消<br>息。<br>120、Jdo是什么? JDO是Java对象持久化的新的规范，为java data object的简称,也是一个用于存取某种数据仓库中的对象的标准化<br>API。JDO提供了透明的对象存储，因此对开发人员来说，存储数据对象完全不需要额外的代码（如JDBC API的使用）。这些繁琐的例<br>行工作已经转移到JDO产品提供商身上，使开发人员解脱出来，从而集中时间和精力在业务逻辑上。另外，JDO很灵活，因为它可以在<br>任何数据底层上运行。JDBC只是面向关系数据库（RDBMS）JDO更通用，提供到任何数据底层的存储功能，比如关系数据库、文件、<br>XML以及对象数据库（ODBMS）等等，使得应用可移植性更强。</p>
+<h3 id="121、内部类可以引用他包含类的成员吗？有没有什么限制？一个内部类对象可以访问创建它的外部类对象的内容"><a href="#121、内部类可以引用他包含类的成员吗？有没有什么限制？一个内部类对象可以访问创建它的外部类对象的内容" class="headerlink" title="121、内部类可以引用他包含类的成员吗？有没有什么限制？一个内部类对象可以访问创建它的外部类对象的内容"></a>121、内部类可以引用他包含类的成员吗？有没有什么限制？一个内部类对象可以访问创建它的外部类对象的内容</h3><p>122、WEB SERVICE名词解释。JSWDL开发包的介绍。JAXP、JAXM的解释。<code>SOAP</code>、UDDI,WSDL解释。 Web ServiceWeb Service是<br>基于网络的、分布式的模块化组件，它执行特定的任务，遵守具体的技术规范，这些规范使得Web Service能与其他兼容的组件进行互<br>操作。JAXP(Java API for <code>XML</code> Parsing) 定义了在Java中使用DOM, SAX, XSLT的通用的接口。这样在你的程序中你只要使用这些通用的<br>接口，当你需要改变具体的实现时候也不需要修改代码。JAXM(Java API for <code>XML</code> Messaging) 是为SOAP通信提供访问方法和传输机制<br>的API。WSDL是一种 <code>XML</code> 格式，用于将网络服务描述为一组端点，这些端点对包含面向文档信息或面向过程信息的消息进行操作。这<br>种格式首先对操作和消息进行抽象描述，然后将其绑定到具体的网络协议和消息格式上以定义端点。相关的具体端点即组合成为抽象<br>端点（服务）。SOAP即简单对象访问协议(Simple <code>Object</code> Access Protocol)，它是用于交换XML编码信息的轻量级协议。 UDDI 的目的<br>是为电子商务建立标准；UDDI是一套基于Web的、分布式的、为Web Service提供的、信息注册中心的实现标准规范，同时也包含一组<br>使企业能将自身提供的Web Service注册，以使别的企业能够发现的访问协议的实现标准。<br>第 15 / 15 页</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+            
+            <div class="reprint1">
+                <p>
+                    <span class="reprint1-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+                    </span>
+                    <a href="https://liaoxingwang.github.io" class="b-link-green">屿</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2025/08/05/blog-open-source-java-interview-java-cheng-xu-yuan-mian-shi-bao-dian/" class="b-link-green">Java程序员面试宝典</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    
+
+    
+        <link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="card-content">
+        <div class="giscus-wrapper" style="overflow: hidden; max-width: 100%;">
+            <div class="giscus"></div>
+        </div>
+    </div>
+</div>
+
+<script src="https://giscus.app/client.js"
+    data-repo="liaoxingwang/liaoxingwang.github.io"
+    data-repo-id="R_kgDONgefmg"
+    data-category="Announcements"
+    data-category-id="DIC_kwDONgefms4DCjUZ"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="preferred_color_scheme"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async>
+</script>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2025/08/05/blog-open-source-java-interview-java-mian-shi-zi-liao-a-li-nei-bu-zi-liao/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Java面试资料（阿里内部资料）">
+                        
+                        <span class="card-title">Java面试资料（阿里内部资料）</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            2、面向对象（Java最重要的特性，让程序耦合度更低，内聚性更高） 面向过程：是分析解决问题的步骤，然后用函数把这些步骤一步一步地实现，然后在使用的时候一 面向对象：是把构成问题的事务分解成各个对象，而建立对象的目的也不是为了完成一个个步骤， 而是为了描述某个事物在解决整个问题的过程中所发生的行为。
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2025-08-05
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java面试-综合/" class="post-category" target="_blank">
+                                    Java面试/综合
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/面试/" target="_blank">
+                        <span class="chip bg-color">面试</span>
+                    </a>
+                    
+                    <a href="/tags/Java面试/" target="_blank">
+                        <span class="chip bg-color">Java面试</span>
+                    </a>
+                    
+                    <a href="/tags/综合/" target="_blank">
+                        <span class="chip bg-color">综合</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2025/08/05/blog-open-source-java-interview-java-zui-xin-mian-shi-wen-dang/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Java最新面试文档">
+                        
+                        <span class="card-title">Java最新面试文档</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            什么是 ？它有哪些核心功能？ Dubbo是以高性能RPC框架，它提供了分布式架构下的服务之间通信方案，使 得开发者可以不需要关心网络通信的细节。通过该框架可以使得远程服务调用方 式和本地服务调用方式一样简单。 Dubbo是一款高性能、轻量级的开源 RPC 框架。由 10 层模式构成，整个分层 通过这
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2025-08-05
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java面试-综合/" class="post-category" target="_blank">
+                                    Java面试/综合
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/面试/" target="_blank">
+                        <span class="chip bg-color">面试</span>
+                    </a>
+                    
+                    <a href="/tags/Java面试/" target="_blank">
+                        <span class="chip bg-color">Java面试</span>
+                    </a>
+                    
+                    <a href="/tags/综合/" target="_blank">
+                        <span class="chip bg-color">综合</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 屿<br />'
+            + '作者: SK<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4, h5'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4, h5').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+        <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&copy; 理想热爱.
+
+            <br>
+            <span id="sitetime"></span><span class="my-face">ღゝ◡╹)ノ♡</span>
+            <br>
+
+            
+
+            
+                    
+                        <span id="busuanzi_container_site_pv" style='display:none'></span>
+                        总访问量: <span id="busuanzi_value_site_pv" class="white-color"></span>
+                    
+
+                    
+                        <span id="busuanzi_container_site_uv" style='display:none'></span>
+                        人次&nbsp; | &nbsp;访客人数: <span id="busuanzi_value_site_uv" class="white-color"></span> 人
+                    
+
+            
+
+            
+                &nbsp; | &nbsp;字数统计:&nbsp;
+                <span class="white-color">1643k</span> 字
+            
+
+            
+            <br>
+
+        </div>
+
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/liaoxingwang" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+ 
+    <a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=807928930@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+
+    <a href="https://zhihu.com/people/zbozci" class="tooltipped" target="_blank" data-tooltip="访问我的知乎" data-position="top" data-delay="50">
+        <i class="fa fa-inverse">知</i>
+    </a>
+
+
+
+    <a href="http://wpa.qq.com/msgrd?v=3&uin=807928930&site=qq&menu=yes" class="tooltipped" target="_blank" data-tooltip="访问我的QQ空间" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+    <a href="https://weibo.com/jamsJJYY" class="tooltipped" target="_blank" data-tooltip="关注我的微博" data-position="top" data-delay="50">
+        <i class="fa fa-weibo"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+
+        var t1 = Date.UTC(2022, 10, 24, 00, 00, 00); //北京时间2019-8-1 00:00:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes *
+            minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours +
+            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒" ;
+    } /*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+
+
+
+
+
+
+        <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+        <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+        <script src="/libs/materialize/materialize.min.js"></script>
+        <script src="https://cdn.bootcss.com/masonry/4.2.2/masonry.pkgd.min.js"></script>
+        <script src="https://cdn.bootcss.com/aos/3.0.0-beta.6/aos.js"></script>
+        <script src="https://cdn.bootcss.com/scrollprogress/3.0.2/scrollProgress.min.js"></script>
+        <script src="https://cdn.bootcss.com/lightgallery/1.6.12/js/lightgallery-all.min.js"></script>
+        <script src="/js/matery.js"></script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+        
+            <script src="/libs/others/clicklove.js"></script>
+        
+
+        
+            <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        
+
+        <!-- liaoxingwang add 2019.08.28 -->
+        <script type="text/javascript">
+            var OriginTitile = document.title,
+                st;
+            document.addEventListener("visibilitychange", function () {
+                document.hidden ? (document.title = "看不见我🙈~看不见我🙈~", clearTimeout(st)) : (document.title =
+                    "(๑•̀ㅂ•́) ✧被发现了～", st = setTimeout(function () {
+                        document.title = OriginTitile
+                    }, 3e3))
+            })
+        </script>
+
+        <!-- 鼠标点击烟花爆炸效果  liaoxingwang add 2019.09.09 -->
+        
+
+        <!-- 背景雪花飘落特效liaoxingwang add 2019.09.10 -->
+        
+
+        <!-- 鼠标点击文字特效 liaoxingwang add 2019.09.10-->
+        
+            <script src="/js/wenzi.js" type="text/javascript"></script>
+        
+
+        <!-- 背景雪花飘落特效 liaoxingwang add 2019.09.10 -->
+        
+
+        <!-- 在线聊天工具  liaoxingwang add 2019.09.11 -->
+        
+
+        <!-- 背景 canvas-nest  洪卫 shw 2018  add 2019.09.15-->
+        
+
+        <!-- 背景静止彩带  洪卫 shw 2018  add 2019.09.15-->
+        
+            <script type="text/javascript">
+            var windowWidth = $(window).width();
+            if (windowWidth > 992) {
+                document.write('<script type="text/javascript" size="150" alpha="0.6" zIndex="-1" src="/libs/background/ribbon.min.js"><\/script>');
+            }
+            </script>
+        
+
+        <!-- 背景动态彩带 洪卫 shw 2018  add 2019.09.15-->
+        
+            <script type="text/javascript">
+            var windowWidth = $(window).width();
+            if (windowWidth > 992) {
+                document.write('<script type="text/javascript" src="/libs/background/ribbon-dynamic.js"><\/script>');
+            }
+            </script>
+        
+
+    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script>
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z\d\-\.\+]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(t.test(e.href)||r.test(e.href))&&(e.href=a.dataset.original)})});</script><script>(r=>{r.imageLazyLoadSetting.processImages=t;var a=r.imageLazyLoadSetting.isSPA,o=r.imageLazyLoadSetting.preloadRatio||1,d=i();function i(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(t){(a||t)&&(d=i());for(var e,n=0;n<d.length;n++)0<=(e=(e=d[n]).getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(r.innerHeight*o||document.documentElement.clientHeight*o)&&(()=>{var t,e,a,o,i=d[n];e=function(){d=d.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).dataset.loaded||(t.hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(a=new Image,o=t.getAttribute("data-original"),a.onload=function(){t.src=o,t.removeAttribute("data-original"),t.setAttribute("data-loaded",!0),e&&e()},a.onerror=function(){t.removeAttribute("data-original"),t.setAttribute("data-loaded",!1),t.src=o},t.src!==o&&(a.src=o)))})()}function e(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",e),r.addEventListener("resize",e),r.addEventListener("orientationchange",e)})(this);</script></body>
+</html>

@@ -1,0 +1,1892 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+    
+
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="03_2022年深圳大数据面试题汇总, 商单接企业项目外包 软件开发 整包服务 移动开发 移动开发团队 移动开发项目">
+    <meta name="baidu-site-verification" content="fmlEuI34ir">
+    <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
+    <meta name="description" content="2022 年深圳大数据面试题汇总年深圳大数据面试题汇总（作者：尚硅谷研究院）版本：V1.0
+第1章 字节面试题（1）介绍项目（2）写了一道算法题，题目是：驼峰命名转换 。（3）二叉树打印（4）用List和Map实现LRU（5）mysql的引">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="03_2022年深圳大数据面试题汇总 | 屿">
+    <meta property="og:description" content="2022 年深圳大数据面试题汇总年深圳大数据面试题汇总（作者：尚硅谷研究院）版本：V1.0
+第1章 字节面试题（1）介绍项目（2）写了一道算法题，题目是：驼峰命名转换 。（3）二叉树打印（4）用List和Map实现LRU（5）mysql的引">
+    <meta property="og:url" content="https://liaoxingwang.github.io2025/08/05/blog-open-source-java-interview-03-2022-nian-shen-zhen-da-shu-ju-mian-shi-ti-hui-zong/">
+    <meta property="og:image" content="https://liaoxingwang.github.io/medias/banner/0.jpg">
+    <meta property="og:site_name" content="屿">
+    <meta property="og:locale" content="zh_CN">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="03_2022年深圳大数据面试题汇总 | 屿">
+    <meta name="twitter:description" content="2022 年深圳大数据面试题汇总年深圳大数据面试题汇总（作者：尚硅谷研究院）版本：V1.0
+第1章 字节面试题（1）介绍项目（2）写了一道算法题，题目是：驼峰命名转换 。（3）二叉树打印（4）用List和Map实现LRU（5）mysql的引">
+    <meta name="twitter:image" content="https://liaoxingwang.github.io/medias/banner/0.jpg">
+
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>03_2022年深圳大数据面试题汇总 | 屿</title>
+    <link rel="icon" type="image/jpeg" href="/medias/avatars/hwsun.jpg">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/aos/3.0.0-beta.6/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/lightgallery/1.6.12/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <style type="text/css">
+        
+
+            code[class*="language-"],
+            pre[class*="language-"] {
+                white-space: pre !important;
+            }
+
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?46e79e71af0709a5b9106bf20cecc493";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+    
+    
+        <script>
+            (function(){
+                var bp = document.createElement('script');
+                var curProtocol = window.location.protocol.split(':')[0];
+                if (curProtocol === 'https') {
+                    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+                }
+                else {
+                    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                }
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(bp, s);
+            })();
+        </script>
+    
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+    <body>
+
+        <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <span class="logo-span">屿</span>
+                </a>
+            </div>
+            
+
+
+<!-- <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/AV" class="waves-effect waves-light">
+            
+            <i class="fa fa-music"></i>
+            
+            <span>视听</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/galleries" class="waves-effect waves-light">
+            
+            <i class="fa fa-photo"></i>
+            
+            <span>相册</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于我</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/contact" class="waves-effect waves-light">
+            
+            <i class="fa fa-envelope"></i>
+            
+            <span>留言板</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul> -->
+
+<!-- 支持二级菜单特性 liaoxingwang modify 2019.09.17  -->
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right nav-menu">
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/" class="waves-effect waves-light">
+              
+                <i class="fa fa-home"></i>
+              
+              <span>首页</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/tags" class="waves-effect waves-light">
+              
+                <i class="fa fa-tags"></i>
+              
+              <span>标签</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/categories" class="waves-effect waves-light">
+              
+                <i class="fa fa-bookmark"></i>
+              
+              <span>分类</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/archives" class="waves-effect waves-light">
+              
+                <i class="fa fa-archive"></i>
+              
+              <span>归档</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/AV" class="waves-effect waves-light">
+              
+                <i class="fa fa-music"></i>
+              
+              <span>视听</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/galleries" class="waves-effect waves-light">
+              
+                <i class="fa fa-photo"></i>
+              
+              <span>相册</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/about" class="waves-effect waves-light">
+              
+                <i class="fa fa-user-circle-o"></i>
+              
+              <span>关于我</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/contact" class="waves-effect waves-light">
+              
+                <i class="fa fa-envelope"></i>
+              
+              <span>留言板</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/friends" class="waves-effect waves-light">
+              
+                <i class="fa fa-address-book"></i>
+              
+              <span>友情链接</span>
+            </a>
+
+            
+      </li>
+    
+
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <div class="logo-name">屿</div>
+        <div class="logo-desc">
+            
+            湖南工业大学 | 计算机科学与技术
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/AV" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-music"></i>
+                
+                视听
+            </a>
+        </li>
+        
+        <li>
+            <a href="/galleries" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-photo"></i>
+                
+                相册
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于我
+            </a>
+        </li>
+        
+        <li>
+            <a href="/contact" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-envelope"></i>
+                
+                留言板
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/liaoxingwang/" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+
+   
+   
+<!-- 支持二级菜单特性 liaoxingwang modify 2019.09.17  -->
+<!-- <ul class="menu-list mobile-menu-list">
+    
+        <li class="m-nav-item">
+                
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-home"></i>
+                        
+                        首页
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/tags" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-tags"></i>
+                        
+                        标签
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/categories" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-bookmark"></i>
+                        
+                        分类
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/archives" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-archive"></i>
+                        
+                        归档
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/AV" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-music"></i>
+                        
+                        视听
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/galleries" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-photo"></i>
+                        
+                        相册
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/about" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-user-circle-o"></i>
+                        
+                        关于我
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/contact" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-envelope"></i>
+                        
+                        留言板
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/friends" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-address-book"></i>
+                        
+                        友情链接
+                    </a>
+              
+            </li>
+        
+
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/liaoxingwang/" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul> -->
+
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/liaoxingwang/" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+        
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        03_2022年深圳大数据面试题汇总
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        
+<!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/大数据面试/" target="_blank">
+                                <span class="chip bg-color">大数据面试</span>
+                            </a>
+                        
+                            <a href="/tags/面试/" target="_blank">
+                                <span class="chip bg-color">面试</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/大数据面试/" class="post-category" target="_blank">
+                                大数据面试
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2025-08-05
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
+                    
+                        SK
+                    
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        25.9k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        96 分
+                    </div>
+                    
+                
+
+                
+                        <span id="busuanzi_container_site_pv" style='display:none'></span>
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv" ></span>
+
+                
+
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h3 id="2022-年深圳大数据面试题汇总"><a href="#2022-年深圳大数据面试题汇总" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p>年深圳大数据面试题汇总<br>（作者：尚硅谷研究院）<br>版本：V1.0</p>
+<h2 id="第1章-字节面试题"><a href="#第1章-字节面试题" class="headerlink" title="第1章 字节面试题"></a>第1章 字节面试题</h2><p>（1）介绍项目<br>（2）写了一道算法题，题目是：驼峰命名转换 。<br>（3）二叉树打印<br>（4）用List和Map实现LRU<br>（5）mysql的引擎有几种，各有什么不同<br>（6）mysql事务级别<br>（7）mysql事务级别如何实现的<br>（8）有一个完全二叉树，给定其中两个节点，代码实现：两个节点哪个是父节点或者</p>
+<p><strong>Q:</strong> 其父节点是什么？<br>（9）数据结构会问的比较多</p>
+<p><strong>Q:</strong> （10）集合有哪些？ArrayList和LinkedList有什么区别？<br>（11）讲一下最近的一个项目（根据架构开始问业务难点）（我的是离线数仓项目）</p>
+<p><strong>Q:</strong> （12）hive两个表join，过滤条件在on后边和where后边有哪些不同？</p>
+<p><strong>Q:</strong> （13）碰到哪些问题，怎么解决的？hive做了哪些优化，优化后有哪些不同？<br>（14）问了挺多 hive 中的参数设置，大表 join 大表的解决思路，数据分块，还有一个<br>是离线数据怎么保证及时性<br>（15）做了个列转行然后行转列的题，我说了两种解决方案，第二种方案，有一个函<br>数没记清，拼接concat_ws函数<br>（16）java 多态<br>（17）hive map side join<br>（18）hive distribute by<br>（19）flink checkpoint exactly once<br>（20）mapreduce流程<br>（21）mapreduce 100亿个数取top10<br>hive sql：<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-1"><a href="#2022-年深圳大数据面试题汇总-1" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p>（22）计算连续登陆超过5天的人<br>coding：<br>（23）实现微信随机红包<br>（24）找到根节点到叶子结点值之和为n的所有路径<br>（25）clickhouse merge tree特性，distributed是否保存数据<br>（26）mysql索引，联合索引 abc，查询条件里abc的索引会命中吗<br>（27）mysql+redis 保证数据一致性<br>coding：<br>（28）两个链表存在交点，找这个交点</p>
+<h2 id="第2章-字节面试题-2"><a href="#第2章-字节面试题-2" class="headerlink" title="第2章 字节面试题-2"></a>第2章 字节面试题-2</h2><p>（1）项目经历3个挨个问，flink的机制，乱序处理，业务架构<br>（2）数据仓库构建基础，spark，hive的执行过程，调优<br>（3）BI系统的架构设计，负责模块<br>（4）sql fulljoin的功能的实现<br>（5）rownumber的底层实现<br>（6）输入正整数n和k，n≥k，找出[1,n]范围内按照字典排序的最小第k个值。<br>（7）项目经历，细节<br>（8）sparkstreaming如何实现容错，遇到问题怎么解决<br>（9）spark mr执行过程，hdfs读写过程，出错处理等<br>（10）判断是是否是BST<br>（11）hive的range分区<br>（12）二叉树的广度深度遍历<br>（13）kafka有序<br>（14）shuffle过程<br>（15）合并两个不同规范的城市表<br>（16）微信红包<br>（17）连续5天登陆<br>（18）一致性hash<br>（19）hashmap<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-2"><a href="#2022-年深圳大数据面试题汇总-2" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p>（20）连表倒数第n个节点<br>（21）排序K个大小为N的数组</p>
+<h2 id="第3章-字节面试题-3"><a href="#第3章-字节面试题-3" class="headerlink" title="第3章 字节面试题-3"></a>第3章 字节面试题-3</h2><p>（1）自我介绍<br>（2）flink exactly-once<br>（3）flink sql：count distinct 求uv场景，同一个设备刷了很多记录<br>（4）算法题：最长子数组和<br>（5）算法题：给一个矩阵，矩阵每一行单调递增，求矩阵第K个数<br>（6）结合项目问一下离线实时sql优化问题<br>（7）sql题：新访问，留存指标如何计算<br>（8）介绍项目，以及项目中的一些优化情况<br>（9）介绍项目，及在项目中碰到的问题，承担的角色<br>（10）为什么离职，是否有收到其它offer<br>（11）职业规划<br>（12）Spark与MapReduce速度差异的原因<br>（13）Spark任务和Spark Streaming任务的差别<br>（14）项目相关<br>（15）Linux的一些基本操作指令。<br>Coding：<br>（16）两个有序数组的合并（二路归并）（编写代码、分析复杂度）<br>（17）拓展，K个有序数组的合并，说说解决方案，分析复杂度。<br>（18）Java<br>（19）先大概说了下项目的情况<br>（20）问题：两个服务端的接口，有这样一个定义：平均耗时=（全部请求的总处理<br>时间）/（请求次数），两个接口经过了各自的优化，使得每个服务接口的平均响应时间都<br>变短了一点，再看整个服务端的时候，发现整个服务端的平均响应时间变长了（假设该服<br>务端是有这两个接口），这个怎么理解。<br>（21）Java平时开发用到什么数据结构，如MAP有哪些<br>（22）HashMap的原理，JDK1.8版本后做了哪些优化，为什么要这么优化。<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-3"><a href="#2022-年深圳大数据面试题汇总-3" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p>（23）JAVA开发遇到过哪些报错，比如内存溢出，怎么解决。<br>（24）sql问了一个开窗函数，一个 join函数和一个日期函数，别的都是介绍项目经历<br>了<br>（25）归并排序代码，<br>（26）kmeans 算法 gbdt,lr,lstm,tansformer,fm,fmm,deepfm,算法题问了下原理，损失函数<br>之类的<br>（27）搜索二维矩阵；<br>（28）循环链表找入口节点，要求无额外空间复杂；<br>（29）智力题：25 匹马，每次只能比较 5 匹的快慢，问至少比较多少次可以得到最快<br>3匹；</p>
+<h2 id="第4章-字节面试题-4"><a href="#第4章-字节面试题-4" class="headerlink" title="第4章 字节面试题-4"></a>第4章 字节面试题-4</h2><p>（05学长提供）<br>（1）讲了实时项目过程</p>
+<p><strong>Q:</strong> （2）为什么有dwm层，这样不是增加运维成本？</p>
+<p><strong>Q:</strong> （3）dws层做了哪些聚合？有多少张表</p>
+<p><strong>Q:</strong> （4）clickhouse每张表有多少行记录，保存多久？</p>
+<p><strong>Q:</strong> （5）访问clickhouse的表延迟是多少？</p>
+<p><strong>Q:</strong> （6）数仓有什么数据，订单的数据吗？</p>
+<p><strong>Q:</strong> （7）订单金额实时跟离线金额差别多少？</p>
+<p><strong>Q:</strong> （8）clickhouse重复数据怎么处理？<br>（9）flink的精准一次，checkpoint机制，两阶段提交，</p>
+<p><strong>Q:</strong> （10）部门有几个人，怎么分配，实时里主要负责哪一块？</p>
+<p><strong>Q:</strong> （11）flink使用java多还是sql多？</p>
+<p><strong>Q:</strong> （12）实时框架是怎么选择的？</p>
+<p><strong>Q:</strong> （13）毕业时间，有没有找了别的工作？<br>（14）最后在算法题和sql题选一题来做，选了sql，然后没做出来，很难受。<br>orders表很大，5000万订单，说出这个sql有什么问题，写出的的优化后的sql。<br>， （ ）<br><code>select</code> province count distinct buyer_id from orders where<br>date=20211001 group by province;<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-4"><a href="#2022-年深圳大数据面试题汇总-4" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><h2 id="第5章-袋鼠云"><a href="#第5章-袋鼠云" class="headerlink" title="第5章 袋鼠云"></a>第5章 袋鼠云</h2><p><strong>Q:</strong> （1）interval join不上的数据，怎么处理？怎么做数据修复？</p>
+<p><strong>Q:</strong> （2）maxwell bootstrap的同时，mysql在变化，怎么保证写到hbase的数据是正确的？<br>（3）flink发生撤回流时，UDF函数失效怎么办，比如级联group下层用上层，就会失</p>
+<p><strong>Q:</strong> 效？</p>
+<h2 id="第6章-腾讯面试"><a href="#第6章-腾讯面试" class="headerlink" title="第6章 腾讯面试"></a>第6章 腾讯面试</h2><p>（1）各种场景模拟，1亿数据，20亿用户，大表处理</p>
+<p><strong>Q:</strong> （2）如何确定某个java程序将CPU跑满之后导致该原因的线程？</p>
+<p><strong>Q:</strong> （3）Phoenix 和HBase是如何关联的？一个SQL是怎么同步写入到HBase的？<br>（4）一年的窗口怎么每5分钟输出一次结果。（RK状态+CK时间点+定时器）</p>
+<p><strong>Q:</strong> （5）flink 和 spark Streaming对比？<br>（6）flink的时间语义，精准一次性这些</p>
+<p><strong>Q:</strong> （7）HBase的二级索引？大表的处理？</p>
+<p><strong>Q:</strong> （8）spark SQL 和hive on spark有什么区别？</p>
+<p><strong>Q:</strong> （9）flink的精准一次？幂等和事务使用有什么问题？ck连续超时有什么影响？</p>
+<p><strong>Q:</strong> （10）hbase如果问怎么快速检索 1亿数据？布隆过滤器已经开辟了最大长度，不能在</p>
+<p><strong>Q:</strong> 开辟了怎么处理？</p>
+<p><strong>Q:</strong> （11）spark 场景题和对应的优化处理？</p>
+<p><strong>Q:</strong> （12）flink 事务 sink写文件，是怎么处理的？对应的文件存在哪里？详细说下</p>
+<p><strong>Q:</strong> （13）一个flink任务一直在重启？怎么判断原因？</p>
+<p><strong>Q:</strong> （14）CBO和RBO的区别？说说常见的RBO的规则？</p>
+<p><strong>Q:</strong> （15）flink的反压你们是怎么处理的？怎么判定的？<br>（16）flink SQL的整个底层执行过程</p>
+<h2 id="第7章-华为"><a href="#第7章-华为" class="headerlink" title="第7章 华为"></a>第7章 华为</h2><p>电话面试</p>
+<p><strong>Q:</strong> （1）你们的业务是什么？</p>
+<p><strong>Q:</strong> （2）你最近的项目是什么是用flink吗？</p>
+<p><strong>Q:</strong> （3）你能给我讲讲你处理过最难的指标吗？并且该指标的作用是什么？<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-5"><a href="#2022-年深圳大数据面试题汇总-5" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p><strong>Q:</strong> （4）你说你使用过分流，那么你给我讲讲是怎么分流的吗？<br>（5）你做分流的时候，用到了什么算子。<br>（6）你能讲讲JDBC连接的整体流程吗 ，以select为例，并且关闭顺序是什么。</p>
+<p><strong>Q:</strong> （7）你给我讲讲你们的业务吧，可以细讲一些指标吗？</p>
+<p><strong>Q:</strong> （8）ArrayList 和 LinkList 的区别？<br>（9）你使用过SpringBoot，你给我讲讲业务场景<br>（10）前端埋点，你给我讲讲，你扮演了什么角色。</p>
+<h2 id="第8章-百度"><a href="#第8章-百度" class="headerlink" title="第8章 百度"></a>第8章 百度</h2><p>（1）项目中为什么考虑用两个平台来做<br>（2）为什么你们白天做实时，晚上做离线，白天有离线任务吗，晚上有实时任务吗<br>（3）你们两个平台统计的指标有什么不同<br>（4）你们数据量多大<br>（5）有多少表<br>（6）表都存在hive里吗<br>（7）实时数据存在哪里<br>（8）解释下ods，dwd。。。。是什么意思<br>（9）说一下你的数仓建模<br>（10）为什么不在导数据到ods层前对数据去重<br>（11）数据在前面去重会有性能上的影响吗，为什么<br>（12）你们整个离线任务是怎么调度的<br>（13）任务调度出现异常重跑会不会出现数据的重复<br>（14）数据重复了怎么做<br>（15）你们azkban调度除了hql任务还有其他任务吗<br>（16）给个场景，azkban调度的过程中我想把中间某张表的数据下载到本地，怎么做<br>（17）你还用过azkaban做过哪些任务的调度<br>（18）你们的kafka设置了多少topic<br>（19）你们写入kafka的数据是什么格式的<br>（20）多少分区<br>（21）你们kafka集群多少，做高可用了吗，为什么可以做高可用<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-6"><a href="#2022-年深圳大数据面试题汇总-6" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p>（22）kafka高可用原理说一下<br>（23）shuffle流程<br>（24）mr的shuffle与spark的shuffle有什么区别<br>（25）为什么group by比distinct高效<br>（26）有3个key10个reduce，这3个key会分到10个reduce上吗<br>（27）用hql写个问题<br>（28）hive有哪些保存元数据的方式，除了mysql<br>（29）flink集群角色有哪些，flink时间机制<br>（30）你刚才讲shuffle时提到了快速排序，可以写一个快速排序吗<br>（31）你java大概是什么水平，java SE是什么</p>
+<h2 id="第9章-OPPO"><a href="#第9章-OPPO" class="headerlink" title="第9章 OPPO"></a>第9章 OPPO</h2><p>（1）hdfs读写流程，数据倾斜怎么解决，小文件问题怎么解决，<br>（2）yarn资源调度原理，<br>（3）flink资源调度原理，<br>（4）flink容错机制，flink数据倾斜，flink反压和失败怎么解决，flink内存机制，<br>（5）mr的checkpoint，<br>（6）kafka为什么那么快，<br>（7）java熟悉程度，<br>（8）Kafka精准一次怎么做的，<br>（9）zk选举机制，zk选举时机，<br>（10）hive小文件问题，hive优化，hive元数据管理，<br>（11）flume三大组件，flume事务流程，flume taildir source断点续传，<br>（12）redis缓存穿透，怎么解决缓存穿透，<br>（13）spark为什么那么快，spark比mr好在哪，spark drive角色设定，spark的并行度<br>的设置，<br>（14）es倒排索引，es怎么用api找出年龄在给的范围内。</p>
+<h2 id="第10章-VIVO"><a href="#第10章-VIVO" class="headerlink" title="第10章 VIVO"></a>第10章 VIVO</h2><p>（1）hdfs的读写流程，为什么数仓要分层<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-7"><a href="#2022-年深圳大数据面试题汇总-7" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p>（2）每层是根据什么确定的<br>（3）公司的业务流程<br>（4）为什么要用kafka，和作用。你理解kafka应该是做什么的<br>（5）用的组件版本<br>（6）做过的最难的指标</p>
+<h2 id="第11章-VIVO-2"><a href="#第11章-VIVO-2" class="headerlink" title="第11章 VIVO-2"></a>第11章 VIVO-2</h2><p>（1）spark问的多，任务划分，执行流程，<br>（2）spark调优，spark数据倾斜；<br>（3）hive 调优，窗口函数，数据倾斜；</p>
+<p><strong>Q:</strong> （4）实时维表存在hbase，怎么查询列簇下的列名？<br>（5）说hbase集成phoenix二级索引好像目前不太好用；<br>（6）为什么用clickhouse；<br>（7）sqoop导数据失败怎么解决；<br>（8）flume事务监控；<br>（9）Kafka事务监控；<br>（10）jvm，新生代，老年代，full GC</p>
+<h2 id="第12章-虾皮-shopee"><a href="#第12章-虾皮-shopee" class="headerlink" title="第12章 虾皮 shopee"></a>第12章 虾皮 shopee</h2><p><strong>Q:</strong> （1）java 的锁了解么？公平锁、非公平锁，偏向锁和非偏向锁？（纳尼？）</p>
+<p><strong>Q:</strong> （2）volatile 关键字了解么？怎么用的？主存是怎么存的？那对应的非主存是怎么处</p>
+<p><strong>Q:</strong> 理的？</p>
+<p><strong>Q:</strong> （3）说说零拷贝的原理？详细的说下</p>
+<p><strong>Q:</strong> （4）计算机原理的一些内容、为什么要分用户态和core？</p>
+<p><strong>Q:</strong> （5）https的通信机制？怎么建立连接的？（好像是这么问的）</p>
+<p><strong>Q:</strong> （6）信息编码的意义？</p>
+<p><strong>Q:</strong> （7）SQL的预编译的处理的底层原理了解么？</p>
+<p><strong>Q:</strong> （8）为什么 C/C+ 用来写 ClickHouse、redis、Zookeeper 这些组件？和 java 有什么区</p>
+<p><strong>Q:</strong> 别？你怎么看待<br>（9）说说内部排序算法的时间、空间复杂度和对应的稳定性。（没说全，有点遗忘）<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-8"><a href="#2022-年深圳大数据面试题汇总-8" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p>（10）HBase的读流程</p>
+<p><strong>Q:</strong> （11）redis的缓存击穿、缓存雪崩、缓存失效是什么意思和如何处理？</p>
+<p><strong>Q:</strong> （12）布隆过滤器原理和kafka 为什么快这些？</p>
+<p><strong>Q:</strong> （13）内部表和外部表的区别？分桶表的原理？一些简单的优化</p>
+<p><strong>Q:</strong> （14）HQL的处理流程，B+树和LSM的区别？分别讲讲他们的特点？为什么MySQL</p>
+<p><strong>Q:</strong> 用B+树，HBase用LSM？<br>（15）你们数仓的建模?(对应每层的处理)</p>
+<p><strong>Q:</strong> （16）留存率你从 ods到 ads说下各层都怎么处理获取的？最终的 SQL 要能用语言表</p>
+<p><strong>Q:</strong> 述清除？（建议结合自己的业务）</p>
+<p><strong>Q:</strong> （17）如何快速从mysql导数据？离线：sqoop 实时：CDC</p>
+<p><strong>Q:</strong> （18）kafka 的producer/consumer 可能会出现的问题？丢和重复，怎么避免，怎么解决？</p>
+<p><strong>Q:</strong> （19）scala的val和var 各自的优缺点？为什么用val？场景设计一堆</p>
+<p><strong>Q:</strong> （20）scala 常见的集合？（可变和不可变）</p>
+<p><strong>Q:</strong> （21）scala option的底层原理是怎么设计和实现的有了解吗？<br>（22）flink的精准一次性，两次事务详细说说</p>
+<p><strong>Q:</strong> （23）flink对于多个流的join是如何保证同时处理到的？<br>（24）很有其他 flink 窗口相关的问题，具体的有点忘记了，就是各种异常场景和大状<br>态的问题</p>
+<p><strong>Q:</strong> （25）一小时的数据IP，（数据量很大，）怎么得到top10？（只说方案和具体的实现，<br>不敲代码）<br>flink有些内容有点没回答好，java相关的JUC和LSM忘记了。</p>
+<h2 id="第13章-美的"><a href="#第13章-美的" class="headerlink" title="第13章 美的"></a>第13章 美的</h2><p>自我介绍</p>
+<p><strong>Q:</strong> （1）flink cdc 怎么实现同步增量数据和全量数据，底层区别是什么？我说同步原理是<br>binlog主从复制balabala，他问同步增量数据和全量数据底层有什么不同，<br>（2）kafka 一般比较大的表有 10+亿数据我们希望写到不同分区，flink 消费的时候怎</p>
+<p><strong>Q:</strong> 么实现有序，有什么方法？<br>（3）kafka 如果分区增加，flink 怎么在程序不停的情况下增加到同等的分区，底层怎</p>
+<p><strong>Q:</strong> 么做？<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-9"><a href="#2022-年深圳大数据面试题汇总-9" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p>（4）rockDB底层内存刷写磁盘原理?</p>
+<p><strong>Q:</strong> （5）实时项目开发中有遇到什么问题？jar包找不到、反压、数据倾斜讲一遍</p>
+<p><strong>Q:</strong> （6）你们 flink 实时运行的有多少条流？我说 10+个 job，他问所有 job 加起来里面有<br>多少条流你做开发应该很清楚，我说30+条</p>
+<p><strong>Q:</strong> （7）你们离线最大的表有多大？dwt用户主题，最宽，但是只存今天和昨天数据不大</p>
+<p><strong>Q:</strong> （8）你们每天数据量？1亿左右，确定吗？确定！<br>其它大保健问题忘了</p>
+<h2 id="第14章-顺丰"><a href="#第14章-顺丰" class="headerlink" title="第14章 顺丰"></a>第14章 顺丰</h2><p>没有问业务<br>（1）javaJVM的优化<br>（2）你了解有哪些算法吗（然后换了个说法，说你了解有哪些排序算法）<br>（3）链表结构了解吗<br>（4）平衡二叉树了解吗<br>（5）kafka的ack<br>（6）kafka怎么保证精准一次消费<br>（7）kafka支持事务吗<br>（8）hql熟吗<br>（9）内部表和外部表有什么区别，什么时候使用内部表，什么时候使用外部表<br>（10）你们在使用hql的时候做了哪些优化<br>（11）你们的数据量有多大<br>（12）你们有采用分区吗<br>（13）你们的分区策略<br>（14）分区太多和太少有什么问题<br>（15）你跑的最慢的一个查询是多久<br>（16）你在写hql的时候有没有做过什么优化<br>（17）有没有遇到什么问题<br>（18）join时数据类型不一致为什么会产生数据倾斜<br>（19）sqoop参数<br>（20）sqoop遇到了哪些问题<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-10"><a href="#2022-年深圳大数据面试题汇总-10" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p>（21）spark怎么保证数据一致性<br>（22）spark怎么实现高可用<br>（23）你们的数仓搭建原理（还是啥，有点忘了）<br>（24）hadoop用的哪个版本<br>（25）hive用的哪个版本<br>（26）你有哪些优势</p>
+<p><strong>Q:</strong> （27）你们实时用的什么？（只是简单问了下，我回flink就没问了）<br>他们要找做离线的，目前没有实时需求<br>然后礼貌性的问了下你有什么要问的吗</p>
+<h2 id="第15章-丰巢"><a href="#第15章-丰巢" class="headerlink" title="第15章 丰巢"></a>第15章 丰巢</h2><p><strong>Q:</strong> （1）你们 dws 层数据放在 clickhouse，你们不同层的数据是放在不同的存储引擎上吗？</p>
+<p><strong>Q:</strong> （2）你们前面 3 层都是做短时间的 kafka 存储吗？还是说你们 kafka 也是存的全量数<br>据</p>
+<p><strong>Q:</strong> （3）明细层的话在业务库，只是做短时间的存储？最终输出到 clickhouse 做持久化的</p>
+<p><strong>Q:</strong> 存储？</p>
+<p><strong>Q:</strong> （4）离线数仓你有参与吗？离线数仓是怎么构建的<br>（5）你们在实时和离线的明细层分别做了两套逻辑汇总，一套是根据实时展现的指标，<br>一套是根据后续报表进行汇总 -&gt; 如何保证两边的口径一致?大家对一些业务口径的理解可<br>能有些出入,如何保证两边的口径和算出来的数据是一致的<br>（6）不同的业务方对同名指标的描述不一致的情况,有没有考虑郭做这种指标的管理,<br>或者一些归档?<br>（7）你们现在大概有多少张表, 对业务部门提供的指标有多少?<br>（8）数据量方便, 你们的订单表之类的大概一天有几个订单?<br>（9）最大的事实表是哪张? 它的量大概是什么样子? 每天的增量是多少<br>（10）轻度汇总是每天都会有某一个维度订单的汇总, 这个数大概是多少? 在某一个维<br>度的事务事实的汇总的量得出来的值大概是多少呢?说的 6w 上下 -&gt; 这个数据量的话其实用<br>不到数仓, mysql 的一个分表就可以处理<br>（11）讲一下维度建模中的星型模型和雪花模型有什么区别? 模型分别的优劣势<br>（12）事务表用哪种方法来建? 累积快照还是事务事实? 事务事实表的建设方法<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-11"><a href="#2022-年深圳大数据面试题汇总-11" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p>（13）事务事实和累计快照的区别, 事务事实会有什么数据, 累积快照会有什么数据?<br>（14）无论用事务事实还是用累积快照都可以记录订单的流转, 那累积快照是怎样去记<br>录, 事务事实是怎样去记录<br>（15）SQL 与 <code>HQL</code> 的优化, sparkSQL 有了解过吗?<br>（16）reduceByKey 和 groupByKey 哪一个性能更好, 分别使用在怎样的场景下<br>（17）广播变量的优势是什么劣势是什么<br>（18）数据治理监控, 就是每天数仓跑出来的数据是正确的还是不正确的, 是否有异常,<br>这些怎么处理</p>
+<h2 id="第16章-蚂蚁金服银行科技中心"><a href="#第16章-蚂蚁金服银行科技中心" class="headerlink" title="第16章 蚂蚁金服银行科技中心"></a>第16章 蚂蚁金服银行科技中心</h2><p>（1）自我介绍<br>（2）项目经历讲一下，做过哪些项目。<br>（3）项目规模多大，有多少张表。<br>（4）项目过程详细讲一下。<br>（5）hive调优方法</p>
+<p><strong>Q:</strong> （6）实际工作中遇到什么印象深刻的问题，怎么解决的？我说的是join的字段数据类<br>型不同导致的数据倾斜</p>
+<p><strong>Q:</strong> （7）数仓有多少张表，每层都做什么？<br>（8）dwt有哪些主题宽表?<br>（9）目有什么指标，分析这些指标什么用?<br>小题目：<br>（10）有一张表，字段是设备 ID，故障开始时间，故障结束时间。求设备在工作日内<br>的宕机时长开始时间和结束时间，可能中间隔了好几天（比如开始时间是 2021-09-28<br>12:12:00，结束时间是2021-10-08 12:12:00在工作日内的宕机时长）。<br>（11）有一张特别大的表怎么处理，我回答可以用 SQL 做成分区表，他又问不用分区<br>怎么做?<br>（12）你的职业规划是怎样的：两年架构师，三年项目leader</p>
+<h2 id="第17章-平安科技面试题"><a href="#第17章-平安科技面试题" class="headerlink" title="第17章 平安科技面试题"></a>第17章 平安科技面试题</h2><h3 id="17-1-离线"><a href="#17-1-离线" class="headerlink" title="17.1 离线"></a>17.1 离线</h3><p>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-12"><a href="#2022-年深圳大数据面试题汇总-12" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p>（1）你们集群规模是怎样的，hadoop 集群怎么实现高可用的，各个节点都配置了那<br>些角色<br>（2）yarn的配置，怎么实现高可用<br>（3）离线数仓没咋问<br>（4）spark没问</p>
+<h3 id="17-2-flink"><a href="#17-2-flink" class="headerlink" title="17.2 flink"></a>17.2 flink</h3><p>（1）你们flink 实时数仓是干嘛的<br>（2）写flinkapi的时候用到了那些类<br>（3）你们实时数仓用到了flinksql吗<br>（4）flink sql怎么实现与表关联的，<br>（5）你了解哪些connector，</p>
+<p><strong>Q:</strong> （6）你们数仓都是api写的，那能叫数仓吗？</p>
+<p><strong>Q:</strong> （7）你们flink没有单独的一个平台去实现写flink sql吗？<br>（8）你们数仓怎么实现kafka的一个topic对应一张表的<br>（9）flink的提交流程<br>（10）flink job提交后都会创建哪些类<br>（11）flink web界面有那些状态<br>（12）flink怎么实现精准一次<br>（13）kafka是怎么实现事务的，你们kafka的版本有要求吗</p>
+<p><strong>Q:</strong> （14）支持事务的sink有哪些，支持幂等的sink有哪些？<br>（15）hbase支持幂等吗<br>（16）job提交后怎么发现问题，你们遇到过很难处理的问题吗，怎么处理的分享一下</p>
+<p><strong>Q:</strong> （17）你了解flink官网对于内存的管理吗？</p>
+<p><strong>Q:</strong> （18）有了解k8s吗，说说prejob和application模式的区别？<br>（19）为啥要用application模式，为什么隔离性更高</p>
+<h3 id="17-3-java"><a href="#17-3-java" class="headerlink" title="17.3 java"></a>17.3 java</h3><p>（1）都写过哪些java 程序<br>（2）你了解hashmap吗，说说实现原理<br>（3）hashmap的get方法怎么实现的<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-13"><a href="#2022-年深圳大数据面试题汇总-13" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p>（4）hashmap和treemap的区别是啥<br>（5）你了解多线程吗，多线程会出现什么问题，你了解锁吗，悲观锁和乐观锁怎么实<br>现的，会用到哪些类</p>
+<p><strong>Q:</strong> （6）你了解开发模式吗？怎么实现单例模式<br>（7）你有用到java的一些解析工具吗比如出现了oom怎么解析<br>（8）了解java虚拟机吗</p>
+<p><strong>Q:</strong> （9）平时有去hadoop社区上去接一些任务吗？</p>
+<h2 id="第18章-平安科技"><a href="#第18章-平安科技" class="headerlink" title="第18章 平安科技"></a>第18章 平安科技</h2><p>（1）java怎么样<br>（2）jvm原理讲一下<br>（3）Flink内存是怎么管理的<br>（4）Flink任务提交流程<br>（5）Flink组件的通讯<br>（6）Flink的checkpoint机制<br>（7）Flink的精准一次，面试官说barrier不对齐也可以精准一次，还给我解释了半天<br>（8）Flink Window机制<br>（9）watermark讲一下<br>（10）FlinkSQL用过吗，FlinkSQL是怎么把SQL转成任务执行的<br>（11）Flink背压机制，Flink怎么感知到背压的<br>（12）他应该是想问具体怎么实现的。不知道是不是metrics-prometheus这个东西</p>
+<p><strong>Q:</strong> （13）你们平常用prometheus监控Flink的哪些指标？</p>
+<p><strong>Q:</strong> （14）Kafka读写文件为什么快？</p>
+<p><strong>Q:</strong> （15）零拷贝技术，分区，顺序读写，他说还差一个页缓存，我说那不就是零拷贝吗？<br>他说你要这样认为也行<br>（16）Kafka的文件存储机制<br>（17）Topic：逻辑上存在 partition: 分区,物理上存在 segment:<br>（18）partition的分段,逻辑上概念 index：log文件的索引 log: 数据存储文件 timeindex:<br>log文件数据的时间索引 segment的命名规则:<br>（19）每个分区第一个segment的文件名= 0000000000000000000<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-14"><a href="#2022-年深圳大数据面试题汇总-14" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p>（20）后续第N个segment文件名 = 第N-1个segment中最后一个offset+1<br>（21）segment给log文件建索引的时候是每个一段范围[4k]建一个索引 如何根据offset<br>找到数据位置?<br>（22）根据 offset 与 segment 的文件名,通过二分查找法可以确定 offset 数据处于哪个<br>segment<br>（23）通过segment文件的index索引得知offset处于log文件哪个区间<br>（24）扫描log文件对应区间得到数据<br>（25）kafka的ISR队列<br>（26）Kafka写文件是找leader还是follower? leader</p>
+<p><strong>Q:</strong> （27）Kafka 读取文件是找 leader 还是 follower？我说是 leader，他说你确定？然后我<br>说follower，他套路我，后面给我解释为什么是leader</p>
+<p><strong>Q:</strong> （28）通信方面的知识了解吗？不懂<br>（29）Hadoop架构<br>（30）hdfs读写流程<br>（31）客户端是找哪个datanode读取数据<br>（32）datanode之间是怎么同步副本的，他说是分一块一块的,我也不懂<br>（33）最后讲一下Flume吧，他说他对Flume不是特别了解，让我随便扯<br>（34）总结：每个知识点都要问到原理的内容，他经常问：你知不知道是怎么实现的，<br>为什么要这样</p>
+<h2 id="第19章-平安保险面试资料（猎头提供，仅供参考）"><a href="#第19章-平安保险面试资料（猎头提供，仅供参考）" class="headerlink" title="第19章 平安保险面试资料（猎头提供，仅供参考）"></a>第19章 平安保险面试资料（猎头提供，仅供参考）</h2><h3 id="19-1-大数据面试题目"><a href="#19-1-大数据面试题目" class="headerlink" title="19.1 大数据面试题目"></a>19.1 大数据面试题目</h3><p>（1）基本是都是spark streaming和Flink的内容（数据开发）<br>（2）就是自己的一些项目，然后聊了一下 hive的一些语言，还有 sql优化的语句，然<br>后讨论了一下运营商业绩计算规则的方案。最后要一个数据分析的报告（数据分析）<br>（3）SQL题，SQL优化，分析思路，最后要一个数据分析的报告（数据分析）<br>（4）基本都是问的理论方面，数仓的概念，数仓分层依据，数据质量，数据模型（数<br>据开发）</p>
+<p><strong>Q:</strong> （5）用的是什么建模技术？用的哪种建模方法论呢？抛开技术层面，从业务角度去讲</p>
+<p><strong>Q:</strong> 解一下怎么去评估一个标签好坏的？做交叉验证的同时，有没有考虑标签的好坏，或者说<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-15"><a href="#2022-年深圳大数据面试题汇总-15" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p><strong>Q:</strong> 为什么好，为什么不好？（数据开发）</p>
+<p><strong>Q:</strong> （6）什么叫做数仓？这几年对自己的职业规划，我说以后可能往架构师发展，然后问</p>
+<p><strong>Q:</strong> 我做了什么准备，了解了哪些架构？提交有几层链路？公司怎么做数据治理，数据质量监<br>控。（数据开发）<br>（7）spark，flink，还有数仓这一块的，一些常见故障点处理，还有技术框架的底层<br>问的比较多，项目数据量这块有问，项目架构，数仓理论都有问，还问了对一些源码有没<br>有研究（数据开发）<br>（8）nlp 的 bert transformer 之类的原理（数据挖掘）</p>
+<h2 id="第20章-平安产险"><a href="#第20章-平安产险" class="headerlink" title="第20章 平安产险"></a>第20章 平安产险</h2><p>视频面 (约47min)<br>(没问业务，基本问的都是原理概念)<br>（1）自我介绍</p>
+<p><strong>Q:</strong> （2）有用Java和Scala吗？一上来就问我用关键字volatile修饰的属性有什么作用</p>
+<p><strong>Q:</strong> （3）Java设计模式有了解吗？——讲了单例模式的饿汉和懒汉</p>
+<p><strong>Q:</strong> （4）Scala的伴生对象和伴生类了解吗？样例类了解吗？</p>
+<p><strong>Q:</strong> （5）Sqoop和Flume有啥区别？</p>
+<p><strong>Q:</strong> （6）Kafka了解多少？为什么这么快知道吗？讲一下你知道的<br>（7）ISR队列讲一下<br>（8）Hbase读写流程</p>
+<p><strong>Q:</strong> （9）你们分了多少个region？有没有预分区？<br>（10）讲讲Hlog和WAL区别<br>（11）Spark的RDD的特性<br>（12）Spark的提交流程说一下</p>
+<p><strong>Q:</strong> （13）Spark 广播变量了解吗？</p>
+<p><strong>Q:</strong> （14）了解Spark的内存管理吗？执行内存和存储内存知道吗？</p>
+<p><strong>Q:</strong> （15）你们的Spark版本用的多少？</p>
+<p><strong>Q:</strong> （16）知道环形缓冲区吗？哪里用到归并排序<br>最后问了下他们那之前有好几个，现在只有 2个人做大数据了。服务器 1000台+ 数据<br>量PB级<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-16"><a href="#2022-年深圳大数据面试题汇总-16" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><h2 id="第21章-平安科技二面"><a href="#第21章-平安科技二面" class="headerlink" title="第21章 平安科技二面"></a>第21章 平安科技二面</h2><p>（1）先讲项目<br>（2）实时项目中Kafka同时有多少的任务在执行</p>
+<p><strong>Q:</strong> （3）项目中有哪些印象深刻的事情？</p>
+<p><strong>Q:</strong> （4）工作中有哪些觉得出彩的地方？</p>
+<p><strong>Q:</strong> （5）Flink的状态机制?怎么做checkpoint？</p>
+<p><strong>Q:</strong> （6）一个算子的一次checkpoint会生成几个文件？<br>（7）从checkpoint恢复数据是怎么恢复的?应该是想问源码<br>（8）Flink看过哪些源码?提交流程</p>
+<p><strong>Q:</strong> （9）kafka了解多少？</p>
+<p><strong>Q:</strong> （10）同一个消费者组增加消费者可能消费不到数据知道是为社么吗？</p>
+<p><strong>Q:</strong> （11）mysql索引了解吗？不了解</p>
+<p><strong>Q:</strong> （12）clink house了解多少？会用而已</p>
+<p><strong>Q:</strong> （13）Linux操作系统了解多少？线程之间具体是怎么切换的？不了解</p>
+<p><strong>Q:</strong> （14）一个Flink程序消费不到数据了怎么查找原因？看堆栈的信息，具体哪个线程在<br>做什么</p>
+<h2 id="第22章-平安保险"><a href="#第22章-平安保险" class="headerlink" title="第22章 平安保险"></a>第22章 平安保险</h2><p><strong>Q:</strong> （1）udf函数用过吗？怎么注册的<br>（2）sort by 和 order by 的区别，你平时是怎么用的</p>
+<p><strong>Q:</strong> （3）开窗函数有用过吗？怎么用的？</p>
+<p><strong>Q:</strong> （4）旧表(全量表)join新表，新表有新增有改变，怎么取最新的全量表？</p>
+<p><strong>Q:</strong> （5）大小表的优化？怎么设置参数让小表加载到内存</p>
+<p><strong>Q:</strong> （6）Hive数据倾斜是什么？有什么表现？数据倾斜的优化？</p>
+<p><strong>Q:</strong> （7）数仓数据分层是怎么分的？</p>
+<p><strong>Q:</strong> （8）指标出了问题你会怎么解决？思路？</p>
+<p><strong>Q:</strong> （9）sqoop你们是怎么用的？参数有哪些？</p>
+<p><strong>Q:</strong> （10）分区表你们有用吗？怎么用的？动态分区和静态分区的区别了解吗？</p>
+<p><strong>Q:</strong> （11）你们数据链路多长？能从头说一说你们数据的流向吗？(从源头到报表层)<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-17"><a href="#2022-年深圳大数据面试题汇总-17" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><h2 id="第23章-华秋电子"><a href="#第23章-华秋电子" class="headerlink" title="第23章 华秋电子"></a>第23章 华秋电子</h2><h3 id="23-1-面试"><a href="#23-1-面试" class="headerlink" title="23.1 面试"></a>23.1 面试</h3><p><strong>Q:</strong> （1）你住在哪里，你女朋友在哪块上班？想半天，直接暴露<br>（2）你们公司几台节点，开发多少人，部门多少人，<br>（3）有做元数据管理吗，</p>
+<p><strong>Q:</strong> （4）集群规模，集群用的什么版本，集群角色怎么分布的？<br>（5）你有参与技术选型是吧，举个例子?</p>
+<p><strong>Q:</strong> （6）在公司里你主要是做什么？</p>
+<p><strong>Q:</strong> （7）Azkaban挂过吗？ 他说他们经常挂 每天数据量多大？</p>
+<p><strong>Q:</strong> （8）你们用sqoop从数据从hdfs导到mysql没有问题吗？</p>
+<p><strong>Q:</strong> （9）你们mysql用的是集群吗？</p>
+<p><strong>Q:</strong> （10）你在项目中做了些什么？</p>
+<p><strong>Q:</strong> （11）说两个你分析过的指标 flink-cdc2.0有什么新特性？</p>
+<p><strong>Q:</strong> （12）clickhouse数据存储方式，你们用的是集群吗？</p>
+<p><strong>Q:</strong> （13）kafka怎么保证分区有序？</p>
+<p><strong>Q:</strong> （14）你们实时项目没有使用flinksql？</p>
+<h2 id="第24章-储算科技"><a href="#第24章-储算科技" class="headerlink" title="第24章 储算科技"></a>第24章 储算科技</h2><p>（1）自我介绍<br>（2）说一下实时数仓的搭建过程<br>（3）说一说kafka组件<br>（4）kafka组件consumer消费offset存储<br>（5）kafka的isr队列<br>（6）flume的了解<br>（7）spark和flink的区别<br>（8）是否了解数据模型<br>（9）go语言写的服务器，使用flume和kafka的方式采集数据，如何优化</p>
+<h2 id="第25章-蔚来汽车"><a href="#第25章-蔚来汽车" class="headerlink" title="第25章 蔚来汽车"></a>第25章 蔚来汽车</h2><p>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-18"><a href="#2022-年深圳大数据面试题汇总-18" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p>（1）java并发机制CompletionService<br>（2）java异常机制——捕获异常+再次抛出异常与异常链<br>（3）讲讲Kafka的再平衡</p>
+<p><strong>Q:</strong> （4）kafka配置的正则表达式？<br>（5）讲讲Spark的shuffe 机制 write阶段 read阶段<br>（6）讲讲spark数据倾斜的问题，出现原因，怎么处理。<br>（7）Flink的事务是怎么实现。幂等性的实现机制，和两阶段提交的区别.<br>（8）讲讲对索引的理解！<br>（9）Hashmap 和treemap 特点-优缺点<br>（10）Maxwell和canal的区别！maxwell的介绍<br>（11）二叉树的前序遍历—思路—在线文档写code</p>
+<h2 id="第26章-碧桂园"><a href="#第26章-碧桂园" class="headerlink" title="第26章 碧桂园"></a>第26章 碧桂园</h2><p>刚刚面试完碧桂园的,总部在佛山,做 flink,给我的评价是有一定的基础,可以培养,说向他<br>们领导申请二面,让我挑时间:</p>
+<h3 id="26-1-离线"><a href="#26-1-离线" class="headerlink" title="26.1 离线"></a>26.1 离线</h3><p>（1）MySQL在你们离线的集群中是扮演的一个什么样的角色?<br>（2）离线数仓 ADS 层的数据为什么不直接可视化,为什么还要再用 sqoop 导回到<br>MySQL中去再实现可视化?<br>（3）你们离线为什么要分那么多层?<br>（4）你们的数仓建模的依据是什么?<br>（5）维度建模分为哪几种?<br>（6）事实是什么?维度是什么?<br>（7）事实跟指标有什么区别?<br>（8）说一说你是怎么用Atlas进行元数据管理和治理的? 我:</p>
+<h3 id="26-2-实时"><a href="#26-2-实时" class="headerlink" title="26.2 实时"></a>26.2 实时</h3><p>（1）你们以HBase存维度表,维度表有什么变化的数据?<br>（2）维度表变化的数据HBase是什么更新到的?<br>（3）还问了一堆clickHouse的… 我说不熟..<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-19"><a href="#2022-年深圳大数据面试题汇总-19" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p>（4）问那个搜索关键词主题宽表用到的那个分词器是怎么弄的?为什么做这个?怎么做<br>的?<br>（5）时间语义是什么?<br>（6）你说你用到interval join, 什么是interval join? 那个时间间隔是什么设定的?<br>（7）你们公司有几台服务器?kafka有怎么分布?各个组件怎么布置?<br>（8）sparkSql有没有做过? 我说自己搭集群玩过</p>
+<h2 id="第27章-企知道"><a href="#第27章-企知道" class="headerlink" title="第27章 企知道"></a>第27章 企知道</h2><h3 id="27-1-第一个面试官"><a href="#27-1-第一个面试官" class="headerlink" title="27.1 第一个面试官"></a>27.1 第一个面试官</h3><p>（1）感觉他不是很懂，像是通过面试学习知识的<br>（2）项目介绍一下<br>（3）hdfs小文件怎么处理的<br>（4）MR的执行过程<br>（5）spark的stage怎么划分<br>（6）什么什么是宽依赖，什么是窄依赖</p>
+<h3 id="27-2-第二个面试官"><a href="#27-2-第二个面试官" class="headerlink" title="27.2 第二个面试官"></a>27.2 第二个面试官</h3><p>像是个搞学术的，年级稍微大点</p>
+<p><strong>Q:</strong> （1）我看你们简历写的都差不多，都写了这么多，你这些都会吗？<br>（2）Clickhouse讲一下吧 我说了Clickhouse一些特点，他说太浅显了，每一个点都问<br>为什么</p>
+<p><strong>Q:</strong> （3）为什么clickhouse快，为什么clickhouse并发弱？<br>（4）为什么mr比spark快<br>（5）flink 的提交流程</p>
+<p><strong>Q:</strong> （6）程序入口是什么？cliFrontend</p>
+<p><strong>Q:</strong> （7）StreamGraph是什么，数据怎么存的？对象封装</p>
+<p><strong>Q:</strong> （8）JobGraph是什么，数据怎么存的？对象封装</p>
+<p><strong>Q:</strong> （9）flink的RM向yarn的RM请求资源是请求的slot还是task？<br>（10）为什么 Flink要用自己的 RM，每次 jobmaster直接向 yarn的 RM申请资源不是</p>
+<p><strong>Q:</strong> 更快吗？<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-20"><a href="#2022-年深圳大数据面试题汇总-20" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p><strong>Q:</strong> （11）为什么Spark没有自己的RM，Flink要有自己的RM？从批处理和流处理的方面<br>回答<br>公司办公环境很好，人都挺有礼貌<br>他们目前还没用flink，大数据有十几个人</p>
+<h2 id="第28章-企知道"><a href="#第28章-企知道" class="headerlink" title="第28章 企知道"></a>第28章 企知道</h2><h3 id="28-1-一面：技术"><a href="#28-1-一面：技术" class="headerlink" title="28.1 一面：技术"></a>28.1 一面：技术</h3><p>（1）项目内容简单讲一下<br>（2）你们用的技术<br>（3）hive调优<br>（4）shuffle过程及调优<br>（5）画像怎么做的<br>（6）上家的业务大致是什么</p>
+<h3 id="28-2-二面：主管"><a href="#28-2-二面：主管" class="headerlink" title="28.2 二面：主管"></a>28.2 二面：主管</h3><p><strong>Q:</strong> （1）你觉得最能体现你优秀的项目给我讲一下，让我觉得很优秀？</p>
+<p><strong>Q:</strong> （2）ClickHouse说下它的特点？其他的MPP数据库有了解么？</p>
+<p><strong>Q:</strong> （3）讲了一下Flink 提交流程？</p>
+<h2 id="第29章-幻创远景"><a href="#第29章-幻创远景" class="headerlink" title="第29章 幻创远景"></a>第29章 幻创远景</h2><p>我选的是电商公司 有自己的app<br>（1）自我介绍</p>
+<p><strong>Q:</strong> （2）上家公司是做什么的？<br>（3）公司项目的基本架构是什么<br>（4）你在其中扮演的角色是什么，<br>（5）遇到过什么问题<br>（6）数据量有多大<br>（7）用户增长怎么样<br>（8）做算法题，并和他说明解题思路<br>（9）hr专门下载了app，问app的东西<br>（10）很厉害的一家公司，对接美国硅谷的中小型公司，每天需要处理的数据量是<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-21"><a href="#2022-年深圳大数据面试题汇总-21" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p>（离线）pb级别，使用hive on spark</p>
+<h2 id="第30章-富德"><a href="#第30章-富德" class="headerlink" title="第30章 富德"></a>第30章 富德</h2><p>（1）自我介绍，问离职原因<br>（2）问 Hive 原理、分区、压缩和存储、表的管理、存储、调优、（这家主要技术为<br>Hive）<br>（3）HDFS读写流程<br>（4）Flink 相较于 Spark 的优势、Flink 怎样处理数据、WaterMaker 的产生与使用，<br>Flink 中的状态机制<br>（5）Java中异常的产生与处理、悲观锁与乐观锁的理解<br>（6）JVM的结构、内部运行流程图<br>（7）最后主要抓着业务问（比如你们公司的主营业务、你们负责那一块，用的什么框<br>架与技术，你负责什么，主要实现了什么……）。</p>
+<h2 id="第31章-滴普科技"><a href="#第31章-滴普科技" class="headerlink" title="第31章 滴普科技"></a>第31章 滴普科技</h2><p><strong>Q:</strong> （1）hdfs小文件怎么处理？</p>
+<p><strong>Q:</strong> （2）namenode脑裂怎么处理？</p>
+<p><strong>Q:</strong> （3）hive有几种join方式？<br>（4）hive怎么实现行转列<br>（5）hive的优化</p>
+<p><strong>Q:</strong> （6）hbase怎么写入的？</p>
+<p><strong>Q:</strong> （7）hbase中master挂了怎么办？</p>
+<p><strong>Q:</strong> （8）项目中有做hbase的优化吗？</p>
+<p><strong>Q:</strong> （9）如何实现kafka端到端数据的一致性（producer-&gt;kafka-&gt;consumer）？<br>（10）还有几个问题记不清了</p>
+<h2 id="第32章-华胜天成"><a href="#第32章-华胜天成" class="headerlink" title="第32章 华胜天成"></a>第32章 华胜天成</h2><p>这家公司做的银行的项目，只做离线<br>（1）自我介绍<br>（2）介绍一下你简历上的项目（我简历上写的离线和实时，都介绍了）<br>（3）离线项目里写过的sql<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-22"><a href="#2022-年深圳大数据面试题汇总-22" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p>（4）问了些sql的问题<br>（5）写过shell脚本吗，举例几个<br>（6）linux的一些命令<br>（7）听他吹牛逼扯淡<br>（8）离职原因<br>（9）离职前薪资，期望薪资</p>
+<h2 id="第33章-欢忻网络"><a href="#第33章-欢忻网络" class="headerlink" title="第33章 欢忻网络"></a>第33章 欢忻网络</h2><p>（1）面试官先介绍了下他们公司，主做游戏业务，总部在硅谷，3 轮面试，终面要连<br>线他们老总用英文<br>（2）自我介绍<br>（3）讲一下你们的项目<br>（4）开始怼Flink</p>
+<p><strong>Q:</strong> （5）讲一下Flink的分区策略，什么情况下要使用什么分区？<br>（6）Flink的JM和TM的作用<br>（7）Flink的提交流程<br>（8）Flink的数据抽象<br>（9）FlinkSql的执行和转化流程<br>（10）Flink状态后端，精确一次<br>（11）Flink的checkpoint，详细讲讲<br>（12）重启策略<br>（13）反压机制，如何处理<br>（14）keyBy等算子数据出现热点问题，如何解决<br>（15）开始怼Kafka<br>（16）kafka如何保证数据不丢，不重<br>（17）kafka组件间一致性的协议（好像是这么个问题，记不清了）<br>（18）你还熟悉hive是吧，那跟我讲一下hive sql的执行流程，转化流程，结果的获取</p>
+<h2 id="第34章-博奥特"><a href="#第34章-博奥特" class="headerlink" title="第34章 博奥特"></a>第34章 博奥特</h2><p>招全栈，需要会java，大数据 两个技术面试官<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-23"><a href="#2022-年深圳大数据面试题汇总-23" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p>（1）最近一次项目<br>（2）工作职责（我老是以用户日活举例，让我用别的举例）<br>（3）flume有遇到什么问题吗<br>（4）kafka有遇到什么问题吗<br>（5）kafka 偏移量保存<br>（6）kafka副本同步机制，leader的副本怎么同步<br>（7）kafka leader选举<br>（8）实时数仓搭建中你做了什么<br>（9）集群规模有多大，多少核多少内存<br>（10）采集，离线和实时都在同一个集群跑吗<br>（11）flink几个任务，集群能扛得住吗<br>（12）跑flink任务用的什么模式<br>（13）提交参数设置了哪些，为什么这样设置<br>（14）测试和生产是在同一个集群中吗<br>（15）数据量有多大<br>（16）数据量这么少为什么做大数据平台<br>（17）kafka怎么确保一致性的<br>（18）为什么使用flink而不是spark streaming<br>（19）flink保证数据一致性<br>（20）说说flink你做的哪些<br>（21）数据哪来的（我说日志数据使用flume导入到kafka，业务使用maxwell同步）<br>（22）maxwell使用过程有什么问题吗<br>（23）为什么不适用flinck cdc<br>（24）处理过表的join吗<br>（25）hive有进行分区分桶吗<br>（26）说说分区和分桶<br>（27）有遇到过数据倾斜吗，产生的原因，怎么解决<br>（28）数据量这么小，考虑过 小文件的问题吗<br>（29）日期的话怎么获取表的新增数据<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-24"><a href="#2022-年深圳大数据面试题汇总-24" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p>（30）那不会产生时间漂移吗<br>（31）窗口函数了解吗<br>（32）有使用自定义函数吗，需要实现哪个类，重写哪些方法<br>（33）如何获取json字符串数据<br>（34）有进行过优化吗，<br>（35）熟悉java吗<br>（36）set去重原理<br>（37）线程和多线程了解吗<br>（38）进程和线程的生命周期有哪些<br>（39）了解jvm吗<br>（40）说说jvm中的组成及作用<br>（41）考虑做全栈开发吗</p>
+<h2 id="第35章-橙色魔方-太平保险"><a href="#第35章-橙色魔方-太平保险" class="headerlink" title="第35章 橙色魔方-太平保险"></a>第35章 橙色魔方-太平保险</h2><p>问的离线，实时没问<br>（1）自我介绍<br>（2）说一下项目经历<br>（3）数据项目架构（就是想问数据采集那一套）<br>（4）sqoop是你自己配的吗（就是那些参数）<br>（5）任务调度用的什么<br>（6）java怎么样<br>（7）java基本数据类型<br>（8）java三大特性<br>（9）有用java在hive里面写过自定义函数吗，udf udtf<br>（10）hive架构<br>（11）hive常用内置函数<br>（12）hive优化<br>（13）最大的一张表<br>（14）你们数据量多大，内存多大，多少台服务器<br>（15）引擎用的什么，为什么用hive on spark，有没有出现什么问题<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-25"><a href="#2022-年深圳大数据面试题汇总-25" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p>（16）还有用其他的吗，对比MapReduce引擎怎么样<br>（17）文件存储格式有了解吗，你们用的什么，为什么用parquet<br>（18）说一下比较难的指标，实现方法<br>（19）为什么离职来深圳<br>（20）薪资要求</p>
+<h2 id="第36章-火火兔"><a href="#第36章-火火兔" class="headerlink" title="第36章 火火兔"></a>第36章 火火兔</h2><p>做儿童故事机，儿童机器人的主要搞嵌入式开发这一块。面试全程我讲项目。没有问<br>啥难的问题。这家公司很抠门。而且他叫我一个人负责大数据的风控和推荐系统，公司他<br>也嫌我要的太高。全程我在输出，他估计是不怎么懂。</p>
+<h2 id="第37章-豹亮科技"><a href="#第37章-豹亮科技" class="headerlink" title="第37章 豹亮科技"></a>第37章 豹亮科技</h2><p>（1）kafka为啥不支持读写分离<br>（2）kafka的follower与leader会有延时，不好解决<br>（3）kafka写多读也多，不太适合<br>（4）linux哪个版本安全<br>（5）优化离线数仓搭建<br>（6）怎么理解元数据<br>（7）数据分析方法论</p>
+<h2 id="第38章-禾渤科技-上海"><a href="#第38章-禾渤科技-上海" class="headerlink" title="第38章 禾渤科技(上海)"></a>第38章 禾渤科技(上海)</h2><p>公司用 spark做的离线和实时，很奇怪的是他们所有业务日志数据放在 Redis而没有使<br>用Kafka</p>
+<p><strong>Q:</strong> （1）往Redis缓存维度数据和删除维度数据有做读写分离吗？<br>（2）Java/Scala手写WordCount<br>（3）手写SQL实现当天，最近3天，最近7天的订单总数，付款总数，退款总数<br>（4）HBase高可用怎么做的<br>（5）Zookeeper选举机制<br>（6）Flume的结构</p>
+<h2 id="第39章-平安外包"><a href="#第39章-平安外包" class="headerlink" title="第39章 平安外包"></a>第39章 平安外包</h2><p>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-26"><a href="#2022-年深圳大数据面试题汇总-26" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p>（1）自我介绍和离职原因<br>（2）简单讲述之前的工作内容，涉及哪些框架比较熟悉，针对熟悉的框架询问。<br>（3）做过的指标和离线数仓每层涉及哪些表（举例说几个）<br>（4）hive：数据格式，数据去重，具体函数用过哪些（开窗函数，日期函数，字符串<br>函数。基本上都要列出来，有的是提问）简单的 SQL 题现场出了一道和一些简单优化讲了<br>下<br>（5）sqoop：对接的数据库或者其他组件有哪些，比如我为什么不用 sqoop 直接连接</p>
+<p><strong>Q:</strong> hive，然后建表输出数据？<br>（6）最后问我有什么要问的，我就问项目的框架（他回答他们用的是 PG 数据库，做<br>的离线，但是用的是python 语言，spark开发 最后委婉地说你可能更懂实时这块）<br>（7）其他都是初试，问题问的比较简单，面试大保健上有或者以前学的知识大部分都<br>能回答上，我能想起的一个就是 mysql 建立索引答不上来，其他的不太了解的问题后续跟<br>进。</p>
+<h2 id="第40章-软通动力"><a href="#第40章-软通动力" class="headerlink" title="第40章 软通动力"></a>第40章 软通动力</h2><p>（1）是否熟悉java编程?</p>
+<p><strong>Q:</strong> （2）flink和spark哪个更熟悉？</p>
+<p><strong>Q:</strong> （3）能说说flink的常用算子有哪些吗？能说说他们的作用和区别吗？<br>（4）说说flink的窗口<br>（5）是否设置过flink的重试策略</p>
+<p><strong>Q:</strong> （6）很多张数据量很大的表进行join，你能如何进行优化呢？</p>
+<h2 id="第41章-软通动力-2"><a href="#第41章-软通动力-2" class="headerlink" title="第41章 软通动力-2"></a>第41章 软通动力-2</h2><p><strong>Q:</strong> （1）Kafka的底层原理是什么？</p>
+<p><strong>Q:</strong> （2）你们用Kafka主要做什么？有什么用？</p>
+<p><strong>Q:</strong> （3）看你项目上写着Flink也做过，你给我讲一下Flink吧？</p>
+<p><strong>Q:</strong> （4）你上一家公司现在还活着吗？</p>
+<p><strong>Q:</strong> （5）你们编程语言用的什么？</p>
+<p><strong>Q:</strong> （6）我们现在项目主要是做地图业务，你有什么需要了解的吗？</p>
+<h2 id="第42章-科脉"><a href="#第42章-科脉" class="headerlink" title="第42章 科脉"></a>第42章 科脉</h2><p>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-27"><a href="#2022-年深圳大数据面试题汇总-27" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p>（1）一去就笔试，没人监考，但是外面人来人往的<br>（2）自我介绍，着重问了离职原因，还聊了下上家公司基本情况，我们组多少人<br>（3）linux常用命令<br>（4）HDFS读、写流程，着重问了写流程的块大小，块在哪里切分<br>（5）Shuffle的优化，MapReduce的全流程（包括Shuffle过程）<br>（6）yarn的参数调优有哪些<br>（7）hive的调优<br>（8）kafka的架构，kafka有哪些优点为什么用kafka<br>（9）离线的数仓建模思路<br>（10）ods层的数据是怎么倒过去的<br>（11）sqoop怎么导增量表<br>（12）除了mapjoin ，其他的还有什么join方式<br>（13）dws和dwd层有什么区别，ads层是干啥的<br>（14）还问了数仓里面什么销售主题、用户主题怎么分的<br>（15）还问了其他的我题目都不懂的问题，印象不深忘记了</p>
+<h2 id="第43章-明源云集团"><a href="#第43章-明源云集团" class="headerlink" title="第43章 明源云集团"></a>第43章 明源云集团</h2><h3 id="43-1-面试"><a href="#43-1-面试" class="headerlink" title="43.1 面试"></a>43.1 面试</h3><p>（1）Java学得怎么样：JavaSe水平<br>（2）Java内存模型了解吗</p>
+<p><strong>Q:</strong> （3）人工智能，机器学习有了解过吗？不了解<br>（4）项目架构是怎样的，项目大概讲一遍，他会拿着简历提问<br>（5）同步策略讲一下<br>（6）拉链表怎么做的<br>（7）hive怎么优化的<br>（8）spark了解吗，spark提交任务流程讲一下<br>（9）Flink 实时数仓介绍一下<br>（10）flink背压机制讲一下</p>
+<h3 id="43-2-笔试"><a href="#43-2-笔试" class="headerlink" title="43.2 笔试"></a>43.2 笔试</h3><p>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-28"><a href="#2022-年深圳大数据面试题汇总-28" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p>（1）HDFS文件系统中fsimage和edit的区别<br>（2）HDFS如何保证数据的安全性<br>（3）Hive和HBase区别是什么<br>（4）请说明hive中sort by order by cluster by distribute by 都代表什么意思<br>（5）Hive SQL中select from where group by limit order by的执行顺序<br>（6）简单描述一下Hbase的rowkey设计原则<br>（7）flink中水印什么概念，起到什么作用<br>（8）业务 有一张 order流水表，60张表分布在 5个库中，order订单状态是下定，付<br>款，结束；更新周期最长是15天，如何在数仓中建立dwd表</p>
+<h2 id="第44章-明源云-2"><a href="#第44章-明源云-2" class="headerlink" title="第44章 明源云-2"></a>第44章 明源云-2</h2><p>明源云视频面 (约20+min)<br>(比较水，大保健上都有)<br>（1）自我介绍<br>（2）采集项目讲一下<br>（3）kafka分区策略<br>（4）kafka幂等原理<br>（5）kafka分区设置<br>（6）离线数仓哪些层做了分区表</p>
+<p><strong>Q:</strong> （7）离线有哪些比较难的逻辑？最近 7天连续 3天登录。想了3天 3夜一开始想用开<br>窗+lead相减做不出来，后来@#￥%！&amp;搞定了<br>（8）MR用了哪些排序，流程讲一下<br>（9）flink反压机制</p>
+<p><strong>Q:</strong> （10）spark了解吗？原理讲一下</p>
+<p><strong>Q:</strong> （11）flink你们用过滚动窗口吗？什么场景？解决了什么问题<br>我问的<br>（12）目前招聘的项目组日常工作是做什么<br>（13）目前离线跟实时做到什么阶段了</p>
+<p><strong>Q:</strong> （14）所以不是因为新项目组建找人而是人员编制不足补充？<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-29"><a href="#2022-年深圳大数据面试题汇总-29" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><h2 id="第45章-明源云客"><a href="#第45章-明源云客" class="headerlink" title="第45章 明源云客"></a>第45章 明源云客</h2><p>（1）标准的自我介绍，要我简略的说一下我的项目<br>（2）离职还是在职，离职原因<br>（3）你说你喜欢学习新技术<br>（4）你对flink的一个了解<br>（5）Chandy-Lamport算法有了解吗，怎么实现的<br>（6）watermark机制<br>（7）你们工作上没有用 flink 这块是吧（因为我的项目没有写，直接说是感兴趣在自<br>学）</p>
+<p><strong>Q:</strong> （8）看着我简历，你这是一个app吗？是做什么的，你们公司是做那块的？</p>
+<p><strong>Q:</strong> （9）离线数仓的搭建？<br>（10）你刚刚说采用了压缩，是哪一层，怎么压缩的<br>（11）你这个在ads层之上你的指标是怎么用的，就是你在ads层做了哪些指标，怎么<br>用的这些指标</p>
+<p><strong>Q:</strong> （12）可视化你们用的什么，superset吗？<br>（13）你们为什么这么分层，这么分层的好处是什么?<br>（14）你做过哪个指标，怎么实现的，做过最难的指标是什么<br>（15）你这个数仓是基于hive来建还是hive SQL来建<br>（16）你的这个用户留存、转换率这些是怎么算的<br>（17）你们是怎么处理拉链表的，怎么实现的<br>（18）拉链表里面的end data和start data怎么来的<br>（19）讲下你的优化<br>（20）数据倾斜你怎么处理<br>（21）你刚刚说了在 join 的时候两张表相同的字段，不同的数据类型可能也会导致数</p>
+<p><strong>Q:</strong> 据倾斜，那你知道为什么会导致这个现象产生吗？<br>（22）你怎么做二次聚合，这是为了解决什么<br>（23）我看你这里面用了kylin和presto，说下他们的区别</p>
+<p><strong>Q:</strong> （24）你事实这块是怎么做的呢，用的spark Streaming？大概一个流程是什么？<br>（25）你这个实时和离线之间的一个数据关系是什么样的<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-30"><a href="#2022-年深圳大数据面试题汇总-30" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p>（26）你这个实时又是主要分析哪些指标，拿来做什么<br>（27）你们HBase表的设计是怎么设计的<br>（28）你平常是些SQL多些还是Java多些<br>（29）你最近有没有做过数据分析和数据挖掘之类的工作<br>（30）个人是倾向于实时这块还是离线这块<br>然后就是你有什么问题想问的</p>
+<h2 id="第46章-明源云客-2"><a href="#第46章-明源云客-2" class="headerlink" title="第46章 明源云客-2"></a>第46章 明源云客-2</h2><p>拿着简历问的<br>（1）问你技术栈—离线和实时 （用的什么框架，为什么要用这个，出现了什么问题）<br>（2）你在这些项目中具体干了什么<br>（3）工作中具体负责什么业务，<br>（4）hadoop体系架构，说说你的了解<br>（5）spark 有用过吗，我说实时用的 flink，spark 自己学的，然后就问我在 spark 学了<br>什么，还记得什么<br>（6）实时为什么用flink 说说你对他的了解，然后他会根据你说的继续问下去<br>（7）工作中遇到的问题，比如数据积压，怎么处理的<br>（8）宕机，怎么定位和处理</p>
+<p><strong>Q:</strong> （9）遇到难的指标？比如连续活跃天数这样的？说一下实现思路<br>总得来说就是抛出一个问题，比如对 flink 的理解，我说了水印，精准一次，反压机制<br>等，他就会根据你说的继续问下去</p>
+<h2 id="第47章-明源云客-3"><a href="#第47章-明源云客-3" class="headerlink" title="第47章 明源云客-3"></a>第47章 明源云客-3</h2><p>（1）问了个Java什么东西，没听懂，直接说不会<br>（2）项目介绍，技术选型<br>（3）<code>MySQL</code> 的引擎原理，我说不知道，但是我知道它有 MyISAM 跟 InnoDB 引擎，<br>然后他就问我区别，就等着他问这个<br>（4）Hive用的什么计算引擎，HiveSQL底层怎么转化的<br>（5）Flink反压<br>（6）离线中最难的一个指标，怎么实现，数据从哪一层来，还有维度是什么，连问的，<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-31"><a href="#2022-年深圳大数据面试题汇总-31" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p>没听全<br>（7）Kakfa语义，还有Kafka如何实现精准一次<br>（8）最后问我我觉简历上还有哪些没问到我的，我感觉还有很多，不知道怎么说，就<br>随便说了个interval join原理，他不问这个，问我还有什么join，为什么用interval join，join<br>不上怎么办</p>
+<h2 id="第48章-摩比可可-1"><a href="#第48章-摩比可可-1" class="headerlink" title="第48章 摩比可可-1"></a>第48章 摩比可可-1</h2><p>（1）clickhouse数据量大不大，怎么读入的<br>（2）flink用的什么语言<br>（3）你们公司数据量大小怎么样，实时有遇到大数据量的解决办法吗<br>（4）Java框架高并发度这块<br>（5）之前工作做了什么，具体描述<br>人很和蔼，一直在被动接受我的输出，和他聊了很多，业务主要做国外的推特油管等，<br>业务数据量巨大和我说有三四亿，得考虑业务数据量大的场景，<br>而且说是框架用的 flink 已经投入使用了，未来打算加日志数据，说是之前做的两个人</p>
+<p><strong>Q:</strong> 都已经走了？</p>
+<p><strong>Q:</strong> 想找人来熟悉及后续优化？</p>
+<h2 id="第49章-摩比可可-2"><a href="#第49章-摩比可可-2" class="headerlink" title="第49章 摩比可可-2"></a>第49章 摩比可可-2</h2><p><strong>Q:</strong> （1）你们Clickhouse中宽表有多宽？<br>（2）按你们这个数据量，没有必要专门在集群中加一个Clickhouse啊。</p>
+<p><strong>Q:</strong> （3）直接问业务，你们公司实时业务都实现哪些指标？</p>
+<p><strong>Q:</strong> （4）你们公司用Flink有没有什么调优？<br>（5）我去的时候，XX 正在面，可能技术问的不想问了，直接怼业务，业务问的很细，</p>
+<p><strong>Q:</strong> 什么指标，指标的作用，为什么统计这个指标，指标是你们公司自己用还是给客户用？<br>（6）开始说他们自己的业务，他们主要是做广告业务，主要做流量变现，说数据量很<br>大，其实也就3亿条；<br>（7）他们离线只做统计，离线的作用只是对实时的指标做一个校验，说白了就是离线<br>已经数仓搭建起来了，后续的指标也不会更新，一个人就维护了。<br>（8）他们 Flink 实时也很离谱，他们统计的指标都是按半天算的，就是窗口开的是半<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-32"><a href="#2022-年深圳大数据面试题汇总-32" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p><strong>Q:</strong> 天，这一块我觉得真的有点离谱，所以就问了一句，你们这个窗口这么大，内存耗的住吗？<br>人直接说，他们20太服务器全都是实时；</p>
+<p><strong>Q:</strong> （9）最后问了Kafka，架构，kafka消息是怎么路游的？数据可靠性如何实现，数据一</p>
+<p><strong>Q:</strong> 致性如何实现？</p>
+<p><strong>Q:</strong> （10）你还有什么要问我的吗？<br>总结：该公司可能只招一个精通 Flink 的人，主要维护他们的 Flink 实时的正常运转就<br>行，顺带着把离线也维护了，因为后面他给我说，他们实时现在有一个人正在负责，但是<br>因为这个人生病了，所以想要找一个人对项目接手；<br>最后他问我，如果他们公司的这一套交给我来交接，我大概需要多久，我直接说起码<br>3个月起步。</p>
+<h2 id="第50章-九章数据"><a href="#第50章-九章数据" class="headerlink" title="第50章 九章数据"></a>第50章 九章数据</h2><p>（1）就Spark我6台服务器 每台120个核 1T内存 80T数据 你怎么分配资源<br>（2）简历上写的指标你一定要知道怎么实现，他家就是干这个的，GMV，复活，流<br>转等等<br>（3）hive我80T的数据量跑的特别慢，你怎么去优化<br>（4）给你需求，行转列，列转行之类的需求，在这过程汇总还要排序，过滤，去重，<br>你怎么实现<br>（5）Altas是拿来干嘛的，最低依赖级别能做到什么程度（字段级别）<br>（6）你们是怎么做同步策略的<br>（7）你们的宽表是怎么存储的，怎么确定他的字段<br>（8）拉链表，这个真的很重要，在这给他扯了十多二十分钟<br>（9）你业务库中的数据前一天的数据发生改变，比如说用户下完单又退单了，你怎么<br>这些改变后的数据在同步到hive中<br>（10）你们hive中的宽表存在哪里，字段怎么确定<br>（11）你们的数据量是多大，就是dws层宽表的数据量<br>（12）hive和Spark的区别</p>
+<h2 id="第51章-中软华为外包"><a href="#第51章-中软华为外包" class="headerlink" title="第51章 中软华为外包"></a>第51章 中软华为外包</h2><p>（1）之前公司的日活，数据量。保存周期。<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-33"><a href="#2022-年深圳大数据面试题汇总-33" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p>（2）半年前的sql当时能正常跑，现在跑不了，有哪些原因。<br>（3）hive小文件的优化，hive资源可以调哪些。<br>（4）Spark的核心。<br>（5）Spark会产生的shuffle算了。<br>（6）Spark如果有需求会产生shuffle，怎么避免，或者换种方式实现。<br>（7）Spark的持久化。<br>（8）Sparkstreaming和Flink的区别。<br>（9）Flink的水印机制。<br>（10）Flink的窗口。<br>（11）Flink的重启策略。<br>（12）Flink的分区策略。</p>
+<h2 id="第52章-中软国际（华为外包）"><a href="#第52章-中软国际（华为外包）" class="headerlink" title="第52章 中软国际（华为外包）"></a>第52章 中软国际（华为外包）</h2><p>（1）自我介绍</p>
+<p><strong>Q:</strong> （2）实时用的什么？Flink<br>（3）说一下JVM的结构，用的一些框架<br>（4）说一下HashSet的去重原理<br>（5）Flink job的提交流程<br>（6）窗口说一下（时间/事件）说一下区别<br>（7）滑动/滚动窗口的应用<br>（8）Flink SQL了解吗知道底层是怎么封装的吗<br>（9）说一下流批一体<br>（10）Flink平时遇到的问题<br>（11）状态知道吗<br>（12）checkpoint机制、作用、具体实现原理<br>（13）用过哪些数据库<br>（14）为什么要用flink<br>（15）Flink的常用算子有哪些</p>
+<h2 id="第53章-中软华为外包"><a href="#第53章-中软华为外包" class="headerlink" title="第53章 中软华为外包"></a>第53章 中软华为外包</h2><p>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-34"><a href="#2022-年深圳大数据面试题汇总-34" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p><strong>Q:</strong> （1）你能讲一下你们那边的需求是什么样子的，然后您那边开发的功能是什么样子的？</p>
+<p><strong>Q:</strong> 承担的职责是什么样子？<br>（2）你简单讲一下你们那边的flink架构</p>
+<p><strong>Q:</strong> （3）Clickhouse的更新数据怎么考虑？数据的唯一性这块是怎么考虑的？</p>
+<p><strong>Q:</strong> （4）clickhouse 里面有没有做一些简单的聚合，还是只是说打宽不做聚合吗？你们</p>
+<p><strong>Q:</strong> clickhouse使用的并发度有多少？</p>
+<p><strong>Q:</strong> （5）你们 flink 有做聚合操作吗？聚合的粒度是多少？有做更长的聚合吗？几个小时？</p>
+<h2 id="一、天的指标"><a href="#一、天的指标" class="headerlink" title="一、天的指标"></a>一、天的指标</h2><p><strong>Q:</strong> （6）Flink你负责哪些指标的计算？举例？思路？做了多久？</p>
+<p><strong>Q:</strong> （7）你们公司做什么业务的？</p>
+<p><strong>Q:</strong> （8）你的工作年限？薪资？</p>
+<p><strong>Q:</strong> （9）采集用了什么技术？离线用了什么技术？你负责的是哪些？</p>
+<p><strong>Q:</strong> （10）原则指标和延伸指标是什么？</p>
+<p><strong>Q:</strong> （11）大数据的海量数据处理原理是？hive 或者 spark,flink 为什么能够处理更大的数</p>
+<p><strong>Q:</strong> 据？原理？</p>
+<p><strong>Q:</strong> （12）hadoop相对mysql为什么可以做到分布式处理更大的数据量？</p>
+<p><strong>Q:</strong> （13）flink sql 的join方式有哪几种？和流式的join区别？和批处理的join区别？它的</p>
+<p><strong>Q:</strong> join原理？怎么实现快速的join？</p>
+<p><strong>Q:</strong> （14）编程语言熟悉哪些？做过java开发吗？</p>
+<p><strong>Q:</strong> （15）你们做开发，离线和实时都是sql吗？为什么?</p>
+<h2 id="第54章-龙通科技"><a href="#第54章-龙通科技" class="headerlink" title="第54章 龙通科技"></a>第54章 龙通科技</h2><p><strong>Q:</strong> （1）map join和 reduce join 的区别？</p>
+<p><strong>Q:</strong> （2）hive 里面有那几种join，区别是什么？</p>
+<p><strong>Q:</strong> （3）你最近的工作内容？</p>
+<p><strong>Q:</strong> （4）你懂不懂数据分析？不懂，只做需求。</p>
+<p><strong>Q:</strong> （5）你做过哪些需求？</p>
+<p><strong>Q:</strong> （6）spark的优化？</p>
+<p><strong>Q:</strong> （7）Linux怎么看进程占用的资源？</p>
+<p><strong>Q:</strong> （8）kakfa怎么处理丢数据？<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-35"><a href="#2022-年深圳大数据面试题汇总-35" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p><strong>Q:</strong> （9）kafka和其他消息队列的对比？</p>
+<p><strong>Q:</strong> （10）kafka的优点？</p>
+<h2 id="第55章-理想动力"><a href="#第55章-理想动力" class="headerlink" title="第55章 理想动力"></a>第55章 理想动力</h2><p>（1）讲一下最近做的项目</p>
+<p><strong>Q:</strong> （2）clickhouse的引擎了解吗？<br>（3）MySQL索引了解吗<br>（4）Linux命令<br>（5）数仓搭建过程<br>（6）维度建模过程</p>
+<p><strong>Q:</strong> （7）数仓从开始搭建到能用花了多长时间？感觉他们才开始做数仓，大数据框架都不<br>问<br>（8）技术选型怎么选的?<br>（9）人事<br>（10）之前公司大数据多少人<br>（11）为啥离职<br>（12）期望薪资多少<br>（13）之前薪资多少</p>
+<h2 id="第56章-理想动力-2"><a href="#第56章-理想动力-2" class="headerlink" title="第56章 理想动力-2"></a>第56章 理想动力-2</h2><h3 id="56-1-技术面"><a href="#56-1-技术面" class="headerlink" title="56.1 技术面"></a>56.1 技术面</h3><p>（1）介绍项目 一套行云流水<br>（2）介绍数据源的设计思路<br>（3）介绍建模思路 这个海哥讲了</p>
+<p><strong>Q:</strong> （4）mysql 慢查询怎么处理？我说的分表查、分治，然后面试官就走了，人事就进来<br>了</p>
+<h3 id="56-2-人事面"><a href="#56-2-人事面" class="headerlink" title="56.2 人事面"></a>56.2 人事面</h3><p>（1）你是不是计算机专业、统招学历</p>
+<p><strong>Q:</strong> （2）你在原来项目是干嘛的？</p>
+<p><strong>Q:</strong> （3）人事问你是自学还是？<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-36"><a href="#2022-年深圳大数据面试题汇总-36" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p><strong>Q:</strong> （4）有没有结婚？有没有女朋友？……….全无</p>
+<p><strong>Q:</strong> （5）什么时候打算结婚？不着急</p>
+<p><strong>Q:</strong> （6）期望薪资？我说的22，原公司给我20<br>（7）人事说她前两天面了一个候选人，5 年工作经验，还是计算机本科，他上家公司<br>才给 12k，我就笑了笑:哦，这也太低了，我做爬虫的时候起步都是 12，后面项目做的好，<br>升组长，升副经理，老板就一直涨工资，一不小心就20了</p>
+<p><strong>Q:</strong> （8）那为什么离职？ 老板投了很多项目，我们还做了一个智慧城市的招标，我负责<br>了其中一个模块的方案设计，但最后没中标，后来又投了k12，结果暴雷，你懂得<br>（9）人事最后就说加个微信，让我等通知，说最高可能就是21k</p>
+<h2 id="第57章-久谦科技"><a href="#第57章-久谦科技" class="headerlink" title="第57章 久谦科技"></a>第57章 久谦科技</h2><p>（1）自我介绍<br>（2）介绍一下你最近在做的项目<br>（3）你们用的什么语言</p>
+<p><strong>Q:</strong> （4）Flink项目是用的api还是用的sql开发的？为什么？<br>（5）Java的hashmap底层架构，往里面的链表插数据是头还是尾<br>（6）单例模式怎么实现的，懒汉式里怎么整成线程安全的<br>（7）口述一下快排思路<br>（8）有若干个0-100的正整数，求出其中所有的两两组合和为100情况，口述思路</p>
+<p><strong>Q:</strong> 我一个干大数据的老问我Java干嘛？拉扯一下<br>（9）MySQL的索引，什么情况下需要建索引（Java折磨完MySQL折磨，继续拉扯）</p>
+<p><strong>Q:</strong> （10）redis用过吗？redis你们保存什么类型的数据</p>
+<p><strong>Q:</strong> （11）你们Hbase里存维度数据？维度数据不多为啥要用hbase存？<br>（12）了解spark吗<br>（13）spark里重分区的算子<br>（14）spark里的宽依赖和窄依赖了解吗<br>（15）kafka的分区分配策略</p>
+<h2 id="第58章-跨越面试"><a href="#第58章-跨越面试" class="headerlink" title="第58章 跨越面试"></a>第58章 跨越面试</h2><h3 id="58-1-一面"><a href="#58-1-一面" class="headerlink" title="58.1 一面"></a>58.1 一面</h3><p>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-37"><a href="#2022-年深圳大数据面试题汇总-37" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p>（1）自我介绍<br>（2）介绍一下最近的一个项目<br>（3）flink算子有哪些<br>（4）flink的时间语义<br>（5）介绍一下水印<br>（6）说说状态<br>（7）如何处理迟到数据<br>（8）双流join<br>（9）rdd说一下，<br>（10）spark三种模式介绍一下<br>（11）hadoop查看文件大小命令<br>（12）说说kafka<br>（13）zookeeper的选举机制了解吗<br>手写三道sql 看图片<br>可以写不完，但是需要和他说解题思路</p>
+<h3 id="58-2-二面-用人部门领导"><a href="#58-2-二面-用人部门领导" class="headerlink" title="58.2 二面 用人部门领导"></a>58.2 二面 用人部门领导</h3><p>（1）自我介绍<br>（2）介绍一下离线数仓项目<br>（3）每日数据量有多少<br>（4）几台节点<br>（5）遇到过哪些难的需求<br>（6）数据倾斜处理过吗，怎么处理<br>（7）有进行过优化吗<br>（8）性能提升如何<br>（9）实时数仓用了哪些算子，为什么<br>（10）窗口开多大，迟到数据怎么办</p>
+<h3 id="58-3-三面-hr"><a href="#58-3-三面-hr" class="headerlink" title="58.3 三面 hr"></a>58.3 三面 hr</h3><p>（1）自我介绍<br>（2）说说上家公司<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-38"><a href="#2022-年深圳大数据面试题汇总-38" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p>（3）离职原因是什么<br>（4）期望薪资和期望年薪是多少<br>（5）薪资流水可查吗（需要填表，包括公司证明人）<br>（6）什么时候入职<br>（7）什么时候离职<br>（8）什么时候涨薪<br>（9）只涨薪过一次吗，为什么<br>（10）未来职业规划能说说吗</p>
+<h2 id="第59章-跨越速运"><a href="#第59章-跨越速运" class="headerlink" title="第59章 跨越速运"></a>第59章 跨越速运</h2><p>（1）笔试三道sql题 最后一道是鹏哥那五道题中的（活动时间统计），问了具体思路<br>（2）介绍你做过的项目的技术选型，包括离线和实时<br>（3）熟悉clickhouse的读写流程吗</p>
+<p><strong>Q:</strong> （4）问你比较熟悉的组件？ kafka</p>
+<p><strong>Q:</strong> （5）rebalance发生有哪些场景？rebalance是针对于消费者端还是生产端？</p>
+<p><strong>Q:</strong> （6）kafka单节点最多支持多少个topic？实际上支持多少个？为什么？</p>
+<p><strong>Q:</strong> （7）kafka支持动态修改topic分区数吗？怎么修改？修改时会暂停数据写入吗<br>（8）topic中的数据是怎么存储的</p>
+<p><strong>Q:</strong> （9）一个副本的数据是否可以存储在多块磁盘中？kafka自身是否支持这种配置<br>（10）是否熟悉mysql<br>（11）实时项目中的维表join有几种方式</p>
+<p><strong>Q:</strong> （12）如果采用广播状态存储维表，修改维表中的数据后，如何让Flink感知到？<br>（13）熟悉HQL的转化流程吗，具体问了一个sql语句有多少个mapreduce任务</p>
+<p><strong>Q:</strong> （14）项目遇到过哪些很难解决的问题？</p>
+<p><strong>Q:</strong> （15）数据量多大，版本多久更新一次？</p>
+<p><strong>Q:</strong> （16）你在这家公司看起来工作量不大，能不能说一个过去你觉得压力比较大的项目？<br>（17）说说你个人的职业规划</p>
+<h2 id="第60章-牧原科技"><a href="#第60章-牧原科技" class="headerlink" title="第60章 牧原科技"></a>第60章 牧原科技</h2><p>视频面试，人事和技术一起面<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-39"><a href="#2022-年深圳大数据面试题汇总-39" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><h3 id="60-1-人事"><a href="#60-1-人事" class="headerlink" title="60.1 人事"></a>60.1 人事</h3><p>（1）上家公司的企业文化是什么?<br>（2）上家公司给你带来什么样的成长?<br>（3）上家公司哪些地方你是觉得好的</p>
+<h3 id="60-2-技术"><a href="#60-2-技术" class="headerlink" title="60.2 技术"></a>60.2 技术</h3><p>（1）问了大学专业相关的内容,虽然毫无关系,但他也要听.<br>（2）hdfs的高可用模式讲一下<br>（3）hdfs的高可用模式有哪些组件?JournalNoe/QJournalProtocol/nn/dn<br>（4）hiveOnSpark的join是怎么实现的?具体详细说明<br>（5）hbase的存储架构讲一下<br>（6）jvm内存模型,堆内存和栈内存的区别?<br>（7）用过哪些数据结构,查找的空间复杂度和时间复杂度分别是?<br>（8）你会怎样选择数据结构?</p>
+<h2 id="第61章-领星"><a href="#第61章-领星" class="headerlink" title="第61章 领星"></a>第61章 领星</h2><p><strong>Q:</strong> （1）你们maxwell数据至少一次的话，后续重复数据在flink里怎么进行过滤处理？<br>（2）质疑为什么用的 flinkCDC 技术那前面还使用 maxwell 功能，不是重复了吗，</p>
+<p><strong>Q:</strong> FlinkCDC就能实现maxwell的功能了？<br>（3）Kafka 中存储三天的数据量，那你的实时数据假如统计一个月、两个月之前的跑</p>
+<p><strong>Q:</strong> 有问题了，需要用到之前的历史数据怎么处理？重复读取这个方法不适用 有其他的吗？</p>
+<p><strong>Q:</strong> （4）kafka怎么实现produce端到端的一致性？以及consumer端到端的一致性？<br>（5）flink任务在跑的过程中进行了修改，10个算子改为了 15个算子怎么进行动态调</p>
+<p><strong>Q:</strong> 整，笑着和我说类似飞机飞行过程中换发动机？？</p>
+<p><strong>Q:</strong> （6）flink背压是怎么定位的除了web？反压怎么造成的？反压会造成什么问题？</p>
+<p><strong>Q:</strong> （7）flink的回撤流写入clickhouse的数据怎么处理幂等性？</p>
+<p><strong>Q:</strong> （8）实时数仓kafka中有几个分区？怎么划分的？</p>
+<p><strong>Q:</strong> （9）状态后端用的哪个？最大的checkpoint存在hdfs上有多大？</p>
+<h2 id="第62章-中软国际"><a href="#第62章-中软国际" class="headerlink" title="第62章 中软国际"></a>第62章 中软国际</h2><p>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-40"><a href="#2022-年深圳大数据面试题汇总-40" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><h3 id="62-1-一面"><a href="#62-1-一面" class="headerlink" title="62.1 一面"></a>62.1 一面</h3><p>技术主管电话面试<br>（1）是否参与了架构搭建<br>（2）说一下数仓搭建整个过程</p>
+<p><strong>Q:</strong> （3）说一下你在项目中扮演的角色？</p>
+<p><strong>Q:</strong> （4）说一下你在项目中遇到的困难，然后是怎么解决的？<br>（5）讲一下维度建模过程<br>（6）Linux打印错误信息的命令</p>
+<p><strong>Q:</strong> （7）hbase 的rowkey设计原则？</p>
+<p><strong>Q:</strong> （8）如何调优使得hbase读写更快？</p>
+<p><strong>Q:</strong> （9）你们每天导入数仓的数据量大概多大？</p>
+<p><strong>Q:</strong> （10）你们最大的表是什么表，数据量有多大？</p>
+<p><strong>Q:</strong> （11）你们使用hbase的时候使用过二级索引吗？</p>
+<p><strong>Q:</strong> （12）你们用的是开源的还是CDH的？</p>
+<p><strong>Q:</strong> （13）你们在写自定义函数的时候是写上函数还是下函数？</p>
+<p><strong>Q:</strong> （14）你之前薪资多少？</p>
+<p><strong>Q:</strong> （15）你期望多少薪资？</p>
+<p><strong>Q:</strong> （16）你是哪个学校毕业的，是全日制本科吗？</p>
+<h3 id="62-2-二面"><a href="#62-2-二面" class="headerlink" title="62.2 二面"></a>62.2 二面</h3><p><strong>Q:</strong> （1）hive的优化有哪些？</p>
+<p><strong>Q:</strong> （2）数据量比较大多个join执行很慢，怎么处理？</p>
+<p><strong>Q:</strong> （3）spark 了解吗？spark的核心是什么？</p>
+<p><strong>Q:</strong> （4）spark action算子有哪些？transformation算子有哪些？<br>（5）你期望薪资多少，我说19-24k<br>面试官：我这边给不了你这么多，最多给你 18k, 我后续再根据你的情况跟我们同事反<br>馈一下</p>
+<h2 id="第63章-游禅科技"><a href="#第63章-游禅科技" class="headerlink" title="第63章 游禅科技"></a>第63章 游禅科技</h2><p><strong>Q:</strong> （1）什么语言写作业，python会不会？java和scala哪个熟？<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-41"><a href="#2022-年深圳大数据面试题汇总-41" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p><strong>Q:</strong> （2）java里面的反射机制？</p>
+<p><strong>Q:</strong> （3）java bean是spring框架里面的？<br>（4）scala闭包说一下?</p>
+<p><strong>Q:</strong> （5）柯里化说一下？<br>（6）scala伴生类，谈谈理解</p>
+<p><strong>Q:</strong> （7）谈谈隐式转换？你知道scala隐式转换有多少种吗？</p>
+<p><strong>Q:</strong> （8）scala模式匹配就多少种？</p>
+<p><strong>Q:</strong> （9）scala网络通信层阿卡之类的你懂吗？</p>
+<p><strong>Q:</strong> （10）用scala写过web框架？</p>
+<p><strong>Q:</strong> （11）能用scala写服务吗？</p>
+<p><strong>Q:</strong> （12）说说CDH，说说架构，里面的角色？</p>
+<p><strong>Q:</strong> （13）说说CDH监控服务？<br>（14）说说CDH集成到FLINK的流程。</p>
+<p><strong>Q:</strong> （15）CM sever莫尼ter 监控系统 之间的关系是大概什么样子？CDH不是有基本的</p>
+<p><strong>Q:</strong> 架构，大概是什么样子，CH服务做高可用？<br>（16）还有恩ber锐也没听过是吧，后面会转用到恩ber锐<br>（17）hadoop高可用以及热备份和冷备份讲讲。<br>（18）yarn调度策略</p>
+<p><strong>Q:</strong> （19）聊聊公平或者容量怎么实现的？</p>
+<p><strong>Q:</strong> （20）然后问我几几年毕业的？<br>（21）说一下redis基本数据结构<br>（22）redis哨兵模式<br>（23）yarn讲讲<br>（24）client cluster 模式说说<br>（25）sparksql 只支持 client 模式那你有没有想过怎么有什么手段去优化这个支持</p>
+<p><strong>Q:</strong> cluster？</p>
+<p><strong>Q:</strong> （26）clinkhouse了解多吗？ 我说查询快，面试官问所有的引擎都是查询快吗？<br>（27）说说物化视图是啥东西<br>（28）你对dorisdb有多少了解<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-42"><a href="#2022-年深圳大数据面试题汇总-42" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p>（29）azkaban会多少 我会写flow<br>（30）sparkstreaming里面怎么保证消息的精准一次<br>（31）说说flink里面怎么保证精准一次<br>（32）讲讲状态后端几种</p>
+<p><strong>Q:</strong> （33）rocketDS一般用在什么样里面？<br>（34）flink窗口计算说说</p>
+<p><strong>Q:</strong> （35）watermark flink里面有哪些水印生成策略？水印生产影响性能。<br>（36）窗口计算里面定时器，触发器，讲讲<br>（37）看过flink源码吗 入口在哪里<br>（38）说说实时数仓是怎么做的<br>（39）join性能问题怎么去解决的。<br>（40）异常数据怎么处理的。</p>
+<p><strong>Q:</strong> （41）遇到什么难点？性能上的难点。 然后我说了flink异步查询。<br>（42）数据没有join咋办，数据延迟咋处理，怎么处理更新不及时。<br>（43）项目中遇到哪些难点</p>
+<h2 id="第64章-索信达"><a href="#第64章-索信达" class="headerlink" title="第64章 索信达"></a>第64章 索信达</h2><p>电话面试-技术面<br>（1）离职原因<br>（2）Java声明volatile变量的作用<br>（3）离线数仓标签有哪几种标签，这些标签有什么特性，这些标签分别采用什么技术</p>
+<p><strong>Q:</strong> 来实现？<br>（4）shell 怎么知道上一行命令执行结果是成功还是失败<br>（5）shell 怎么得到参数个数<br>（6）hql问题：三个字段 部门 薪资 姓名，想得到每个部门下面薪资最高的十个人。<br>（7）hive的元数据服务和 hiveserver2服务是什么关系，或者说 hive的 metastore服务</p>
+<p><strong>Q:</strong> 可以不开吗？<br>（8）clickhouse优缺点及应用场景<br>（9）什么是OLAP<br>（10）clickhouse每秒查多少次(QPS)——这个问题就是想问clickhouse的缺点：不适合<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-43"><a href="#2022-年深圳大数据面试题汇总-43" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p>高并发<br>（11）Flink：时间语义</p>
+<p><strong>Q:</strong> （12）Flink：对于不好直接计算得出最终结果的数据怎么处理？<br>（13）Flink: 有几种状态类型<br>（14）业务场景如何实现：Flink 消费 Kafka 的日志数据，把规则放到 <code>MySQL</code> 的配置<br>表，然后需要感知配置表的变化，根据配置表规则的变化对数据流进行对应的匹配</p>
+<p><strong>Q:</strong> （15）Java的什么关键字的锁经历那几个阶段？——不懂<br>（16）<code>Redis</code>：如何实现删除2点到5点写进去的数据 —— 用hash，key存时间</p>
+<p><strong>Q:</strong> （17）Hive表的数据如何导到Hbase？</p>
+<h2 id="第65章-索信达-2"><a href="#第65章-索信达-2" class="headerlink" title="第65章 索信达-2"></a>第65章 索信达-2</h2><p><strong>Q:</strong> （1）source阶段发现读取数据慢，和并行度无关的情况下还有什么原因？ maybe kafka<br>只有一个分区有数据。写入的时候指定分区了<br>（2）es倒排索引</p>
+<p><strong>Q:</strong> （3）flink状态api？<br>（4）spark core和spark sql读取hive表，spark core没读取到，可能原因<br>（5）快排和选择排序说下、<br>（6）锁的状态、<br>（7）一些树的原理、</p>
+<p><strong>Q:</strong> （8）scala柯里化？？？</p>
+<h2 id="第66章-索信达-3-招商外包"><a href="#第66章-索信达-3-招商外包" class="headerlink" title="第66章 索信达-3(招商外包)"></a>第66章 索信达-3(招商外包)</h2><p><strong>Q:</strong> （1）flink预提交会commite数据到mysql吗？答案是会的，然后预提交之后还要等待<br>mysql的ack，如果ack失败，则会全部回滚。如果ack成功了才会二次提交<br>（2）savepoint与checkpoint的区别</p>
+<h2 id="第67章-万筑物连"><a href="#第67章-万筑物连" class="headerlink" title="第67章 万筑物连"></a>第67章 万筑物连</h2><h3 id="67-1-一面"><a href="#67-1-一面" class="headerlink" title="67.1 一面"></a>67.1 一面</h3><p>技术组长面 分钟<br>| 40<br>这一面主要是考察一下掌握的技术点，面试官还是从简历上写的项目开始问起的， 看<br>|<br>到写的有他感兴趣的地方，就会问。<br>（1）自我介绍<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-44"><a href="#2022-年深圳大数据面试题汇总-44" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p>（2）flink状态机制<br>（3）flink并行度与slot，taskmanager的关系<br>（4）flink水印机制<br>（5）双流join，join不上怎么办<br>（6）对flink做的优化，我说的是关联维度数据，观测到反压，使用旁路缓存+flink异<br>步IO，好像不太满意，最正确的回答应该是从flink机制上的调优，这些虽然也是优化，但<br>是比较通用，不能体现对flink的了解程度。<br>（7）checkpoint 为什么比spark的好，从分布式异步快照讲了一遍<br>（8）精准一次性的保证<br>（9）flink内存管理，这个不会，我直接就说的不知道<br>（10）hive优化<br>（11）拉链表，从数据导入，到建模，到使用说一遍<br>（12）数仓建模<br>（13）spark内存管理，这个也不会，就说了只知道 spark和 flink都有一个堆内内存一<br>个堆外内存</p>
+<p><strong>Q:</strong> （14）项目组现在是做啥的？</p>
+<p><strong>Q:</strong> （15）我进去是做啥的？</p>
+<p><strong>Q:</strong> （16）你们怎么数仓建模的？</p>
+<h3 id="67-2-二面"><a href="#67-2-二面" class="headerlink" title="67.2 二面"></a>67.2 二面</h3><p>技术总监面 分钟<br>| 20<br>这一面主要考察对业务的了解情况，就是说大数据工程师还是要了解业务指标的作用和<br>|<br>价值。答得比较磕磕巴巴。<br>自我介绍</p>
+<p><strong>Q:</strong> （1）你们app是干啥的？</p>
+<p><strong>Q:</strong> （2）你们做大数据的作用是什么？</p>
+<p><strong>Q:</strong> （3）怎么统计这个指标的？</p>
+<p><strong>Q:</strong> （4）你们怎么针对性的发放优惠卷？<br>我问的问题：</p>
+<p><strong>Q:</strong> （5）项目组的人员配置？</p>
+<p><strong>Q:</strong> （6）公司业务是啥样的？<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-45"><a href="#2022-年深圳大数据面试题汇总-45" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><h3 id="67-3-三面"><a href="#67-3-三面" class="headerlink" title="67.3 三面"></a>67.3 三面</h3><p>boss 10分钟</p>
+<p><strong>Q:</strong> （1）你们公司规模多大？</p>
+<p><strong>Q:</strong> （2）日活？GMV？</p>
+<p><strong>Q:</strong> （3）你感觉自己了解业务吗？ 我说上个面试官问的挺深的，我感觉自己还算了解把</p>
+<p><strong>Q:</strong> （4）怎么来到深圳发展了？</p>
+<p><strong>Q:</strong> （5）职业规划是什么样？<br>我问的问题：</p>
+<p><strong>Q:</strong> （6）公司在研发上的投入怎么样？</p>
+<p><strong>Q:</strong> （7）作为老板，怎么看待公司前景的？</p>
+<h2 id="第68章-先创科技"><a href="#第68章-先创科技" class="headerlink" title="第68章 先创科技"></a>第68章 先创科技</h2><p>（1）kafka原理，有哪些组件<br>（2）为什么用kafka<br>（3）HBase的原理<br>（4）HBase优化<br>（5）你们用HBase是拿来干什么 为什么不要ES<br>（6）Java和Scala的区别<br>（7）spark的一个优化<br>（8）Spark的高阶函数用过没有 说一下你们常用的<br>（9）azkaban版本是多少<br>（10）说一下你们的数仓建模<br>（11）ES了解不 为什么用ES<br>（12）我看你这上面写了kylin和presto,说一下他两的区别<br>（13）主要还是根据你的一个简历来问，感觉自己面的稀碎</p>
+<h2 id="第69章-一页科技"><a href="#第69章-一页科技" class="headerlink" title="第69章 一页科技"></a>第69章 一页科技</h2><p>（1）问：介绍一下项目<br>（2）问：介绍一下flink<br>（3）问：介绍一下数据一致性<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-46"><a href="#2022-年深圳大数据面试题汇总-46" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p>（4）问：hive调优、数据倾斜<br>（5）问：介绍一下水印<br>（6）其他就是一些业务问题，在就没什么了，flink的问的多一些</p>
+<h2 id="第70章-赢时胜"><a href="#第70章-赢时胜" class="headerlink" title="第70章 赢时胜"></a>第70章 赢时胜</h2><p>（1）自我介绍<br>（2）讲一下你们实时数仓的流程，根据数据流向讲<br>（3）讲一下你们数据怎么采集的，flume组件，为什么不用kafkachannel<br>（4）hbase的rowkey怎么设计的<br>（5）hbase做没做二级索引<br>（6）超大数据量用hbase怎么读写<br>（7）flink提交流程，任务调度，通信原理<br>（8）通信原理里面你讲了akka和netty，那你了解akka和netty吗<br>（9）kafka如何保证不丢数据</p>
+<p><strong>Q:</strong> （10）你讲了producer如何不丢，那consumer 呢？<br>（11）两阶段提交了解吗</p>
+<h2 id="第71章-中地"><a href="#第71章-中地" class="headerlink" title="第71章 中地"></a>第71章 中地</h2><p>自我介绍</p>
+<p><strong>Q:</strong> （1）介绍一下你所做过的所有项目（简历上的）？</p>
+<p><strong>Q:</strong> （2）数据采集为什么用flume、kafka？</p>
+<p><strong>Q:</strong> （3）你们公司都用了哪些组件？为什么要用这些组件？</p>
+<p><strong>Q:</strong> （4）为什么离线和实时的可视化工具不一样？</p>
+<p><strong>Q:</strong> （5）为什么离线用superset、实时用suger？</p>
+<p><strong>Q:</strong> （6）导业务数据为什么用maxwell，不用sqoop？</p>
+<p><strong>Q:</strong> （7）有搭建环境的经验吗？（这我理解成集群搭建了）</p>
+<p><strong>Q:</strong> （8）其他的忘了，想起来了补充？<br>注：自研公司，目前在搭建实时平台，大数据组总共就 1 人（大佬），已经搭建到 ods<br>层，面试官自己都不是很懂这些</p>
+<h2 id="第72章-易车面试"><a href="#第72章-易车面试" class="headerlink" title="第72章 易车面试"></a>第72章 易车面试</h2><p>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-47"><a href="#2022-年深圳大数据面试题汇总-47" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p>（1）自我介绍<br>（2）介绍一下你们的实时数仓项目<br>（3）你在实时数仓开发中担任什么角色，有过哪些亮点表现，解决过什么问题<br>（4）有参与框架选型吗<br>（5）那再来介绍一下你们的离线数仓项目<br>（6）你在离线数仓中担任什么角色<br>（7）问一些简历上写的指标<br>（8）你的hql能力怎么样<br>（9）你写的那些HQL做过哪些优化（实际业务中的HQL语句的优化，行列过滤。。。<br>那一套不管用）<br>（10）用redis做缓存，那考虑过穿透雪崩等问题吗<br>（11）你有什么问题想问的</p>
+<h2 id="第73章-万宝盛华"><a href="#第73章-万宝盛华" class="headerlink" title="第73章 万宝盛华"></a>第73章 万宝盛华</h2><p>（1）Flink底层开发做过吗，比如说flink sql这块<br>（2）说一下你用flink sql做了什么，有没有遇到什么问题<br>（3）好的，你自我介绍一下<br>（4）然后问了一下工作经历<br>（5）我们项目主要用flink和hbase，你展开讲下就这两个组件你在项目中用到了哪些<br>（6）你们source是什么<br>（7）你们用flink怎么处理流数据的<br>（8）窗口机制<br>（9）你们用的flink是基于开源的hadoop吗<br>（10）你们部署flink后是用session模式还是per-job模式<br>（11）用per-job模式出现了异常你们是怎么设置自动拉起的<br>（12）如果重试次数达到上限后你们怎么处理<br>（13）Hbase的基本原理或者是存储架构简单介绍一下<br>（14）表的存储结构<br>（15）这个rowkey和列簇是什么关系<br>（16）用phinoix或者hbase api查询表或写入数据可能出现异常，你们是怎么考虑的<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-48"><a href="#2022-年深圳大数据面试题汇总-48" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p>（17）Java用的怎么样，linkedlist和arraylist什么区别<br>（18）说一下引用传递和值传递<br>（19）Hashset是用什么判断两个对象是否相同<br>（20）删除集合元素时是用到哪个类的哪个方法<br>（21）Java8的streamAPI会用吗<br>（22）Maven常用的操作有哪些</p>
+<p><strong>Q:</strong> （23）Git的常用操作都有哪些？就是提交代码，拉取代码的命令<br>（24）你做过单元测试吗，做过哪些</p>
+<h2 id="第74章-银星智能"><a href="#第74章-银星智能" class="headerlink" title="第74章 银星智能"></a>第74章 银星智能</h2><p>（1）介绍项目<br>（2）整个框架的理解<br>（3）离线数仓与实时数仓的实现思路<br>（4）假如有1000台节点，如何保证集群的正常运行<br>（5）讲一讲cdh<br>（6）如何对flinksql进行封装<br>（7）讲一讲数据中台<br>（8）讲一讲数据质量监控<br>（9）讲一讲权限管理<br>（10）最后告诉我，他们是做数据中台的，类似 cdh 的那个可视化平台，供客户使用，<br>目前他们现有节点近1000台，如果我去了，可能就是要做数据中台的开发.</p>
+<h2 id="第75章-中电惠安"><a href="#第75章-中电惠安" class="headerlink" title="第75章 中电惠安"></a>第75章 中电惠安</h2><p>（1）自我介绍<br>（2）介绍离线项目框架<br>（3）建立离线数仓遇到过哪些问题，怎么解决的<br>（4）离线数仓有做了哪些优化吗<br>（5）数据量有多大<br>（6）做过实时数仓，简单说一下整体的架构<br>（7）flume熟悉吗<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-49"><a href="#2022-年深圳大数据面试题汇总-49" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p>（8）说一说你对kafka的了解<br>（9）flink的算子和作用<br>（10）说说flink如何解决乱序的<br>（11）有遇到过什么问题吗<br>（12）有做过哪些优化<br>（13）能说说hbase吗<br>（14）hadoop写流程<br>（15）你所在的部门组成是如何的</p>
+<h2 id="第76章-视野数科"><a href="#第76章-视野数科" class="headerlink" title="第76章 视野数科"></a>第76章 视野数科</h2><p>（1）IK分词器有几种分词模式<br>（2）Flink双流join会遇到什么问题是怎么处理的<br>（3）Flink异步I/o是怎么做的，怎么实现的<br>（4）Flink介绍开窗函数<br>（5）对clickhouse引擎有了解吗<br>（6）Nginx是怎么配置的<br>（7）Phoenix对hbase建索引有几种方式及区别<br>（8）spark 和flink 的checkpoint的区别<br>（9）spark submit提交任务会用到那些参数<br>（10）对于堆内和堆外内存如何了解<br>（11）udf udtf udaf 函数都有什么区别<br>（12）怎么在hive上使用自定义函数<br>（13）自定义函数上传的命令是什么</p>
+<h2 id="第77章-160-健康"><a href="#第77章-160-健康" class="headerlink" title="第77章 160 健康"></a>第77章 160 健康</h2><p><strong>Q:</strong> （1）水印的作用？</p>
+<p><strong>Q:</strong> （2）水印在哪些算子不算数？</p>
+<p><strong>Q:</strong> （3）flink的slot的CPU与内存是隔离的吗？</p>
+<h2 id="第78章-易数科技"><a href="#第78章-易数科技" class="headerlink" title="第78章 易数科技"></a>第78章 易数科技</h2><p>（1）亿级表的去重<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-50"><a href="#2022-年深圳大数据面试题汇总-50" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p>（2）hdfs 了解吗? yarn 的队列划分的方式 : 4 种<br>（3）hdfs 写的原理<br>（4）hive 的文件存储格式, parquet 与 orc 的区别<br>（5）mr 的 shuffle 原理<br>（6）shuffle 是哪个过程中产生的?在 map 端还是在 reduce 端<br>（7）用过 hive 的 udf 函数吗? 继承了 udf 的一个类,还能继承别的类吗?<br>（8）使用 hive 的时候数据的表现? 数据倾斜的原因有什么<br>（9）spark 了解吗<br>（10）flink 的反压机制,原理,怎么实现反压<br>（11）flink 的架构模型?source 怎么使用的?连接 clickhouse 怎么使用,说一下 API 和继<br>承的类,用什么类<br>（12）map 和 richmap 有什么区别?open 方法有什么用?<br>（13）知道 flink 的 slot 的合并<br>（14）flink 的窗口? 时间语义有几种?<br>（15）flink 读取 kafka,按照事件时间的, 如何处理时间乱序<br>（16）维度建模的方法,步骤. 建模的过程中的顺序,建了哪些模型,第一步做的是什么模<br>型<br>（17）ods 层做什么事,会在 ods 层输出什么东西<br>（18）dwd 层做什么,不是细节上的而是更加宏观的,这一次要做什么. 比如划分主题域<br>之类<br>（19）clickhouse 的源码看过吗?为什么选用 clickhouse?为什么快?有几种表引擎?除了<br>合并树还有哪些<br>（20）有做过数据治理吗?</p>
+<h2 id="第79章-十方教育"><a href="#第79章-十方教育" class="headerlink" title="第79章 十方教育"></a>第79章 十方教育</h2><p>（1）hive小文件处理，开启 combine是查询完之后的，但是如果是那种已存在的小文<br>件怎么处理，然后就是确实是数据量小文件小怎么处理</p>
+<p><strong>Q:</strong> （2）hive做过什么优化没？<br>（3）用过什么可视化软件，这个就问一下就没了，回答用了什么就行<br>（4）mysql 导出数据的时候数据量特别大，比如上千万级别的数据，mysql 那边是会<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-51"><a href="#2022-年深圳大数据面试题汇总-51" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p><strong>Q:</strong> 做分库分表的，你们sqoop是怎么合并的？</p>
+<p><strong>Q:</strong> （5）离线的有没有遇到过失败的时候？怎么处理的？比如你 sqoop 失败了怎么处理，<br>我答，重启就好了，然后就是有数据没有全部导出的情况，是因为没有设置–<br>（6）stage_table，设置一下就好了，还有就是Azkaban失败了，重启就是了<br>（7）flink因为我说我在的时候做了第一版上了线我就跑路了，所以问的不多，问了一<br>下纬度表的链路是怎样的，然后讲一下整个实时的情况是怎样的，离线的也问了<br>（8）这个东西我想了一下说这个我没有去整过，应该是我们项目经理弄得，会有问题</p>
+<p><strong>Q:</strong> 吗？</p>
+<h2 id="第80章-腾云悦智"><a href="#第80章-腾云悦智" class="headerlink" title="第80章 腾云悦智"></a>第80章 腾云悦智</h2><p><strong>Q:</strong> （1）namenode ha如何切换？zkfc</p>
+<p><strong>Q:</strong> （2）hadoop集群100台变50台，纠删码原理？</p>
+<p><strong>Q:</strong> （3）hadoop怎么迁移？</p>
+<p><strong>Q:</strong> （4）edit文件存放位置，和namenode一起？name node ha模式怎么同步edit?</p>
+<p><strong>Q:</strong> （5）2nn除了秘书作用还有啥作用？恢复nn数据</p>
+<p><strong>Q:</strong> （6）hbase region分裂原理，不是问到哪个数据量分裂？</p>
+<p><strong>Q:</strong> （7）region server 挂了两台会怎么样？</p>
+<p><strong>Q:</strong> （8）spark内存模型？spark提交流程<br>（9）java -jar运行任务，如果任务很慢怎么排查</p>
+<p><strong>Q:</strong> （10）flink interval 原理，如果数据量大，里面的map不就是数据量会很大吗？怎么处<br>理</p>
+<p><strong>Q:</strong> （11）hive迁移？</p>
+<h2 id="第81章-零碎问题汇总"><a href="#第81章-零碎问题汇总" class="headerlink" title="第81章 零碎问题汇总"></a>第81章 零碎问题汇总</h2><p><strong>Q:</strong> （1）你们自定义过 connector吗？怎么自定义的，用到哪些技术，是封装的 flink的，<br>还是自己写的。<br>（2）hive sql转化成mr任务和spark任务是怎么转换的，比如count distinct<br>（3）flink的内存管理</p>
+<p><strong>Q:</strong> （4）flink的懒加载算子，spark的算子是不是懒加载的？<br>（5）clickhouse为什么性能高，如何充分利用CPU的<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-52"><a href="#2022-年深圳大数据面试题汇总-52" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p>（6）yarn有没有出现不均衡的情况，某个nodemanager内存多，处理核数少<br>（7）1.9版本的flink和1.11版本的区别<br>（8）clickhouse底层引擎<br>（9）sqoop字段映射，如何处理数据库的特殊字段，比如text格式的字符串<br>（10）写到dws宽表clickhouse有数据错了，怎么定位是在哪出的问题</p>
+<p><strong>Q:</strong> （11）Flink：对于不好直接计算得出最终结果的数据怎么处理？<br>（12）离线数仓标签有哪几种标签，这些标签有什么特性，这些标签分别采用什么技</p>
+<p><strong>Q:</strong> 术来实现？<br>（13）shell 怎么知道上一行命令执行结果是成功还是失败<br>（14）shell 怎么得到参数个数</p>
+<p><strong>Q:</strong> （15）业务表中如果遇见了批量刷数，会给CDC流处理程序带来什么影响？你会如何</p>
+<p><strong>Q:</strong> 解决？<br>（16）业务数据库的 schema是经常发生变化的，一旦发生变化，就会导致应用程序出</p>
+<p><strong>Q:</strong> 错。你们是怎么管理业务元数据和数仓元数据的？<br>（17）用过flink的cep吗。遇到过什么问题没有<br>（18）有一个一年的窗口，数据量大概是十亿，如何以五分钟为单位输出一下结果<br>（19）公司同步数据的时候数据校验咋做的</p>
+<h2 id="第82章-华秋电子"><a href="#第82章-华秋电子" class="headerlink" title="第82章 华秋电子"></a>第82章 华秋电子</h2><p>（1）笔试<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-53"><a href="#2022-年深圳大数据面试题汇总-53" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><h2 id="第83章-百丽零售"><a href="#第83章-百丽零售" class="headerlink" title="第83章 百丽零售"></a>第83章 百丽零售</h2><p>（1）笔试题<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-54"><a href="#2022-年深圳大数据面试题汇总-54" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-55"><a href="#2022-年深圳大数据面试题汇总-55" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p>（2）explain sql 分析慢SQL<br>（3）利用缓存<br>（4）建立分区表</p>
+<h2 id="第84章-百丽笔试题-2"><a href="#第84章-百丽笔试题-2" class="headerlink" title="第84章 百丽笔试题-2"></a>第84章 百丽笔试题-2</h2><p>（1）笔试<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-56"><a href="#2022-年深圳大数据面试题汇总-56" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><h2 id="第85章-微众银行外包笔试题"><a href="#第85章-微众银行外包笔试题" class="headerlink" title="第85章 微众银行外包笔试题"></a>第85章 微众银行外包笔试题</h2><p>（1）笔试SQL题<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-57"><a href="#2022-年深圳大数据面试题汇总-57" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p>（2）基于附录1《核额流水表》和附录2《借据表》统计以下指标，请提供统计SQL<br>指标 当日新增 昨日新增 历史累计<br>申请户数<br>规则通过户数<br>核额成功户数<br>授信金额<br>平均核额<br>发放金额<br>户均发放金额<br>（3）基于附录2《借据表》统计下述指标，请提供统计SQL<br>产品类型 在贷客户数 在贷余额 不良余额 余额不良率 不良客户数 客户不良率<br>XX贷<br>YY贷<br>ZZ贷<br>汇总<br>（4）基于附录2《借据表》统计下述指标，请提供统计SQL<br>产品类型 户数 余额 逾期率/不良率<br>逾期1-30天<br>逾期30-90天<br>逾期90天以上<br>逾期合计<br>不良合计<br>（5）基于附录3《模型输出表》统计下述指标，请提供统计SQL（备注：value值为1<br>时即命中）<br>统计日期 统计指标 命中户数 命中率<br>2020/10/10累计 v01<br>v02<br>v03<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-58"><a href="#2022-年深圳大数据面试题汇总-58" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p>v04<br>v05<br>（6）基于附录2《借据表》统计下述指标，请提供Vintage统计SQL（备注：mobX指<br>的是发放后第X月末的不良余额/发放月金额）<br>发 M M M M M M M M M M M M<br>放 月放 OB1 OB2 OB3 OB4 OB5 OB6 OB7 OB8 OB9 OB10 OB11 OB12<br>份 金<br>额<br>019-<br>019-<br>019-<br>020-<br>020-<br>020-<br>020-<br>020-<br>020-<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-59"><a href="#2022-年深圳大数据面试题汇总-59" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p>020-<br>020-<br>020-<br>020-<br>附录：<br>（7）核额流水表<br>字段名 字段意义 字段类型<br>日期分区，样例格式为 20200101，每个<br>ds string<br>分区有全量流水<br>sno 每个ds内主键，流水号 string<br>uid 用户id string<br>是否核额申请（核额漏斗第一步）取值0<br>is_risk_apply bigint<br>和1<br>是否通过规则（核额漏斗第二步）取值0<br>is_pass_rule bigint<br>和1<br>是否授信成功（核额漏斗第三步）取值0<br>is_obtain_qutoa bigint<br>和1<br>qutoa 授信金额 decimal(30,6)<br>更新时间，样例格式为 2020-11-14<br>update_time string<br>08:12:12<br>（8）借据表<br>字段名 字段意义 字段类型<br>ds 日 期 分 区 ， 样 例 格 式 为 string<br>20200101，每个分区有全量借据号<br>duebill_id 借据号（每个日期分区内的主键） string<br>uid 用户id string<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-60"><a href="#2022-年深圳大数据面试题汇总-60" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p>prod_type 产品名称 仅3个枚举值：XX贷， string<br>YY贷，ZZ贷<br>putout_date 发放日期，样例格式为 2020-10-10 bigint<br>00:10:30<br>putout_amt 发放金额 decimal(30,6)<br>balance 借据金额 decimal(30,6)<br>is_buliang 状态-是否不良，取值0和1 bigint<br>overduedays 逾期天数 bigint<br>（9）模型输出表<br>字段名 字段意义 字段类型<br>ds 日 期 分 区 ， 样 例 格 式 为 string<br>20200101，增量表，部分流水记录可<br>能有更新<br>sno 流水号，主键 string<br>create_time 创建日期，样例格式为2020-10-10 string<br>00:10:13，与sno唯一绑定，不会变更<br>uid 用户id string<br>content json格式，key值名称为v01-v06， string<br>value值取值为0和1<br>update_time 更新日期，样例格式为2020-10-10 string<br>00:10:13</p>
+<h2 id="第86章-法本笔试-SQL-题"><a href="#第86章-法本笔试-SQL-题" class="headerlink" title="第86章 法本笔试 SQL 题"></a>第86章 法本笔试 SQL 题</h2><p>（1）笔试题<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-61"><a href="#2022-年深圳大数据面试题汇总-61" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-62"><a href="#2022-年深圳大数据面试题汇总-62" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><h2 id="第87章-跨越"><a href="#第87章-跨越" class="headerlink" title="第87章 跨越"></a>第87章 跨越</h2><p>（1）笔试</p>
+<h3 id="87-1-第一题"><a href="#87-1-第一题" class="headerlink" title="87.1 第一题"></a>87.1 第一题</h3><p>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-63"><a href="#2022-年深圳大数据面试题汇总-63" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-64"><a href="#2022-年深圳大数据面试题汇总-64" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p>求出每个部门工资最高的前三名员工，并计算这些员工的工资占所属部门的总工资的<br>百分比<br>结果：</p>
+<h3 id="87-2-第二题"><a href="#87-2-第二题" class="headerlink" title="87.2 第二题"></a>87.2 第二题</h3><p>在第一题员工表的基础上，统计每年入职总数以及截至本年累计入职总人数<br>截至本年累计入职总人数=本年总入职人数+本年之前所有年的总入职人数之和<br>结果：</p>
+<h3 id="87-3-第三题"><a href="#87-3-第三题" class="headerlink" title="87.3 第三题"></a>87.3 第三题</h3><p>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-65"><a href="#2022-年深圳大数据面试题汇总-65" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p>该表记录了每个品牌的营销活动开始日期以及结束日期，现需要统计出每个品牌的总<br>营销天数。<br>注意<br>1 苹果第一行数据的营销结束日期比第二行数据的营销开始日期要晚,这部分有重叠的<br>日期的要去重计算。<br>2 苹果第二行数据的营销结束日期和第三行的开始日期不连续，20190907 以及<br>20190908不统计到营销天数中。<br>结果<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-66"><a href="#2022-年深圳大数据面试题汇总-66" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><h2 id="第88章-招商永隆笔试题"><a href="#第88章-招商永隆笔试题" class="headerlink" title="第88章 招商永隆笔试题"></a>第88章 招商永隆笔试题</h2><p>（1）笔试<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-67"><a href="#2022-年深圳大数据面试题汇总-67" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><h2 id="第89章-东信时代"><a href="#第89章-东信时代" class="headerlink" title="第89章 东信时代"></a>第89章 东信时代</h2><h3 id="89-1-技术一面-20min"><a href="#89-1-技术一面-20min" class="headerlink" title="89.1 技术一面(20min)"></a>89.1 技术一面(20min)</h3><p>（2）自我介绍</p>
+<p><strong>Q:</strong> （3）会什么开发语言？Java Scala是自学的吗？<br>（4）GC的算法 ——不太了解 只学了JavaEE</p>
+<p><strong>Q:</strong> （5）Redis为什么这么快？<br>（6）Hbase的RowKey设计原则<br>（7）RowKey的读写流程</p>
+<p><strong>Q:</strong> （8）用Phoenix操作Hbase的时候有没有遇到什么问题？——没答上<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-68"><a href="#2022-年深圳大数据面试题汇总-68" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p>（9）Clickhouse的优缺点<br>（10）MySQL的视图和Clickhouse的物化视图的区别<br>（11）用Clickhouse查询最大的数据量(行数和字段数)<br>（12）Flink和SparkStreaming的区别<br>（13）Flink如何实现精确一致性</p>
+<p><strong>Q:</strong> （14）有没有做过数据中台？——没有做过但讲了一下我对数据中台的理解</p>
+<p><strong>Q:</strong> （15）你们部门只负责存数据，其他部门做可视化展示吗？</p>
+<p><strong>Q:</strong> （16）部门多少人？做大数据多少人？</p>
+<h3 id="89-2-HR二面-约-15min"><a href="#89-2-HR二面-约-15min" class="headerlink" title="89.2 HR二面(约 15min)"></a>89.2 HR二面(约 15min)</h3><p>风格比较刨根问底</p>
+<p><strong>Q:</strong> （1）为什么从深圳毕业要去北京工作？现在为什么从北京回来？</p>
+<p><strong>Q:</strong> （2）看你简历上的每一点写得很有条理性，是否有参考别人的简历？</p>
+<p><strong>Q:</strong> （3）什么时候开始做实时项目的？<br>（4）为什么你的简历上的项目的时间都是连贯性的 你们公司做完一个项目人员马上</p>
+<p><strong>Q:</strong> 投入下一个项目 没有交集的吗？</p>
+<p><strong>Q:</strong> （5）你觉得工作中最大的收获是什么？</p>
+<p><strong>Q:</strong> （6）能否提供离职证明？</p>
+<p><strong>Q:</strong> （7）你对我们公司有什么想要了解的吗？——问了下还会不会有三面，答复时间</p>
+<h2 id="第90章-HungryPanda-数据仓库工程师笔试题"><a href="#第90章-HungryPanda-数据仓库工程师笔试题" class="headerlink" title="第90章 HungryPanda 数据仓库工程师笔试题"></a>第90章 HungryPanda 数据仓库工程师笔试题</h2><p>（1）笔试题</p>
+<p><strong>Q:</strong> 1、T1表 JOIN T2表 ON T1.C = T2.C，会得到多少条数据？</p>
+<h3 id="2、如何根据三张原始表，得出⽬标表"><a href="#2、如何根据三张原始表，得出⽬标表" class="headerlink" title="2、如何根据三张原始表，得出⽬标表"></a>2、如何根据三张原始表，得出⽬标表</h3><p>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-69"><a href="#2022-年深圳大数据面试题汇总-69" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><h3 id="3、如何根据原始表得出目标表"><a href="#3、如何根据原始表得出目标表" class="headerlink" title="3、如何根据原始表得出目标表"></a>3、如何根据原始表得出目标表</h3><h3 id="4、旅店房间饱和情况"><a href="#4、旅店房间饱和情况" class="headerlink" title="4、旅店房间饱和情况"></a>4、旅店房间饱和情况</h3><p>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-70"><a href="#2022-年深圳大数据面试题汇总-70" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><h2 id="第91章-地上铁笔试题"><a href="#第91章-地上铁笔试题" class="headerlink" title="第91章 地上铁笔试题"></a>第91章 地上铁笔试题</h2><p>（1）笔试题<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<h3 id="2022-年深圳大数据面试题汇总-71"><a href="#2022-年深圳大数据面试题汇总-71" class="headerlink" title="2022 年深圳大数据面试题汇总"></a>2022 年深圳大数据面试题汇总</h3><p>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+            
+            <div class="reprint1">
+                <p>
+                    <span class="reprint1-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+                    </span>
+                    <a href="https://liaoxingwang.github.io" class="b-link-green">屿</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2025/08/05/blog-open-source-java-interview-03-2022-nian-shen-zhen-da-shu-ju-mian-shi-ti-hui-zong/" class="b-link-green">03_2022年深圳大数据面试题汇总</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    
+
+    
+        <link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="card-content">
+        <div class="giscus-wrapper" style="overflow: hidden; max-width: 100%;">
+            <div class="giscus"></div>
+        </div>
+    </div>
+</div>
+
+<script src="https://giscus.app/client.js"
+    data-repo="liaoxingwang/liaoxingwang.github.io"
+    data-repo-id="R_kgDONgefmg"
+    data-category="Announcements"
+    data-category-id="DIC_kwDONgefms4DCjUZ"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="preferred_color_scheme"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async>
+</script>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2025/08/05/blog-open-source-java-interview-04-da-shu-ju-ji-zhu-zhi-gao-pin-mian-shi-ti-9.0.5/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="04_大数据技术之高频面试题9.0.5">
+                        
+                        <span class="card-title">04_大数据技术之高频面试题9.0.5</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            尚硅谷大数据技术之高频面试题 ————————————————————————————— 尚硅谷大数据技术之高频面试题 （作者：尚硅谷研究院） 1.4.1 Flume组成，Put事务，Take事务 尚硅谷大数据技术之高频面试题 ————————————————————————————— 尚硅谷大数据
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2025-08-05
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/大数据面试/" class="post-category" target="_blank">
+                                    大数据面试
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/大数据面试/" target="_blank">
+                        <span class="chip bg-color">大数据面试</span>
+                    </a>
+                    
+                    <a href="/tags/面试/" target="_blank">
+                        <span class="chip bg-color">面试</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2025/08/05/blog-open-source-java-interview-02-2022-nian-shang-hai-da-shu-ju-mian-shi-ti-hui-zong/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="02_2022年上海大数据面试题汇总">
+                        
+                        <span class="card-title">02_2022年上海大数据面试题汇总</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            2022年上海大数据面试题汇总 年上海大数据面试题汇总 （作者：尚硅谷研究院） （1）算法题，排列组合 期望：[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1] （2）kafka如果创建大量的topic，对kafak会有什么影响？ （3）kafka一个to
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2025-08-05
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/大数据面试/" class="post-category" target="_blank">
+                                    大数据面试
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/大数据面试/" target="_blank">
+                        <span class="chip bg-color">大数据面试</span>
+                    </a>
+                    
+                    <a href="/tags/面试/" target="_blank">
+                        <span class="chip bg-color">面试</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 屿<br />'
+            + '作者: SK<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4, h5'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4, h5').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+        <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&copy; 理想热爱.
+
+            <br>
+            <span id="sitetime"></span><span class="my-face">ღゝ◡╹)ノ♡</span>
+            <br>
+
+            
+
+            
+                    
+                        <span id="busuanzi_container_site_pv" style='display:none'></span>
+                        总访问量: <span id="busuanzi_value_site_pv" class="white-color"></span>
+                    
+
+                    
+                        <span id="busuanzi_container_site_uv" style='display:none'></span>
+                        人次&nbsp; | &nbsp;访客人数: <span id="busuanzi_value_site_uv" class="white-color"></span> 人
+                    
+
+            
+
+            
+                &nbsp; | &nbsp;字数统计:&nbsp;
+                <span class="white-color">1643k</span> 字
+            
+
+            
+            <br>
+
+        </div>
+
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/liaoxingwang" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+ 
+    <a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=807928930@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+
+    <a href="https://zhihu.com/people/zbozci" class="tooltipped" target="_blank" data-tooltip="访问我的知乎" data-position="top" data-delay="50">
+        <i class="fa fa-inverse">知</i>
+    </a>
+
+
+
+    <a href="http://wpa.qq.com/msgrd?v=3&uin=807928930&site=qq&menu=yes" class="tooltipped" target="_blank" data-tooltip="访问我的QQ空间" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+    <a href="https://weibo.com/jamsJJYY" class="tooltipped" target="_blank" data-tooltip="关注我的微博" data-position="top" data-delay="50">
+        <i class="fa fa-weibo"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+
+        var t1 = Date.UTC(2022, 10, 24, 00, 00, 00); //北京时间2019-8-1 00:00:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes *
+            minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours +
+            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒" ;
+    } /*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+
+
+
+
+
+
+        <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+        <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+        <script src="/libs/materialize/materialize.min.js"></script>
+        <script src="https://cdn.bootcss.com/masonry/4.2.2/masonry.pkgd.min.js"></script>
+        <script src="https://cdn.bootcss.com/aos/3.0.0-beta.6/aos.js"></script>
+        <script src="https://cdn.bootcss.com/scrollprogress/3.0.2/scrollProgress.min.js"></script>
+        <script src="https://cdn.bootcss.com/lightgallery/1.6.12/js/lightgallery-all.min.js"></script>
+        <script src="/js/matery.js"></script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+        
+            <script src="/libs/others/clicklove.js"></script>
+        
+
+        
+            <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        
+
+        <!-- liaoxingwang add 2019.08.28 -->
+        <script type="text/javascript">
+            var OriginTitile = document.title,
+                st;
+            document.addEventListener("visibilitychange", function () {
+                document.hidden ? (document.title = "看不见我🙈~看不见我🙈~", clearTimeout(st)) : (document.title =
+                    "(๑•̀ㅂ•́) ✧被发现了～", st = setTimeout(function () {
+                        document.title = OriginTitile
+                    }, 3e3))
+            })
+        </script>
+
+        <!-- 鼠标点击烟花爆炸效果  liaoxingwang add 2019.09.09 -->
+        
+
+        <!-- 背景雪花飘落特效liaoxingwang add 2019.09.10 -->
+        
+
+        <!-- 鼠标点击文字特效 liaoxingwang add 2019.09.10-->
+        
+            <script src="/js/wenzi.js" type="text/javascript"></script>
+        
+
+        <!-- 背景雪花飘落特效 liaoxingwang add 2019.09.10 -->
+        
+
+        <!-- 在线聊天工具  liaoxingwang add 2019.09.11 -->
+        
+
+        <!-- 背景 canvas-nest  洪卫 shw 2018  add 2019.09.15-->
+        
+
+        <!-- 背景静止彩带  洪卫 shw 2018  add 2019.09.15-->
+        
+            <script type="text/javascript">
+            var windowWidth = $(window).width();
+            if (windowWidth > 992) {
+                document.write('<script type="text/javascript" size="150" alpha="0.6" zIndex="-1" src="/libs/background/ribbon.min.js"><\/script>');
+            }
+            </script>
+        
+
+        <!-- 背景动态彩带 洪卫 shw 2018  add 2019.09.15-->
+        
+            <script type="text/javascript">
+            var windowWidth = $(window).width();
+            if (windowWidth > 992) {
+                document.write('<script type="text/javascript" src="/libs/background/ribbon-dynamic.js"><\/script>');
+            }
+            </script>
+        
+
+    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script>
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z\d\-\.\+]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(t.test(e.href)||r.test(e.href))&&(e.href=a.dataset.original)})});</script><script>(r=>{r.imageLazyLoadSetting.processImages=t;var a=r.imageLazyLoadSetting.isSPA,o=r.imageLazyLoadSetting.preloadRatio||1,d=i();function i(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(t){(a||t)&&(d=i());for(var e,n=0;n<d.length;n++)0<=(e=(e=d[n]).getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(r.innerHeight*o||document.documentElement.clientHeight*o)&&(()=>{var t,e,a,o,i=d[n];e=function(){d=d.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).dataset.loaded||(t.hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(a=new Image,o=t.getAttribute("data-original"),a.onload=function(){t.src=o,t.removeAttribute("data-original"),t.setAttribute("data-loaded",!0),e&&e()},a.onerror=function(){t.removeAttribute("data-original"),t.setAttribute("data-loaded",!1),t.src=o},t.src!==o&&(a.src=o)))})()}function e(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",e),r.addEventListener("resize",e),r.addEventListener("orientationchange",e)})(this);</script></body>
+</html>

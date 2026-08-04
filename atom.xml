@@ -69,11 +69,11 @@
   </entry>
   
   <entry>
-    <title>java笔记</title>
-    <link href="https://liaoxingwang.github.io/2024/12/21/blog-open-source-javanote/"/>
-    <id>https://liaoxingwang.github.io/2024/12/21/blog-open-source-javanote/</id>
-    <published>2024-12-20T21:20:00.000Z</published>
-    <updated>2026-08-04T10:06:19.054Z</updated>
+    <title>阿里面试感想</title>
+    <link href="https://liaoxingwang.github.io/2025/08/07/blog-open-source-java-interview-a-li-mian-shi-gan-xiang/"/>
+    <id>https://liaoxingwang.github.io/2025/08/07/blog-open-source-java-interview-a-li-mian-shi-gan-xiang/</id>
+    <published>2025-08-06T18:00:00.000Z</published>
+    <updated>2026-08-04T10:05:12.652Z</updated>
     
     <summary type="html">
     
@@ -81,25 +81,29 @@
       
         
         
-          &lt;iframe frameborder=&quot;no&quot; border=&quot;1&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;100%&quot; height=&quot;86&quot;
+          &lt;p&gt;引言&lt;br&gt;其实本来真的没打算写这篇文章，主要是LZ得记忆力不是很好，不像一些记忆&lt;br&gt;力强的人，面试完以后，几乎能把自己和面试官的对话都给记下来。LZ自己当初面试完以&lt;br&gt;后，除了记住一些聊过的知识点以外，具体的内容基本上忘得一干二净，所以写这篇文章其&lt;br&gt;实是很有
         
       
     
     </summary>
     
-      <category term="Java" scheme="https://liaoxingwang.github.io/categories/Java/"/>
+      <category term="Java面试/大厂面经" scheme="https://liaoxingwang.github.io/categories/Java%E9%9D%A2%E8%AF%95-%E5%A4%A7%E5%8E%82%E9%9D%A2%E7%BB%8F/"/>
     
     
-      <category term="Java" scheme="https://liaoxingwang.github.io/tags/Java/"/>
+      <category term="面试" scheme="https://liaoxingwang.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="Java面试" scheme="https://liaoxingwang.github.io/tags/Java%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="大厂面经" scheme="https://liaoxingwang.github.io/tags/%E5%A4%A7%E5%8E%82%E9%9D%A2%E7%BB%8F/"/>
     
   </entry>
   
   <entry>
-    <title>Java中23种设计模式</title>
-    <link href="https://liaoxingwang.github.io/2024/04/16/blog-open-source-design-patterns/"/>
-    <id>https://liaoxingwang.github.io/2024/04/16/blog-open-source-design-patterns/</id>
-    <published>2024-04-15T21:20:00.000Z</published>
-    <updated>2026-08-04T10:06:19.051Z</updated>
+    <title>阿里钉钉，字节抖音 Android 面经分享</title>
+    <link href="https://liaoxingwang.github.io/2025/08/07/blog-open-source-java-interview-a-li-ding-ding-zi-jie-dou-yin-android-mian-jing-fen-xiang/"/>
+    <id>https://liaoxingwang.github.io/2025/08/07/blog-open-source-java-interview-a-li-ding-ding-zi-jie-dou-yin-android-mian-jing-fen-xiang/</id>
+    <published>2025-08-06T17:00:00.000Z</published>
+    <updated>2026-08-04T10:05:12.652Z</updated>
     
     <summary type="html">
     
@@ -107,25 +111,29 @@
       
         
         
-          &lt;iframe frameborder=&quot;no&quot; border=&quot;1&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;100%&quot; height=&quot;86&quot;
+          &lt;p&gt;前段时间，在网上看到一篇面经，是阿里钉钉和字节抖音面试的，觉得挺不&lt;br&gt;错的，分享给大家。&lt;br&gt;阿里巴巴 –
         
       
     
     </summary>
     
-      <category term="Java" scheme="https://liaoxingwang.github.io/categories/Java/"/>
+      <category term="Java面试/大厂面经" scheme="https://liaoxingwang.github.io/categories/Java%E9%9D%A2%E8%AF%95-%E5%A4%A7%E5%8E%82%E9%9D%A2%E7%BB%8F/"/>
     
     
-      <category term="Java" scheme="https://liaoxingwang.github.io/tags/Java/"/>
+      <category term="面试" scheme="https://liaoxingwang.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="Java面试" scheme="https://liaoxingwang.github.io/tags/Java%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="大厂面经" scheme="https://liaoxingwang.github.io/tags/%E5%A4%A7%E5%8E%82%E9%9D%A2%E7%BB%8F/"/>
     
   </entry>
   
   <entry>
-    <title>工作思考</title>
-    <link href="https://liaoxingwang.github.io/2024/04/15/blog-open-source-work-thinking/"/>
-    <id>https://liaoxingwang.github.io/2024/04/15/blog-open-source-work-thinking/</id>
-    <published>2024-04-14T21:20:00.000Z</published>
-    <updated>2026-08-04T10:06:19.059Z</updated>
+    <title>阿里云面试总结及面试题详解</title>
+    <link href="https://liaoxingwang.github.io/2025/08/07/blog-open-source-java-interview-a-li-yun-mian-shi-zong-jie-ji-mian-shi-ti-xiang-jie/"/>
+    <id>https://liaoxingwang.github.io/2025/08/07/blog-open-source-java-interview-a-li-yun-mian-shi-zong-jie-ji-mian-shi-ti-xiang-jie/</id>
+    <published>2025-08-06T16:00:00.000Z</published>
+    <updated>2026-08-04T10:05:12.651Z</updated>
     
     <summary type="html">
     
@@ -133,25 +141,29 @@
       
         
         
-          &lt;iframe frameborder=&quot;no&quot; border=&quot;1&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;100%&quot; height=&quot;86&quot;
+          &lt;p&gt;本面试题有道云链接：&lt;br&gt;文档：阿里云面试总结及面试题详解.note&lt;br&gt;链接：&lt;a href=&quot;http://note.youdao.com/noteshare&quot; target=&quot;_blank&quot;
         
       
     
     </summary>
     
-      <category term="Java" scheme="https://liaoxingwang.github.io/categories/Java/"/>
+      <category term="Java面试/大厂面经" scheme="https://liaoxingwang.github.io/categories/Java%E9%9D%A2%E8%AF%95-%E5%A4%A7%E5%8E%82%E9%9D%A2%E7%BB%8F/"/>
     
     
-      <category term="Java" scheme="https://liaoxingwang.github.io/tags/Java/"/>
+      <category term="面试" scheme="https://liaoxingwang.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="Java面试" scheme="https://liaoxingwang.github.io/tags/Java%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="大厂面经" scheme="https://liaoxingwang.github.io/tags/%E5%A4%A7%E5%8E%82%E9%9D%A2%E7%BB%8F/"/>
     
   </entry>
   
   <entry>
-    <title>职场杂谈</title>
-    <link href="https://liaoxingwang.github.io/2024/04/15/blog-open-source-workplace/"/>
-    <id>https://liaoxingwang.github.io/2024/04/15/blog-open-source-workplace/</id>
-    <published>2024-04-14T21:20:00.000Z</published>
-    <updated>2026-08-04T10:06:19.059Z</updated>
+    <title>阿里P7面试</title>
+    <link href="https://liaoxingwang.github.io/2025/08/06/blog-open-source-java-interview-a-li-p7-mian-shi/"/>
+    <id>https://liaoxingwang.github.io/2025/08/06/blog-open-source-java-interview-a-li-p7-mian-shi/</id>
+    <published>2025-08-06T15:00:00.000Z</published>
+    <updated>2026-08-04T10:05:12.650Z</updated>
     
     <summary type="html">
     
@@ -159,25 +171,30 @@
       
         
         
-          &lt;iframe frameborder=&quot;no&quot; border=&quot;1&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;100%&quot; height=&quot;86&quot;
+          &lt;p&gt;Java基础&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q:&lt;/strong&gt; Vector,ArrayList,
         
       
     
     </summary>
     
-      <category term="Java" scheme="https://liaoxingwang.github.io/categories/Java/"/>
+      <category term="Java面试/大厂面经" scheme="https://liaoxingwang.github.io/categories/Java%E9%9D%A2%E8%AF%95-%E5%A4%A7%E5%8E%82%E9%9D%A2%E7%BB%8F/"/>
     
     
-      <category term="Java" scheme="https://liaoxingwang.github.io/tags/Java/"/>
+      <category term="面试" scheme="https://liaoxingwang.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="Java面试" scheme="https://liaoxingwang.github.io/tags/Java%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="大厂面经" scheme="https://liaoxingwang.github.io/tags/%E5%A4%A7%E5%8E%82%E9%9D%A2%E7%BB%8F/"/>
     
   </entry>
   
   <entry>
-    <title>代码分层</title>
-    <link href="https://liaoxingwang.github.io/2024/03/18/blog-open-source-codelayering/"/>
-    <id>https://liaoxingwang.github.io/2024/03/18/blog-open-source-codelayering/</id>
-    <published>2024-03-17T21:20:00.000Z</published>
-    <updated>2026-08-04T10:06:19.050Z</updated>
+    <title>蚂蚁金服面试分享</title>
+    <link href="https://liaoxingwang.github.io/2025/08/06/blog-open-source-java-interview-ma-yi-jin-fu-mian-shi-fen-xiang/"/>
+    <id>https://liaoxingwang.github.io/2025/08/06/blog-open-source-java-interview-ma-yi-jin-fu-mian-shi-fen-xiang/</id>
+    <published>2025-08-06T14:00:00.000Z</published>
+    <updated>2026-08-04T10:05:12.649Z</updated>
     
     <summary type="html">
     
@@ -185,25 +202,30 @@
       
         
         
-          &lt;iframe frameborder=&quot;no&quot; border=&quot;1&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;100%&quot; height=&quot;86&quot;
+          &lt;p&gt;蚂蚁金服面试分享&lt;br&gt;第一面10.4(电话面试)&lt;/p&gt;
+&lt;h3 id=&quot;1-自我介绍&quot;&gt;&lt;a href=&quot;#1-自我介绍&quot; class=&quot;headerlink&quot; title=&quot;1.自我介绍&quot;&gt;&lt;/a&gt;1.自我介绍&lt;/h3&gt;&lt;h3 id=&quot;2-项目情况：&quot;&gt;&lt;a
         
       
     
     </summary>
     
-      <category term="Java" scheme="https://liaoxingwang.github.io/categories/Java/"/>
+      <category term="Java面试/大厂面经" scheme="https://liaoxingwang.github.io/categories/Java%E9%9D%A2%E8%AF%95-%E5%A4%A7%E5%8E%82%E9%9D%A2%E7%BB%8F/"/>
     
     
-      <category term="Java" scheme="https://liaoxingwang.github.io/tags/Java/"/>
+      <category term="面试" scheme="https://liaoxingwang.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="Java面试" scheme="https://liaoxingwang.github.io/tags/Java%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="大厂面经" scheme="https://liaoxingwang.github.io/tags/%E5%A4%A7%E5%8E%82%E9%9D%A2%E7%BB%8F/"/>
     
   </entry>
   
   <entry>
-    <title>Java之Lambda表达式详解</title>
-    <link href="https://liaoxingwang.github.io/2023/05/21/blog-open-source-java-lambda/"/>
-    <id>https://liaoxingwang.github.io/2023/05/21/blog-open-source-java-lambda/</id>
-    <published>2023-05-20T21:20:00.000Z</published>
-    <updated>2026-08-04T10:06:19.053Z</updated>
+    <title>腾讯校招面经</title>
+    <link href="https://liaoxingwang.github.io/2025/08/06/blog-open-source-java-interview-teng-xun-xiao-zhao-mian-jing/"/>
+    <id>https://liaoxingwang.github.io/2025/08/06/blog-open-source-java-interview-teng-xun-xiao-zhao-mian-jing/</id>
+    <published>2025-08-06T13:00:00.000Z</published>
+    <updated>2026-08-04T10:05:12.648Z</updated>
     
     <summary type="html">
     
@@ -211,25 +233,30 @@
       
         
         
-          &lt;iframe frameborder=&quot;no&quot; border=&quot;1&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;100%&quot; height=&quot;86&quot;
+          &lt;p&gt;（一）非技术篇：&lt;/p&gt;
+&lt;h3 id=&quot;1、微信支付应该如何做反欺诈策略-如何减少利用微信支付诈骗的现象&quot;&gt;&lt;a href=&quot;#1、微信支付应该如何做反欺诈策略-如何减少利用微信支付诈骗的现象&quot; class=&quot;headerlink&quot;
         
       
     
     </summary>
     
-      <category term="Java" scheme="https://liaoxingwang.github.io/categories/Java/"/>
+      <category term="Java面试/大厂面经" scheme="https://liaoxingwang.github.io/categories/Java%E9%9D%A2%E8%AF%95-%E5%A4%A7%E5%8E%82%E9%9D%A2%E7%BB%8F/"/>
     
     
-      <category term="Java" scheme="https://liaoxingwang.github.io/tags/Java/"/>
+      <category term="面试" scheme="https://liaoxingwang.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="Java面试" scheme="https://liaoxingwang.github.io/tags/Java%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="大厂面经" scheme="https://liaoxingwang.github.io/tags/%E5%A4%A7%E5%8E%82%E9%9D%A2%E7%BB%8F/"/>
     
   </entry>
   
   <entry>
-    <title>MySql之SQL优化</title>
-    <link href="https://liaoxingwang.github.io/2023/05/21/blog-open-source-sqloptimization/"/>
-    <id>https://liaoxingwang.github.io/2023/05/21/blog-open-source-sqloptimization/</id>
-    <published>2023-05-20T21:20:00.000Z</published>
-    <updated>2026-08-04T10:06:19.058Z</updated>
+    <title>腾讯&amp;阿里&amp;携程面经</title>
+    <link href="https://liaoxingwang.github.io/2025/08/06/blog-open-source-java-interview-teng-xun-a-li-xi-cheng-mian-jing/"/>
+    <id>https://liaoxingwang.github.io/2025/08/06/blog-open-source-java-interview-teng-xun-a-li-xi-cheng-mian-jing/</id>
+    <published>2025-08-06T12:00:00.000Z</published>
+    <updated>2026-08-04T10:05:12.648Z</updated>
     
     <summary type="html">
     
@@ -237,25 +264,31 @@
       
         
         
-          &lt;iframe frameborder=&quot;no&quot; border=&quot;1&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;100%&quot; height=&quot;86&quot;
+          &lt;p&gt;阿里&lt;br&gt;一面&lt;br&gt;没打招呼突击电话面试（30min）&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q:&lt;/strong&gt; 地点ok？时间ok？（base杭州，暑期，全部ok ok ok）简单自我介绍一&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q:&lt;/strong&gt;
         
       
     
     </summary>
     
-      <category term="MySql" scheme="https://liaoxingwang.github.io/categories/MySql/"/>
+      <category term="Java面试/大厂面经" scheme="https://liaoxingwang.github.io/categories/Java%E9%9D%A2%E8%AF%95-%E5%A4%A7%E5%8E%82%E9%9D%A2%E7%BB%8F/"/>
     
     
-      <category term="MySql" scheme="https://liaoxingwang.github.io/tags/MySql/"/>
+      <category term="面试" scheme="https://liaoxingwang.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="Java面试" scheme="https://liaoxingwang.github.io/tags/Java%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="大厂面经" scheme="https://liaoxingwang.github.io/tags/%E5%A4%A7%E5%8E%82%E9%9D%A2%E7%BB%8F/"/>
     
   </entry>
   
   <entry>
-    <title>Java循环删除List中的元素</title>
-    <link href="https://liaoxingwang.github.io/2023/05/20/blog-open-source-circular-deletion-of-elements-in-list/"/>
-    <id>https://liaoxingwang.github.io/2023/05/20/blog-open-source-circular-deletion-of-elements-in-list/</id>
-    <published>2023-05-19T21:20:00.000Z</published>
-    <updated>2026-08-04T10:06:19.049Z</updated>
+    <title>美团和蚂蚁金服面试笔记</title>
+    <link href="https://liaoxingwang.github.io/2025/08/06/blog-open-source-java-interview-mei-tuan-he-ma-yi-jin-fu-mian-shi-bi-ji/"/>
+    <id>https://liaoxingwang.github.io/2025/08/06/blog-open-source-java-interview-mei-tuan-he-ma-yi-jin-fu-mian-shi-bi-ji/</id>
+    <published>2025-08-06T11:00:00.000Z</published>
+    <updated>2026-08-04T10:05:12.648Z</updated>
     
     <summary type="html">
     
@@ -263,25 +296,29 @@
       
         
         
-          &lt;iframe frameborder=&quot;no&quot; border=&quot;1&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;100%&quot; height=&quot;86&quot;
+          &lt;p&gt;Java内存模型&lt;br&gt;线程公有&lt;br&gt;方法区：&lt;br&gt;Java方法区和堆一样，方法区是一块所有线程共享的内存区域，他保存系统的&lt;br&gt;类信息。比如类的字段、方法、常量池等。方法区的大小决定系统可以保存多少个类。如果&lt;br&gt;系统定义太多的类，导致方法区溢出。虚拟机同样会抛出
         
       
     
     </summary>
     
-      <category term="Java" scheme="https://liaoxingwang.github.io/categories/Java/"/>
+      <category term="Java面试/大厂面经" scheme="https://liaoxingwang.github.io/categories/Java%E9%9D%A2%E8%AF%95-%E5%A4%A7%E5%8E%82%E9%9D%A2%E7%BB%8F/"/>
     
     
-      <category term="Java" scheme="https://liaoxingwang.github.io/tags/Java/"/>
+      <category term="面试" scheme="https://liaoxingwang.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="Java面试" scheme="https://liaoxingwang.github.io/tags/Java%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="大厂面经" scheme="https://liaoxingwang.github.io/tags/%E5%A4%A7%E5%8E%82%E9%9D%A2%E7%BB%8F/"/>
     
   </entry>
   
   <entry>
-    <title>MySql基础篇</title>
-    <link href="https://liaoxingwang.github.io/2023/05/19/blog-open-source-mysqlfoundation/"/>
-    <id>https://liaoxingwang.github.io/2023/05/19/blog-open-source-mysqlfoundation/</id>
-    <published>2023-05-19T09:20:00.000Z</published>
-    <updated>2026-08-04T10:06:19.056Z</updated>
+    <title>美团Java开发面经</title>
+    <link href="https://liaoxingwang.github.io/2025/08/06/blog-open-source-java-interview-mei-tuan-java-kai-fa-mian-jing/"/>
+    <id>https://liaoxingwang.github.io/2025/08/06/blog-open-source-java-interview-mei-tuan-java-kai-fa-mian-jing/</id>
+    <published>2025-08-06T10:00:00.000Z</published>
+    <updated>2026-08-04T10:05:12.647Z</updated>
     
     <summary type="html">
     
@@ -289,25 +326,31 @@
       
         
         
-          &lt;h2 id=&quot;MyISAM和InnoDB&quot;&gt;&lt;a href=&quot;#MyISAM和InnoDB&quot; class=&quot;headerlink&quot;
+          &lt;p&gt;美团Java开发&lt;br&gt;聊了一下RCP和数据库细节和原理。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q:&lt;/strong&gt; 1,内存文件映射断电数据是否可以保存？&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q:&lt;/strong&gt;
         
       
     
     </summary>
     
-      <category term="MySql" scheme="https://liaoxingwang.github.io/categories/MySql/"/>
+      <category term="Java面试/大厂面经" scheme="https://liaoxingwang.github.io/categories/Java%E9%9D%A2%E8%AF%95-%E5%A4%A7%E5%8E%82%E9%9D%A2%E7%BB%8F/"/>
     
     
-      <category term="MySql" scheme="https://liaoxingwang.github.io/tags/MySql/"/>
+      <category term="面试" scheme="https://liaoxingwang.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="Java面试" scheme="https://liaoxingwang.github.io/tags/Java%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="大厂面经" scheme="https://liaoxingwang.github.io/tags/%E5%A4%A7%E5%8E%82%E9%9D%A2%E7%BB%8F/"/>
     
   </entry>
   
   <entry>
-    <title>日常开发中，提升技术建议</title>
-    <link href="https://liaoxingwang.github.io/2023/05/17/blog-open-source-promotion/"/>
-    <id>https://liaoxingwang.github.io/2023/05/17/blog-open-source-promotion/</id>
-    <published>2023-05-17T09:20:00.000Z</published>
-    <updated>2026-08-04T10:06:19.057Z</updated>
+    <title>算法面经｜10天面了12面！</title>
+    <link href="https://liaoxingwang.github.io/2025/08/06/blog-open-source-java-interview-suan-fa-mian-jing-10-tian-mian-liao-12-mian/"/>
+    <id>https://liaoxingwang.github.io/2025/08/06/blog-open-source-java-interview-suan-fa-mian-jing-10-tian-mian-liao-12-mian/</id>
+    <published>2025-08-06T09:00:00.000Z</published>
+    <updated>2026-08-04T10:05:12.647Z</updated>
     
     <summary type="html">
     
@@ -315,25 +358,29 @@
       
         
         
-          &lt;h1 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;h1 id=&quot;日常开发中，提升技术建议&quot;&gt;&lt;a href=&quot;#日常开发中，提升技术建议&quot; class=&quot;headerlink&quot;
+          &lt;h3 id=&quot;1-写在前面&quot;&gt;&lt;a href=&quot;#1-写在前面&quot; class=&quot;headerlink&quot; title=&quot;1. 写在前面&quot;&gt;&lt;/a&gt;1.
         
       
     
     </summary>
     
-      <category term="Java" scheme="https://liaoxingwang.github.io/categories/Java/"/>
+      <category term="Java面试/大厂面经" scheme="https://liaoxingwang.github.io/categories/Java%E9%9D%A2%E8%AF%95-%E5%A4%A7%E5%8E%82%E9%9D%A2%E7%BB%8F/"/>
     
     
-      <category term="Java" scheme="https://liaoxingwang.github.io/tags/Java/"/>
+      <category term="面试" scheme="https://liaoxingwang.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="Java面试" scheme="https://liaoxingwang.github.io/tags/Java%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="大厂面经" scheme="https://liaoxingwang.github.io/tags/%E5%A4%A7%E5%8E%82%E9%9D%A2%E7%BB%8F/"/>
     
   </entry>
   
   <entry>
-    <title>Git学习之常用命令</title>
-    <link href="https://liaoxingwang.github.io/2023/05/15/blog-open-source-gitlearn/"/>
-    <id>https://liaoxingwang.github.io/2023/05/15/blog-open-source-gitlearn/</id>
-    <published>2023-05-15T09:20:00.000Z</published>
-    <updated>2026-08-04T10:06:19.052Z</updated>
+    <title>技术人做到哪些才能进阿里</title>
+    <link href="https://liaoxingwang.github.io/2025/08/06/blog-open-source-java-interview-ji-zhu-ren-zuo-dao-na-xie-cai-neng-jin-a-li/"/>
+    <id>https://liaoxingwang.github.io/2025/08/06/blog-open-source-java-interview-ji-zhu-ren-zuo-dao-na-xie-cai-neng-jin-a-li/</id>
+    <published>2025-08-06T08:00:00.000Z</published>
+    <updated>2026-08-04T10:05:12.646Z</updated>
     
     <summary type="html">
     
@@ -341,26 +388,31 @@
       
         
         
-          &lt;h2 id=&quot;实际工作中常用命令汇总：&quot;&gt;&lt;a href=&quot;#实际工作中常用命令汇总：&quot; class=&quot;headerlink&quot; title=&quot;实际工作中常用命令汇总：&quot;&gt;&lt;/a&gt;实际工作中常用命令汇总：&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;查看远程分支：$ git branch
+          &lt;p&gt;无论是在公众号后台，还是我的个人微信上，经常会有有很多读者会问我以下类似的&lt;br&gt;问题：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q:&lt;/strong&gt; 达到什么水平才能进阿里？&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q:&lt;/strong&gt;
         
       
     
     </summary>
     
-      <category term="Git" scheme="https://liaoxingwang.github.io/categories/Git/"/>
+      <category term="Java面试/大厂面经" scheme="https://liaoxingwang.github.io/categories/Java%E9%9D%A2%E8%AF%95-%E5%A4%A7%E5%8E%82%E9%9D%A2%E7%BB%8F/"/>
     
     
-      <category term="Git" scheme="https://liaoxingwang.github.io/tags/Git/"/>
+      <category term="面试" scheme="https://liaoxingwang.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="Java面试" scheme="https://liaoxingwang.github.io/tags/Java%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="大厂面经" scheme="https://liaoxingwang.github.io/tags/%E5%A4%A7%E5%8E%82%E9%9D%A2%E7%BB%8F/"/>
     
   </entry>
   
   <entry>
-    <title>Linu命令总结</title>
-    <link href="https://liaoxingwang.github.io/2023/05/12/blog-open-source-linux/"/>
-    <id>https://liaoxingwang.github.io/2023/05/12/blog-open-source-linux/</id>
-    <published>2023-05-12T09:20:00.000Z</published>
-    <updated>2026-08-04T10:06:19.055Z</updated>
+    <title>微软面经</title>
+    <link href="https://liaoxingwang.github.io/2025/08/06/blog-open-source-java-interview-wei-ruan-mian-jing/"/>
+    <id>https://liaoxingwang.github.io/2025/08/06/blog-open-source-java-interview-wei-ruan-mian-jing/</id>
+    <published>2025-08-06T07:00:00.000Z</published>
+    <updated>2026-08-04T10:05:12.643Z</updated>
     
     <summary type="html">
     
@@ -368,26 +420,29 @@
       
         
         
-          &lt;h2 id=&quot;简易的命令行入门教程&quot;&gt;&lt;a href=&quot;#简易的命令行入门教程&quot; class=&quot;headerlink&quot; title=&quot;简易的命令行入门教程:&quot;&gt;&lt;/a&gt;简易的命令行入门教程:&lt;/h2&gt;&lt;p&gt;Git 全局设置:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;git config
+          &lt;p&gt;想上岸 ╳
         
       
     
     </summary>
     
-      <category term="Linux" scheme="https://liaoxingwang.github.io/categories/Linux/"/>
+      <category term="Java面试/大厂面经" scheme="https://liaoxingwang.github.io/categories/Java%E9%9D%A2%E8%AF%95-%E5%A4%A7%E5%8E%82%E9%9D%A2%E7%BB%8F/"/>
     
     
-      <category term="Linux" scheme="https://liaoxingwang.github.io/tags/Linux/"/>
+      <category term="面试" scheme="https://liaoxingwang.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="Java面试" scheme="https://liaoxingwang.github.io/tags/Java%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="大厂面经" scheme="https://liaoxingwang.github.io/tags/%E5%A4%A7%E5%8E%82%E9%9D%A2%E7%BB%8F/"/>
     
   </entry>
   
   <entry>
-    <title>MyBatis-Plus学习记录</title>
-    <link href="https://liaoxingwang.github.io/2023/05/12/blog-open-source-mybatis-plus/"/>
-    <id>https://liaoxingwang.github.io/2023/05/12/blog-open-source-mybatis-plus/</id>
-    <published>2023-05-12T09:20:00.000Z</published>
-    <updated>2026-08-04T10:06:19.055Z</updated>
+    <title>字节跳动面经</title>
+    <link href="https://liaoxingwang.github.io/2025/08/06/blog-open-source-java-interview-zi-jie-tiao-dong-mian-jing/"/>
+    <id>https://liaoxingwang.github.io/2025/08/06/blog-open-source-java-interview-zi-jie-tiao-dong-mian-jing/</id>
+    <published>2025-08-06T06:00:00.000Z</published>
+    <updated>2026-08-04T10:05:12.642Z</updated>
     
     <summary type="html">
     
@@ -395,25 +450,29 @@
       
         
         
-          &lt;h1 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;h1 id=&quot;MyBatis-Plus通用查询&quot;&gt;&lt;a href=&quot;#MyBatis-Plus通用查询&quot; class=&quot;headerlink&quot;
+          &lt;p&gt;先来个自我介绍，18年本科毕业，毕业后进入中移子公司做运维，后来转前端，有一年多的&lt;br&gt;前端经验，目前在一家算是明星创业公司工作。从转行到拿到大厂offer这个过程并不顺&lt;br&gt;利，我的技术起点说实在话，算是比较低的，这些后面我有空的话会单独写篇文章。我也面&lt;br&gt;了不少
         
       
     
     </summary>
     
-      <category term="MyBatis-Plus" scheme="https://liaoxingwang.github.io/categories/MyBatis-Plus/"/>
+      <category term="Java面试/大厂面经" scheme="https://liaoxingwang.github.io/categories/Java%E9%9D%A2%E8%AF%95-%E5%A4%A7%E5%8E%82%E9%9D%A2%E7%BB%8F/"/>
     
     
-      <category term="MyBatis-Plus" scheme="https://liaoxingwang.github.io/tags/MyBatis-Plus/"/>
+      <category term="面试" scheme="https://liaoxingwang.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="Java面试" scheme="https://liaoxingwang.github.io/tags/Java%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="大厂面经" scheme="https://liaoxingwang.github.io/tags/%E5%A4%A7%E5%8E%82%E9%9D%A2%E7%BB%8F/"/>
     
   </entry>
   
   <entry>
-    <title>微信小程序</title>
-    <link href="https://liaoxingwang.github.io/2023/05/12/blog-open-source-wechat-mini-program/"/>
-    <id>https://liaoxingwang.github.io/2023/05/12/blog-open-source-wechat-mini-program/</id>
-    <published>2023-05-12T09:20:00.000Z</published>
-    <updated>2026-08-04T10:06:19.059Z</updated>
+    <title>字节data-基础架构-大数据面经</title>
+    <link href="https://liaoxingwang.github.io/2025/08/06/blog-open-source-java-interview-zi-jie-data-ji-chu-jia-gou-da-shu-ju-mian-jing/"/>
+    <id>https://liaoxingwang.github.io/2025/08/06/blog-open-source-java-interview-zi-jie-data-ji-chu-jia-gou-da-shu-ju-mian-jing/</id>
+    <published>2025-08-06T05:00:00.000Z</published>
+    <updated>2026-08-04T10:05:12.642Z</updated>
     
     <summary type="html">
     
@@ -421,27 +480,30 @@
       
         
         
-          &lt;p&gt;微信小程序篇&lt;/p&gt;
-&lt;p&gt; 打开微信小程序导入一个项目时，控制台弹出下面的错误：&lt;/p&gt;
-&lt;p&gt;&lt;img
+          &lt;p&gt;写此贴主要是为了感谢在面试中从牛客得到的经验，反馈给后来者。&lt;br&gt;本人是两年大数据平台开发经验跳槽的。~~&lt;br&gt;一面（大约6.1，一个小时）：&lt;/p&gt;
+&lt;h3 id=&quot;1-自我介绍&quot;&gt;&lt;a href=&quot;#1-自我介绍&quot; class=&quot;headerlink&quot;
         
       
     
     </summary>
     
-      <category term="微信小程序" scheme="https://liaoxingwang.github.io/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+      <category term="Java面试/大厂面经" scheme="https://liaoxingwang.github.io/categories/Java%E9%9D%A2%E8%AF%95-%E5%A4%A7%E5%8E%82%E9%9D%A2%E7%BB%8F/"/>
     
     
-      <category term="微信小程序" scheme="https://liaoxingwang.github.io/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+      <category term="面试" scheme="https://liaoxingwang.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="Java面试" scheme="https://liaoxingwang.github.io/tags/Java%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="大厂面经" scheme="https://liaoxingwang.github.io/tags/%E5%A4%A7%E5%8E%82%E9%9D%A2%E7%BB%8F/"/>
     
   </entry>
   
   <entry>
-    <title>Nginx安装和配置文件讲解</title>
-    <link href="https://liaoxingwang.github.io/2023/03/23/blog-open-source-nginx-environment/"/>
-    <id>https://liaoxingwang.github.io/2023/03/23/blog-open-source-nginx-environment/</id>
-    <published>2023-03-23T09:20:00.000Z</published>
-    <updated>2026-08-04T10:06:19.056Z</updated>
+    <title>头条java面试题</title>
+    <link href="https://liaoxingwang.github.io/2025/08/06/blog-open-source-java-interview-tou-tiao-java-mian-shi-ti/"/>
+    <id>https://liaoxingwang.github.io/2025/08/06/blog-open-source-java-interview-tou-tiao-java-mian-shi-ti/</id>
+    <published>2025-08-06T04:00:00.000Z</published>
+    <updated>2026-08-04T10:05:12.641Z</updated>
     
     <summary type="html">
     
@@ -449,25 +511,29 @@
       
         
         
-          &lt;h1 id=&quot;Nginx安装和配置文件讲解&quot;&gt;&lt;a href=&quot;#Nginx安装和配置文件讲解&quot; class=&quot;headerlink&quot; title=&quot;Nginx安装和配置文件讲解&quot;&gt;&lt;/a&gt;Nginx安装和配置文件讲解&lt;/h1&gt;&lt;h3
+          &lt;p&gt;育&lt;br&gt;教&lt;br&gt;哇&lt;br&gt;爪&lt;br&gt;育&lt;br&gt;今日头条 Java 面试题&lt;br&gt;教&lt;br&gt;头条Java一面&lt;br&gt;育
         
       
     
     </summary>
     
-      <category term="Nginx" scheme="https://liaoxingwang.github.io/categories/Nginx/"/>
+      <category term="Java面试/大厂面经" scheme="https://liaoxingwang.github.io/categories/Java%E9%9D%A2%E8%AF%95-%E5%A4%A7%E5%8E%82%E9%9D%A2%E7%BB%8F/"/>
     
     
-      <category term="Nginx" scheme="https://liaoxingwang.github.io/tags/Nginx/"/>
+      <category term="面试" scheme="https://liaoxingwang.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="Java面试" scheme="https://liaoxingwang.github.io/tags/Java%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="大厂面经" scheme="https://liaoxingwang.github.io/tags/%E5%A4%A7%E5%8E%82%E9%9D%A2%E7%BB%8F/"/>
     
   </entry>
   
   <entry>
-    <title>Java学习之Java环境配置</title>
-    <link href="https://liaoxingwang.github.io/2023/03/22/blog-open-source-java-environment/"/>
-    <id>https://liaoxingwang.github.io/2023/03/22/blog-open-source-java-environment/</id>
-    <published>2023-03-22T09:20:00.000Z</published>
-    <updated>2026-08-04T10:06:19.053Z</updated>
+    <title>华为校招面经</title>
+    <link href="https://liaoxingwang.github.io/2025/08/06/blog-open-source-java-interview-hua-wei-xiao-zhao-mian-jing/"/>
+    <id>https://liaoxingwang.github.io/2025/08/06/blog-open-source-java-interview-hua-wei-xiao-zhao-mian-jing/</id>
+    <published>2025-08-06T03:00:00.000Z</published>
+    <updated>2026-08-04T10:05:12.641Z</updated>
     
     <summary type="html">
     
@@ -475,25 +541,29 @@
       
         
         
-          &lt;h1 id=&quot;Java学习笔记之Java环境配置&quot;&gt;&lt;a href=&quot;#Java学习笔记之Java环境配置&quot; class=&quot;headerlink&quot; title=&quot;Java学习笔记之Java环境配置&quot;&gt;&lt;/a&gt;Java学习笔记之Java环境配置&lt;/h1&gt;&lt;h2
+          &lt;p&gt;（一）技术类∶&lt;br&gt;一面∶&lt;br&gt;主要是聊你的简历和项目，一个一个介绍;&lt;br&gt;面试官会根据你的项目进行算法细问，优缺点，应用，讲解算法细节什么的。问题不难，想&lt;br&gt;不出来还会有提示。接下来手撕代码，题目很简单。&lt;br&gt;二面∶&lt;br&gt;眼一面流程差不多，区别是这次要看了项
         
       
     
     </summary>
     
-      <category term="Java" scheme="https://liaoxingwang.github.io/categories/Java/"/>
+      <category term="Java面试/大厂面经" scheme="https://liaoxingwang.github.io/categories/Java%E9%9D%A2%E8%AF%95-%E5%A4%A7%E5%8E%82%E9%9D%A2%E7%BB%8F/"/>
     
     
-      <category term="Java" scheme="https://liaoxingwang.github.io/tags/Java/"/>
+      <category term="面试" scheme="https://liaoxingwang.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="Java面试" scheme="https://liaoxingwang.github.io/tags/Java%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="大厂面经" scheme="https://liaoxingwang.github.io/tags/%E5%A4%A7%E5%8E%82%E9%9D%A2%E7%BB%8F/"/>
     
   </entry>
   
   <entry>
-    <title>专业团队高效接单</title>
-    <link href="https://liaoxingwang.github.io/2020/11/21/blog-open-source/"/>
-    <id>https://liaoxingwang.github.io/2020/11/21/blog-open-source/</id>
-    <published>2020-11-21T09:20:00.000Z</published>
-    <updated>2026-08-04T10:06:19.060Z</updated>
+    <title>两周拿到字节offer</title>
+    <link href="https://liaoxingwang.github.io/2025/08/06/blog-open-source-java-interview-liang-zhou-na-dao-zi-jie-offer/"/>
+    <id>https://liaoxingwang.github.io/2025/08/06/blog-open-source-java-interview-liang-zhou-na-dao-zi-jie-offer/</id>
+    <published>2025-08-06T02:00:00.000Z</published>
+    <updated>2026-08-04T10:05:12.639Z</updated>
     
     <summary type="html">
     
@@ -501,16 +571,50 @@
       
         
         
-          &lt;h1 id=&quot;团队技术实力与服务承诺&quot;&gt;&lt;a href=&quot;#团队技术实力与服务承诺&quot; class=&quot;headerlink&quot; title=&quot;团队技术实力与服务承诺&quot;&gt;&lt;/a&gt;团队技术实力与服务承诺&lt;/h1&gt;&lt;p&gt;🏆
+          &lt;p&gt;今天，和大家分享一则字节跳动的面经贴，该作者15天拿到了字节的offer，在整个&lt;br&gt;面试过程中感受颇多，遂发文以记录，以下是正文：&lt;br&gt;我的面试流程&lt;br&gt;7月28日：官网投递简历&lt;br&gt;8月5日：简历评估通过&lt;br&gt;8月10日：一面&lt;br&gt;8月16日：二面（原定8/
         
       
     
     </summary>
     
-      <category term="高效接单" scheme="https://liaoxingwang.github.io/categories/%E9%AB%98%E6%95%88%E6%8E%A5%E5%8D%95/"/>
+      <category term="Java面试/大厂面经" scheme="https://liaoxingwang.github.io/categories/Java%E9%9D%A2%E8%AF%95-%E5%A4%A7%E5%8E%82%E9%9D%A2%E7%BB%8F/"/>
     
     
-      <category term="高效接单" scheme="https://liaoxingwang.github.io/tags/%E9%AB%98%E6%95%88%E6%8E%A5%E5%8D%95/"/>
+      <category term="面试" scheme="https://liaoxingwang.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="Java面试" scheme="https://liaoxingwang.github.io/tags/Java%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="大厂面经" scheme="https://liaoxingwang.github.io/tags/%E5%A4%A7%E5%8E%82%E9%9D%A2%E7%BB%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【面经分享】互联网寒冬，7面阿里，终获Offer，定级P6+</title>
+    <link href="https://liaoxingwang.github.io/2025/08/06/blog-open-source-java-interview-mian-jing-fen-xiang-hu-lian-wang-han-dong-7-mian-a-li-zhong-huo-offer-ding-ji-p6/"/>
+    <id>https://liaoxingwang.github.io/2025/08/06/blog-open-source-java-interview-mian-jing-fen-xiang-hu-lian-wang-han-dong-7-mian-a-li-zhong-huo-offer-ding-ji-p6/</id>
+    <published>2025-08-06T01:00:00.000Z</published>
+    <updated>2026-08-04T10:05:12.634Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;前言&lt;br&gt;这次去阿里面试的是我老东家的好朋友，我们之前都是一个项目组的，一起吃&lt;br&gt;饭，一起洗脚，一起。。。&lt;br&gt;他们公司最近也裁员了，不过他是裁员前去的阿里，不知道谁捞到他简历了，莫&lt;br&gt;名就走了流程，他莫名的就面了7轮过了。&lt;br&gt;他想着行情这么不好，要不就去了
+        
+      
+    
+    </summary>
+    
+      <category term="Java面试/大厂面经" scheme="https://liaoxingwang.github.io/categories/Java%E9%9D%A2%E8%AF%95-%E5%A4%A7%E5%8E%82%E9%9D%A2%E7%BB%8F/"/>
+    
+    
+      <category term="面试" scheme="https://liaoxingwang.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="Java面试" scheme="https://liaoxingwang.github.io/tags/Java%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="大厂面经" scheme="https://liaoxingwang.github.io/tags/%E5%A4%A7%E5%8E%82%E9%9D%A2%E7%BB%8F/"/>
     
   </entry>
   

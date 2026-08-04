@@ -1,0 +1,1771 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+    
+
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="并发编程基础知识, 商单接企业项目外包 软件开发 整包服务 移动开发 移动开发团队 移动开发项目">
+    <meta name="baidu-site-verification" content="fmlEuI34ir">
+    <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
+    <meta name="description" content="【讲义】第讲：并发编程基础知识
+⼀、Java内存模型
+.&amp;gt; 原⼦性（Atomicity）
+.&amp;gt; 可⻅性（Visibility）
+.&amp;gt; 有序性（Ordering）
+..&amp;gt; 指令重排
+..&amp;gt; Happen-Befo">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="并发编程基础知识 | 屿">
+    <meta property="og:description" content="【讲义】第讲：并发编程基础知识
+⼀、Java内存模型
+.&amp;gt; 原⼦性（Atomicity）
+.&amp;gt; 可⻅性（Visibility）
+.&amp;gt; 有序性（Ordering）
+..&amp;gt; 指令重排
+..&amp;gt; Happen-Befo">
+    <meta property="og:url" content="https://liaoxingwang.github.io2025/08/05/blog-open-source-java-interview-bing-fa-bian-cheng-ji-chu-zhi-shi/">
+    <meta property="og:image" content="https://liaoxingwang.github.io/medias/banner/0.jpg">
+    <meta property="og:site_name" content="屿">
+    <meta property="og:locale" content="zh_CN">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="并发编程基础知识 | 屿">
+    <meta name="twitter:description" content="【讲义】第讲：并发编程基础知识
+⼀、Java内存模型
+.&amp;gt; 原⼦性（Atomicity）
+.&amp;gt; 可⻅性（Visibility）
+.&amp;gt; 有序性（Ordering）
+..&amp;gt; 指令重排
+..&amp;gt; Happen-Befo">
+    <meta name="twitter:image" content="https://liaoxingwang.github.io/medias/banner/0.jpg">
+
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>并发编程基础知识 | 屿</title>
+    <link rel="icon" type="image/jpeg" href="/medias/avatars/hwsun.jpg">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/aos/3.0.0-beta.6/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/lightgallery/1.6.12/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <style type="text/css">
+        
+
+            code[class*="language-"],
+            pre[class*="language-"] {
+                white-space: pre !important;
+            }
+
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?46e79e71af0709a5b9106bf20cecc493";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+    
+    
+        <script>
+            (function(){
+                var bp = document.createElement('script');
+                var curProtocol = window.location.protocol.split(':')[0];
+                if (curProtocol === 'https') {
+                    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+                }
+                else {
+                    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                }
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(bp, s);
+            })();
+        </script>
+    
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+    <body>
+
+        <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <span class="logo-span">屿</span>
+                </a>
+            </div>
+            
+
+
+<!-- <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/AV" class="waves-effect waves-light">
+            
+            <i class="fa fa-music"></i>
+            
+            <span>视听</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/galleries" class="waves-effect waves-light">
+            
+            <i class="fa fa-photo"></i>
+            
+            <span>相册</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于我</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/contact" class="waves-effect waves-light">
+            
+            <i class="fa fa-envelope"></i>
+            
+            <span>留言板</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul> -->
+
+<!-- 支持二级菜单特性 liaoxingwang modify 2019.09.17  -->
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right nav-menu">
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/" class="waves-effect waves-light">
+              
+                <i class="fa fa-home"></i>
+              
+              <span>首页</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/tags" class="waves-effect waves-light">
+              
+                <i class="fa fa-tags"></i>
+              
+              <span>标签</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/categories" class="waves-effect waves-light">
+              
+                <i class="fa fa-bookmark"></i>
+              
+              <span>分类</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/archives" class="waves-effect waves-light">
+              
+                <i class="fa fa-archive"></i>
+              
+              <span>归档</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/AV" class="waves-effect waves-light">
+              
+                <i class="fa fa-music"></i>
+              
+              <span>视听</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/galleries" class="waves-effect waves-light">
+              
+                <i class="fa fa-photo"></i>
+              
+              <span>相册</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/about" class="waves-effect waves-light">
+              
+                <i class="fa fa-user-circle-o"></i>
+              
+              <span>关于我</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/contact" class="waves-effect waves-light">
+              
+                <i class="fa fa-envelope"></i>
+              
+              <span>留言板</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/friends" class="waves-effect waves-light">
+              
+                <i class="fa fa-address-book"></i>
+              
+              <span>友情链接</span>
+            </a>
+
+            
+      </li>
+    
+
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <div class="logo-name">屿</div>
+        <div class="logo-desc">
+            
+            湖南工业大学 | 计算机科学与技术
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/AV" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-music"></i>
+                
+                视听
+            </a>
+        </li>
+        
+        <li>
+            <a href="/galleries" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-photo"></i>
+                
+                相册
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于我
+            </a>
+        </li>
+        
+        <li>
+            <a href="/contact" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-envelope"></i>
+                
+                留言板
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/liaoxingwang/" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+
+   
+   
+<!-- 支持二级菜单特性 liaoxingwang modify 2019.09.17  -->
+<!-- <ul class="menu-list mobile-menu-list">
+    
+        <li class="m-nav-item">
+                
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-home"></i>
+                        
+                        首页
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/tags" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-tags"></i>
+                        
+                        标签
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/categories" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-bookmark"></i>
+                        
+                        分类
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/archives" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-archive"></i>
+                        
+                        归档
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/AV" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-music"></i>
+                        
+                        视听
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/galleries" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-photo"></i>
+                        
+                        相册
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/about" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-user-circle-o"></i>
+                        
+                        关于我
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/contact" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-envelope"></i>
+                        
+                        留言板
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/friends" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-address-book"></i>
+                        
+                        友情链接
+                    </a>
+              
+            </li>
+        
+
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/liaoxingwang/" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul> -->
+
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/liaoxingwang/" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+        
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        并发编程基础知识
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        
+<!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/面试/" target="_blank">
+                                <span class="chip bg-color">面试</span>
+                            </a>
+                        
+                            <a href="/tags/Java面试/" target="_blank">
+                                <span class="chip bg-color">Java面试</span>
+                            </a>
+                        
+                            <a href="/tags/2024/" target="_blank">
+                                <span class="chip bg-color">2024</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Java面试-2024/" class="post-category" target="_blank">
+                                Java面试/2024
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2025-08-05
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
+                    
+                        SK
+                    
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        4.7k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        16 分
+                    </div>
+                    
+                
+
+                
+                        <span id="busuanzi_container_site_pv" style='display:none'></span>
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv" ></span>
+
+                
+
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>【讲义】第讲：并发编程基础知识</p>
+<p>⼀、Java内存模型</p>
+<p>.&gt; 原⼦性（Atomicity）</p>
+<p>.&gt; 可⻅性（Visibility）</p>
+<p>.&gt; 有序性（Ordering）</p>
+<p>..&gt; 指令重排</p>
+<p>..&gt; Happen-Before规则</p>
+<p>⼆、多线程基本操作</p>
+<p>.&gt; 线程状态</p>
+<p>.&gt; stop（被废弃）</p>
+<p>.&gt; interrupt&amp;isInterrupt&amp;interrupted</p>
+<p>.&gt; <code>wait</code>&amp;<code>notify</code></p>
+<p>.&gt; suspend&amp;resume（被废弃）</p>
+<p>.&gt; join&amp;yield</p>
+<h2 id="三、volatile"><a href="#三、volatile" class="headerlink" title="三、volatile"></a>三、volatile</h2><h2 id="四、ThreadGroup"><a href="#四、ThreadGroup" class="headerlink" title="四、ThreadGroup"></a>四、ThreadGroup</h2><h2 id="五、Daemon"><a href="#五、Daemon" class="headerlink" title="五、Daemon"></a>五、Daemon</h2><h2 id="六、synchronized"><a href="#六、synchronized" class="headerlink" title="六、synchronized"></a>六、synchronized</h2><h2 id="七、锁的优化策略"><a href="#七、锁的优化策略" class="headerlink" title="七、锁的优化策略"></a>七、锁的优化策略</h2><p>⼋、⽆锁</p>
+<p>.&gt; <code>CAS</code></p>
+<p>.&gt; <code>AtomicInteger</code></p>
+<p>.&gt; Unsafe</p>
+<p>.&gt; AtomicReference</p>
+<p>.&gt; AtomicStampedReference</p>
+<p>.&gt; AtomicIntegerArray</p>
+<p>.&gt; AtomicIntegerFieldUpdater</p>
+<h2 id="九、ThreadLocal"><a href="#九、ThreadLocal" class="headerlink" title="九、ThreadLocal"></a>九、ThreadLocal</h2><p>⼀、Java内存模型</p>
+<p>Java内存模型，即：JMM。当程序执⾏并⾏操作时，如果对数据的访问和操作不加以控制，那么必</p>
+<p>●</p>
+<p>然会对程序的正确性造成破坏。因此，我们需要在深⼊了解并⾏机制的前提下，再定义⼀种规则，</p>
+<p>来保证多个线程间可以有效地、正确地协同⼯作。⽽JMM就是为此⽽⽣的。</p>
+<p>JMM的关键技术点都是围绕着多线程的原⼦性、可⻅性和有序性来创建的。所以，下⾯我们来⼀⼀</p>
+<p>●</p>
+<p>介绍这三种特性。</p>
+<p>. &gt; 原⼦性（Atomicity）</p>
+<h3 id="1-1"><a href="#1-1" class="headerlink" title="1 1"></a>1 1</h3><p>●</p>
+<p>原⼦性</p>
+<p>是指⼀个操作是不可中断的。即使是在多个线程⼀起执⾏的时候，⼀个操作⼀旦开始，就不会被其他</p>
+<p>线程所⼲扰。</p>
+<p>●</p>
+<p>⽐如⼀个int a，线程A对其赋值1，线程B对其赋值2，⽆论什么情况，a的值要么是1，要么是2；不</p>
+<p>会被线程A或线程B⼲扰。但是，如果是在32 位操作系统中，操作64位的long类型数据的时候，</p>
+<p>就⽆法保证原⼦性了。因为赋值操作需要执⾏2次32位的操作，⽽在多线程的情况下，可能会出</p>
+<p>现“意想不到”的最终结果。如下所示：</p>
+<p>【解释】</p>
+<p>由于在32位操作系统中，对long赋值是要执⾏两步的，所以，在并发赋值时，就有可能最终long的赋</p>
+<p>值结果“让⼈很意外”，即：不是111L、-999L、333L和-444L中的任意⼀个。（例如：long的⾼32位</p>
+<p>由线程A赋值了，低32位由线程B赋值了）</p>
+<p>. &gt; 可⻅性（Visibility）</p>
+<h3 id="1-2"><a href="#1-2" class="headerlink" title="1 2"></a>1 2</h3><p>●</p>
+<p>可⻅性</p>
+<p>是指当⼀个线程修改了某⼀个共享变量的值，其他线程是否能够⽴即知道这个修改。</p>
+<p>如果在CPU_A和CPU_B上各运⾏了⼀个线程，它们共享变量t，由于编译器优化或者硬件优化的缘</p>
+<p>●</p>
+<p>故， 在CPU_A上的线程将变量t进⾏了优化，将其缓存在cache中或者寄存器⾥。这种情况下，如果</p>
+<p>在CPU_B上的某个线程修改了变量t的实际值，那么CPU_A上的线程可能并⽆法意识到这个改动，</p>
+<p>依然会读取cache中或者寄存器⾥的数据。</p>
+<p>可⻅性问题是⼀个综合性问题。除了上述提到的缓存优化或者硬件优化（有些内存读写可能不会⽴</p>
+<p>●</p>
+<p>即触发，⽽会先进⼊⼀个硬件队列等待）会导致可⻅性问题外，指令重排以及编译器的优化，</p>
+<p>都有可能导致⼀个线程的修改不会⽴即被其他线程察觉。</p>
+<p>. &gt; 有序性（Ordering）</p>
+<h3 id="1-3"><a href="#1-3" class="headerlink" title="1 3"></a>1 3</h3><p>因为指令流⽔线的存在，CPU才能真正⾼效的执⾏。但是，流⽔线总是害怕被中断的。流⽔线满载</p>
+<p>●</p>
+<p>时，性能确实相当不错，但是⼀旦中断，所有的硬件设备都会进⼊⼀个停顿期，再次满载⼜需要⼏</p>
+<p>个周期，因此，性能损失会⽐较⼤。所以，我们必须要想办法尽量不让流⽔线中断。</p>
+<p>. . &gt; 指令重排</p>
+<h3 id="1-3-1"><a href="#1-3-1" class="headerlink" title="1 3 1"></a>1 3 1</h3><p>●</p>
+<p>A=B+C的执⾏过程</p>
+<p>●</p>
+<p>重排前指令执⾏过程（红叉表示停顿）</p>
+<p>●</p>
+<p>重排后的指令（已经没有停顿了）</p>
+<p>. . &gt; Happen-Before规则</p>
+<h3 id="1-3-2"><a href="#1-3-2" class="headerlink" title="1 3 2"></a>1 3 2</h3><p>●</p>
+<p>程序顺序原则：⼀个线程内保证语义的串⾏性。</p>
+<p>●</p>
+<p>volatile规则：volatile变量的写，先发⽣于读，这保证了volatile变量的可⻅性。</p>
+<p>●</p>
+<p>锁规则：解锁（unlock）必然发⽣在随后的加锁（lock）前。</p>
+<p>●</p>
+<p>传递性：A先于B，B先于C，那么A必然先于C。</p>
+<p>●</p>
+<p>线程的start()⽅法先于它的每⼀个动作。</p>
+<p>●</p>
+<p>线程的所有操作先于线程的终结Thread.join()。</p>
+<p>●</p>
+<p>线程的中断interrupt()先于被中断线程的代码。</p>
+<p>●</p>
+<p>对象的构造函数执、结束先于finalize()⽅法。</p>
+<p>⼆、多线程基本操作</p>
+<p>. &gt; 线程状态</p>
+<h3 id="2-1"><a href="#2-1" class="headerlink" title="2 1"></a>2 1</h3><p>●</p>
+<p>线程状态图</p>
+<p>●</p>
+<p>线程的所有状态都在Thread中的State枚举中定义的。如下所示：</p>
+<p>【解释】</p>
+<p>●</p>
+<p>NEW：表示刚刚创建的线程，这种线程还没开始执⾏。</p>
+<p>●</p>
+<p>RUNNABLE：当调⽤start()⽅法时，处于该状态，表示线程所需的⼀切资源都已经准备好了。</p>
+<p>●</p>
+<p>BLOCKED：如果线程在执⾏过程中遇到了锁，就会进⼊该状态。</p>
+<p>●</p>
+<p>WAITING：处于⽆时间限制的等待状态。</p>
+<p>●</p>
+<p>TIMED_WAITING：处于有限的等待状态。</p>
+<p>●</p>
+<p>TERMINATED：当线程执⾏完毕，就进⼊结束状态。</p>
+<p>【注意】从NEW状态出发后，线程不能再回到NEW状态，同理，处于TERMINATED的线程也不能再</p>
+<p>回到RUNNABLE状态。</p>
+<p>. &gt; stop（被废弃）</p>
+<h3 id="2-2"><a href="#2-2" class="headerlink" title="2 2"></a>2 2</h3><p>JDK提供了stop⽅法⽤来关闭线程，但是该⽅法由于太过于暴⼒了，强⾏把执⾏到⼀半的线程终</p>
+<p>●</p>
+<p>⽌，所以可能会引起⼀些数据不⼀致的问题。所以stop⽅法被标记为废弃⽅法。如下所示：</p>
+<p>●</p>
+<p>代码实现</p>
+<p>. &gt; interrupt&amp;isInterrupt&amp;interrupted</p>
+<h3 id="2-3"><a href="#2-3" class="headerlink" title="2 3"></a>2 3</h3><p>线程中断并不会使线程⽴即退出，⽽是给线程发送⼀个通知，告知⽬标线程，有⼈希望你退出啦！</p>
+<p>●</p>
+<p>⾄于⽬标线程接到通知后如何处理，则完全由⽬标线程⾃⾏决定。</p>
+<p>“完全由⽬标线程⾃⾏决定”这⼀点⾮常重要，如果中断后，线程⽴即⽆条件退出，那么⼜会遇到跟</p>
+<p>●</p>
+<p>stop()⽅法⼀样的⽼问题了。</p>
+<p>●</p>
+<p>JDK中关于线程中断⼀共提供了3种⽅法：</p>
+<p>●</p>
+<p>interrupt() 中断线程，添加中断状态</p>
+<p>●</p>
+<p>isInterrupted() 判断线程是否被中断</p>
+<p>●</p>
+<p>interrupted() 判断线程是否被中断，并清除当前中断状态</p>
+<p>●</p>
+<p>实验⼀：测试isInterrupted()只判断线程是否被中断，不会清除中断状态</p>
+<p>●</p>
+<p>实验⼆：测试interrupted()会清除掉当前中断状态</p>
+<p>●</p>
+<p>实验三：如果中断sleep⽅法，会抛出InterruptedException异常，并清除中断状态</p>
+<p>●</p>
+<p>实验四：修复由于异常后，线程中断状态被清除掉导致⽆限循环的问题</p>
+<p>. &gt; <code>wait</code>&amp;<code>notify</code></p>
+<h3 id="2-4"><a href="#2-4" class="headerlink" title="2 4"></a>2 4</h3><p>这两个⽅法是Object类提供的⽅法，也就是说，任何对象都可以调⽤这两个⽅法。⽤于⽀持多线</p>
+<p>●</p>
+<p>程之间的协作操作。</p>
+<p>线程A调⽤了obj.<code>wait</code>()⽅法，那么线程A就会停⽌继续执⾏，⽽转为等待状态。那么等待到何时才</p>
+<p>●</p>
+<p><strong>Q:</strong> 能结束呢？即：线程A会⼀直等到其他线程调⽤了obj.notify()⽅法为⽌。</p>
+<p>如果⼀个线程调⽤了object.<code>wait</code>()，那么它就会进⼊object对象的等待队列。这个等待队列</p>
+<p>●</p>
+<p>中，可能会有多个线程，因为系统运⾏多个线程同时等待某⼀个对象。当object.<code>notify</code>()被调⽤时，</p>
+<p>它就会从这个等待队列中，随机选择⼀个线程，并将其唤醒。这种选择是不公平的，是完全随机</p>
+<p>的。</p>
+<p>●</p>
+<p><code>notify</code>()和notifyAll()唤醒等待的线程的区别</p>
+<p>Object的wait()⽅法并不是可以随便调⽤的。它必须包含在对应的synchronized语句中，</p>
+<p>●</p>
+<p>⽆论是wait()或notify()都需要⾸先获得⽬标对象的⼀个监视器。</p>
+<p>●</p>
+<p>演示操作</p>
+<p>●</p>
+<p>如果不在T2中执⾏obj.<code>notify</code>();则T1⼀直处于阻塞状态，输⼊如下所示：</p>
+<p>●</p>
+<p>此时如果还希望T1可以解锁，则可以使⽤<code>wait</code>(long timeout)⽅式，即：如果T1等待timeout时间依</p>
+<p>然没有被执⾏<code>notify</code>，则⾃动解除等待状态。</p>
+<p>. &gt; suspend&amp;resume（被废弃）</p>
+<h3 id="2-5"><a href="#2-5" class="headerlink" title="2 5"></a>2 5</h3><p>●</p>
+<p>suspend⽤于操作线程挂起，它会在暂停线程的同时，并锁住资源⽽不去释放。</p>
+<p>●</p>
+<p>resume⽤于解除线程挂起，它会让线程继续执⾏。</p>
+<p>如果⼀个线程的resume先于suspend被执⾏了，那么这个线程就会永久被挂起。并且，从它的线程</p>
+<p>●</p>
+<p>状态上看，居然还是Runnable状态！如下图所示：</p>
+<p>. &gt; join&amp;yield</p>
+<h3 id="2-6"><a href="#2-6" class="headerlink" title="2 6"></a>2 6</h3><p>当⼀个线程的输⼊⾮常依赖于另外⼀个或者多个线程的输出，此时，这个线程就需要等待依赖线程</p>
+<p>●</p>
+<p>执⾏完毕，才能继续执⾏。JDK提供了join()操作来实现这个功能</p>
+<p>●</p>
+<p>join()的本质就是让调⽤线程wait()在当前线程对象实例上。下⾯为相关代码：</p>
+<p>从上⾯源码中可以看到，它让调⽤线程在当前线程对象上进⾏等待。当线程执⾏完成后，被等待的</p>
+<p>●</p>
+<p>线程会在退出前调⽤<code>notifyAll</code>()通知所有的等待线程继续执⾏。因此，值得注意的⼀点是：不要在</p>
+<p>应⽤程序中，在Thread对象实例上使⽤类似wait()或者notify()等⽅法，因为这很有可能会影响</p>
+<p>系统API的⼯作，或者被系统API所影响。</p>
+<p><code>Thread</code>.yield()⽅法会使当前线程让出CPU。让出CPU并不表示当前线程不执⾏了。当前线程在让出</p>
+<p>●</p>
+<p>CPU后，还会进⾏CPU资源的争夺，但是是否能够再次被分配到，就不⼀定了。因此，对</p>
+<p><code>Thread</code>.yield()的调⽤就好像是在说：我已经完成⼀些最重要的⼯作了，我应该是可以休息⼀下了。</p>
+<p>可以给其他线程⼀些⼯作机会了。</p>
+<h2 id="三、volatile-1"><a href="#三、volatile-1" class="headerlink" title="三、volatile"></a>三、volatile</h2><p>正常情况下，如果我们不使⽤<code>volatile</code>，那么每条线程都会有⾃⼰的缓存，当全局变量被修改时，其</p>
+<p>●</p>
+<p>他线程可能并不会被通知到。</p>
+<p>volatile并不能真正的保证线程安全。它只能确保⼀个线程修改了数据后，其他线程能够看到这个改</p>
+<p>●</p>
+<p>动。</p>
+<p>如下所示，即使ready在主线程中被赋值为true，依然⽆法在⼦线程中获得最新修改的值，从⽽结束</p>
+<p>●</p>
+<p>while循环：</p>
+<p>当我们使⽤volatile去申明变量时，就等于告诉了虚拟机，这个变量极有可能会被某些程序或者线程</p>
+<p>●</p>
+<p>修改。为了确保这个变量被修改后，应⽤程序范围内的所有线程都能够“看到”这个改动，虚拟机就</p>
+<p>必须采⽤⼀些特殊的⼿段，保证这个变量的可⻅性等特点。如下所示：</p>
+<p>volatile并不能代替锁，它也⽆法保证⼀些复合操作的原⼦性。⽐如通过volatile是⽆法保证i++的原</p>
+<p>●</p>
+<p>⼦性操作的。</p>
+<h2 id="四、ThreadGroup-1"><a href="#四、ThreadGroup-1" class="headerlink" title="四、ThreadGroup"></a>四、ThreadGroup</h2><p>在⼀个系统中，如果线程数量很多，⽽且功能分配⽐较明确，就可以将相同功能的线程放置在⼀个</p>
+<p>●</p>
+<p>线程组⾥。如下图所示：</p>
+<p>●</p>
+<p>建议⼤家在创建线程和线程组的时候，给它们取⼀个好听的名字。</p>
+<h2 id="五、Daemon-1"><a href="#五、Daemon-1" class="headerlink" title="五、Daemon"></a>五、Daemon</h2><p>守护线程是⼀种特殊的线程，它会在后台默默地完成⼀些系统性的服务。当⼀个Java应⽤内，只有</p>
+<p>●</p>
+<p>守护线程时，Java虚拟机就⾃然退出了。我们可以通过调⽤setDaemon(true)的⽅式，设置线程为</p>
+<p>守护线程。这⾥需要注意，设置守护线程必须在线程调⽤start()⽅法之前设置</p>
+<p>setDaemon(true)，否则会报IllegalThreadStateException。</p>
+<h2 id="六、synchronized-1"><a href="#六、synchronized-1" class="headerlink" title="六、synchronized"></a>六、synchronized</h2><p>●</p>
+<p>情况1：不使⽤synchronized修饰的对象，乱序输出。</p>
+<p>●</p>
+<p>情况2：synchronized修饰代码块——对象</p>
+<p>●</p>
+<p>情况3：synchronized修饰代码块——类</p>
+<p>●</p>
+<p>情况4：synchronized修饰⽅法</p>
+<p>●</p>
+<p>情况5：直接作⽤于静态⽅法——相当于对当前类加锁，进⼊同步代码前要获得当前类的锁。</p>
+<h2 id="七、锁的优化策略-1"><a href="#七、锁的优化策略-1" class="headerlink" title="七、锁的优化策略"></a>七、锁的优化策略</h2><p>●</p>
+<p>偏向锁</p>
+<p>如果⼀个线程获得了锁，那么锁就进⼊偏向模式。当这个线程再次请求锁时，⽆须在做任何同步</p>
+<p>●</p>
+<p>操作。这样就节省了⼤量有关锁申请的操作，从⽽提⾼了程序性能。</p>
+<p>●</p>
+<p>轻量级锁</p>
+<p>●</p>
+<p>如果偏向锁失败,虚拟机并不会⽴即挂起线程.它还会使⽤⼀种称为轻量级锁的优化⼿段。</p>
+<p>轻量级锁的操作也很轻便，它只是简单地将对象头部作为指针，指向持有锁的线程堆栈的内</p>
+<p>●</p>
+<p>部，来判断⼀个线程是否持有对象锁。</p>
+<p>如果线程获得轻量级锁成功，则可以顺利进⼊临界区。如果轻量级锁加锁失败，则表示其他线程</p>
+<p>●</p>
+<p>抢先争夺到了锁，那么当前线程的锁请求就会膨胀为重量级锁。</p>
+<p>●</p>
+<p>⾃旋锁</p>
+<p>锁膨胀后，虚拟机为了避免线程真实地在操作系统层⾯挂起，虚拟机还会再做最后的努⼒——⾃</p>
+<p>●</p>
+<p>旋锁。</p>
+<p>系统会进⾏⼀次赌注：它会假设在不久的将来，线程可以得到这把锁。因此，虚拟机会让当前线</p>
+<p>●</p>
+<p>程做⼏个空循环（这也是⾃旋的含义），在经过若⼲次循环后，如果可以得到锁，那么就顺利进</p>
+<p>⼊临界区。如果还不能获得锁，才会真实地将线程在操作系统层⾯挂起。</p>
+<p>●</p>
+<p>锁消除</p>
+<p>锁消除是⼀种更彻底的锁优化。Java虚拟机在JIT编译时，通过对运⾏上下⽂的扫描，去除不可能</p>
+<p>●</p>
+<p>存在共享资源竞争的锁。通过锁消除，可以节省毫⽆意义的请求锁时间。</p>
+<p>⽐如，我们有可能在⼀个不可能存在并发竞争的场合使⽤<code>Vector</code>，⽽Vector内部使⽤了</p>
+<p>●</p>
+<p>synchronized请求锁。例如如下代码：</p>
+<p>【注】在上述代码中的Vector，由于变量vector只在createStrings()函数中使⽤，因此，它只是⼀个</p>
+<p>单纯的局部变量。局部变量是在线程栈上分配的，属于线程私有的数据，因此不可能被其他线程访</p>
+<p>问。所以，如果虚拟机检测到这种情况，就会将这些⽆⽤的锁操作去除掉。</p>
+<p>锁消除涉及的⼀项关键技术为逃逸分析。所谓逃逸分析就是观察某⼀个变量是否会逃出某⼀个作</p>
+<p>●</p>
+<p>⽤域。</p>
+<p>⼋、⽆锁</p>
+<p>. &gt; <code>CAS</code></p>
+<h3 id="8-1"><a href="#8-1" class="headerlink" title="8 1"></a>8 1</h3><p>在Unsafe类⾥，包含着CAS的操作函数。它采⽤⽆锁的乐观策略，由于其⾮阻塞性，它对死锁问题</p>
+<p>●</p>
+<p>天⽣免疫，并且，线程间的相互影响也远远⽐基于锁的⽅式要⼩得多。更为重要的是，使⽤⽆锁的</p>
+<p>⽅式完全没有锁竞争带来的系统开销，也没有线程间频繁调度带来的开销。因此，它要⽐基于锁的</p>
+<p>⽅式拥有更优越的性能。</p>
+<p>●</p>
+<p>CAS算法的过程</p>
+<p>●</p>
+<p>它包含四个参数CAS(object,offset,expectdValue,newValue)，分别是：</p>
+<p>object：待更新的对象</p>
+<p>offset：待更新变量的offset偏移量</p>
+<p>expectdValue：表示预期值，</p>
+<p>newValue：表示新值</p>
+<p>那么，仅当object+offset定位到的值等于expectdValue值时，才会将其值设为newValue，如果</p>
+<p>●</p>
+<p>与expectdValue值不同，则说明已经有其他线程做了更新，则当前线程什么都不做。最后，<code>CAS</code></p>
+<p>返回当前V的真实值。</p>
+<p>●</p>
+<p>在硬件层⾯，⼤部分的现代处理器都已经⽀持原⼦化的CAS指令。</p>
+<p>. &gt; <code>AtomicInteger</code></p>
+<h3 id="8-2"><a href="#8-2" class="headerlink" title="8 2"></a>8 2</h3><p>通过使⽤<code>AtomicInteger</code>，我们可以得益于CAS等CPU指令，保证Integer操作的原⼦性。如下所</p>
+<p>●</p>
+<p>示：</p>
+<p>●</p>
+<p>我们来看⼀下AtomicInteger的incrementAndGet()⽅法是怎么实现的（基于JDK1.8）</p>
+<p>【注】由于针对incrementAndGet(）⽅法，是先执⾏increment，然后再执⾏get，所以获取的</p>
+<p>是increment之后的值；⽽unsafe.getAndAddInt先返回get到的值，然后内部在执⾏addInt，所</p>
+<p>以在整体的⽅法这⾥需要”+1”;</p>
+<p>●</p>
+<p>此处使⽤了CAS的⽅式，来进⾏原⼦的+1操作</p>
+<p>. &gt; Unsafe</p>
+<h3 id="8-3"><a href="#8-3" class="headerlink" title="8 3"></a>8 3</h3><p>Unsafe封装了⼀些类似指针的操作。因为指针是不安全的，如果指针指错了位置，或者计算指针偏</p>
+<p>●</p>
+<p>移量时出错，结果可能是灾难性的，你很有可能覆盖别⼈放⼊内存中的数据，导致系统崩溃。</p>
+<p>●</p>
+<p>Unsafe类还提供了⼀些常⽤的⽅法，如下所示：</p>
+<p>Java 复制代码</p>
+<h3 id="1-获得给定对象偏移量上的int值"><a href="#1-获得给定对象偏移量上的int值" class="headerlink" title="1 // 获得给定对象偏移量上的int值"></a>1 // 获得给定对象偏移量上的int值</h3><p>2 <code>public</code> native int getInt(<code>Object</code> o, long offset);</p>
+<h3 id="4-设置给定对象偏移量上的int值"><a href="#4-设置给定对象偏移量上的int值" class="headerlink" title="4 // 设置给定对象偏移量上的int值"></a>4 // 设置给定对象偏移量上的int值</h3><p>5 <code>public</code> native void putInt(<code>Object</code> o, long offset, int x);</p>
+<h3 id="7-获得字段在对象中的偏移量"><a href="#7-获得字段在对象中的偏移量" class="headerlink" title="7 // 获得字段在对象中的偏移量"></a>7 // 获得字段在对象中的偏移量</h3><p>8 <code>public</code> native long objectFieldOffset(<code>Field</code> f);</p>
+<p>10 // 设置给定对象的int值，使⽤volatile语义</p>
+<p>11 <code>public</code> native void putIntVolatile(<code>Object</code> o, long offset, int x);</p>
+<p>13 // 获得给定对象的int值，使⽤volatile语义</p>
+<p>14 <code>public</code> native int getIntVolatile(<code>Object</code> o, long offset);</p>
+<p>16 // 和putIntVolatile()⼀样，但是它要求被操作字段就是volatile类型的</p>
+<p>17 <code>public</code> native void putOrderedInt(<code>Object</code> o, long offset, int x);</p>
+<p>但是，如果我们要使⽤Unsafe类，需要调⽤getUnsafe()函数，如果这个类的ClassLoader不为</p>
+<p>●</p>
+<p>null，就直接抛出异常，拒绝⼯作。因为我们知道，只有系统类加载器才会返回null。因此，这也使</p>
+<p>得我们⾃⼰的应⽤程序⽆法直接使⽤Unsafe类。它是⼀个JDK内部使⽤的专属类。</p>
+<p>. &gt; AtomicReference</p>
+<h3 id="8-4"><a href="#8-4" class="headerlink" title="8 4"></a>8 4</h3><p>AtomicReference和AtomicInteger⾮常类似，只是AtomicReference对应普通的对象引⽤。如下所</p>
+<p>●</p>
+<p>示：</p>
+<p>. &gt; AtomicStampedReference</p>
+<h3 id="8-5"><a href="#8-5" class="headerlink" title="8 5"></a>8 5</h3><p>有⼀点需要注意的是，当你获得对象当前数据后，在准备修改为新值前，对象的值被其他线程连续</p>
+<p>●</p>
+<p>修改了N次，⽽最终对象的值⼜被恢复为旧值。这样，当前线程就⽆法正确判断这个对象究竟是否</p>
+<p>被修改过。如下所示：</p>
+<p>那么，针对上⾯的问题，我们可以通过使⽤AtomicStampedReference这种带有时间戳的对象引⽤</p>
+<p>●</p>
+<p>来解决，因为它包含了⼀个stamp参数，类似版本或时间戳的概念，如果想要CAS成功，就必须ref</p>
+<p>和stamp都满⾜期待值，如下所示：</p>
+<p>. &gt; AtomicIntegerArray</p>
+<h3 id="8-6"><a href="#8-6" class="headerlink" title="8 6"></a>8 6</h3><p>除了基本数据类型之外，JDK还为我们提供了数组这种复合类型结构。当前可⽤的原⼦数组有</p>
+<p>●</p>
+<p>AtomicIntegerArray、AtomicLongArray和AtomicReferenceArray。它们本质都是对数组类型进⾏</p>
+<p>封装，使⽤Unsafe类通过CAS的⽅式控制数组在多线程下的安全性。下⾯以AtomicIntegerArray为</p>
+<p>例进⾏演示：</p>
+<p>. &gt; AtomicIntegerFieldUpdater</p>
+<h3 id="8-7"><a href="#8-7" class="headerlink" title="8 7"></a>8 7</h3><p>它的作⽤是，让普通变量也能享受原⼦操作，并且在不改动或极少改动原有代码的基础上，让普通</p>
+<p>●</p>
+<p>的变量也能享受CAS操作带来的线程安全性。</p>
+<p>根据数据类型不同，这个Updater有三种。分别是AtomicIntegerFieldUpdater、</p>
+<p>●</p>
+<p>AtomicLongFieldUpdater、AtomicReferenceFieldUpdater，顾名思义，它们分别可以对int、</p>
+<p>long和Object进⾏CAS修改。</p>
+<p>allScore是通过AtomicInteger来进⾏递增计算的；score是通过AtomicIntegerFieldUpdater进⾏封</p>
+<p>●</p>
+<p>装执⾏CAS操作的；scoreTemp就是普通的字段通过⾃增计算的。循环了100*1000次，总计数应</p>
+<p>该是100000。如下所示；</p>
+<p>●</p>
+<p>使⽤Updater的注意事项：</p>
+<p>Updater只能修改它可⻅范围内的变量。因为Updater使⽤反射得到这个变量，如果变量不可⻅，</p>
+<p>●</p>
+<p>就会出错。⽐如不能将score声明为private。</p>
+<p>●</p>
+<p>为了确保变量被正确的读取，它必须是volatile类型的。</p>
+<p>由于CAS操作会通过对象实例中的偏移量直接进⾏赋值，因此，它不⽀持static字段（即：</p>
+<p>●</p>
+<p>Unsafe.objectFieldOffset()不⽀持静态变量）</p>
+<h2 id="九、ThreadLocal-1"><a href="#九、ThreadLocal-1" class="headerlink" title="九、ThreadLocal"></a>九、ThreadLocal</h2><p>●</p>
+<p>详情请⻅：【源码解析】<code>ThreadLocal</code>.pdf</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+            
+            <div class="reprint1">
+                <p>
+                    <span class="reprint1-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+                    </span>
+                    <a href="https://liaoxingwang.github.io" class="b-link-green">屿</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2025/08/05/blog-open-source-java-interview-bing-fa-bian-cheng-ji-chu-zhi-shi/" class="b-link-green">并发编程基础知识</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    
+
+    
+        <link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="card-content">
+        <div class="giscus-wrapper" style="overflow: hidden; max-width: 100%;">
+            <div class="giscus"></div>
+        </div>
+    </div>
+</div>
+
+<script src="https://giscus.app/client.js"
+    data-repo="liaoxingwang/liaoxingwang.github.io"
+    data-repo-id="R_kgDONgefmg"
+    data-category="Announcements"
+    data-category-id="DIC_kwDONgefms4DCjUZ"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="preferred_color_scheme"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async>
+</script>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2025/08/05/blog-open-source-java-interview-bi-zhi-bi-hui-108-ti/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="必知必会108题">
+                        
+                        <span class="card-title">必知必会108题</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            JDK、JRE和JVM的关系： - JDK(Java Development Kit)是Java开发工具包的缩写，包含了Java编译器、Java运行时环境(JRE)和其他开发工具。JDK是开发Java应用程序的必备工具，它提供了编写、编译、调试和运行Java程序所需的所有组件。 - J
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2025-08-05
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java面试-实习/" class="post-category" target="_blank">
+                                    Java面试/实习
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/面试/" target="_blank">
+                        <span class="chip bg-color">面试</span>
+                    </a>
+                    
+                    <a href="/tags/Java面试/" target="_blank">
+                        <span class="chip bg-color">Java面试</span>
+                    </a>
+                    
+                    <a href="/tags/实习/" target="_blank">
+                        <span class="chip bg-color">实习</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2025/08/05/blog-open-source-java-interview-bing-fa-rong-qi-he-xian-cheng-chi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="并发容器和线程池">
+                        
+                        <span class="card-title">并发容器和线程池</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            【讲义】第讲：并发容器和线程池 .> ConcurrentHashMap .> ConcurrentLinkedQueue ..> remove .> CopyOnWriteArrayList .> BlockingQueue ..> ArrayBlockingQu
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2025-08-05
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java面试-2024/" class="post-category" target="_blank">
+                                    Java面试/2024
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/面试/" target="_blank">
+                        <span class="chip bg-color">面试</span>
+                    </a>
+                    
+                    <a href="/tags/Java面试/" target="_blank">
+                        <span class="chip bg-color">Java面试</span>
+                    </a>
+                    
+                    <a href="/tags/2024/" target="_blank">
+                        <span class="chip bg-color">2024</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 屿<br />'
+            + '作者: SK<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4, h5'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4, h5').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+        <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&copy; 理想热爱.
+
+            <br>
+            <span id="sitetime"></span><span class="my-face">ღゝ◡╹)ノ♡</span>
+            <br>
+
+            
+
+            
+                    
+                        <span id="busuanzi_container_site_pv" style='display:none'></span>
+                        总访问量: <span id="busuanzi_value_site_pv" class="white-color"></span>
+                    
+
+                    
+                        <span id="busuanzi_container_site_uv" style='display:none'></span>
+                        人次&nbsp; | &nbsp;访客人数: <span id="busuanzi_value_site_uv" class="white-color"></span> 人
+                    
+
+            
+
+            
+                &nbsp; | &nbsp;字数统计:&nbsp;
+                <span class="white-color">1643k</span> 字
+            
+
+            
+            <br>
+
+        </div>
+
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/liaoxingwang" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+ 
+    <a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=807928930@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+
+    <a href="https://zhihu.com/people/zbozci" class="tooltipped" target="_blank" data-tooltip="访问我的知乎" data-position="top" data-delay="50">
+        <i class="fa fa-inverse">知</i>
+    </a>
+
+
+
+    <a href="http://wpa.qq.com/msgrd?v=3&uin=807928930&site=qq&menu=yes" class="tooltipped" target="_blank" data-tooltip="访问我的QQ空间" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+    <a href="https://weibo.com/jamsJJYY" class="tooltipped" target="_blank" data-tooltip="关注我的微博" data-position="top" data-delay="50">
+        <i class="fa fa-weibo"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+
+        var t1 = Date.UTC(2022, 10, 24, 00, 00, 00); //北京时间2019-8-1 00:00:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes *
+            minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours +
+            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒" ;
+    } /*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+
+
+
+
+
+
+        <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+        <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+        <script src="/libs/materialize/materialize.min.js"></script>
+        <script src="https://cdn.bootcss.com/masonry/4.2.2/masonry.pkgd.min.js"></script>
+        <script src="https://cdn.bootcss.com/aos/3.0.0-beta.6/aos.js"></script>
+        <script src="https://cdn.bootcss.com/scrollprogress/3.0.2/scrollProgress.min.js"></script>
+        <script src="https://cdn.bootcss.com/lightgallery/1.6.12/js/lightgallery-all.min.js"></script>
+        <script src="/js/matery.js"></script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+        
+            <script src="/libs/others/clicklove.js"></script>
+        
+
+        
+            <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        
+
+        <!-- liaoxingwang add 2019.08.28 -->
+        <script type="text/javascript">
+            var OriginTitile = document.title,
+                st;
+            document.addEventListener("visibilitychange", function () {
+                document.hidden ? (document.title = "看不见我🙈~看不见我🙈~", clearTimeout(st)) : (document.title =
+                    "(๑•̀ㅂ•́) ✧被发现了～", st = setTimeout(function () {
+                        document.title = OriginTitile
+                    }, 3e3))
+            })
+        </script>
+
+        <!-- 鼠标点击烟花爆炸效果  liaoxingwang add 2019.09.09 -->
+        
+
+        <!-- 背景雪花飘落特效liaoxingwang add 2019.09.10 -->
+        
+
+        <!-- 鼠标点击文字特效 liaoxingwang add 2019.09.10-->
+        
+            <script src="/js/wenzi.js" type="text/javascript"></script>
+        
+
+        <!-- 背景雪花飘落特效 liaoxingwang add 2019.09.10 -->
+        
+
+        <!-- 在线聊天工具  liaoxingwang add 2019.09.11 -->
+        
+
+        <!-- 背景 canvas-nest  洪卫 shw 2018  add 2019.09.15-->
+        
+
+        <!-- 背景静止彩带  洪卫 shw 2018  add 2019.09.15-->
+        
+            <script type="text/javascript">
+            var windowWidth = $(window).width();
+            if (windowWidth > 992) {
+                document.write('<script type="text/javascript" size="150" alpha="0.6" zIndex="-1" src="/libs/background/ribbon.min.js"><\/script>');
+            }
+            </script>
+        
+
+        <!-- 背景动态彩带 洪卫 shw 2018  add 2019.09.15-->
+        
+            <script type="text/javascript">
+            var windowWidth = $(window).width();
+            if (windowWidth > 992) {
+                document.write('<script type="text/javascript" src="/libs/background/ribbon-dynamic.js"><\/script>');
+            }
+            </script>
+        
+
+    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script>
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z\d\-\.\+]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(t.test(e.href)||r.test(e.href))&&(e.href=a.dataset.original)})});</script><script>(r=>{r.imageLazyLoadSetting.processImages=t;var a=r.imageLazyLoadSetting.isSPA,o=r.imageLazyLoadSetting.preloadRatio||1,d=i();function i(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(t){(a||t)&&(d=i());for(var e,n=0;n<d.length;n++)0<=(e=(e=d[n]).getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(r.innerHeight*o||document.documentElement.clientHeight*o)&&(()=>{var t,e,a,o,i=d[n];e=function(){d=d.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).dataset.loaded||(t.hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(a=new Image,o=t.getAttribute("data-original"),a.onload=function(){t.src=o,t.removeAttribute("data-original"),t.setAttribute("data-loaded",!0),e&&e()},a.onerror=function(){t.removeAttribute("data-original"),t.setAttribute("data-loaded",!1),t.src=o},t.src!==o&&(a.src=o)))})()}function e(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",e),r.addEventListener("resize",e),r.addEventListener("orientationchange",e)})(this);</script></body>
+</html>

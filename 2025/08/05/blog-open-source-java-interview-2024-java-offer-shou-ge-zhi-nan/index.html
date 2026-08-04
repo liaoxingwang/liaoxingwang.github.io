@@ -1,0 +1,1576 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+    
+
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="2024 Java offer 收割指南, 商单接企业项目外包 软件开发 整包服务 移动开发 移动开发团队 移动开发项目">
+    <meta name="baidu-site-verification" content="fmlEuI34ir">
+    <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
+    <meta name="description" content="最新百度、阿里、字节 Java 面试题集
+一、 百度篇1.JAVA中的几种基本数据类型是什么，各自占用多少字节。2.String类能被继承吗，为什么。3.String，Stringbuffer，StringBuilder的区别。4.Arra">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="2024 Java offer 收割指南 | 屿">
+    <meta property="og:description" content="最新百度、阿里、字节 Java 面试题集
+一、 百度篇1.JAVA中的几种基本数据类型是什么，各自占用多少字节。2.String类能被继承吗，为什么。3.String，Stringbuffer，StringBuilder的区别。4.Arra">
+    <meta property="og:url" content="https://liaoxingwang.github.io2025/08/05/blog-open-source-java-interview-2024-java-offer-shou-ge-zhi-nan/">
+    <meta property="og:image" content="https://liaoxingwang.github.io/medias/banner/0.jpg">
+    <meta property="og:site_name" content="屿">
+    <meta property="og:locale" content="zh_CN">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="2024 Java offer 收割指南 | 屿">
+    <meta name="twitter:description" content="最新百度、阿里、字节 Java 面试题集
+一、 百度篇1.JAVA中的几种基本数据类型是什么，各自占用多少字节。2.String类能被继承吗，为什么。3.String，Stringbuffer，StringBuilder的区别。4.Arra">
+    <meta name="twitter:image" content="https://liaoxingwang.github.io/medias/banner/0.jpg">
+
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>2024 Java offer 收割指南 | 屿</title>
+    <link rel="icon" type="image/jpeg" href="/medias/avatars/hwsun.jpg">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/aos/3.0.0-beta.6/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/lightgallery/1.6.12/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <style type="text/css">
+        
+
+            code[class*="language-"],
+            pre[class*="language-"] {
+                white-space: pre !important;
+            }
+
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?46e79e71af0709a5b9106bf20cecc493";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+    
+    
+        <script>
+            (function(){
+                var bp = document.createElement('script');
+                var curProtocol = window.location.protocol.split(':')[0];
+                if (curProtocol === 'https') {
+                    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+                }
+                else {
+                    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                }
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(bp, s);
+            })();
+        </script>
+    
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+    <body>
+
+        <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <span class="logo-span">屿</span>
+                </a>
+            </div>
+            
+
+
+<!-- <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/AV" class="waves-effect waves-light">
+            
+            <i class="fa fa-music"></i>
+            
+            <span>视听</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/galleries" class="waves-effect waves-light">
+            
+            <i class="fa fa-photo"></i>
+            
+            <span>相册</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于我</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/contact" class="waves-effect waves-light">
+            
+            <i class="fa fa-envelope"></i>
+            
+            <span>留言板</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul> -->
+
+<!-- 支持二级菜单特性 liaoxingwang modify 2019.09.17  -->
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right nav-menu">
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/" class="waves-effect waves-light">
+              
+                <i class="fa fa-home"></i>
+              
+              <span>首页</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/tags" class="waves-effect waves-light">
+              
+                <i class="fa fa-tags"></i>
+              
+              <span>标签</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/categories" class="waves-effect waves-light">
+              
+                <i class="fa fa-bookmark"></i>
+              
+              <span>分类</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/archives" class="waves-effect waves-light">
+              
+                <i class="fa fa-archive"></i>
+              
+              <span>归档</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/AV" class="waves-effect waves-light">
+              
+                <i class="fa fa-music"></i>
+              
+              <span>视听</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/galleries" class="waves-effect waves-light">
+              
+                <i class="fa fa-photo"></i>
+              
+              <span>相册</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/about" class="waves-effect waves-light">
+              
+                <i class="fa fa-user-circle-o"></i>
+              
+              <span>关于我</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/contact" class="waves-effect waves-light">
+              
+                <i class="fa fa-envelope"></i>
+              
+              <span>留言板</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/friends" class="waves-effect waves-light">
+              
+                <i class="fa fa-address-book"></i>
+              
+              <span>友情链接</span>
+            </a>
+
+            
+      </li>
+    
+
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <div class="logo-name">屿</div>
+        <div class="logo-desc">
+            
+            湖南工业大学 | 计算机科学与技术
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/AV" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-music"></i>
+                
+                视听
+            </a>
+        </li>
+        
+        <li>
+            <a href="/galleries" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-photo"></i>
+                
+                相册
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于我
+            </a>
+        </li>
+        
+        <li>
+            <a href="/contact" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-envelope"></i>
+                
+                留言板
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/liaoxingwang/" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+
+   
+   
+<!-- 支持二级菜单特性 liaoxingwang modify 2019.09.17  -->
+<!-- <ul class="menu-list mobile-menu-list">
+    
+        <li class="m-nav-item">
+                
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-home"></i>
+                        
+                        首页
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/tags" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-tags"></i>
+                        
+                        标签
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/categories" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-bookmark"></i>
+                        
+                        分类
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/archives" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-archive"></i>
+                        
+                        归档
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/AV" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-music"></i>
+                        
+                        视听
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/galleries" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-photo"></i>
+                        
+                        相册
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/about" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-user-circle-o"></i>
+                        
+                        关于我
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/contact" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-envelope"></i>
+                        
+                        留言板
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/friends" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-address-book"></i>
+                        
+                        友情链接
+                    </a>
+              
+            </li>
+        
+
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/liaoxingwang/" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul> -->
+
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/liaoxingwang/" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+        
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        2024 Java offer 收割指南
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        
+<!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/面试/" target="_blank">
+                                <span class="chip bg-color">面试</span>
+                            </a>
+                        
+                            <a href="/tags/Java面试/" target="_blank">
+                                <span class="chip bg-color">Java面试</span>
+                            </a>
+                        
+                            <a href="/tags/2024/" target="_blank">
+                                <span class="chip bg-color">2024</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Java面试-2024/" class="post-category" target="_blank">
+                                Java面试/2024
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2025-08-05
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
+                    
+                        SK
+                    
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        14.8k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        53 分
+                    </div>
+                    
+                
+
+                
+                        <span id="busuanzi_container_site_pv" style='display:none'></span>
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv" ></span>
+
+                
+
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>最新百度、阿里、字节 Java 面试题集</p>
+<h2 id="一、-百度篇"><a href="#一、-百度篇" class="headerlink" title="一、 百度篇"></a>一、 百度篇</h2><p>1.JAVA中的几种基本数据类型是什么，各自占用多少字节。<br>2.String类能被继承吗，为什么。<br>3.<code>String</code>，Stringbuffer，StringBuilder的区别。<br>4.ArrayList和LinkedList有什么区别。<br>5.讲讲类的实例化顺序，比如父类静态数据，构造函数，字段，子类静态数据，构<br>造函数，字段，当new的时候，他们的执行顺序。</p>
+<h3 id="6-sql优化有哪些-如何创建索引-创建索引的原则-索引的优缺点"><a href="#6-sql优化有哪些-如何创建索引-创建索引的原则-索引的优缺点" class="headerlink" title="6.sql优化有哪些?如何创建索引?创建索引的原则?索引的优缺点?"></a>6.sql优化有哪些?如何创建索引?创建索引的原则?索引的优缺点?</h3><h3 id="7-sql如何去重？"><a href="#7-sql如何去重？" class="headerlink" title="7.sql如何去重？"></a>7.sql如何去重？</h3><h3 id="8-内连接和外连接的区别"><a href="#8-内连接和外连接的区别" class="headerlink" title="8.内连接和外连接的区别"></a>8.内连接和外连接的区别</h3><h3 id="9-sql语句关键词的执行顺序？"><a href="#9-sql语句关键词的执行顺序？" class="headerlink" title="9.sql语句关键词的执行顺序？"></a>9.sql语句关键词的执行顺序？</h3><p>10.什么情况下会发生栈内存溢出。<br>11.JVM的内存结构，Eden和Survivor比例。<br>12.JVM内存为什么要分成新生代，老年代，持久代。新生代中为什么要分为Eden<br>和Survivor。<br>13.JVM中一次完整的GC流程是怎样的，对象如何晋升到老年代，说说你知道的<br>几种主要的JVM参数。</p>
+<h3 id="14-Java中如何使用-redis？redis-支持的数据类型及各种数据类型的使用场景？"><a href="#14-Java中如何使用-redis？redis-支持的数据类型及各种数据类型的使用场景？" class="headerlink" title="14.Java中如何使用 redis？redis 支持的数据类型及各种数据类型的使用场景？"></a>14.Java中如何使用 redis？redis 支持的数据类型及各种数据类型的使用场景？</h3><p><strong>Q:</strong> redis如何解决数据过期？</p>
+<h3 id="15-存储过程的了解和使用？"><a href="#15-存储过程的了解和使用？" class="headerlink" title="15.存储过程的了解和使用？"></a>15.存储过程的了解和使用？</h3><p>16.消息队列的使用场景。<br>17.消息的重发，补充策略。<br>18.如何保证消息的有序性。<br>用过哪些MQ，和其他mq比较有什么优缺点，MQ的连接是线程安全的吗，.14</p>
+<h3 id="19-数据库表的设计注意事项有哪些？三大范式的了解？"><a href="#19-数据库表的设计注意事项有哪些？三大范式的了解？" class="headerlink" title="19.数据库表的设计注意事项有哪些？三大范式的了解？"></a>19.数据库表的设计注意事项有哪些？三大范式的了解？</h3><h3 id="20-百万级量的数据分页查询如何优化？"><a href="#20-百万级量的数据分页查询如何优化？" class="headerlink" title="20.百万级量的数据分页查询如何优化？"></a>20.百万级量的数据分页查询如何优化？</h3><h3 id="21-数据库的乐观锁和悲观锁的理解和使用？"><a href="#21-数据库的乐观锁和悲观锁的理解和使用？" class="headerlink" title="21.数据库的乐观锁和悲观锁的理解和使用？"></a>21.数据库的乐观锁和悲观锁的理解和使用？</h3><h3 id="22-数据库如何实现分页？"><a href="#22-数据库如何实现分页？" class="headerlink" title="22.数据库如何实现分页？"></a>22.数据库如何实现分页？</h3><p><strong>Q:</strong> 23.#{}和${}的区别是什么？</p>
+<h3 id="24-数据库中字符串和日期的相互转换？"><a href="#24-数据库中字符串和日期的相互转换？" class="headerlink" title="24.数据库中字符串和日期的相互转换？"></a>24.数据库中字符串和日期的相互转换？</h3><h3 id="25-MySQL的存储引擎有哪些？"><a href="#25-MySQL的存储引擎有哪些？" class="headerlink" title="25.MySQL的存储引擎有哪些？"></a>25.MySQL的存储引擎有哪些？</h3><h3 id="26-事务隔离级别有哪些？mysql和oracle默认的隔离级别是什么？"><a href="#26-事务隔离级别有哪些？mysql和oracle默认的隔离级别是什么？" class="headerlink" title="26.事务隔离级别有哪些？mysql和oracle默认的隔离级别是什么？"></a>26.事务隔离级别有哪些？mysql和oracle默认的隔离级别是什么？</h3><h3 id="27-SQL如何行转列和列转行？"><a href="#27-SQL如何行转列和列转行？" class="headerlink" title="27.SQL如何行转列和列转行？"></a>27.SQL如何行转列和列转行？</h3><h3 id="28-如何查看sql的执行计划？"><a href="#28-如何查看sql的执行计划？" class="headerlink" title="28.如何查看sql的执行计划？"></a>28.如何查看sql的执行计划？</h3><h3 id="29-union和unionAll区别？"><a href="#29-union和unionAll区别？" class="headerlink" title="29.union和unionAll区别？"></a>29.union和unionAll区别？</h3><h3 id="31-oracle中的分析函数有哪些？"><a href="#31-oracle中的分析函数有哪些？" class="headerlink" title="31.oracle中的分析函数有哪些？"></a>31.oracle中的分析函数有哪些？</h3><h3 id="32-数据库中除了聚合函数之外还有哪些常用的函数？oracle数据库的merge（）"><a href="#32-数据库中除了聚合函数之外还有哪些常用的函数？oracle数据库的merge（）" class="headerlink" title="32.数据库中除了聚合函数之外还有哪些常用的函数？oracle数据库的merge（）"></a>32.数据库中除了聚合函数之外还有哪些常用的函数？oracle数据库的merge（）</h3><p><strong>Q:</strong> 函数的作用和使用？</p>
+<h3 id="33-MySQL中如何忽略表名的大小写？"><a href="#33-MySQL中如何忽略表名的大小写？" class="headerlink" title="33.MySQL中如何忽略表名的大小写？"></a>33.MySQL中如何忽略表名的大小写？</h3><h3 id="34-Aspect-切面"><a href="#34-Aspect-切面" class="headerlink" title="34.Aspect 切面"></a>34.Aspect 切面</h3><p>35.常见的高并发场景有哪些，对应的架构设计方案是什么。</p>
+<p>36.介绍完整的分布式中间件有哪些，各自的应用场景和作用。<br>37.双11秒杀活动，你的技术架构设计思路。<br>38.用java自己实现一个LRU。</p>
+<h2 id="二、阿里篇"><a href="#二、阿里篇" class="headerlink" title="二、阿里篇"></a>二、阿里篇</h2><p>1.讲讲类的实例化顺序，比如父类静态数据，构造函数，字段，子类静态数据，构<br>造函数，字段，当new的时候，他们的执行顺序。<br>2.用过哪些Map 类，都有什么区别，<code>HashMap</code> 是线程安全的吗,并发下使用的<br>Map是什么，他们内部原理分别是什么，比如存储方式，hashcode，扩容，默认<br>容量等。<br>3.JAVA8的ConcurrentHashMap为什么放弃了分段锁，有什么问题吗，如果你<br>来设计，你如何设计。<br>4.有没有有顺序的Map实现类，如果有，他们是怎么保证有序的。</p>
+<h3 id="5-having和where的区别？"><a href="#5-having和where的区别？" class="headerlink" title="5.having和where的区别？"></a>5.having和where的区别？</h3><h3 id="6-游标的作用和使用？"><a href="#6-游标的作用和使用？" class="headerlink" title="6.游标的作用和使用？"></a>6.游标的作用和使用？</h3><h3 id="7-如何使用数据库中的定时器？触发器？定时任务？Oracle-中如何实现递归查"><a href="#7-如何使用数据库中的定时器？触发器？定时任务？Oracle-中如何实现递归查" class="headerlink" title="7.如何使用数据库中的定时器？触发器？定时任务？Oracle 中如何实现递归查"></a>7.如何使用数据库中的定时器？触发器？定时任务？Oracle 中如何实现递归查</h3><p><strong>Q:</strong> 询？</p>
+<h3 id="8-高并发下如何保证修改数据安全"><a href="#8-高并发下如何保证修改数据安全" class="headerlink" title="8.高并发下如何保证修改数据安全"></a>8.高并发下如何保证修改数据安全</h3><h3 id="9-MyBatis-实现一对一有几种方式-具体怎么操作的？"><a href="#9-MyBatis-实现一对一有几种方式-具体怎么操作的？" class="headerlink" title="9.MyBatis 实现一对一有几种方式?具体怎么操作的？"></a>9.MyBatis 实现一对一有几种方式?具体怎么操作的？</h3><ol start="10">
+<li>linux命令，如何改文件权限。</li>
+</ol>
+<h3 id="11-数组、链表（单向、双向、双端）、栈和队列、二叉树、红黑树、哈希表、堆"><a href="#11-数组、链表（单向、双向、双端）、栈和队列、二叉树、红黑树、哈希表、堆" class="headerlink" title="11.数组、链表（单向、双向、双端）、栈和队列、二叉树、红黑树、哈希表、堆"></a>11.数组、链表（单向、双向、双端）、栈和队列、二叉树、红黑树、哈希表、堆</h3><p>（最大和最小）<br>12. 个人经验：栈和队列、哈希表、链表、二叉树的题较多，图的较少</p>
+<h3 id="13-查找：二分查找及其变形"><a href="#13-查找：二分查找及其变形" class="headerlink" title="13. 查找：二分查找及其变形"></a>13. 查找：二分查找及其变形</h3><ol start="14">
+<li>二叉树：前序、中序、后序遍历，按规定方式打印，两个节点之间操作（最近<br>公共祖先、距离）等问题。</li>
+</ol>
+<h3 id="15-Mybatis-是如何进行分页的？分页插件的原理是什么？"><a href="#15-Mybatis-是如何进行分页的？分页插件的原理是什么？" class="headerlink" title="15.Mybatis 是如何进行分页的？分页插件的原理是什么？"></a>15.Mybatis 是如何进行分页的？分页插件的原理是什么？</h3><h3 id="16-Delete误删数据没有备份怎么恢复？"><a href="#16-Delete误删数据没有备份怎么恢复？" class="headerlink" title="16.Delete误删数据没有备份怎么恢复？"></a>16.Delete误删数据没有备份怎么恢复？</h3><p><strong>Q:</strong> 17.Mybatis 是否支持延迟加载？如果支持，它的实现原理是什么？</p>
+<h3 id="18-什么是-MyBatis-的接口绑定？有哪些实现方式？"><a href="#18-什么是-MyBatis-的接口绑定？有哪些实现方式？" class="headerlink" title="18.什么是 MyBatis 的接口绑定？有哪些实现方式？"></a>18.什么是 MyBatis 的接口绑定？有哪些实现方式？</h3><h3 id="19-使用-MyBatis-的-mapper-接口调用时有哪些要求？"><a href="#19-使用-MyBatis-的-mapper-接口调用时有哪些要求？" class="headerlink" title="19.使用 MyBatis 的 mapper 接口调用时有哪些要求？"></a>19.使用 MyBatis 的 mapper 接口调用时有哪些要求？</h3><ol start="20">
+<li>介绍下你理解的操作系统中线程切换过程。</li>
+<li>. 进程和线程的区别。</li>
+<li>top 命令之后有哪些内容，有什么作用。</li>
+<li>线上CPU爆高，请问你如何找到问题所在。</li>
+</ol>
+<h3 id="24-什么是-Spring-MVC-框架的控制器？"><a href="#24-什么是-Spring-MVC-框架的控制器？" class="headerlink" title="24.什么是 Spring MVC 框架的控制器？"></a>24.什么是 Spring MVC 框架的控制器？</h3><h3 id="25-数据传输的事务定义有哪三种？"><a href="#25-数据传输的事务定义有哪三种？" class="headerlink" title="25.数据传输的事务定义有哪三种？"></a>25.数据传输的事务定义有哪三种？</h3><p>26.谈谈对Synchronized关键字，类锁，方法锁，重入锁的理解。<br>27.volatile的原理。<br>28.使用kafka有没有遇到什么问题，怎么解决的。<br>29.MQ有可能发生重复消费，如何避免，如何做到幂等。<br>30.MQ的消息延迟了怎么处理，消息可以设置过期时间么，过期了你们一般怎么<br>处理。</p>
+<h3 id="31-Redis集群方案应该怎么做？都有哪些方案？"><a href="#31-Redis集群方案应该怎么做？都有哪些方案？" class="headerlink" title="31. Redis集群方案应该怎么做？都有哪些方案？"></a>31. Redis集群方案应该怎么做？都有哪些方案？</h3><p><strong>Q:</strong> 32.谈谈你的参与的项目？能否画出整个项目的架构设计图，尽量包含流程、部署</p>
+<p>等</p>
+<p><strong>Q:</strong> 33. 一次web请求响应中，那个部分最耗时，tcp握手？业务逻辑处理？网络延</p>
+<p><strong>Q:</strong> 迟？数据库查询？浏览器解析？ 34、分布式系统设计你会考虑哪些策略？</p>
+<h3 id="35、最常见的数据分布方式是什么？"><a href="#35、最常见的数据分布方式是什么？" class="headerlink" title="35、最常见的数据分布方式是什么？"></a>35、最常见的数据分布方式是什么？</h3><p>36、谈一谈一致性哈希算法。</p>
+<h3 id="37、paxos是什么？"><a href="#37、paxos是什么？" class="headerlink" title="37、paxos是什么？"></a>37、paxos是什么？</h3><h3 id="38、什么是Lease机制？"><a href="#38、什么是Lease机制？" class="headerlink" title="38、什么是Lease机制？"></a>38、什么是Lease机制？</h3><h3 id="39、如何理解选主算法？"><a href="#39、如何理解选主算法？" class="headerlink" title="39、如何理解选主算法？"></a>39、如何理解选主算法？</h3><p><strong>Q:</strong> 40、OSI有哪七层模型？TCP/IP是哪四层模型。 41正常情况下，当在try块或</p>
+<p><strong>Q:</strong> catch块中遇到return语句时，finally语句块在方法返回之前还是之后被执行？36<br>42、try、catch、finally语句块的执行顺序。</p>
+<p><strong>Q:</strong> 43、Java虚拟机中，数据类型可以分为哪几类？</p>
+<h3 id="44、怎么理解栈、堆？堆中存什么？栈中存什么？"><a href="#44、怎么理解栈、堆？堆中存什么？栈中存什么？" class="headerlink" title="44、怎么理解栈、堆？堆中存什么？栈中存什么？"></a>44、怎么理解栈、堆？堆中存什么？栈中存什么？</h3><h3 id="45、为什么要把堆和栈区分出来呢？栈中不是也可以存储数据吗？"><a href="#45、为什么要把堆和栈区分出来呢？栈中不是也可以存储数据吗？" class="headerlink" title="45、为什么要把堆和栈区分出来呢？栈中不是也可以存储数据吗？"></a>45、为什么要把堆和栈区分出来呢？栈中不是也可以存储数据吗？</h3><h2 id="三、字节篇"><a href="#三、字节篇" class="headerlink" title="三、字节篇"></a>三、字节篇</h2><p>1.IO模型有哪些，讲讲你理解的nio ，他和bio，aio的区别是啥，谈谈reactor<br>模型。<br>2.反射的原理，反射创建类实例的三种方式是什么。<br>3.反射中，<code>Class</code>.forName和ClassLoader区别 。<br>4.描述动态代理的几种实现方式，分别说出相应的优缺点。<br>5.动态代理与cglib实现的区别。<br>6.为什么CGlib方式可以对接口实现代理。</p>
+<p>7.final的用途。<br>8.简述 Mybatis 的插件运行原理，以及如何编写一个插件。</p>
+<h3 id="9-ZAB-协议？"><a href="#9-ZAB-协议？" class="headerlink" title="9.ZAB 协议？"></a>9.ZAB 协议？</h3><h3 id="10-客户端注册-Watcher-实现"><a href="#10-客户端注册-Watcher-实现" class="headerlink" title="10.客户端注册 Watcher 实现"></a>10.客户端注册 Watcher 实现</h3><h3 id="11-Chroot-特性"><a href="#11-Chroot-特性" class="headerlink" title="11.Chroot 特性"></a>11.Chroot 特性</h3><h3 id="12-会话管理"><a href="#12-会话管理" class="headerlink" title="12.会话管理"></a>12.会话管理</h3><h3 id="13-服务器角色"><a href="#13-服务器角色" class="headerlink" title="13.服务器角色"></a>13.服务器角色</h3><h3 id="14-数据同步"><a href="#14-数据同步" class="headerlink" title="14.数据同步"></a>14.数据同步</h3><h3 id="15-如何理解-Spring-中的代理？"><a href="#15-如何理解-Spring-中的代理？" class="headerlink" title="15.如何理解 Spring 中的代理？"></a>15.如何理解 Spring 中的代理？</h3><h3 id="16-分布式集群中为什么会有-Master？"><a href="#16-分布式集群中为什么会有-Master？" class="headerlink" title="16.分布式集群中为什么会有 Master？"></a>16.分布式集群中为什么会有 Master？</h3><h3 id="17-Zookeeper-对节点的-watch监听通知是永久的吗？为什么不是永久的"><a href="#17-Zookeeper-对节点的-watch监听通知是永久的吗？为什么不是永久的" class="headerlink" title="17.Zookeeper 对节点的 watch监听通知是永久的吗？为什么不是永久的?"></a>17.Zookeeper 对节点的 watch监听通知是永久的吗？为什么不是永久的?</h3><p><strong>Q:</strong> 18.chubby 是什么，和 zookeeper 比你怎么看？<br>19.说几个 zookeeper 常用的命令。</p>
+<h3 id="20-ZAB-和-Paxos-算法的联系与区别？"><a href="#20-ZAB-和-Paxos-算法的联系与区别？" class="headerlink" title="20.ZAB 和 Paxos 算法的联系与区别？"></a>20.ZAB 和 Paxos 算法的联系与区别？</h3><h3 id="21-服务调用是阻塞的吗？"><a href="#21-服务调用是阻塞的吗？" class="headerlink" title="21.服务调用是阻塞的吗？"></a>21.服务调用是阻塞的吗？</h3><h3 id="22-Dubbo-推荐用什么协议？"><a href="#22-Dubbo-推荐用什么协议？" class="headerlink" title="22.Dubbo 推荐用什么协议？"></a>22.Dubbo 推荐用什么协议？</h3><h3 id="23-Dubbo-Monitor-实现原理？"><a href="#23-Dubbo-Monitor-实现原理？" class="headerlink" title="23.Dubbo Monitor 实现原理？"></a>23.Dubbo Monitor 实现原理？</h3><h3 id="24-Dubbo-用到哪些设计模式？"><a href="#24-Dubbo-用到哪些设计模式？" class="headerlink" title="24.Dubbo 用到哪些设计模式？"></a>24.Dubbo 用到哪些设计模式？</h3><h3 id="25-Dubbo-SPI-和-JavaSPI-区别？"><a href="#25-Dubbo-SPI-和-JavaSPI-区别？" class="headerlink" title="25.Dubbo SPI 和 JavaSPI 区别？"></a>25.Dubbo SPI 和 JavaSPI 区别？</h3><p>26.简述Http请求get和post的区别以及数据包格式。</p>
+<h3 id="27-HTTP有哪些method"><a href="#27-HTTP有哪些method" class="headerlink" title="27.HTTP有哪些method"></a>27.HTTP有哪些method</h3><p>28.简述HTTP请求的报文格式。</p>
+<p>29.HTTP的长连接是什么意思。<br>30.<code>Thread</code> 类的 sleep()方法和对象的 <code>wait</code>()方法都可以让线程暂停执行，它们有<br>什么区别?<br>31. Java服务端问题排查（OOM，CPU高，Load高，类冲突）</p>
+<h3 id="32-如何查看Java应用的线程信息"><a href="#32-如何查看Java应用的线程信息" class="headerlink" title="32. 如何查看Java应用的线程信息"></a>32. 如何查看Java应用的线程信息</h3><h3 id="33-Redis-hash算法用的是什么？"><a href="#33-Redis-hash算法用的是什么？" class="headerlink" title="33.Redis hash算法用的是什么？"></a>33.Redis hash算法用的是什么？</h3><h2 id="一、百度篇"><a href="#一、百度篇" class="headerlink" title="一、百度篇"></a>一、百度篇</h2><p>1.JAVA 中的几种基本数据类型是什么，各自占用多少字节。<br>2.<code>String</code> 类能被继承吗，为什么。<br>3.<code>String</code>，Stringbuffer，<code>StringBuilder</code> 的区别。<br>4.<code>ArrayList</code> 和 <code>LinkedList</code> 有什么区别。<br>5.讲讲类的实例化顺序，比如父类静态数据，构造函数，字段，子类静<br>态数据，构造函数，字段，当 new 的时候，他们的执行顺序。</p>
+<h3 id="6-sql-优化有哪些-如何创建索引-创建索引的原则-索引的优缺点"><a href="#6-sql-优化有哪些-如何创建索引-创建索引的原则-索引的优缺点" class="headerlink" title="6.sql 优化有哪些?如何创建索引?创建索引的原则?索引的优缺点?"></a>6.sql 优化有哪些?如何创建索引?创建索引的原则?索引的优缺点?</h3><p>sql 的优化有:<br>尽量避免使用 <code>select</code> * ，返回无用的字段会降低效率。优化方式：只能使用具<br>体的字段代替 <code>select</code> 具体字段，只返回使用到的字段。<br>尽量避免使用in和not in，会导致数据库引擎放弃索引进行全表扫描。优化方<br>式：如果是连续数值，可以用betwween代替，如果是子查询，可以用exists<br>代替。<br>尽量避免在字段开头模糊查询，会导致数据库引擎放弃索引进行全表扫描。优化<br>方式:尽量在字段后面使用模糊查询。<br>尽量避免进行null值的判断，会导致数据库引擎放弃索引进行全表扫描。优化<br>方式:可以给字段添加默认值0，对0 值进行判断。<br>如何创建索引：<br>数据库索引，是数据库管理系统中一个排序的数据结构，索引的实现通常使用B<br>树及其变种B+树。<br>创建索引有两种:<br>直接创建索引，例如使用CREATE INDEX 语句或者使用创建索引向导。<br>间接创建索引，例如在表中定义主键约束或者唯一性键约束时，同时也创建了索<br>引。<br>索引的作用:<br>协助快速查询、更新数据库表中数据。<br>为表设置索引要付出代价的：</p>
+<h2 id="一、是增加了数据库的存储空间"><a href="#一、是增加了数据库的存储空间" class="headerlink" title="一、是增加了数据库的存储空间"></a>一、是增加了数据库的存储空间</h2><p>为索引也要随之变动）。</p>
+<p>创建索引可以大大提高系统的性能（优点）:<br>通过创建唯一性索引，可以保证数据库表中每一行数据的唯一性。<br>可以大大加快数据的检索速度，这也是创建索引的最主要的原因。<br>可以加速表和表之间的连接，特别是在实现数据的参考完整性方面特别有意义。<br>在使用分组和排序子句进行数据检索时，同样可以显著减少查询中分组和排序的<br>时间。<br>通过使用索引，可以在查询的过程中，使用优化隐藏器，提高系统的性能。增加<br>索引也有许多不利的方面(缺点):<br>创建索引和维护索引要耗费时间，这种时间随着数据量的增加而增加。<br>索引需要占物理空间，除了数据表占数据空间之外，每一个索引还要占一定的物<br>理空间，如果要建立聚簇索引，那么需要的空间就会更大。<br>当对表中的数据进行增加、删除和修改的时候，索引也要动态的维护，这样就降<br>低了数据的维护速度。<br>创建索引的原则：<br>最左前缀匹配原则（一直向右匹配直到遇到范围查询就停止匹配）；<br>=和in可以乱序（建立索引是可以任意顺序的，mysql 的查询优化器会帮你优<br>化成索引可以识别的形式）；<br>尽量选择区分度高的列作为索引（区分度的公式是count(distinct<br>col)/count(*)，表示字段不重复的比例，比例越大我们扫描的记录数越少，唯一<br>键的区分度是1，）；<br>索引列不能参与计算（保持列“干净”，）；<br>尽量的扩展索引，不要新建索引（如a-&gt;（a，b）只需要修改原来的索引）；</p>
+<p>选择唯一性索引（唯一性索引的值是唯一的，可以更快速的通过该索引来确定某<br>条记录。）；<br>为经常需要排序、分组和联合操作的字段建立索引；<br>为常作为查询条件的字段建立索引；<br>限制索引的数目；<br>尽量使用数据量少的索引；<br>尽量使用前缀来索引；<br>删除不再使用或者很少使用的索引。</p>
+<h3 id="7-sql-如何去重？"><a href="#7-sql-如何去重？" class="headerlink" title="7.sql 如何去重？"></a>7.sql 如何去重？</h3><p>总的思路就是先找出表中重复数据中的一条数据，插入临时表中，删除所有的重<br>复数据，然后再将临时表中的数据插入表中。<br>实现：<br>重复数据完全一样，使用distinct；<br>id列不同,id 类型为int,自增字段,使用聚合函数max或其他；<br>id列不同,id 类型为uniqueidentifier；使用row_number()over()和partition<br>by 给每一组添加行号；将行号=1 的数据插入临时表中。</p>
+<h3 id="8-内连接和外连接的区别-1"><a href="#8-内连接和外连接的区别-1" class="headerlink" title="8.内连接和外连接的区别"></a>8.内连接和外连接的区别</h3><p>自然连接：是一种特殊的等值连接，他要求两个关系表中进行比较的必须是相同<br>的属性列，无须添加连接条件，并且在结果中消除重复的属性列。<br>sql 语句：Select …… from 表1 natural join 表2</p>
+<p>内连接：基本与自然连接相同，不同之处在于自然连接要求是同名属性列的比较，<br>而内连接则不要求两属性列同名，可以用using或on 来指定某两列字段相同的<br>连接条件。<br>sql 语句：Select …… from 表1 inner join 表 2 on 表1.A=表2.E<br>左外连接：是在两表进行自然连接，左边表数据行全部保留，右边表保留符合连<br>接条件的行。<br>sql 语句：Select …… from 表1 left outer join 表2 on 表1.C=表2.C<br>右外连接：是在两表进行自然连接，右边表数据行全部保留，左边表保留符合连<br>接条件的行。<br>Select …… from 表1 rignt outer join 表2 on 表1.C=表2.C</p>
+<h3 id="9-sql-语句关键词的执行顺序？"><a href="#9-sql-语句关键词的执行顺序？" class="headerlink" title="9.sql 语句关键词的执行顺序？"></a>9.sql 语句关键词的执行顺序？</h3><p>FROM 子句, 组装来自不同数据源的数据；<br>WHERE 子句, 基于指定的条件对记录进行筛选<br>GROUP BY 子句, 将数据划分为多个分组<br>使用聚合函数进行计算<br>使用 HAVING 子句筛选分组<br>计算所有的表达式<br>使用 ORDER BY 对结果集进行排序<br>即：from—&gt;where—&gt;group by—&gt;having—&gt;计算所有的表达式—&gt;order<br>by—&gt;select输出<br>10.什么情况下会发生栈内存溢出。</p>
+<p>11.<code>JVM</code> 的内存结构，Eden 和 Survivor 比例。<br>12.<code>JVM</code> 内存为什么要分成新生代，老年代，持久代。新生代中为什么<br>要分为 Eden 和 Survivor。<br>13.<code>JVM</code> 中一次完整的 GC 流程是怎样的，对象如何晋升到老年代，说<br>说你知道的几种主要的 <code>JVM</code> 参数。</p>
+<h3 id="14-Java-中如何使用-redis？redis-支持的数据类型及各种数据类型的"><a href="#14-Java-中如何使用-redis？redis-支持的数据类型及各种数据类型的" class="headerlink" title="14.Java 中如何使用 redis？redis 支持的数据类型及各种数据类型的"></a>14.Java 中如何使用 redis？redis 支持的数据类型及各种数据类型的</h3><p><strong>Q:</strong> 使用场景？redis 如何解决数据过期？<br>如何使用redis：<br>redis的安装(windows)；启动redis，默认端口6379；连接redis输入<br>redis-cli.exe -h 127.0.0.1 -p 6379<br>java 中利用jedis连接redis<br>spring集成redis：<br>引入spring-data-redis.jar包；<br>redis.properties 配置文件；<br>spring-redis配置文件(此处包含了数据库和mybatis的配置)；<br>redis工具类(此处try catch 为防止redis宕机等问题时 方法可以继续执行)；<br>将spring-redis.xml包含到web.xml中；</p>
+<p>在需要redis的业务类中注入redisUtil。<br>redis支持的数据类型及各种数据类型的使用场景：<br>redis如何解决数据过期：<br><code>Redis</code> 提供了两种的方式，用于删除过期的数据：<br>定期删除：<code>Redis</code> 默认 100ms 随即抽取部分设置过期时间的 key，过期了就<br>删除。优点是避免长时间的在扫描过期 key，缺点是有些过期 key 无法被删除。<br>惰性删除：如果查询了某个过期 key，但定期删除没有删除掉，那就将其删除<br>了。key 没过期就正常返回。</p>
+<h3 id="15-存储过程的了解和使用？-1"><a href="#15-存储过程的了解和使用？-1" class="headerlink" title="15.存储过程的了解和使用？"></a>15.存储过程的了解和使用？</h3><p>存储过程：就是作为可执行对象存放在数据库中的一个或多个SQL命令。通俗<br>来讲：存储过程其实就是能完成一定操作的一组SQL语句。<br>优点：<br>存储过程可封装，并隐藏复杂的商业逻辑。<br>存储过程可以回传值，并可以接受参数。</p>
+<p>存储过程无法使用select指令来运行，因为它是子程序，与查看表，数据表或<br>用户定义函数不同。<br>存储过程可以用在数据检验，强制实行商业逻辑等。<br>缺点：<br>存储过程，往往定制化于特定的数据库上，因为支持的编程语言不同。当切换到<br>其他厂商的数据库系统时，需要重写原有的存储过程。<br>存储过程的性能调校和撰写，受限于各种数据库系统。<br>使用：<br>创建存储过程保存在数据库的数据字典中。<br>查询所有存储过程状态<br>查看对应数据库下所有存储过程状态<br>mysql存储过程用call 和过程名以及一个括号，括号里面根据需要，加入参数，<br>参数包括输入参数、输出参数、输入输出参数调用。<br>16.消息队列的使用场景。<br>17.消息的重发，补充策略。<br>18.如何保证消息的有序性。<br>用过哪些 MQ，和其他 mq 比较有什么优缺点，MQ 的连接是线程安<br>全的吗，</p>
+<h3 id="19-数据库表的设计注意事项有哪些？三大范式的了解？-1"><a href="#19-数据库表的设计注意事项有哪些？三大范式的了解？-1" class="headerlink" title="19.数据库表的设计注意事项有哪些？三大范式的了解？"></a>19.数据库表的设计注意事项有哪些？三大范式的了解？</h3><p>数据库设计的注意事项：<br>字段的原子性：保证每列的原子性，不可分解，能用一个字段表达清楚的绝不使<br>用第二个字段。<br>主键设计：主键不要与业务逻辑有所关联，最好是毫无意义的一串独立不重复的<br>数字。<br>字段使用次数：对于频繁修改的字段（一般是指状态类字段）最好用独立的数字<br>或者单个字母去表示，不用使用汉字或长字符的英文。<br>字段长度：建表的时候，字段长度尽量要比实际业务的字段大3-5个字段左右，<br>最好是2的n 次方幂值。<br>关于外键：尽量不要建立外键，保证每个表的独立性。<br>动静分离：最好做好静态表和动态表的分离。<br>关于code的值：使用数字码或者字母去代替实际的名字，也就是尽量把name<br>转换为code。<br>关于null的值：尽量不要有null 值，有null 值的话，数据库在进行索引的时候<br>查询的时间更久，从而浪费更多的时间！可以在建表的时候设置一个默认值！<br>关于引擎的选择：myisam的实际查询速度要比innodb快，因为它不扫面全表，<br>但是myisam不支持事务，没办法保证数据的Acid。<br>资源存储：数据库不要存储任何资源文件。<br>与主键相关：根据数据库设计三大范式，尽量保证列数据和主键直接相关而不是<br>间接相关<br>关系映射：多对一或者一对多的关系,关联一张表最好通过id 去建立关系。<br>预留字段：在设计一张表的时候应该预制一个空白字段，用于以后的扩展。</p>
+<p>留下单一字段确定是否可用：通过一个单一字段去控制表是否可用。<br>删除字段：数据库是禁止使用delete命令的,一般都不会真正删除数据，都是采<br>用改状态的方式，设置state字段，通过修改状态赋予它是否有效的逻辑含义！</p>
+<h2 id="三、大范式的了解"><a href="#三、大范式的了解" class="headerlink" title="三、大范式的了解"></a>三、大范式的了解</h2><p>第一范式（1NF）:确保每一列的原子性<br>数据表中的每一列都是最小的不可分割的单元<br>第二范式（2NF）：表中的记录是唯一的<br>表中的数据是可以通过主键来区分的<br>第三范式（3NF）：表中数据不要有冗余<br>在一个表中不要出现其他表中除了关键字段（主键）的其他字段，用外键进行关<br>联</p>
+<h3 id="20-百万级量的数据分页查询如何优化？-1"><a href="#20-百万级量的数据分页查询如何优化？-1" class="headerlink" title="20.百万级量的数据分页查询如何优化？"></a>20.百万级量的数据分页查询如何优化？</h3><p>–方法1: 直接使用数据库提供的SQL 语句<br>–语句样式: MySQL中,可用如下方法: SELECT * FROM 表名称 LIMIT M,N<br>–适应场景: 适用于数据量较少的情况(元组百/千级)<br>–原因/缺点: 全表扫描,速度会很慢 且 有的数据库结果集返回不稳定(如某次返<br>回1,2,3,另外的一次返回2,1,3). Limit限制的是从结果集的M位置处取出N 条<br>输出,其余抛弃.<br>–方法2: 建立主键或唯一索引, 利用索引(假设每页10条)<br>–语句样式: MySQL中,可用如下方法: SELECT FROM 表名称 WHERE</p>
+<p>id_pk &gt; (pageNum10) LIMIT M<br>–适应场景: 适用于数据量多的情况(元组数上万)<br>–原因: 索引扫描,速度会很快. 有朋友提出: 因为数据查询出来并不是按照<br>pk_id排序的，所以会有漏掉数据的情况，只能方法3<br>–方法3: 基于索引再排序<br>–语句样式: MySQL中,可用如下方法: SELECT FROM 表名称 WHERE<br>id_pk &gt; (pageNum10) ORDER BY id_pk ASC LIMIT M<br>–适应场景: 适用于数据量多的情况(元组数上万). 最好ORDER BY后的列对象<br>是主键或唯一所以,使得ORDERBY操作能利用索引被消除但结果集是稳定的(稳<br>定的含义,参见方法1)<br>–原因: 索引扫描,速度会很快. 但MySQL 的排序操作,只有ASC 没有<br>DESC(DESC 是假的,未来会做真正的DESC,期待…).</p>
+<p><strong>Q:</strong> –方法4: 基于索引使用prepare（第一个问号表示pageNum，第二个？表示<br>每页元组数）<br>–语句样式: MySQL中,可用如下方法: PREPARE stmt_name FROM</p>
+<p><strong>Q:</strong> SELECT FROM 表名称 WHERE id_pk &gt; (？ ？) ORDER BY id_pk ASC LIMIT<br>M<br>–适应场景: 大数据量<br>–原因: 索引扫描,速度会很快. prepare 语句又比一般的查询语句快一点。<br>–方法5: 利用MySQL支持ORDER 操作可以利用索引快速定位部分元组,避免<br>全表扫描<br>比如: 读第1000到1019 行元组(pk 是主键/唯一键).</p>
+<p>SELECT * FROM your_table WHERE pk&gt;=1000 ORDER BY pk ASC LIMIT<br>0,20<br>–方法6: 利用”子查询/连接+索引”快速定位元组的位置,然后再读取元组. 道理<br>同方法5<br>如(id 是主键/唯一键,蓝色字体时变量):</p>
+<h3 id="21-数据库的乐观锁和悲观锁的理解和使用？-1"><a href="#21-数据库的乐观锁和悲观锁的理解和使用？-1" class="headerlink" title="21.数据库的乐观锁和悲观锁的理解和使用？"></a>21.数据库的乐观锁和悲观锁的理解和使用？</h3><p>悲观锁，就是对数据的冲突采取一种悲观的态度，也就是说假设数据肯定会冲突，<br>所以在数据开始读取的时候就把数据锁定住。（数据锁定：数据将暂时不会得到<br>修改）<br>乐观锁，认为数据一般情况下不会造成冲突，所以在数据进行提交更新的时候，<br>才会正式对数据的冲突与否进行检测，如果发现冲突了，则让用户返回错误的信<br>息。让用户决定如何去做。<br>使用：<br>悲观锁通常依靠数据库提供的锁机制实现，比如mysql 的排他锁，<code>select</code> … for<br>update来实现悲观锁。<br>乐观锁不依靠数据库提供的锁机制，需要我们自已实现，实现方式一般是记录数<br>据版本，一种是通过版本号，一种是通过时间戳。</p>
+<h3 id="22-数据库如何实现分页？-1"><a href="#22-数据库如何实现分页？-1" class="headerlink" title="22.数据库如何实现分页？"></a>22.数据库如何实现分页？</h3><p>SQL Server<br>在分页查询上，我感觉SQL Server比较费劲，没有一个专门的分页的语句，靠</p>
+<p>的是一种巧妙的方法实现分页查询。<br><code>MySQL</code><br>MySQL有个专门针对查询出一段数据的语句 limit，使用起来非常的方便。<br><code>Oracle</code><br>Oracle中有个rownum，其含义更加明显，就是第几行的意思，这样我们就可<br>以通过where条件来进行分段查询了。</p>
+<p><strong>Q:</strong> 23.#{}和${}的区别是什么？</p>
+<p>#{}是预编译处理，${}是字符串替换。</p>
+<p>Mybatis 在处理#{}时，会将 sql 中的#{}替换为?号，调用 PreparedStatement<br>的set 方法来赋值；<br>Mybatis 在处理${}时，就是把${}替换成变量的值。<br>使用#{}可以有效的防止 SQL 注入，提高系统安全性。</p>
+<h3 id="24-数据库中字符串和日期的相互转换？-1"><a href="#24-数据库中字符串和日期的相互转换？-1" class="headerlink" title="24.数据库中字符串和日期的相互转换？"></a>24.数据库中字符串和日期的相互转换？</h3><p><code>Oracle</code><br>时间转字符串 to_char(date,format)<br><code>select</code> to_char(sysdata,’YYYY”年”MM”月”DD”日”‘) 时间转字符串 from<br>dual<br>字符串转时间 to_date(str,format)<br><code>select</code> to_date(‘2019-10-25 17:15:20’,’yyyy-MM-dd HH24:mi:ss’)<br>字符串转时间 from dual</p>
+<p><code>select</code> to_date(‘2019-10-25 17:15:20’,’yyyy-MM-dd HH24:mi:ss’) 字符串<br>转时间 from dual<br><code>MySQL</code><br>MySQL内置函数，在MySQL里面利用str_to_date() 把字符串转换为日期<br>示例：分隔符一致，年月日要一致<br>字符串转日期<br><code>select</code> str_to_date(‘2019-10-25 15:43:28’,’%Y-%m-%d %H:%i:%s’);<br>日期转字符串<br><code>select</code> DATE_FORMAT(SYSDATE(),’%Y 年%m 月%d 日’) MySQL日期转字符<br>串 from DUAL；</p>
+<h3 id="25-MySQL-的存储引擎有哪些？"><a href="#25-MySQL-的存储引擎有哪些？" class="headerlink" title="25.MySQL 的存储引擎有哪些？"></a>25.MySQL 的存储引擎有哪些？</h3><p>InnoDB,MyISAM,Memory,Merge,Archive,Federate,CSV,BLACKHOLE</p>
+<h3 id="26-事务隔离级别有哪些？mysql-和-oracle-默认的隔离级别是什么？"><a href="#26-事务隔离级别有哪些？mysql-和-oracle-默认的隔离级别是什么？" class="headerlink" title="26.事务隔离级别有哪些？mysql 和 oracle 默认的隔离级别是什么？"></a>26.事务隔离级别有哪些？mysql 和 oracle 默认的隔离级别是什么？</h3><p>事务的四大特性：<br>原子性：事务是最小的执行单位，不允许分割。事务的原子性确保动作要么全部</p>
+<p>完成，要么完全不起作用。</p>
+<h2 id="一、致性"><a href="#一、致性" class="headerlink" title="一、致性"></a>一、致性</h2><p>同的；<br>隔离性：并发访问数据库时，一个用户的事务不被其他事务所干扰，各并发事务<br>之间数据库是独立的；<br>持久性：一个事务被提交之后。它对数据库中数据的改变是持久的，即使数据库<br>发生故障也不应该对其有任何影响。</p>
+<p><strong>Q:</strong> 脏读？幻读？不可重复读？<br>脏读(Drity Read)：某个事务已更新一份数据，另一个事务在此时读取了同一份<br>数据，由于某些原因，前一个RollBack 了操作，则后一个事务所读取的数据就<br>会是不正确的。<br>幻读(PhantomRead):在一个事务的两次查询中数据笔数不一致，例如有一个事<br>务查询了几列(Row)数据，而另一个事务却在此时插入了新的几列数据，先前的<br>事务在接下来的查询中，就会发现有几列数据是它先前所没有的。<br>不可重复读(Non-repeatableread):在一个事务的两次查询之中数据不一致，这<br>可能是两次查询过程中间插入了一个事务更新的原有的数据。</p>
+<h3 id="27-SQL-如何行转列和列转行？"><a href="#27-SQL-如何行转列和列转行？" class="headerlink" title="27.SQL 如何行转列和列转行？"></a>27.SQL 如何行转列和列转行？</h3><p>行转列：<br>case when 以及 sum（max 也可以）<br>列转行：<br>使用union 和 case when 以及concat来完成</p>
+<h3 id="28-如何查看-sql-的执行计划？"><a href="#28-如何查看-sql-的执行计划？" class="headerlink" title="28.如何查看 sql 的执行计划？"></a>28.如何查看 sql 的执行计划？</h3><p>set statistics profile on<br>explain</p>
+<h3 id="29-union-和-unionAll-区别？"><a href="#29-union-和-unionAll-区别？" class="headerlink" title="29.union 和 unionAll 区别？"></a>29.union 和 unionAll 区别？</h3><p>union和unionall的区别是,union会自动压缩多个结果集合中的重复结果，而<br>union all则将所有的结果全部显示出来，不管是不是重复。<br>Union：对两个结果集进行并集操作，不包括重复行，同时进行默认规则的排序；<br>—在进行表链接后会筛选掉重复的记录，所以在表链接后会对所产生的结果集<br>进行排序运算，删除重复的记录再返回结果<br>UnionAll：对两个结果集进行并集操作，包括重复行，不进行排序；—如果返<br>回的两个结果集中有重复的数据，那么返回的结果集就会包含重复的数据了。</p>
+<h3 id="30-为什么说-Mybatis-是半自动-ORM-映射工具？它与全自动"><a href="#30-为什么说-Mybatis-是半自动-ORM-映射工具？它与全自动" class="headerlink" title="30.为什么说 Mybatis 是半自动 ORM 映射工具？它与全自动"></a>30.为什么说 Mybatis 是半自动 ORM 映射工具？它与全自动</h3><p><strong>Q:</strong> 的区别在哪里？<br><code>Hibernate</code> 属于全自动 <code>ORM</code> 映射工具，使用 <code>Hibernate</code> 查询关联对象或者<br>关联集合对象时，可以根据对象关系模型直接获取，所以它是全自动的。而<br>Mybatis在查询关联对象或关联集合对象时，需要手动编写 sql 来完成，所以，<br>称之为半自动 <code>ORM</code> 映射工具。</p>
+<h3 id="31-oracle-中的分析函数有哪些？"><a href="#31-oracle-中的分析函数有哪些？" class="headerlink" title="31.oracle 中的分析函数有哪些？"></a>31.oracle 中的分析函数有哪些？</h3><p>分析函数是Oracle专门用于解决复杂报表统计需求的功能强大的函数，它可以<br>在数据中进行分组然后计算基于组的某种统计值，并且每一组的每一行都可以返<br>回一个统计值。<br>分析函数带有一个开窗函数over()，包含三个分析子句:分组(partition by), 排<br>序(order by), 窗口(rows) ；<br>first_value()与last_value()：求最值对应的其他属性<br>rank(),dense_rank()与row_number()：求排序<br>lag()与lead()：求之前或之后的第N行<br>rollup()与cube()：排列组合分组<br>max(),min(),sun()与avg()：求移动的最值总和与平均值</p>
+<h3 id="32-数据库中除了聚合函数之外还有哪些常用的函数？oracle数据库的"><a href="#32-数据库中除了聚合函数之外还有哪些常用的函数？oracle数据库的" class="headerlink" title="32.数据库中除了聚合函数之外还有哪些常用的函数？oracle数据库的"></a>32.数据库中除了聚合函数之外还有哪些常用的函数？oracle数据库的</h3><p><strong>Q:</strong> merge（）函数的作用和使用？</p>
+<p>oracle数据库merge（）函数的作用和使用：<br>通常我们对数据库数据进行插入的时候，会判断数据是否已经存在，如果存在就<br>修改，不存在就插入，一般我们会写两个sql，一个insert一个update,那么其<br>实oracle中存在merge 函数，可以一次性解决这个问题</p>
+<h3 id="33-MySQL-中如何忽略表名的大小写？"><a href="#33-MySQL-中如何忽略表名的大小写？" class="headerlink" title="33.MySQL 中如何忽略表名的大小写？"></a>33.MySQL 中如何忽略表名的大小写？</h3><p>mysql在windows系统下安装好后，默认是对表名大小写不敏感的。<br>在linux下，一些系统需要手动设置。 用root登录，打开并修改 /etc/my.cnf；<br>在[mysqld]节点下，加入一行： lower_case_table_names=1。重启mysql<br>服务systemctl restart mysqld</p>
+<h3 id="34-Aspect-切面-1"><a href="#34-Aspect-切面-1" class="headerlink" title="34.Aspect 切面"></a>34.Aspect 切面</h3><p><code>AOP</code> 核心就是切面，它将多个类的通用行为封装成可重用的模块，该模块含有<br>一组 API 提供横切功能。比如，一个日志模块可以被称作日志的 <code>AOP</code> 切面。</p>
+<p>根据需求的不同，一个应用程序可以有若干切面。在 <code>Spring</code> <code>AOP</code> 中，切面通<br>过带有@Aspect 注解的类实现。<br>35.常见的高并发场景有哪些，对应的架构设计方案是什么。<br>36.介绍完整的分布式中间件有哪些，各自的应用场景和作用。<br>37.双 11 秒杀活动，你的技术架构设计思路。<br>38.用 java 自己实现一个 <code>LRU</code>。</p>
+<h2 id="二、阿里篇-1"><a href="#二、阿里篇-1" class="headerlink" title="二、阿里篇"></a>二、阿里篇</h2><p>1.讲讲类的实例化顺序，比如父类静态数据，构造函数，字段，子类静<br>态数据，构造函数，字段，当 new 的时候，他们的执行顺序。<br>2.用过哪些 <code>Map</code> 类，都有什么区别，<code>HashMap</code> 是线程安全的吗,并发<br>下使用的 <code>Map</code> 是什么，他们内部原理分别是什么，比如存储方式，<br>hashcode，扩容，默认容量等。<br>3.JAVA8 的 <code>ConcurrentHashMap</code> 为什么放弃了分段锁，有什么问<br>题吗，如果你来设计，你如何设计。<br>4.有没有有顺序的 <code>Map</code> 实现类，如果有，他们是怎么保证有序的。</p>
+<h3 id="5-having-和-where-的区别？"><a href="#5-having-和-where-的区别？" class="headerlink" title="5.having 和 where 的区别？"></a>5.having 和 where 的区别？</h3><p>Where过滤子句是在查询过程中对表中数据的过滤条件，不允许使用聚合函数<br>作为过滤条件，原因在于时机不对。聚合函数是对表中数据查询后的结果集进行<br>统计处理的，两者的执行时机不一致。<br>Having过滤子句是对查询结果集进行过滤的，可以在该子句后使用聚合函数，<br>因为时机相同，聚合函数是处理结果集的，having子句又是过滤结果集的，可<br>以在一起使用，另外having不能单独使用，只能跟在group by 分组子句后面<br>使用。</p>
+<h3 id="6-游标的作用和使用？-1"><a href="#6-游标的作用和使用？-1" class="headerlink" title="6.游标的作用和使用？"></a>6.游标的作用和使用？</h3><p>游标实际上是一种能从包括多条数据记录的结果集中每次提取一条记录的机制。<br>SQL的游标是一种临时的数据库对象，即可以用来存放在数据库表中的数据行<br>副本，也可以指向存储在数据库中的数据行的指针。游标提供了在逐行的基础上<br>操作表中数据的方法。<br>游标的一个常见用途就是保存查询结果，以便以后使用。<br>游标的结果集是由SELECT语句产生，如果处理过程需要重复使用一个记录集，<br>那么创建一次游标而重复使用若干次，比重复查询数据库要快的多。<br>使用：<br>%FOUND–判断游标中是否还有数据，若有，返回 true，否则，返回false。<br>%NOTFOUND–与%FOUND 相反<br>%ISOPEN–判断游标是否为打开状态<br>%ROWCOUNT–记录已从游标中取出的记录数</p>
+<h3 id="7-如何使用数据库中的定时器？触发器？定时任务？Oracle-中如何实"><a href="#7-如何使用数据库中的定时器？触发器？定时任务？Oracle-中如何实" class="headerlink" title="7.如何使用数据库中的定时器？触发器？定时任务？Oracle 中如何实"></a>7.如何使用数据库中的定时器？触发器？定时任务？Oracle 中如何实</h3><p><strong>Q:</strong> 现递归查询？<br>start with 条件一 connect by prior 条件二 where 条件三<br>第一种:startwith 子节点ID=’…’connectby prior 子节点ID=父节点ID—<br>按照条件对条件(包括自己)及其子节点进行递归查询,查询结果自己所有后代节<br>点(包括自己)<br>第二种:start with 子节点ID=’…’connect by 子节点ID = prior 父节点<br>ID—-按照条件对于条件(包括自己)及其父节点进行递归查询,查询结果自己所<br>有的前代节点(包括自己)<br>第三种:start with 父节点ID=’…’connectby prior 子节点ID=父节点ID—<br>按照条对条件（不包括自己）子节点进行递归查询,查询结果自己所有的后代节<br>点,(不包括自己)<br>第四种: start with 父节点ID=‘…‘ connect by 子节点ID = prior 父节点<br>ID—按照条件对条件（包括自己）的第一代孩子们及其父节点进行递归查询,查<br>询结果是自己的第一代后节点,和所有的前代节点(包括自己)如果有where条<br>件,(4)执行顺序为先执行start withconnectby prior,然后再按照where条件进<br>过滤<br>如何执行批量插入?<br>首先,创建一个简单的 insert 语句:<br><insert id="”insertname”"><br>insert into names (name) values (#{value})</insert></p>
+
+然后在 java 代码中像下面这样执行批处理插入:
+list &lt; string &gt; names = new arraylist();
+names.add(“fred”);
+names.add(“barney”);
+names.add(“betty”);
+names.add(“wilma”);
+// 注意这里 executortype.batch
+sqlsession sqlsession =
+sqlsessionfactory.opensession(executortype.batch);
+try {
+namemapper mapper = sqlsession.getmapper(namemapper.class);
+for (string name: names) {
+mapper.insertname(name);
+}
+sqlsession.commit();
+} catch (`Exception` e) {
+e.printStackTrace();
+sqlSession.rollback();
+throw e;
+}
+finally {
+
+<p>sqlsession.close();<br>}</p>
+<h3 id="8-高并发下如何保证修改数据安全-1"><a href="#8-高并发下如何保证修改数据安全-1" class="headerlink" title="8.高并发下如何保证修改数据安全"></a>8.高并发下如何保证修改数据安全</h3><p>使用Synchronized 解决，给生成ID的代码加上同步代码块，成功解决问题；<br>作用是：同一时刻，只有一个线程可以执行该代码块<br>使用Lock锁解决问题：给生成ID 的代码加上Lock锁，成功解决问题；<br>悲观锁—在修改数据的时候,采用锁定状态,排斥外部请求的修改,遇到加锁的状<br>态,就必须等待<br>弊端: 在高并发下,每个请求都需要等待’锁’,某些线程可能永远都没有机会抢<br>到这个锁,请求就会死在那里,这种请求会很多,瞬间增系统的平均响应时间,结果<br>时可用链接数被耗尽,系统陷入异常<br>FIFO 队列—-采用FIFO(First Input First Output，先进先出),这样就不会导致<br>某些请求永远获取不到锁<br>弊端:请求很多,很有可能一瞬间将队列内存”撑爆”,系统陷入到异常状态,或者设<br>计一个极大的内存队列,但是系统处理完一个队列,内请求的速度根本无法和疯狂<br>涌入队列中的数目相比,也就是说,队列内的请求会越积累越多,最终WEB 系统平<br>均响应时候还是会大幅下降，系统还是陷入异常。<br>乐观锁—相对于”悲观锁”采用更为宽松的加锁机制,大都是采用带版本号更新,<br>实现就是,这个数据所有请求都有资格去修改,但会获得一个该数据的版本号,只<br>有版本号符合才能更新成功,其他的返回抢购失败,这样就不用了考虑队列的问题,</p>
+<p>会增大CPU的计算开销,</p>
+<h3 id="9-MyBatis-实现一对一有几种方式-具体怎么操作的？-1"><a href="#9-MyBatis-实现一对一有几种方式-具体怎么操作的？-1" class="headerlink" title="9.MyBatis 实现一对一有几种方式?具体怎么操作的？"></a>9.MyBatis 实现一对一有几种方式?具体怎么操作的？</h3><p>有联合查询和嵌套查询,联合查询是几个表联合查询,只查询一次, 通过在<br>resultMap 里面配置 association 节点配置一对一的类就可以完成；嵌套查询<br>是先查一个表，根据这个表里面的结果的 外键 id，去再另外一个表里面查询数<br>据,也是通过 association 配置，但另外一个表的查询通过 <code>select</code> 属性配置。<br>10. linux 命令，如何改文件权限。</p>
+<h3 id="11-数组、链表（单向、双向、双端）、栈和队列、二叉树、红黑树、"><a href="#11-数组、链表（单向、双向、双端）、栈和队列、二叉树、红黑树、" class="headerlink" title="11.数组、链表（单向、双向、双端）、栈和队列、二叉树、红黑树、"></a>11.数组、链表（单向、双向、双端）、栈和队列、二叉树、红黑树、</h3><p>哈希表、堆（最大和最小）<br>12. 个人经验：栈和队列、哈希表、链表、二叉树的题较多，图的较少</p>
+<h3 id="13-查找：二分查找及其变形-1"><a href="#13-查找：二分查找及其变形-1" class="headerlink" title="13. 查找：二分查找及其变形"></a>13. 查找：二分查找及其变形</h3><ol start="14">
+<li>二叉树：前序、中序、后序遍历，按规定方式打印，两个节点之间<br>操作（最近公共祖先、距离）等问题。</li>
+</ol>
+<h3 id="15-Mybatis-是如何进行分页的？分页插件的原理是什么？-1"><a href="#15-Mybatis-是如何进行分页的？分页插件的原理是什么？-1" class="headerlink" title="15.Mybatis 是如何进行分页的？分页插件的原理是什么？"></a>15.Mybatis 是如何进行分页的？分页插件的原理是什么？</h3><p>Mybatis 使用 RowBounds 对象进行分页，它是针对 ResultSet 结果集执行<br>的内存分页，而非物理分页。可以在 sql 内直接书写带有物理分页的参数来完<br>成物理分页功能，也可以使用分页插件来完成物理分页。<br>分页插件的基本原理是使用 Mybatis 提供的插件接口，实现自定义插件，在插<br>件的拦截方法内拦截待执行的 sql，然后重写 sql，根据 dialect 方言，添加对<br>应的物理分页语句和物理分页参数。</p>
+<h3 id="16-Delete-误删数据没有备份怎么恢复？"><a href="#16-Delete-误删数据没有备份怎么恢复？" class="headerlink" title="16.Delete 误删数据没有备份怎么恢复？"></a>16.Delete 误删数据没有备份怎么恢复？</h3><p>flashback query 闪回查询<br>–尝试使用Oracle 10g 以后的flashback Query 特性 闪回查询可以查询若干<br>时间之前的数据<br>logmnr 日志挖掘<br>–使用logminer 日志挖掘 把delete的redo 挖出来看有没有 对应的undo<br>回滚SQL可用<br>使用ORACLE PRM-DUL 工具<br>–<code>Oracle</code> PRM-DUL 工具可以恢复 数据库中表上 被删除的记录。</p>
+<p><strong>Q:</strong> 17.MyBatis 实现一对多有几种方式,怎么操作的？</p>
+<p>有联合查询和嵌套查询。联合查询是几个表联合查询,只查询一次,通过在<br>resultMap 里面的 collection 节点配置一对多的类就可以完成；嵌套查询是先<br>查一个表,根据这个表里面的 结果的外键 id,去再另外一个表里面查询数据,也<br>是通过配置 collection,但另外一个表的查询通过 <code>select</code> 节点配置。</p>
+<p><strong>Q:</strong> 17.Mybatis 是否支持延迟加载？如果支持，它的实现原理是什么？</p>
+<p><strong>答:</strong> Mybatis 仅支持 association 关联对象和 collection 关联集合对象的延<br>迟加载，association 指的就是一对一，collection 指的就是一对多查询。在<br>Mybatis配置文件中，可以配置是否启用延迟加载<br>lazyLoadingEnabled=true|false。<br>它的原理是，使用 CGLIB 创建目标对象的代理对象，当调用目标方法时，进入<br>拦截器方法，比如调用 a.getB().getName()，拦截器 invoke()方法发现<br>a.getB()是 null 值，那么就会单独发送事先保存好的查询关联 B 对象的 sql，<br>把 B 查询上来，然后调用 a.setB(b)，于是 a 的对象 b 属性就有值了，接着<br>完成 a.getB().getName()方法的调用。这就是延迟加载的基本原理。<br>当然了，不光是 Mybatis，几乎所有的包括 <code>Hibernate</code>，支持延迟加载的原理<br>都是一样的。</p>
+<h3 id="18-什么是-MyBatis-的接口绑定？有哪些实现方式？-1"><a href="#18-什么是-MyBatis-的接口绑定？有哪些实现方式？-1" class="headerlink" title="18.什么是 MyBatis 的接口绑定？有哪些实现方式？"></a>18.什么是 MyBatis 的接口绑定？有哪些实现方式？</h3><p>接口绑定，就是在 <code>MyBatis</code> 中任意定义接口,然后把接口里面的方法和 SQL 语<br>句绑定, 我们直接调用接口方法就可以,这样比起原来了 <code>SqlSession</code> 提供的方<br>法我们可以有更加灵活的选择和设置。<br>接口绑定有两种实现方式,一种是通过注解绑定，就是在接口的方法上面加上<br>@Select、@Update 等注解，里面包含 Sql 语句来绑定；另外一种就是通过<br>xml里面写 SQL 来绑定, 在这种情况下,要指定 xml 映射文件里面的<br>namespace 必须为接口的全路径名。当 Sql 语句比较简单时候,用注解绑定,<br>当 SQL 语句比较复杂时候,用 xml 绑定,一般用 xml 绑定的比较多。</p>
+<h3 id="19-使用-MyBatis-的-mapper-接口调用时有哪些要求？-1"><a href="#19-使用-MyBatis-的-mapper-接口调用时有哪些要求？-1" class="headerlink" title="19.使用 MyBatis 的 mapper 接口调用时有哪些要求？"></a>19.使用 MyBatis 的 mapper 接口调用时有哪些要求？</h3><p>1、Mapper 接口方法名和 mapper.xml 中定义的每个 sql 的 id 相同；</p>
+<h3 id="2、Mapper-接口方法的输入参数类型和-mapper-xml-中定义的每个-sql-的"><a href="#2、Mapper-接口方法的输入参数类型和-mapper-xml-中定义的每个-sql-的" class="headerlink" title="2、Mapper 接口方法的输入参数类型和 mapper.xml 中定义的每个 sql 的"></a>2、Mapper 接口方法的输入参数类型和 mapper.xml 中定义的每个 sql 的</h3><p>parameterType 的类型相同；</p>
+<h3 id="3、Mapper-接口方法的输出参数类型和-mapper-xml-中定义的每个-sql-的"><a href="#3、Mapper-接口方法的输出参数类型和-mapper-xml-中定义的每个-sql-的" class="headerlink" title="3、Mapper 接口方法的输出参数类型和 mapper.xml 中定义的每个 sql 的"></a>3、Mapper 接口方法的输出参数类型和 mapper.xml 中定义的每个 sql 的</h3><p>resultType 的类型相同；<br>4、Mapper.xml 文件中的 namespace 即是 mapper 接口的类路径。<br>20. 介绍下你理解的操作系统中线程切换过程。<br>21.. 进程和线程的区别。<br>22. top 命令之后有哪些内容，有什么作用。<br>23. 线上 CPU 爆高，请问你如何找到问题所在。</p>
+<h3 id="24-什么是-Spring-MVC-框架的控制器？-1"><a href="#24-什么是-Spring-MVC-框架的控制器？-1" class="headerlink" title="24.什么是 Spring MVC 框架的控制器？"></a>24.什么是 Spring MVC 框架的控制器？</h3><p>控制器提供一个访问应用程序的行为，此行为通常通过服务接口实现。控制器解<br>析用户输入并将其转换为一个由视图呈现给用户的模型。<code>Spring</code> 用一个非常抽<br>象的方式实现了一个控制层，允许用户创建多种用途的控制器。</p>
+<h3 id="25-数据传输的事务定义有哪三种？-1"><a href="#25-数据传输的事务定义有哪三种？-1" class="headerlink" title="25.数据传输的事务定义有哪三种？"></a>25.数据传输的事务定义有哪三种？</h3><p>和 MQTT 的事务定义一样都是 3 种。<br>（1）最多一次: 消息不会被重复发送，最多被传输一次，但也有可能一次不传<br>输<br>（2）最少一次: 消息不会被漏发送，最少被传输一次，但也有可能被重复传输.<br>（3）精确的一次（Exactly once）: 不会漏传输也不会重复传输,每个消息都传<br>输被一次而且仅仅被传输一次，这是大家所期望的<br>26.谈谈对 Synchronized 关键字，类锁，方法锁，重入锁的理解。<br>27.<code>volatile</code> 的原理。<br>28.使用 kafka 有没有遇到什么问题，怎么解决的。<br>29.MQ 有可能发生重复消费，如何避免，如何做到幂等。<br>30.MQ 的消息延迟了怎么处理，消息可以设置过期时间么，过期了你<br>们一般怎么处理。</p>
+<h3 id="31-Redis-集群方案应该怎么做？都有哪些方案？"><a href="#31-Redis-集群方案应该怎么做？都有哪些方案？" class="headerlink" title="31. Redis 集群方案应该怎么做？都有哪些方案？"></a>31. Redis 集群方案应该怎么做？都有哪些方案？</h3><p><strong>Q:</strong> 32.谈谈你的参与的项目？能否画出整个项目的架构设计图，尽量包含<br>流程、部署等</p>
+<p><strong>Q:</strong> 33. 一次 web 请求响应中，那个部分最耗时，tcp 握手？业务逻辑处</p>
+<p><strong>Q:</strong> 理？网络延迟？数据库查询？浏览器解析？</p>
+<h3 id="34、分布式系统设计你会考虑哪些策略？"><a href="#34、分布式系统设计你会考虑哪些策略？" class="headerlink" title="34、分布式系统设计你会考虑哪些策略？"></a>34、分布式系统设计你会考虑哪些策略？</h3><h3 id="35、最常见的数据分布方式是什么？-1"><a href="#35、最常见的数据分布方式是什么？-1" class="headerlink" title="35、最常见的数据分布方式是什么？"></a>35、最常见的数据分布方式是什么？</h3><p>36、谈一谈一致性哈希算法。</p>
+<h3 id="37、paxos-是什么？"><a href="#37、paxos-是什么？" class="headerlink" title="37、paxos 是什么？"></a>37、paxos 是什么？</h3><h3 id="38、什么是-Lease-机制？"><a href="#38、什么是-Lease-机制？" class="headerlink" title="38、什么是 Lease 机制？"></a>38、什么是 Lease 机制？</h3><h3 id="39、如何理解选主算法？-1"><a href="#39、如何理解选主算法？-1" class="headerlink" title="39、如何理解选主算法？"></a>39、如何理解选主算法？</h3><p><strong>Q:</strong> 40、OSI 有哪七层模型？TCP/IP 是哪四层模型。<br>41 正常情况下，当在 try 块或 catch 块中遇到 return 语句时，finally</p>
+<p><strong>Q:</strong> 语句块在方法返回之前还是之后被执行？<br>42、try、catch、finally 语句块的执行顺序。</p>
+<p><strong>Q:</strong> 43、Java 虚拟机中，数据类型可以分为哪几类？</p>
+<h3 id="44、怎么理解栈、堆？堆中存什么？栈中存什么？-1"><a href="#44、怎么理解栈、堆？堆中存什么？栈中存什么？-1" class="headerlink" title="44、怎么理解栈、堆？堆中存什么？栈中存什么？"></a>44、怎么理解栈、堆？堆中存什么？栈中存什么？</h3><h3 id="45、为什么要把堆和栈区分出来呢？栈中不是也可以存储数据吗？-1"><a href="#45、为什么要把堆和栈区分出来呢？栈中不是也可以存储数据吗？-1" class="headerlink" title="45、为什么要把堆和栈区分出来呢？栈中不是也可以存储数据吗？"></a>45、为什么要把堆和栈区分出来呢？栈中不是也可以存储数据吗？</h3><h2 id="三、字节篇-1"><a href="#三、字节篇-1" class="headerlink" title="三、字节篇"></a>三、字节篇</h2><p>1.IO 模型有哪些，讲讲你理解的 nio ，他和 bio，aio 的区别是啥，<br>谈谈 reactor 模型。<br>2.反射的原理，反射创建类实例的三种方式是什么。<br>3.反射中，<code>Class</code>.forName 和 ClassLoader 区别 。<br>4.描述动态代理的几种实现方式，分别说出相应的优缺点。<br>5.动态代理与 cglib 实现的区别。<br>6.为什么 CGlib 方式可以对接口实现代理。<br>7.<code>final</code> 的用途。<br>8.简述 Mybatis 的插件运行原理，以及如何编写一个插件。</p>
+<p><strong>答:</strong> Mybatis 仅可以编写针对 ParameterHandler、ResultSetHandler、<br>StatementHandler、Executor 这 4 种接口的插件，Mybatis 使用 <code>JDK</code> 的动<br>态代 理，为需要拦截的接口生成代理对象以实现接口方法拦截功能，每当执行</p>
+<p>这 4 种接口对象的方法时，就会进入拦截方法，具体就是 InvocationHandler<br>的 invoke()方法，当然，只会拦截那些你指定需要拦截的方法。<br>编写插件：实现 Mybatis 的 Interceptor 接口并复写 intercept()方法，然后<br>在给插件编写注解，指定要拦截哪一个接口的哪些方法即可，记住，别忘了在配<br>置文件中配置你编写的插件</p>
+<h3 id="9-ZAB-协议？-1"><a href="#9-ZAB-协议？-1" class="headerlink" title="9.ZAB 协议？"></a>9.ZAB 协议？</h3><p>ZAB 协议是为分布式协调服务 Zookeeper 专门设计的一种支持崩溃恢复的<br>原子广播协议。ZAB 协议包括两种基本的模式：崩溃恢复和消息广播。<br>当整个 zookeeper 集群刚刚启动或者 Leader 服务器宕机、重启或者网络故<br>障导致不存在过半的服务器与 Leader 服务器保持正常通信时，所有进程（服<br>务器）进入崩溃恢复模式，首先选举产生新的 Leader 服务器，然后集群中<br>Follower 服务器开始与新的 Leader 服务器进行数据同步，当集群中超过半数<br>机器与该 Leader 服务器完成数据同步之后，退出恢复模式进入消息广播模式，<br>Leader 服务器开始接收客户端的事务请求生成事物提案来进行事务请求处理</p>
+<h3 id="10-客户端注册-Watcher-实现-1"><a href="#10-客户端注册-Watcher-实现-1" class="headerlink" title="10.客户端注册 Watcher 实现"></a>10.客户端注册 Watcher 实现</h3><p>1、调用 getData()/getChildren()/exist()三个 API，传入 Watcher 对象<br>2、标记请求 request，封装 Watcher 到 WatchRegistration<br>3、封装成 Packet 对象，发服务端发送 request</p>
+<p>4、收到服务端响应后，将 Watcher 注册到 ZKWatcherManager 中进行管<br>理<br>5、请求返回，完成注册。</p>
+<h3 id="11-Chroot-特性-1"><a href="#11-Chroot-特性-1" class="headerlink" title="11.Chroot 特性"></a>11.Chroot 特性</h3><p>3.2.0 版本后，添加了 Chroot 特性，该特性允许每个客户端为自己设置一个命<br>名 空间。如果一个客户端设置了 Chroot，那么该客户端对服务器的任何操作，<br>都将会被限制在其自己的命名空间下。通过设置 Chroot，能够将一个客户端应<br>用于 Zookeeper 服务端的一颗子树相对应，在那些多个应用公用一个<br>Zookeeper 进群的场景下，对实现不同应用间的相互隔离非常有帮助。</p>
+<h3 id="12-会话管理-1"><a href="#12-会话管理-1" class="headerlink" title="12.会话管理"></a>12.会话管理</h3><p>分桶策略：将类似的会话放在同一区块中进行管理，以便于 Zookeeper 对会话进<br>行不同区块的隔离处理以及同一区块的统一处理。<br>分配原则：每个会话的“下次超时时间点”（ExpirationTime）<br>计算公式：<br>ExpirationTime_ = currentTime + sessionTimeout<br>ExpirationTime = (ExpirationTime_ / ExpirationInrerval + 1) *<br>ExpirationInterval , ExpirationInterval 是指 Zookeeper 会话超时检查时间<br>间隔，默认 tickTime</p>
+<h3 id="13-服务器角色-1"><a href="#13-服务器角色-1" class="headerlink" title="13.服务器角色"></a>13.服务器角色</h3><p>Leader<br>1、事务请求的唯一调度和处理者，保证集群事务处理的顺序性</p>
+<h3 id="2、集群内部各服务的调度者"><a href="#2、集群内部各服务的调度者" class="headerlink" title="2、集群内部各服务的调度者"></a>2、集群内部各服务的调度者</h3><p>Follower<br>1、处理客户端的非事务请求，转发事务请求给 Leader 服务器</p>
+<h3 id="2、参与事务请求-Proposal-的投票"><a href="#2、参与事务请求-Proposal-的投票" class="headerlink" title="2、参与事务请求 Proposal 的投票"></a>2、参与事务请求 Proposal 的投票</h3><h3 id="3、参与-Leader-选举投票"><a href="#3、参与-Leader-选举投票" class="headerlink" title="3、参与 Leader 选举投票"></a>3、参与 Leader 选举投票</h3><p>Observer<br>1、3.0 版本以后引入的一个服务器角色，在不影响集群事务处理能力的基础上提<br>升集群的非事务处理能力<br>2、处理客户端的非事务请求，转发事务请求给 Leader 服务器</p>
+<h3 id="3、不参与任何形式的投票"><a href="#3、不参与任何形式的投票" class="headerlink" title="3、不参与任何形式的投票"></a>3、不参与任何形式的投票</h3><h3 id="14-数据同步-1"><a href="#14-数据同步-1" class="headerlink" title="14.数据同步"></a>14.数据同步</h3><p>整个集群完成 Leader 选举之后，Learner（Follower 和 Observer 的统称）回向<br>Leader 服务器进行注册。当 Learner 服务器想 Leader 服务器完成注册后，进入<br>数据同步环节。<br>数据同步流程：（均以消息传递的方式进行）<br>Learner 向 Learder 注册</p>
+<p>数据同步<br>同步确认<br>Zookeeper 的数据同步通常分为四类：</p>
+<h3 id="1、直接差异化同步（DIFF-同步）"><a href="#1、直接差异化同步（DIFF-同步）" class="headerlink" title="1、直接差异化同步（DIFF 同步）"></a>1、直接差异化同步（DIFF 同步）</h3><h3 id="2、先回滚再差异化同步（TRUNC-DIFF-同步）"><a href="#2、先回滚再差异化同步（TRUNC-DIFF-同步）" class="headerlink" title="2、先回滚再差异化同步（TRUNC+DIFF 同步）"></a>2、先回滚再差异化同步（TRUNC+DIFF 同步）</h3><h3 id="3、仅回滚同步（TRUNC-同步）"><a href="#3、仅回滚同步（TRUNC-同步）" class="headerlink" title="3、仅回滚同步（TRUNC 同步）"></a>3、仅回滚同步（TRUNC 同步）</h3><h3 id="4、全量同步（SNAP-同步）"><a href="#4、全量同步（SNAP-同步）" class="headerlink" title="4、全量同步（SNAP 同步）"></a>4、全量同步（SNAP 同步）</h3><p>在进行数据同步前，Leader 服务器会完成数据同步初始化：<br>peerLastZxid：<br>第 59 页 共 485 页第 60 页 共 485 页<br><br>从 learner 服务器注册时发送的 ACKEPOCH 消息中提取 lastZxid（该<br>Learner 服务器最后处理的 ZXID）<br>minCommittedLog：<br><br>Leader 服务器 Proposal 缓存队列 committedLog 中最小 ZXID<br>maxCommittedLog：<br><br>Leader 服务器 Proposal 缓存队列 committedLog 中最大 ZXID<br>直接差异化同步（DIFF 同步）<br><br>场景：peerLastZxid 介于 minCommittedLog 和 maxCommittedLog<br>之间<br>先回滚再差异化同步（TRUNC+DIFF 同步）<br></p>
+<p>场景：当新的 Leader 服务器发现某个 Learner 服务器包含了一条自己没<br>有的事务记录，那么就需要让该 Learner 服务器进行事务回滚–回滚到<br>Leader<br>服务器上存在的，同时也是最接近于 peerLastZxid 的 ZXID<br>仅回滚同步（TRUNC 同步）第 61 页 共 485 页<br><br>场景：peerLastZxid 大于 maxCommittedLog<br>全量同步（SNAP 同步）<br><br>场景一：peerLastZxid 小于 minCommittedLog<br><br>场景二：Leader 服务器上没有 Proposal 缓存队列且 peerLastZxid 不等</p>
+<h3 id="15-如何理解-Spring-中的代理？-1"><a href="#15-如何理解-Spring-中的代理？-1" class="headerlink" title="15.如何理解 Spring 中的代理？"></a>15.如何理解 Spring 中的代理？</h3><p>将 Advice 应用于目标对象后创建的对象称为代理。在客户端对象的情况下，目<br>标对象和代理对象是相同的。<br>Advice + Target <code>Object</code> = Proxy</p>
+<h3 id="16-分布式集群中为什么会有-Master？-1"><a href="#16-分布式集群中为什么会有-Master？-1" class="headerlink" title="16.分布式集群中为什么会有 Master？"></a>16.分布式集群中为什么会有 Master？</h3><p>在分布式环境中，有些业务逻辑只需要集群中的某一台机器进行执行，其他的机<br>器可以共享这个结果，这样可以大大减少重复计算，提高性能，于是就需要进行<br>leader 选举</p>
+<h3 id="17-Zookeeper-对节点的-watch-监听通知是永久的吗？为什么不是"><a href="#17-Zookeeper-对节点的-watch-监听通知是永久的吗？为什么不是" class="headerlink" title="17.Zookeeper 对节点的 watch 监听通知是永久的吗？为什么不是"></a>17.Zookeeper 对节点的 watch 监听通知是永久的吗？为什么不是</h3><p>永久的?<br>不是。官方声明：一个 Watch 事件是一个一次性的触发器，当被设置了 Watch<br>的数据发生了改变的时候，则服务器将这个改变发送给设置了 Watch 的客户端，<br>以便通知它们。<br>为什么不是永久的，举个例子，如果服务端变动频繁，而监听的客户端很多情况<br>下，每次变动都要通知到所有的客户端，给网络和服务器造成很大压力。<br>一般是客户端执行 getData(“/节点 A”,true)，如果节点 A 发生了变更或删除，<br>客户端会得到它的 watch 事件，但是在之后节点 A 又发生了变更，而客户端又没<br>有设置 watch 事件，就不再给客户端发送。<br>在实际应用中，很多情况下，我们的客户端不需要知道服务端的每一次变动，我<br>只要最新的数据即可。</p>
+<p><strong>Q:</strong> 18.chubby 是什么，和 zookeeper 比你怎么看？<br>chubby 是 google 的，完全实现 paxos 算法，不开源。zookeeper 是 chubby<br>的开源实现，使用 zab 协议，paxos 算法的变种。<br>19.说几个 zookeeper 常用的命令。<br>常用命令：lsget set createdelete 等。</p>
+<h3 id="20-ZAB-和-Paxos-算法的联系与区别？-1"><a href="#20-ZAB-和-Paxos-算法的联系与区别？-1" class="headerlink" title="20.ZAB 和 Paxos 算法的联系与区别？"></a>20.ZAB 和 Paxos 算法的联系与区别？</h3><p>相同点：</p>
+<p>1、两者都存在一个类似于 Leader 进程的角色，由其负责协调多个 Follower 进程<br>的运行<br>2、Leader 进程都会等待超过半数的 Follower 做出正确的反馈后，才会将一个提<br>案进行提交<br>3、ZAB 协议中，每个 Proposal 中都包含一个 epoch 值来代表当前的 Leader<br>周期，Paxos 中名字为 Ballot<br>不同点：<br>ZAB 用来构建高可用的分布式数据主备系统（Zookeeper），Paxos 是用来构建<br>分布式一致性状态机系统。</p>
+<h3 id="21-服务调用是阻塞的吗？-1"><a href="#21-服务调用是阻塞的吗？-1" class="headerlink" title="21.服务调用是阻塞的吗？"></a>21.服务调用是阻塞的吗？</h3><p>默认是阻塞的，可以异步调用，没有返回值的可以这么做。<br>Dubbo 是基于 <code>NIO</code> 的非阻塞实现并行调用，客户端不需要启动多线程即可完成<br>并行调用多个远程服务，相对多线程开销较小，异步调用会返回一个 <code>Future</code> 对<br>象</p>
+<h3 id="22-Dubbo-推荐用什么协议？-1"><a href="#22-Dubbo-推荐用什么协议？-1" class="headerlink" title="22.Dubbo 推荐用什么协议？"></a>22.Dubbo 推荐用什么协议？</h3><p><br>dubbo://（推荐）<br><br>rmi://<br></p>
+<p>hessian://<br><br>http://<br><br>webservice://<br><br>thrift://<br><br>memcached://<br><br>redis://<br></p>
+<h3 id="23-Dubbo-Monitor-实现原理？-1"><a href="#23-Dubbo-Monitor-实现原理？-1" class="headerlink" title="23.Dubbo Monitor 实现原理？"></a>23.Dubbo Monitor 实现原理？</h3><p><code>Consumer</code> 端在发起调用之前会先走 filter 链；provider 端在接收到请求时也是<br>先走 filter 链，然后才进行真正的业务逻辑处理。<br>默认情况下，在 consumer 和 provider 的 filter 链中都会有 Monitorfilter。</p>
+<h3 id="1、MonitorFilter-向-DubboMonitor-发送数据"><a href="#1、MonitorFilter-向-DubboMonitor-发送数据" class="headerlink" title="1、MonitorFilter 向 DubboMonitor 发送数据"></a>1、MonitorFilter 向 DubboMonitor 发送数据</h3><h3 id="2、DubboMonitor-将数据进行聚合后（默认聚合-1min-中的统计数据）暂存到"><a href="#2、DubboMonitor-将数据进行聚合后（默认聚合-1min-中的统计数据）暂存到" class="headerlink" title="2、DubboMonitor 将数据进行聚合后（默认聚合 1min 中的统计数据）暂存到"></a>2、DubboMonitor 将数据进行聚合后（默认聚合 1min 中的统计数据）暂存到</h3><p>ConcurrentMap&lt;Statistics, AtomicReference&gt;statisticsMap，然后使用一个<br>含有 3 个线程（线程名字：DubboMonitorSendTimer）的线程池每隔 1min 钟，<br>调用 SimpleMonitorService 遍历发送 statisticsMap 中的统计数据，每发送完毕<br>一个，就重置当前的 Statistics 的 AtomicReference</p>
+<h3 id="3、SimpleMonitorService-将这些聚合数据塞入-BlockingQueue-queue-中（队"><a href="#3、SimpleMonitorService-将这些聚合数据塞入-BlockingQueue-queue-中（队" class="headerlink" title="3、SimpleMonitorService 将这些聚合数据塞入 BlockingQueue queue 中（队"></a>3、SimpleMonitorService 将这些聚合数据塞入 BlockingQueue queue 中（队</h3><p>列大写为 100000）4、SimpleMonitorService 使用一个后台线程（线程名为：<br>DubboMonitorAsyncWriteLogThread）将 queue 中的数据写入文件（该线程以<br>死循环的形式来写）</p>
+<h3 id="5、SimpleMonitorService-还会使用一个含有-1-个线程（线程名字："><a href="#5、SimpleMonitorService-还会使用一个含有-1-个线程（线程名字：" class="headerlink" title="5、SimpleMonitorService 还会使用一个含有 1 个线程（线程名字："></a>5、SimpleMonitorService 还会使用一个含有 1 个线程（线程名字：</h3><p>DubboMonitorTimer）的线程池每隔 5min 钟，将文件中的统计数据画成图表</p>
+<h3 id="24-Dubbo-用到哪些设计模式？-1"><a href="#24-Dubbo-用到哪些设计模式？-1" class="headerlink" title="24.Dubbo 用到哪些设计模式？"></a>24.Dubbo 用到哪些设计模式？</h3><p>Dubbo 框架在初始化和通信过程中使用了多种设计模式，可灵活控制类加载、权<br>限控制等功能。<br>工厂模式<br>Provider 在 export 服务时，会调用 ServiceConfig 的 export 方法。ServiceConfig<br>中有个字段：<br><code>private</code> <code>static</code> <code>final</code> Protocol protocol =<br>ExtensionLoader.getExtensionLoader(Protocol.class).getAdaptiveExtensi<br>on();<br>Dubbo 里有很多这种代码。这也是一种工厂模式，只是实现类的获取采用了 <code>JDK</code><br>SPI 的机制。这么实现的优点是可扩展性强，想要扩展实现，只需要在 classpath<br>下增加个文件就可以了，代码零侵入。另外，像上面的 Adaptive 实现，可以做到<br>调用时动态决定调用哪个实现，但是由于这种实现采用了动态代理，会造成代码<br>调试比较麻烦，需要分析出实际调用的实现类。<br>装饰器模式</p>
+<p>Dubbo 在启动和调用阶段都大量使用了装饰器模式。以 Provider 提供的调用链为<br>例，具体的调用链代码是在 ProtocolFilterWrapper 的 buildInvokerChain 完成<br>的，具体是将注解中含有 group=provider 的 <code>Filter</code> 实现，按照 order 排序，最<br>后的调用顺序是：<br>第 75 页 共 485 页EchoFilter -&gt; ClassLoaderFilter -&gt; GenericFilter -&gt;<br>ContextFilter -&gt;<br>ExecuteLimitFilter -&gt; TraceFilter -&gt; TimeoutFilter -&gt; MonitorFilter -&gt;<br>ExceptionFilter<br>更确切地说，这里是装饰器和责任链模式的混合使用。例如，EchoFilter 的作用是<br>判断是否是回声测试请求，是的话直接返回内容，这是一种责任链的体现。而像<br>ClassLoaderFilter 则只是在主功能上添加了功能，更改当前线程的 ClassLoader，<br>这是典型的装饰器模式。<br>观察者模式<br>Dubbo 的 Provider 启动时，需要与注册中心交互，先注册自己的服务，再订阅自<br>己的服务，订阅时，采用了观察者模式，开启一个 listener。注册中心会每 5 秒定<br>时检查是否有服务更新，如果有更新，向该服务的提供者发送一个 <code>notify</code> 消息，<br>provider 接受到 <code>notify</code> 消息后，即运行 NotifyListener 的 <code>notify</code> 方法，执行监<br>听器方法。<br>动态代理模式<br>Dubbo 扩展 <code>JDK</code> SPI 的类 ExtensionLoader 的 Adaptive 实现是典型的动态代理<br>实现。Dubbo 需要灵活地控制实现类，即在调用阶段动态地根据参数决定调用哪<br>个实现类，所以采用先生成代理类的方法，能够做到灵活的调用。生成代理类的</p>
+<p>代码是 ExtensionLoader 的 createAdaptiveExtensionClassCode 方法。代理类<br>的主要逻辑是，获取 URL 参数中指定参数的值作为获取实现类的 key。</p>
+<h3 id="25-Dubbo-SPI-和-Java-SPI-区别？"><a href="#25-Dubbo-SPI-和-Java-SPI-区别？" class="headerlink" title="25.Dubbo SPI 和 Java SPI 区别？"></a>25.Dubbo SPI 和 Java SPI 区别？</h3><p>JDKSPI<br><code>JDK</code> 标准的 SPI 会一次性加载所有的扩展实现，如果有的扩展吃实话很耗时，但<br>也没用上，很浪费资源。<br>所以只希望加载某个的实现，就不现实了<br>DUBBO SPI<br>1，对 Dubbo 进行扩展，不需要改动 Dubbo 的源码<br>2，延迟加载，可以一次只加载自己想要加载的扩展实现。<br>3，增加了对扩展点 <code>IOC</code> 和 <code>AOP</code> 的支持，一个扩展点可以直接 setter 注入其<br>它扩展点。<br>3，Dubbo 的扩展机制能很好的支持第三方 IoC 容器，默认支持 <code>Spring</code> Bean。<br>26.简述 Http 请求 get 和 post 的区别以及数据包格式。</p>
+<h3 id="27-HTTP-有哪些-method"><a href="#27-HTTP-有哪些-method" class="headerlink" title="27.HTTP 有哪些 method"></a>27.HTTP 有哪些 method</h3><p>28.简述 <code>HTTP</code> 请求的报文格式。<br>29.<code>HTTP</code> 的长连接是什么意思。</p>
+<h3 id="30-Thread-类的-sleep-方法和对象的-wait-方法都可以让线程暂"><a href="#30-Thread-类的-sleep-方法和对象的-wait-方法都可以让线程暂" class="headerlink" title="30.Thread 类的 sleep()方法和对象的 wait()方法都可以让线程暂"></a>30.Thread 类的 sleep()方法和对象的 wait()方法都可以让线程暂</h3><p>停执行，它们有什么区别?<br>答：<br>sleep()方法（休眠）是线程类（<code>Thread</code>）的静态方法，调用此方法会让当前线<br>程暂停执行指定的时间，将执行机会（CPU）让给其他线程，但是对象的锁依然<br>保持，因此休眠时间结束后会自动恢复（线程回到就绪状态，请参考第 66 题<br>中的线程状态转换图）。<code>wait</code>()是 <code>Object</code> 类的方法，调用对象的 <code>wait</code>()方法导<br>致当前线程放弃对象的锁（线程暂停执行），进入对象的等待池（waitpool），<br>只有调用对象的 <code>notify</code>()方法（或 <code>notifyAll</code>()方法）时才能唤醒等待池中的线程<br>进入等锁池（lock pool），如果线程重新获得对象的锁就可以进入就绪状态。<br>补充：可能不少人对什么是进程，什么是线程还比较模糊，对于为什么需要多线<br>程编程也不是特别理解。简单的说：进程是具有一定独立功能的程序关于某个数<br>据集合上的一次运行活动，是操作系统进行资源分配和调度的一个独立单位；线<br>程是进程的一个实体，是 CPU 调度和分派的基本单位，是比进程更小的能独立<br>运行的基本单位。线程的划分尺度小于进程，这使得多线程程序的并发性高；进<br>程在执行时通常拥有独立的内存单元，而线程之间可以共享内存。使用多线程的<br>编程通常能够带来更好的性能和用户体验，但是多线程的程序对于其他程序是不<br>友好的，因为它可能占用了更多的 CPU 资源。当然，也不是线程越多，程序的<br>性能就越好，因为线程之间的调度和切换也会浪费 CPU 时间。时下很时髦的<br>Node.js就采用了单线程异步 I/O 的工作模式。<br>31. Java 服务端问题排查（OOM，CPU 高，Load 高，类冲突）</p>
+<h3 id="32-如何查看-Java-应用的线程信息"><a href="#32-如何查看-Java-应用的线程信息" class="headerlink" title="32. 如何查看 Java 应用的线程信息"></a>32. 如何查看 Java 应用的线程信息</h3><h3 id="33-Redis-hash-算法用的是什么？"><a href="#33-Redis-hash-算法用的是什么？" class="headerlink" title="33.Redis hash 算法用的是什么？"></a>33.Redis hash 算法用的是什么？</h3><script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+            
+            <div class="reprint1">
+                <p>
+                    <span class="reprint1-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+                    </span>
+                    <a href="https://liaoxingwang.github.io" class="b-link-green">屿</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2025/08/05/blog-open-source-java-interview-2024-java-offer-shou-ge-zhi-nan/" class="b-link-green">2024 Java offer 收割指南</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    
+
+    
+        <link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="card-content">
+        <div class="giscus-wrapper" style="overflow: hidden; max-width: 100%;">
+            <div class="giscus"></div>
+        </div>
+    </div>
+</div>
+
+<script src="https://giscus.app/client.js"
+    data-repo="liaoxingwang/liaoxingwang.github.io"
+    data-repo-id="R_kgDONgefmg"
+    data-category="Announcements"
+    data-category-id="DIC_kwDONgefms4DCjUZ"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="preferred_color_scheme"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async>
+</script>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2025/08/05/blog-open-source-java-interview-aqs-he-juc/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="AQS和JUC">
+                        
+                        <span class="card-title">AQS和JUC</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            【讲义】第讲：AQS和JUC ⼀、ReentrantLock重⼊锁 .> 中断响应 lockInterruptibly() .> 锁申请等待限时 tryLock(long time, TimeUnit unit) .> 公平锁和⾮公平锁 .> AQS源码解析 ⼆、Condition
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2025-08-05
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java面试-2024/" class="post-category" target="_blank">
+                                    Java面试/2024
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/面试/" target="_blank">
+                        <span class="chip bg-color">面试</span>
+                    </a>
+                    
+                    <a href="/tags/Java面试/" target="_blank">
+                        <span class="chip bg-color">Java面试</span>
+                    </a>
+                    
+                    <a href="/tags/2024/" target="_blank">
+                        <span class="chip bg-color">2024</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2025/08/05/blog-open-source-java-interview-12-wan-zi-java-mian-jing-zong-jie/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="12万字 java 面经总结">
+                        
+                        <span class="card-title">12万字 java 面经总结</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            2、面向对象（Java最重要的特性，让程序耦合度更低，内聚性更高） 面向过程：是分析解决问题的步骤，然后用函数把这些步骤一步一步地实现，然后在使用的时候一 面向对象：是把构成问题的事务分解成各个对象，而建立对象的目的也不是为了完成一个个步骤， 而是为了描述某个事物在解决整个问题的过程中所发生的行为。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2025-08-05
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java面试-2024/" class="post-category" target="_blank">
+                                    Java面试/2024
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/面试/" target="_blank">
+                        <span class="chip bg-color">面试</span>
+                    </a>
+                    
+                    <a href="/tags/Java面试/" target="_blank">
+                        <span class="chip bg-color">Java面试</span>
+                    </a>
+                    
+                    <a href="/tags/2024/" target="_blank">
+                        <span class="chip bg-color">2024</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 屿<br />'
+            + '作者: SK<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4, h5'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4, h5').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+        <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&copy; 理想热爱.
+
+            <br>
+            <span id="sitetime"></span><span class="my-face">ღゝ◡╹)ノ♡</span>
+            <br>
+
+            
+
+            
+                    
+                        <span id="busuanzi_container_site_pv" style='display:none'></span>
+                        总访问量: <span id="busuanzi_value_site_pv" class="white-color"></span>
+                    
+
+                    
+                        <span id="busuanzi_container_site_uv" style='display:none'></span>
+                        人次&nbsp; | &nbsp;访客人数: <span id="busuanzi_value_site_uv" class="white-color"></span> 人
+                    
+
+            
+
+            
+                &nbsp; | &nbsp;字数统计:&nbsp;
+                <span class="white-color">1643k</span> 字
+            
+
+            
+            <br>
+
+        </div>
+
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/liaoxingwang" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+ 
+    <a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=807928930@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+
+    <a href="https://zhihu.com/people/zbozci" class="tooltipped" target="_blank" data-tooltip="访问我的知乎" data-position="top" data-delay="50">
+        <i class="fa fa-inverse">知</i>
+    </a>
+
+
+
+    <a href="http://wpa.qq.com/msgrd?v=3&uin=807928930&site=qq&menu=yes" class="tooltipped" target="_blank" data-tooltip="访问我的QQ空间" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+    <a href="https://weibo.com/jamsJJYY" class="tooltipped" target="_blank" data-tooltip="关注我的微博" data-position="top" data-delay="50">
+        <i class="fa fa-weibo"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+
+        var t1 = Date.UTC(2022, 10, 24, 00, 00, 00); //北京时间2019-8-1 00:00:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes *
+            minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours +
+            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒" ;
+    } /*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+
+
+
+
+
+
+        <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+        <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+        <script src="/libs/materialize/materialize.min.js"></script>
+        <script src="https://cdn.bootcss.com/masonry/4.2.2/masonry.pkgd.min.js"></script>
+        <script src="https://cdn.bootcss.com/aos/3.0.0-beta.6/aos.js"></script>
+        <script src="https://cdn.bootcss.com/scrollprogress/3.0.2/scrollProgress.min.js"></script>
+        <script src="https://cdn.bootcss.com/lightgallery/1.6.12/js/lightgallery-all.min.js"></script>
+        <script src="/js/matery.js"></script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+        
+            <script src="/libs/others/clicklove.js"></script>
+        
+
+        
+            <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        
+
+        <!-- liaoxingwang add 2019.08.28 -->
+        <script type="text/javascript">
+            var OriginTitile = document.title,
+                st;
+            document.addEventListener("visibilitychange", function () {
+                document.hidden ? (document.title = "看不见我🙈~看不见我🙈~", clearTimeout(st)) : (document.title =
+                    "(๑•̀ㅂ•́) ✧被发现了～", st = setTimeout(function () {
+                        document.title = OriginTitile
+                    }, 3e3))
+            })
+        </script>
+
+        <!-- 鼠标点击烟花爆炸效果  liaoxingwang add 2019.09.09 -->
+        
+
+        <!-- 背景雪花飘落特效liaoxingwang add 2019.09.10 -->
+        
+
+        <!-- 鼠标点击文字特效 liaoxingwang add 2019.09.10-->
+        
+            <script src="/js/wenzi.js" type="text/javascript"></script>
+        
+
+        <!-- 背景雪花飘落特效 liaoxingwang add 2019.09.10 -->
+        
+
+        <!-- 在线聊天工具  liaoxingwang add 2019.09.11 -->
+        
+
+        <!-- 背景 canvas-nest  洪卫 shw 2018  add 2019.09.15-->
+        
+
+        <!-- 背景静止彩带  洪卫 shw 2018  add 2019.09.15-->
+        
+            <script type="text/javascript">
+            var windowWidth = $(window).width();
+            if (windowWidth > 992) {
+                document.write('<script type="text/javascript" size="150" alpha="0.6" zIndex="-1" src="/libs/background/ribbon.min.js"><\/script>');
+            }
+            </script>
+        
+
+        <!-- 背景动态彩带 洪卫 shw 2018  add 2019.09.15-->
+        
+            <script type="text/javascript">
+            var windowWidth = $(window).width();
+            if (windowWidth > 992) {
+                document.write('<script type="text/javascript" src="/libs/background/ribbon-dynamic.js"><\/script>');
+            }
+            </script>
+        
+
+    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script>
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z\d\-\.\+]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(t.test(e.href)||r.test(e.href))&&(e.href=a.dataset.original)})});</script><script>(r=>{r.imageLazyLoadSetting.processImages=t;var a=r.imageLazyLoadSetting.isSPA,o=r.imageLazyLoadSetting.preloadRatio||1,d=i();function i(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(t){(a||t)&&(d=i());for(var e,n=0;n<d.length;n++)0<=(e=(e=d[n]).getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(r.innerHeight*o||document.documentElement.clientHeight*o)&&(()=>{var t,e,a,o,i=d[n];e=function(){d=d.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).dataset.loaded||(t.hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(a=new Image,o=t.getAttribute("data-original"),a.onload=function(){t.src=o,t.removeAttribute("data-original"),t.setAttribute("data-loaded",!0),e&&e()},a.onerror=function(){t.removeAttribute("data-original"),t.setAttribute("data-loaded",!1),t.src=o},t.src!==o&&(a.src=o)))})()}function e(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",e),r.addEventListener("resize",e),r.addEventListener("orientationchange",e)})(this);</script></body>
+</html>

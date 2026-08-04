@@ -1,0 +1,1628 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+    
+
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="06_大数据技术之面试题复习1.6带答案, 商单接企业项目外包 软件开发 整包服务 移动开发 移动开发团队 移动开发项目">
+    <meta name="baidu-site-verification" content="fmlEuI34ir">
+    <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
+    <meta name="description" content="尚硅谷大数据技术之面试题复习—————————————————————————————尚硅谷大数据技术之面试题复习（尚硅谷研究院）版本：V1.6第 1 章 技术复习1.1 第 1 次考试（准备 20 分钟，考试 30 分钟）1）Linux常">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="06_大数据技术之面试题复习1.6带答案 | 屿">
+    <meta property="og:description" content="尚硅谷大数据技术之面试题复习—————————————————————————————尚硅谷大数据技术之面试题复习（尚硅谷研究院）版本：V1.6第 1 章 技术复习1.1 第 1 次考试（准备 20 分钟，考试 30 分钟）1）Linux常">
+    <meta property="og:url" content="https://liaoxingwang.github.io2025/08/06/blog-open-source-java-interview-06-da-shu-ju-ji-zhu-zhi-mian-shi-ti-fu-xi-1.6-dai-da-an/">
+    <meta property="og:image" content="https://liaoxingwang.github.io/medias/banner/0.jpg">
+    <meta property="og:site_name" content="屿">
+    <meta property="og:locale" content="zh_CN">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="06_大数据技术之面试题复习1.6带答案 | 屿">
+    <meta name="twitter:description" content="尚硅谷大数据技术之面试题复习—————————————————————————————尚硅谷大数据技术之面试题复习（尚硅谷研究院）版本：V1.6第 1 章 技术复习1.1 第 1 次考试（准备 20 分钟，考试 30 分钟）1）Linux常">
+    <meta name="twitter:image" content="https://liaoxingwang.github.io/medias/banner/0.jpg">
+
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>06_大数据技术之面试题复习1.6带答案 | 屿</title>
+    <link rel="icon" type="image/jpeg" href="/medias/avatars/hwsun.jpg">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/aos/3.0.0-beta.6/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/lightgallery/1.6.12/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <style type="text/css">
+        
+
+            code[class*="language-"],
+            pre[class*="language-"] {
+                white-space: pre !important;
+            }
+
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?46e79e71af0709a5b9106bf20cecc493";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+    
+    
+        <script>
+            (function(){
+                var bp = document.createElement('script');
+                var curProtocol = window.location.protocol.split(':')[0];
+                if (curProtocol === 'https') {
+                    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+                }
+                else {
+                    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                }
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(bp, s);
+            })();
+        </script>
+    
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+    <body>
+
+        <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <span class="logo-span">屿</span>
+                </a>
+            </div>
+            
+
+
+<!-- <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/AV" class="waves-effect waves-light">
+            
+            <i class="fa fa-music"></i>
+            
+            <span>视听</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/galleries" class="waves-effect waves-light">
+            
+            <i class="fa fa-photo"></i>
+            
+            <span>相册</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于我</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/contact" class="waves-effect waves-light">
+            
+            <i class="fa fa-envelope"></i>
+            
+            <span>留言板</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul> -->
+
+<!-- 支持二级菜单特性 liaoxingwang modify 2019.09.17  -->
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right nav-menu">
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/" class="waves-effect waves-light">
+              
+                <i class="fa fa-home"></i>
+              
+              <span>首页</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/tags" class="waves-effect waves-light">
+              
+                <i class="fa fa-tags"></i>
+              
+              <span>标签</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/categories" class="waves-effect waves-light">
+              
+                <i class="fa fa-bookmark"></i>
+              
+              <span>分类</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/archives" class="waves-effect waves-light">
+              
+                <i class="fa fa-archive"></i>
+              
+              <span>归档</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/AV" class="waves-effect waves-light">
+              
+                <i class="fa fa-music"></i>
+              
+              <span>视听</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/galleries" class="waves-effect waves-light">
+              
+                <i class="fa fa-photo"></i>
+              
+              <span>相册</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/about" class="waves-effect waves-light">
+              
+                <i class="fa fa-user-circle-o"></i>
+              
+              <span>关于我</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/contact" class="waves-effect waves-light">
+              
+                <i class="fa fa-envelope"></i>
+              
+              <span>留言板</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/friends" class="waves-effect waves-light">
+              
+                <i class="fa fa-address-book"></i>
+              
+              <span>友情链接</span>
+            </a>
+
+            
+      </li>
+    
+
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <div class="logo-name">屿</div>
+        <div class="logo-desc">
+            
+            湖南工业大学 | 计算机科学与技术
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/AV" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-music"></i>
+                
+                视听
+            </a>
+        </li>
+        
+        <li>
+            <a href="/galleries" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-photo"></i>
+                
+                相册
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于我
+            </a>
+        </li>
+        
+        <li>
+            <a href="/contact" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-envelope"></i>
+                
+                留言板
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/liaoxingwang/" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+
+   
+   
+<!-- 支持二级菜单特性 liaoxingwang modify 2019.09.17  -->
+<!-- <ul class="menu-list mobile-menu-list">
+    
+        <li class="m-nav-item">
+                
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-home"></i>
+                        
+                        首页
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/tags" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-tags"></i>
+                        
+                        标签
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/categories" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-bookmark"></i>
+                        
+                        分类
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/archives" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-archive"></i>
+                        
+                        归档
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/AV" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-music"></i>
+                        
+                        视听
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/galleries" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-photo"></i>
+                        
+                        相册
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/about" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-user-circle-o"></i>
+                        
+                        关于我
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/contact" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-envelope"></i>
+                        
+                        留言板
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/friends" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-address-book"></i>
+                        
+                        友情链接
+                    </a>
+              
+            </li>
+        
+
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/liaoxingwang/" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul> -->
+
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/liaoxingwang/" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+        
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        06_大数据技术之面试题复习1.6带答案
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        
+<!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/大数据面试/" target="_blank">
+                                <span class="chip bg-color">大数据面试</span>
+                            </a>
+                        
+                            <a href="/tags/面试/" target="_blank">
+                                <span class="chip bg-color">面试</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/大数据面试/" class="post-category" target="_blank">
+                                大数据面试
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2025-08-06
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
+                    
+                        SK
+                    
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        15.8k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        61 分
+                    </div>
+                    
+                
+
+                
+                        <span id="busuanzi_container_site_pv" style='display:none'></span>
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv" ></span>
+
+                
+
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>尚硅谷大数据技术之面试题复习<br>—————————————————————————————<br>尚硅谷大数据技术之面试题复习<br>（尚硅谷研究院）<br>版本：V1.6<br>第 1 章 技术复习<br>1.1 第 1 次考试（准备 20 分钟，考试 30 分钟）<br>1）Linux常用高级命令<br>（查看内存）<br>top<br>（查看进程内存）<br>jmap -heap<br>（查看系统内存使用情况）<br>free -m<br>进程（查看进程）<br>ps -ef|grep<br>端口（查看端口占用）<br>netstat -tunlp|grep<br>查看磁盘存储<br>df -h<br>路径 （查看路径下磁盘存储情况）<br>du -sh *<br>2）HDFS读写流程<br>HDFS的写数据流程<br>NameNode<br>客户端 检查目录树是否可以创建文件<br>2.1检查权限；<br>create 1 向NameNode请求上传文件/user/atguigu/ss.avi 2.2检查目录结构（目录是否存在）<br>HDFS<br>client Distributed 2 响应可以上传文件<br>write FileSystem 3 请求上传第一个Block（0-128M），请返回DataNode 元数据<br>close 4返回dn1，dn2，dn3节点，表示采用这三个节点存储数据 副本存储节点选择</p>
+<h3 id="4-1本地节点"><a href="#4-1本地节点" class="headerlink" title="4.1本地节点"></a>4.1本地节点</h3><p>FSDataOu 4.2其他机架一个节点<br>tputStream 4.3 其他机架另一个节点<br>200m 8 传输数据完成<br>0-128m</p>
+<h3 id="6-dn1应答成功-DataNode1-6-dn2应答成功-DataNode2-6-dn3应答成功-DataNode3"><a href="#6-dn1应答成功-DataNode1-6-dn2应答成功-DataNode2-6-dn3应答成功-DataNode3" class="headerlink" title="6 dn1应答成功 DataNode1 6 dn2应答成功 DataNode2 6 dn3应答成功 DataNode3"></a>6 dn1应答成功 DataNode1 6 dn2应答成功 DataNode2 6 dn3应答成功 DataNode3</h3><p>ss.avi</p>
+<h3 id="5-请求建立Block传输通道-Bytebuffer-5-请求建立通道-Bytebuffer-5-请求建立通道-Bytebuffer"><a href="#5-请求建立Block传输通道-Bytebuffer-5-请求建立通道-Bytebuffer-5-请求建立通道-Bytebuffer" class="headerlink" title="5 请求建立Block传输通道 Bytebuffer 5 请求建立通道 Bytebuffer 5 请求建立通道 Bytebuffer"></a>5 请求建立Block传输通道 Bytebuffer 5 请求建立通道 Bytebuffer 5 请求建立通道 Bytebuffer</h3><h3 id="7-传输数据-Packet（64k）-7-blk-1-7-blk-1-7-blk-1"><a href="#7-传输数据-Packet（64k）-7-blk-1-7-blk-1-7-blk-1" class="headerlink" title="7 传输数据 Packet（64k） 7 blk_1 7 blk_1 7 blk_1"></a>7 传输数据 Packet（64k） 7 blk_1 7 blk_1 7 blk_1</h3><p>packet（chunk512byte+chunksum4byte）<br>3）HDFS小文件危害及解决办法<br>小文件影响：<br>（ ）存储层面， 个文件块占用 字节内存</p>
+<h3 id="1-1-NN150"><a href="#1-1-NN150" class="headerlink" title="1 1 NN150"></a>1 1 NN150</h3><p>（ ）计算层面，每个小文件都起一个 （默认内存 ），浪费资源。</p>
+<h3 id="2-MapTask-1G"><a href="#2-MapTask-1G" class="headerlink" title="2 MapTask 1G"></a>2 MapTask 1G</h3><p>解决方法：<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<p>尚硅谷大数据技术之面试题复习<br>—————————————————————————————<br>（ ）对小文件采用 归档</p>
+<h3 id="1-har"><a href="#1-har" class="headerlink" title="1 har"></a>1 har</h3><p>（ ）采用</p>
+<h3 id="2-CombineTextInputFormat"><a href="#2-CombineTextInputFormat" class="headerlink" title="2 CombineTextInputFormat"></a>2 CombineTextInputFormat</h3><p>（ ）有小文件的场景，开启 重用，通过设置 文件中</p>
+<h3 id="3-JVM-mapred-site-xml"><a href="#3-JVM-mapred-site-xml" class="headerlink" title="3 JVM mapred-site.xml"></a>3 JVM mapred-site.xml</h3><p>参数，通常 之间。<br>mapreduce.job.jvm.numtasks 10-20<br>1.2 第 2 次考试（准备 15 分钟，考试 20 分钟）<br>1）Shuffle及其优化<br>MapReduce优化（上）<br>Combiner为可选流程 归并排序 combiner<br>默认100M 环形缓冲区 分区 排序 分区1 分区2<br>写入&lt;k,v&gt;数据 分区1 分区2 分<br>排<br>区<br>序</p>
+<h3 id="1-分"><a href="#1-分" class="headerlink" title="1 分"></a>1 分</h3><p>排<br>区<br>序<br>第<br>C<br>一<br>om<br>次<br>b<br>溢<br>in<br>出<br>er 分<br>合<br>区<br>并</p>
+<h3 id="1-分-1"><a href="#1-分-1" class="headerlink" title="1 分"></a>1 分</h3><p>合<br>区<br>并</p>
+<h3 id="2-合并"><a href="#2-合并" class="headerlink" title="2 合并"></a>2 合并</h3><p>压缩<br>合并<br>&lt;k,v&gt;<br>Map1方法 kvmeta bufindex 分区 排序 spill.index Spill.out 合并 分 归 区 并 1 分 归 区 并 2 分 压 区 缩 1 分 压 区 缩 2<br>kvindex 分区1 分区2 分 排 区 序 1 分 排 区 序 2 第 C 二 o 次 mb 溢 in 出 er 分 合 区 并 1 分 合 区 并 2 写磁盘<br>1）自定义分区，减少数 80% 据 ,后 倾 反 斜 向 ; spill.index Spill.out 归并排序 分 输 区 出 1 分 输 区 出 2<br>定义类，继承Partitioner接口，重写getPartition方法<br>2）减少溢写的次数 6）mapreduce.map.memory.mb默认MapTask内存上限1024MB。<br>mapreduce.task.io.sort.mb<br>可以根据128m数据对应1G内存原则提高该内存。<br>Shuffle的环形缓冲区大小，默认100m，可以提高到200m<br>mapreduce.map.sort.spill.percent 7）mapreduce.map.java.opts：控制MapTask堆内存大小。（如果内存不够，<br>环形缓冲区溢出的阈值，默认80% ，可以提高的90% 报：java.lang.OutOfMemoryError）<br>3）增加每次Merge合并次数<br>mapreduce.task.io.sort.factor默认10，可以提高到20 8）mapreduce.map.cpu.vcores默认MapTask的CPU核数1。计算密集型任<br>4）在不影响业务结果的前提条件下可以提前采用Combiner<br>务可以增加CPU核数<br>job.setCombinerClass(xxxReducer.class);<br>5）为了减少磁盘IO，可以采用Snappy或者LZO压缩 9）异常重试<br>conf.setBoolean(“mapreduce.map.output.compress”, true); mapreduce.map.maxattempts每个Map Task最大重试次数，一旦重试<br>conf.setClass(“mapreduce.map.output.compress.codec”, 次数超过该值，则认为Map Task运行失败，默认值：4。根据机器<br>SnappyCodec.class,CompressionCodec.class); 性能适当提高。<br>MapReduce优化（下）<br>Map1方法 拷贝<br>Reduce1处理流程<br>输出数据 内存缓冲<br>分区1 内存不够溢出到磁盘 按照相同key分组<br>分 输 区 出 1 分 输 区 出 2 输出 磁盘 归并 分组 Reduce方法<br>数据 排序<br>分区1<br>输出 对每个map来的<br>Map2方法 数据归并排序<br>输出数据<br>拷贝<br>分区1 分区2<br>输出 输出 6）mapreduce.reduce.cpu.vcores默认ReduceTask的CPU核数1个。可<br>以提高到2-4个<br>1）mapreduce.reduce.shuffle.parallelcopies每个Reduce去Map<br>中拉取数据的并行数，默认值是5。可以提高到10。 7）mapreduce.reduce.maxattempts每个Reduce Task最大重试次数，</p>
+<h2 id="一、旦重试次数超过该值"><a href="#一、旦重试次数超过该值" class="headerlink" title="一、旦重试次数超过该值"></a>一、旦重试次数超过该值</h2><p>2 B ） uff m er a 大 pr 小 edu 占 ce R .r e e d d u u c c e e 可 .sh 用 uf 内 fle 存 .in 的 pu 比 t.b 例 uf ， fer 默 .pe 认 rc 值 ent 0.7。可以提高到0.8 8 例 ） 达 m 到 ap 该 re 值 du 后 ce. 才 job 会 .r 为 edu R c e e d . u sl c o e w T s a t s a k r 申 t.c 请 om 资 pl 源 ete 。 dm 默 ap 认 s当 是 M 0.0 a 5 p 。 Task完成的比<br>开<br>）<br>始<br>m<br>写<br>ap<br>入<br>red<br>磁<br>uc<br>盘<br>e.<br>，<br>red<br>默<br>uc<br>认<br>e.s<br>值<br>hu<br>f<br>.<br>f<br>le<br>.<br>。<br>me<br>可<br>rg<br>以<br>e.p<br>提<br>er<br>高<br>cen<br>到<br>t<br>B<br>.7<br>u<br>ffer中的数据达到多少比例 9）mapreduce.task.timeout如果一个Task在一定时间内没有任何进入，<br>即不会读取新的数据，也没有输出数据，则认为该Task处于Block状态，<br>4）mapreduce.reduce.memory.mb默认ReduceTask内存上限1024MB，<br>可能是卡住了，也许永远会卡住，为了防止因为用户程序永远Block住<br>根据128m数据对应1G内存原则，适当提高内存到4-6G 不退出，则强制设置了一个该超时时间（单位毫秒），默认是600000<br>（10分钟）。如果你的程序对每条输入数据的处理时间过长，建议将<br>该参数调大。<br>5）mapreduce.reduce.java.opts：控制ReduceTask堆内存大小。（如果内<br>存不够，报：java.lang.OutOfMemoryError） 10）如果可以不用Reduce，尽可能不用<br>2）Yarn工作机制<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<p>尚硅谷大数据技术之面试题复习<br>—————————————————————————————<br>YARN工作机制<br>ResourceManager</p>
+<h3 id="0-Mr程序提交到客-1-申请一个Application"><a href="#0-Mr程序提交到客-1-申请一个Application" class="headerlink" title="0 Mr程序提交到客 1 申请一个Application"></a>0 Mr程序提交到客 1 申请一个Application</h3><p>户端所在的节点 5 将用户的请求初始化成一个Task<br>/home/atguigu/wc.jar 2 Application资源提交路径 14 程序运行完后，<br>main(){<br>hdfs://…./.staging以及 MR会向RM注销自己<br>job. waitForCompletion(); application_id FIFO调度队列<br>}<br>YarnRunner 4 资源提交完毕，申请运行mrAppMaster Capacity</p>
+<h3 id="3-提交job运-6-领取到"><a href="#3-提交job运-6-领取到" class="headerlink" title="3 提交job运 6 领取到"></a>3 提交job运 6 领取到</h3><p>行所需资源 Task任务 10 领取到任<br>NodeManager NodeManager 务，创建容器 NodeManager</p>
+<h3 id="9-申请运行"><a href="#9-申请运行" class="headerlink" title="9 申请运行"></a>9 申请运行</h3><h3 id="7-创建容器-Container-MapTask容器-Container-Container"><a href="#7-创建容器-Container-MapTask容器-Container-Container" class="headerlink" title="7 创建容器 Container MapTask容器 Container Container"></a>7 创建容器 Container MapTask容器 Container Container</h3><p>Container<br>cpu+ram 11 发送程 cpu+ram+jar cpu+ram+jar</p>
+<h3 id="8-下载job资-序启动脚本"><a href="#8-下载job资-序启动脚本" class="headerlink" title="8 下载job资 序启动脚本"></a>8 下载job资 序启动脚本</h3><p>源到本地 MRAppmaster MapTask MapTask</p>
+<h3 id="12-向RM申请2个-YarnChild-YarnChild"><a href="#12-向RM申请2个-YarnChild-YarnChild" class="headerlink" title="12 向RM申请2个 YarnChild YarnChild"></a>12 向RM申请2个 YarnChild YarnChild</h3><p>容器，运行<br>ReduceTask程序 0 1 0 1<br>hdfs://…./.staging/application_id<br>这些文件在 Job.split NodeManager NodeManager<br>job.submit() Job.xml Container Container<br>后生成 wc.jar 13 Reduce向<br>Map获取相应<br>ReduceTask0 分区的数据 ReduceTask1<br>YarnChild YarnChild<br>YARN生产环境核心参数<br>1）ResourceManager相关<br>yarn.resourcemanager.scheduler.class 配置调度器，默认容量<br>yarn.resourcemanager.scheduler.client.thread-count ResourceManager处理调度器请求的线程数量，默认50<br>2）NodeManager相关<br>NodeManager<br>yarn.nodemanager.resource.detect-hardware-capabilities 是否让yarn自己检测硬件进行配置，默认false<br>yarn.nodemanager.resource.count-logical-processors-as-cores 是否将虚拟核数当作CPU核数，默认false<br>yarn.nodemanager.resource.pcores-vcores-multiplier 虚拟核数和物理核数乘数，例如：4核8线程，该 Container Container<br>参数就应设为2，默认1.0 App Mstr MapTask<br>client<br>yarn.nodemanager.resource.memory-mb NodeManager使用内存，默认8G<br>yarn.nodemanager.resource.system-reserved-memory-mbNodeManager为系统保留多少内存<br>以上二个参数配置一个即可 调度器 NodeManager<br>yarn.nodemanager.resource.cpu-vcores NodeManager使用CPU核数，默认8个<br>Resource<br>yarn.nodemanager.pmem-check-enabled 是否开启物理内存检查限制container，默认打开 Manager Container Container<br>yarn.nodemanager.vmem-check-enabled 是否开启虚拟内存检查限制container，默认打开 App Mstr ReduceTask<br>yarn.nodemanager.vmem-pmem-ratio 虚拟内存物理内存比例，默认2.1<br>3）Container相关<br>client NodeManager<br>yarn.scheduler.minimum-allocation-mb 容器最最小内存，默认1G<br>yarn.scheduler.maximum-allocation-mb 容器最最大内存，默认8G<br>Container Container<br>yarn.scheduler.minimum-allocation-vcores 容器最小CPU核数，默认1个<br>MapTask ReduceTask<br>yarn.scheduler.maximum-allocation-vcores 容器最大CPU核数，默认4个<br>3）Yarn中各个调度器特点及生产环境中怎么选择<br>） 调度器重要分为三类：</p>
+<h3 id="1-Hadoop"><a href="#1-Hadoop" class="headerlink" title="1 Hadoop"></a>1 Hadoop</h3><p>、 （容量调度器）和 （公平调度器）。<br>FIFO Capacity Scheduler Fair Sceduler<br>默认的资源调度器是容量调度器；<br>Apache<br>默认的资源调度器是公平调度器。<br>CDH<br>）区别：<br>调度器：支持单队列 、先进先出。生产环境不会用。<br>FIFO<br>容量调度器：支持多队列。队列资源分配，优先选择资源占用率最低的队列分配资源；作业资源分配，<br>按照作业的优先级和提交时间顺序分配资源；容器资源分配，本地原则（同一节点 同一机架 不同节点不<br>/ /<br>同机架）<br>公平调度器：支持多队列，保证每个任务公平享有队列资源。资源不够时可以按照缺额分配。</p>
+<p><strong>Q:</strong> ）在生产环境下怎么选择？<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<p>尚硅谷大数据技术之面试题复习<br>—————————————————————————————<br>大厂：如果对并发度要求比较高，选择公平，要求服务器性能必须 ；<br>OK<br>中小公司，集群服务器资源不太充裕选择容量。</p>
+<p><strong>Q:</strong> ）在生产环境怎么创建队列？<br>（ ）调度器默认就 个 队列，不能满足生产要求。</p>
+<h3 id="1-1-default"><a href="#1-1-default" class="headerlink" title="1 1 default"></a>1 1 default</h3><p>（ ）按照框架： 每个框架的任务放入指定的队列（企业用的不是特别多）</p>
+<h3 id="2-hive-spark-flink"><a href="#2-hive-spark-flink" class="headerlink" title="2 hive /spark/ flink"></a>2 hive /spark/ flink</h3><p>（ ）按照部门：业务部门 、业务部门</p>
+<h3 id="3-1-2"><a href="#3-1-2" class="headerlink" title="3 1 2"></a>3 1 2</h3><p>（ ）按照业务模块：登录注册、购物车、下单</p>
+<p><strong>Q:</strong> ）创建多队列的好处？<br>（ ）因为担心员工不小心，写递归死循环代码，把所有资源全部耗尽。<br>（ ）实现任务的降级使用，特殊时期保证重要的任务队列资源充足。<br>4）Zookeeper非第一次选举机制<br>选举 的规则：<br>Leader<br>（ ） 大的直接胜出</p>
+<h3 id="1-EPOCH"><a href="#1-EPOCH" class="headerlink" title="1 EPOCH"></a>1 EPOCH</h3><p>（ ） 相同，事务 大的胜出</p>
+<h3 id="2-EPOCH-id"><a href="#2-EPOCH-id" class="headerlink" title="2 EPOCH id"></a>2 EPOCH id</h3><p>（ ）事务 相同，服务器 大的胜出</p>
+<h3 id="3-id-id"><a href="#3-id-id" class="headerlink" title="3 id id"></a>3 id id</h3><p>5）Zookeeper符合CAP法则中哪两个<br>：一致性<br>C<br>：可用性<br>A<br>：分区容错性<br>P<br>保证的是 ， 在选举时不能一直对外提供服务，不满足可用性。<br>Zookeeper CP Zookeeper<br>1.3 第 3 次考试（准备 20 分钟，考试 25 分钟）<br>1）解释一下零点漂移产生的原因及解决办法（Flume）<br>）拦截器注意事项<br>（ ） 拦截器：主要是用来判断 是否完整。没有做复杂的清洗操作主要是防止过多的降低</p>
+<h3 id="1-ETL-json"><a href="#1-ETL-json" class="headerlink" title="1 ETL json"></a>1 ETL json</h3><p>传输速率。<br>（ ）时间戳拦截器：主要是解决零点漂移问题<br>）自定义拦截器步骤<br>（ ）实现</p>
+<h3 id="1-Interceptor"><a href="#1-Interceptor" class="headerlink" title="1 Interceptor"></a>1 Interceptor</h3><p>（ ）重写四个方法<br>初始化<br>initialize<br>处理单个<br><code>public</code> Event intercept(Event event) Event<br>处理多个<br><code>public</code> <code>List</code><event> intercept(<code>List</code><event> events) Event<br>方法<br>close<br>（ ）静态内部类，实现</event></event></p>
+<h3 id="3-Interceptor-Builder"><a href="#3-Interceptor-Builder" class="headerlink" title="3 Interceptor.Builder"></a>3 Interceptor.Builder</h3><p>2）Kafka生产者发消息流程<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<p>尚硅谷大数据技术之面试题复习<br>—————————————————————————————<br>发送流程<br>外部数据 达到<br>batch.size或 sender线程 Kafka 集群<br>Kafka Producer 生产者 linger.ms<br>Sender<br>Broker1 Broker2<br>main线程 RecordAccumulator (读取数据)<br>（默认32m） 分区1 分区1<br>Producer <code>Deque</code> NetworkClient<br>send(ProducerRecord) 。。。 Req 2 uest RReeqq 11 uueesstt 发送<br>InFlightRequests，默认每个 分区2 分区2<br>broker节点最多缓存5个请求<br>Interceptors <code>Deque</code><br>拦截器 。。。 Req 2 uest RReeqq 11 uueesstt<br>清理 分区3 分区3<br>Serializer retries<br>序列化器 <code>Deque</code> 是</p>
+<p><strong>Q:</strong> 成功？ 重试？<br>失败 是<br>Partitioner ProducerBatch Selector<br>分区器 （默认16k） 应答acks：<br>• batch.size：只有数据积累到batch.size之后，sender才会发送数据。默认16k • 0：生产者发送过来的数据，不需要等数据落盘应答。<br>• linger.ms：如果数据迟迟未达到batch.size，sender等待linger.ms设置的时间 • 1：生产者发送过来的数据，Leader收到数据后应答。<br>• -1（all）：生产者发送过来的数据，Leader和ISR队列<br>到了之后就会发送数据。单位ms，默认值是0ms，表示没有延迟。 里面的所有节点收齐数据后应答。-1和all等价。<br>Kafka Broker总体工作流程<br>Zookeeper<br>/brokers/topics/first/partitions/0/state<br>/brokers/ids/ [ 0 , 1 , 2 ] controller“brokerid”:0<br>“leader”: 10 ,”isr”:[ 1 , 0 , 2 ]<br>1）broker启动 2<br>说<br>）<br>了<br>co<br>算<br>ntroller谁先注册，谁 5<br>上<br>）<br>传<br>C<br>到<br>on<br>Z<br>tr<br>K<br>oller将节点信息<br>后在zk中注册<br>3）由选举出来的Controller<br>AR：Kafka分区中 Kafka cluster 监听brokers节点变化 9）获取ISR<br>的所有副本统称<br>broker0 11）更新Leader及ISR<br>TTooppiiccAA–PPaarrttiittiioonn00<br>CCoonnttrroolllleerr<br>LFeoalldoewrer 1 8）Controller监听到节点变化<br>7）假设Broker1中<br>Leader挂了 4）Controller决定Leader选举 10）选举新的Leader（在<br>broker1 选举规则：在isr中存活为前提，按 isr中存活为前提，按照<br>发送消息 TopicA-Partition0 照AR中排在前面的优先。例如 AR中排在前面的优先）<br>22 11 Leader Controller ar[1,0,2], isr[1，0，2]，那么leader<br>Kafka 就会按照1，0，2的顺序轮询<br>Producer broker2 Segment .log文件<br>6）其他contorller从zk同<br>应答消息 L （1G） 步相关信息<br>TopicA-Partition0 O .index文件<br>Follower 1 g Segment Controller<br>(1G)<br>3）Kafka的Broker工作流程<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<p>尚硅谷大数据技术之面试题复习<br>—————————————————————————————<br>Kafka Broker总体工作流程<br>Zookeeper<br>/brokers/topics/first/partitions/0/state<br>/brokers/ids/ [ 0 , 1 , 2 ] controller“brokerid”:0<br>“leader”: 10 ,”isr”:[ 1 , 0 , 2 ]<br>1）broker启动 2<br>说<br>）<br>了<br>co<br>算<br>ntroller谁先注册，谁 5<br>上<br>）<br>传<br>C<br>到<br>on<br>Z<br>tr<br>K<br>oller将节点信息<br>后在zk中注册<br>3）由选举出来的Controller<br>AR：Kafka分区中 Kafka cluster 监听brokers节点变化 9）获取ISR<br>的所有副本统称<br>broker0 11）更新Leader及ISR<br>TTooppiiccAA–PPaarrttiittiioonn00<br>CCoonnttrroolllleerr<br>LFeoalldoewrer 1 8）Controller监听到节点变化<br>7）假设Broker1中<br>Leader挂了 4）Controller决定Leader选举 10）选举新的Leader（在<br>broker1 选举规则：在isr中存活为前提，按 isr中存活为前提，按照<br>发送消息 TopicA-Partition0 照AR中排在前面的优先。例如 AR中排在前面的优先）<br>22 11 Leader Controller ar[1,0,2], isr[1，0，2]，那么leader<br>Kafka 就会按照1，0，2的顺序轮询<br>Producer broker2 Segment .log文件<br>6）其他contorller从zk同<br>应答消息 L （1G） 步相关信息<br>TopicA-Partition0 O .index文件<br>Follower 1 g Segment Controller<br>(1G)<br>4）Kafka的消费者组消费流程<br>消费者组详细消费流程<br><code>Consumer</code><br>Kafka cluster<br>broker0 Leader sendFetches group<br>send 发送消费请求<br>TopicA<br>ConsumerNetworkClient <code>Consumer</code><br>-Partition0<br>FetchedRecords<br>Fetch.min.bytes每批次最 从队列中抓取数据<br>broker1Leader 小抓取大小，默认1字节<br>Max.<code>poll</code>.records一次<br>fetch.max.<code>wait</code>.ms一批数据最小值 拉取数据返回消息的<br>TopicA 未达到的超时时间，默认500ms 最大条数，默认500条 <code>Consumer</code><br>-Partition1<br>Fetch.max.bytes每批次最<br>大抓取大小，默认50m<br>broker2 Leader onSuccess<br>completedFetches<br>TopicA （queue） parseRecord <code>Consumer</code><br>-Partition2 （反序列化）<br>completed 。。。 completed<br>Fetch Fetch<br>Interceptors<br>（拦截器）<br>处理数据<br>1.4 第 4 次考试（准备 20 分钟，考试 25 分钟）<br>1）Kafka挂了如何处理<br>（ ）紧急处理方式：先尝试重新启动一下，如果能启动正常，那直接解决。<br>（ ）分析影响：分析数据的一致性（丢数、重复、乱序）。如果数据出现问题，在日志服务器有</p>
+<h3 id="2-30"><a href="#2-30" class="headerlink" title="2 30"></a>2 30</h3><p>天备份<br>（ ）定位问题：查看 日志</p>
+<h3 id="3-Kafka"><a href="#3-Kafka" class="headerlink" title="3 Kafka"></a>3 Kafka</h3><p>（ ）解决问题：如果因为资源问题，如 、 使用率过高等，考虑增加内存、增加 、网络带</p>
+<h3 id="4-OOM-CPU-CPU"><a href="#4-OOM-CPU-CPU" class="headerlink" title="4 OOM CPU CPU"></a>4 OOM CPU CPU</h3><p>宽。<br>2）Kafka怎么保证数据不丢<br>） 角度</p>
+<h3 id="1-producer"><a href="#1-producer" class="headerlink" title="1 producer"></a>1 producer</h3><p>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<p>尚硅谷大数据技术之面试题复习<br>—————————————————————————————<br>，生产者发送过来数据就不管了，可靠性差，效率高；<br>acks=0<br>，生产者发送过来数据 应答，可靠性中等，效率中等；<br>acks=1 Leader<br>，生产者发送过来数据 和 队列里面所有 应答，可靠性高，效率低；<br>acks=-1 Leader ISR Follwer<br>在生产环境中， 很少使用； ，一般用于传输普通日志，允许丢个别数据； ，<br>acks=0 acks=1 acks=-1</p>
+<h2 id="一、般用于传输和钱相关的数据"><a href="#一、般用于传输和钱相关的数据" class="headerlink" title="一、般用于传输和钱相关的数据"></a>一、般用于传输和钱相关的数据</h2><p>参数控制当数据发送失败时候的重试次数，默认为 最大值，当发送失败时候会自动进<br>retries int<br>行重试。生产中如果不希望数据丢失， 参数必须大于 。即使 ，当 为 时候<br>retries 0 ack=-1 retries 0<br>数据也会丢失。<br>） 角度</p>
+<h3 id="2-broker"><a href="#2-broker" class="headerlink" title="2 broker"></a>2 broker</h3><p>副本数大于等于<br>大于等于<br>min.insync.replicas 2<br>3）Kafka数据重复如何处理<br>精确一次 幂等性 事务<br>= +<br>幂等性原理<br>幂等性就是指Producer不论向Broker发送多少次重复数据，Broker端都只会持久化一条，保证了不重复。<br>精确一次（ExactlyOnce）=幂等性+至少一次（ack=-1+ 分区副本数&gt;=2 + ISR最小副本数量&gt;=2）。<br>重复数据的判断标准：具有&lt;PID, Partition, SeqNumber&gt;相同主键的消息提交时，Broker只会持久化一条。其<br>中PID是Kafka每次重启都会分配一个新的；Partition表示分区号；SequenceNumber是单调自增的。<br>所以幂等性只能保证的是在单分区单会话内不重复。<br>Kafka cluster<br>broker0<br>Sequence=0 Sequence=1 Sequence=1<br>world Hello TopicA-Partition0 PID=1000 PID=1000 PID=1000<br>Value=Hello Value=world Value=world<br>Producer1<br>Pid=1000<br>broker1<br>kafka atguigu Sequence=0 Sequence=1<br>TopicA-Partition1 PID=1000 PID=1000<br>Value=atguigu Value=kafka<br>总结，如果要实现全局的精准一次，需要达到以下条件。<br>（ ）生产者角度<br>设置为 （ ）。<br>acks -1 acks=-1<br>幂等性（ ） 事务 。<br>enable.idempotence = true +<br>（ ） 服务端角度</p>
+<h3 id="2-broker-1"><a href="#2-broker-1" class="headerlink" title="2 broker"></a>2 broker</h3><p>分区副本大于等于 （ ）。</p>
+<h3 id="2-–replication-factor-2"><a href="#2-–replication-factor-2" class="headerlink" title="2 –replication-factor 2"></a>2 –replication-factor 2</h3><p>里应答的最小副本数量大于等于 （ ）。<br>ISR 2 min.insync.replicas = 2<br>（ ）消费者<br>事务 手动提交 （ ）。</p>
+<ul>
+<li>offset enable.auto.commit = false<br>消费者输出的目的地必须支持事务（ 、 ）。<br><code>MySQL</code> Kafka<br>4）Kafka数据积压如何处理<br>（ ）如果是 消费能力不足，则可以考虑增加 的分区数，并且同时提升消费组的消费者</li>
+</ul>
+<h3 id="1-Kafka-Topic"><a href="#1-Kafka-Topic" class="headerlink" title="1 Kafka Topic"></a>1 Kafka Topic</h3><p>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<p>尚硅谷大数据技术之面试题复习<br>—————————————————————————————<br>数量，消费者数 分区数。（两者缺一不可）<br>=<br>增加分区数通过 命令完成<br>alter<br>[atguigu@hadoop102 kafka]$ bin/kafka-topics.sh –bootstrap-server<br>hadoop102:9092 –alter –topic first –partitions 3<br>（ ）如果是下游的数据处理不及时：提高每批次拉取的数量。批次拉取数据过少（拉取数据 处理时</p>
+<h3 id="2"><a href="#2" class="headerlink" title="2 /"></a>2 /</h3><p>间 生产速度），使处理的数据小于生产的数据，也会造成数据积压。<br>&lt;<br>参数名称 描述<br>fetch.max.bytes 默认Default: 52428800（50 m）。消费者获取服务器端一批消息最大的字节<br>数。如果服务器端一批次的数据大于该值（50m）仍然可以拉取回来这批数据，<br>因此，这不是一个绝对最大值。一批次的大小受message.max.bytes （broker<br>config）or max.message.bytes （topic config）影响。<br>max.<code>poll</code>.records 一次poll拉取数据返回消息的最大条数，默认是500条<br>5）Kafka如何保证数据有序or 怎么解决乱序问题<br>（1）Kafka 最多只保证单分区内的消息是有序的，所以如果要保证业务全局严格有序，<br>就要设置 Topic 为单分区。<br>生产经验——如何保证数据有序<br>Kafka cluster 单分区内，可保证数据有序，但也不是绝对<br>broker0 的。例如，某批次的数据发送失败后，进行了<br>TopicA-partition0-leader 重试，就可能出现后边的批次先于它到达的情<br>0 1 2 3 4 5 况。<br>broker1<br>TopicA-partition1-leader<br>Producer <code>Consumer</code></p>
+<h3 id="0-1-2-3"><a href="#0-1-2-3" class="headerlink" title="0 1 2 3"></a>0 1 2 3</h3><p>broker2<br>TopicA-partition2-leader</p>
+<h3 id="0-1-2-3-4"><a href="#0-1-2-3-4" class="headerlink" title="0 1 2 3 4"></a>0 1 2 3 4</h3><p><strong>Q:</strong> （2）如何保证单分区内数据有序？<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<p>尚硅谷大数据技术之面试题复习<br>—————————————————————————————<br>生产经验——如何保证单分区数据有序<br>方案一：<br>禁止重试，需设置以下参数<br>设置retries等于0<br>说明：数据出现乱序的根本原因是，失败重试，关闭重试，则可保证数据是有序的。但是这样做，可能会<br>导致数据的丢失。<br>方案二：<br>启用幂等，需设置以下参数<br>设置enable.idempotence=true，启用幂等<br>设置max.in.flight.requests.per.connection，1.0.X版本前，需设置为1，1.0.X之后，小于等于5<br>设置retries，保证其大于0<br>设置acks，保证其为all<br>注：幂等机制保证数据有序的原理如下：<br>生产经验——如何保证数据有序</p>
+<h3 id="2-Response"><a href="#2-Response" class="headerlink" title="2.Response"></a>2.Response</h3><h3 id="3-对Record-Accumulator中P0"><a href="#3-对Record-Accumulator中P0" class="headerlink" title="3.对Record Accumulator中P0"></a>3.对Record Accumulator中P0</h3><p>分区队列中的batch重新排序</p>
+<h3 id="7-重新发送-最近一次写入P0分区的batch的SeqNum：p0-9"><a href="#7-重新发送-最近一次写入P0分区的batch的SeqNum：p0-9" class="headerlink" title="7.重新发送 最近一次写入P0分区的batch的SeqNum：p0-9"></a>7.重新发送 最近一次写入P0分区的batch的SeqNum：p0-9</h3><h3 id="1-发生故障，-Broker-0"><a href="#1-发生故障，-Broker-0" class="headerlink" title="1.发生故障， Broker-0"></a>1.发生故障， Broker-0</h3><p>Producer Request Request Request 导致写入失败<br>batch-10 batch-11 batch-10 batch-9 batch-8 batch-7 batch-6<br>4.当前批次的SeqNum比最新的SeqNum大2，<br>证明顺序发生混乱，拒绝写入</p>
+<h3 id="6-对Record-Accumulator中P0分"><a href="#6-对Record-Accumulator中P0分" class="headerlink" title="6.对Record Accumulator中P0分"></a>6.对Record Accumulator中P0分</h3><p>区队列中的batch重新排序</p>
+<h3 id="5-Response"><a href="#5-Response" class="headerlink" title="5.Response"></a>5.Response</h3><p>1.5 第 5 次考试（准备 10 分钟，考试 25 分钟）<br>1）Kafka怎么做到的高效读写<br>） 本身是分布式集群，可以采用分区技术，并行度高</p>
+<h3 id="1-Kafka"><a href="#1-Kafka" class="headerlink" title="1 Kafka"></a>1 Kafka</h3><p>）读数据采用稀疏索引，可以快速定位要消费的数据<br>）顺序写磁盘<br>的 生产数据，要写入到 文件中，写的过程是一直追加到文件末端，为顺序写。<br>Kafka producer log<br>官网有数据表明，同样的磁盘，顺序写能到 ，而随机写只有 。这与磁盘的机械机构有关，<br>600M/s 100K/s<br>顺序写之所以快，是因为其省去了大量磁头寻址的时间。<br>）页缓存 零拷贝技术</p>
+<h3 id="4"><a href="#4" class="headerlink" title="4 +"></a>4 +</h3><p>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<p>尚硅谷大数据技术之面试题复习<br>—————————————————————————————<br>页缓存+ 零拷贝技术<br>零拷贝：Kafka的数据加工处理操作交由Kafka生产者和Kafka消费者处理。Kafka Broker应用层不关心存储的数据，所以就不用<br>走应用层，传输效率高。<br>PageCache页缓存：Kafka重度依赖底层操作系统提供的PageCache功能。当上层有写操作时，操作系统只是将数据写入<br>PageCache。当读操作发生时，先从PageCache中查找，如果找不到，再去磁盘中读取。实际上PageCache是把尽可能多的空闲内存<br>都当做了磁盘缓存来使用。<br>非零拷贝工作流程（假设） 零拷贝工作流程（实际）<br>kafka kafka<br>Application<br>Cache<br>生产者 kernel space 消费者 生产者 kernel space 消费者<br>Page Cache Page Cache<br>页缓存 Socket Cache 页缓存<br><code>File</code> 网卡（NIC） <code>File</code> 网卡（NIC）<br>2）Kafka如何提高吞吐量<br>）提高生产者的吞吐量<br>（ ） ：发送消息的缓冲区大小，默认值是 ，可以增加到 。</p>
+<h3 id="1-buffer-memory-32m-64m"><a href="#1-buffer-memory-32m-64m" class="headerlink" title="1 buffer.memory 32m 64m"></a>1 buffer.memory 32m 64m</h3><p>（ ） ：默认是 。如果 设置太小，会导致频繁网络请求，吞吐量下降；如果</p>
+<h3 id="2-batch-size-16k-batch"><a href="#2-batch-size-16k-batch" class="headerlink" title="2 batch.size 16k batch"></a>2 batch.size 16k batch</h3><p>太大，会导致一条消息需要等待很久才能被发送出去，增加网络延时。<br>batch<br>（ ） ，这个值默认是 ，意思就是消息必须立即被发送。一般设置一个 毫秒。如</p>
+<h3 id="3-linger-ms-0-5-100"><a href="#3-linger-ms-0-5-100" class="headerlink" title="3 linger.ms 0 5-100"></a>3 linger.ms 0 5-100</h3><p>果 设置的太小，会导致频繁网络请求，吞吐量下降；如果 太长，会导致一条消<br>linger.ms linger.ms<br>息需要等待很久才能被发送出去，增加网络延时。<br>（ ） ：默认是 ，不压缩，但是也可以使用 压缩，效率还是不错的，</p>
+<h3 id="4-compression-type-none-lz4"><a href="#4-compression-type-none-lz4" class="headerlink" title="4 compression.type none lz4"></a>4 compression.type none lz4</h3><p>压缩之后可以减小数据量，提升吞吐量，但是会加大 端的 开销。<br>producer CPU<br>）增加分区<br>）提高消费者的吞吐量<br>（ ）调整 大小，默认是 。</p>
+<h3 id="1-fetch-max-bytes-50m"><a href="#1-fetch-max-bytes-50m" class="headerlink" title="1 fetch.max.bytes 50m"></a>1 fetch.max.bytes 50m</h3><p>（ ）调整 大小，默认是 条。</p>
+<h3 id="2-max-poll-records-500"><a href="#2-max-poll-records-500" class="headerlink" title="2 max.poll.records 500"></a>2 max.poll.records 500</h3><p>3）消费策略（Range、RoundRobin、粘性）<br>生产端分区分配<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<p>尚硅谷大数据技术之面试题复习<br>—————————————————————————————<br>Kafka 原则<br>在IDEA中全局查找（ctrl+n）ProducerRecord类，在类中可以看到如下构造方法：<br><code>public</code> ProducerRecord(<code>String</code> topic, <code>Integer</code> partition, <code>Long</code> timestamp, K key, V value, <code>Iterable</code></p><header> headers) {<br>… …<br>}<br><code>public</code> ProducerRecord(<code>String</code> topic, <code>Integer</code> partition, <code>Long</code> timestamp, K key, V value) {<br>（1）指明partition的情况下，直<br>… … 接将指明的值作为partition值；<br>} 例如partition=0，所有数据写入<br><code>public</code> ProducerRecord(<code>String</code> topic, <code>Integer</code> partition, K key, V value, <code>Iterable</code><header> headers) { 分区0<br>… …<br>}<br><code>public</code> ProducerRecord(<code>String</code> topic, <code>Integer</code> partition, K key, V value) {<br>… …<br>}<br><code>public</code> ProducerRecord(<code>String</code> topic, K key, V value) {<br>… … （2）没有指明partition值但有key的情况下，将key的hash值与topic的<br>}<br><code>public</code> ProducerRecord(<code>String</code> topic, V value) { partition数进行取余得到partition值；<br>… …<br>}<br>例如：key1的hash值=5， key2的hash值=6 ，topic的partition数=2，那<br>么key1对应的value1写入1号分区，key2对应的value2写入0号分区。<br>（3）既没有partition值又没有key值的情况下，Kafka采用Sticky Partition（黏性分区器），会随机选择一个分区，并尽可能一直<br>使用该分区，待该分区的batch已满或者已完成，Kafka再随机一个分区进行使用（和上一次的分区不同）。<br>例如：第一次随机选择0号分区，等0号分区当前批次满了（默认16k）或者linger.ms设置的时间到，Kafka再随机一个分区进<br>行使用（如果还是0会继续随机）。<br>消费端分区分配<br>分区分配策略之Range<br>Range 是对每个topic 而言的。 Kafka cluster<br>首先对同一个topic 里面的分区按照序号进行排序，并 broker-0<br>对消费者按照字母顺序进行排序。 Partition-0<br>0，1，2<br>假如现在有7 个分区，3 个消费者，排序后的分区将会 broker-1<br>是0,1,2,3,4,5,6；消费者排序完之后将会是C0,C1,C2。 Partition-1 Consumer0<br>通过partitions数/consumer数来决定每个消费者应该 broker-2<br>消费几个分区。如果除不尽，那么前面几个消费者将会多 Partition-2<br>消费1 个分区。 broker-3<br>例如，7/3 = 2 余1 ，除不尽，那么消费者C0 便会多 3，4<br>Partition-3<br>消费1 个分区。8/3=2余2，除不尽，那么C0和C1分别多<br>broker-4<br>Consumer1<br>消费一个。<br>Partition-4<br>注意：如果只是针对1 个topic 而言，C0消费者多消费1<br>broker-5<br>个分区影响不是很大。但是如果有N 多个topic，那么针对每 5，6<br>Partition-5<br>个topic，消费者C0都将多消费1 个分区，topic越多，C0消<br>broker-6 Consumer2<br>费的分区会比其他消费者明显多消费N 个分区。<br>Partition-6<br>容易产生数据倾斜！<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</header></header><p></p>
+<p>尚硅谷大数据技术之面试题复习<br>—————————————————————————————<br>分区分配策略之RoundRobin<br>RoundRobin针对集群中所有Topic而言。 Kafka cluster<br>broker-0<br>RoundRobin轮询分区策略，是把所有的partition 和所有的 Partition-0<br>0，3，6<br>consumer 都列出来，然后按照hashcode进行排序，最后 broker-1<br>通过轮询算法来分配partition 给到各个消费者。 Partition-1 Consumer1<br>broker-2<br>Partition-2<br>broker-3 1，4<br>Partition-3 Consumer2<br>broker-4<br>Partition-4<br>broker-5<br>2，5<br>Partition-5<br>broker-6 Consumer3<br>Partition-6<br>1.6 第 6 次考试（准备 20 分钟，考试 25 分钟）<br>1）Hive优化<br>）</p>
+<h3 id="1-MapJoin"><a href="#1-MapJoin" class="headerlink" title="1 MapJoin"></a>1 MapJoin</h3><p>用 把小表全部加载到内存在 端进行 ，避免 处理。<br>MapJoin map join reducer<br>）行列过滤<br>列处理：在 中，只拿需要的列，如果有，尽量使用分区过滤，少用 。<br>SELECT SELECT *<br>行处理：在分区剪裁中，当使用外关联时，如果将副表的过滤条件写在 后面，那么就会先全<br>Where<br>表关联，之后再过滤。<br>）列式存储<br>）采用分区技术<br>）合理设置 数</p>
+<h3 id="5-Map"><a href="#5-Map" class="headerlink" title="5 Map"></a>5 Map</h3><p>指的是数据的最小分割单元大小； 的默认值是<br>mapred.min.split.size: min 1B<br>指的是数据的最大分割单元大小； 的默认值是<br>mapred.max.split.size: max 256MB<br>通过调整 可以起到调整 数的作用，减小 可以增加 数，增大 可以减少 数。<br>max map max map max map<br>需要提醒的是，直接调整 这个参数是没有效果的。<br>mapred.map.tasks<br>）合理设置 数</p>
+<h3 id="6-Reduce"><a href="#6-Reduce" class="headerlink" title="6 Reduce"></a>6 Reduce</h3><p>个数并不是越多越好<br>Reduce<br>（ ）过多的启动和初始化 也会消耗时间和资源；</p>
+<h3 id="1-Reduce"><a href="#1-Reduce" class="headerlink" title="1 Reduce"></a>1 Reduce</h3><p>（ ）另外，有多少个 ，就会有多少个输出文件，如果生成了很多个小文件，那么如果这些小</p>
+<h3 id="2-Reduce"><a href="#2-Reduce" class="headerlink" title="2 Reduce"></a>2 Reduce</h3><p>文件作为下一个任务的输入，则也会出现小文件过多的问题；<br>在设置 个数的时候也需要考虑这两个原则：处理大数据量利用合适的 数；使单个<br>Reduce Reduce<br>任务处理数据量大小要合适；<br>Reduce</p>
+<p><strong>Q:</strong> ）小文件如何产生的？<br>（ ）动态分区插入数据，产生大量的小文件，从而导致 数量剧增；</p>
+<h3 id="1-map"><a href="#1-map" class="headerlink" title="1 map"></a>1 map</h3><p>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<p>尚硅谷大数据技术之面试题复习<br>—————————————————————————————<br>（ ） 数量越多，小文件也越多（ 的个数和输出文件是对应的）；</p>
+<h3 id="2-reduce-reduce"><a href="#2-reduce-reduce" class="headerlink" title="2 reduce reduce"></a>2 reduce reduce</h3><p>（ ）数据源本身就包含大量的小文件。<br>）小文件解决方案<br>（ ）在 执行前合并小文件，减少 数： 具有对小文件进行合</p>
+<h3 id="1-Map-Map-CombineHiveInputFormat"><a href="#1-Map-Map-CombineHiveInputFormat" class="headerlink" title="1 Map Map CombineHiveInputFormat"></a>1 Map Map CombineHiveInputFormat</h3><p>并的功能（系统默认的格式）。 没有对小文件合并功能。<br>HiveInputFormat<br>（ ）</p>
+<h3 id="2-merge"><a href="#2-merge" class="headerlink" title="2 merge"></a>2 merge</h3><p>输出合并小文件<br>//<br>默认 ，在 任务结束时合并小文件<br>SET hive.merge.mapfiles = true; – true map-only<br>默认 ，在 任务结束时合并<br>SET hive.merge.mapredfiles = true; – false map-reduce<br>小文件<br>默认<br>SET hive.merge.size.per.task = 268435456; – 256M<br>当输出文件的平均大小小于<br>SET hive.merge.smallfiles.avgsize = 16777216; – 16m<br>该值时，启动一个独立的 任务进行文件<br>map-reduce merge<br>（ ）开启 重用</p>
+<h3 id="3-JVM"><a href="#3-JVM" class="headerlink" title="3 JVM"></a>3 JVM</h3><p>set mapreduce.job.jvm.numtasks=10<br>）开启 端 （不影响最终业务逻辑）</p>
+<h3 id="9-map-combiner"><a href="#9-map-combiner" class="headerlink" title="9 map combiner"></a>9 map combiner</h3><p>；<br>set hive.map.aggr=true<br>）压缩（选择快的）<br>设置 端输出、中间结果压缩。（不完全是解决数据倾斜的问题，但是减少了 读写和网络传输，<br>map IO<br>能提高很多效率）<br>启用中间数据压缩<br>set hive.exec.compress.intermediate=true –<br>启用最终数据压缩<br>set mapreduce.map.output.compress=true –<br>… 设置压缩方式<br>set mapreduce.map.outout.compress.codec= ; –<br>）采用 引擎或者 引擎</p>
+<h3 id="11-tez-spark"><a href="#11-tez-spark" class="headerlink" title="11 tez spark"></a>11 tez spark</h3><p>2）Hive数据倾斜<br>（ ）不同数据类型关联产生数据倾斜<br>情形：比如用户表中 字段为 ， 表中 字段 类型。当按照<br>user_id int log user_id string user_id<br>进行两个表的 操作时。<br>Join<br>解决方式：把数字类型转换成字符串类型<br>（ ）控制空值分布<br>在生产环境经常会用大量空值数据进入到一个 中去，导致数据倾斜。<br>reduce<br>解决办法：自定义分区，将为空的 转变为字符串加随机数或纯随机数，将因空值而造成倾斜的数<br>key<br>据分不到多个 。<br>Reducer<br>（ ）单表</p>
+<h3 id="3-group-by"><a href="#3-group-by" class="headerlink" title="3 group by"></a>3 group by</h3><p>单<br>key<br>加随机数，双重聚合<br>-<br>配置参数，双重聚合</p>
+<ul>
+<li>set hive.groupby.skewindata = true;<br>过滤出这个 单独处理</li>
+<li>Key<br>多<br>key<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</li>
+</ul>
+<p>尚硅谷大数据技术之面试题复习<br>—————————————————————————————<br>增加 个数，一定程度上解决问题</p>
+<ul>
+<li>Reducer<br>自定义分区器</li>
+<li>加随机数，双重聚合</li>
+<li>配置参数，双重聚合</li>
+<li>set hive.groupby.skewindata = true;<br>（ ） 关联字段</li>
+</ul>
+<h3 id="4-JOIN-ON"><a href="#4-JOIN-ON" class="headerlink" title="4 JOIN ON"></a>4 JOIN ON</h3><p>大表 小表 避免了<br>JOIN mapJoin Reducer<br>大表 大表 表加随机数 表扩容 聚合<br>JOIN A B<br>3）怎么将Hive SQL转换为可以执行的MR<br>抽象语法树<br>TOK_QUERY<br>TOK_FROM TOK_INSERT<br><code>select</code><br>TOK_TABNAME TOK_DESTINATION TOK_SELECT TOK_GROUPBY<br>count(*)<br>from test<br>group by id; test TOK_DIR TOK_SELEXPR TOK_TABLE_OR_COL<br>TOK_TMP_FILE TOK_FUNCTIONSTAR id<br>查询语句 抽象语法树 count<br>逻辑计划与物理计划<br><code>Map</code> Reduce Task<br>TableScan <code>Map</code> Operator Tree<br>TableScan<br>Select Operator<br>Select Operator<br>逻 物<br>辑 理<br>Group By Operator Group By Operator<br>计 计<br>划 划<br>抽象语法树 及 Reduce Output Operator 及 Reduce Output Operator<br>其 其<br>优 Group By Operator 优 Reduce Operator Tree<br>化 化<br>Group By Operator<br>Select Operator<br>Select Operator<br><code>File</code> Output Operator <code>File</code> Output Operator<br>（1）解析器（SQLParser）：将SQL字符串转换成抽象语法树（AST）<br>（2）语义分析器（Semantic Analyzer）：将AST进一步抽象为QueryBlock（可以理解<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<p>尚硅谷大数据技术之面试题复习<br>—————————————————————————————<br>为一个子查询划分成一个QueryBlock）<br>（2）逻辑计划生成器（Logical Plan Gen）：由QueryBlock生成逻辑计划<br>（3）逻辑优化器（Logical Optimizer）：对逻辑计划进行优化<br>（4）物理计划生成器（Physical Plan Gen）：根据优化后的逻辑计划生成物理计划<br>（5）物理优化器（Physical Optimizer）：对物理计划进行优化<br>（6）执行器（Execution）：执行该计划，得到查询结果并返回给客户端<br>1.7 第 7 次考试（准备 20 分钟，考试 25 分钟）<br>1）MaxWell底层原理及为什么选择<br>主从复制<br><code>MySQL</code><br>支持断点续传。<br>全量同步。<br>自动根据库名和表名把数据发往 的对应主题。<br>kafka<br>2）MaxWell怎么产生的重复数据，如何解决<br>同步历史数据时， 引导服务需要依赖 进程。<br>bootstrap Maxwell<br>同时 也在监听。<br>binlog<br>如果同步历史数据过程中，源表的数据发生改变：<br>》 会同步到<br>= bootstrap<br>》 监听 也会同步到<br>= maxwell binlog<br>数据产生重复，只能保证至少一致性<br>解决： 根据 过滤，<br>type<br>同步的 为<br>bootstrap type bootstrap-insert<br>同步的为<br>binlog insert<br>3）DataX在使用过程中遇到哪些问题，怎么解决的<br>空置处理<br>） （ ） （ ） 要求 建表语句<br>1 <code>MySQL</code> null =&gt; hive \N hive<br>解决该问题的方案有两个：<br>（ ）修改 的源码，增加自定义 值存储格式的逻辑，可参考</p>
+<h3 id="1-DataX-HDFS-Writer-null"><a href="#1-DataX-HDFS-Writer-null" class="headerlink" title="1 DataX HDFS Writer null"></a>1 DataX HDFS Writer null</h3><p>。<br><a href="https://blog.csdn.net/u010834071/article/details/105506580" target="_blank" rel="noopener">https://blog.csdn.net/u010834071/article/details/105506580</a><br>（ ）在 中建表时指定 值存储格式为空字符串（ ），例如：</p>
+<h3 id="2-Hive-null-‘’"><a href="#2-Hive-null-‘’" class="headerlink" title="2 Hive null ‘’"></a>2 Hive null ‘’</h3><p>） （ ） （ ）<br>2 hive \N =&gt; mysql null<br>4）Spark 转换算子 10个<br>）单</p>
+<h3 id="1-Value"><a href="#1-Value" class="headerlink" title="1 Value"></a>1 Value</h3><p>（ ）</p>
+<h3 id="1-map-1"><a href="#1-map-1" class="headerlink" title="1 map"></a>1 map</h3><p>（ ）</p>
+<h3 id="2-mapPartitions"><a href="#2-mapPartitions" class="headerlink" title="2 mapPartitions"></a>2 mapPartitions</h3><p>（ ）</p>
+<h3 id="3-mapPartitionsWithIndex"><a href="#3-mapPartitionsWithIndex" class="headerlink" title="3 mapPartitionsWithIndex"></a>3 mapPartitionsWithIndex</h3><p>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<p>尚硅谷大数据技术之面试题复习<br>—————————————————————————————<br>（ ）</p>
+<h3 id="4-flatMap"><a href="#4-flatMap" class="headerlink" title="4 flatMap"></a>4 flatMap</h3><p>（ ）</p>
+<h3 id="5-glom"><a href="#5-glom" class="headerlink" title="5 glom"></a>5 glom</h3><p>（ ）</p>
+<h3 id="6-groupBy"><a href="#6-groupBy" class="headerlink" title="6 groupBy"></a>6 groupBy</h3><p>（ ）</p>
+<h3 id="7-filter"><a href="#7-filter" class="headerlink" title="7 filter"></a>7 filter</h3><p>（ ）</p>
+<h3 id="8-sample"><a href="#8-sample" class="headerlink" title="8 sample"></a>8 sample</h3><p>（ ）</p>
+<h3 id="9-distinct"><a href="#9-distinct" class="headerlink" title="9 distinct"></a>9 distinct</h3><p>（ ）</p>
+<h3 id="10-coalesce"><a href="#10-coalesce" class="headerlink" title="10 coalesce"></a>10 coalesce</h3><p>（ ）</p>
+<h3 id="11-repartition"><a href="#11-repartition" class="headerlink" title="11 repartition"></a>11 repartition</h3><p>（ ）</p>
+<h3 id="12-sortBy"><a href="#12-sortBy" class="headerlink" title="12 sortBy"></a>12 sortBy</h3><p>（ ）</p>
+<h3 id="13-pipe"><a href="#13-pipe" class="headerlink" title="13 pipe"></a>13 pipe</h3><p>）双</p>
+<h3 id="2-vlaue"><a href="#2-vlaue" class="headerlink" title="2 vlaue"></a>2 vlaue</h3><p>（ ）</p>
+<h3 id="1-intersection"><a href="#1-intersection" class="headerlink" title="1 intersection"></a>1 intersection</h3><p>（ ）</p>
+<h3 id="2-union"><a href="#2-union" class="headerlink" title="2 union"></a>2 union</h3><p>（ ）</p>
+<h3 id="3-subtract"><a href="#3-subtract" class="headerlink" title="3 subtract"></a>3 subtract</h3><p>（ ）</p>
+<h3 id="4-zip"><a href="#4-zip" class="headerlink" title="4 zip"></a>4 zip</h3><p>）</p>
+<h3 id="3-Key-Value"><a href="#3-Key-Value" class="headerlink" title="3 Key-Value"></a>3 Key-Value</h3><p>（ ）</p>
+<h3 id="1-partitionBy"><a href="#1-partitionBy" class="headerlink" title="1 partitionBy"></a>1 partitionBy</h3><p>（ ）</p>
+<h3 id="2-reduceByKey"><a href="#2-reduceByKey" class="headerlink" title="2 reduceByKey"></a>2 reduceByKey</h3><p>（ ）</p>
+<h3 id="3-groupByKey"><a href="#3-groupByKey" class="headerlink" title="3 groupByKey"></a>3 groupByKey</h3><p>（ ）</p>
+<h3 id="4-aggregateByKey"><a href="#4-aggregateByKey" class="headerlink" title="4 aggregateByKey"></a>4 aggregateByKey</h3><p>（ ）</p>
+<h3 id="5-foldByKey"><a href="#5-foldByKey" class="headerlink" title="5 foldByKey"></a>5 foldByKey</h3><p>（ ）</p>
+<h3 id="6-combineByKey"><a href="#6-combineByKey" class="headerlink" title="6 combineByKey"></a>6 combineByKey</h3><p>（ ）</p>
+<h3 id="7-sortByKey"><a href="#7-sortByKey" class="headerlink" title="7 sortByKey"></a>7 sortByKey</h3><p>（ ）</p>
+<h3 id="8-mapValues"><a href="#8-mapValues" class="headerlink" title="8 mapValues"></a>8 mapValues</h3><p>5）Spark 行动算子 5个<br>（ ）</p>
+<h3 id="1-reduce"><a href="#1-reduce" class="headerlink" title="1 reduce"></a>1 reduce</h3><p>（ ）</p>
+<h3 id="2-collect"><a href="#2-collect" class="headerlink" title="2 collect"></a>2 collect</h3><p>（ ）</p>
+<h3 id="3-count"><a href="#3-count" class="headerlink" title="3 count"></a>3 count</h3><p>（ ）</p>
+<h3 id="4-first"><a href="#4-first" class="headerlink" title="4 first"></a>4 first</h3><p>（ ）</p>
+<h3 id="5-take"><a href="#5-take" class="headerlink" title="5 take"></a>5 take</h3><p>（ ）</p>
+<h3 id="6-takeOrdered"><a href="#6-takeOrdered" class="headerlink" title="6 takeOrdered"></a>6 takeOrdered</h3><p>（ ）</p>
+<h3 id="7-aggregate"><a href="#7-aggregate" class="headerlink" title="7 aggregate"></a>7 aggregate</h3><p>（ ）</p>
+<h3 id="8-fold"><a href="#8-fold" class="headerlink" title="8 fold"></a>8 fold</h3><p>（ ）</p>
+<h3 id="9-countByKey"><a href="#9-countByKey" class="headerlink" title="9 countByKey"></a>9 countByKey</h3><p>（ ）</p>
+<h3 id="10-save"><a href="#10-save" class="headerlink" title="10 save"></a>10 save</h3><p>（ ）</p>
+<h3 id="11-foreach"><a href="#11-foreach" class="headerlink" title="11 foreach"></a>11 foreach</h3><p>6）Spark任务怎么切分的<br>（ ） ：初始化一个 即生成一个 ；</p>
+<h3 id="1-Application-SparkContext-Application"><a href="#1-Application-SparkContext-Application" class="headerlink" title="1 Application SparkContext Application"></a>1 Application SparkContext Application</h3><p>（ ） ：一个 算子就会生成一个 ；</p>
+<h3 id="2-Job-Action-Job"><a href="#2-Job-Action-Job" class="headerlink" title="2 Job Action Job"></a>2 Job Action Job</h3><p>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<p>尚硅谷大数据技术之面试题复习<br>—————————————————————————————<br>（ ） ： 等于宽依赖的个数加 ；</p>
+<h3 id="3-Stage-Stage-1"><a href="#3-Stage-Stage-1" class="headerlink" title="3 Stage Stage 1"></a>3 Stage Stage 1</h3><p>（ ） ：一个 阶段中，最后一个 的分区个数就是 的个数。</p>
+<h3 id="4-Task-Stage-RDD-Task"><a href="#4-Task-Stage-RDD-Task" class="headerlink" title="4 Task Stage RDD Task"></a>4 Task Stage RDD Task</h3><p>Stage任务划分<br>def main(args: Array[<code>String</code>]): Unit = { 1.执行main方法-&gt;初始化sc-&gt;执行到Action算子1<br>v v a a l l s r c e : s u S l p t a R r D k D C o = n t s e c x . t t e = x t n F e i w l e S (“ pa i r n k pu Co t” nt ) e . x fl t( a n tM ew a p S (_ pa . r s k pl Co it nf ( ( “ ) . “ s ) e ) t . A m p a p p N ( a ( m _ e , ( 1) “S ). pa re rk du Co ce re By Te Ke st y( “ _ ) + .s _) etMaster(“local[*]”)) 2.DAGScheduler对job0切分Stage，Stage产生Task<br>resultRDD.collect()<br>resultRDD.saveAsTextFile(“output”)<br>}<br>1）Application = SparkContext个数<br>DAGScheduler<br>ShuffleMapStage 查找宽依赖 查找宽依赖 查找宽依赖 ResultStage<br>RDD(textfile) RDD(flatMap) RDD(map) Shuffle RDD(reduceByKey)<br>p0 p0 A p0 A,1 A,1 A,1 p0 Job0<br>A B B B,1 A,1 A,1<br>collect<br>file<br>p1 p1 A p1 A,1 B,1 B,1 p1<br>3 过 . T T a a s s k k S S c e h t获 ed 取 ule jo r通 b0 A B B B,1 B,1 B,1 2）Job个数<br>的 列 所 化 有 发 T 往 as E k x , e 然 cu 后 to 序 r Stage0 write read Stage1 = 子 A 个 ct 数 ion算<br>3）Job0的Stage个数= 宽依赖的个数+ 1 = 1 + 1<br>hadoop102<br>4）Job0的Task个数= 一个Stage阶段中，最后一个RDD的分区个数就是Task的个数= 2 + 2 Job1<br>Executor<br>DAGScheduler 所有操作同上 saveAs<br>TextFie<br>1.8 第 8 次考试（准备 20 分钟，考试 25 分钟）<br>1）Spark提交流程<br>YarnCluster模式提交流程<br>bin/spark-submit \ NodeManager<br>–class WordCount <br>–master yarn \ ApplicationMaster 3. AM根据参数，启动Driver线程并初<br>–deploy-mode cluster \ 始化SparkContext<br>./WordCount.jar \ Driver 6.1 launcherPool<br>./input ./output 2 启动ApplicationMaster YarnRM<br>1.1 脚本启动执行 R M e a s n o a u g rc e e r Client 3 3 . . 1 2 执 初 行 始 代 化 码 SC 6.2 ExecutorRunnalbe<br>(NMClient)<br>SparkSubmit 4.注册AM,申请资源 通信模块RPC<br>Spark<br>S<br>.<br>u<br>b<br>解<br>m<br>析<br>itA<br>参<br>rgu<br>数<br>ments</p>
+<h3 id="5-返回资源可用列表-6-4-onStart"><a href="#5-返回资源可用列表-6-4-onStart" class="headerlink" title="5.返回资源可用列表 6.4 onStart"></a>5.返回资源可用列表 6.4 onStart</h3><h3 id="10-任务切分"><a href="#10-任务切分" class="headerlink" title="10 任务切分"></a>10 任务切分</h3><p>–master –class</p>
+<h3 id="7-注册Executor-11-分配任务"><a href="#7-注册Executor-11-分配任务" class="headerlink" title="7. 注册Executor 11.分配任务"></a>7. 注册Executor 11.分配任务</h3><h3 id="1-5-提交任务信息"><a href="#1-5-提交任务信息" class="headerlink" title="1.5 提交任务信息"></a>1.5 提交任务信息</h3><p>Yarn 1 C .3 lu 创 ste 建 rA 客 pp 户 lic 端 ation submitApplication 1 启 0 动 . 告 成 知 功 Executor 8. 注册成功 6 b . in 3 / 启 jav 动 a Executor<br>CoarseGrainedExecutorBackend<br>Client NodeManager<br>yarnClient<br>CoarseGrainedExecutorBackend</p>
+<h3 id="1-令-4-封装提交参数和命-（Execu-9-to-创-r）-建Executor计算对象-通信模块RPC-6-4-onStart"><a href="#1-令-4-封装提交参数和命-（Execu-9-to-创-r）-建Executor计算对象-通信模块RPC-6-4-onStart" class="headerlink" title="1 令 .4 封装提交参数和命 （Execu 9 to . 创 r） 建Executor计算对象 通信模块RPC 6.4 onStart"></a>1 令 .4 封装提交参数和命 （Execu 9 to . 创 r） 建Executor计算对象 通信模块RPC 6.4 onStart</h3><p>bin/java Executor<br>ApplicationMaster ThreadPool<br>–jar … –class … <code>Thread</code> <code>Thread</code> <code>Thread</code><br>Task Task Task<br>2）SortShuffle原理<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<p>尚硅谷大数据技术之面试题复习<br>—————————————————————————————<br>SortShuffle流程<br>Executor 1核CPU Executor 1核CPU<br>Task Task Task Task<br>优势：减少了小文件<br>buffer buffer Buffer buffer buffer Buffer<br>默认5M,超过会尝试增加到2*当前使用内存<br>输出流缓冲 如果申请不到内存，则进行溢写，默认每批次1万条<br>默认32k (spark.shuffle.spill.batchSize)<br>temp temp temp <code>File</code> Temp文件内多个分区 temp temp temp <code>File</code><br>temp temp temp temp temp temp<br>Index Index<br>HDFS<br>分区0 分区1 分区2 文件内容有序 分区0 分区1 分区2<br>buffer 默认48m(spark.reducer.maxSizeInFlight) buffer buffer<br>ReduceTask ReduceTask ReduceTask<br>3）统一内存模型<br>1.9 第 9 次考试（准备 20 分钟，考试 15 分钟）<br>1）Flink的架构有哪些角色<br>程序在运行时主要有 ， ， 三种角色。<br>Flink TaskManager JobManager Client<br>是集群的老大，负责接收 ，协调检查点， 故障恢复等，同时管<br>JobManager Flink Job Failover<br>理 。 包含： 、 、 。<br>TaskManager Dispatcher ResourceManager JobMaster<br>是执行计算的节点，每个 负责管理其所在节点上的资源信息，如内存、<br>TaskManager TaskManager<br>磁盘、网络。内部划分 隔离内存，不隔离 。同一个 共享组的不同算子的 可以共<br>slot cpu slot subtask<br>享 。<br>slot<br>是 程序提交的客户端，将 提交给 。<br>Client Flink Flink Job JobManager<br>2）Flink与Spark Streaming的区别<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<p>尚硅谷大数据技术之面试题复习<br>—————————————————————————————<br>Flink Spark Streaming<br>计算模型 流计算 微批次<br>时间语义 三种 没有，处理时间<br>乱序 有 没有<br>窗口 多、灵活 少、不灵活（窗口长度必须是 批次的整数倍）<br>异步分界线快照 弱<br>checkpoint<br>状态 有，多 没有（ ）<br>updatestatebykey<br>流式 有 没有<br>sql<br>3）介绍一下时间语义，谈谈你对Watermark的理解<br>）时间语义<br>：是事件创建的时间。数据本身携带的时间。<br>Event Time<br>：是数据进入 的时间。<br>Ingestion Time Flink<br>：是每一个执行基于时间操作的算子的本地系统时间，与机器相关，默认的时间<br>Processing Time<br>属性就是 。<br>Processing Time<br>）你对 的认识</p>
+<h3 id="2-Watermark"><a href="#2-Watermark" class="headerlink" title="2 Watermark"></a>2 Watermark</h3><p>（ ） 是一种衡量 进展的机制，是一个逻辑时钟</p>
+<h3 id="1-Watermark-Event-Time"><a href="#1-Watermark-Event-Time" class="headerlink" title="1 Watermark Event Time"></a>1 Watermark Event Time</h3><p>（ ） 是用于处理乱序事件的，而正确的处理乱序事件，通常用 机制结合</p>
+<h3 id="2-Watermark-Watermark"><a href="#2-Watermark-Watermark" class="headerlink" title="2 Watermark Watermark"></a>2 Watermark Watermark</h3><p>来实现<br>window<br>（ ）基于事件时间，用来触发窗口、定时器等<br>（ ） 主要属性就是时间戳，可以理解一个特殊的数据，插入到流里面</p>
+<h3 id="4-watermark"><a href="#4-watermark" class="headerlink" title="4 watermark"></a>4 watermark</h3><p>（ ） 是单调不减的</p>
+<h3 id="5-watermark"><a href="#5-watermark" class="headerlink" title="5 watermark"></a>5 watermark</h3><p>（ ）数据流中的 用于表示 小于 的数据，都已经到达了，</p>
+<h3 id="6-Watermark-timestamp-Watermark"><a href="#6-Watermark-timestamp-Watermark" class="headerlink" title="6 Watermark timestamp Watermark"></a>6 Watermark timestamp Watermark</h3><p>如果后续还有 小于 的数据到达，称为迟到数据<br>timestamp Watermark<br>4）窗口的分类、划分、生命周期<br>）窗口分类：<br>和<br>Keyed Window Non-keyed Window<br>基于时间：滚动、滑动、会话<br>基于数量：滚动、滑动<br>）窗口的划分：如，基于事件时间的滚动窗口<br>按照数据的事件时间向下取窗口长度的整数倍<br>start=<br>end=start+size<br>比如开了一个 的滚动窗口，第一条数据是 ，那么它属于<br>10s 857s [850s,860s)<br>）窗口的创建：当属于某个窗口的第一个元素到达， 就会创建一个窗口，并且放入单例集合</p>
+<h3 id="3-Flink"><a href="#3-Flink" class="headerlink" title="3 Flink"></a>3 Flink</h3><p>）窗口的销毁：时间进展 窗口最大时间戳 窗口允许延迟时间<br>4 &gt;= +<br>（ 保证只删除基于时间的窗口，而不能删除其他类型的窗口，例如全局窗口）。<br>Flink<br>5）Flink如何解决乱序问题<br>） 的乱序等待时间</p>
+<h3 id="1-watermark"><a href="#1-watermark" class="headerlink" title="1 watermark"></a>1 watermark</h3><p>）使用窗口时，可以允许迟到<br>）迟到特别久的，放到侧输出流处理<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<p>尚硅谷大数据技术之面试题复习<br>—————————————————————————————<br>1.10 第 10 次考试（准备 15 分钟，考试 20 分钟）<br>1）介绍一下Flink的状态和状态后端<br>） 算子状态：每个并行实例 各自维护状态<br><code>List</code><br>unionList<br>键控状态：经过 的，每个 各自维护状态<br>keyby key<br>、 、<br>value list map<br>广播<br>）状态后端<br>&lt;1.13<br>本地状态 存储<br>checkpoint<br>内存 内存<br>memory TM JM<br>内存<br>fs TM HDFS<br>的<br>rocksdb TM Rocksdb HDFS</p>
+<blockquote>
+<p>=1.13<br>本地状态<br>内存<br>hashmap TM<br>的<br>rocksdb TM rocksdb<br>存储单独自己指定： 内存、<br>checkpoint JM hdfs<br>又短又小的，一般作业： 》 快<br>hashmap ===<br>又大又长的： 》 增量，比 快、节省资源<br>rocksdb === hashmap<br>我们怎么用： 基本都是 ，个别状态大的用 （ 个）<br>hashmap rocksdb 3<br>2）有没有状态比较大的作业，遇到过什么问题，怎么解决<br>开启 访问性能监控<br>State<br>中引入了 访问的性能监控，即 。此功能不局限<br>Flink 1.13 State latency trackig state<br>于 的类型，自定义实现的 也可以复用此功能。<br>State Backend State Backend<br>开启增量检查点和本地恢复<br>）开启增量检查点<br>是目前唯一可用于支持有状态流处理应用程序增量检查点的状态后端，可以修改参数开启<br>RocksDB<br>增量检查点：<br>默认 ，改为 。<br>state.backend.incremental: true # false true<br>或代码中指定<br>new EmbeddedRocksDBStateBackend(true)<br>）开启本地恢复<br>当 任务失败时，可以基于本地的状态信息进行恢复任务，可能不需要从 拉取数据。<br>Flink hdfs<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+</blockquote>
+<p>尚硅谷大数据技术之面试题复习<br>—————————————————————————————<br>本地恢复目前仅涵盖键控类型的状态后端（ ）， 不支持本地恢复并忽略<br>RocksDB MemoryStateBackend<br>此选项。<br>state.backend.local-recovery: true<br>）设置多目录<br>如果有多块磁盘，也可以考虑指定本地多目录<br>调整预定义选项<br>针对不同的设置为 提供了一些预定义的选项集合 其中包含了后续提到的一些参数，<br>Flink RocksDB ,<br>如果调整预定义选项后还达不到预期，再去调整后面的 、 等参数。<br>block writebuffer<br>当 前 支 持 的 预 定 义 选 项 有 、 、<br>DEFAULT SPINNING_DISK_OPTIMIZED<br>或 。有条件上 的，可以指定为<br>SPINNING_DISK_OPTIMIZED_HIGH_MEM FLASH_SSD_OPTIMIZED SSD<br>FLASH_SSD_OPTIMIZED<br>：<br>state.backend.rocksdb.predefined-options<br>SPINNING_DISK_OPTIMIZED_HIGH_MEM<br>设置为机械硬盘 内存模式</p>
+<h1 id=""><a href="#" class="headerlink" title="+"></a>+</h1><p>3）Flink有没有遇到过反压，怎么发现、定位、分析、解决，效果如何<br>①反压的原因<br>短时间的负载高峰导致系统接收数据的速率远高于它处理数据的速率。许多日常问题都会导致反压，<br>例如，垃圾回收停顿可能会导致流入的数据快速堆积，或遇到大促、秒杀活动导致流量陡增。<br>②反压的危害<br>会影响到 时长和 大小，甚至可能会导致资源耗尽甚至系统崩溃<br>checkpoint state<br>是保证数据一致性的关键， 时间变长有可能导致 超时失<br>checkpoint checkpoint checkpoint<br>败，而 大小同样可能拖慢 甚至导致 （使用 ）<br>state checkpoint OOM Heap-based StateBackend<br>或者物理内存使用超出容器资源（使用 ）的稳定性问题。<br>RocksDBStateBackend<br>③定位反压<br>利用 定位<br>web ui<br>定位到造成反压的节点，排查的时候，先把 禁用，方便定位到具体算子。<br>operator chain<br>现在在 上通过颜色和数值来展示繁忙和反压的程度。<br>Flink UI<br>通过 看具体算子的 显示 。<br>WebUI BackPressure High<br>分析瓶颈算子<br>如果处于反压状态，那么有两种可能性：<br>（ ）该节点的发送速率跟不上它的产生数据速率。这一般会发生在一条输入多条输出的</p>
+<h3 id="1-Operator"><a href="#1-Operator" class="headerlink" title="1 Operator"></a>1 Operator</h3><p>（比如 ）。这种情况，该节点是反压的根源节点，它是从 到 的<br>flatmap Source Task Sink Task<br>第一个出现反压的节点。<br>（ ）下游的节点接受速率较慢，通过反压机制限制了该节点的发送速率。这种情况，需要继续排查<br>下游节点，一直找到第一个为 的一般就是根源节点。<br>OK<br>总体来看，如果我们找到第一个出现反压的节点，反压根源要么是就这个节点，要么是它紧接着的下<br>游节点。<br>通常来讲，第二种情况更常见。如果无法确定，还需要结合 进一步判断。<br>Metrics<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<p>尚硅谷大数据技术之面试题复习<br>—————————————————————————————<br>利用 定位<br>Metrics<br>可以根据指标分析反压<br>可以分析数据传输<br>④处理反压<br>反压可能是暂时的，可能是由于负载高峰、 或作业重启引起的数据积压而导致反压。如果反<br>CheckPoint<br>压是暂时的，应该忽略它。<br>查看是否数据倾斜<br>使用火焰图分析看顶层的哪个函数占据的宽度最大。只要有 平顶 （ ），就表示该函数可能存<br>“ “ plateaus<br>在性能问题。<br>分析 日志<br>GC<br>4）Flink有没有遇到过数据倾斜，怎么发现、定位、分析、解决，效果如何<br>数据倾斜现象<br>相同 的多个 中，个别 接收到的数据量明显大于其他 接收到的数<br>Task Subtask Subtask Subtask<br>据量，通过 可以精确地看到每个 处理了多少数据，即可判断出 任务<br>Flink Web UI Subtask Flink<br>是否存在数据倾斜。通常，数据倾斜也会引起反压。<br>数据倾斜解决</p>
+<ul>
+<li>LocalKeyBy<br>是实时流处理，如果 之后的聚合操作存在数据倾斜，且没有开窗口（没攒批）的情况<br>Flink keyby<br>下，简单的认为使用两阶段聚合，是不能解决问题的。在 上游算子数据发送之前，首先在上游算<br>keyBy<br>子的本地对数据进行聚合后，再发送到下游，使下游接收到的数据量大大减少，从而使得 之后的<br>keyBy<br>聚合操作不再是任务的瓶颈。类似 中 的思想，但是这要求聚合操作必须是多条<br>MapReduce Combiner<br>数据或者一批数据才能聚合，单条数据没有办法通过聚合来减少数据量。从 实现原<br>Flink LocalKeyBy<br>理来讲，必然会存在一个积攒批次的过程，在上游算子中必须攒够一定的数据量，对这些数据聚合后再发<br>送到下游。<br>之前发生数据倾斜</li>
+<li>keyBy<br>如果 之前就存在数据倾斜，上游算子的某些实例可能处理的数据较多，某些实例可能处理的<br>keyBy<br>数据较少，产生该情况可能是因为数据源的数据本身就不均匀，例如由于某些原因 的 中<br>Kafka topic<br>某些 的数据量较大，某些 的数据量较少。对于不存在 的 任<br>partition partition keyBy Flink<br>务也会出现该情况。<br>这种情况，需要让 任务强制进行 。使用 、 或 算<br>Flink shuffle shuffle rebalance rescale<br>子即可将数据均匀分配，从而解决数据倾斜的问题。<br>后的窗口聚合操作存在数据倾斜</li>
+<li>keyBy<br>第一阶段聚合： 拼接随机数前缀或后缀，进行 、开窗、聚合<br>key keyby<br>注意：聚合完不再是 ，要获取 作为窗口标记作为第二阶段分组依据，<br>WindowedStream WindowEnd<br>避免不同窗口的结果聚合到一起）<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</li>
+</ul>
+<p>尚硅谷大数据技术之面试题复习<br>—————————————————————————————<br>第二阶段聚合：按照原来的 及 作 、聚合<br>key windowEnd keyby<br>1.11 第 11 次考试（准备 15 分钟，考试 25 分钟）<br>1）Flink如何保证数据精准一次<br>端： 是 ，可重发<br>source kafka<br>：开启 ，设置为精准一次（介绍 原理、 对齐）<br>flink checkpoint checkpoint barrier<br>端：幂等、事务（ ），结合 介绍 过程<br>sink 2pc kafka 2pc<br>2）你是如何理解Flink的Checkpoint<br>在数据流源处被注入并行数据流中。快照 的 被插入的位置（我们称之为 ）是<br>barriers n barriers Sn<br>快照所包含的数据在数据源中最大位置。<br>例如，在 中，此位置将是分区中最后一条记录的偏移量。将该位置 报告给<br>Apache Kafka Sn checkpoint<br>协调器（ 的 ）。<br>Flink JobManager<br>然后 向下游流动。当一个中间操作算子从其所有输入流中收到快照 的 时，它会<br>barriers n barriers<br>为快照 发出 进入其所有输出流中。<br>n barriers<br>一旦 操作算子（流式 的末端）从其所有输入流接收到 ，它就向 协<br>sink DAG barriers n checkpoint<br>调器确认快照 完成。<br>n<br>在所有 确认快照后，意味快照着已完成。一旦完成快照 ， 将永远不再向数据源请求 之前的<br>sink n job Sn<br>记录，因为此时这些记录（及其后续记录）将已经通过整个数据流拓扑，也即是已经被处理结束。<br>3）Task的重启策略<br>（ ）固定延迟重启策略：如果发生故障，系统会尝试重新启动作业 次，并在连续重启尝试之间等待</p>
+<h3 id="1-n"><a href="#1-n" class="headerlink" title="1 n"></a>1 n</h3><p>秒。<br>n<br>（ ）固定延迟重启策略：尝试给定次数重新启动作业，如果超过最大尝试次数，则作业最终会失败。<br>在两次连续重启尝试之间，重启策略等待一段固定的时间。<br>1.12 第 12 次考试（准备 15 分钟，考试 20 分钟）<br>1）Flink有几种Join ，详细说明特点<br>：<br>API window join<br>interval join<br>connect + coGroup<br>： ： 默认不清理状态，结合<br>SQL regular join ttl<br>： 没有回撤数据<br>inner<br>、 ： 有回撤数据<br>left right<br>：<br>interval join where between xxx and xxx<br>（现查外部系统）<br>lookup join<br>：时态表 （保存多版本）<br>temporal join join<br>2）你对keyby算子的理解<br>（ ）对指定的 调用自身的 方法 》 》<br>1 key <code>hashCode</code> = key.hashcode = keyHash<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<p>尚硅谷大数据技术之面试题复习<br>—————————————————————————————<br>（ ）调用 算法，进行第二次 》<br>2 murmruhash hash = MathUtils.murmurHash(keyHash) %<br>》<br>maxParallelism = keygroupid<br>（ ）计算出当前数据应该去往哪个下游分区：<br>keyGroupId * parallelism / maxParallelism<br>（ ）键组 下游算子并行度 最大并行度（默认 ）</p>
+<h3 id="4-id-128"><a href="#4-id-128" class="headerlink" title="4 id * / 128"></a>4 id * / 128</h3><p>3）你对Interval Join的理解<br>底层调用的是 ，处理逻辑：<br>keyby+connect<br>（ ）判断是否迟到（迟到就不处理了，直接 ）</p>
+<h3 id="1-return"><a href="#1-return" class="headerlink" title="1 return"></a>1 return</h3><p>（ ）每条流都存了一个 类型的状态（ 是时间戳， 是 存数据）</p>
+<h3 id="2-Map-key-value-List"><a href="#2-Map-key-value-List" class="headerlink" title="2 Map key value List"></a>2 Map key value List</h3><p>（ ）任一条流，来了一条数据，遍历对方的 状态，能匹配上就发往 方法</p>
+<h3 id="3-map-join"><a href="#3-map-join" class="headerlink" title="3 map join"></a>3 map join</h3><p>（ ）使用定时器，超过有效时间范围，会删除对应 中的数据（不是 ，是 ）</p>
+<h3 id="4-Map-clear-remove"><a href="#4-Map-clear-remove" class="headerlink" title="4 Map clear remove"></a>4 Map clear remove</h3><p>不会处理 不上的数据，如果需要没 上的数据，可以用 算<br>Interval join join join coGroup+join<br>子实现，或者直接使用 里的 或 语法。<br>flinksql left join right join<br>1.13 第 13 次考试（准备 20 分钟，考试 20 分钟）<br>1）Flink的提交参数如何设置，怎么考虑的<br>flink run -t yarn-per-job<br>并行度 ，与 分区保持一致，效率最高<br>-p 3 kafka<br>内存， ，不需要处理数据，不用给太大<br>-D JM 2G<br>内存， ， 按照 原则，观察过 的内存<br>-D TM 4G 1cu webui metrics<br>每个 的 数 ，节省资源， 不浪费<br>-D TM slot 3 3 slot<br>-D<br>全类名<br>-c<br>包路径<br>jar<br>2）Flink的提交流程<br>Yarn-per-job模式提交流程<br>NodeManager<br>bin/flink run<br>-t yarn-per-job ApplicationMaster</p>
+<h3 id="3-3-Dispatcher"><a href="#3-3-Dispatcher" class="headerlink" title="3.3 Dispatcher"></a>3.3 Dispatcher</h3><p>-c com.xxx.xxx.WordCount 3. 1 AM启动Dispatcher 启动JobMaster<br>./WordCount.jar Dispatcher JobMaster<br>Yarn的 2 启动ApplicationMaster</p>
+<h3 id="1-1-脚本启动执行-Resource-3-2-AM启动ResourceManager-SlotPool"><a href="#1-1-脚本启动执行-Resource-3-2-AM启动ResourceManager-SlotPool" class="headerlink" title="1.1 脚本启动执行 Resource 3. 2 AM启动ResourceManager SlotPool"></a>1.1 脚本启动执行 Resource 3. 2 AM启动ResourceManager SlotPool</h3><p>Manager ResourceMan 4 注册、<br>CliFrontend 5.申请资源 ager 请求slot 3.4 生成<br>ExecutionGraph</p>
+<h3 id="1-2-解析参数CliFrontendParser-requestNewWorker-SlotManager"><a href="#1-2-解析参数CliFrontendParser-requestNewWorker-SlotManager" class="headerlink" title="1.2 解析参数CliFrontendParser requestNewWorker SlotManager"></a>1.2 解析参数CliFrontendParser requestNewWorker SlotManager</h3><h3 id="1-3-使用FlinkYarnSessionCli-实时检查所需"><a href="#1-3-使用FlinkYarnSessionCli-实时检查所需" class="headerlink" title="1.3 使用FlinkYarnSessionCli 实时检查所需"></a>1.3 使用FlinkYarnSessionCli 实时检查所需</h3><h3 id="1-4-执行用户代码-slot是否足够"><a href="#1-4-执行用户代码-slot是否足够" class="headerlink" title="1.4 执行用户代码 slot是否足够"></a>1.4 执行用户代码 slot是否足够</h3><h3 id="1-5-生成StreamGraph-6-启和TaskManager"><a href="#1-5-生成StreamGraph-6-启和TaskManager" class="headerlink" title="1.5 生成StreamGraph 6.启和TaskManager"></a>1.5 生成StreamGraph 6.启和TaskManager</h3><p>YarnJobClusterExecutor</p>
+<h3 id="1-6-生成JobGraph-8-注册slot-9-分配slot-11-提交执行"><a href="#1-6-生成JobGraph-8-注册slot-9-分配slot-11-提交执行" class="headerlink" title="1.6 生成JobGraph 8. 注册slot 9. 分配slot 11. 提交执行"></a>1.6 生成JobGraph 8. 注册slot 9. 分配slot 11. 提交执行</h3><p>YarnClusterDescriptor 1.9 提交任务信息 NodeManager sumitTask()<br>submitApplication</p>
+<h3 id="1-7-上传jar包和配置-YarnTaskExecutorRunner"><a href="#1-7-上传jar包和配置-YarnTaskExecutorRunner" class="headerlink" title="1.7 上传jar包和配置 YarnTaskExecutorRunner"></a>1.7 上传jar包和配置 YarnTaskExecutorRunner</h3><h3 id="1-8-封装提交参数和命令"><a href="#1-8-封装提交参数和命令" class="headerlink" title="1.8 封装提交参数和命令"></a>1.8 封装提交参数和命令</h3><p>bin/java ApplicationMaster 7. runTaskManager启动TaskExecutor 10. 提供slot<br>–jar … –class …<br>TaskExecutor<br>YarnClient Slot Slot Slot<br>HDFS Task Task Task<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<p>尚硅谷大数据技术之面试题复习<br>—————————————————————————————<br>3）Flink的内存模型<br>1.14 第 14 次考试（准备 20 分钟，考试 20 分钟）<br>1）HBase存储结构<br>HBase架构图<br>HRegionServer HRegionServer<br>2）HBase的读、写流程<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网<br>goLH<br>Client ZK HMaster<br>HRegion<br>esaBH<br>Stor Stor<br>e e<br>goLH<br>HRegion<br>Stor Stor<br>e e<br>HDFS Client HDFS Client<br>DataNode<br>SFDH<br>Mem Store Mem Store Mem Store Mem Store<br>…… ……<br>S<br>e<br>toreFil S<br>e<br>toreFil<br>…<br>S<br>e<br>toreFil S<br>e<br>toreFil… S<br>e<br>toreFil S<br>e<br>toreFil<br>…<br>S<br>e<br>toreFil<br>…<br>HFile HFile HFile HFile HFile HFile HFile<br>DataNode DataNode DataNode DataNode</p>
+<p>尚硅谷大数据技术之面试题复习<br>—————————————————————————————<br>HBase写流程<br>写流程从客户端创建连接开始， 先写入WAL的原因是数据在Mem Story会排序并保存一段<br>到最终刷写落盘到hdfs上结束 时间，存内存不安全。<br>zookeeper<br>数据在写入到Mem Story之后就会返回写入成功的ACK，<br>此时宕机可以通过WAL找回。<br>Hdfs文件系统<br>Client客户端</p>
+<h3 id="6-将请求写入"><a href="#6-将请求写入" class="headerlink" title="6.将请求写入"></a>6.将请求写入</h3><p>102-Region Server服务端 WAL并落盘 WAL预写日志</p>
+<h3 id="1-向ZK发送请"><a href="#1-向ZK发送请" class="headerlink" title="1. 向ZK发送请"></a>1. 向ZK发送请</h3><p>求创建连接<br>WAL</p>
+<h3 id="2-读取ZK存储-5-发送put-Table表"><a href="#2-读取ZK存储-5-发送put-Table表" class="headerlink" title="2. 读取ZK存储 5.发送put Table表"></a>2. 读取ZK存储 5.发送put Table表</h3><p>管理<br>meta表是由哪个 7.操作put请求，<br>Region Server管 写入到对应Mem<br>理-&gt; 例如103 Story并排序。 Region1<br>store1 store2</p>
+<h3 id="3-访问103读取-Mem-Story-Mem-Story"><a href="#3-访问103读取-Mem-Story-Mem-Story" class="headerlink" title="3. 访问103读取 Mem Story Mem Story"></a>3. 访问103读取 Mem Story Mem Story</h3><p>meta表 写缓存1 写缓存2</p>
+<h3 id="4-将读取的meta-8-等待触发刷写条件"><a href="#4-将读取的meta-8-等待触发刷写条件" class="headerlink" title="4. 将读取的meta 8.等待触发刷写条件"></a>4. 将读取的meta 8.等待触发刷写条件</h3><p>表作为属性保存 写入对应的store Region2<br>在连接中 store1 store2<br>MetaCache<br>103-Region Server服务端 管理<br>如果Meta表发送<br>变化需要重新读 hbase:meta表<br>取缓存<br>HBase读流程<br>读流程从客户端创建连接开始， 读缓存中优先缓存索引文件、布隆过滤器和key值<br>到合并数据返回客户端结束<br>zookeeper （元数据）。其余内存按照64K块缓存数据，清理<br>内存时按照数据活跃度，删除块数据<br>Hdfs文件系统<br>Client客户端</p>
+<h3 id="6-将请求写入-1"><a href="#6-将请求写入-1" class="headerlink" title="6.将请求写入"></a>6.将请求写入</h3><p>102-Region Server服务端 WAL并落盘 WAL预写日志</p>
+<h3 id="1-向ZK发送请-1"><a href="#1-向ZK发送请-1" class="headerlink" title="1. 向ZK发送请"></a>1. 向ZK发送请</h3><p>求创建连接<br>WAL</p>
+<h3 id="2-读取ZK存储-5-发送get-Table表"><a href="#2-读取ZK存储-5-发送get-Table表" class="headerlink" title="2. 读取ZK存储 5.发送get Table表"></a>2. 读取ZK存储 5.发送get Table表</h3><p>管理<br>meta表是由哪个 7.读取Block Cache<br>Region Server管 Block cache<br>理-&gt; 例如103 Region1<br>读缓存<br>store1 store2</p>
+<h3 id="3-访问103读取"><a href="#3-访问103读取" class="headerlink" title="3. 访问103读取"></a>3. 访问103读取</h3><p>meta表 9.合并所有读 8.读取对应写缓存和store文件<br>取数据返回 同时缓存到Block Cache</p>
+<h3 id="4-将读取的meta"><a href="#4-将读取的meta" class="headerlink" title="4. 将读取的meta"></a>4. 将读取的meta</h3><p>表作为属性保存 Mem Story Mem Story Region2<br>在连接中 写缓存1 写缓存2 store1 store2<br>MetaCache<br>管理<br>如果Meta表发送<br>变化需要重新读 103-Region Server服务端 hbase:meta表<br>取缓存<br>3）HBase热点问题如何解决<br>）合理设计</p>
+<h3 id="1-RowKey"><a href="#1-RowKey" class="headerlink" title="1 RowKey"></a>1 RowKey</h3><p>（ ） 长度原则</p>
+<h3 id="1-rowkey"><a href="#1-rowkey" class="headerlink" title="1 rowkey"></a>1 rowkey</h3><p>（ ） 散列原则</p>
+<h3 id="2-rowkey"><a href="#2-rowkey" class="headerlink" title="2 rowkey"></a>2 rowkey</h3><p>（ ） 唯一原则</p>
+<h3 id="3-rowkey"><a href="#3-rowkey" class="headerlink" title="3 rowkey"></a>3 rowkey</h3><p>）设置预分区<br>）利用 的盐表</p>
+<h3 id="3-Phoniex"><a href="#3-Phoniex" class="headerlink" title="3 Phoniex"></a>3 Phoniex</h3><p>1.15 第 15 次考试（准备 20 分钟，考试 20 分钟）<br>1）Clickhouse的优势<br>快： 提供了丰富的表引擎，每个表引擎 都做了尽可能的优化<br>为什么快：<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<p>尚硅谷大数据技术之面试题复习<br>—————————————————————————————<br>（ ）向量化<br>（ ）列式<br>（ ）尽可能使用本节点的 内存</p>
+<h3 id="3-cpu"><a href="#3-cpu" class="headerlink" title="3 +cpu"></a>3 +cpu</h3><p>（ ）提供了 化的语言</p>
+<h3 id="4-sql"><a href="#4-sql" class="headerlink" title="4 sql"></a>4 sql</h3><p>（ ）支持自定义函数<br>（ ）提供了丰富的表引擎，引擎都经过了优化</p>
+<p><strong>Q:</strong> 2）Flink写入Clickhouse怎么保证一致性？<br>没有事务， 写入是至少一次语义。<br>Clickhouse Flink<br>利用 的 引擎会根据主键去重，但只能保证最终一致性。查询<br>Clickhouse ReplacingMergeTree<br>时加上 关键字可以保证查询结果的一致性。<br><code>final</code><br>3）Clickhouse的常用引擎<br>（ ）</p>
+<h3 id="1-Log"><a href="#1-Log" class="headerlink" title="1 Log"></a>1 Log</h3><p>（ ） ： 、</p>
+<h3 id="2-Special-Memory-Distributed"><a href="#2-Special-Memory-Distributed" class="headerlink" title="2 Special Memory Distributed"></a>2 Special Memory Distributed</h3><p>（ ） ： 、</p>
+<h3 id="3-MergeTree-replacingmergetree-summingmergetree"><a href="#3-MergeTree-replacingmergetree-summingmergetree" class="headerlink" title="3 MergeTree replacingmergetree summingmergetree"></a>3 MergeTree replacingmergetree summingmergetree</h3><p>replicatedmergetree<br>（ ）集成引擎： 外部系统映射，如</p>
+<h3 id="4-MySQL"><a href="#4-MySQL" class="headerlink" title="4 MySQL"></a>4 MySQL</h3><p>1.16 第 16 次考试（准备 10 分钟，考试 20 分钟）<br>1）数仓项目建模准备（事实表 、维度表）<br>、 模型（三范式 增删改查） 维度建模（尽可能减少 操作）</p>
+<h3 id="1-ER-join"><a href="#1-ER-join" class="headerlink" title="1 ER join"></a>1 ER join</h3><p>、维度建模<br>星型模型（事实表周围一级维度） 减少 操作<br>join<br>雪花模型（事实表周围多级维度）<br>星座（多个事实表）<br>、事实表<br>）判断表是事实表<br>具有度量值，可以累加的值 （个数、件事、次数、金额）<br>）事实表 数据量大 同步策略： 通常 增量 》 特殊的 加购（周期快照事实表）<br>2 =<br>）事务型事实表<br>原子操作<br>（ ）选择业务过程<br>（ ）声明粒度<br>（ ）确定维度<br>（ ）确定事实<br>不足<br>（ ）连续性指标 库存 周期型快照事实表<br>（ ）多事实表关联 加购 到支付 平均使用时长 累积型快照事实表<br>）周期型快照事实表<br>）累积型快照事实表<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<p>尚硅谷大数据技术之面试题复习<br>—————————————————————————————<br>、维度表<br>）判断表是维度表<br>没有度量值 性别 身高、体重 年龄 姓名 都是描述信息<br>）维度表 数据量小 同步策略：通常 全量 》 特殊的 用户表 （拉链表）<br>2 =<br>）用户表 拉链表<br>缓慢变化维场景<br>）维度整合<br>减少 操作<br>join<br>（ ）商品表 商品品类表 商品 表 一级分类 二级分类 三级分类 》 商<br>1 + + SPU + + + =<br>品维度表<br>（ ）省份表 地区表 》 地区维度表<br>2 + =<br>（ ）活动信息表 活动规则表 》 活动维度表<br>3 + =<br>2）数仓项目建模（项目调研、数据域、业务矩阵、建模、指标体系建设等）<br>）数仓建模（项目调研、数据域、业务矩阵、建模、指标体系建设等）<br>、数据调研 （ ）</p>
+<h3 id="1-50"><a href="#1-50" class="headerlink" title="1 50%"></a>1 50%</h3><p>）要原始的表 表的字段什么含义 要需求<br>快速熟悉业务 网站 小程序 安卓<br>ios<br>过滤掉 图片 权限 临时表 废弃的功能<br>）和业务人员聊<br>）和产品经理聊<br>需求 原子指标 派生指标 衍生指标<br>:<br>派生指标 原子指标（业务过程 度量值 聚合逻辑） 统计周期 业务限定 统<br>= + + + + +<br>计粒度<br>、明确数据域<br>）用户域 注册 登录<br>）流量域： 启动、页面、动作、故障、曝光<br>）交易域 ： 加购、下单 支付、物流、退单、退支付<br>）工具域： 领取优惠卷、使用优惠卷下单、使用优惠卷支付<br>）互动域：评论、点赞、收藏<br>、构建业务矩阵<br>用户、商品（ 张整合）、活动（ 张整合）、优惠卷、地区（ 张表整合）、时间</p>
+<h3 id="6-2-2"><a href="#6-2-2" class="headerlink" title="6 2 2"></a>6 2 2</h3><p>）用户域<br>注册 √<br>登录<br>）流量域<br>启动<br>页面<br>动作 √<br>故障<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<p>尚硅谷大数据技术之面试题复习<br>—————————————————————————————<br>曝光<br>）交易域<br>加购<br>下单<br>支付<br>物流<br>退单<br>退支付<br>）工具域<br>领取优惠卷<br>使用优惠卷下单<br>使用优惠卷支付<br>）互动域<br>评论<br>点赞<br>收藏<br>、维度建模<br>） 层</p>
+<h3 id="1-ODS"><a href="#1-ODS" class="headerlink" title="1 ODS"></a>1 ODS</h3><p>（ ）保持数据原貌不做任何修改 备份<br>（ ）采用压缩 减少磁盘空间<br>（ ）创建分区表 防止后续全表扫描<br>） 层</p>
+<h3 id="2-DIM"><a href="#2-DIM" class="headerlink" title="2 DIM"></a>2 DIM</h3><p>（ ）用户表 拉链表<br>缓慢变化维场景<br>（ ）维度整合<br>减少 操作<br>join<br>商品表 商品品类表 商品 表 一级分类 二级分类 三级分类 》 商</p>
+<ul>
+<li><ul>
+<li>SPU + + + =<br>品维度表<br>省份表 地区表 》 地区维度表</li>
+</ul>
+</li>
+<li>=<br>活动信息表 活动规则表 》 活动维度表</li>
+<li>=<br>（ ） 数据清洗</li>
+</ul>
+<h3 id="3-ETL"><a href="#3-ETL" class="headerlink" title="3 ETL"></a>3 ETL</h3><p>） 层</p>
+<h3 id="3-DWD"><a href="#3-DWD" class="headerlink" title="3 DWD"></a>3 DWD</h3><p>（ ）事务型事实表<br>找的原子操作<br>①选择业务过程<br>选择感兴趣的 产品经理提出来的<br>过滤掉 图片 权限 临时表 废弃的功能<br>②声明粒度<br>粒度：一行信息代表什么含义 可以代表一次下单 一周下单<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<p>尚硅谷大数据技术之面试题复习<br>—————————————————————————————<br>保持最小粒度<br>不做聚合操作<br>③确定维度<br>产品经理需要的 用户、商品、活动、优惠卷、地区、时间<br>④确定事实<br>确定事实表的度量值 可以累加的值 （个数、次数、件事、金额）<br>（ ）周期快照事实表 （加购、连续）<br>①选择业务过程<br>②声明粒度 （按天、小时）<br>③确定维度<br>④确定事实<br>（ ）累积型快照事实表（多事实表关联）<br>①选择业务过程<br>②声明粒度<br>③确定维度<br>④确定事实 （确定多张事实表的事实 ）<br>（ ） 数据清洗</p>
+<h3 id="4-ETL"><a href="#4-ETL" class="headerlink" title="4 ETL"></a>4 ETL</h3><p>、指标体系建设<br>层<br>ads<br>日活、月活、周活、总用户、日新增、周新增、月新增、 日 日留存、转化率（漏</p>
+<h3 id="1-60"><a href="#1-60" class="headerlink" title="1 -60"></a>1 -60</h3><p>斗）、 （日、周、月）<br>GMV<br>天内连续三天（点赞、收藏、评价、登录） 统计同时在线人数<br>层<br>dws<br>派生指标 原子指标（业务过程 度量值 聚合逻辑） 统计周期 业务限定<br>= + + + +<br>统计粒度<br>+<br>交易总额（下单 金额 ） 每天 手机 省份</p>
+<ul>
+<li><ul>
+<li>sum + + +<br>统计 每天各个省份手机的交易总额<br>找公共的业务过程 统计周期 统计粒度 》 建 层宽表</li>
+</ul>
+</li>
+<li><ul>
+<li>= dws<br>第 2 章 项目复习</li>
+</ul>
+</li>
+</ul>
+<p>2.1 第 17 次考试（准备 30 分钟，考试 1 小时）<br>1）离线数仓项目串讲<br>2.2 第 18 次考试（准备 30 分钟，考试 1 小时）<br>1）实时数仓项目串讲<br>更多Java –大数据 –前端 –python人工智能资料下载，可百度访问：尚硅谷官网</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+            
+            <div class="reprint1">
+                <p>
+                    <span class="reprint1-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+                    </span>
+                    <a href="https://liaoxingwang.github.io" class="b-link-green">屿</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2025/08/06/blog-open-source-java-interview-06-da-shu-ju-ji-zhu-zhi-mian-shi-ti-fu-xi-1.6-dai-da-an/" class="b-link-green">06_大数据技术之面试题复习1.6带答案</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    
+
+    
+        <link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="card-content">
+        <div class="giscus-wrapper" style="overflow: hidden; max-width: 100%;">
+            <div class="giscus"></div>
+        </div>
+    </div>
+</div>
+
+<script src="https://giscus.app/client.js"
+    data-repo="liaoxingwang/liaoxingwang.github.io"
+    data-repo-id="R_kgDONgefmg"
+    data-category="Announcements"
+    data-category-id="DIC_kwDONgefms4DCjUZ"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="preferred_color_scheme"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async>
+</script>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2025/08/06/blog-open-source-java-interview-07-da-shu-ju-mian-shi-ti-gan-huo-pan-dian/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="07_大数据面试题干货盘点">
+                        
+                        <span class="card-title">07_大数据面试题干货盘点</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            w13021299785 直播课20点准时开讲！ 大海哥带你轻松收割名企Offer 经典大数据框架的核心面试题 大数据重点项目的常见面试题 大厂大数据面试题综合分类 经典大数据框架的核心面试题 1）Linux常用高级命令 2）HDFS小文件危害及解决办法 3）Shuffle及其优化 5）Yarn中各
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2025-08-06
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/大数据面试/" class="post-category" target="_blank">
+                                    大数据面试
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/大数据面试/" target="_blank">
+                        <span class="chip bg-color">大数据面试</span>
+                    </a>
+                    
+                    <a href="/tags/面试/" target="_blank">
+                        <span class="chip bg-color">面试</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2025/08/05/blog-open-source-java-interview-05-da-shu-ju-ji-zhu-zhi-mian-shi-ti-fu-xi-1.6/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="05_大数据技术之面试题复习1.6">
+                        
+                        <span class="card-title">05_大数据技术之面试题复习1.6</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            尚硅谷大数据技术之面试题复习 ————————————————————————————— 尚硅谷大数据技术之面试题复习 1.1 第 1 次考试（准备 20 分钟，考试 30 分钟） 1）Linux常用高级命令 3）HDFS小文件危害及解决办法 1.2 第 2 次考试（准备 15 分钟，考试 20 分
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2025-08-05
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/大数据面试/" class="post-category" target="_blank">
+                                    大数据面试
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/大数据面试/" target="_blank">
+                        <span class="chip bg-color">大数据面试</span>
+                    </a>
+                    
+                    <a href="/tags/面试/" target="_blank">
+                        <span class="chip bg-color">面试</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 屿<br />'
+            + '作者: SK<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4, h5'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4, h5').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+        <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&copy; 理想热爱.
+
+            <br>
+            <span id="sitetime"></span><span class="my-face">ღゝ◡╹)ノ♡</span>
+            <br>
+
+            
+
+            
+                    
+                        <span id="busuanzi_container_site_pv" style='display:none'></span>
+                        总访问量: <span id="busuanzi_value_site_pv" class="white-color"></span>
+                    
+
+                    
+                        <span id="busuanzi_container_site_uv" style='display:none'></span>
+                        人次&nbsp; | &nbsp;访客人数: <span id="busuanzi_value_site_uv" class="white-color"></span> 人
+                    
+
+            
+
+            
+                &nbsp; | &nbsp;字数统计:&nbsp;
+                <span class="white-color">1643k</span> 字
+            
+
+            
+            <br>
+
+        </div>
+
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/liaoxingwang" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+ 
+    <a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=807928930@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+
+    <a href="https://zhihu.com/people/zbozci" class="tooltipped" target="_blank" data-tooltip="访问我的知乎" data-position="top" data-delay="50">
+        <i class="fa fa-inverse">知</i>
+    </a>
+
+
+
+    <a href="http://wpa.qq.com/msgrd?v=3&uin=807928930&site=qq&menu=yes" class="tooltipped" target="_blank" data-tooltip="访问我的QQ空间" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+    <a href="https://weibo.com/jamsJJYY" class="tooltipped" target="_blank" data-tooltip="关注我的微博" data-position="top" data-delay="50">
+        <i class="fa fa-weibo"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+
+        var t1 = Date.UTC(2022, 10, 24, 00, 00, 00); //北京时间2019-8-1 00:00:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes *
+            minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours +
+            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒" ;
+    } /*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+
+
+
+
+
+
+        <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+        <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+        <script src="/libs/materialize/materialize.min.js"></script>
+        <script src="https://cdn.bootcss.com/masonry/4.2.2/masonry.pkgd.min.js"></script>
+        <script src="https://cdn.bootcss.com/aos/3.0.0-beta.6/aos.js"></script>
+        <script src="https://cdn.bootcss.com/scrollprogress/3.0.2/scrollProgress.min.js"></script>
+        <script src="https://cdn.bootcss.com/lightgallery/1.6.12/js/lightgallery-all.min.js"></script>
+        <script src="/js/matery.js"></script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+        
+            <script src="/libs/others/clicklove.js"></script>
+        
+
+        
+            <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        
+
+        <!-- liaoxingwang add 2019.08.28 -->
+        <script type="text/javascript">
+            var OriginTitile = document.title,
+                st;
+            document.addEventListener("visibilitychange", function () {
+                document.hidden ? (document.title = "看不见我🙈~看不见我🙈~", clearTimeout(st)) : (document.title =
+                    "(๑•̀ㅂ•́) ✧被发现了～", st = setTimeout(function () {
+                        document.title = OriginTitile
+                    }, 3e3))
+            })
+        </script>
+
+        <!-- 鼠标点击烟花爆炸效果  liaoxingwang add 2019.09.09 -->
+        
+
+        <!-- 背景雪花飘落特效liaoxingwang add 2019.09.10 -->
+        
+
+        <!-- 鼠标点击文字特效 liaoxingwang add 2019.09.10-->
+        
+            <script src="/js/wenzi.js" type="text/javascript"></script>
+        
+
+        <!-- 背景雪花飘落特效 liaoxingwang add 2019.09.10 -->
+        
+
+        <!-- 在线聊天工具  liaoxingwang add 2019.09.11 -->
+        
+
+        <!-- 背景 canvas-nest  洪卫 shw 2018  add 2019.09.15-->
+        
+
+        <!-- 背景静止彩带  洪卫 shw 2018  add 2019.09.15-->
+        
+            <script type="text/javascript">
+            var windowWidth = $(window).width();
+            if (windowWidth > 992) {
+                document.write('<script type="text/javascript" size="150" alpha="0.6" zIndex="-1" src="/libs/background/ribbon.min.js"><\/script>');
+            }
+            </script>
+        
+
+        <!-- 背景动态彩带 洪卫 shw 2018  add 2019.09.15-->
+        
+            <script type="text/javascript">
+            var windowWidth = $(window).width();
+            if (windowWidth > 992) {
+                document.write('<script type="text/javascript" src="/libs/background/ribbon-dynamic.js"><\/script>');
+            }
+            </script>
+        
+
+    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script>
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z\d\-\.\+]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(t.test(e.href)||r.test(e.href))&&(e.href=a.dataset.original)})});</script><script>(r=>{r.imageLazyLoadSetting.processImages=t;var a=r.imageLazyLoadSetting.isSPA,o=r.imageLazyLoadSetting.preloadRatio||1,d=i();function i(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(t){(a||t)&&(d=i());for(var e,n=0;n<d.length;n++)0<=(e=(e=d[n]).getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(r.innerHeight*o||document.documentElement.clientHeight*o)&&(()=>{var t,e,a,o,i=d[n];e=function(){d=d.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).dataset.loaded||(t.hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(a=new Image,o=t.getAttribute("data-original"),a.onload=function(){t.src=o,t.removeAttribute("data-original"),t.setAttribute("data-loaded",!0),e&&e()},a.onerror=function(){t.removeAttribute("data-original"),t.setAttribute("data-loaded",!1),t.src=o},t.src!==o&&(a.src=o)))})()}function e(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",e),r.addEventListener("resize",e),r.addEventListener("orientationchange",e)})(this);</script></body>
+</html>
