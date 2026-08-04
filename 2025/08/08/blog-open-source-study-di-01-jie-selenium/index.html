@@ -1,0 +1,1753 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+    
+
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="第 01 节 Selenium, 商单接企业项目外包 软件开发 整包服务 移动开发 移动开发团队 移动开发项目">
+    <meta name="baidu-site-verification" content="fmlEuI34ir">
+    <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
+    <meta name="description" content="文档对应的视频来自bibi
+第 01 节 Selenium1. Selenium概述
+Selenium是一个Web的自动化测试工具，最初是为网站自动化测试而开发的，Selenium 可以直接运行在浏览器上，它支持所有主流的浏览器。因为Sel">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="第 01 节 Selenium | 屿">
+    <meta property="og:description" content="文档对应的视频来自bibi
+第 01 节 Selenium1. Selenium概述
+Selenium是一个Web的自动化测试工具，最初是为网站自动化测试而开发的，Selenium 可以直接运行在浏览器上，它支持所有主流的浏览器。因为Sel">
+    <meta property="og:url" content="https://liaoxingwang.github.io2025/08/08/blog-open-source-study-di-01-jie-selenium/">
+    <meta property="og:image" content="https://liaoxingwang.github.io/medias/banner/0.jpg">
+    <meta property="og:site_name" content="屿">
+    <meta property="og:locale" content="zh_CN">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="第 01 节 Selenium | 屿">
+    <meta name="twitter:description" content="文档对应的视频来自bibi
+第 01 节 Selenium1. Selenium概述
+Selenium是一个Web的自动化测试工具，最初是为网站自动化测试而开发的，Selenium 可以直接运行在浏览器上，它支持所有主流的浏览器。因为Sel">
+    <meta name="twitter:image" content="https://liaoxingwang.github.io/medias/banner/0.jpg">
+
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>第 01 节 Selenium | 屿</title>
+    <link rel="icon" type="image/jpeg" href="/medias/avatars/hwsun.jpg">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/aos/3.0.0-beta.6/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/lightgallery/1.6.12/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <style type="text/css">
+        
+
+            code[class*="language-"],
+            pre[class*="language-"] {
+                white-space: pre !important;
+            }
+
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?46e79e71af0709a5b9106bf20cecc493";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+    
+    
+        <script>
+            (function(){
+                var bp = document.createElement('script');
+                var curProtocol = window.location.protocol.split(':')[0];
+                if (curProtocol === 'https') {
+                    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+                }
+                else {
+                    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                }
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(bp, s);
+            })();
+        </script>
+    
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+    <body>
+
+        <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <span class="logo-span">屿</span>
+                </a>
+            </div>
+            
+
+
+<!-- <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/AV" class="waves-effect waves-light">
+            
+            <i class="fa fa-music"></i>
+            
+            <span>视听</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/galleries" class="waves-effect waves-light">
+            
+            <i class="fa fa-photo"></i>
+            
+            <span>相册</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于我</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/contact" class="waves-effect waves-light">
+            
+            <i class="fa fa-envelope"></i>
+            
+            <span>留言板</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul> -->
+
+<!-- 支持二级菜单特性 liaoxingwang modify 2019.09.17  -->
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right nav-menu">
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/" class="waves-effect waves-light">
+              
+                <i class="fa fa-home"></i>
+              
+              <span>首页</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/tags" class="waves-effect waves-light">
+              
+                <i class="fa fa-tags"></i>
+              
+              <span>标签</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/categories" class="waves-effect waves-light">
+              
+                <i class="fa fa-bookmark"></i>
+              
+              <span>分类</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/archives" class="waves-effect waves-light">
+              
+                <i class="fa fa-archive"></i>
+              
+              <span>归档</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/AV" class="waves-effect waves-light">
+              
+                <i class="fa fa-music"></i>
+              
+              <span>视听</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/galleries" class="waves-effect waves-light">
+              
+                <i class="fa fa-photo"></i>
+              
+              <span>相册</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/about" class="waves-effect waves-light">
+              
+                <i class="fa fa-user-circle-o"></i>
+              
+              <span>关于我</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/contact" class="waves-effect waves-light">
+              
+                <i class="fa fa-envelope"></i>
+              
+              <span>留言板</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/friends" class="waves-effect waves-light">
+              
+                <i class="fa fa-address-book"></i>
+              
+              <span>友情链接</span>
+            </a>
+
+            
+      </li>
+    
+
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <div class="logo-name">屿</div>
+        <div class="logo-desc">
+            
+            湖南工业大学 | 计算机科学与技术
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/AV" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-music"></i>
+                
+                视听
+            </a>
+        </li>
+        
+        <li>
+            <a href="/galleries" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-photo"></i>
+                
+                相册
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于我
+            </a>
+        </li>
+        
+        <li>
+            <a href="/contact" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-envelope"></i>
+                
+                留言板
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/liaoxingwang/" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+
+   
+   
+<!-- 支持二级菜单特性 liaoxingwang modify 2019.09.17  -->
+<!-- <ul class="menu-list mobile-menu-list">
+    
+        <li class="m-nav-item">
+                
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-home"></i>
+                        
+                        首页
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/tags" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-tags"></i>
+                        
+                        标签
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/categories" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-bookmark"></i>
+                        
+                        分类
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/archives" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-archive"></i>
+                        
+                        归档
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/AV" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-music"></i>
+                        
+                        视听
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/galleries" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-photo"></i>
+                        
+                        相册
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/about" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-user-circle-o"></i>
+                        
+                        关于我
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/contact" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-envelope"></i>
+                        
+                        留言板
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/friends" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-address-book"></i>
+                        
+                        友情链接
+                    </a>
+              
+            </li>
+        
+
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/liaoxingwang/" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul> -->
+
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/liaoxingwang/" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+        
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        第 01 节 Selenium
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        
+<!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Python/" target="_blank">
+                                <span class="chip bg-color">Python</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Python/" class="post-category" target="_blank">
+                                Python
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2025-08-08
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
+                    
+                        SK
+                    
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        3.4k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        14 分
+                    </div>
+                    
+                
+
+                
+                        <span id="busuanzi_container_site_pv" style='display:none'></span>
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv" ></span>
+
+                
+
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p><a href="https://www.bilibili.com/video/BV1RZ4y147zD" target="_blank" rel="noopener">文档对应的视频来自bibi</a></p>
+<h2 id="第-01-节-Selenium"><a href="#第-01-节-Selenium" class="headerlink" title="第 01 节 Selenium"></a>第 01 节 Selenium</h2><h3 id="1-Selenium概述"><a href="#1-Selenium概述" class="headerlink" title="1. Selenium概述"></a>1. Selenium概述</h3><blockquote>
+<p>Selenium是一个Web的自动化测试工具，最初是为网站自动化测试而开发的，Selenium 可以直接运行<br><br>在浏览器上，它支持所有主流的浏览器。<br><br>因为Selenium可以控制浏览器发送请求，并获取网页数据，因此可以应用于爬虫领域。<br><br>Selenium<br>可以根据我们的指令，让浏览器自动加载页面，获取需要的数据，甚至页面截屏，或者判断网站上某些动作是否发生。Selenium<br><br>自己不带浏览器，不支持浏览器的功能，它需要与第三方浏览器结合在一起才能使用。<br></p>
+</blockquote>
+<h6 id="官方文档：http-selenium-python-readthedocs-io-index-html"><a href="#官方文档：http-selenium-python-readthedocs-io-index-html" class="headerlink" title="官方文档：http://selenium-python.readthedocs.io/index.html"></a>官方文档：<a href="http://selenium-python.readthedocs.io/index.html" target="_blank" rel="noopener">http://selenium-python.readthedocs.io/index.html</a></h6><h3 id="2-浏览器驱动"><a href="#2-浏览器驱动" class="headerlink" title="2. 浏览器驱动"></a>2. 浏览器驱动</h3><blockquote>
+<p>浏览器驱动用于使用selenium操控本地浏览器执行自动化操作。</p>
+</blockquote>
+<h6 id="驱动网站：https-npmmirror-com"><a href="#驱动网站：https-npmmirror-com" class="headerlink" title="驱动网站：https://npmmirror.com/"></a>驱动网站：<a href="https://npmmirror.com/" target="_blank" rel="noopener">https://npmmirror.com/</a></h6><blockquote>
+<p>课程中使用Chrome浏览器作为演示工具，因此下载ChromeDriver</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/liaoxingwang/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="QQ%E6%88%AA%E5%9B%BE20231206223013.png" alt=""></p>
+<blockquote>
+<p>注意需要根据本地电脑Chrome的版本选择对应的驱动包，否则无法操控浏览器</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/liaoxingwang/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="QQ%E6%88%AA%E5%9B%BE20231206223129.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/liaoxingwang/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="QQ%E6%88%AA%E5%9B%BE20231206223154.png" alt=""></p>
+<blockquote>
+<p>再根据操作系统选择不同的驱动包即可，驱动包不需要安装，只需要解压到项目目录，后续会在代码中调用。</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/liaoxingwang/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="QQ%E6%88%AA%E5%9B%BE20231206223223.png" alt=""></p>
+<h3 id="3-基本使用"><a href="#3-基本使用" class="headerlink" title="3. 基本使用"></a>3. 基本使用</h3><p>安装selenium库</p>
+<p><img src="https://cdn.jsdelivr.net/gh/liaoxingwang/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="QQ%E6%88%AA%E5%9B%BE20231206223407.png" alt=""></p>
+<p>或使用命令</p>
+<pre class="line-numbers language-py"><code class="language-py">pip install selenium<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h6 id="控制浏览器自动网页"><a href="#控制浏览器自动网页" class="headerlink" title="控制浏览器自动网页"></a>控制浏览器自动网页</h6><p>将驱动包导入到项目</p>
+<p><img src="https://cdn.jsdelivr.net/gh/liaoxingwang/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="QQ%E6%88%AA%E5%9B%BE20231206223455.png" alt=""></p>
+<p>调用Chrome驱动，控制浏览器打开网页</p>
+<pre class="line-numbers language-py"><code class="language-py"># 导入 webdriver
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+# 调用键盘按键操作时需要引入的Keys包
+from selenium.webdriver.common.keys import Keys
+# 调用环境变量指定的PhantomJS浏览器创建浏览器对象
+driver = webdriver.Chrome("./chromedriver.exe")
+# get方法会一直等到页面被完全加载，然后才会继续程序，通常测试会在这里选择 time.sleep(2)
+driver.get("http://www.baidu.com/")<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="控制页面元素"><a href="#控制页面元素" class="headerlink" title="控制页面元素"></a>控制页面元素</h6><pre class="line-numbers language-py"><code class="language-py"># id="kw"是百度搜索输入框，输入字符串"长城"
+driver.find_element(By.CSS_SELECTOR,"#kw").send_keys("长城")
+# id="su"是百度搜索按钮，click() 是模拟点击
+driver.find_element(By.CSS_SELECTOR,"#su").click()
+# 关闭浏览器
+driver.quit()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="第-02-节-常用操作"><a href="#第-02-节-常用操作" class="headerlink" title="第 02 节 常用操作"></a>第 02 节 常用操作</h2><h3 id="1-元素定位"><a href="#1-元素定位" class="headerlink" title="1. 元素定位"></a>1. 元素定位</h3><p>获取单个元素</p>
+<pre class="line-numbers language-py"><code class="language-py">driver.find_element(By.ID,"inputOriginal")
+driver.find_element(By.CSS_SELECTOR,"#inputOriginal")
+driver.find_element(By.TAG_NAME,"div")
+driver.find_element(By.NAME,"username")
+driver.find_element(By.LINK_TEXT,"下一页")<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="如果找不到相应的元素会报错"><a href="#如果找不到相应的元素会报错" class="headerlink" title="如果找不到相应的元素会报错"></a>如果找不到相应的元素会报错</h6><pre class="line-numbers language-py"><code class="language-py">selenium.common.exceptions.NoSuchElementException: Message: no such element:
+Unable to locate element: xx<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h6 id="获取多个元素"><a href="#获取多个元素" class="headerlink" title="获取多个元素"></a>获取多个元素</h6><pre class="line-numbers language-py"><code class="language-py">driver.find_elements(By.ID,"inputOriginal")
+driver.find_elements(By.CSS_SELECTOR,"#inputOriginal")
+driver.find_elements(By.TAG_NAME,"div")
+driver.find_elements(By.NAME,"username")
+driver.find_elements(By.LINK_TEXT,"下一页")<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="访问有道翻译网站，输入单词，并获取翻译后的内容"><a href="#访问有道翻译网站，输入单词，并获取翻译后的内容" class="headerlink" title="访问有道翻译网站，输入单词，并获取翻译后的内容"></a>访问有道翻译网站，输入单词，并获取翻译后的内容</h6><pre class="line-numbers language-py"><code class="language-py">from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+driver = webdriver.Chrome("./chromedriver.exe")
+# 加载有道翻译页面
+driver.get("https://fanyi.youdao.com/")
+# 获取输入框
+input = driver.find_element(By.ID,"inputOriginal")
+# 输入内容
+input.send_keys("hello")
+# 获取翻译按钮
+tbtn = driver.find_element(By.ID,"transMachine")
+# 发现页面被遮挡，此时无法点击
+# tbtn.click()
+# 先获取遮挡的广告条，点击关闭按钮
+close_btn = driver.find_element(By.CSS_SELECTOR,".guide-con .guide-close")
+close_btn.click()
+#点击翻译
+tbtn.click()
+#获取翻译后的内容
+transTarget = driver.find_element(By.ID,"transTarget")
+print(transTarget.text)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="2-内容获取"><a href="#2-内容获取" class="headerlink" title="2. 内容获取"></a>2. 内容获取</h3><p>*</p>
+<ol>
+<li>size 返回元素大小</li>
+</ol>
+<p>*<br>2. text 获取元素的文本 </p><div>hello</div><br>*<br>3. title 获取页面title<br>*<br>4. current_url 获取当前页面URL<br>*<br>5. get_attribute() 获取属性值 <a href="xxxx">百度</a><br>*<br>6. is_display() 判断元素是否可见<br>*<br>7. is_enabled() 判断元素是否可用<p></p>
+<pre class="line-numbers language-py"><code class="language-py">driver = webdriver.Chrome("./chromedriver.exe")
+# 加载有道翻译页面
+driver.get("https://fanyi.youdao.com/")
+print(driver.title)
+print(driver.current_url)
+# 获取输入框
+transMachine = driver.find_element(By.ID,"transMachine")
+print(transMachine.size)
+print(transMachine.text)
+print(transMachine.get_attribute("href"))
+print(transMachine.is_displayed())
+print(transMachine.is_enabled())<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="3-窗口操作"><a href="#3-窗口操作" class="headerlink" title="3. 窗口操作"></a>3. 窗口操作</h3><p>*</p>
+<ol>
+<li>maximize_window() 最大化 –&gt; 模拟浏览器最大化按钮</li>
+</ol>
+<p>*<br>2. set_window_size(100,100) 浏览器大小 –&gt; 设置浏览器宽、高(像素点)<br>*<br>3. set_window_position(300,200) 浏览器位置 –&gt; 设置浏览器位置<br>*<br>4. back() 后退 –&gt; 模拟浏览器后退按钮<br>*<br>5. forward() 前进 –&gt; 模拟浏览器前进按钮<br>*<br>6. refresh() 刷新 –&gt; 模拟浏览器F5刷新<br>*<br>7. close() 关闭 –&gt; 模拟浏览器关闭按钮(关闭单个窗口)<br>*<br>8. quit() 关闭 –&gt; 关闭所有WebDriver启动的窗口</p>
+<h3 id="4-元素等待"><a href="#4-元素等待" class="headerlink" title="4. 元素等待"></a>4. 元素等待</h3><h6 id="翻页获取每页元素"><a href="#翻页获取每页元素" class="headerlink" title="翻页获取每页元素"></a>翻页获取每页元素</h6><pre class="line-numbers language-py"><code class="language-py">from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+driver = webdriver.Chrome("./chromedriver.exe")
+# 加载当当网
+driver.get("https://www.dangdang.com/")
+# 获取输入框
+key = driver.find_element(By.ID,"key_S")
+key.send_keys("科幻")
+# 获取搜索框，点击搜索
+search = driver.find_element(By.CSS_SELECTOR,".search .button")
+search.click()
+# 获取商品标题及价格
+for i in range(5):
+shoplist = driver.find_elements(By.CSS_SELECTOR, ".shoplist li")
+for li in shoplist:
+print(li.find_element(By.CSS_SELECTOR, "a").get_attribute("title"))
+# 获取下一页按钮
+next = driver.find_element(By.LINK_TEXT, "下一页")
+next.click()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>现在的网页越来越多采用了 Ajax 技术，这样程序便不能确定何时某个元素完全加载出来了。如果实际页<br><br>面等待时间过长导致某个dom元素还没出来，但是你的代码直接使用了这个WebElement，那么就会抛出NullPointer的异常。<br><br>为了避免这种元素定位困难而且会提高产生 ElementNotVisibleException 的概率。所以 Selenium<br>提供了两种等待方式，一种是隐式等待，一种是显式等待。<br><br>隐式等待是等待特定的时间，显式等待是指定某一条件直到这个条件成立时继续执行。<br></p>
+</blockquote>
+<h6 id="显式等待"><a href="#显式等待" class="headerlink" title="显式等待"></a>显式等待</h6><blockquote>
+<p>显式等待指定某个条件，然后设置最长等待时间。如果在这个时间还没有找到元素，那么便会抛出异常了。</p>
+</blockquote>
+<p>显示等待使用WebDriverWait完成</p>
+<pre class="line-numbers language-py"><code class="language-py">WebDriverWait(driver, timeout, poll_frequency=POLL_FREQUENCY,
+ignored_exceptions=None)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul>
+<li>driver 所创建的浏览器driver</li>
+<li>timeout 最长时间长度（默认单位：秒）</li>
+<li>poll_frequency 间隔检测时长（每）默认0.5秒</li>
+<li>ignored_exceptions 方法调用中忽略的异常，默认只抛出：找不到元素的异常</li>
+</ul>
+<h6 id="基础格式（webDriverWait-until-（判断条件））"><a href="#基础格式（webDriverWait-until-（判断条件））" class="headerlink" title="基础格式（webDriverWait+until+（判断条件））"></a>基础格式（webDriverWait+until+（判断条件））</h6><h6 id="until"><a href="#until" class="headerlink" title="until"></a>until</h6><h6 id="直到调用的方法返回值为True"><a href="#直到调用的方法返回值为True" class="headerlink" title="直到调用的方法返回值为True"></a>直到调用的方法返回值为True</h6><pre class="line-numbers language-py"><code class="language-py">until(method, message=’’)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>method：expected_conditions库中定义的方法<br><br>message ：自定义报错信息</p>
+<h6 id="判断条件"><a href="#判断条件" class="headerlink" title="判断条件"></a>判断条件</h6><pre class="line-numbers language-py"><code class="language-py">判断当前页面标题是否为title title_is(title)
+
+判断当前页面标题是否包含title title_contains(title)
+
+判断此定位的元素是否存在，presence_of_element_located(locator)
+
+判断页面网址中是否包含url url_contains(url)
+
+判断此定位的元素是否可见 visibility_of_element_located(locator)
+
+判断此元素是否可见 visibility_of(element) element：所获得的元素
+判断此定位的一组元素是否至少存在一个 presence_of_all_elements_located(locator)
+
+判断此定位的一组元素至少有一个可见，visibility_of_any_elements_located(locator)
+
+判断此定位的一组元素全部可见visibility_of_all_elements_located(locator)
+
+判断此定位中是否包含text_的内容，text_to_be_present_in_element(locator, text_)
+locator：元素的定位信息
+text_：期望的文本信息
+
+判断此定位中的value属性中是否包含text_的内容
+text_to_be_present_in_element_value(locator, text_)
+
+locator：元素的定位信息
+text_：期望的文本信息
+
+判断定位的元素是否为frame，并直接切换到这个frame中
+
+frame_to_be_available_and_switch_to_it(locator)
+
+locator：元素的定位信息
+判断定位的元素是否不可见 invisibility_of_element_located(locator)
+locator：元素的定位信息
+
+判断此元素是否不可见 invisibility_of_element(element)
+element：所获得的元素
+
+判断所定位的元素是否可见且可点击 element_to_be_clickable(locator)
+locator：元素的定位信息
+
+判断此元素是否不可用 staleness_of(element)
+element：所获得的元素
+
+判断该元素是否被选中 element_to_be_selected(element)
+element：所获得的元素
+
+判断定位的元素是否被选中 element_located_to_be_selected(locator)
+locator：元素的定位信息
+
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+# 程序每0.5秒检查，是否满足：标题包含“百度一下”这个条件，检查是否满足条件的最长时间为： 15 秒，超
+过 15 秒仍未满足条件则抛出异常
+WebDriverWait(driver, 15 , 0.5).until(EC.title_contains("百度一下"))
+
+# 程序每0.5秒检查，是否满足：某定位的元素出现，检查是否满足条件的最长时间为： 15 秒，超过 15 秒仍未
+满足条件则抛出异常
+WebDriverWait(driver, 15 ,
+0.5).until(EC.visibility_of_element_located(By.CSS_SELECTOR,"XX"))
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="隐式等待"><a href="#隐式等待" class="headerlink" title="隐式等待"></a>隐式等待</h6><p>隐式等待比较简单，就是设置全局元素查找的超时时间</p>
+<pre class="line-numbers language-py"><code class="language-py">implicitly_wait(time_to_wait)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>设置的时间单位为秒，例如implicitly_wait(30)，意思是超过 30 秒没有定位到一个元素，程序就会报错抛出异常，期间会一直轮询查找定位元素。</p>
+<h2 id="第-04-节-页面操作-动作链"><a href="#第-04-节-页面操作-动作链" class="headerlink" title="第 04 节 页面操作(动作链)"></a>第 04 节 页面操作(动作链)</h2><h3 id="1-鼠标及键盘操作"><a href="#1-鼠标及键盘操作" class="headerlink" title="1. 鼠标及键盘操作"></a>1. 鼠标及键盘操作</h3><h4 id="鼠标操作"><a href="#鼠标操作" class="headerlink" title="鼠标操作"></a>鼠标操作</h4><p>*</p>
+<ol>
+<li>context_click() 右击 –&gt; 此方法模拟鼠标右键点击效果</li>
+</ol>
+<p>*<br>2. double_click() 双击 –&gt; 此方法模拟双标双击效果<br>*<br>3. drag_and_drop() 拖动 –&gt; 此方法模拟双标拖动效果<br>*<br>4. move_to_element() 悬停 –&gt; 此方法模拟鼠标悬停效果<br>*<br>5. perform() 执行 –&gt; 此方法用来执行以上所有鼠标方法</p>
+<pre class="line-numbers language-py"><code class="language-py">driver.get("https://www.baidu.com/")
+more = driver.find_element(By.LINK_TEXT,"更多")
+#将鼠标移动到更多按钮
+ActionChains(driver).move_to_element(more).perform()
+# element = driver.find_element(by=By.CSS_SELECTOR, value="#s-top-more > div:nth-child(1) > a > div")
+# 将鼠标移动到更多并点击翻译功能
+# ActionChains(driver).move_to_element(more).click(element).perform()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="键盘操作"><a href="#键盘操作" class="headerlink" title="键盘操作"></a>键盘操作</h4><p>*</p>
+<ol>
+<li>send_keys(Keys.BACK_SPACE)删除键（BackSpace）</li>
+</ol>
+<p>*<br>2. send_keys(Keys.SPACE)空格键(Space)<br>*<br>3. send_keys(Keys.TAB)制表键(Tab)<br>*<br>4. send_keys(Keys.ESCAPE)回退键（Esc）<br>*<br>5. send_keys(Keys.ENTER)回车键（Enter）<br>*<br>6. send_keys(Keys.CONTROL,’a’) 全选（Ctrl+A）<br>*<br>7. send_keys(Keys.CONTROL,’c’)复制（Ctrl+C）</p>
+<pre class="line-numbers language-py"><code class="language-py">from selenium.webdriver.common.keys import Keys
+driver.get("https://www.baidu.com/")
+
+element = driver.find_element(By.ID,"kw")
+
+# 输入用户名
+element.send_keys("admin1")
+# 删除 1
+element.send_keys(Keys.BACK_SPACE)
+# 全选
+element.send_keys(Keys.CONTROL,'a')
+# 复制
+element.send_keys(Keys.CONTROL,'c')
+# 粘贴
+# element.send_keys(Keys.CONTROL,'v')<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="2-滚动条"><a href="#2-滚动条" class="headerlink" title="2. 滚动条"></a>2. 滚动条</h3><blockquote>
+<p>在HTML页面中，由于前端技术框架的原因，页面元素为动态显示，元素根据滚动条的下拉而被加载</p>
+</blockquote>
+<pre class="line-numbers language-py"><code class="language-py"># 1. 设置JavaScritp脚本控制滚动条，(0:左边距； 1000 ：上边距；单位像素)
+js="window.scrollTo(0,1000)"
+
+# 2. WebDriver调用js脚本方法
+driver.execute_script(js)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="3-窗口截图"><a href="#3-窗口截图" class="headerlink" title="3. 窗口截图"></a>3. 窗口截图</h3><blockquote>
+<p>自动化脚本是由程序去执行的，因此有时候打印的错误信息并不是十分明确。如果在执行出错的时候对当前窗口截图保存，那么通过图片就可以非常直观地看到出错的原因。</p>
+</blockquote>
+<pre class="line-numbers language-py"><code class="language-py"># 截取当前窗口
+driver.get_screenshot_as_file("./demo.png")<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="第-05-节-存储数据"><a href="#第-05-节-存储数据" class="headerlink" title="第 05 节 存储数据"></a>第 05 节 存储数据</h2><h3 id="1-将数据写入CSV文件"><a href="#1-将数据写入CSV文件" class="headerlink" title="1. 将数据写入CSV文件"></a>1. 将数据写入CSV文件</h3><pre class="line-numbers language-py"><code class="language-py">import csv
+# 以写入方式打开文件，如果文件不存在则自动创建
+f = open("d:/test.csv",'w')
+# 获取csv writer，用于写入csv格式数据
+writer = csv.writer(f)
+# 写入数据
+writer.writerow(["张三","男","1.7"])
+# 关闭文件
+f.close()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="2-将数据写入至MySQL"><a href="#2-将数据写入至MySQL" class="headerlink" title="2. 将数据写入至MySQL"></a>2. 将数据写入至MySQL</h3><h5 id="安装模块"><a href="#安装模块" class="headerlink" title="安装模块"></a>安装模块</h5><pre class="line-numbers language-py"><code class="language-py">pip install pymysql
+
+import pymysql
+
+# 创建连接
+conn = pymysql.connect(host='127.0.0.1', port= 3306 , user='root', passwd='',
+db='tkq1', charset='utf8')
+# 创建游标
+cursor = conn.cursor()
+
+# 执行SQL，并返回收影响行数
+
+effect_row = cursor.execute("select * from tb7")
+
+# 执行SQL，并返回受影响行数
+
+#effect_row = cursor.execute("update tb7 set pass = '123' where nid = %s",(11,))
+
+# 执行SQL，并返回受影响行数,执行多次
+#effect_row = cursor.executemany("insert into tb7(user,pass,licnese)values(%s,%s,%s)", [("u1","u1pass","11111"),("u2","u2pass","22222")])
+
+# 提交，不然无法保存新建或者修改的数据
+
+conn.commit()
+
+# 关闭游标
+cursor.close()
+# 关闭连接
+conn.close()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="参考：https-www-jb51-net-article-92516-htm"><a href="#参考：https-www-jb51-net-article-92516-htm" class="headerlink" title="参考：https://www.jb51.net/article/92516.htm"></a>参考：<a href="https://www.jb51.net/article/92516.htm" target="_blank" rel="noopener">https://www.jb51.net/article/92516.htm</a></h5><h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><blockquote>
+<p>因为爬虫技术涉及面广，且技术复杂，推荐直接在网络上寻找已有数据进行处理分析，因此爬虫阶段可以只做参考。</p>
+</blockquote>
+<h5 id="数据网站参考："><a href="#数据网站参考：" class="headerlink" title="数据网站参考："></a>数据网站参考：</h5><ul>
+<li>和鲸社区：<a href="https://www.heywhale.com/home/dataset" target="_blank" rel="noopener">https://www.heywhale.com/home/dataset</a></li>
+<li>Kaggle：<a href="https://www.kaggle.com/datasets" target="_blank" rel="noopener">https://www.kaggle.com/datasets</a></li>
+<li>GitHub：<a href="https://github.com/awesomedata/awesome-public-datasets" target="_blank" rel="noopener">https://github.com/awesomedata/awesome-public-datasets</a></li>
+</ul>
+<h2 id="额外笔记"><a href="#额外笔记" class="headerlink" title="额外笔记"></a>额外笔记</h2><blockquote>
+<p>文件下载</p>
+</blockquote>
+<pre class="line-numbers language-py"><code class="language-py">options = webdriver.ChromeOptions()
+prefs = {
+'download.default_directory': r"C:\Users\69447\Desktop\pythonProject",  # 设置默认下载路径
+"profile.default_content_setting_values.automatic_downloads": 1  # 允许多文件下载
+}
+options.add_experimental_option("prefs", prefs)
+webdriver_chrome = webdriver.Chrome(options=options)
+webdriver_chrome.get("https://registry.npmmirror.com/binary.html?path=chromedriver/")
+sleep(3)
+webdriver_chrome.find_element(by=By.CSS_SELECTOR,
+value='body > table > tbody > tr:nth-child(156) > td:nth-child(2) > a').click()
+webdriver_chrome.close()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>文件上传</p>
+</blockquote>
+<pre class="line-numbers language-py"><code class="language-py">#定位input框
+input=dirver.find_element_by_xpath('//input[@class="upload-pic"]')
+#发送文件
+input.send_keys(r'C:\Users\Administrator\Desktop\123.png')<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>Select操作</p>
+</blockquote>
+<pre class="line-numbers language-py"><code class="language-py">from selenium.webdriver.support.select import Select
+s=Select(driver.find_element_by_id("s1") #定位select框
+# 选择select框内选项的方法，不需要再写click()：
+s.select_by_index(1)  #定位第二个option元素
+s.select_by_value("49")  #根据<option value="49">进行定位
+s.select_by_visible_text("Fax")  #根据<option>fax</option>进行定位<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>alert,confirm,prompt 的方法</p>
+</blockquote>
+<pre class="line-numbers language-py"><code class="language-py"># 获取当前页面上的警告框
+alert = switch_to.alert()
+
+alert.text  # 返回文本信息
+alert.accept()   # 确定
+alert.dismiss()  # 取消
+alert.send_keys("hello") # 输入文本<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>iframe操作</p>
+</blockquote>
+<pre class="line-numbers language-py"><code class="language-py">#1、常见处理方法三种
+#index：下标
+#name：id或name属性的值
+#webelement：元素
+#2、通过下标进入
+#进入第一个iframe driver.switch_to.frame(0)
+
+#3、通过id或name属性的值进入
+#通过id或name属性的值进入指定的iframe
+
+#driver.switch_to.frame('iframe')
+#driver.switch_to.frame('iframeName')
+#4、通过iframe元素进入iframe
+#通过iframe元素进入指定iframe
+
+#iframe=driver.find_element(By.ID,"iframe")
+#driver.switch_to.frame(iframe)
+#完整案例代码如下：
+
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager
+
+driver = webdriver.Chrome(ChromeDriverManager().install())
+driver.get("http://localhost:8080/iframeDemo.html")
+# 通过下标进入frame
+driver.switch_to.frame(0)
+# 通过id或name属性的值进入指定的iframe
+driver.switch_to.frame('iframe')
+driver.switch_to.frame('iframeName')
+# 通iframe元素进入iframe
+iframe=driver.find_element(By.ID,"iframe")
+driver.switch_to.frame(iframe)
+driver.find_element(By.ID,'user').clear()
+driver.find_element(By.ID,'user').send_keys("this is a frame test !")
+print(driver.find_element(By.ID,'user').get_attribute('value'))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+            
+            <div class="reprint1">
+                <p>
+                    <span class="reprint1-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+                    </span>
+                    <a href="https://liaoxingwang.github.io" class="b-link-green">屿</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2025/08/08/blog-open-source-study-di-01-jie-selenium/" class="b-link-green">第 01 节 Selenium</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    
+
+    
+        <link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="card-content">
+        <div class="giscus-wrapper" style="overflow: hidden; max-width: 100%;">
+            <div class="giscus"></div>
+        </div>
+    </div>
+</div>
+
+<script src="https://giscus.app/client.js"
+    data-repo="liaoxingwang/liaoxingwang.github.io"
+    data-repo-id="R_kgDONgefmg"
+    data-category="Announcements"
+    data-category-id="DIC_kwDONgefms4DCjUZ"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="preferred_color_scheme"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async>
+</script>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2025/08/08/blog-open-source-study-xiao-xi-dui-lie/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="消息队列">
+                        
+                        <span class="card-title">消息队列</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            MQ(message queue)，从字面意思上看，本质是个队列，FIFO 先入先出，只不过队列中存放的内容是 message 而已，还是一种跨进程的通信机制，用于上下游传递消息。在互联网架构中，MQ 是一种非常常 见的上下游“逻辑解耦+物理解耦”的消息通信服务。使用了 MQ 之后，消息发送上游只需
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2025-08-08
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/RabbitMQ/" class="post-category" target="_blank">
+                                    RabbitMQ
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/RabbitMQ/" target="_blank">
+                        <span class="chip bg-color">RabbitMQ</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2025/08/08/blog-open-source-study-scrapy-jian-jie/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Scrapy简介">
+                        
+                        <span class="card-title">Scrapy简介</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            文档对应的视频来自bibi Scrapy 是一个用于抓取网站和提取结构化数据的应用程序框架，可 用于各种有用的应用程序，如数据挖掘、信息处理或历史存档。 尽管 Scrapy 最初是为网络抓取而设计的，但它也可用于使用 API提取数据或用作通用网络爬虫。 Scrapy的优势 * 可以容易构建大规模的爬
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2025-08-08
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Python/" class="post-category" target="_blank">
+                                    Python
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python/" target="_blank">
+                        <span class="chip bg-color">Python</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 屿<br />'
+            + '作者: SK<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4, h5'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4, h5').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+        <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&copy; 理想热爱.
+
+            <br>
+            <span id="sitetime"></span><span class="my-face">ღゝ◡╹)ノ♡</span>
+            <br>
+
+            
+
+            
+                    
+                        <span id="busuanzi_container_site_pv" style='display:none'></span>
+                        总访问量: <span id="busuanzi_value_site_pv" class="white-color"></span>
+                    
+
+                    
+                        <span id="busuanzi_container_site_uv" style='display:none'></span>
+                        人次&nbsp; | &nbsp;访客人数: <span id="busuanzi_value_site_uv" class="white-color"></span> 人
+                    
+
+            
+
+            
+                &nbsp; | &nbsp;字数统计:&nbsp;
+                <span class="white-color">2588.7k</span> 字
+            
+
+            
+            <br>
+
+        </div>
+
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/liaoxingwang" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+ 
+    <a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=807928930@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+
+    <a href="https://zhihu.com/people/zbozci" class="tooltipped" target="_blank" data-tooltip="访问我的知乎" data-position="top" data-delay="50">
+        <i class="fa fa-inverse">知</i>
+    </a>
+
+
+
+    <a href="http://wpa.qq.com/msgrd?v=3&uin=807928930&site=qq&menu=yes" class="tooltipped" target="_blank" data-tooltip="访问我的QQ空间" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+    <a href="https://weibo.com/jamsJJYY" class="tooltipped" target="_blank" data-tooltip="关注我的微博" data-position="top" data-delay="50">
+        <i class="fa fa-weibo"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+
+        var t1 = Date.UTC(2022, 10, 24, 00, 00, 00); //北京时间2019-8-1 00:00:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes *
+            minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已勉强运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours +
+            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒" ;
+    } /*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+
+
+
+
+
+
+        <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+        <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+        <script src="/libs/materialize/materialize.min.js"></script>
+        <script src="https://cdn.bootcss.com/masonry/4.2.2/masonry.pkgd.min.js"></script>
+        <script src="https://cdn.bootcss.com/aos/3.0.0-beta.6/aos.js"></script>
+        <script src="https://cdn.bootcss.com/scrollprogress/3.0.2/scrollProgress.min.js"></script>
+        <script src="https://cdn.bootcss.com/lightgallery/1.6.12/js/lightgallery-all.min.js"></script>
+        <script src="/js/matery.js"></script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+        
+            <script src="/libs/others/clicklove.js"></script>
+        
+
+        
+            <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        
+
+        <!-- liaoxingwang add 2019.08.28 -->
+        <script type="text/javascript">
+            var OriginTitile = document.title,
+                st;
+            document.addEventListener("visibilitychange", function () {
+                document.hidden ? (document.title = "看不见我🙈~看不见我🙈~", clearTimeout(st)) : (document.title =
+                    "(๑•̀ㅂ•́) ✧被发现了～", st = setTimeout(function () {
+                        document.title = OriginTitile
+                    }, 3e3))
+            })
+        </script>
+
+        <!-- 鼠标点击烟花爆炸效果  liaoxingwang add 2019.09.09 -->
+        
+
+        <!-- 背景雪花飘落特效liaoxingwang add 2019.09.10 -->
+        
+
+        <!-- 鼠标点击文字特效 liaoxingwang add 2019.09.10-->
+        
+            <script src="/js/wenzi.js" type="text/javascript"></script>
+        
+
+        <!-- 背景雪花飘落特效 liaoxingwang add 2019.09.10 -->
+        
+
+        <!-- 在线聊天工具  liaoxingwang add 2019.09.11 -->
+        
+
+        <!-- 背景 canvas-nest  洪卫 shw 2018  add 2019.09.15-->
+        
+
+        <!-- 背景静止彩带  洪卫 shw 2018  add 2019.09.15-->
+        
+            <script type="text/javascript">
+            var windowWidth = $(window).width();
+            if (windowWidth > 992) {
+                document.write('<script type="text/javascript" size="150" alpha="0.6" zIndex="-1" src="/libs/background/ribbon.min.js"><\/script>');
+            }
+            </script>
+        
+
+        <!-- 背景动态彩带 洪卫 shw 2018  add 2019.09.15-->
+        
+            <script type="text/javascript">
+            var windowWidth = $(window).width();
+            if (windowWidth > 992) {
+                document.write('<script type="text/javascript" src="/libs/background/ribbon-dynamic.js"><\/script>');
+            }
+            </script>
+        
+
+    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script>
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z\d\-\.\+]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(t.test(e.href)||r.test(e.href))&&(e.href=a.dataset.original)})});</script><script>(r=>{r.imageLazyLoadSetting.processImages=t;var a=r.imageLazyLoadSetting.isSPA,o=r.imageLazyLoadSetting.preloadRatio||1,d=i();function i(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(t){(a||t)&&(d=i());for(var e,n=0;n<d.length;n++)0<=(e=(e=d[n]).getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(r.innerHeight*o||document.documentElement.clientHeight*o)&&(()=>{var t,e,a,o,i=d[n];e=function(){d=d.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).dataset.loaded||(t.hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(a=new Image,o=t.getAttribute("data-original"),a.onload=function(){t.src=o,t.removeAttribute("data-original"),t.setAttribute("data-loaded",!0),e&&e()},a.onerror=function(){t.removeAttribute("data-original"),t.setAttribute("data-loaded",!1),t.src=o},t.src!==o&&(a.src=o)))})()}function e(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",e),r.addEventListener("resize",e),r.addEventListener("orientationchange",e)})(this);</script></body>
+</html>
