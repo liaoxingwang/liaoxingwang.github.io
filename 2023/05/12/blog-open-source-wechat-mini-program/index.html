@@ -5039,22 +5039,25 @@ chartLine<span class="token punctuation">.</span><span class="token function">se
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/05/12/blog-open-source-linux/">
+                <a href="/2023/05/12/blog-open-source-mybatis-plus/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Linu命令总结">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="MyBatis-Plus学习记录">
                         
-                        <span class="card-title">Linu命令总结</span>
+                        <span class="card-title">MyBatis-Plus学习记录</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            简易的命令行入门教程:Git 全局设置:
-git config --global user.name "sky"
-git config --global user.email "807928930@qq.com"创建 git 仓库:
-mkd
+                            MyBatis-Plus通用查询CRUD接口service接口：service继承BaseMapper
+1、查询/*
+1、Get：查询一个
+*/
+// 根据 ID 查询
+T getById(Serializable id);
+// 根据 W
                         
                     </div>
                     <div class="publish-info">
@@ -5065,8 +5068,8 @@ mkd
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Linux/" class="post-category" target="_blank">
-                                    Linux
+                            <a href="/categories/MyBatis-Plus/" class="post-category" target="_blank">
+                                    MyBatis-Plus
                                 </a>
                             
                             
@@ -5076,8 +5079,8 @@ mkd
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Linux/" target="_blank">
-                        <span class="chip bg-color">Linux</span>
+                    <a href="/tags/MyBatis-Plus/" target="_blank">
+                        <span class="chip bg-color">MyBatis-Plus</span>
                     </a>
                     
                 </div>
@@ -5303,7 +5306,7 @@ wget -c http://nginx.org/download/nginx-1.17.5.tar.gz
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">2588.6k</span> 字
+                <span class="white-color">96.7k</span> 字
             
 
             
@@ -5387,7 +5390,7 @@ wget -c http://nginx.org/download/nginx-1.17.5.tar.gz
         var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
         var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes *
             minutes) / seconds);
-        document.getElementById("sitetime").innerHTML = "本站已运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours +
+        document.getElementById("sitetime").innerHTML = "本站已勉强运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours +
             " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒" ;
     } /*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
     siteTime();
